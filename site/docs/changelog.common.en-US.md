@@ -1,3 +1,12 @@
+## 2.59.0
+
+2024-01-19
+
+### 🆕 Feature
+
+- 新增数据色色彩序列([#2494](https://github.com/arco-design/arco-design/pull/2494))
+- VirtualList add new `wrapperChild` and `onScroll` properties.([#2483](https://github.com/arco-design/arco-design/pull/2483))
+
 ## 2.57.0
 
 2023-12-08

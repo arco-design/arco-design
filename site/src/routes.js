@@ -63,6 +63,11 @@ export default function getRoutes(lang = 'zh', t) {
           hide: true,
         },
         {
+          name: t['routes.vchart'],
+          path: 'docs/vchart',
+          component: lazyLoad(() => import(`./pages/vchart`)),
+        },
+        {
           name: t['routes.overview'],
           path: 'docs/overview',
           component: OverView,
@@ -245,6 +250,12 @@ export default function getRoutes(lang = 'zh', t) {
               name: t['routes.checkbox'],
               path: 'components/checkbox',
               component: lazyLoad(() => import(`../../components/Checkbox/README${suffix}.md`)),
+            },
+            {
+              name: t['routes.color-picker'],
+              path: 'components/color-picker',
+              component: lazyLoad(() => import(`../../components/ColorPicker/README${suffix}.md`)),
+              new: true,
             },
             {
               name: t['routes.date-picker'],

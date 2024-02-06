@@ -115,7 +115,6 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                   placeholder="Hover to expand"
-                  style="min-width:100%"
                   value=""
                 />
                 <span
@@ -524,7 +523,6 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
-                style="min-width:100%"
                 value=""
               />
               <span
@@ -735,7 +733,6 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
-                style="min-width:100%"
                 value=""
               />
               <span
@@ -1894,7 +1891,6 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
-                style="min-width:100%"
                 value=""
               />
               <span
@@ -2059,7 +2055,6 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
-                style="min-width:100%"
                 value=""
               />
               <span
@@ -2234,7 +2229,6 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                   placeholder="Please enter ..."
-                  style="min-width:100%"
                   value=""
                 />
                 <span
@@ -2879,7 +2873,6 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
-                style="min-width:100%"
                 value=""
               />
               <span

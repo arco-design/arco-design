@@ -38,11 +38,11 @@ describe('Table', () => {
   it('table loading', () => {
     const component = render(<Table columns={columns} data={[]} />);
 
-    expect(component.find('.arco-spin .arco-spin')).toHaveLength(0);
+    expect(component.find('.arco-spin .arco-spin-icon')).toHaveLength(0);
 
     component.rerender(<Table columns={columns} data={[]} loading />);
 
-    expect(component.find('.arco-spin .arco-spin')).toHaveLength(1);
+    expect(component.find('.arco-spin .arco-spin-icon')).toHaveLength(1);
   });
 
   it('table size', () => {

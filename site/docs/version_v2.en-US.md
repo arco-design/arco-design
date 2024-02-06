@@ -2,6 +2,87 @@
 changelog: true
 ---
 
+## 2.59.1
+
+2024-01-26
+
+### 🐛 BugFix
+
+- Fixed a bug where the default value of `ConfigProvider` was mistakenly changed when Notice was called.([#2511](https://github.com/arco-design/arco-design/pull/2511))
+
+## 2.59.0
+
+2024-01-19
+
+### 💎 Enhancement
+
+- The `Popover` component does not display the popup box when the content is empty.([#2504](https://github.com/arco-design/arco-design/pull/2504))
+
+### 🆕 Feature
+
+- `InputTag` adds a `maxTagCount` property to support customizing the maximum number of displayed tags.([#2503](https://github.com/arco-design/arco-design/pull/2503))
+- `Trigger` supports setting the viewport offset when automatically adjusting the position according to the viewport.([#2502](https://github.com/arco-design/arco-design/pull/2502))
+- 新增数据色色彩序列([#2494](https://github.com/arco-design/arco-design/pull/2494))
+- VirtualList add new `wrapperChild` and `onScroll` properties.([#2483](https://github.com/arco-design/arco-design/pull/2483))
+- The `card` mode of the `Carousel` component adds vertical arrangement support([#2462](https://github.com/arco-design/arco-design/pull/2462))
+
+### 🐛 BugFix
+
+- Fixed the bug of incomplete display of `Watermark` content in boundary scenes.([#2507](https://github.com/arco-design/arco-design/pull/2507))
+- Fixed a bug that caused all form items to be reset when the `resetFields` method of the `Form` component passed in non-string/array type parameters.([#2505](https://github.com/arco-design/arco-design/pull/2505))
+- Fix `Typography` component `resize` throttling issue([#2488](https://github.com/arco-design/arco-design/pull/2488))
+
+## 2.58.3
+
+2024-01-11
+
+### 💎 Enhancement
+
+- Optimize that when the `Image` component is in `lazyload`, elements outside the viewport do not display placeholder loading to avoid page reflow.([#2492](https://github.com/arco-design/arco-design/pull/2492))
+
+### 🐛 BugFix
+
+- Fixed the bug causing white screen due to loop rendering in `Image` component boundary scene.([#2489](https://github.com/arco-design/arco-design/pull/2489))
+
+## 2.58.2
+
+2024-01-08
+
+### 🐛 BugFix
+
+- Fix the `effect` infinite loop that may occur in edge cases in `Select` after turning on `allowCreate`.([#2484](https://github.com/arco-design/arco-design/pull/2484))
+
+## 2.58.1
+
+2024-01-05
+
+### 🐛 BugFix
+
+- Fixed the issue where the `Space` component wrapping Fragment could not be parsed correctly.([#2480](https://github.com/arco-design/arco-design/pull/2480))
+- Adjust the `InputNumber` component to only prevent specific keyboard events from bubbling up([#2479](https://github.com/arco-design/arco-design/pull/2479))
+- Fixed the bug of extra delimiters appearing when conditional rendering exists in `Breadcrumb.Item`.([#2477](https://github.com/arco-design/arco-design/pull/2477))
+- Fixes `Table` component `loading` configuration not being effective.([#2474](https://github.com/arco-design/arco-design/pull/2474))
+- Fixed page error caused by updating the value to `undefined` when `allowCreate` is enabled `Select` single-mode.([#2473](https://github.com/arco-design/arco-design/pull/2473))
+
+## 2.58.0
+
+2023-12-29
+
+### 💎 Enhancement
+
+- Optimize the issue of vertical jitter when clearing all tags in `InputTag`.([#2455](https://github.com/arco-design/arco-design/pull/2455))
+
+### 🆕 Feature
+
+- The `Image.Preview` component adds the `imageRender` attribute to allow custom image rendering, and the `imgAttributes` attribute customizes src content.([#2458](https://github.com/arco-design/arco-design/pull/2458))
+- The `Image.PreviewGroup` component adds the `renderImages` attribute for loading images in advance([#2458](https://github.com/arco-design/arco-design/pull/2458))
+- Add  `ColorPicker` component([#2383](https://github.com/arco-design/arco-design/pull/2383))
+
+### 🐛 BugFix
+
+- Fix the problem that `Message` is called with the same id and is not updated during([#2459](https://github.com/arco-design/arco-design/pull/2459))
+- Fix the problem that `Notification` is called with the same id and is not updated during([#2456](https://github.com/arco-design/arco-design/pull/2456))
+
 ## 2.57.2
 
 2023-12-22

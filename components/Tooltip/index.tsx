@@ -1,5 +1,4 @@
 import React, {
-  ReactNode,
   forwardRef,
   useContext,
   useRef,
@@ -12,7 +11,7 @@ import { ConfigContext } from '../ConfigProvider';
 import pick, { pickDataAttributes } from '../_util/pick';
 import { TooltipProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
-import { isFunction } from '../_util/is';
+import { isFunction, isEmptyReactNode } from '../_util/is';
 
 export type TooltipHandle = {
   updatePopupPosition: () => void;
@@ -93,21 +92,9 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
 
   const renderedContent = isFunction(content) ? content() : content;
 
-  // it is important to note that this method has its limitations
-  // it fails in cases such as content = <>&nbsp;&nbsp;</>
-  const isEmpty = (content: ReactNode): boolean => {
-    if (content === null || content === undefined || content === false) {
-      return true;
-    }
-    if (typeof content === 'string' && content.trim() === '') {
-      return true;
-    }
-    return false;
-  };
-
   if ('popupVisible' in props) {
     otherProps.popupVisible = popupVisible;
-  } else if (isEmpty(renderedContent)) {
+  } else if (isEmptyReactNode(renderedContent, true)) {
     // hide if empty content
     otherProps.popupVisible = false;
   }

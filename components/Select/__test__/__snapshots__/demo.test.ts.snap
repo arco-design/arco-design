@@ -114,7 +114,6 @@ exports[`renders Select/demo/addbefore.md correctly 1`] = `
                 <input
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-                  style="min-width:100%"
                   value=""
                 />
                 <span
@@ -369,7 +368,6 @@ exports[`renders Select/demo/async-data.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Search by name"
-            style="min-width:100%"
             value=""
           />
           <span
@@ -741,7 +739,6 @@ exports[`renders Select/demo/autoWidth.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select"
-                style="min-width:100%"
                 value=""
               />
               <span
@@ -812,7 +809,6 @@ exports[`renders Select/demo/autoWidth.md correctly 1`] = `
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                   placeholder="Please select"
-                  style="min-width:100%"
                   value=""
                 />
                 <span
@@ -1666,7 +1662,6 @@ exports[`renders Select/demo/hide-selected-option.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Please select"
-            style="min-width:100%"
             value=""
           />
           <span
@@ -2394,7 +2389,6 @@ exports[`renders Select/demo/on-popup-scroll.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Search by name"
-            style="min-width:100%"
             value=""
           />
           <span
@@ -3462,7 +3456,6 @@ exports[`renders Select/demo/size.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select"
-                style="min-width:100%"
                 value=""
               />
               <span
@@ -3528,7 +3521,6 @@ exports[`renders Select/demo/token-separators.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Please select"
-            style="min-width:100%"
             value=""
           />
           <span
@@ -3598,7 +3590,6 @@ Array [
               autocomplete="off"
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
               placeholder="Select a tag"
-              style="min-width:100%"
               value=""
             />
             <span

@@ -7685,7 +7685,6 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                           autocomplete="off"
                           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                           placeholder="please select"
-                          style="min-width:100%"
                           value=""
                         />
                         <span
@@ -9500,7 +9499,6 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                           autocomplete="off"
                           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                           placeholder="Select..."
-                          style="min-width:100%"
                           value=""
                         />
                         <span

@@ -280,6 +280,20 @@ export const tokens = [
     ],
   },
   {
+    name: '数据色',
+    nameEN: 'Data',
+    type: 'color',
+    tokens: [...new Array(20)].map((_, i) => {
+      return {
+        name: `data-${i + 1}`,
+        desc: '',
+        descEN: '',
+        value: `rgb(var(--data-${i + 1}))`,
+        cssvar: true,
+      };
+    }),
+  },
+  {
     name: '边框颜色',
     nameEN: 'Border Color',
     type: 'color',

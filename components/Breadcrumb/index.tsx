@@ -7,6 +7,7 @@ import IconObliqueLine from '../../icon/react-icon/IconObliqueLine';
 import omit from '../_util/omit';
 import { RouteProps, BreadcrumbProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { isEmptyReactNode } from '../_util/is';
 
 const defaultItemRender = (route: RouteProps, routes: RouteProps[], paths: string[]): ReactNode => {
   if (routes.indexOf(route) === routes.length - 1) {
@@ -91,17 +92,20 @@ function Breadcrumb(baseProps: PropsWithChildren<BreadcrumbProps>, ref) {
   };
 
   const getItemsByChildren = () => {
-    const delta = React.Children.toArray(children).length - maxCount;
-    return React.Children.map(children, (child: React.ReactElement, index) => {
-      return (
-        child &&
-        getValidChild(
-          React.cloneElement(child, {
-            prefixCls,
-          }),
-          delta,
-          index
-        )
+    const _children = [];
+    React.Children.forEach(children, (child) => {
+      if (!isEmptyReactNode(child)) {
+        _children.push(child);
+      }
+    });
+    const delta = _children.length - maxCount;
+    return React.Children.map(_children, (child: React.ReactElement, index) => {
+      return getValidChild(
+        React.cloneElement(child, {
+          prefixCls,
+        }),
+        delta,
+        index
       );
     });
   };

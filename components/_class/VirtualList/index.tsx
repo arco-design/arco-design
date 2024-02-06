@@ -63,11 +63,18 @@ export interface VirtualListProps<T> extends Omit<React.HTMLAttributes<any>, 'ch
   outerStyle?: CSSProperties;
   innerStyle?: CSSProperties;
   onScroll?: React.UIEventHandler<HTMLElement>;
+  wrapperChild?: string | React.FC<any> | React.ComponentClass<any>;
 }
 
 export type AvailableVirtualListProps = Pick<
   VirtualListProps<any>,
-  'height' | 'itemHeight' | 'threshold' | 'isStaticItemHeight' | 'scrollOptions'
+  | 'height'
+  | 'itemHeight'
+  | 'threshold'
+  | 'isStaticItemHeight'
+  | 'scrollOptions'
+  | 'onScroll'
+  | 'wrapperChild'
 >;
 
 interface RelativeScroll {
@@ -170,6 +177,7 @@ const VirtualList: React.ForwardRefExoticComponent<
     needFiller = true,
     outerStyle,
     innerStyle,
+    wrapperChild: WrapperChildTagName = React.Fragment,
     ...restProps
   } = props;
   // Compatible with setting the height of the list through style.maxHeight
@@ -684,16 +692,18 @@ const VirtualList: React.ForwardRefExoticComponent<
               innerStyle={innerStyle}
               offset={state.status === 'MEASURE_DONE' ? state.startItemTop : 0}
             >
-              {renderChildren(data.slice(state.startIndex, state.endIndex + 1), state.startIndex)}
+              <WrapperChildTagName>
+                {renderChildren(data.slice(state.startIndex, state.endIndex + 1), state.startIndex)}
+              </WrapperChildTagName>
             </Filler>
             {renderLongestItem()}
           </>
         ) : needFiller ? (
           <Filler height={viewportHeight} outerStyle={outerStyle} innerStyle={innerStyle}>
-            {renderChildren(data, 0)}
+            <WrapperChildTagName>{renderChildren(data, 0)}</WrapperChildTagName>
           </Filler>
         ) : (
-          renderChildren(data, 0)
+          <WrapperChildTagName>{renderChildren(data, 0)}</WrapperChildTagName>
         )}
       </WrapperTagName>
     </ResizeObserver>

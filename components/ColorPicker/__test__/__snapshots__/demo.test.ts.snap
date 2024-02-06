@@ -1,0 +1,302 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ColorPicker/demo/basic.md correctly 1`] = `
+<div>
+  <div
+    class="arco-color-picker arco-color-picker-size-default"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF"
+    />
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFF"
+    />
+  </div>
+  <div
+    style="margin-top:10px"
+  />
+  <div
+    class="arco-color-picker arco-color-picker-size-default"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF"
+    />
+    <div
+      class="arco-color-picker-value"
+    >
+      #165DFF
+    </div>
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFF"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders ColorPicker/demo/colors.md correctly 1`] = `
+<div>
+  <div>
+    Preset: 
+  </div>
+  <div
+    class="arco-color-picker arco-color-picker-size-default"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF"
+    />
+    <div
+      class="arco-color-picker-value"
+    >
+      #165DFF
+    </div>
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFF"
+    />
+  </div>
+  <div
+    style="margin-top:10px"
+  />
+  <div>
+    History & Preset: 
+  </div>
+  <div
+    class="arco-color-picker arco-color-picker-size-default"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF"
+    />
+    <div
+      class="arco-color-picker-value"
+    >
+      #165DFF
+    </div>
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFF"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders ColorPicker/demo/control.md correctly 1`] = `
+<div>
+  <div>
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        #165DFF
+      </span>
+    </button>
+    <button
+      class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+      type="button"
+    >
+      <span>
+        #165DFF88
+      </span>
+    </button>
+  </div>
+  <div
+    style="margin-top:10px"
+  />
+  <div
+    class="arco-color-picker arco-color-picker-size-default"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF"
+    />
+    <div
+      class="arco-color-picker-value"
+    >
+      #165DFF
+    </div>
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFF"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders ColorPicker/demo/disabled.md correctly 1`] = `
+<div>
+  <div
+    class="arco-color-picker arco-color-picker-size-default arco-color-picker-disabled"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF"
+    />
+    <input
+      class="arco-color-picker-input"
+      disabled=""
+      readonly=""
+      value="#165DFF"
+    />
+  </div>
+  <div
+    style="margin-top:10px"
+  />
+  <div
+    class="arco-color-picker arco-color-picker-size-default arco-color-picker-disabled"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF"
+    />
+    <div
+      class="arco-color-picker-value"
+    >
+      #165DFF
+    </div>
+    <input
+      class="arco-color-picker-input"
+      disabled=""
+      readonly=""
+      value="#165DFF"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders ColorPicker/demo/format.md correctly 1`] = `
+<div>
+  <div
+    class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
+    role="radiogroup"
+    style="margin-bottom:24px"
+  >
+    <label
+      class="arco-radio-button arco-radio-checked"
+    >
+      <input
+        checked=""
+        name="size"
+        type="radio"
+        value="hex"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        hex
+      </span>
+    </label>
+    <label
+      class="arco-radio-button"
+    >
+      <input
+        name="size"
+        type="radio"
+        value="rgb"
+      />
+      <span
+        class="arco-radio-button-inner"
+      >
+        rgb
+      </span>
+    </label>
+  </div>
+  <div
+    style="margin-top:10px"
+  />
+  <div
+    class="arco-color-picker arco-color-picker-size-default"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF"
+    />
+    <div
+      class="arco-color-picker-value"
+    >
+      #165DFF
+    </div>
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFF"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders ColorPicker/demo/size.md correctly 1`] = `
+<div>
+  <div
+    class="arco-color-picker arco-color-picker-size-mini"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF"
+    />
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFF"
+    />
+  </div>
+  <div
+    style="margin-top:10px"
+  />
+  <div
+    class="arco-color-picker arco-color-picker-size-small"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF"
+    />
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFF"
+    />
+  </div>
+  <div
+    style="margin-top:10px"
+  />
+  <div
+    class="arco-color-picker arco-color-picker-size-default"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF"
+    />
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFF"
+    />
+  </div>
+  <div
+    style="margin-top:10px"
+  />
+  <div
+    class="arco-color-picker arco-color-picker-size-large"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF"
+    />
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFF"
+    />
+  </div>
+</div>
+`;

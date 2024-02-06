@@ -1,3 +1,11 @@
+## 2.58.1
+
+2024-01-05
+
+### 🐛 BugFix
+
+- Adjust the `InputNumber` component to only prevent specific keyboard events from bubbling up([#2479](https://github.com/arco-design/arco-design/pull/2479))
+
 ## 2.54.0
 
 2023-10-09

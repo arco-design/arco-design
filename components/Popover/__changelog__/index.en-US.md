@@ -1,3 +1,11 @@
+## 2.59.0
+
+2024-01-19
+
+### 💎 Enhancement
+
+- The `Popover` component does not display the popup box when the content is empty.([#2504](https://github.com/arco-design/arco-design/pull/2504))
+
 ## 2.48.0
 
 2023-05-12

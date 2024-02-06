@@ -73,52 +73,108 @@
     // 通过改变 perspective 来取得不同景深关系
     perspective: 800px;
 
-    > * {
-      left: 50%;
-      opacity: 0;
-      transform: translateX(-50%) translateZ(-400px);
-      animation: ~'@{prefix}-carousel-card-middle-to-bottom';
-    }
-
-    // prev 右边对齐容器中线
-    .@{carousel-prefix-cls}-item-prev {
-      opacity: 0.4;
-      transform: translateX(-100%) translateZ(-200px);
-      animation: ~'@{prefix}-carousel-card-top-to-middle';
-    }
-
-    // next 左边对齐容器中线
-    .@{carousel-prefix-cls}-item-next {
-      opacity: 0.4;
-      transform: translateX(0%) translateZ(-200px);
-      animation: ~'@{prefix}-carousel-card-bottom-to-middle';
-    }
-
-    // current 居中
-    .@{carousel-prefix-cls}-item-current {
-      opacity: 1;
-      transform: translateX(-50%) translateZ(0);
-      animation: ~'@{prefix}-carousel-card-middle-to-top';
-    }
-
-    &.@{carousel-prefix-cls}-negative {
+    &.@{carousel-prefix-cls}-horizontal {
       > * {
-        animation: ~'@{prefix}-carousel-card-middle-to-bottom-reverse';
+        left: 50%;
+        opacity: 0;
+        transform: translateX(-50%) translateZ(-400px);
+        animation: ~'@{prefix}-carousel-card-middle-to-bottom';
       }
 
       // prev 右边对齐容器中线
       .@{carousel-prefix-cls}-item-prev {
-        animation: ~'@{prefix}-carousel-card-bottom-to-middle-reverse';
+        opacity: 0.4;
+        transform: translateX(-100%) translateZ(-200px);
+        animation: ~'@{prefix}-carousel-card-top-to-middle';
       }
 
       // next 左边对齐容器中线
       .@{carousel-prefix-cls}-item-next {
-        animation: ~'@{prefix}-carousel-card-top-to-middle-reverse';
+        opacity: 0.4;
+        transform: translateX(0%) translateZ(-200px);
+        animation: ~'@{prefix}-carousel-card-bottom-to-middle';
       }
 
       // current 居中
       .@{carousel-prefix-cls}-item-current {
-        animation: ~'@{prefix}-carousel-card-middle-to-top-reverse';
+        opacity: 1;
+        transform: translateX(-50%) translateZ(0);
+        animation: ~'@{prefix}-carousel-card-middle-to-top';
+      }
+
+      &.@{carousel-prefix-cls}-negative {
+        > * {
+          animation: ~'@{prefix}-carousel-card-middle-to-bottom-reverse';
+        }
+
+        // prev 右边对齐容器中线
+        .@{carousel-prefix-cls}-item-prev {
+          animation: ~'@{prefix}-carousel-card-bottom-to-middle-reverse';
+        }
+
+        // next 左边对齐容器中线
+        .@{carousel-prefix-cls}-item-next {
+          animation: ~'@{prefix}-carousel-card-top-to-middle-reverse';
+        }
+
+        // current 居中
+        .@{carousel-prefix-cls}-item-current {
+          animation: ~'@{prefix}-carousel-card-middle-to-top-reverse';
+        }
+      }
+    }
+
+    &.@{carousel-prefix-cls}-vertical {
+      > * {
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50%) translateZ(-400px);
+        animation: ~'@{prefix}-carousel-card-middle-to-right';
+        display: flex;
+        justify-content: center;
+      }
+
+      // prev 右边对齐容器中线
+      .@{carousel-prefix-cls}-item-prev {
+        opacity: 0.4;
+        transform: translateX(-50%) translateY(-100%) translateZ(-200px);
+        animation: ~'@{prefix}-carousel-card-left-to-middle';
+      }
+
+      // next 左边对齐容器中线
+      .@{carousel-prefix-cls}-item-next {
+        opacity: 0.4;
+        transform: translateX(-50%) translateY(0%) translateZ(-200px);
+        animation: ~'@{prefix}-carousel-card-right-to-middle';
+      }
+
+      // current 居中
+      .@{carousel-prefix-cls}-item-current {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%) translateZ(0);
+        animation: ~'@{prefix}-carousel-card-middle-to-left';
+      }
+    }
+
+    &.@{carousel-prefix-cls}-negative {
+      > * {
+        animation: ~'@{prefix}-carousel-card-middle-to-right-reverse';
+      }
+
+      // prev 右边对齐容器中线
+      .@{carousel-prefix-cls}-item-prev {
+        animation: ~'@{prefix}-carousel-card-right-to-middle-reverse';
+      }
+
+      // next 左边对齐容器中线
+      .@{carousel-prefix-cls}-item-next {
+        animation: ~'@{prefix}-carousel-card-left-to-middle-reverse';
+      }
+
+      // current 居中
+      .@{carousel-prefix-cls}-item-current {
+        animation: ~'@{prefix}-carousel-card-middle-to-left-reverse';
       }
     }
   }
@@ -199,6 +255,13 @@
         right: 0;
         background: none;
       }
+
+      &-outer-right {
+        right: 0;
+        top: 0;
+        width: @size-5;
+        height: 100%;
+      }
     }
 
     &-bottom {
@@ -244,6 +307,29 @@
       &.@{carousel-prefix-cls}-indicator-slider {
         padding: 0;
         bottom: -(@carousel-indicator-position + @carousel-indicator-slider-size-height + $padding);
+        background-color: @carousel-indicator-outer-color_default;
+      }
+
+      .@{carousel-prefix-cls}-indicator-item {
+        background-color: @carousel-indicator-outer-color_default;
+
+        &:hover,
+        &-active {
+          background-color: @carousel-indicator-outer-color_active;
+        }
+      }
+    }
+
+    &-outer-right {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      padding: @carousel-indicator-outer-padding;
+      border-radius: @carousel-indicator-outer-border-radius;
+      background-color: @carousel-indicator-outer-color-bg;
+
+      &.@{carousel-prefix-cls}-indicator-slider {
+        padding: 0;
         background-color: @carousel-indicator-outer-color_default;
       }
 

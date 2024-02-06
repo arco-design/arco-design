@@ -20,7 +20,7 @@ function updateMessage() {
   Message.loading({
     id: 'need_update',
     content: 'Will update after 2 seconds...',
-    duration: 4000,
+    duration: 3000,
   });
   setTimeout(() => {
     Message.success({

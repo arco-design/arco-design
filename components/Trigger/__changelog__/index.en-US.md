@@ -1,3 +1,11 @@
+## 2.59.0
+
+2024-01-19
+
+### 🆕 Feature
+
+- `Trigger` supports setting the viewport offset when automatically adjusting the position according to the viewport.([#2502](https://github.com/arco-design/arco-design/pull/2502))
+
 ## 2.57.0
 
 2023-12-08

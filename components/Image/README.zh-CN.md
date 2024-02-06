@@ -53,6 +53,7 @@
 |scales|在预览缩放时会使用当前数组中的缩放百分比。若不包含 `100%`，则会自动添加在最相邻的位置。|number[] |`[25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500];`|2.30.0|
 |style|节点样式|CSSProperties |`-`|-|
 |getPopupContainer|弹出层挂载的节点|() => HTMLElement |`() => document.body`|2.16.0|
+|imageRender|自定义 IMG 元素的渲染|(originalNode: ReactElement) => ReactNode |`-`|2.58.0|
 |onVisibleChange|切换可见状态触发的事件|(visible: boolean, preVisible: boolean) => void |`-`|-|
 
 ### Image.PreviewGroup
@@ -64,6 +65,7 @@
 |closable|是否显示关闭按钮|boolean |`true`|2.16.0|
 |defaultVisible|默认是否可见，非受控|boolean |`-`|-|
 |escToExit|按 `ESC` 键关闭预览|boolean |`true`|2.24.0|
+|forceRender|是否渲染图片列表，用于提前加载图片|boolean |`-`|2.58.0|
 |infinite|是否无限循环|boolean |`-`|-|
 |maskClosable|点击 mask 是否触发关闭|boolean |`true`|-|
 |visible|是否可见，受控属性|boolean |`-`|-|
@@ -79,6 +81,7 @@
 |srcList|图片列表 （设置了本属性之后，将不再收集 Image 子组件的图片信息）|string[] |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
 |getPopupContainer|弹出层挂载的节点|() => HTMLElement |`() => document.body`|2.16.0|
+|imageRender|自定义 IMG 元素的渲染|(originalNode: ReactElement) => ReactNode |`-`|2.58.0|
 |onChange|切换图片触发的事件|(index: number) => void |`-`|-|
 |onVisibleChange|切换可见状态触发的事件|(visible: boolean, preVisible: boolean) => void |`-`|-|
 

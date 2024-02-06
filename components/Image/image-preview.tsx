@@ -82,6 +82,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
     scales,
     escToExit,
     imgAttributes = {},
+    imageRender,
     extra: extraNode = null,
   } = mergedProps;
   const mergedSrc = previewGroup ? previewUrlMap.get(currentIndex) : src;
@@ -446,6 +447,33 @@ function Preview(baseProps: ImagePreviewProps, ref) {
     },
   ];
 
+  const renderImage = () => {
+    const image = (
+      <img
+        onWheel={onWheelZoom}
+        ref={refImage}
+        className={cs(imgClassName, `${previewPrefixCls}-img`, {
+          [`${previewPrefixCls}-img-moving`]: moving,
+        })}
+        style={{
+          ...imgStyle,
+          transform: `translate(${translate.x}px, ${translate.y}px) rotate(${rotate}deg)`,
+        }}
+        key={previewImgSrc}
+        src={previewImgSrc}
+        {...restImgAttributes}
+        onLoad={onImgLoaded}
+        onError={onImgLoadError}
+        onMouseDown={(event) => {
+          // only trigger onMoveStart when press mouse left button
+          event.button === 0 && onMoveStart(event);
+        }}
+      />
+    );
+
+    return imageRender?.(image) ?? image;
+  };
+
   return (
     <Portal visible={visible} forceRender={false} getContainer={getContainer}>
       {/* ConfigProvider need to inherit the outermost Context.
@@ -489,26 +517,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
                   style={{ transform: `scale(${scale}, ${scale})` }}
                   onClick={onOutsideImgClick}
                 >
-                  <img
-                    onWheel={onWheelZoom}
-                    ref={refImage}
-                    className={cs(imgClassName, `${previewPrefixCls}-img`, {
-                      [`${previewPrefixCls}-img-moving`]: moving,
-                    })}
-                    style={{
-                      ...imgStyle,
-                      transform: `translate(${translate.x}px, ${translate.y}px) rotate(${rotate}deg)`,
-                    }}
-                    {...restImgAttributes}
-                    onLoad={onImgLoaded}
-                    onError={onImgLoadError}
-                    onMouseDown={(event) => {
-                      // only trigger onMoveStart when press mouse left button
-                      event.button === 0 && onMoveStart(event);
-                    }}
-                    key={previewImgSrc}
-                    src={previewImgSrc}
-                  />
+                  {renderImage()}
                   {isLoading && (
                     <div className={`${previewPrefixCls}-loading`}>
                       <IconLoading />

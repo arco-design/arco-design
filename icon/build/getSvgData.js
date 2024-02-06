@@ -24,38 +24,41 @@ svgs.forEach((svg) => {
     const dirData = {};
     const dirDataPure = {};
     dir.forEach((d) => {
-      const files = fs.readdirSync(path.resolve(rootPath, d));
-      function setDirData(dd, pure) {
-        dd[d] = files
-          .map((file) => {
-            if (file === '.DS_Store') {
-              return '';
-            }
-            const name = file.slice(0, -4);
-            const data = {
-              name,
-              componentName: getCamelString(name),
-              file: path.resolve(rootPath, d, file),
-            };
-            if (pure) {
-              delete data.name;
-              delete data.file;
-            }
-            if (!pure) {
-              flatData.push(data);
-              if (svg === 'out-of-date') {
-                outOfDateComponentNames.push(getCamelString(name));
+      if (fs.lstatSync(path.resolve(rootPath, d)).isDirectory()) {
+        const files = fs.readdirSync(path.resolve(rootPath, d));
+        function setDirData(dd, pure) {
+          dd[d] = files
+            .map((file) => {
+              if (file === '.DS_Store') {
+                return '';
               }
-            }
-            return data;
-          })
-          .filter((x) => x);
-        return dd[d];
+              const name = file.slice(0, -4);
+              const data = {
+                name,
+                componentName: getCamelString(name),
+                file: path.resolve(rootPath, d, file),
+              };
+              if (pure) {
+                delete data.name;
+                delete data.file;
+              }
+              if (!pure) {
+                flatData.push(data);
+                if (svg === 'out-of-date') {
+                  outOfDateComponentNames.push(getCamelString(name));
+                }
+              }
+              return data;
+            })
+            .filter((x) => x);
+          return dd[d];
+        }
+
+        setDirData(dirData);
+        setDirData(dirDataPure, true);
+        svgData[svg] = dirData;
+        svgDataPure[svg] = dirDataPure;
       }
-      setDirData(dirData);
-      setDirData(dirDataPure, true);
-      svgData[svg] = dirData;
-      svgDataPure[svg] = dirDataPure;
     });
   }
 });

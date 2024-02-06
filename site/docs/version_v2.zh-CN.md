@@ -2,6 +2,87 @@
 changelog: true
 ---
 
+## 2.59.1
+
+2024-01-26
+
+### 🐛 问题修复
+
+- 修复 `ConfigProvider` 的默认值在 Notice  被调用时被误改的 bug。([#2511](https://github.com/arco-design/arco-design/pull/2511))
+
+## 2.59.0
+
+2024-01-19
+
+### 💎 功能优化
+
+- `Popover` 组件当内容为空时不显示弹出框。([#2504](https://github.com/arco-design/arco-design/pull/2504))
+
+### 🆕 功能升级
+
+- `InputTag` 组件新增 `maxTagCount` 属性以支持自定义最多展示的标签数量。([#2503](https://github.com/arco-design/arco-design/pull/2503))
+- `Trigger` 支持根据视口自动调整位置时，设置视口偏移量([#2502](https://github.com/arco-design/arco-design/pull/2502))
+- 新增数据色色彩序列([#2494](https://github.com/arco-design/arco-design/pull/2494))
+- 虚拟列表新增 `wrapperChild` 和 `onScroll` 属性。([#2483](https://github.com/arco-design/arco-design/pull/2483))
+- `Carousel` 组件的 `card` 模式增加纵向排列支持([#2462](https://github.com/arco-design/arco-design/pull/2462))
+
+### 🐛 问题修复
+
+- 修复 `Watermark` 在边界场景下内容显示不完全的 bug。([#2507](https://github.com/arco-design/arco-design/pull/2507))
+- 修复 `Form` 组件的 `resetFields` 方法传入非 string/array 类型 的参数时，所有表单项都被重置的 bug。([#2505](https://github.com/arco-design/arco-design/pull/2505))
+- 修复 `Typography` 组件 `resize` 节流问题([#2488](https://github.com/arco-design/arco-design/pull/2488))
+
+## 2.58.3
+
+2024-01-11
+
+### 💎 功能优化
+
+- 优化 `Image` 组件在 `lazyload` 时视口外的元素不显示占位 loading，避免页面重排([#2492](https://github.com/arco-design/arco-design/pull/2492))
+
+### 🐛 问题修复
+
+- 修复 `Image` 组件边界场景下循环渲染导致白屏的 bug。([#2489](https://github.com/arco-design/arco-design/pull/2489))
+
+## 2.58.2
+
+2024-01-08
+
+### 🐛 问题修复
+
+- 修复 `Select` 在开启 `allowCreate` 后在边缘情况可能出现的 `effect` 无限循环。([#2484](https://github.com/arco-design/arco-design/pull/2484))
+
+## 2.58.1
+
+2024-01-05
+
+### 🐛 问题修复
+
+- 修复 `Space` 组件包裹 Fragment 不能正确解析的问题。([#2480](https://github.com/arco-design/arco-design/pull/2480))
+- 调整 `InputNumber` 组件仅阻止特定键盘事件的冒泡。([#2479](https://github.com/arco-design/arco-design/pull/2479))
+- 修复 `Breadcrumb.Item` 存在条件渲染时，出现多余分隔符的 bug。([#2477](https://github.com/arco-design/arco-design/pull/2477))
+- 修复`Table`组件`loading`配置不生效的问题([#2474](https://github.com/arco-design/arco-design/pull/2474))
+- 修复 `Select` 单选模式开启 `allowCreate` 时，将值更新为 `undefined` 后导致的页面报错。([#2473](https://github.com/arco-design/arco-design/pull/2473))
+
+## 2.58.0
+
+2023-12-29
+
+### 💎 功能优化
+
+- 优化 `InputTag` 清除所有标签时高度抖动的问题。([#2455](https://github.com/arco-design/arco-design/pull/2455))
+
+### 🆕 功能升级
+
+- `Image.Preview` 组件增加 `imageRender` 属性允许自定义图片渲染，`imgAttributes` 属性自定义 src 内容([#2458](https://github.com/arco-design/arco-design/pull/2458))
+- `Image.PreviewGroup` 组件增加 `forceRender` 属性，用于提前加载图片([#2458](https://github.com/arco-design/arco-design/pull/2458))
+- 新增 `ColorPicker` 组件([#2383](https://github.com/arco-design/arco-design/pull/2383))
+
+### 🐛 问题修复
+
+- 修复 `Message` 相同 id 调用，during 不更新问题([#2459](https://github.com/arco-design/arco-design/pull/2459))
+- 修复 `Notification` 相同 id 调用，during 不更新问题([#2456](https://github.com/arco-design/arco-design/pull/2456))
+
 ## 2.57.2
 
 2023-12-22
