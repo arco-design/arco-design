@@ -67,6 +67,7 @@ import { UploadProps } from '../Upload/interface';
 import { VerificationCodeProps } from '../VerificationCode/interface';
 import { WatermarkProps } from '../Watermark/interface';
 import { EllipsisProps } from '../Ellipsis/interface';
+import { ColorPickerProps } from '../ColorPicker';
 
 export type ThemeConfig = Record<string, any>;
 
@@ -89,6 +90,7 @@ export type ComponentConfig = {
   Checkbox?: CheckboxProps;
   Collapse?: CollapseProps;
   Comment?: CommentProps;
+  ColorPicker?: ColorPickerProps;
   DatePicker?: Omit<
     DatePickerCommonProps,
     | 'placeholder'

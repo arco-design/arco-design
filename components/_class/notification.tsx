@@ -51,9 +51,19 @@ class BaseNotice extends Component<any, BaseNoticeState> {
     const updatedNotices = this.state.notices.map((oldNotice) =>
       newNotice.id === oldNotice.id ? newNotice : oldNotice
     );
-    this.setState({
-      notices: updatedNotices,
-    });
+
+    this.setState(
+      {
+        notices: updatedNotices,
+      },
+      () => {
+        const notices = updatedNotices.map((notice) => {
+          if (newNotice.id === notice.id) delete notice.update;
+          return notice;
+        });
+        this.setState({ notices });
+      }
+    );
   };
 
   remove(id: string) {

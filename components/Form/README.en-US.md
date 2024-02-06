@@ -299,3 +299,38 @@ return <div>
 </div>
 ```
 This is because when the form method is called, `Modal` has not yet been mounted and `Form` has not been created yet. You can set the `mountOnEnter=false` of Modal.
+### Form.Item did not collect the value of the wrapped form control / did not trigger verification?
+
+* Form.Item sets the field attribute
+* Form.Item is directly wrapped outside the form control, and the form control is the **only child node** of FormItem
+* The default triggerPropName of Form.Item is value, which means that the value attribute will be injected into the child control. If the controlled property of the form control is `checked` (such as switch, checkbox, radio), `fileList` (such as Upload) or others, then you need to set the triggerPropName={ of the form control in `Form.Item` according to the actual situation. control attribute}
+* Similar to triggerPropName, by default `FormItem` listens to the `onChange` callback of child components to collect control values and trigger validation logic. If the callback of the subcomponent is not `onChange`, remember to set `trigger={form control event callback}` of `FormItem`
+* The control wrapped by Form.Item is in a mounted state (that is, it has not been destroyed)
+
+### A form element has a value filled in but has been destroyed. How do I get this value?
+The **`getFields`** method will obtain the values ​​of all fields registered in `Form`, including form items that are created and destroyed.
+### Verification throttling or asynchronous verification?
+Customize the `validator` method in `rules` and return a `Promise` to implement asynchronous verification of the form.
+If throttling with `lodash.debounce` does not take effect, it is recommended to use `debounce.promise`, which returns a `promise`.
+[Official website example](https://arco.design/react/components/form#%E8%A1%A8%E5%8D%95%E5%BC%82%E6%AD%A5%E6%A0%A1% E9%AA%8C)
+### The Checkbox/Switch/Upload settings in Form do not take effect.
+Set `triggerPropName=checked` on the `Form.Item` corresponding to `Checkbox/Switch`
+Set `triggerPropName=fileList` on the `Form.Item` corresponding to `Upload`
+Other components are similar
+### Does the Input in the Form appear with a light blue background color (Chrome browser)?
+The blue background color is the automatic filling style of the Chrome browser. Just turn off the automatic filling of the form.
+### How to turn off autofill?
+The native property of `Form` component, just set `autoComplete=off`.
+### Will clicking the label trigger a change in the behavior of the corresponding form control? For example: switch, checkbox selected, input focused
+> https://www.runoob.com/tags/tag-label.html
+> **Label definition and usage instructions**
+> The label tag defines the label (marker) for the input element.
+> The label element does not present any special effects to the user. However, it improves usability for mouse users. This control is triggered if you click on the text inside the label element. That is to say, when the user selects the label, the browser will automatically turn the focus to the form control related to the label.
+> label The for attribute of the label should be the same as the id attribute of the related element.
+If you really don't want this effect, just set an id attribute to the form control, and don't match it with the for attribute of the label. Such as `<Switch id="aaaaa" />`
+### Advanced customization of error message display
+https://codepen.io/yinkaihui/pen/GRwRQao?editors=1011
+
+### DatePicker.WeekPicker value cannot be parsed
+> Same as DatePicker.QuarterPicker
+Add `getValueFromEvent={(v, dv) => dv}` to `Form.Item`.

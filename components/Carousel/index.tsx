@@ -178,28 +178,53 @@ function Carousel(baseProps: CarouselProps, ref) {
           return;
         }
 
-        const totalWidth = refSliderWrapper.current.clientWidth;
-        const sliderWidth = sliderElement.clientWidth;
-        const edge = (totalWidth - sliderWidth) / 2;
+        if (direction === 'horizontal') {
+          const totalWidth = refSliderWrapper.current.clientWidth;
+          const sliderWidth = sliderElement.clientWidth;
+          const edge = (totalWidth - sliderWidth) / 2;
 
-        // deltaZ is TranslateZ(-Zpx) of prev/next slider's style
-        // perspective / (perspective + deltaZ) = x / X
-        const deltaZ = 200;
-        const x = totalWidth / 2;
-        const X = sliderWidth;
-        // avoid getting a huge perspective value
-        const perspective = x + 50 >= X ? deltaZ * 4 : (deltaZ * x) / (X - x);
+          // deltaZ is TranslateZ(-Zpx) of prev/next slider's style
+          // perspective / (perspective + deltaZ) = x / X
+          const deltaZ = 200;
+          const x = totalWidth / 2;
+          const X = sliderWidth;
+          // avoid getting a huge perspective value
+          const perspective = x + 50 >= X ? deltaZ * 4 : (deltaZ * x) / (X - x);
 
-        setComputedStyle({
-          sliderWrapper: {
-            perspective,
-          },
-          indicatorWrapper: {
-            width: 'auto',
-            left: edge,
-            right: edge,
-          },
-        });
+          setComputedStyle({
+            sliderWrapper: {
+              perspective,
+            },
+            indicatorWrapper: {
+              width: 'auto',
+              left: edge,
+              right: edge,
+            },
+          });
+        } else {
+          const totalHeight = refSliderWrapper.current.clientHeight;
+          const sliderHeight = sliderElement.clientHeight;
+          const edge = (totalHeight - sliderHeight) / 2;
+
+          // deltaZ is TranslateZ(-Zpx) of prev/next slider's style
+          // perspective / (perspective + deltaZ) = x / X
+          const deltaZ = 200;
+          const y = totalHeight / 2;
+          const Y = sliderHeight;
+          // avoid getting a huge perspective value
+          const perspective = y + 50 >= Y ? deltaZ * 4 : (deltaZ * y) / (Y - y);
+
+          setComputedStyle({
+            sliderWrapper: {
+              perspective,
+            },
+            indicatorWrapper: {
+              height: 'auto',
+              top: edge,
+              bottom: edge,
+            },
+          });
+        }
       }
     } else {
       setComputedStyle({

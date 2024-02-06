@@ -17,7 +17,7 @@
 |alignPoint|弹出层跟随鼠标位置|boolean |`-`|-|
 |autoAlignPopupMinWidth|自动对齐子元素的宽度设置弹出框的最小宽度|boolean |`-`|-|
 |autoAlignPopupWidth|自动对齐子元素的宽度设置弹出框的宽度|boolean |`-`|-|
-|autoFitPosition|是否根据空间自动调整弹出框的位置|boolean |`true`|-|
+|autoFitPosition|是否根据空间自动调整弹出框的位置。|boolean |`true`|-|
 |autoFixPosition|当内容发生变化导致内容区域尺寸发生变化，自动进行重新定位。|boolean |`true`|-|
 |blurToHide|是否在触发节点失去焦点的时候关闭弹出框，仅在 `trigger` 中含有 `focus` 时生效|boolean |`true`|-|
 |clickToClose|是否能通过点击触发节点来关闭弹出框。trigger 包含 click, contextMenu 时，默认为 true。否则为 false|boolean |`-`|-|
@@ -39,6 +39,7 @@
 |position|弹出位置，一共有 12 个方位可供选择|\| 'top'\| 'tl'\| 'tr'\| 'bottom'\| 'bl'\| 'br'\| 'left'\| 'lt'\| 'lb'\| 'right'\| 'rt'\| 'rb' |`bottom`|-|
 |trigger|触发方式|\| 'hover'\| 'click'\| 'focus'\| 'contextMenu'\| Array<'hover' \| 'click' \| 'focus' \| 'contextMenu'> |`hover`|-|
 |arrowProps|箭头元素的所有 html 参数|HTMLAttributes&lt;HTMLDivElement&gt; |`-`|-|
+|boundaryDistance|默认弹出层位置会根据视口边界进行定位及微调，此参数可以设置到视口边界一定距离时即进行定位调整。仅在 autoFitPosition=true 且 alignPoint=false 生效。|\| { left?: number; bottom?: number }\| { left?: number; top?: number }\| { right?: number; bottom?: number }\| { right?: number; top?: number } |`-`|2.59.0|
 |className|节点类名|string \| string[] |`-`|-|
 |clickOutsideToClose|是否在点击空白处（触发节点和弹出框以外的区域）时关闭弹出层。 关闭时会触发 `onVisibleChange`。默认是在冒泡阶段触发该逻辑，可设置 `{ capture: true }` 指定捕获阶段触发|boolean \| { capture: boolean } |`true`|`{ capture: boolean }` in `2.55.0`|
 |duration|动画过渡时间|number \| { exit?: number; enter?: number; appear?: number } |`200`|-|

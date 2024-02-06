@@ -166,4 +166,9 @@ export default {
     originalSize: 'Original Size',
   },
   Form: DefaultValidateMessage,
+  ColorPicker: {
+    history: 'History Colors',
+    preset: 'Preset Colors',
+    empty: 'Empty',
+  },
 };

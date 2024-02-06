@@ -1,3 +1,11 @@
+## 2.59.0
+
+2024-01-19
+
+### 🆕 Feature
+
+- The `card` mode of the `Carousel` component adds vertical arrangement support([#2462](https://github.com/arco-design/arco-design/pull/2462))
+
 ## 2.51.1
 
 2023-08-04

@@ -13,7 +13,6 @@ exports[`ConfigProvider componentConfig.InputTag default 1`] = `
       <input
         autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-        style="min-width:100%"
         value=""
       />
       <span
@@ -37,7 +36,6 @@ exports[`ConfigProvider componentConfig.InputTag set className globally 1`] = `
       <input
         autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-        style="min-width:100%"
         value=""
       />
       <span
@@ -61,7 +59,6 @@ exports[`ConfigProvider componentConfig.InputTag set className globally and comp
       <input
         autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-        style="min-width:100%"
         value=""
       />
       <span
@@ -86,7 +83,6 @@ exports[`ConfigProvider componentConfig.InputTag set data-* property 1`] = `
       <input
         autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-        style="min-width:100%"
         value=""
       />
       <span

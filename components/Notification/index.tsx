@@ -94,19 +94,23 @@ class Notification extends BaseNotification {
       const add = () => {
         const { instance } = notificationInstance[position] || {};
         const notices = instance.state.notices;
+        const updated = notices.find((notice) => notice.id === noticeProps.id);
+        const _mergerProps = {
+          ..._noticeProps,
+          update: updated,
+        };
         if (notices.length >= maxCount) {
-          const updated = notices.find((notice) => notice.id === noticeProps.id);
           if (updated) {
             instance.add({
-              ..._noticeProps,
+              ..._mergerProps,
               id: updated.id,
             });
           } else {
             notices.shift();
-            instance.add(_noticeProps);
+            instance.add(_mergerProps);
           }
         } else {
-          instance.add(_noticeProps);
+          instance.add({ ..._mergerProps });
         }
         return instance;
       };

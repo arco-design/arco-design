@@ -1,5 +1,5 @@
 /* eslint-disable no-console,react/no-this-in-sfc */
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, forwardRef } from 'react';
 import {
   Table,
   Button,
@@ -170,6 +170,118 @@ function DemoVirtualList() {
 
 export const VirtualList = () => <DemoVirtualList />;
 
+function DemoVirtualListWithWrapper() {
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      width: 140,
+      fixed: 'left' as const,
+    },
+    {
+      title: 'Salary',
+      dataIndex: 'salary',
+      width: 100,
+      fixed: 'left' as const,
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+    },
+    {
+      title: 'Email',
+      dataIndex: 'email',
+      width: 200,
+      fixed: 'right' as const,
+    },
+  ];
+  const getData = (num: Number) => {
+    const originData = Array(num)
+      .fill(0)
+      .map((_, index) => ({
+        key: `${index}`,
+        name: `Kevin ${index}`,
+        salary: 22000,
+        address: `${index} Park Road, London`,
+        email: `kevin.sandra_${index}@example.com`,
+      }));
+    return originData;
+  };
+
+  const [data, setData] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isReachBottom, setIsReachBottom] = useState(false);
+  const listOver = 500;
+  const getMore = () => {
+    const currentLength = data.length;
+    setIsLoading(true);
+    setTimeout(() => {
+      setData(getData(currentLength + 100));
+      setIsLoading(false);
+    }, 2000);
+  };
+  useEffect(() => {
+    setTimeout(() => {
+      setData(getData(100));
+    }, 2000);
+  }, []);
+
+  const newRenderForBottom = React.useRef(true);
+  const handleScroll = (e: any) => {
+    if (e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight <= 50) {
+      // 触底
+      if (newRenderForBottom.current && data.length < listOver) {
+        getMore();
+      }
+      newRenderForBottom.current = false;
+    } else {
+      newRenderForBottom.current = true;
+    }
+    if (e.target.scrollHeight - e.target.scrollTop - e.target.clientHeight <= 200) {
+      // 触底提示
+      setIsReachBottom(true);
+    } else {
+      setIsReachBottom(false);
+    }
+  };
+
+  const WrapperChild = forwardRef((props, ref) => {
+    const { children, ...rest } = props;
+    return (
+      <div {...rest} style={{ textAlign: 'center' }}>
+        {children}
+        {data.length > 0 && data.length < listOver && !isLoading && isReachBottom && (
+          <Button onClick={getMore} type="text">
+            加载更多
+          </Button>
+        )}
+        {isLoading && isReachBottom && <Button type="text">正在加载中</Button>}
+        {!isLoading && data.length >= listOver && isReachBottom && (
+          <Button type="text">没有更多了</Button>
+        )}
+      </div>
+    );
+  });
+
+  return (
+    <Table
+      virtualized
+      scroll={{ x: 1600, y: 500 }}
+      border
+      columns={columns}
+      data={data}
+      pagination={false}
+      rowSelection={{}}
+      virtualListProps={{
+        wrapperChild: WrapperChild,
+        onScroll: handleScroll,
+      }}
+    />
+  );
+}
+
+export const VirtualListWithWrapper = () => <DemoVirtualListWithWrapper />;
+
 function DemoTreeData() {
   const [checkStrictly, setCheckStrictly] = useState(false);
 
@@ -296,10 +408,6 @@ function DemoTreeData() {
         onExpand={(r) => {
           console.log('rrrr', r);
         }}
-        // scroll={{
-        //   x: 'max-content',
-        //   y: 300,
-        // }}
         rowSelection={{
           type: 'checkbox',
           onChange: (_, selectedRows) => {
@@ -313,7 +421,7 @@ function DemoTreeData() {
         onChange={(p, s, f, extra) => {
           console.log(extra.currentData);
         }}
-        columns={columns}
+        columns={columns as any}
         data={data}
       />
     </div>
@@ -942,7 +1050,7 @@ export const SortDemoTable = () => {
   ];
   return (
     <div>
-      <Table data={data} columns={columns as any} />
+      <Table data={data} columns={columns as any} loading />
     </div>
   );
 };

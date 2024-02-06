@@ -37,7 +37,7 @@
 |onClickMenuItem|点击菜单项的回调|(key: string, event, keyPath: string[]) => any |`-`|`event` in 2.15.0, `keyPath` in 2.19.0|
 |onClickSubMenu|点击子菜单标题的回调|(key: string, openKeys: string[], keyPath: string[]) => void |`-`|`keyPath` in 2.19.0|
 |onCollapseChange|折叠状态改变时的回调|(collapse: boolean) => void |`-`|-|
-|onEllipsisChange|水平菜单自动超出省略发生变化时的回调|(lastVisibleIndex: number, ellipsisChildren: ReactNode[]) => void |`-`|2.57.0|
+|onEllipsisChange|水平菜单自动超出省略发生变化时的回调|(status: { lastVisibleIndex: number; overflowNodes: ReactNode[] }) => void |`-`|2.57.0|
 
 ### Menu.SubMenu
 

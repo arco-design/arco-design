@@ -38,6 +38,7 @@
 |tokenSeparators|触发自动分词的分隔符|string[] |`-`|2.44.0|
 |validate|校验函数，默认在 按下enter时候触发。|(inputValue: string, values: T[]) =&gt; boolean \| Promise&lt;boolean&gt; \| T \| Promise&lt;T&gt; |`(inputValue, values) => inputValue && values.every((item) => item !== inputValue)`|return type T and `Promise<T>` in 2.37.0|
 |value|控件值|T[] |`-`|-|
+|maxTagCount|最多显示多少个 `tag`|\| number\| {count: number;render?: (invisibleTagCount: number, value: T[]) => ReactNode;} |`-`|2.59.0|
 |onBlur|失去焦点时候触发|(e) => void |`-`|-|
 |onChange|控件值改变时触发|(value: T[], reason: [ValueChangeReason](#valuechangereason)) => void |`-`|`reason` in 2.27.0|
 |onClear|点击清除按钮的回调|() => void |`-`|2.20.0|

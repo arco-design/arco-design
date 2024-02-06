@@ -121,11 +121,21 @@ export interface TriggerProps {
    */
   popup?: () => ReactNode;
   /**
-   * @zh 是否根据空间自动调整弹出框的位置
+   * @zh 是否根据空间自动调整弹出框的位置。
    * @en Whether to automatically adjust the position of the popup according to the viewport
    * @defaultValue true
    */
   autoFitPosition?: boolean;
+  /**
+   * @zh 默认弹出层位置会根据视口边界进行定位及微调，此参数可以设置到视口边界一定距离时即进行定位调整。仅在 autoFitPosition=true 且 alignPoint=false 生效。
+   * @en The default pop-up layer position will be positioned and fine-tuned according to the viewport boundary. This parameter can be set to adjust the positioning when it is a certain distance from the viewport boundary. Only takes effect when autoFitPosition=true and alignPoint=false.
+   * @version 2.59.0
+   */
+  boundaryDistance?:
+    | { left?: number; bottom?: number }
+    | { left?: number; top?: number }
+    | { right?: number; bottom?: number }
+    | { right?: number; top?: number };
   /**
    * @zh 是否在鼠标移出触发节点，移入弹出框时保留弹出框。
    * @en Whether the popup is visible when the mouse hovers over the popup.

@@ -43,6 +43,9 @@ export { default as Checkbox } from './Checkbox';
 export type { CollapseProps, CollapseItemProps } from './Collapse/interface';
 export { default as Collapse } from './Collapse';
 
+export type { ColorPickerProps } from './ColorPicker/interface';
+export { default as ColorPicker } from './ColorPicker';
+
 export type { CommentProps } from './Comment/interface';
 export { default as Comment } from './Comment';
 
@@ -211,4 +214,4 @@ export { default as Ellipsis } from './Ellipsis';
 export type { ImageProps, ImagePreviewProps, ImagePreviewActionProps, ImagePreviewGroupProps } from './Image/interface';
 export { default as Image } from './Image';
 
-export const version = '2.57.2';
+export const version = '2.59.1';

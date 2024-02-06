@@ -10,7 +10,7 @@ import Portal from './portal';
 import ResizeObserver from '../_util/resizeObserver';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import getStyle from './getPopupStyle';
+import getStyle, { getBoundingClientRect } from './getPopupStyle';
 import throttleByRaf from '../_util/throttleByRaf';
 import { TriggerProps, MouseLocationType } from './interface';
 import { raf, caf } from '../_util/raf';
@@ -18,11 +18,17 @@ import mergeProps from '../_util/mergeProps';
 
 export { TriggerProps };
 
-function getDOMPos(dom: HTMLElement) {
+function getDOMPos(
+  dom: HTMLElement,
+  options: {
+    boundaryDistance: TriggerProps['boundaryDistance'];
+    position: TriggerProps['position'];
+  }
+) {
   if (!dom) {
     return {};
   }
-  const { width, height, left, right } = dom.getBoundingClientRect();
+  const { width, height, left, right } = getBoundingClientRect(dom, options);
   return {
     width,
     height,
@@ -202,7 +208,10 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
     this.childrenDom = this.getRootElement();
     if (this.state.popupVisible) {
-      this.childrenDomSize = getDOMPos(this.childrenDom);
+      this.childrenDomSize = getDOMPos(this.childrenDom, {
+        boundaryDistance: this.props.alignPoint ? undefined : this.props.boundaryDistance,
+        position: this.props.position,
+      });
     }
   }
 
@@ -223,7 +232,10 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       return;
     }
 
-    const rect = getDOMPos(this.childrenDom);
+    const rect = getDOMPos(this.childrenDom, {
+      boundaryDistance: this.props.alignPoint ? {} : this.props.boundaryDistance,
+      position: this.props.position,
+    });
     // children节点的尺寸改变，主要是处理children 存在scale等动画属性，或者移动位置的时候，popup 的位置有问题
     if (JSON.stringify(rect) !== JSON.stringify(this.childrenDomSize)) {
       this.updatePopupPosition();
