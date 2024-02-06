@@ -66,8 +66,8 @@ import { TriggerProps } from '../Trigger/interface';
 import { UploadProps } from '../Upload/interface';
 import { VerificationCodeProps } from '../VerificationCode/interface';
 import { WatermarkProps } from '../Watermark/interface';
-import { EllipsisProps } from '../Ellipsis/interface';
 import { ColorPickerProps } from '../ColorPicker';
+import { TypographyEllipsisProps } from '../Typography';
 
 export type ThemeConfig = Record<string, any>;
 
@@ -107,7 +107,7 @@ export type ComponentConfig = {
   Dropdown?: DropdownProps;
   'Dropdown.Button'?: DropdownButtonProps;
   Empty?: EmptyProps;
-  Ellipsis?: EllipsisProps;
+  'Typography.Ellipsis'?: TypographyEllipsisProps;
   Form?: FormProps;
   'Grid.Row'?: RowProps;
   'Grid.Col'?: ColProps;

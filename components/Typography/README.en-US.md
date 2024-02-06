@@ -87,6 +87,22 @@ Used to display titles, paragraphs, and text content.
 |onEllipsis|Callback when the ellipsis state changes, usually triggered by window resize。|(isEllipsis: boolean) => void |`-`|-|
 |onExpand|Callback when the expand state changes, usually triggered by clicking the button|(isExpand: boolean, e) => void |`-`|e in `2.27.0`|
 
+### Typography.Ellipsis
+
+|Property|Description|Type|DefaultValue|
+|---|---|---|---|
+|defaultExpanded|Expand by default|boolean |`-`|
+|disabled|Whether to disable the text ellipsis|boolean |`-`|
+|expandable|Whether to show control button|boolean |`true`|
+|expanded|Whether to expand|boolean |`-`|
+|rows|The number of omitted rows|number |`1`|
+|className|Additional css class|string \| string[] |`-`|
+|showTooltip|Whether to display pop-up prompts|boolean \| [TooltipProps](tooltip#tooltip) |`-`|
+|style|Additional style|CSSProperties |`-`|
+|expandRender|Custom rendering control buttons|(expanded: boolean) => ReactNode |`-`|
+|onEllipsis|Triggered when the omission status changes, and also when omitted for the first time.|(isEllipsis: boolean) => void |`-`|
+|onExpand|Triggered when clicked to expand or collapse|(isExpand: boolean, ev: Event) => void |`-`|
+
 ## About exceeding omission
 
 Exceeding and omitting are currently implemented in two ways: **js dichotomy calculation truncation value** and **CSS exceeding and omitting**. The two advantages and disadvantages are as follows:

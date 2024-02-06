@@ -1,8 +1,8 @@
 ---
-order: 5
+order: 8
 title:
-  zh-CN: 省略
-  en-US: Ellipsis
+  zh-CN: 省略（不推荐）
+  en-US: Ellipsis(Not recommended)
 ---
 
 ## zh-CN
