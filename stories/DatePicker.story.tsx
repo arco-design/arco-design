@@ -233,10 +233,28 @@ const RangePickerInputPropsDemo = () => {
           onBlur: (e) => {
             onBlur(e, 0);
           },
+          onClick: (e) => {
+            console.log('onClick1', e);
+          },
+          onChange: (e) => {
+            console.log('onChange1', e.target.value);
+          },
+          onKeyDown: (e) => {
+            console.log('onKeyDown1', e);
+          },
         },
         {
           onBlur: (e) => {
             onBlur(e, 1);
+          },
+          onClick: (e) => {
+            console.log('onClick2', e);
+          },
+          onChange: (e) => {
+            console.log('onChange2', e.target.value);
+          },
+          onKeyDown: (e) => {
+            console.log('onKeyDown2', e);
           },
         },
       ]}
