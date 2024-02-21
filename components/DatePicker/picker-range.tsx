@@ -84,6 +84,8 @@ const Picker = (baseProps: RangePickerProps) => {
     componentConfig?.DatePicker
   );
   const {
+    allowEmpty = false,
+    referenceInterval = [],
     allowClear,
     className,
     style,
@@ -121,9 +123,7 @@ const Picker = (baseProps: RangePickerProps) => {
     timezone,
     inputProps,
   } = props;
-
   const prefixCls = getPrefixCls('picker-range');
-
   const weekStart = isUndefined(props.dayStartOfWeek)
     ? getDefaultWeekStart(locale.dayjsLocale)
     : props.dayStartOfWeek;
@@ -186,6 +186,10 @@ const Picker = (baseProps: RangePickerProps) => {
   const mergedValue = 'value' in props ? propsValueDayjs : value;
 
   const panelValue = shortcutsValue || valueShow || mergedValue || [];
+  const disabledConfirm = (() => {
+    if (allowEmpty) return false;
+    return !(isArray(panelValue) && panelValue[0] && panelValue[1]);
+  })();
 
   const selectedLength = getAvailableDayjsLength(valueShow || mergedValue);
 
@@ -511,6 +515,17 @@ const Picker = (baseProps: RangePickerProps) => {
 
   // Callback when click the confirm button
   function onClickConfirmBtn() {
+    if (allowEmpty && valueShow) {
+      const focusedIndex = customTriggerElement
+        ? selectedLength === 0 || selectedLength === 2
+          ? 0
+          : 1
+        : focusedInputIndex;
+      onSelectPanel(
+        '',
+        getDayjsValue(referenceInterval, format, utcOffset, timezone)[focusedIndex]
+      );
+    }
     onConfirmValue();
     const localePanelValue = panelValue.map((v) => getLocaleDayjsValue(v, locale.dayjsLocale));
     onOk &&
@@ -570,13 +585,11 @@ const Picker = (baseProps: RangePickerProps) => {
     }
 
     const sortedValueShow = getSortedDayjsArray(newValueShow);
-
     onSelectValueShow(sortedValueShow);
     setInputValue(undefined);
     setHoverPlaceholderValue(undefined);
 
     const newSelectedLength = getAvailableDayjsLength(newValueShow);
-
     if (resetRange) {
       if (selectedLength === 0 || (selectedLength === 2 && !isHalfAvailable)) {
         customTriggerElement ? setFocusedInputIndex(1) : switchFocusedInput(true);
@@ -768,11 +781,14 @@ const Picker = (baseProps: RangePickerProps) => {
       onSelectShortcut: onHandleSelectShortcut,
     };
 
-    const shouldShowFooter =
-      (showTime && panelModes[0] === 'date' && panelModes[1] === 'date') ||
-      extra ||
-      (isArray(shortcuts) && shortcuts.length && !shortcutsPlacementLeft);
-
+    const shouldShowFooter = (() => {
+      if (allowEmpty) return true;
+      return (
+        (showTime && panelModes[0] === 'date' && panelModes[1] === 'date') ||
+        extra ||
+        (isArray(shortcuts) && shortcuts.length && !shortcutsPlacementLeft)
+      );
+    })();
     const content = (
       <>
         <RangePickerPanel
@@ -804,12 +820,13 @@ const Picker = (baseProps: RangePickerProps) => {
           <Footer
             {...shortcutsProps}
             DATEPICKER_LOCALE={locale.DatePicker}
-            disabled={!(isArray(panelValue) && panelValue[0] && panelValue[1])}
+            disabled={disabledConfirm}
             onClickConfirmBtn={onClickConfirmBtn}
             extra={extra}
             shortcutsPlacementLeft={shortcutsPlacementLeft}
             onClickSelectTimeBtn={onClickSelectTimeBtn}
             isTimePanel={isTimePanel}
+            showSingleConfirmBtn={!showTime && allowEmpty}
           />
         )}
       </>

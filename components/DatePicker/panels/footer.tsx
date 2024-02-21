@@ -22,6 +22,7 @@ export default function Footer(props) {
     extra,
     mode,
     shortcutsPlacementLeft,
+    showSingleConfirmBtn = false,
   } = props;
 
   const hasShortcuts = isArray(shortcuts) && shortcuts.length > 0;
@@ -29,7 +30,10 @@ export default function Footer(props) {
   const shouldShouldShortcuts = shouldShowNowBtn || (hasShortcuts && !shortcutsPlacementLeft);
 
   return (
-    <div className={`${prefixCls}-footer`}>
+    <div
+      className={`${prefixCls}-footer`}
+      style={showSingleConfirmBtn ? { display: 'flex', justifyContent: 'end' } : {}}
+    >
       {extra && <div className={`${prefixCls}-footer-extra-wrapper`}>{extra}</div>}
       {!showTime && showNowBtn && mode === 'date' && (
         <div className={`${prefixCls}-footer-now-wrapper`}>
@@ -66,6 +70,7 @@ export default function Footer(props) {
                 {isTimePanel ? DATEPICKER_LOCALE.selectDate : DATEPICKER_LOCALE.selectTime}
               </Button>
               <Button
+                style={{ marginRight: '8px' }}
                 className={`${prefixCls}-btn-confirm`}
                 type="primary"
                 size="mini"
@@ -78,6 +83,18 @@ export default function Footer(props) {
           )}
         </div>
       ) : null}
+      {showSingleConfirmBtn && (
+        <Button
+          style={{ marginRight: '8px' }}
+          className={`${prefixCls}-btn-confirm`}
+          type="primary"
+          size="mini"
+          disabled={disabled}
+          onClick={onClickConfirmBtn}
+        >
+          {DATEPICKER_LOCALE.ok}
+        </Button>
+      )}
     </div>
   );
 }
