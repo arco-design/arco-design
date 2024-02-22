@@ -69,9 +69,7 @@ export const InputHex: React.FC<InputHexProps> = ({
         onPressEnter={onBlur}
         onPaste={onPaste as any}
       />
-      {!disabledAlpha && (
-        <InputAlpha value={alpha} onChange={onAlphaChange} disabled={disabledAlpha} />
-      )}
+      {!disabledAlpha && <InputAlpha value={alpha} onChange={onAlphaChange} />}
     </Input.Group>
   );
 };
