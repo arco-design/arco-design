@@ -189,6 +189,20 @@ exports[`renders ColorPicker/demo/disabledAlpha.md correctly 1`] = `
       value="#165DFF"
     />
   </div>
+  <br />
+  <div
+    class="arco-color-picker arco-color-picker-size-default"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background-color:#165DFF80"
+    />
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFF80"
+    />
+  </div>
 </div>
 `;
 

@@ -7,6 +7,7 @@ interface UseColorPickerProps {
   value?: string;
   defaultValue?: string;
   defaultPopupVisible?: boolean;
+  disabledAlpha?: boolean;
   popupVisible?: boolean;
   format?: 'hex' | 'rgb';
   onChange?: (value: string) => void;
@@ -14,7 +15,7 @@ interface UseColorPickerProps {
 }
 
 export const useColorPicker = (props: UseColorPickerProps) => {
-  const { format, onChange } = props;
+  const { format, onChange, disabledAlpha } = props;
 
   const [value, setValue] = useMergeValue('', props);
 
@@ -82,6 +83,9 @@ export const useColorPicker = (props: UseColorPickerProps) => {
 
   const onHsvChange = (_value: HSV) => {
     setHsv(_value);
+    if (disabledAlpha && alpha !== 100) {
+      setAlpha(100);
+    }
   };
 
   const onAlphaChange = (_value: number) => {
