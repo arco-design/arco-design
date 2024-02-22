@@ -88,6 +88,7 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
     ...pick(rest, EventsByTriggerNeed),
     ...pickDataAttributes(rest),
     ...triggerProps,
+    className: cs(className, triggerProps.className),
   };
 
   const renderedContent = isFunction(content) ? content() : content;
@@ -115,7 +116,6 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
         maxWidth: 350,
         ...style,
       }}
-      className={className}
       ref={refTrigger}
       classNames="zoomInFadeOut"
       duration={triggerDuration}
