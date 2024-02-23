@@ -13,7 +13,7 @@ const defaultProps: ColorPickerProps = {
   presetColors: colors,
 };
 
-function ColorPicker(baseProps: ColorPickerProps, ref) {
+function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) {
   const { getPrefixCls, componentConfig } = useContext(ConfigContext);
   const props = useMergeProps<ColorPickerProps>(
     baseProps,
@@ -48,6 +48,15 @@ function ColorPicker(baseProps: ColorPickerProps, ref) {
   } = useColorPicker(props);
 
   const renderInput = () => {
+    if (baseProps.children) {
+      return (
+        <div className={cs(prefixCls, className)} style={style} ref={ref}>
+          {baseProps.children}
+          <input className={`${prefixCls}-input`} value={value} disabled={disabled} readOnly />
+        </div>
+      );
+    }
+
     return (
       <div
         className={cs(prefixCls, className, {
