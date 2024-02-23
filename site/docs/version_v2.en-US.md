@@ -2,6 +2,29 @@
 changelog: true
 ---
 
+## 2.60.0
+
+2024-02-23
+
+### 🆕 Feature
+
+- The `DatePicker` component adds the `inputProps` parameter.([#2551](https://github.com/arco-design/arco-design/pull/2551))
+- `ColorPicker` component adds support for custom trigger elements([#2548](https://github.com/arco-design/arco-design/pull/2548))
+- Add `Typography.Ellipsis` Component([#2525](https://github.com/arco-design/arco-design/pull/2525))
+- `DatePicker` supports `inputProps` property([#2519](https://github.com/arco-design/arco-design/pull/2519))
+- `DatePicker.RangePicker` adds `inputProps`.([#2516](https://github.com/arco-design/arco-design/pull/2516))
+
+### 🐛 BugFix
+
+- Add support for disabledAlpha([#2538](https://github.com/arco-design/arco-design/pull/2538))
+- Fix the issue where the `scrollbar-color` property in the `Table` component causes incorrect width calculations.([#2533](https://github.com/arco-design/arco-design/pull/2533))
+- Fix the bug that triggers `onChange` when `ColorPicker` is initialized([#2521](https://github.com/arco-design/arco-design/pull/2521))
+- Fix the bug of missing on-demand style introduction in `ColorPicker`([#2520](https://github.com/arco-design/arco-design/pull/2520))
+
+### 🆎 TypeScript
+
+- `Table` component column attribute TS definition adjustment([#2531](https://github.com/arco-design/arco-design/pull/2531))
+
 ## 2.59.1
 
 2024-01-26

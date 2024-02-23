@@ -1,3 +1,11 @@
+## 2.60.0
+
+2024-02-23
+
+### 🆕 Feature
+
+- Add `Typography.Ellipsis` Component([#2525](https://github.com/arco-design/arco-design/pull/2525))
+
 ## 2.59.0
 
 2024-01-19
