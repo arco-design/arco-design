@@ -37,6 +37,7 @@
 |defaultPickerValue|默认面板显示的日期|[CalendarValue](#calendarvalue) |`-`|-|
 |disabled|是否禁用|boolean \| boolean[] |`-`|-|
 |icons|日历翻页的图标配置。|{prev?: ReactNode;prevDouble?: ReactNode;next?: ReactNode;nextDouble?: ReactNode;inputSuffix?: ReactNode;} |`-`|2.20.0|
+|inputProps|原生输入框属性|React.InputHTMLAttributes&lt;HTMLInputElement&gt; |`-`|2.60.0|
 |locale|国际化配置|Record&lt;string, any&gt; |`-`|-|
 |pickerValue|面板显示的日期。|[CalendarValue](#calendarvalue) |`-`|2.9.0|
 |placeholder|提示文案|string \| string[] |`-`|-|

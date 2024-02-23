@@ -2,13 +2,18 @@
 order: 9
 title:
   zh-CN: 省略受控（不推荐）
-  en-US: Ellipsis Controlled(Not recommended)
+  en-US: Ellipsis Controlled (Not recommended)
 ---
 
 ## zh-CN
+
+**不推荐使用 ellipsis 属性开启折叠，建议使用 Typography.Ellipsis 组件替代**
+
 省略操作及相关配置受控案例
 
 ## en-US
+
+**It is not recommended to use the ellipsis attribute to enable folding. It is recommended to use the Typography.Ellipsis component instead.**
 
 Ellipsis and related configuration controlled cases
 
