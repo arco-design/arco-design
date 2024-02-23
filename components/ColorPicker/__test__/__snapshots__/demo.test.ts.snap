@@ -332,3 +332,16 @@ exports[`renders ColorPicker/demo/size.md correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`renders ColorPicker/demo/trigger.md correctly 1`] = `
+<div>
+  <button
+    class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
+    type="button"
+  >
+    <span>
+      Open Color Picker: #165DFF
+    </span>
+  </button>
+</div>
+`;

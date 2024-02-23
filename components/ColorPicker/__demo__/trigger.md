@@ -22,8 +22,10 @@ const App = () => {
 
   return (
     <div>
-      <ColorPicker value={value} onChange={setValue}>
-        <Button>Open Color Picker: {value}</Button>
+      <ColorPicker defaultValue={'#165DFF'} triggerElement={({ value }) => {
+        return <Button>Open Color Picker: {value}</Button>
+      }}>
+
       </ColorPicker>
     </div>
   );

@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 import { TriggerProps } from '../Trigger';
 import { InputProps } from '../Input';
 
@@ -85,6 +85,12 @@ export interface ColorPickerProps {
    * @en Color array of preset colors
    */
   presetColors?: string[];
+  /**
+   * @zh 自定义触发元素。
+   * @en The trigger element which executes the dropdown action.
+   * @version 2.60.0
+   */
+  triggerElement?: ReactNode | ((params: { value: string }) => ReactNode);
   /**
    * @zh 颜色值改变时触发
    * @en Callback when the color value changes
