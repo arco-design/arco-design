@@ -25,6 +25,7 @@ function ColorPicker(baseProps: ColorPickerProps, ref) {
     className,
     size,
     disabled,
+    disabledAlpha = false,
     triggerProps = {},
     unmountOnExit,
     showText,
@@ -76,6 +77,7 @@ function ColorPicker(baseProps: ColorPickerProps, ref) {
         showPreset={showPreset}
         onHsvChange={onHsvChange}
         onAlphaChange={onAlphaChange}
+        disabledAlpha={disabledAlpha}
       />
     );
   };
