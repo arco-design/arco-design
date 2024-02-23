@@ -125,6 +125,7 @@ const Picker = (baseProps: InnerPickerProps) => {
     utcOffset,
     timezone,
     panelRender,
+    inputProps,
   } = props;
 
   const prefixCls = getPrefixCls('picker');
@@ -588,6 +589,7 @@ const Picker = (baseProps: InnerPickerProps) => {
               prefixCls={prefixCls}
               onChange={onChangeInput}
               isPlaceholder={!!hoverPlaceholderValue}
+              inputProps={inputProps}
             />
           )}
         </Trigger>

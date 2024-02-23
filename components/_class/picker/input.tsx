@@ -36,6 +36,7 @@ export interface DateInputProps {
   suffixIcon?: ReactNode;
   isPlaceholder?: boolean;
   prefix?: ReactNode;
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
 type DateInputHandle = {
@@ -65,6 +66,7 @@ function DateInput(
     onChange,
     popupVisible,
     isPlaceholder,
+    inputProps,
     ...rest
   }: DateInputProps,
   ref
@@ -83,10 +85,17 @@ function DateInput(
   }));
 
   function onKeyDown(e) {
+    inputProps?.onKeyDown?.(e);
+
     const keyCode = e.keyCode || e.which;
     if (keyCode === Enter.code) {
       onPressEnter?.();
     }
+  }
+
+  function onChangeInput(e) {
+    inputProps?.onChange?.(e);
+    onChange?.(e);
   }
 
   let showValue = '';
@@ -125,12 +134,13 @@ function DateInput(
       >
         <input
           ref={input}
+          {...inputProps}
           disabled={disabled}
           placeholder={placeholder}
           className={`${prefixCls}-start-time`}
           value={showValue}
           onKeyDown={onKeyDown}
-          onChange={onChange}
+          onChange={onChangeInput}
           {...readOnlyProps}
         />
       </div>
