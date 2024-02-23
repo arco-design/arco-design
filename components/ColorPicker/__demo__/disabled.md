@@ -7,11 +7,11 @@ title:
 
 ## zh-CN
 
-设置 `disabled` 禁用选择器。
+设置 `disabled` 禁用整个选择器。
 
 ## en-US
 
-Set `disabled` to disable the selector.
+Set `disabled` to disable the selector. 
 
 ```js
 import { ColorPicker, Radio } from '@arco-design/web-react';
