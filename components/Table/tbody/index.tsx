@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, forwardRef } from 'react';
 import { TbodyProps } from '../interface';
 import { isArray } from '../../_util/is';
 import cs from '../../_util/classNames';
@@ -7,33 +7,35 @@ import VirtualList from '../../_class/VirtualList';
 import Tr from './tr';
 import { getOriginData } from '../utils';
 
-function TBody<T>(props: TbodyProps<T>) {
+type TBodyDataRecord = TbodyProps['data'][number];
+
+const DataRecordRenderer = forwardRef(function (
+  {
+    record,
+    index,
+    virtualized,
+    tbodyProps,
+  }: {
+    record: TBodyDataRecord;
+    index: number;
+    virtualized: boolean;
+    tbodyProps: TbodyProps;
+  },
+  ref: any
+) {
   const {
+    prefixCls,
+    columns,
+    indentSize = 16,
     childrenColumnName = 'children',
     expandProps = {},
-    expandedRowRender,
-    expandedRowKeys,
-    data,
-    columns,
-    prefixCls,
-    components,
     rowSelection,
-    noDataElement,
-    scroll,
-    indentSize = 16,
     hasFixedColumn,
     tableViewWidth,
-    virtualized,
-    virtualListProps,
     getRowKey,
-    saveVirtualListRef,
-  } = props;
-
-  const er = expandedRowRender
-    ? (r, i) => expandedRowRender(getOriginData(r), i)
-    : expandedRowRender;
-
-  const { ComponentTbody } = useComponent(components);
+    expandedRowKeys,
+    expandedRowRender,
+  } = tbodyProps;
 
   let type: 'radio' | 'checkbox';
   if (rowSelection && 'type' in rowSelection) {
@@ -42,35 +44,47 @@ function TBody<T>(props: TbodyProps<T>) {
     type = 'checkbox';
   }
 
-  function isChildrenNotEmpty(record) {
-    return isArray(record[childrenColumnName]) && record[childrenColumnName].length;
-  }
+  const er = expandedRowRender
+    ? (r, i) => expandedRowRender(getOriginData(r), i)
+    : expandedRowRender;
 
-  function shouldRowExpand(record, index) {
+  const isChildrenNotEmpty = (record: TBodyDataRecord) => {
+    return isArray(record[childrenColumnName]) && record[childrenColumnName].length;
+  };
+
+  const shouldRowExpand = (record: TBodyDataRecord, index: number) => {
     if ('rowExpandable' in expandProps && typeof expandProps.rowExpandable === 'function') {
       return expandProps.rowExpandable(record);
     }
     return er && er(record, index) !== null;
-  }
-
-  const trProps = {
-    ...props,
-    type,
-    shouldRowExpand,
   };
 
-  function renderTreeTrs(record: T, index: number) {
+  const renderTreeTrs = (record: TBodyDataRecord, index: number) => {
     const trList: any[] = [];
+    const trProps = {
+      ...tbodyProps,
+      type,
+      shouldRowExpand,
+    };
+
+    // 存在 record.children 时，仅使用第一个元素作为 ref 返回，此时虚拟列表获得元素高度可能不太准确，但大致可用
     trList.push(
-      <Tr<T> key={getRowKey(record)} {...trProps} record={record} level={0} index={index} />
+      <Tr<typeof record>
+        ref={ref}
+        key={getRowKey(record)}
+        {...trProps}
+        record={record}
+        level={0}
+        index={index}
+      />
     );
 
-    const travel = (children, rowKey, level = 0) => {
+    const travel = (children: TbodyProps['data'], rowKey: string, level = 0) => {
       if (isArray(children) && children.length) {
         children.forEach((child, i) => {
           if (expandedRowKeys.indexOf(rowKey) !== -1) {
             trList.push(
-              <Tr<T>
+              <Tr<TBodyDataRecord>
                 {...trProps}
                 key={getRowKey(child)}
                 record={child}
@@ -85,12 +99,62 @@ function TBody<T>(props: TbodyProps<T>) {
         });
       }
     };
+
     if (!er) {
       travel(record[childrenColumnName], getRowKey(record));
     }
 
     return trList;
-  }
+  };
+
+  const rowK = getRowKey(record);
+  const shouldRenderExpandIcon =
+    shouldRowExpand(record, index) && expandedRowKeys.indexOf(rowK) !== -1;
+  const TRTagName = virtualized ? 'div' : 'tr';
+  const TDTagName = virtualized ? 'div' : 'td';
+  return (
+    <React.Fragment key={rowK}>
+      {renderTreeTrs(record, index)}
+      {shouldRenderExpandIcon && (
+        <TRTagName
+          key={`${rowK}-expanded`}
+          className={cs(`${prefixCls}-tr`, `${prefixCls}-expand-content`)}
+        >
+          <TDTagName
+            className={cs(`${prefixCls}-td`)}
+            style={{ paddingLeft: indentSize }}
+            colSpan={columns.length}
+          >
+            {hasFixedColumn ? (
+              <div className={`${prefixCls}-expand-fixed-row`} style={{ width: tableViewWidth }}>
+                {er?.(record, index)}
+              </div>
+            ) : (
+              er?.(record, index)
+            )}
+          </TDTagName>
+        </TRTagName>
+      )}
+    </React.Fragment>
+  );
+});
+
+function TBody<T>(props: TbodyProps<T>) {
+  const {
+    data,
+    columns,
+    prefixCls,
+    components,
+    noDataElement,
+    scroll,
+    tableViewWidth,
+    virtualized,
+    virtualListProps,
+    getRowKey,
+    saveVirtualListRef,
+  } = props;
+
+  const { ComponentTbody } = useComponent(components);
 
   let scrollStyleX: CSSProperties = {};
   let scrollStyleY: CSSProperties = {};
@@ -123,6 +187,15 @@ function TBody<T>(props: TbodyProps<T>) {
     </tr>
   );
 
+  const renderDataRecord = (record: TBodyDataRecord, index: number) => (
+    <DataRecordRenderer
+      record={record}
+      index={index}
+      virtualized={virtualized}
+      tbodyProps={props}
+    />
+  );
+
   // https://github.com/arco-design/arco-design/issues/644
   // except the real scroll container, all parent nodes should not have a overflow style.
   if (virtualized) {
@@ -139,9 +212,7 @@ function TBody<T>(props: TbodyProps<T>) {
         itemKey={getRowKey}
         {...virtualListProps}
       >
-        {(child, index) => (
-          <Tr<T> {...trProps} key={getRowKey(child)} record={child} index={index} level={0} />
-        )}
+        {renderDataRecord}
       </VirtualList>
     ) : (
       <div className={`${prefixCls}-body`}>
@@ -152,45 +223,7 @@ function TBody<T>(props: TbodyProps<T>) {
     );
   }
 
-  return (
-    <ComponentTbody>
-      {data.length > 0
-        ? data.map((record, index) => {
-            const rowK = getRowKey(record);
-            const shouldRenderExpandIcon =
-              shouldRowExpand(record, index) && expandedRowKeys.indexOf(rowK) !== -1;
-            return (
-              <React.Fragment key={rowK}>
-                {renderTreeTrs(record, index)}
-                {shouldRenderExpandIcon && (
-                  <tr
-                    className={cs(`${prefixCls}-tr`, `${prefixCls}-expand-content`)}
-                    key={`${rowK}-expanded`}
-                  >
-                    <td
-                      className={`${prefixCls}-td`}
-                      colSpan={columns.length}
-                      style={{ paddingLeft: indentSize }}
-                    >
-                      {hasFixedColumn ? (
-                        <div
-                          className={`${prefixCls}-expand-fixed-row`}
-                          style={{ width: tableViewWidth }}
-                        >
-                          {er && er(record, index)}
-                        </div>
-                      ) : (
-                        er && er(record, index)
-                      )}
-                    </td>
-                  </tr>
-                )}
-              </React.Fragment>
-            );
-          })
-        : noDataTr}
-    </ComponentTbody>
-  );
+  return <ComponentTbody>{data.length > 0 ? data.map(renderDataRecord) : noDataTr}</ComponentTbody>;
 }
 
 export default TBody;
