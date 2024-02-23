@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { HSV } from '../interface';
 import { formatInputToHSVA, hsvToRgb, rgbaToHex, rgbToHex } from '../../_util/color';
 import useMergeValue from '../../_util/hooks/useMergeValue';
+import useIsFirstRender from '../../_util/hooks/useIsFirstRender';
 
 interface UseColorPickerProps {
   value?: string;
@@ -16,6 +17,8 @@ interface UseColorPickerProps {
 
 export const useColorPicker = (props: UseColorPickerProps) => {
   const { format, onChange, disabledAlpha } = props;
+
+  const isFirstRender = useIsFirstRender();
 
   const [value, setValue] = useMergeValue('', props);
 
@@ -60,7 +63,7 @@ export const useColorPicker = (props: UseColorPickerProps) => {
 
   useEffect(() => {
     setValue(formatValue);
-    onChange?.(formatValue);
+    !isFirstRender && onChange?.(formatValue);
   }, [formatValue]);
 
   const onVisibleChange = useCallback(
