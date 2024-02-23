@@ -67,6 +67,7 @@ export type ComponentConfig = {
   Dropdown?: DropdownProps;
   "Dropdown.Button"?: DropdownButtonProps;
   Empty?: EmptyProps;
+  "Typography.Ellipsis"?: TypographyEllipsisProps;
   Form?: FormProps;
   "Grid.Row"?: RowProps;
   "Grid.Col"?: ColProps;

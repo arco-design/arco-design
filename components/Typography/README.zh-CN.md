@@ -87,6 +87,22 @@
 |onEllipsis|在省略发生改变的时候触发，通常是窗口resize情况会触发。|(isEllipsis: boolean) => void |`-`|-|
 |onExpand|在折叠/展开状态发生改变的时候触发，通常是点击折叠/展开按钮触发。|(isExpand: boolean, e) => void |`-`|e in `2.27.0`|
 
+### Typography.Ellipsis
+
+|参数名|描述|类型|默认值|
+|---|---|---|---|
+|defaultExpanded|默认展开|boolean |`-`|
+|disabled|是否禁用省略功能|boolean |`-`|
+|expandable|是否显示操控按钮|boolean |`true`|
+|expanded|是否展开|boolean |`-`|
+|rows|显示省略的行数|number |`1`|
+|className|节点类名|string \| string[] |`-`|
+|showTooltip|是否显示弹出提示|boolean \| [TooltipProps](tooltip#tooltip) |`-`|
+|style|节点样式|CSSProperties |`-`|
+|expandRender|自定义渲染操控按钮|(expanded: boolean) => ReactNode |`-`|
+|onEllipsis|当省略状态发生改变时触发，首次省略时也会触发|(isEllipsis: boolean) => void |`-`|
+|onExpand|点击展开、折叠时触发|(isExpand: boolean, ev: Event) => void |`-`|
+
 ## 关于超出省略
 
 超出省略目前通过两种方式实现分别是 **js二分法计算截断值** 和 **CSS超出省略** 两种优缺点如下：
