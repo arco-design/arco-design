@@ -214,3 +214,58 @@ export type EllipsisConfig = {
   // React.Fragment will cause the page to crash in special scenarios
   wrapper?: string | React.FC<any> | React.ComponentClass<any>;
 };
+
+/**
+ * @title Typography.Ellipsis
+ */
+export interface TypographyEllipsisProps {
+  style?: CSSProperties;
+  className?: string | string[];
+  /**
+   * @zh 显示省略的行数
+   * @en The number of omitted rows
+   * @defaultValue 1
+   */
+  rows?: number;
+  /**
+   * @zh 是否禁用省略功能
+   * @en Whether to disable the text ellipsis
+   */
+  disabled?: boolean;
+  /**
+   * @zh 是否显示弹出提示
+   * @en Whether to display pop-up prompts
+   */
+  showTooltip?: boolean | TooltipProps;
+  /**
+   * @zh 是否显示操控按钮
+   * @en Whether to show control button
+   * @defaultValue true
+   */
+  expandable?: boolean;
+  /**
+   * @zh 自定义渲染操控按钮
+   * @en Custom rendering control buttons
+   */
+  expandRender?: (expanded: boolean) => ReactNode;
+  /**
+   * @zh 默认展开
+   * @en Expand by default
+   */
+  defaultExpanded?: boolean;
+  /**
+   * @zh 是否展开
+   * @en Whether to expand
+   */
+  expanded?: boolean;
+  /**
+   * @zh 点击展开、折叠时触发
+   * @en Triggered when clicked to expand or collapse
+   */
+  onExpand?: (isExpand: boolean, ev: Event) => void;
+  /**
+   * @zh 当省略状态发生改变时触发，首次省略时也会触发
+   * @en Triggered when the omission status changes, and also when omitted for the first time.
+   */
+  onEllipsis?: (isEllipsis: boolean) => void;
+}

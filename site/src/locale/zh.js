@@ -9,6 +9,7 @@ export default {
   'routes.button': '按钮 Button',
   'routes.link': '链接 Link',
   'routes.typography': '排版 Typography',
+  'routes.ellipsis': '省略 Ellipsis',
   'routes._layout': '布局',
   'routes.hooks': 'Hooks',
   'routes.grid': '栅格 Grid',

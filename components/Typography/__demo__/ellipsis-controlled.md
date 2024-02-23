@@ -1,8 +1,8 @@
 ---
-order: 6
+order: 9
 title:
-  zh-CN: 省略受控
-  en-US: Ellipsis Controlled
+  zh-CN: 省略受控（不推荐）
+  en-US: Ellipsis Controlled(Not recommended)
 ---
 
 ## zh-CN
