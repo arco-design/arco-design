@@ -7,13 +7,14 @@ import cs from '../_util/classNames';
 import Trigger from '../Trigger';
 import { colors } from './colors';
 import { useColorPicker } from './hooks/useColorPicker';
+import { isFunction, isNullOrUndefined } from '../_util/is';
 
 const defaultProps: ColorPickerProps = {
   size: 'default' as const,
   presetColors: colors,
 };
 
-function ColorPicker(baseProps: ColorPickerProps, ref) {
+function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) {
   const { getPrefixCls, componentConfig } = useContext(ConfigContext);
   const props = useMergeProps<ColorPickerProps>(
     baseProps,
@@ -49,6 +50,14 @@ function ColorPicker(baseProps: ColorPickerProps, ref) {
   } = useColorPicker(props);
 
   const renderInput = () => {
+    const customTriggerElement = isFunction(baseProps.triggerElement)
+      ? baseProps.triggerElement({ value })
+      : baseProps.triggerElement;
+
+    if (!isNullOrUndefined(customTriggerElement)) {
+      return customTriggerElement;
+    }
+
     return (
       <div
         className={cs(prefixCls, className, {
