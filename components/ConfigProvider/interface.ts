@@ -99,6 +99,7 @@ export type ComponentConfig = {
     | 'defaultPickerValue'
     | 'pickerValue'
     | 'onPickerValueChange'
+    | 'inputProps'
   >;
   Descriptions?: DescriptionsProps;
   Divider?: DividerProps;
