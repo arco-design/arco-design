@@ -2,6 +2,29 @@
 changelog: true
 ---
 
+## 2.60.0
+
+2024-02-23
+
+### 🆕 功能升级
+
+- `DatePicker` 组件增加 `inputProps` 参数。([#2551](https://github.com/arco-design/arco-design/pull/2551))
+- `ColorPicker` 组件增加对自定义触发元素的支持([#2548](https://github.com/arco-design/arco-design/pull/2548))
+- 新增 `Typography.Ellipsis` 组件，支持文本省略功能。([#2525](https://github.com/arco-design/arco-design/pull/2525))
+- `DatePicker` 支持 `inputProps` 属性([#2519](https://github.com/arco-design/arco-design/pull/2519))
+- `DatePicker.RangePicker` 新增 `inputProps`.([#2516](https://github.com/arco-design/arco-design/pull/2516))
+
+### 🐛 问题修复
+
+- 支持 disabledAlpha([#2538](https://github.com/arco-design/arco-design/pull/2538))
+- 修复`Table`组件`scrollbar-color`属性导致宽度计算错误的问题。([#2533](https://github.com/arco-design/arco-design/pull/2533))
+- 修复 `ColorPicker` 初始化时触发`onChange` 的 bug([#2521](https://github.com/arco-design/arco-design/pull/2521))
+- 修复 `ColorPicker` 按需样式引入缺失的 bug([#2520](https://github.com/arco-design/arco-design/pull/2520))
+
+### 🆎 类型修正
+
+- `Table` 组件 column 属性 TS 定义调整([#2531](https://github.com/arco-design/arco-design/pull/2531))
+
 ## 2.59.1
 
 2024-01-26

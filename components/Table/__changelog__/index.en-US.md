@@ -1,3 +1,15 @@
+## 2.60.0
+
+2024-02-23
+
+### 🐛 BugFix
+
+- Fix the issue where the `scrollbar-color` property in the `Table` component causes incorrect width calculations.([#2533](https://github.com/arco-design/arco-design/pull/2533))
+
+### 🆎 TypeScript
+
+- `Table` component column attribute TS definition adjustment([#2531](https://github.com/arco-design/arco-design/pull/2531))
+
 ## 2.58.1
 
 2024-01-05

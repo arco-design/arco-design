@@ -1,3 +1,15 @@
+## 2.60.0
+
+2024-02-23
+
+### 🐛 问题修复
+
+- 修复`Table`组件`scrollbar-color`属性导致宽度计算错误的问题。([#2533](https://github.com/arco-design/arco-design/pull/2533))
+
+### 🆎 类型修正
+
+- `Table` 组件 column 属性 TS 定义调整([#2531](https://github.com/arco-design/arco-design/pull/2531))
+
 ## 2.58.1
 
 2024-01-05
