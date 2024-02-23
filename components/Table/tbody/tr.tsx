@@ -95,7 +95,7 @@ function Tr<T>(props: TrType<T>, ref) {
 
   const shouldRenderExpandRow = shouldRowExpand(record, index);
   const recordHaveChildren = isChildrenNotEmpty(record);
-  const haveTreeData = !virtualized && isDataHaveChildren() && !expandedRowRender;
+  const haveTreeData = isDataHaveChildren() && !expandedRowRender;
   const shouldRenderTreeDataExpandRow = haveTreeData && recordHaveChildren;
 
   const expandRowByClick = expandProps.expandRowByClick;
