@@ -6,6 +6,7 @@ import React, {
   useState,
   ReactNode,
   CSSProperties,
+  UIEvent,
 } from 'react';
 import {
   Key,
@@ -39,7 +40,8 @@ export type RenderFunc<T> = (
 
 type Status = 'NONE' | 'MEASURE_START' | 'MEASURE_DONE';
 
-export interface VirtualListProps<T> extends Omit<React.HTMLAttributes<any>, 'children'> {
+export interface VirtualListProps<T>
+  extends Omit<React.HTMLAttributes<any>, 'children' | 'onScroll'> {
   children: RenderFunc<T>;
   data: T[];
   /* Viewable area height (`2.11.0` starts support `string` type such as `80%`) */
@@ -62,7 +64,7 @@ export interface VirtualListProps<T> extends Omit<React.HTMLAttributes<any>, 'ch
   /** Custom filler outer style */
   outerStyle?: CSSProperties;
   innerStyle?: CSSProperties;
-  onScroll?: React.UIEventHandler<HTMLElement>;
+  onScroll?: (event: UIEvent<HTMLElement>, info: { index: number }) => void;
   wrapperChild?: string | React.FC<any> | React.ComponentClass<any>;
 }
 
@@ -358,7 +360,7 @@ const VirtualList: React.ForwardRefExoticComponent<
       itemOffsetPtg: offsetPtg,
     });
 
-    event && onScroll && onScroll(event);
+    event && onScroll?.(event, { index });
   };
 
   // Modify the state and recalculate the position in the next render
@@ -396,7 +398,7 @@ const VirtualList: React.ForwardRefExoticComponent<
       status: 'MEASURE_START',
     });
 
-    event && onScroll && onScroll(event);
+    event && onScroll?.(event, { index: itemIndex });
   };
 
   useEffect(() => {
