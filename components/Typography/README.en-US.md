@@ -28,7 +28,7 @@ Used to display titles, paragraphs, and text content.
 |underline|Underline style|boolean |`-`|-|
 |type|Text type|'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
-|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
+|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)。Deprecated, `Typography.Ellipsis` is recommended instead|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |heading|Heading level, equivalent to `h1` `h2` `h3` `h4` `h5` `h6`|1 \| 2 \| 3 \| 4 \| 5 \| 6 |`1`|-|
 |mark|Mark style|boolean \| { color: string } |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
@@ -48,7 +48,7 @@ Used to display titles, paragraphs, and text content.
 |spacing|The line height of the paragraph. The default line height is recommended for long text (more than 5 lines),and the close line height of `close` is recommended for short text (less than or equal to 3 lines).|'default' \| 'close' |`default`|-|
 |type|Text type|'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
-|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
+|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)。Deprecated, `Typography.Ellipsis` is recommended instead|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |mark|Mark style|boolean \| { color: string } |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
@@ -65,7 +65,7 @@ Used to display titles, paragraphs, and text content.
 |underline|Underline style|boolean |`-`|-|
 |type|Text type|'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
-|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
+|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)。Deprecated, `Typography.Ellipsis` is recommended instead|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |mark|Mark style|boolean \| { color: string } |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|

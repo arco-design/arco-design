@@ -40,8 +40,8 @@ export interface OperationsProps extends Omit<React.HTMLAttributes<HTMLElement>,
         onEnd?: (text) => void;
       };
   /**
-   * @zh 自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)
-   * @en Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)
+   * @zh 自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)。不推荐使用，建议 `Typography.Ellipsis` 替代
+   * @en Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)。Deprecated, `Typography.Ellipsis` is recommended instead
    */
   ellipsis?: boolean | EllipsisConfig;
   isEllipsis?: boolean;

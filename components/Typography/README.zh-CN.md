@@ -28,7 +28,7 @@
 |underline|下划线样式|boolean |`-`|-|
 |type|文本类型|'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
-|ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
+|ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)。不推荐使用，建议 `Typography.Ellipsis` 替代|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |heading|标题级别，相当于 `h1` `h2` `h3` `h4` `h5` `h6`|1 \| 2 \| 3 \| 4 \| 5 \| 6 |`1`|-|
 |mark|标记样式|boolean \| { color: string } |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
@@ -48,7 +48,7 @@
 |spacing|段落的的行高，长文本(大于5行)的时候推荐使用默认行高，短文本(小于等于3行)推荐使用 `close` 紧密的行高。|'default' \| 'close' |`default`|-|
 |type|文本类型|'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
-|ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
+|ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)。不推荐使用，建议 `Typography.Ellipsis` 替代|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |mark|标记样式|boolean \| { color: string } |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
 |copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
@@ -65,7 +65,7 @@
 |underline|下划线样式|boolean |`-`|-|
 |type|文本类型|'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
-|ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
+|ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)。不推荐使用，建议 `Typography.Ellipsis` 替代|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |mark|标记样式|boolean \| { color: string } |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
 |copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
