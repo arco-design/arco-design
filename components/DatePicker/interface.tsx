@@ -248,6 +248,12 @@ export interface PickerProps {
    * @en timezone name, if `utcOffset` is set, `utcOffset` takes effect.
    */
   timezone?: string;
+  /**
+   * @zh 原生输入框属性
+   * @en Native input attributes
+   * @version 2.60.0
+   */
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
 /**
@@ -505,7 +511,13 @@ export interface BaseRangePickerProps {
 export type RangePickerProps = BaseRangePickerProps &
   Omit<
     PickerProps,
-    'onChange' | 'onSelect' | 'onOk' | 'defaultPickerValue' | 'pickerValue' | 'onPickerValueChange'
+    | 'onChange'
+    | 'onSelect'
+    | 'onOk'
+    | 'defaultPickerValue'
+    | 'pickerValue'
+    | 'onPickerValueChange'
+    | 'inputProps'
   >;
 
 export interface ShortcutsProps {
