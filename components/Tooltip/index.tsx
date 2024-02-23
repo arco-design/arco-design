@@ -88,7 +88,7 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
     ...pick(rest, EventsByTriggerNeed),
     ...pickDataAttributes(rest),
     ...triggerProps,
-    className: cs(className, triggerProps.className),
+    className: cs(className, triggerProps?.className),
   };
 
   const renderedContent = isFunction(content) ? content() : content;
