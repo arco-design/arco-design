@@ -5,7 +5,7 @@ import cs from '../../_util/classNames';
 import useComponent from '../hooks/useComponent';
 import VirtualList from '../../_class/VirtualList';
 import Tr from './tr';
-import { getOriginData } from '../utils';
+import { getOriginData, isChildrenNotEmpty } from '../utils';
 
 function TBody<T>(props: TbodyProps<T>) {
   const {
@@ -42,10 +42,6 @@ function TBody<T>(props: TbodyProps<T>) {
     type = 'checkbox';
   }
 
-  function isChildrenNotEmpty(record) {
-    return isArray(record[childrenColumnName]) && record[childrenColumnName].length;
-  }
-
   function shouldRowExpand(record, index) {
     if ('rowExpandable' in expandProps && typeof expandProps.rowExpandable === 'function') {
       return expandProps.rowExpandable(record);
@@ -78,7 +74,7 @@ function TBody<T>(props: TbodyProps<T>) {
                 index={i}
               />
             );
-            if (isChildrenNotEmpty(child)) {
+            if (isChildrenNotEmpty(child, childrenColumnName)) {
               travel(child[childrenColumnName], getRowKey(child), level + 1);
             }
           }
