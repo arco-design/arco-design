@@ -272,20 +272,7 @@
   position: relative;
 
   &-content {
-    display: block;
-    word-break: break-all;
-
-    /* stylelint-disable */
-    &.@{ellipsis-cls}-collapsed {
-      display: -webkit-box;
-      display: -moz-box;
-      overflow: hidden;
-      -webkit-box-orient: vertical;
-      -moz-box-orient: vertical;
-    }
-    /* stylelint-enable */
-
-    &::before {
+    &.@{ellipsis-cls}-multiple::before {
       content: ' ';
       float: right;
       height: 100%;
@@ -316,13 +303,34 @@
       //}
     }
   }
+
+  &-single {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &-multiple {
+    display: block;
+    word-break: break-all;
+  }
+
   /* stylelint-disable */
-  &-content-mirror {
-    position: absolute;
+
+  &-collapsed {
     display: -webkit-box;
+    display: -moz-box;
     overflow: hidden;
     -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+  }
+
+  /* stylelint-enable */
+
+  &-content-mirror {
+    position: absolute;
+    width: 100%;
     visibility: hidden;
   }
-  /* stylelint-enable */
 }
