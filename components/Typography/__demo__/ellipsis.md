@@ -1,5 +1,5 @@
 ---
-order: 8
+order: 7
 title:
   zh-CN: 省略（不推荐）
   en-US: Ellipsis(Not recommended)

@@ -1,5 +1,5 @@
 ---
-order: 9
+order: 8
 title:
   zh-CN: 省略受控（不推荐）
   en-US: Ellipsis Controlled (Not recommended)
