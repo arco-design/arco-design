@@ -1,3 +1,11 @@
+## 2.60.1
+
+2024-02-28
+
+### 🐛 BugFix
+
+- Fix the problem of single line omission failure in `Ellipsis` component([#2564](https://github.com/arco-design/arco-design/pull/2564))
+
 ## 2.60.0
 
 2024-02-23
