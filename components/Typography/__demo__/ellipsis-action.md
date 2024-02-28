@@ -1,8 +1,8 @@
 ---
 order: 6
 title:
-  zh-CN: 文本省略 - 操控按钮
-  en-US: Text Ellipsis - Action Button
+  zh-CN: 文本省略 - 操控按钮（推荐）
+  en-US: Text Ellipsis - Action Button(Recommended)
 ---
 
 ## zh-CN
@@ -33,6 +33,7 @@ function App() {
   return (
     <div>
       <Typography.Ellipsis
+        rows={4}
         expanded={expanded}
         expandRender={expandRender}
         onExpand={setExpanded}

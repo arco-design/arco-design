@@ -1,5 +1,4 @@
 import React, {
-  CSSProperties,
   forwardRef,
   useCallback,
   useContext,
@@ -61,6 +60,7 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
   });
   const [overflow, setOverflow] = useState(false);
 
+  const single = useMemo(() => `${rows}` === '1', [rows]);
   const tooltipData = useMemo(() => {
     if (isObject(showTooltip)) {
       return {
@@ -84,17 +84,6 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
   }, [children, textRef]);
 
   const prefix = ctx.getPrefixCls('ellipsis');
-
-  const computedStyle = useMemo<CSSProperties>(() => {
-    if (!expanded) {
-      return {
-        WebkitBoxOrient: 'vertical',
-        MozBoxOrient: 'vertical',
-        WebkitLineClamp: rows,
-      };
-    }
-    return null;
-  }, [expanded]);
 
   const renderActionContent = () => {
     if (expandRender) {
@@ -137,7 +126,10 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
   const onResize = useCallback(
     throttleByRaf(() => {
       if (mirrorTextRef.current && mirrorContentRef.current) {
-        if (mirrorTextRef.current.offsetHeight > mirrorContentRef.current.offsetHeight) {
+        const isOverflow = single
+          ? mirrorTextRef.current.offsetWidth > mirrorContentRef.current.offsetWidth
+          : mirrorTextRef.current.offsetHeight > mirrorContentRef.current.offsetHeight;
+        if (isOverflow) {
           if (overflow === false) {
             setOverflow(true);
             onEllipsis?.(true);
@@ -148,7 +140,7 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
         }
       }
     }),
-    [overflow]
+    [overflow, single]
   );
 
   const renderMirror = () => {
@@ -159,7 +151,11 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
     return (
       <ResizeObserver onResize={onResize}>
         <div
-          className={`${prefix}-content-mirror`}
+          className={
+            single
+              ? cs(`${prefix}-content-mirror`, `${prefix}-single`)
+              : cs(`${prefix}-content-mirror`, `${prefix}-multiple`, `${prefix}-collapsed`)
+          }
           style={{
             WebkitBoxOrient: 'vertical',
             MozBoxOrient: 'vertical',
@@ -178,22 +174,25 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
   };
 
   const renderContent = () => {
-    if (disabled) {
+    if (single) {
       return (
-        <div className={`${prefix}-content`}>
+        <div className={cs(`${prefix}-content`, `${prefix}-single`)}>
           <span ref={textRef} className={`${prefix}-text`}>
             {children}
           </span>
         </div>
       );
     }
-
-    const content = (
+    return (
       <div
-        className={cs(`${prefix}-content`, {
+        className={cs(`${prefix}-content`, `${prefix}-multiple`, {
           [`${prefix}-collapsed`]: !expanded,
         })}
-        style={computedStyle}
+        style={{
+          WebkitBoxOrient: 'vertical',
+          MozBoxOrient: 'vertical',
+          WebkitLineClamp: rows,
+        }}
         title={!tooltipData.tooltip && overflow && !expanded ? text : undefined}
       >
         {!expanded && renderAction()}
@@ -203,6 +202,18 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
         {expanded && renderAction()}
       </div>
     );
+  };
+
+  const renderWrapper = () => {
+    if (disabled) {
+      return (
+        <div className={`${prefix}-content`}>
+          <span ref={textRef} className={`${prefix}-text`}>
+            {children}
+          </span>
+        </div>
+      );
+    }
 
     if (tooltipData.tooltip) {
       return (
@@ -224,18 +235,18 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
           }}
           {...tooltipData.tooltipProps}
         >
-          {content}
+          {renderContent()}
         </Tooltip>
       );
     }
 
-    return content;
+    return renderContent();
   };
 
   return (
     <div ref={wrapperRef} className={cs(prefix, className)} style={style}>
       {renderMirror()}
-      {renderContent()}
+      {renderWrapper()}
     </div>
   );
 };
