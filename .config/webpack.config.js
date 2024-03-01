@@ -78,6 +78,8 @@ exports.site = (config, env) => {
   // update the react-dnd, with issue: https://github.com/facebook/react/issues/20235
   config.resolve.alias['react/jsx-runtime'] = require.resolve('react/jsx-runtime.js');
   config.resolve.alias['react/jsx-dev-runtime'] = require.resolve('react/jsx-dev-runtime.js');
+  config.resolve.alias['react/jsx-runtime.js'] = require.resolve('react/jsx-runtime.js');
+  config.resolve.alias['react/jsx-dev-runtime.js'] = require.resolve('react/jsx-runtime.js');
   delete config.resolve.alias['react'];
 
   if (env === 'dev') {

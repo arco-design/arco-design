@@ -1,0 +1,122 @@
+name: pr-test
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: install
+        run: yarn run dependencies
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+
+      - name: build
+        run: yarn icon && yarn build
+
+      - name: Upload pkg-build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          name: pkg-build
+          if-no-files-found: error
+          path: |
+            icon
+            es
+            lib
+            hooks
+            dist
+
+  test-client:
+    needs: ['build']
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        reactVersion: [16, 17, 18]
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: install
+        run: yarn run dependencies
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+
+      - name: Download pkg-build Artifact
+        uses: actions/download-artifact@v3.0.1
+        with:
+          # Artifact name
+          name: pkg-build
+          # Destination path
+          path: ./
+
+      - name: install react ${{ matrix.reactVersion }}
+        run: |
+          yarn add react@${{matrix.reactVersion}} react-dom@${{matrix.reactVersion}}
+          npm ls react react-dom
+
+      - name: mock-time
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: 'Asia/Singapore'
+          timezoneMacos: 'Asia/Singapore'
+          timezoneWindows: 'Singapore Standard Time'
+
+      - name: test:client ${{ matrix.reactVersion }}
+        run: yarn test:client
+
+  test-node:
+    needs: ['build']
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        reactVersion: [16, 17, 18]
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: install
+        run: yarn run dependencies
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+
+      - name: Download pkg-build Artifact
+        uses: actions/download-artifact@v3.0.1
+        with:
+          # Artifact name
+          name: pkg-build
+          # Destination path
+          path: ./
+
+      - name: install react ${{ matrix.reactVersion }}
+        run: |
+          yarn add react@${{matrix.reactVersion}} react-dom@${{matrix.reactVersion}}
+          npm ls react react-dom
+
+      - name: mock-time
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: 'Asia/Singapore'
+          timezoneMacos: 'Asia/Singapore'
+          timezoneWindows: 'Singapore Standard Time'
+
+      - name: test:node ${{ matrix.reactVersion }}
+        run: yarn test:node
