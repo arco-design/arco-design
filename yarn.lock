@@ -3570,10 +3570,10 @@ arco-cli-dev-utils@^1.1.1:
     os-locale "^5.0.0"
     semver "^7.3.5"
 
-arco-markdown-loader@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/arco-markdown-loader/-/arco-markdown-loader-1.0.8.tgz#da5c8dc05ea29e8985ae7c8ef9d90a9e6752628f"
-  integrity sha512-v5t/sOjFEciGz1ii0hXL7S1GaP3Xe44OK7HwDHXKulRZPc3dhlnIcaiHTTNCki39gWQCy1z3aoQCXyWkCVqWsg==
+arco-markdown-loader@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/arco-markdown-loader/-/arco-markdown-loader-1.0.9.tgz#85fa2819666c0740265ca34202974a4a1bacfe80"
+  integrity sha512-pcdOXgwb3Ton+9tXK9rDo/Y6WyLozKEu/+f8JfkkFzk3wmHKzKgHZRdpNQT4214qJEain35vOypZg0V67MCCYw==
   dependencies:
     "@babel/core" "^7.5.5"
     "@babel/plugin-transform-typescript" "^7.9.6"
@@ -3583,6 +3583,7 @@ arco-markdown-loader@^1.0.8:
     lru-cache "^6.0.0"
     marked "^2.0.1"
     nanoid "^3.1.22"
+    prettier "^2.3.0"
     prismjs "^1.23.0"
     react-helmet "^6.1.0"
 
@@ -3603,14 +3604,14 @@ arco-scripts-babel-config@^1.0.0:
     "@babel/runtime" "^7.13.10"
     babel-plugin-import "^1.13.3"
 
-arco-scripts@^1.27.11:
-  version "1.27.11"
-  resolved "https://registry.yarnpkg.com/arco-scripts/-/arco-scripts-1.27.11.tgz#61948d6cf7e10821a77e46bfc0984dc4a17de881"
-  integrity sha512-jinFelxLljoNKYPgKN9BoUB+7MpBpqIdZVbumkX9P9UyamX212IwL2ThHkqVUox9BUlaeVAS9r3upHJtvegNLw==
+arco-scripts@^1.27.14:
+  version "1.27.14"
+  resolved "https://registry.yarnpkg.com/arco-scripts/-/arco-scripts-1.27.14.tgz#a07947b77fdfb68c4dcce7adc1b4e449c62a1bd2"
+  integrity sha512-AtR2JK7umAZZJleYOSWbXNDN3Pw38ZAsBr/2W0GSwn8F/KJMCro84ycW1PmP+SuZL9oRuVrsuWM4iPDjPh9dFw==
   dependencies:
     "@svgr/webpack" "^4.2.0"
     arco-cli-dev-utils "^1.1.1"
-    arco-markdown-loader "^1.0.8"
+    arco-markdown-loader "^1.0.9"
     arco-scripts-babel-config "^1.0.0"
     axios "~0"
     babel-jest "^26.0.1"
@@ -3651,7 +3652,7 @@ arco-scripts@^1.27.11:
     node-typescript-compiler "^3.0.0"
     nunjucks "^3.2.3"
     optimize-css-assets-webpack-plugin "^5.0.3"
-    parse-es-import "^0.3.1"
+    parse-es-import "^0.5.0"
     postcss-loader "4.3.0"
     progress-bar-webpack-plugin "^2.1.0"
     react-docgen-typescript "^2.1.0"
@@ -11960,10 +11961,10 @@ parse-entities@^2.0.0:
     is-decimal "^1.0.0"
     is-hexadecimal "^1.0.0"
 
-parse-es-import@^0.3.1:
-  version "0.3.2"
-  resolved "https://registry.npmjs.org/parse-es-import/-/parse-es-import-0.3.2.tgz"
-  integrity sha512-xB88cqAqrCXICVg8ALNibroJOBAeQmJRJCIgVmxNKe4DRPs95CP6/TwEHZpbKb1KzbMDpxdr4ywvTc7rj8LeKA==
+parse-es-import@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/parse-es-import/-/parse-es-import-0.5.0.tgz#c27b8f303462bd06d1377eb109ae766c8b414f7e"
+  integrity sha512-Vb7+lH0g28Qvp3Q8lwtsTXT4at8gq4mglh/Mz6C/igpYmriLs7ntTj3GJ1VGgj2rIMVVnJOWL2iM/frgaQDbEw==
   dependencies:
     acorn "^8.4.1"
     acorn-jsx "^5.3.1"
@@ -12722,6 +12723,11 @@ prettier-linter-helpers@^1.0.0:
   integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
   dependencies:
     fast-diff "^1.1.2"
+
+prettier@^2.3.0:
+  version "2.8.8"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.8.tgz#e8c5d7e98a4305ffe3de2e1fc4aca1a71c28b1da"
+  integrity sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==
 
 prettier@^2.5.0:
   version "2.5.0"
