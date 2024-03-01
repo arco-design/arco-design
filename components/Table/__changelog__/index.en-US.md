@@ -1,3 +1,11 @@
+## 2.60.2
+
+2024-03-01
+
+### 💎 Enhancement
+
+- `Table` component supports expanding rows and tree data when virtual scrolling is turned on.([#2553](https://github.com/arco-design/arco-design/pull/2553))
+
 ## 2.60.0
 
 2024-02-23

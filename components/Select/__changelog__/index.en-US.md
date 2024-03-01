@@ -1,3 +1,11 @@
+## 2.60.2
+
+2024-03-01
+
+### 💅 Style
+
+- The font size of the selection box under the `large` size of the `Select` component is adjusted from `16px` to `14px`.([#2570](https://github.com/arco-design/arco-design/pull/2570))
+
 ## 2.58.2
 
 2024-01-08
