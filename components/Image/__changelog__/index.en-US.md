@@ -1,3 +1,11 @@
+## 2.60.2
+
+2024-03-01
+
+### 🐛 BugFix
+
+- Fix the problem of `loading` status display of `Image` component([#2550](https://github.com/arco-design/arco-design/pull/2550))
+
 ## 2.58.3
 
 2024-01-11

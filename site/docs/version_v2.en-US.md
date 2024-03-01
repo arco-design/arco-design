@@ -2,6 +2,23 @@
 changelog: true
 ---
 
+## 2.60.2
+
+2024-03-01
+
+### 💎 Enhancement
+
+- Optimize the problem that the underline position is not adjusted when the default type of `Tabs` component activeTab does not exist.([#2571](https://github.com/arco-design/arco-design/pull/2571))
+- `Table` component supports expanding rows and tree data when virtual scrolling is turned on.([#2553](https://github.com/arco-design/arco-design/pull/2553))
+
+### 🐛 BugFix
+
+- Fix the problem of `loading` status display of `Image` component([#2550](https://github.com/arco-design/arco-design/pull/2550))
+
+### 💅 Style
+
+- The font size of the selection box under the `large` size of the `Select` component is adjusted from `16px` to `14px`.([#2570](https://github.com/arco-design/arco-design/pull/2570))
+
 ## 2.60.1
 
 2024-02-28

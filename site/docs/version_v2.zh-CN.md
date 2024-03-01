@@ -2,6 +2,23 @@
 changelog: true
 ---
 
+## 2.60.2
+
+2024-03-01
+
+### 💎 功能优化
+
+- 优化默认类型的 `Tabs` 组件 activeTab 不存在时，下划线位置未调整的问题。([#2571](https://github.com/arco-design/arco-design/pull/2571))
+- `Table` 组件虚拟滚动开启时支持展开行和树形数据。([#2553](https://github.com/arco-design/arco-design/pull/2553))
+
+### 🐛 问题修复
+
+- 修复 `Image` 组件 `loading` 状态展示的问题([#2550](https://github.com/arco-design/arco-design/pull/2550))
+
+### 💅 样式更新
+
+- `Select` 组件 `large` 尺寸下的选择框文本由 `16px` 调整为 `14px`。([#2570](https://github.com/arco-design/arco-design/pull/2570))
+
 ## 2.60.1
 
 2024-02-28

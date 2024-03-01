@@ -1,3 +1,11 @@
+## 2.60.2
+
+2024-03-01
+
+### 💎 Enhancement
+
+- Optimize the problem that the underline position is not adjusted when the default type of `Tabs` component activeTab does not exist.([#2571](https://github.com/arco-design/arco-design/pull/2571))
+
 ## 2.54.0
 
 2023-10-09
