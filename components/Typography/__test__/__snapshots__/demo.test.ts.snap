@@ -1207,7 +1207,7 @@ exports[`renders Typography/demo/paragraph.md correctly 1`] = `
 `;
 
 exports[`renders Typography/demo/text.md correctly 1`] = `
-[
+Array [
   <div
     style="margin-bottom: 10px;"
   >

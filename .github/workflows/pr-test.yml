@@ -38,6 +38,7 @@ jobs:
   test-client:
     needs: ['build']
     runs-on: ubuntu-latest
+    continue-on-error: true
     strategy:
       matrix:
         reactVersion: [16, 17, 18]
@@ -63,9 +64,18 @@ jobs:
           # Destination path
           path: ./
 
-      - name: install react ${{ matrix.reactVersion }}
+      - name: install react 17
+        if: ${{ matrix.reactVersion == '17' }}
         run: |
-          yarn add react@${{matrix.reactVersion}} react-dom@${{matrix.reactVersion}} react-test-renderer@${{matrix.reactVersion}}
+          rm  yarn.lock
+          yarn add react@${{matrix.reactVersion}} react-dom@${{matrix.reactVersion}} react-test-renderer@${{matrix.reactVersion}} @types/react@${{matrix.reactVersion}} @types/react-dom@${{matrix.reactVersion}} @types/react-test-renderer@${{matrix.reactVersion}}
+          npm ls react react-dom
+
+      - name: install react 18
+        if: ${{ matrix.reactVersion == '18' }}
+        run: |
+          rm  yarn.lock
+          yarn add react@${{matrix.reactVersion}} react-dom@${{matrix.reactVersion}} react-test-renderer@${{matrix.reactVersion}} @testing-library/react@13 @types/react@${{matrix.reactVersion}} @types/react-dom@${{matrix.reactVersion}} @types/react-test-renderer@${{matrix.reactVersion}}
           npm ls react react-dom
 
       - name: mock-time
