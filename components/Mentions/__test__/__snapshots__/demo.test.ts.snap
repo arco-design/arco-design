@@ -3,7 +3,7 @@
 exports[`renders Mentions/demo/basic.md correctly 1`] = `
 <div
   class="arco-mentions arco-mentions-align-textarea"
-  style="width:154px"
+  style="width: 154px;"
 >
   <textarea
     class="arco-textarea arco-mentions-textarea"
@@ -25,7 +25,7 @@ exports[`renders Mentions/demo/basic.md correctly 1`] = `
 exports[`renders Mentions/demo/control.md correctly 1`] = `
 <form
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="width:360px"
+  style="width: 360px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -154,7 +154,7 @@ exports[`renders Mentions/demo/control.md correctly 1`] = `
           >
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-              style="margin:0 12px"
+              style="margin: 0px 12px;"
               type="button"
             >
               <span>
@@ -183,11 +183,11 @@ exports[`renders Mentions/demo/prefix.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <div
       class="arco-mentions arco-mentions-align-textarea"
-      style="width:154px;margin-bottom:10px"
+      style="width: 154px; margin-bottom: 10px;"
     >
       <textarea
         class="arco-textarea arco-mentions-textarea"
@@ -205,11 +205,11 @@ exports[`renders Mentions/demo/prefix.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <div
       class="arco-mentions arco-mentions-align-textarea"
-      style="width:154px;margin-bottom:10px"
+      style="width: 154px; margin-bottom: 10px;"
     >
       <textarea
         class="arco-textarea arco-mentions-textarea"
@@ -230,7 +230,7 @@ exports[`renders Mentions/demo/prefix.md correctly 1`] = `
   >
     <div
       class="arco-mentions arco-mentions-align-textarea"
-      style="width:154px;margin-bottom:10px"
+      style="width: 154px; margin-bottom: 10px;"
     >
       <textarea
         class="arco-textarea arco-mentions-textarea"
@@ -255,11 +255,11 @@ exports[`renders Mentions/demo/status.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <div
       class="arco-mentions arco-mentions-align-textarea"
-      style="width:154px"
+      style="width: 154px;"
     >
       <textarea
         class="arco-textarea arco-mentions-textarea"
@@ -283,13 +283,13 @@ exports[`renders Mentions/demo/status.md correctly 1`] = `
   >
     <div
       class="arco-mentions arco-mentions-align-textarea"
-      style="width:154px"
+      style="width: 154px;"
     >
       <textarea
         class="arco-textarea arco-textarea-disabled arco-mentions-textarea"
         disabled=""
         rows="1"
-        style="resize:none"
+        style="resize: none;"
       >
         Bytedance
       </textarea>

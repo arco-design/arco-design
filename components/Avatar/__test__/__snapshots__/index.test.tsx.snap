@@ -3,7 +3,6 @@
 exports[`ConfigProvider componentConfig.Avatar default 1`] = `
 <div
   class="arco-avatar arco-avatar-circle"
-  style="font-size:"
 >
   <span
     class="arco-avatar-text"
@@ -14,7 +13,6 @@ exports[`ConfigProvider componentConfig.Avatar default 1`] = `
 exports[`ConfigProvider componentConfig.Avatar set className globally 1`] = `
 <div
   class="arco-avatar arco-avatar-circle global-default-class"
-  style="font-size:"
 >
   <span
     class="arco-avatar-text"
@@ -25,7 +23,6 @@ exports[`ConfigProvider componentConfig.Avatar set className globally 1`] = `
 exports[`ConfigProvider componentConfig.Avatar set className globally and component set className itself. 1`] = `
 <div
   class="arco-avatar arco-avatar-circle component-class"
-  style="font-size:"
 >
   <span
     class="arco-avatar-text"
@@ -37,7 +34,6 @@ exports[`ConfigProvider componentConfig.Avatar set data-* property 1`] = `
 <div
   class="arco-avatar arco-avatar-circle"
   data-test-name="Avatar"
-  style="font-size:"
 >
   <span
     class="arco-avatar-text"

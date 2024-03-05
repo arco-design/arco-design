@@ -3,6 +3,7 @@
 exports[`ConfigProvider componentConfig.Select default 1`] = `
 <div
   aria-autocomplete="list"
+  aria-controls="arco-select-popup-1"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default"
@@ -19,7 +20,7 @@ exports[`ConfigProvider componentConfig.Select default 1`] = `
       <input
         autocomplete="off"
         class="arco-select-view-input"
-        style="width:100%;pointer-events:none"
+        style="width: 100%; pointer-events: none;"
         tabindex="-1"
         value=""
       />
@@ -28,7 +29,7 @@ exports[`ConfigProvider componentConfig.Select default 1`] = `
       />
       <span
         class="arco-select-view-value"
-        style="display:none"
+        style="display: none;"
       />
     </span>
     <div
@@ -60,6 +61,7 @@ exports[`ConfigProvider componentConfig.Select default 1`] = `
 exports[`ConfigProvider componentConfig.Select set className globally 1`] = `
 <div
   aria-autocomplete="list"
+  aria-controls="arco-select-popup-2"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default global-default-class"
@@ -76,7 +78,7 @@ exports[`ConfigProvider componentConfig.Select set className globally 1`] = `
       <input
         autocomplete="off"
         class="arco-select-view-input"
-        style="width:100%;pointer-events:none"
+        style="width: 100%; pointer-events: none;"
         tabindex="-1"
         value=""
       />
@@ -85,7 +87,7 @@ exports[`ConfigProvider componentConfig.Select set className globally 1`] = `
       />
       <span
         class="arco-select-view-value"
-        style="display:none"
+        style="display: none;"
       />
     </span>
     <div
@@ -117,6 +119,7 @@ exports[`ConfigProvider componentConfig.Select set className globally 1`] = `
 exports[`ConfigProvider componentConfig.Select set className globally and component set className itself. 1`] = `
 <div
   aria-autocomplete="list"
+  aria-controls="arco-select-popup-3"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default component-class"
@@ -133,7 +136,7 @@ exports[`ConfigProvider componentConfig.Select set className globally and compon
       <input
         autocomplete="off"
         class="arco-select-view-input"
-        style="width:100%;pointer-events:none"
+        style="width: 100%; pointer-events: none;"
         tabindex="-1"
         value=""
       />
@@ -142,7 +145,7 @@ exports[`ConfigProvider componentConfig.Select set className globally and compon
       />
       <span
         class="arco-select-view-value"
-        style="display:none"
+        style="display: none;"
       />
     </span>
     <div
@@ -174,6 +177,7 @@ exports[`ConfigProvider componentConfig.Select set className globally and compon
 exports[`ConfigProvider componentConfig.Select set data-* property 1`] = `
 <div
   aria-autocomplete="list"
+  aria-controls="arco-select-popup-4"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-select arco-select-single arco-select-size-default"
@@ -191,7 +195,7 @@ exports[`ConfigProvider componentConfig.Select set data-* property 1`] = `
       <input
         autocomplete="off"
         class="arco-select-view-input"
-        style="width:100%;pointer-events:none"
+        style="width: 100%; pointer-events: none;"
         tabindex="-1"
         value=""
       />
@@ -200,7 +204,7 @@ exports[`ConfigProvider componentConfig.Select set data-* property 1`] = `
       />
       <span
         class="arco-select-view-value"
-        style="display:none"
+        style="display: none;"
       />
     </span>
     <div

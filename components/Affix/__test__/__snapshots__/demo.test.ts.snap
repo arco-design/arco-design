@@ -41,15 +41,14 @@ exports[`renders Affix/demo/bottom.md correctly 1`] = `
 exports[`renders Affix/demo/container.md correctly 1`] = `
 <div
   id="container"
-  style="height:200px;overflow:auto"
+  style="height: 200px; overflow: auto;"
 >
   <div
-    style="height:400px;background-color:var(--color-fill-2);background-image:linear-gradient(45deg, var(--color-bg-2) 25%, transparent 0, transparent 75%, var(--color-bg-2) 0),
-            linear-gradient(45deg, var(--color-bg-2) 25%, transparent 0, transparent 75%, var(--color-bg-2) 0);background-position:0 0, 15px 15px;background-size:30px 30px;overflow:hidden"
+    style="height: 400px; background-size: 30px 30px; overflow: hidden;"
   >
     <div
       class=""
-      style="margin:40px"
+      style="margin: 40px;"
     >
       <div
         class=""

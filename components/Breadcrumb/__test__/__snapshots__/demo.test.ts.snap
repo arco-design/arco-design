@@ -159,7 +159,7 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <div
       class="arco-breadcrumb"
@@ -223,7 +223,7 @@ exports[`renders Breadcrumb/demo/separator.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <div
       class="arco-breadcrumb"
@@ -337,7 +337,7 @@ exports[`renders Breadcrumb/demo/size.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <div
       class="arco-breadcrumb"
@@ -405,7 +405,7 @@ exports[`renders Breadcrumb/demo/size.md correctly 1`] = `
     <div
       class="arco-breadcrumb"
       role="list"
-      style="font-size:12px"
+      style="font-size: 12px;"
     >
       <div
         class="arco-breadcrumb-item"
@@ -549,7 +549,7 @@ exports[`renders Breadcrumb/demo/with-dropdown.md correctly 1`] = `
   <div
     class="arco-breadcrumb"
     role="list"
-    style="margin-top:20px"
+    style="margin-top: 20px;"
   >
     <div
       class="arco-breadcrumb-item"
@@ -643,7 +643,7 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <div
       class="arco-breadcrumb"
@@ -726,7 +726,7 @@ exports[`renders Breadcrumb/demo/with-icon.md correctly 1`] = `
     <div
       class="arco-breadcrumb"
       role="list"
-      style="font-size:12px"
+      style="font-size: 12px;"
     >
       <div
         class="arco-breadcrumb-item"

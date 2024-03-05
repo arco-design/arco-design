@@ -39,7 +39,7 @@ exports[`ConfigProvider componentConfig.Timeline.Item default 1`] = `
   >
     <div
       class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-undefined"
-      style="border-left-style:solid"
+      style="border-left-style: solid;"
     />
     <div
       class="arco-timeline-item-dot-content"
@@ -65,7 +65,7 @@ exports[`ConfigProvider componentConfig.Timeline.Item set className globally 1`]
   >
     <div
       class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-undefined"
-      style="border-left-style:solid"
+      style="border-left-style: solid;"
     />
     <div
       class="arco-timeline-item-dot-content"
@@ -91,7 +91,7 @@ exports[`ConfigProvider componentConfig.Timeline.Item set className globally and
   >
     <div
       class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-undefined"
-      style="border-left-style:solid"
+      style="border-left-style: solid;"
     />
     <div
       class="arco-timeline-item-dot-content"
@@ -118,7 +118,7 @@ exports[`ConfigProvider componentConfig.Timeline.Item set data-* property 1`] = 
   >
     <div
       class="arco-timeline-item-dot-line arco-timeline-item-dot-line-is-undefined"
-      style="border-left-style:solid"
+      style="border-left-style: solid;"
     />
     <div
       class="arco-timeline-item-dot-content"

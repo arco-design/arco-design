@@ -43,7 +43,7 @@ exports[`renders Modal/demo/confirm_type.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -56,7 +56,7 @@ exports[`renders Modal/demo/confirm_type.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-success"
@@ -69,7 +69,7 @@ exports[`renders Modal/demo/confirm_type.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning"
@@ -101,7 +101,7 @@ exports[`renders Modal/demo/custom_button_text.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -114,11 +114,11 @@ exports[`renders Modal/demo/custom_button_text.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   />
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -150,7 +150,7 @@ exports[`renders Modal/demo/footer.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -163,11 +163,11 @@ exports[`renders Modal/demo/footer.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   />
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -180,11 +180,11 @@ exports[`renders Modal/demo/footer.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   />
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -207,7 +207,7 @@ exports[`renders Modal/demo/header.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -220,11 +220,11 @@ exports[`renders Modal/demo/header.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   />
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -309,7 +309,7 @@ exports[`renders Modal/demo/useModal.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -322,7 +322,7 @@ exports[`renders Modal/demo/useModal.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -335,7 +335,7 @@ exports[`renders Modal/demo/useModal.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -348,7 +348,7 @@ exports[`renders Modal/demo/useModal.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -361,7 +361,7 @@ exports[`renders Modal/demo/useModal.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"

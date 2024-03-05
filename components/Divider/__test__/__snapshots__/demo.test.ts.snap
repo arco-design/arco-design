@@ -22,7 +22,7 @@ Array [
     <div
       class="arco-divider arco-divider-horizontal"
       role="separator"
-      style="border-bottom-style:dashed"
+      style="border-bottom-style: dashed;"
     />
     <div
       class="arco-typography"
@@ -32,7 +32,7 @@ Array [
     <div
       class="arco-divider arco-divider-horizontal"
       role="separator"
-      style="border-bottom-width:2px;border-bottom-style:dotted"
+      style="border-bottom-width: 2px; border-bottom-style: dotted;"
     />
     <div
       class="arco-typography"
@@ -42,7 +42,7 @@ Array [
   </div>,
   <div
     class="divider-demo"
-    style="margin-top:48px"
+    style="margin-top: 48px;"
   >
     <div
       class="divider-demo-flex-content"

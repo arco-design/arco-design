@@ -6,7 +6,7 @@ Array [
     class="arco-upload arco-upload-type-text"
   >
     <input
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -48,7 +48,7 @@ Array [
     class="arco-upload arco-upload-type-text global-default-class"
   >
     <input
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -90,7 +90,7 @@ Array [
     class="arco-upload arco-upload-type-text component-class"
   >
     <input
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -133,7 +133,7 @@ Array [
     data-test-name="Upload"
   >
     <input
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div

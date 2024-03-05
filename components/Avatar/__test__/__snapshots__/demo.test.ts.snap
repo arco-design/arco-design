@@ -6,11 +6,10 @@ exports[`renders Avatar/demo/autoFixFontSize.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <div
       class="arco-avatar arco-avatar-circle"
-      style="font-size:"
     >
       <span
         class="arco-avatar-text"
@@ -40,11 +39,10 @@ exports[`renders Avatar/demo/basic.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-avatar arco-avatar-circle"
-      style="font-size:"
     >
       <span
         class="arco-avatar-text"
@@ -55,11 +53,11 @@ exports[`renders Avatar/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-avatar arco-avatar-circle"
-      style="font-size:;background-color:#3370ff"
+      style="background-color: rgb(51, 112, 255);"
     >
       <span
         class="arco-avatar-text"
@@ -87,11 +85,11 @@ exports[`renders Avatar/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-avatar arco-avatar-circle"
-      style="font-size:;background-color:#14a9f8"
+      style="background-color: rgb(20, 169, 248);"
     >
       <span
         class="arco-avatar-text"
@@ -102,11 +100,11 @@ exports[`renders Avatar/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-avatar arco-avatar-circle"
-      style="font-size:;background-color:#00d0b6"
+      style="background-color: rgb(0, 208, 182);"
     >
       <span
         class="arco-avatar-text"
@@ -120,7 +118,6 @@ exports[`renders Avatar/demo/basic.md correctly 1`] = `
   >
     <div
       class="arco-avatar arco-avatar-circle"
-      style="font-size:"
     >
       <span
         class="arco-avatar-image"
@@ -139,11 +136,11 @@ exports[`renders Avatar/demo/group.md correctly 1`] = `
 <div>
   <div
     class="arco-avatar-group"
-    style="margin:10px"
+    style="margin: 10px;"
   >
     <div
       class="arco-avatar arco-avatar-circle"
-      style="width:32px;height:32px;font-size:16px;z-index:5;margin-left:0;background-color:#7BC616"
+      style="width: 32px; height: 32px; font-size: 16px; z-index: 5; margin-left: 0px; background-color: rgb(123, 198, 22);"
     >
       <span
         class="arco-avatar-text"
@@ -153,7 +150,7 @@ exports[`renders Avatar/demo/group.md correctly 1`] = `
     </div>
     <div
       class="arco-avatar arco-avatar-circle"
-      style="width:32px;height:32px;font-size:16px;z-index:4;margin-left:-8px;background-color:#14C9C9"
+      style="width: 32px; height: 32px; font-size: 16px; z-index: 4; margin-left: -8px; background-color: rgb(20, 201, 201);"
     >
       <span
         class="arco-avatar-text"
@@ -163,7 +160,7 @@ exports[`renders Avatar/demo/group.md correctly 1`] = `
     </div>
     <div
       class="arco-avatar arco-avatar-circle"
-      style="width:32px;height:32px;font-size:16px;z-index:3;margin-left:-8px;background-color:#168CFF"
+      style="width: 32px; height: 32px; font-size: 16px; z-index: 3; margin-left: -8px; background-color: rgb(22, 140, 255);"
     >
       <span
         class="arco-avatar-text"
@@ -173,7 +170,7 @@ exports[`renders Avatar/demo/group.md correctly 1`] = `
     </div>
     <div
       class="arco-avatar arco-avatar-circle"
-      style="width:32px;height:32px;font-size:16px;z-index:2;margin-left:-8px;background-color:#FF7D00"
+      style="width: 32px; height: 32px; font-size: 16px; z-index: 2; margin-left: -8px; background-color: rgb(255, 125, 0);"
     >
       <span
         class="arco-avatar-text"
@@ -183,7 +180,7 @@ exports[`renders Avatar/demo/group.md correctly 1`] = `
     </div>
     <div
       class="arco-avatar arco-avatar-circle"
-      style="width:32px;height:32px;font-size:16px;z-index:1;margin-left:-8px;background-color:#FFC72E"
+      style="width: 32px; height: 32px; font-size: 16px; z-index: 1; margin-left: -8px; background-color: rgb(255, 199, 46);"
     >
       <span
         class="arco-avatar-text"
@@ -195,11 +192,11 @@ exports[`renders Avatar/demo/group.md correctly 1`] = `
   <br />
   <div
     class="arco-avatar-group"
-    style="margin:10px"
+    style="margin: 10px;"
   >
     <div
       class="arco-avatar arco-avatar-circle"
-      style="width:24px;height:24px;font-size:12px;z-index:5;margin-left:0;background-color:#7BC616"
+      style="width: 24px; height: 24px; font-size: 12px; z-index: 5; margin-left: 0px; background-color: rgb(123, 198, 22);"
     >
       <span
         class="arco-avatar-text"
@@ -209,7 +206,7 @@ exports[`renders Avatar/demo/group.md correctly 1`] = `
     </div>
     <div
       class="arco-avatar arco-avatar-circle"
-      style="width:24px;height:24px;font-size:12px;z-index:4;margin-left:-6px;background-color:#14C9C9"
+      style="width: 24px; height: 24px; font-size: 12px; z-index: 4; margin-left: -6px; background-color: rgb(20, 201, 201);"
     >
       <span
         class="arco-avatar-text"
@@ -219,7 +216,7 @@ exports[`renders Avatar/demo/group.md correctly 1`] = `
     </div>
     <div
       class="arco-avatar arco-avatar-circle"
-      style="width:24px;height:24px;font-size:12px;z-index:3;margin-left:-6px;background-color:#168CFF"
+      style="width: 24px; height: 24px; font-size: 12px; z-index: 3; margin-left: -6px; background-color: rgb(22, 140, 255);"
     >
       <span
         class="arco-avatar-text"
@@ -229,7 +226,7 @@ exports[`renders Avatar/demo/group.md correctly 1`] = `
     </div>
     <div
       class="arco-avatar arco-avatar-circle"
-      style="width:24px;height:24px;font-size:12px;z-index:2;margin-left:-6px;background-color:#FF7D00"
+      style="width: 24px; height: 24px; font-size: 12px; z-index: 2; margin-left: -6px; background-color: rgb(255, 125, 0);"
     >
       <span
         class="arco-avatar-text"
@@ -239,7 +236,7 @@ exports[`renders Avatar/demo/group.md correctly 1`] = `
     </div>
     <div
       class="arco-avatar arco-avatar-circle"
-      style="width:24px;height:24px;font-size:12px;z-index:1;margin-left:-6px;background-color:#FFC72E"
+      style="width: 24px; height: 24px; font-size: 12px; z-index: 1; margin-left: -6px; background-color: rgb(255, 199, 46);"
     >
       <span
         class="arco-avatar-text"
@@ -257,18 +254,18 @@ exports[`renders Avatar/demo/size.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-avatar arco-avatar-circle"
-          style="width:64px;height:64px;font-size:32px"
+          style="width: 64px; height: 64px; font-size: 32px;"
         >
           <span
             class="arco-avatar-text"
@@ -279,11 +276,11 @@ exports[`renders Avatar/demo/size.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-avatar arco-avatar-circle"
-          style="width:40px;height:40px;font-size:20px"
+          style="width: 40px; height: 40px; font-size: 20px;"
         >
           <span
             class="arco-avatar-text"
@@ -294,11 +291,11 @@ exports[`renders Avatar/demo/size.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-avatar arco-avatar-circle"
-          style="width:32px;height:32px;font-size:16px"
+          style="width: 32px; height: 32px; font-size: 16px;"
         >
           <span
             class="arco-avatar-text"
@@ -312,7 +309,7 @@ exports[`renders Avatar/demo/size.md correctly 1`] = `
       >
         <div
           class="arco-avatar arco-avatar-circle"
-          style="width:24px;height:24px;font-size:12px"
+          style="width: 24px; height: 24px; font-size: 12px;"
         >
           <span
             class="arco-avatar-text"
@@ -331,11 +328,11 @@ exports[`renders Avatar/demo/size.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-avatar arco-avatar-square"
-          style="width:64px;height:64px;font-size:32px"
+          style="width: 64px; height: 64px; font-size: 32px;"
         >
           <span
             class="arco-avatar-text"
@@ -346,11 +343,11 @@ exports[`renders Avatar/demo/size.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-avatar arco-avatar-square"
-          style="width:40px;height:40px;font-size:20px"
+          style="width: 40px; height: 40px; font-size: 20px;"
         >
           <span
             class="arco-avatar-text"
@@ -361,11 +358,11 @@ exports[`renders Avatar/demo/size.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-avatar arco-avatar-square"
-          style="width:32px;height:32px;font-size:16px"
+          style="width: 32px; height: 32px; font-size: 16px;"
         >
           <span
             class="arco-avatar-text"
@@ -379,7 +376,7 @@ exports[`renders Avatar/demo/size.md correctly 1`] = `
       >
         <div
           class="arco-avatar arco-avatar-square"
-          style="width:24px;height:24px;font-size:12px"
+          style="width: 24px; height: 24px; font-size: 12px;"
         >
           <span
             class="arco-avatar-text"
@@ -399,11 +396,11 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-avatar arco-avatar-circle arco-avatar-with-trigger-icon"
-      style="font-size:;background-color:#168CFF"
+      style="background-color: rgb(22, 140, 255);"
     >
       <span
         class="arco-avatar-text"
@@ -412,7 +409,7 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
       </span>
       <div
         class="arco-avatar-trigger-icon-button"
-        style="color:#3491FA"
+        style="color: rgb(52, 145, 250);"
       >
         <svg
           aria-hidden="true"
@@ -432,11 +429,11 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-avatar arco-avatar-circle arco-avatar-with-trigger-icon"
-      style="font-size:;background-color:#14C9C9"
+      style="background-color: rgb(20, 201, 201);"
     >
       <span
         class="arco-avatar-text"
@@ -462,7 +459,7 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
       </span>
       <div
         class="arco-avatar-trigger-icon-button"
-        style="color:#14C9C9"
+        style="color: rgb(20, 201, 201);"
       >
         <svg
           aria-hidden="true"
@@ -482,11 +479,11 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-avatar arco-avatar-square arco-avatar-with-trigger-icon"
-      style="font-size:;background-color:#FFC72E"
+      style="background-color: rgb(255, 199, 46);"
     >
       <span
         class="arco-avatar-text"
@@ -512,7 +509,7 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
       </span>
       <div
         class="arco-avatar-trigger-icon-button"
-        style="color:#FFC72E"
+        style="color: rgb(255, 199, 46);"
       >
         <svg
           aria-hidden="true"
@@ -535,7 +532,6 @@ exports[`renders Avatar/demo/triggerIcon.md correctly 1`] = `
   >
     <div
       class="arco-avatar arco-avatar-circle arco-avatar-with-trigger-icon"
-      style="font-size:"
     >
       <span
         class="arco-avatar-image"

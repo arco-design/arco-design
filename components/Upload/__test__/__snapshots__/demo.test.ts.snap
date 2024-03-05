@@ -6,7 +6,7 @@ exports[`renders Upload/demo/avatar.md correctly 1`] = `
     class="arco-upload arco-upload-type-text"
   >
     <input
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -38,7 +38,7 @@ exports[`renders Upload/demo/avatar.md correctly 1`] = `
                 />
               </svg>
               <div
-                style="margin-top:10px;font-weight:600"
+                style="margin-top: 10px; font-weight: 600;"
               >
                 Upload
               </div>
@@ -58,7 +58,7 @@ exports[`renders Upload/demo/basic.md correctly 1`] = `
       class="arco-upload arco-upload-type-text"
     >
       <input
-        style="display:none"
+        style="display: none;"
         type="file"
       />
       <div
@@ -95,10 +95,10 @@ exports[`renders Upload/demo/basic.md correctly 1`] = `
   <div>
     <div
       class="arco-upload arco-upload-type-text arco-upload-disabled"
-      style="margin-top:40px"
+      style="margin-top: 40px;"
     >
       <input
-        style="display:none"
+        style="display: none;"
         type="file"
       />
       <div
@@ -143,7 +143,7 @@ exports[`renders Upload/demo/beforeUpload.md correctly 1`] = `
   >
     <input
       multiple=""
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -188,7 +188,7 @@ exports[`renders Upload/demo/crop.md correctly 1`] = `
     class="arco-upload arco-upload-type-picture-card"
   >
     <input
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -232,7 +232,7 @@ Array [
     class="arco-upload arco-upload-type-text"
   >
     <input
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -275,7 +275,7 @@ exports[`renders Upload/demo/directory.md correctly 1`] = `
       class="arco-upload arco-upload-type-text"
     >
       <input
-        style="display:none"
+        style="display: none;"
         type="file"
         webkitdirectory="true"
       />
@@ -321,7 +321,7 @@ Array [
     <input
       accept="image/*"
       multiple=""
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -375,7 +375,7 @@ exports[`renders Upload/demo/icon.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
     role="radiogroup"
-    style="margin-left:20px;margin-bottom:20px"
+    style="margin-left: 20px; margin-bottom: 20px;"
   >
     <label
       class="arco-radio arco-radio-checked"
@@ -448,7 +448,7 @@ exports[`renders Upload/demo/icon.md correctly 1`] = `
     >
       <input
         multiple=""
-        style="display:none"
+        style="display: none;"
         type="file"
       />
       <div
@@ -677,7 +677,7 @@ Array [
   >
     <input
       multiple=""
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -720,7 +720,7 @@ Array [
   >
     <input
       multiple=""
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -734,7 +734,7 @@ Array [
         >
           <div
             class="arco-space-item"
-            style="margin-right:24px"
+            style="margin-right: 24px;"
           >
             <button
               class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -747,7 +747,7 @@ Array [
           </div>
           <div
             class="arco-space-item"
-            style="margin-right:24px"
+            style="margin-right: 24px;"
           >
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -787,7 +787,7 @@ exports[`renders Upload/demo/onRemove.md correctly 1`] = `
   >
     <input
       multiple=""
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -1001,7 +1001,7 @@ exports[`renders Upload/demo/pictureList.md correctly 1`] = `
   >
     <input
       multiple=""
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -1254,7 +1254,7 @@ exports[`renders Upload/demo/preview.md correctly 1`] = `
   >
     <input
       multiple=""
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -1301,7 +1301,7 @@ exports[`renders Upload/demo/progress.md correctly 1`] = `
   >
     <input
       multiple=""
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -1374,11 +1374,11 @@ exports[`renders Upload/demo/progress.md correctly 1`] = `
           </div>
           <div
             class="arco-upload-list-status"
-            style="width:100%"
+            style="width: 100%;"
           >
             <div
               class="arco-progress arco-progress-line arco-progress-small arco-upload-list-progress"
-              style="width:100%"
+              style="width: 100%;"
             >
               <div
                 class="arco-progress-line-wrapper"
@@ -1389,11 +1389,11 @@ exports[`renders Upload/demo/progress.md correctly 1`] = `
                   aria-valuenow="0"
                   class="arco-progress-line-outer"
                   role="progressbar"
-                  style="height:3px"
+                  style="height: 3px;"
                 >
                   <div
                     class="arco-progress-line-inner"
-                    style="width:0%"
+                    style="width: 0%;"
                   />
                 </div>
                 <div
@@ -1525,11 +1525,11 @@ exports[`renders Upload/demo/progress.md correctly 1`] = `
           </span>
           <div
             class="arco-upload-list-status"
-            style="width:100%"
+            style="width: 100%;"
           >
             <div
               class="arco-progress arco-progress-line arco-progress-small arco-progress-is-error arco-upload-list-progress"
-              style="width:100%"
+              style="width: 100%;"
             >
               <div
                 class="arco-progress-line-wrapper"
@@ -1540,11 +1540,11 @@ exports[`renders Upload/demo/progress.md correctly 1`] = `
                   aria-valuenow="0"
                   class="arco-progress-line-outer"
                   role="progressbar"
-                  style="height:3px"
+                  style="height: 3px;"
                 >
                   <div
                     class="arco-progress-line-inner"
-                    style="width:0%"
+                    style="width: 0%;"
                   />
                 </div>
                 <div
@@ -1614,7 +1614,7 @@ exports[`renders Upload/demo/renderUploadList.md correctly 1`] = `
     class="arco-upload arco-upload-type-text"
   >
     <input
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -1648,23 +1648,23 @@ exports[`renders Upload/demo/renderUploadList.md correctly 1`] = `
     class="arco-upload-list"
   >
     <div
-      style="display:flex;margin-top:20px"
+      style="display: flex; margin-top: 20px;"
     >
       <div
         class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable"
-        style="width:140px;margin-right:10px"
+        style="width: 140px; margin-right: 10px;"
       >
         <div
           class="arco-card-cover"
         >
           <img
             src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp"
-            style="width:100%"
+            style="width: 100%;"
           />
         </div>
         <div
           class="arco-card-body"
-          style="padding:4px 8px"
+          style="padding: 4px 8px;"
         >
           <div
             class="arco-card-meta"
@@ -1698,7 +1698,7 @@ exports[`renders Upload/demo/renderUploadList.md correctly 1`] = `
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="font-size:12px"
+                        style="font-size: 12px;"
                         viewBox="0 0 48 48"
                       >
                         <path
@@ -1722,7 +1722,7 @@ exports[`renders Upload/demo/renderUploadList.md correctly 1`] = `
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="font-size:12px"
+                        style="font-size: 12px;"
                         viewBox="0 0 48 48"
                       >
                         <path
@@ -1739,19 +1739,19 @@ exports[`renders Upload/demo/renderUploadList.md correctly 1`] = `
       </div>
       <div
         class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable"
-        style="width:140px;margin-right:10px"
+        style="width: 140px; margin-right: 10px;"
       >
         <div
           class="arco-card-cover"
         >
           <img
             src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3ee5f13fb09879ecb5185e440cef6eb9.png~tplv-uwbnlip3yd-webp.webp"
-            style="width:100%"
+            style="width: 100%;"
           />
         </div>
         <div
           class="arco-card-body"
-          style="padding:4px 8px"
+          style="padding: 4px 8px;"
         >
           <div
             class="arco-card-meta"
@@ -1785,7 +1785,7 @@ exports[`renders Upload/demo/renderUploadList.md correctly 1`] = `
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="font-size:12px"
+                        style="font-size: 12px;"
                         viewBox="0 0 48 48"
                       >
                         <path
@@ -1809,7 +1809,7 @@ exports[`renders Upload/demo/renderUploadList.md correctly 1`] = `
                         focusable="false"
                         stroke="currentColor"
                         stroke-width="4"
-                        style="font-size:12px"
+                        style="font-size: 12px;"
                         viewBox="0 0 48 48"
                       >
                         <path
@@ -1837,7 +1837,7 @@ exports[`renders Upload/demo/trigger.md correctly 1`] = `
     class="arco-upload arco-upload-type-text"
   >
     <input
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -1852,7 +1852,7 @@ exports[`renders Upload/demo/trigger.md correctly 1`] = `
           <div>
             Drag the file here or
             <span
-              style="color:#3370FF;padding:0 4px"
+              style="color: rgb(51, 112, 255); padding: 0px 4px;"
             >
               Click to upload
             </span>
@@ -1874,7 +1874,7 @@ exports[`renders Upload/demo/uploadList.md correctly 1`] = `
   >
     <input
       multiple=""
-      style="display:none"
+      style="display: none;"
       type="file"
     />
     <div
@@ -2071,7 +2071,7 @@ exports[`renders Upload/demo/uploadList.md correctly 1`] = `
                 aria-valuenow="0"
                 class="arco-progress-circle-wrapper"
                 role="progressbar"
-                style="width:16px;height:16px"
+                style="width: 16px; height: 16px;"
               >
                 <svg
                   class="arco-progress-circle-svg"
@@ -2092,7 +2092,7 @@ exports[`renders Upload/demo/uploadList.md correctly 1`] = `
                     fill="none"
                     r="4"
                     stroke-width="8"
-                    style="stroke-dasharray:25.132741228718345;stroke-dashoffset:25.132741228718345"
+                    style="stroke-dasharray: 25.132741228718345; stroke-dashoffset: 25.132741228718345;"
                   />
                 </svg>
               </div>

@@ -7,7 +7,7 @@ exports[`renders _hooks/useVerificationCode/demo/basic.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <input
         class="custom-code-input"
@@ -16,7 +16,7 @@ exports[`renders _hooks/useVerificationCode/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <input
         class="custom-code-input"
@@ -25,7 +25,7 @@ exports[`renders _hooks/useVerificationCode/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <input
         class="custom-code-input"
@@ -34,7 +34,7 @@ exports[`renders _hooks/useVerificationCode/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <input
         class="custom-code-input"
@@ -43,7 +43,7 @@ exports[`renders _hooks/useVerificationCode/demo/basic.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <input
         class="custom-code-input"

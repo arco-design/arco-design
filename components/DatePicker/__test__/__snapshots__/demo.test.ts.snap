@@ -3,7 +3,7 @@
 exports[`renders DatePicker/demo/basic.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-size-default"
-  style="width:200px"
+  style="width: 200px;"
 >
   <div
     class="arco-picker-input"
@@ -44,11 +44,11 @@ exports[`renders DatePicker/demo/control.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <div
       class="arco-picker arco-picker-size-default"
-      style="width:200px"
+      style="width: 200px;"
     >
       <div
         class="arco-picker-input"
@@ -56,12 +56,29 @@ exports[`renders DatePicker/demo/control.md correctly 1`] = `
         <input
           class="arco-picker-start-time"
           placeholder="请选择日期"
-          value=""
+          value="2020-04-10 20:32:59"
         />
       </div>
       <div
         class="arco-picker-suffix"
       >
+        <span
+          class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-close"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+            />
+          </svg>
+        </span>
         <span
           class="arco-picker-suffix-icon"
         >
@@ -94,14 +111,14 @@ exports[`renders DatePicker/demo/control.md correctly 1`] = `
   >
     <div
       class="arco-picker arco-picker-range arco-picker-size-default"
-      style="width:380px"
+      style="width: 380px;"
     >
       <div
         class="arco-picker-input arco-picker-input-active"
       >
         <input
           placeholder="开始日期"
-          value=""
+          value="2020-04-10 20:32:59"
         />
       </div>
       <span
@@ -114,12 +131,29 @@ exports[`renders DatePicker/demo/control.md correctly 1`] = `
       >
         <input
           placeholder="结束日期"
-          value=""
+          value="2020-04-10 20:32:59"
         />
       </div>
       <div
         class="arco-picker-suffix"
       >
+        <span
+          class="arco-icon-hover arco-picker-icon-hover arco-picker-clear-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-close"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M9.857 9.858 24 24m0 0 14.142 14.142M24 24 38.142 9.858M24 24 9.857 38.142"
+            />
+          </svg>
+        </span>
         <span
           class="arco-picker-suffix-icon"
         >
@@ -153,7 +187,7 @@ exports[`renders DatePicker/demo/control.md correctly 1`] = `
 exports[`renders DatePicker/demo/dateRender.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-size-default"
-  style="width:200px"
+  style="width: 200px;"
 >
   <div
     class="arco-picker-input"
@@ -192,7 +226,7 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
 <div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:220px;margin-bottom:24px;margin-right:24px"
+    style="width: 220px; margin-bottom: 24px; margin-right: 24px;"
   >
     <div
       class="arco-picker-input"
@@ -244,7 +278,7 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:240px;margin-bottom:24px;margin-right:24px"
+    style="width: 240px; margin-bottom: 24px; margin-right: 24px;"
   >
     <div
       class="arco-picker-input"
@@ -297,7 +331,7 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:220px;margin-bottom:24px;margin-right:24px"
+    style="width: 220px; margin-bottom: 24px; margin-right: 24px;"
   >
     <div
       class="arco-picker-input"
@@ -356,7 +390,7 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:220px;margin-bottom:24px;margin-right:24px"
+    style="width: 220px; margin-bottom: 24px; margin-right: 24px;"
   >
     <div
       class="arco-picker-input"
@@ -408,7 +442,7 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:220px;margin-bottom:24px;margin-right:24px"
+    style="width: 220px; margin-bottom: 24px; margin-right: 24px;"
   >
     <div
       class="arco-picker-input"
@@ -460,7 +494,7 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:220px;margin-bottom:24px;margin-right:24px"
+    style="width: 220px; margin-bottom: 24px; margin-right: 24px;"
   >
     <div
       class="arco-picker-input"
@@ -512,7 +546,7 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:360px;margin-bottom:24px;margin-right:24px"
+    style="width: 360px; margin-bottom: 24px; margin-right: 24px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -583,7 +617,7 @@ exports[`renders DatePicker/demo/defaultValue.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:300px;margin-bottom:24px"
+    style="width: 300px; margin-bottom: 24px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -652,7 +686,7 @@ exports[`renders DatePicker/demo/disabled.md correctly 1`] = `
 <div>
   <div
     class="arco-picker arco-picker-size-default arco-picker-disabled"
-    style="width:200px;margin-bottom:20px"
+    style="width: 200px; margin-bottom: 20px;"
   >
     <div
       class="arco-picker-input"
@@ -706,7 +740,7 @@ exports[`renders DatePicker/demo/disabled.md correctly 1`] = `
   <br />
   <div
     class="arco-picker arco-picker-range arco-picker-size-default arco-picker-disabled"
-    style="width:300px;margin-bottom:20px"
+    style="width: 300px; margin-bottom: 20px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -773,7 +807,7 @@ exports[`renders DatePicker/demo/disabled.md correctly 1`] = `
   <br />
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:300px;margin-bottom:20px"
+    style="width: 300px; margin-bottom: 20px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -839,7 +873,7 @@ exports[`renders DatePicker/demo/disabled.md correctly 1`] = `
   <br />
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:380px"
+    style="width: 380px;"
   >
     <div
       class="arco-picker-input"
@@ -899,7 +933,7 @@ exports[`renders DatePicker/demo/disabled-date.md correctly 1`] = `
 <div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:200px;margin-right:24px;margin-bottom:24px"
+    style="width: 200px; margin-right: 24px; margin-bottom: 24px;"
   >
     <div
       class="arco-picker-input"
@@ -934,7 +968,7 @@ exports[`renders DatePicker/demo/disabled-date.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:300px;margin-right:24px;margin-bottom:24px"
+    style="width: 300px; margin-right: 24px; margin-bottom: 24px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -981,7 +1015,7 @@ exports[`renders DatePicker/demo/disabled-date.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:200px;margin-right:24px;margin-bottom:24px"
+    style="width: 200px; margin-right: 24px; margin-bottom: 24px;"
   >
     <div
       class="arco-picker-input"
@@ -1023,7 +1057,7 @@ exports[`renders DatePicker/demo/disabled-date.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:380px;margin-bottom:24px"
+    style="width: 380px; margin-bottom: 24px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -1084,11 +1118,11 @@ exports[`renders DatePicker/demo/disabled-date-advance.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-picker arco-picker-range arco-picker-size-default"
-      style="width:300px"
+      style="width: 300px;"
     >
       <div
         class="arco-picker-input arco-picker-input-active"
@@ -1139,7 +1173,7 @@ exports[`renders DatePicker/demo/disabled-date-advance.md correctly 1`] = `
   >
     <div
       class="arco-picker arco-picker-range arco-picker-size-default"
-      style="width:400px"
+      style="width: 400px;"
     >
       <div
         class="arco-picker-input arco-picker-input-active"
@@ -1199,7 +1233,7 @@ exports[`renders DatePicker/demo/extra.md correctly 1`] = `
 <div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:200px;margin-bottom:20px"
+    style="width: 200px; margin-bottom: 20px;"
   >
     <div
       class="arco-picker-input"
@@ -1235,7 +1269,7 @@ exports[`renders DatePicker/demo/extra.md correctly 1`] = `
   <br />
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:380px"
+    style="width: 380px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -1293,7 +1327,7 @@ exports[`renders DatePicker/demo/extra.md correctly 1`] = `
 exports[`renders DatePicker/demo/month.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-size-default"
-  style="width:200px"
+  style="width: 200px;"
 >
   <div
     class="arco-picker-input"
@@ -1332,7 +1366,7 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
 <div>
   <div
     class="arco-picker-container arco-picker-panel-only"
-    style="width:268px"
+    style="width: 268px;"
   >
     <div
       class="arco-panel-date"
@@ -2058,7 +2092,7 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
   </div>
   <div
     class="arco-picker-range-container arco-picker-range-panel-only"
-    style="width:560px;margin-top:20px"
+    style="width: 560px; margin-top: 20px;"
   >
     <div
       class="arco-picker-range"
@@ -3438,11 +3472,11 @@ exports[`renders DatePicker/demo/prefix.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <div
       class="arco-picker arco-picker-size-default arco-picker-has-prefix"
-      style="width:200px"
+      style="width: 200px;"
     >
       <div
         class="arco-picker-prefix"
@@ -3498,7 +3532,7 @@ exports[`renders DatePicker/demo/prefix.md correctly 1`] = `
   >
     <div
       class="arco-picker arco-picker-range arco-picker-size-default arco-picker-has-prefix"
-      style="width:350px"
+      style="width: 350px;"
     >
       <div
         class="arco-picker-prefix"
@@ -3567,7 +3601,7 @@ exports[`renders DatePicker/demo/prefix.md correctly 1`] = `
 exports[`renders DatePicker/demo/quarter.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-size-default"
-  style="width:200px"
+  style="width: 200px;"
 >
   <div
     class="arco-picker-input"
@@ -3608,7 +3642,7 @@ exports[`renders DatePicker/demo/range.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
@@ -3700,7 +3734,7 @@ exports[`renders DatePicker/demo/range.md correctly 1`] = `
   >
     <div
       class="arco-picker arco-picker-range arco-picker-size-default"
-      style="width:254px;margin-bottom:20px"
+      style="width: 254px; margin-bottom: 20px;"
     >
       <div
         class="arco-picker-input arco-picker-input-active"
@@ -3753,7 +3787,7 @@ exports[`renders DatePicker/demo/shortcuts.md correctly 1`] = `
 <div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:200px;margin-bottom:24px;margin-right:24px"
+    style="width: 200px; margin-bottom: 24px; margin-right: 24px;"
   >
     <div
       class="arco-picker-input"
@@ -3795,7 +3829,7 @@ exports[`renders DatePicker/demo/shortcuts.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:200px;margin-bottom:24px;margin-right:24px"
+    style="width: 200px; margin-bottom: 24px; margin-right: 24px;"
   >
     <div
       class="arco-picker-input"
@@ -3830,7 +3864,7 @@ exports[`renders DatePicker/demo/shortcuts.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:280px;margin-bottom:24px;margin-right:24px"
+    style="width: 280px; margin-bottom: 24px; margin-right: 24px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -3877,7 +3911,7 @@ exports[`renders DatePicker/demo/shortcuts.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:240px;margin-bottom:24px"
+    style="width: 240px; margin-bottom: 24px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -3929,7 +3963,7 @@ exports[`renders DatePicker/demo/shortcuts-placement-left.md correctly 1`] = `
 <div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:254px;margin-bottom:20px"
+    style="width: 254px; margin-bottom: 20px;"
   >
     <div
       class="arco-picker-input"
@@ -3965,7 +3999,7 @@ exports[`renders DatePicker/demo/shortcuts-placement-left.md correctly 1`] = `
   <br />
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:300px"
+    style="width: 300px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -4017,7 +4051,7 @@ exports[`renders DatePicker/demo/showtime.md correctly 1`] = `
 <div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:220px;margin:0 24px 24px 0"
+    style="width: 220px; margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input"
@@ -4059,7 +4093,7 @@ exports[`renders DatePicker/demo/showtime.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:220px;margin:0 24px 24px 0"
+    style="width: 220px; margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input"
@@ -4101,7 +4135,7 @@ exports[`renders DatePicker/demo/showtime.md correctly 1`] = `
   </div>
   <div
     class="arco-picker arco-picker-range arco-picker-size-default"
-    style="width:360px;margin:0 24px 24px 0"
+    style="width: 360px; margin: 0px 24px 24px 0px;"
   >
     <div
       class="arco-picker-input arco-picker-input-active"
@@ -4161,7 +4195,7 @@ exports[`renders DatePicker/demo/size.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
     role="radiogroup"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-radio-button"
@@ -4224,7 +4258,7 @@ exports[`renders DatePicker/demo/size.md correctly 1`] = `
   <br />
   <div
     class="arco-picker arco-picker-size-default"
-    style="width:254px"
+    style="width: 254px;"
   >
     <div
       class="arco-picker-input"
@@ -4267,11 +4301,11 @@ exports[`renders DatePicker/demo/status.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:8px;margin-bottom:8px"
+      style="margin-right: 8px; margin-bottom: 8px;"
     >
       <div
         class="arco-picker arco-picker-size-default arco-picker-error"
-        style="width:200px"
+        style="width: 200px;"
       >
         <div
           class="arco-picker-input"
@@ -4307,11 +4341,11 @@ exports[`renders DatePicker/demo/status.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-bottom:8px"
+      style="margin-bottom: 8px;"
     >
       <div
         class="arco-picker arco-picker-range arco-picker-size-default arco-picker-error"
-        style="width:250px"
+        style="width: 250px;"
       >
         <div
           class="arco-picker-input arco-picker-input-active"
@@ -4364,11 +4398,11 @@ exports[`renders DatePicker/demo/status.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:8px;margin-bottom:8px"
+      style="margin-right: 8px; margin-bottom: 8px;"
     >
       <div
         class="arco-picker arco-picker-size-default arco-picker-warning"
-        style="width:200px"
+        style="width: 200px;"
       >
         <div
           class="arco-picker-input"
@@ -4404,11 +4438,11 @@ exports[`renders DatePicker/demo/status.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-bottom:8px"
+      style="margin-bottom: 8px;"
     >
       <div
         class="arco-picker arco-picker-range arco-picker-size-default arco-picker-warning"
-        style="width:250px"
+        style="width: 250px;"
       >
         <div
           class="arco-picker-input arco-picker-input-active"
@@ -4464,17 +4498,18 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:8px"
+        style="margin-right: 8px;"
       >
         <div
           aria-autocomplete="list"
+          aria-controls="arco-select-popup-0"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-default"
@@ -4492,7 +4527,7 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
                 aria-hidden="true"
                 autocomplete="off"
                 class="arco-select-view-input arco-select-hidden"
-                style="width:100%;pointer-events:none"
+                style="width: 100%; pointer-events: none;"
                 tabindex="-1"
                 value=""
               />
@@ -4529,7 +4564,7 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:8px"
+        style="margin-right: 8px;"
       >
         <div
           class="arco-picker arco-picker-size-default"
@@ -4668,7 +4703,7 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-alert arco-alert-info"
@@ -4685,7 +4720,7 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
           >
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div
                 class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -4699,7 +4734,7 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
             </div>
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div>
                 <span
@@ -4714,7 +4749,7 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
             </div>
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div>
                 <span
@@ -4764,7 +4799,7 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
           >
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div
                 class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -4778,7 +4813,7 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
             </div>
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div>
                 <span
@@ -4793,7 +4828,7 @@ exports[`renders DatePicker/demo/timezone.md correctly 1`] = `
             </div>
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div>
                 <span
@@ -4834,7 +4869,7 @@ exports[`renders DatePicker/demo/triggerElement.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -4866,17 +4901,18 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:8px"
+        style="margin-right: 8px;"
       >
         <div
           aria-autocomplete="list"
+          aria-controls="arco-select-popup-1"
           aria-expanded="false"
           aria-haspopup="listbox"
           class="arco-select arco-select-single arco-select-size-default"
@@ -4894,7 +4930,7 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
                 aria-hidden="true"
                 autocomplete="off"
                 class="arco-select-view-input arco-select-hidden"
-                style="width:100%;pointer-events:none"
+                style="width: 100%; pointer-events: none;"
                 tabindex="-1"
                 value=""
               />
@@ -4931,7 +4967,7 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:8px"
+        style="margin-right: 8px;"
       >
         <div
           class="arco-picker arco-picker-size-default"
@@ -5070,7 +5106,7 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:8px"
+    style="margin-bottom: 8px;"
   >
     <div
       class="arco-alert arco-alert-info"
@@ -5087,7 +5123,7 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
           >
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div
                 class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -5101,7 +5137,7 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
             </div>
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div>
                 <span
@@ -5116,7 +5152,7 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
             </div>
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div>
                 <span
@@ -5166,7 +5202,7 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
           >
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div
                 class="arco-tag arco-tag-gray arco-tag-checked arco-tag-size-default arco-tag-bordered"
@@ -5180,7 +5216,7 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
             </div>
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div>
                 <span
@@ -5195,7 +5231,7 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
             </div>
             <div
               class="arco-space-item"
-              style="margin-bottom:8px"
+              style="margin-bottom: 8px;"
             >
               <div>
                 <span
@@ -5233,7 +5269,7 @@ exports[`renders DatePicker/demo/utcOffset.md correctly 1`] = `
 exports[`renders DatePicker/demo/week.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-size-default"
-  style="width:200px"
+  style="width: 200px;"
 >
   <div
     class="arco-picker-input"
@@ -5271,7 +5307,7 @@ exports[`renders DatePicker/demo/week.md correctly 1`] = `
 exports[`renders DatePicker/demo/year.md correctly 1`] = `
 <div
   class="arco-picker arco-picker-size-default"
-  style="width:200px"
+  style="width: 200px;"
 >
   <div
     class="arco-picker-input"

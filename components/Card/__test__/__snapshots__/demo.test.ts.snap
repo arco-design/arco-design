@@ -2,11 +2,11 @@
 
 exports[`renders Card/demo/basic.md correctly 1`] = `
 <div
-  style="display:flex"
+  style="display: flex;"
 >
   <div
     class="arco-card arco-card-size-default arco-card-bordered"
-    style="width:360px"
+    style="width: 360px;"
   >
     <div
       class="arco-card-header"
@@ -38,18 +38,18 @@ exports[`renders Card/demo/basic.md correctly 1`] = `
 exports[`renders Card/demo/card-grid.md correctly 1`] = `
 <div
   class="arco-card arco-card-size-default arco-card-contain-grid"
-  style="width:100%"
+  style="width: 100%;"
 >
   <div
     class="arco-card-body"
   >
     <div
       class="arco-card-grid arco-card-grid-hoverable"
-      style="width:25%"
+      style="width: 25%;"
     >
       <div
         class="arco-card arco-card-size-default card-demo-in-grid"
-        style="width:100%"
+        style="width: 100%;"
       >
         <div
           class="arco-card-header"
@@ -73,96 +73,12 @@ exports[`renders Card/demo/card-grid.md correctly 1`] = `
           class="arco-card-body"
         >
           <p
-            style="margin:0"
+            style="margin: 0px;"
           >
             Card allow to hover
           </p>
           <p
-            style="margin:0"
-          >
-            Card allow to hover
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-card-grid"
-      style="width:25%"
-    >
-      <div
-        class="arco-card arco-card-size-default card-demo-in-grid"
-        style="width:100%"
-      >
-        <div
-          class="arco-card-header"
-        >
-          <div
-            class="arco-card-header-title"
-          >
-            Arco Card
-          </div>
-          <div
-            class="arco-card-header-extra"
-          >
-            <span
-              class="arco-link"
-            >
-              More
-            </span>
-          </div>
-        </div>
-        <div
-          class="arco-card-body"
-        >
-          <p
-            style="margin:0"
-          >
-            Card content
-          </p>
-          <p
-            style="margin:0"
-          >
-            Card content
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="arco-card-grid arco-card-grid-hoverable"
-      style="width:25%"
-    >
-      <div
-        class="arco-card arco-card-size-default card-demo-in-grid"
-        style="width:100%"
-      >
-        <div
-          class="arco-card-header"
-        >
-          <div
-            class="arco-card-header-title"
-          >
-            Arco Card
-          </div>
-          <div
-            class="arco-card-header-extra"
-          >
-            <span
-              class="arco-link"
-            >
-              More
-            </span>
-          </div>
-        </div>
-        <div
-          class="arco-card-body"
-        >
-          <p
-            style="margin:0"
-          >
-            Card allow to hover
-          </p>
-          <p
-            style="margin:0"
+            style="margin: 0px;"
           >
             Card allow to hover
           </p>
@@ -171,11 +87,11 @@ exports[`renders Card/demo/card-grid.md correctly 1`] = `
     </div>
     <div
       class="arco-card-grid"
-      style="width:25%"
+      style="width: 25%;"
     >
       <div
         class="arco-card arco-card-size-default card-demo-in-grid"
-        style="width:100%"
+        style="width: 100%;"
       >
         <div
           class="arco-card-header"
@@ -199,12 +115,12 @@ exports[`renders Card/demo/card-grid.md correctly 1`] = `
           class="arco-card-body"
         >
           <p
-            style="margin:0"
+            style="margin: 0px;"
           >
             Card content
           </p>
           <p
-            style="margin:0"
+            style="margin: 0px;"
           >
             Card content
           </p>
@@ -213,11 +129,11 @@ exports[`renders Card/demo/card-grid.md correctly 1`] = `
     </div>
     <div
       class="arco-card-grid arco-card-grid-hoverable"
-      style="width:25%"
+      style="width: 25%;"
     >
       <div
         class="arco-card arco-card-size-default card-demo-in-grid"
-        style="width:100%"
+        style="width: 100%;"
       >
         <div
           class="arco-card-header"
@@ -241,12 +157,12 @@ exports[`renders Card/demo/card-grid.md correctly 1`] = `
           class="arco-card-body"
         >
           <p
-            style="margin:0"
+            style="margin: 0px;"
           >
             Card allow to hover
           </p>
           <p
-            style="margin:0"
+            style="margin: 0px;"
           >
             Card allow to hover
           </p>
@@ -255,11 +171,11 @@ exports[`renders Card/demo/card-grid.md correctly 1`] = `
     </div>
     <div
       class="arco-card-grid"
-      style="width:25%"
+      style="width: 25%;"
     >
       <div
         class="arco-card arco-card-size-default card-demo-in-grid"
-        style="width:100%"
+        style="width: 100%;"
       >
         <div
           class="arco-card-header"
@@ -283,12 +199,12 @@ exports[`renders Card/demo/card-grid.md correctly 1`] = `
           class="arco-card-body"
         >
           <p
-            style="margin:0"
+            style="margin: 0px;"
           >
             Card content
           </p>
           <p
-            style="margin:0"
+            style="margin: 0px;"
           >
             Card content
           </p>
@@ -297,11 +213,11 @@ exports[`renders Card/demo/card-grid.md correctly 1`] = `
     </div>
     <div
       class="arco-card-grid arco-card-grid-hoverable"
-      style="width:25%"
+      style="width: 25%;"
     >
       <div
         class="arco-card arco-card-size-default card-demo-in-grid"
-        style="width:100%"
+        style="width: 100%;"
       >
         <div
           class="arco-card-header"
@@ -325,12 +241,96 @@ exports[`renders Card/demo/card-grid.md correctly 1`] = `
           class="arco-card-body"
         >
           <p
-            style="margin:0"
+            style="margin: 0px;"
           >
             Card allow to hover
           </p>
           <p
-            style="margin:0"
+            style="margin: 0px;"
+          >
+            Card allow to hover
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-card-grid"
+      style="width: 25%;"
+    >
+      <div
+        class="arco-card arco-card-size-default card-demo-in-grid"
+        style="width: 100%;"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          <p
+            style="margin: 0px;"
+          >
+            Card content
+          </p>
+          <p
+            style="margin: 0px;"
+          >
+            Card content
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-card-grid arco-card-grid-hoverable"
+      style="width: 25%;"
+    >
+      <div
+        class="arco-card arco-card-size-default card-demo-in-grid"
+        style="width: 100%;"
+      >
+        <div
+          class="arco-card-header"
+        >
+          <div
+            class="arco-card-header-title"
+          >
+            Arco Card
+          </div>
+          <div
+            class="arco-card-header-extra"
+          >
+            <span
+              class="arco-link"
+            >
+              More
+            </span>
+          </div>
+        </div>
+        <div
+          class="arco-card-body"
+        >
+          <p
+            style="margin: 0px;"
+          >
+            Card allow to hover
+          </p>
+          <p
+            style="margin: 0px;"
           >
             Card allow to hover
           </p>
@@ -347,11 +347,11 @@ exports[`renders Card/demo/hoverable.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <div
       class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable"
-      style="width:360px"
+      style="width: 360px;"
     >
       <div
         class="arco-card-header"
@@ -385,7 +385,7 @@ exports[`renders Card/demo/hoverable.md correctly 1`] = `
   >
     <div
       class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable card-custom-hover-style"
-      style="width:360px"
+      style="width: 360px;"
     >
       <div
         class="arco-card-header"
@@ -435,7 +435,7 @@ exports[`renders Card/demo/inner-card.md correctly 1`] = `
   >
     <div
       class="arco-card arco-card-size-default arco-card-bordered"
-      style="margin-bottom:20px"
+      style="margin-bottom: 20px;"
     >
       <div
         class="arco-card-header"
@@ -495,18 +495,18 @@ exports[`renders Card/demo/inner-card.md correctly 1`] = `
 exports[`renders Card/demo/meta.md correctly 1`] = `
 <div
   class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable"
-  style="width:360px"
+  style="width: 360px;"
 >
   <div
     class="arco-card-cover"
   >
     <div
-      style="height:204px;overflow:hidden"
+      style="height: 204px; overflow: hidden;"
     >
       <img
         alt="dessert"
         src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/3ee5f13fb09879ecb5185e440cef6eb9.png~tplv-uwbnlip3yd-webp.webp"
-        style="width:100%;transform:translateY(-20px)"
+        style="width: 100%; transform: translateY(-20px);"
       />
     </div>
   </div>
@@ -540,15 +540,15 @@ exports[`renders Card/demo/meta.md correctly 1`] = `
 exports[`renders Card/demo/no-border.md correctly 1`] = `
 <div
   class="arco-space arco-space-horizontal arco-space-align-center"
-  style="padding:40px;background-color:var(--color-fill-2)"
+  style="padding: 40px;"
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-card arco-card-size-default"
-      style="width:360px"
+      style="width: 360px;"
     >
       <div
         class="arco-card-header"
@@ -582,7 +582,7 @@ exports[`renders Card/demo/no-border.md correctly 1`] = `
   >
     <div
       class="arco-card arco-card-size-default arco-card-hoverable"
-      style="width:360px"
+      style="width: 360px;"
     >
       <div
         class="arco-card-header"
@@ -618,29 +618,29 @@ exports[`renders Card/demo/only-content.md correctly 1`] = `
 Array [
   <div
     class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable"
-    style="width:360px;margin-bottom:20px"
+    style="width: 360px; margin-bottom: 20px;"
   >
     <div
       class="arco-card-body"
     >
       <div
         class="arco-space arco-space-horizontal arco-space-align-center"
-        style="display:flex;align-items:center;justify-content:space-between"
+        style="display: flex; align-items: center; justify-content: space-between;"
       >
         <div
           class="arco-space-item"
-          style="margin-right:8px"
+          style="margin-right: 8px;"
         >
           <div
             class="arco-space arco-space-horizontal arco-space-align-center"
           >
             <div
               class="arco-space-item"
-              style="margin-right:8px"
+              style="margin-right: 8px;"
             >
               <div
                 class="arco-avatar arco-avatar-circle"
-                style="width:28px;height:28px;font-size:14px;background-color:#165DFF"
+                style="width: 28px; height: 28px; font-size: 14px; background-color: rgb(22, 93, 255);"
               >
                 <span
                   class="arco-avatar-text"
@@ -674,29 +674,29 @@ Array [
   </div>,
   <div
     class="arco-card arco-card-size-default arco-card-bordered arco-card-hoverable card-with-icon-hover"
-    style="width:360px"
+    style="width: 360px;"
   >
     <div
       class="arco-card-body"
     >
       <div
         class="arco-space arco-space-horizontal arco-space-align-center"
-        style="display:flex;align-items:center;justify-content:space-between"
+        style="display: flex; align-items: center; justify-content: space-between;"
       >
         <div
           class="arco-space-item"
-          style="margin-right:8px"
+          style="margin-right: 8px;"
         >
           <div
             class="arco-space arco-space-horizontal arco-space-align-center"
           >
             <div
               class="arco-space-item"
-              style="margin-right:8px"
+              style="margin-right: 8px;"
             >
               <div
                 class="arco-avatar arco-avatar-circle"
-                style="width:28px;height:28px;font-size:14px;background-color:#165DFF"
+                style="width: 28px; height: 28px; font-size: 14px; background-color: rgb(22, 93, 255);"
               >
                 <span
                   class="arco-avatar-text"
@@ -729,7 +729,7 @@ Array [
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="cursor:pointer"
+              style="cursor: pointer;"
               viewBox="0 0 48 48"
             >
               <path
@@ -747,18 +747,18 @@ Array [
 exports[`renders Card/demo/with-actions.md correctly 1`] = `
 <div
   class="arco-card arco-card-size-default arco-card-bordered card-with-icon-hover"
-  style="width:360px"
+  style="width: 360px;"
 >
   <div
     class="arco-card-cover"
   >
     <div
-      style="height:204px;overflow:hidden"
+      style="height: 204px; overflow: hidden;"
     >
       <img
         alt="dessert"
         src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a20012a2d4d5b9db43dfc6a01fe508c0.png~tplv-uwbnlip3yd-webp.webp"
-        style="width:100%;transform:translateY(-20px)"
+        style="width: 100%; transform: translateY(-20px);"
       />
     </div>
   </div>
@@ -793,11 +793,11 @@ exports[`renders Card/demo/with-actions.md correctly 1`] = `
           >
             <div
               class="arco-space-item"
-              style="margin-right:8px"
+              style="margin-right: 8px;"
             >
               <div
                 class="arco-avatar arco-avatar-circle"
-                style="width:24px;height:24px;font-size:12px"
+                style="width: 24px; height: 24px; font-size: 12px;"
               >
                 <span
                   class="arco-avatar-text"
@@ -901,19 +901,19 @@ exports[`renders Card/demo/with-actions.md correctly 1`] = `
 
 exports[`renders Card/demo/with-row.md correctly 1`] = `
 <div
-  style="box-sizing:border-box;width:100%;padding:40px;background-color:var(--color-fill-2)"
+  style="box-sizing: border-box; width: 100%; padding: 40px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start"
-    style="margin-bottom:20px;margin-left:-10px;margin-right:-10px"
+    style="margin-bottom: 20px; margin-left: -10px; margin-right: -10px;"
   >
     <div
       class="arco-col arco-col-8"
-      style="padding-left:10px;padding-right:10px"
+      style="padding-left: 10px; padding-right: 10px;"
     >
       <div
         class="arco-card arco-card-size-default"
-        style="width:100%"
+        style="width: 100%;"
       >
         <div
           class="arco-card-header"
@@ -942,11 +942,11 @@ exports[`renders Card/demo/with-row.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-8"
-      style="padding-left:10px;padding-right:10px"
+      style="padding-left: 10px; padding-right: 10px;"
     >
       <div
         class="arco-card arco-card-size-default"
-        style="width:100%"
+        style="width: 100%;"
       >
         <div
           class="arco-card-header"
@@ -975,11 +975,11 @@ exports[`renders Card/demo/with-row.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-8"
-      style="padding-left:10px;padding-right:10px"
+      style="padding-left: 10px; padding-right: 10px;"
     >
       <div
         class="arco-card arco-card-size-default"
-        style="width:100%"
+        style="width: 100%;"
       >
         <div
           class="arco-card-header"
@@ -1009,15 +1009,15 @@ exports[`renders Card/demo/with-row.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start"
-    style="margin-left:-10px;margin-right:-10px"
+    style="margin-left: -10px; margin-right: -10px;"
   >
     <div
       class="arco-col arco-col-16"
-      style="padding-left:10px;padding-right:10px"
+      style="padding-left: 10px; padding-right: 10px;"
     >
       <div
         class="arco-card arco-card-size-default"
-        style="width:100%"
+        style="width: 100%;"
       >
         <div
           class="arco-card-header"
@@ -1046,11 +1046,11 @@ exports[`renders Card/demo/with-row.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-8"
-      style="padding-left:10px;padding-right:10px"
+      style="padding-left: 10px; padding-right: 10px;"
     >
       <div
         class="arco-card arco-card-size-default"
-        style="width:100%"
+        style="width: 100%;"
       >
         <div
           class="arco-card-header"
@@ -1087,7 +1087,7 @@ Array [
     aria-checked="false"
     class="arco-switch arco-switch-type-circle"
     role="switch"
-    style="display:block;margin-bottom:10px"
+    style="display: block; margin-bottom: 10px;"
     type="button"
   >
     <div
@@ -1099,11 +1099,11 @@ Array [
   >
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <div
         class="arco-card arco-card-size-default arco-card-bordered"
-        style="width:384px"
+        style="width: 384px;"
       >
         <div
           class="arco-card-cover"
@@ -1116,7 +1116,7 @@ Array [
             >
               <div
                 class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-square"
-                style="width:352px;height:188px;margin:16px 16px 0 16px"
+                style="width: 352px; height: 188px; margin: 16px 16px 0px 16px;"
               />
             </div>
             <div
@@ -1142,7 +1142,7 @@ Array [
               >
                 <div
                   class="arco-skeleton"
-                  style="margin-top:0"
+                  style="margin-top: 0px;"
                 >
                   <div
                     class="arco-skeleton-content"
@@ -1152,7 +1152,7 @@ Array [
                     >
                       <li
                         class="arco-skeleton-text-row"
-                        style="width:72px"
+                        style="width: 72px;"
                       />
                     </ul>
                   </div>
@@ -1172,7 +1172,7 @@ Array [
                     >
                       <li
                         class="arco-skeleton-text-row"
-                        style="width:150px"
+                        style="width: 150px;"
                       />
                     </ul>
                   </div>
@@ -1187,14 +1187,14 @@ Array [
               >
                 <div
                   class="arco-skeleton"
-                  style="display:flex;align-items:center;margin-top:4px"
+                  style="display: flex; align-items: center; margin-top: 4px;"
                 >
                   <div
                     class="arco-skeleton-header"
                   >
                     <div
                       class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-circle"
-                      style="width:24px;height:24px"
+                      style="width: 24px; height: 24px;"
                     />
                   </div>
                   <div
@@ -1205,7 +1205,7 @@ Array [
                     >
                       <li
                         class="arco-skeleton-text-row"
-                        style="width:64px"
+                        style="width: 64px;"
                       />
                     </ul>
                   </div>
@@ -1221,7 +1221,7 @@ Array [
     >
       <div
         class="arco-card arco-card-size-default arco-card-bordered"
-        style="width:384px"
+        style="width: 384px;"
       >
         <div
           class="arco-card-header"
@@ -1240,7 +1240,7 @@ Array [
                 >
                   <li
                     class="arco-skeleton-text-row"
-                    style="width:72px"
+                    style="width: 72px;"
                   />
                 </ul>
               </div>
@@ -1257,11 +1257,11 @@ Array [
               >
                 <ul
                   class="arco-skeleton-text"
-                  style="width:30px;float:right"
+                  style="width: 30px; float: right;"
                 >
                   <li
                     class="arco-skeleton-text-row"
-                    style="width:100%"
+                    style="width: 100%;"
                   />
                 </ul>
               </div>
@@ -1282,11 +1282,11 @@ Array [
               >
                 <li
                   class="arco-skeleton-text-row"
-                  style="width:100%"
+                  style="width: 100%;"
                 />
                 <li
                   class="arco-skeleton-text-row"
-                  style="width:80%"
+                  style="width: 80%;"
                 />
               </ul>
             </div>
@@ -1302,14 +1302,14 @@ Array [
               >
                 <div
                   class="arco-skeleton"
-                  style="display:flex;align-items:center;margin-top:4px"
+                  style="display: flex; align-items: center; margin-top: 4px;"
                 >
                   <div
                     class="arco-skeleton-header"
                   >
                     <div
                       class="arco-skeleton-image arco-skeleton-image-left arco-skeleton-image-circle"
-                      style="width:24px;height:24px"
+                      style="width: 24px; height: 24px;"
                     />
                   </div>
                   <div
@@ -1320,7 +1320,7 @@ Array [
                     >
                       <li
                         class="arco-skeleton-text-row"
-                        style="width:64px"
+                        style="width: 64px;"
                       />
                     </ul>
                   </div>
@@ -1338,7 +1338,7 @@ Array [
 exports[`renders Card/demo/with-tab.md correctly 1`] = `
 <div
   class="arco-card arco-card-size-default arco-card-bordered"
-  style="width:100%"
+  style="width: 100%;"
 >
   <div
     class="arco-card-header"
@@ -1363,7 +1363,7 @@ exports[`renders Card/demo/with-tab.md correctly 1`] = `
   >
     <div
       class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default"
-      style="max-width:350px;margin:-15px"
+      style="max-width: 350px; margin: -15px;"
     >
       <div
         class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
@@ -1376,11 +1376,13 @@ exports[`renders Card/demo/with-tab.md correctly 1`] = `
           >
             <div
               class="arco-tabs-header"
-              style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+              style="transform: translateX(0px);"
             >
               <div
+                aria-controls="arco-tabs-0-panel-0"
                 aria-selected="true"
                 class="arco-tabs-header-title arco-tabs-header-title-active"
+                id="arco-tabs-0-tab-0"
                 role="tab"
                 tabindex="0"
               >
@@ -1391,8 +1393,10 @@ exports[`renders Card/demo/with-tab.md correctly 1`] = `
                 </span>
               </div>
               <div
+                aria-controls="arco-tabs-0-panel-1"
                 aria-selected="false"
                 class="arco-tabs-header-title"
+                id="arco-tabs-0-tab-1"
                 role="tab"
                 tabindex="0"
               >
@@ -1403,8 +1407,10 @@ exports[`renders Card/demo/with-tab.md correctly 1`] = `
                 </span>
               </div>
               <div
+                aria-controls="arco-tabs-0-panel-2"
                 aria-selected="false"
                 class="arco-tabs-header-title"
+                id="arco-tabs-0-tab-2"
                 role="tab"
                 tabindex="0"
               >
@@ -1415,8 +1421,10 @@ exports[`renders Card/demo/with-tab.md correctly 1`] = `
                 </span>
               </div>
               <div
+                aria-controls="arco-tabs-0-panel-3"
                 aria-selected="false"
                 class="arco-tabs-header-title"
+                id="arco-tabs-0-tab-3"
                 role="tab"
                 tabindex="0"
               >
@@ -1438,10 +1446,12 @@ exports[`renders Card/demo/with-tab.md correctly 1`] = `
       >
         <div
           class="arco-tabs-content-inner"
-          style="margin-left:-0%"
+          style="margin-left: -0%;"
         >
           <div
+            aria-labelledby="arco-tabs-0-tab-0"
             class="arco-tabs-content-item arco-tabs-content-item-active"
+            id="arco-tabs-0-panel-0"
             role="tabpanel"
             tabindex="0"
           >
@@ -1449,7 +1459,7 @@ exports[`renders Card/demo/with-tab.md correctly 1`] = `
               class="arco-tabs-pane"
             >
               <div
-                style="margin:0px 16px 16px 16px"
+                style="margin: 0px 16px 16px 16px;"
               >
                 Content 0
                 <br />
@@ -1461,19 +1471,25 @@ exports[`renders Card/demo/with-tab.md correctly 1`] = `
           </div>
           <div
             aria-hidden="true"
+            aria-labelledby="arco-tabs-0-tab-1"
             class="arco-tabs-content-item"
+            id="arco-tabs-0-panel-1"
             role="tabpanel"
             tabindex="-1"
           />
           <div
             aria-hidden="true"
+            aria-labelledby="arco-tabs-0-tab-2"
             class="arco-tabs-content-item"
+            id="arco-tabs-0-panel-2"
             role="tabpanel"
             tabindex="-1"
           />
           <div
             aria-hidden="true"
+            aria-labelledby="arco-tabs-0-tab-3"
             class="arco-tabs-content-item"
+            id="arco-tabs-0-panel-3"
             role="tabpanel"
             tabindex="-1"
           />

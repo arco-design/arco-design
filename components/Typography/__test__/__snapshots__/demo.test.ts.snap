@@ -3,7 +3,7 @@
 exports[`renders Typography/demo/basic.md correctly 1`] = `
 <article
   class="arco-typography"
-  style="margin-top:-40px"
+  style="margin-top: -40px;"
 >
   <h1
     class="arco-typography"
@@ -164,7 +164,6 @@ exports[`renders Typography/demo/ellipsis-action.md correctly 1`] = `
   >
     <div
       class="arco-ellipsis-content-mirror arco-ellipsis-multiple arco-ellipsis-collapsed"
-      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:4"
     >
       <span
         class="arco-ellipsis-text"
@@ -174,7 +173,6 @@ exports[`renders Typography/demo/ellipsis-action.md correctly 1`] = `
     </div>
     <div
       class="arco-ellipsis-content arco-ellipsis-multiple"
-      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:4"
     >
       <span
         class="arco-ellipsis-text"
@@ -193,11 +191,11 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:120px"
+      style="margin-right: 120px;"
     >
       <form
         class="arco-form arco-form-horizontal arco-form-size-small"
-        style="width:400px"
+        style="width: 400px;"
       >
         <div
           class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -390,7 +388,7 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
                   >
                     <div
                       class="arco-space-item"
-                      style="margin-right:16px"
+                      style="margin-right: 16px;"
                     >
                       <button
                         class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-square"
@@ -458,7 +456,7 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
     >
       <div
         class="arco-descriptions arco-descriptions-layout-horizontal"
-        style="margin-bottom:20px"
+        style="margin-bottom: 20px;"
       >
         <div
           class="arco-descriptions-title"
@@ -479,7 +477,7 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
               >
                 <td
                   class="arco-descriptions-item-label"
-                  style="padding-right:36px"
+                  style="padding-right: 36px;"
                 >
                   disabled
                 </td>
@@ -494,7 +492,7 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
               >
                 <td
                   class="arco-descriptions-item-label"
-                  style="padding-right:36px"
+                  style="padding-right: 36px;"
                 >
                   expandable
                 </td>
@@ -509,7 +507,7 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
               >
                 <td
                   class="arco-descriptions-item-label"
-                  style="padding-right:36px"
+                  style="padding-right: 36px;"
                 >
                   expanded
                 </td>
@@ -524,7 +522,7 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
               >
                 <td
                   class="arco-descriptions-item-label"
-                  style="padding-right:36px"
+                  style="padding-right: 36px;"
                 >
                   showTooltip
                 </td>
@@ -539,7 +537,7 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
               >
                 <td
                   class="arco-descriptions-item-label"
-                  style="padding-right:36px"
+                  style="padding-right: 36px;"
                 >
                   rows
                 </td>
@@ -557,14 +555,13 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
   </div>
   <div
     class="arco-resizebox"
-    style="width:500px;min-width:100px"
+    style="width: 500px; min-width: 100px;"
   >
     <div
       class="arco-ellipsis"
     >
       <div
         class="arco-ellipsis-content-mirror arco-ellipsis-multiple arco-ellipsis-collapsed"
-        style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:4"
       >
         <span
           class="arco-ellipsis-text"
@@ -574,7 +571,6 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
       </div>
       <div
         class="arco-ellipsis-content arco-ellipsis-multiple arco-ellipsis-collapsed"
-        style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:4"
       >
         <span
           class="arco-ellipsis-text"
@@ -630,11 +626,11 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:120px"
+      style="margin-right: 120px;"
     >
       <form
         class="arco-form arco-form-horizontal arco-form-size-small"
-        style="width:400px"
+        style="width: 400px;"
       >
         <div
           class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -815,7 +811,7 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
                   >
                     <div
                       class="arco-space-item"
-                      style="margin-right:16px"
+                      style="margin-right: 16px;"
                     >
                       <button
                         class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-square"
@@ -886,7 +882,7 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
     >
       <div
         class="arco-descriptions arco-descriptions-layout-horizontal"
-        style="margin-bottom:20px"
+        style="margin-bottom: 20px;"
       >
         <div
           class="arco-descriptions-title"
@@ -907,7 +903,7 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
               >
                 <td
                   class="arco-descriptions-item-label"
-                  style="padding-right:36px"
+                  style="padding-right: 36px;"
                 >
                   ellipsisStr
                 </td>
@@ -922,7 +918,7 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
               >
                 <td
                   class="arco-descriptions-item-label"
-                  style="padding-right:36px"
+                  style="padding-right: 36px;"
                 >
                   rows
                 </td>
@@ -1006,7 +1002,7 @@ exports[`renders Typography/demo/operations.md correctly 1`] = `
   </div>
   <h1
     class="arco-typography"
-    style="margin:0"
+    style="margin: 0px;"
   >
     H1. The Pragmatic Romanticism
     <span
@@ -1032,7 +1028,7 @@ exports[`renders Typography/demo/operations.md correctly 1`] = `
   </h1>
   <h2
     class="arco-typography"
-    style="margin:0"
+    style="margin: 0px;"
   >
     H2. The Pragmatic Romanticism
     <span
@@ -1058,7 +1054,7 @@ exports[`renders Typography/demo/operations.md correctly 1`] = `
   </h2>
   <h3
     class="arco-typography"
-    style="margin:0"
+    style="margin: 0px;"
   >
     H3. The Pragmatic Romanticism
     <span
@@ -1084,7 +1080,7 @@ exports[`renders Typography/demo/operations.md correctly 1`] = `
   </h3>
   <h4
     class="arco-typography"
-    style="margin:0"
+    style="margin: 0px;"
   >
     H4. The Pragmatic Romanticism
     <span
@@ -1110,7 +1106,7 @@ exports[`renders Typography/demo/operations.md correctly 1`] = `
   </h4>
   <h5
     class="arco-typography"
-    style="margin:0"
+    style="margin: 0px;"
   >
     H5. The Pragmatic Romanticism
     <span
@@ -1136,7 +1132,7 @@ exports[`renders Typography/demo/operations.md correctly 1`] = `
   </h5>
   <h6
     class="arco-typography"
-    style="margin:0"
+    style="margin: 0px;"
   >
     H6. The Pragmatic Romanticism
     <span
@@ -1211,9 +1207,9 @@ exports[`renders Typography/demo/paragraph.md correctly 1`] = `
 `;
 
 exports[`renders Typography/demo/text.md correctly 1`] = `
-Array [
+[
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography"
@@ -1222,7 +1218,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography arco-typography-secondary"
@@ -1231,7 +1227,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography arco-typography-primary"
@@ -1240,7 +1236,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography arco-typography-success"
@@ -1249,7 +1245,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography arco-typography-warning"
@@ -1258,7 +1254,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography arco-typography-error"
@@ -1267,7 +1263,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography"
@@ -1278,7 +1274,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography arco-typography-disabled"
@@ -1287,7 +1283,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography"
@@ -1298,7 +1294,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography"
@@ -1309,7 +1305,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography"
@@ -1320,7 +1316,7 @@ Array [
     </span>
   </div>,
   <div
-    style="margin-bottom:10px"
+    style="margin-bottom: 10px;"
   >
     <span
       class="arco-typography"

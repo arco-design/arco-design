@@ -6,21 +6,20 @@ exports[`renders Badge/demo/animate.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <span
           class="arco-badge"
         >
           <div
             class="arco-avatar arco-avatar-square"
-            style="font-size:"
           >
             <span
               class="arco-avatar-text"
@@ -29,7 +28,7 @@ exports[`renders Badge/demo/animate.md correctly 1`] = `
             </span>
           </div>
           <span
-            class="arco-badge-dot"
+            class="arco-badge-dot badge-zoom-appear badge-zoom-appear-active"
           />
         </span>
       </div>
@@ -57,14 +56,13 @@ exports[`renders Badge/demo/animate.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <span
           class="arco-badge"
         >
           <div
             class="arco-avatar arco-avatar-square"
-            style="font-size:"
           >
             <span
               class="arco-avatar-text"
@@ -73,7 +71,7 @@ exports[`renders Badge/demo/animate.md correctly 1`] = `
             </span>
           </div>
           <span
-            class="arco-badge-number"
+            class="arco-badge-number badge-zoom-appear badge-zoom-appear-active"
           >
             <span
               class=""
@@ -138,21 +136,20 @@ exports[`renders Badge/demo/basic.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <span
       class="arco-badge"
     >
       <div
         class="arco-avatar arco-avatar-square"
-        style="font-size:"
       >
         <span
           class="arco-avatar-text"
         />
       </div>
       <span
-        class="arco-badge-number"
+        class="arco-badge-number badge-zoom-appear badge-zoom-appear-active"
       >
         <span
           class=""
@@ -164,22 +161,21 @@ exports[`renders Badge/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <span
       class="arco-badge"
     >
       <div
         class="arco-avatar arco-avatar-square"
-        style="font-size:"
       >
         <span
           class="arco-avatar-text"
         />
       </div>
       <span
-        class="arco-badge-dot"
-        style="width:10px;height:10px"
+        class="arco-badge-dot badge-zoom-appear badge-zoom-appear-active"
+        style="width: 10px; height: 10px;"
       />
     </span>
   </div>
@@ -191,7 +187,6 @@ exports[`renders Badge/demo/basic.md correctly 1`] = `
     >
       <div
         class="arco-avatar arco-avatar-square"
-        style="font-size:"
       >
         <span
           class="arco-avatar-text"
@@ -199,7 +194,7 @@ exports[`renders Badge/demo/basic.md correctly 1`] = `
       </div>
       <span
         class="arco-badge-custom-dot"
-        style="height:16px;width:16px;font-size:14px"
+        style="height: 16px; width: 16px; font-size: 14px;"
       >
         <svg
           aria-hidden="true"
@@ -208,7 +203,7 @@ exports[`renders Badge/demo/basic.md correctly 1`] = `
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="vertical-align:middle;color:var(--color-text-2)"
+          style="vertical-align: middle;"
           viewBox="0 0 48 48"
         >
           <path
@@ -226,7 +221,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
   <div>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -244,7 +239,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -262,7 +257,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -280,7 +275,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -298,7 +293,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -316,7 +311,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -334,7 +329,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -352,7 +347,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -370,7 +365,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -388,7 +383,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -406,7 +401,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -424,7 +419,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -445,7 +440,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
   <div>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -453,7 +448,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#F53F3F"
-          style="background-color:#F53F3F"
+          style="background-color: rgb(245, 63, 63);"
         />
         <span
           class="arco-badge-status-text"
@@ -464,7 +459,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -472,7 +467,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#7816FF"
-          style="background-color:#7816FF"
+          style="background-color: rgb(120, 22, 255);"
         />
         <span
           class="arco-badge-status-text"
@@ -483,7 +478,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -491,7 +486,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#00B42A"
-          style="background-color:#00B42A"
+          style="background-color: rgb(0, 180, 42);"
         />
         <span
           class="arco-badge-status-text"
@@ -502,7 +497,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -510,7 +505,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#165DFF"
-          style="background-color:#165DFF"
+          style="background-color: rgb(22, 93, 255);"
         />
         <span
           class="arco-badge-status-text"
@@ -521,7 +516,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -529,7 +524,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#FF7D00"
-          style="background-color:#FF7D00"
+          style="background-color: rgb(255, 125, 0);"
         />
         <span
           class="arco-badge-status-text"
@@ -540,7 +535,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -548,7 +543,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#EB0AA4"
-          style="background-color:#EB0AA4"
+          style="background-color: rgb(235, 10, 164);"
         />
         <span
           class="arco-badge-status-text"
@@ -559,7 +554,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -567,7 +562,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#7BC616"
-          style="background-color:#7BC616"
+          style="background-color: rgb(123, 198, 22);"
         />
         <span
           class="arco-badge-status-text"
@@ -578,7 +573,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -586,7 +581,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#86909C"
-          style="background-color:#86909C"
+          style="background-color: rgb(134, 144, 156);"
         />
         <span
           class="arco-badge-status-text"
@@ -597,7 +592,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -605,7 +600,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#B71DE8"
-          style="background-color:#B71DE8"
+          style="background-color: rgb(183, 29, 232);"
         />
         <span
           class="arco-badge-status-text"
@@ -616,7 +611,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -624,7 +619,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#0FC6C2"
-          style="background-color:#0FC6C2"
+          style="background-color: rgb(15, 198, 194);"
         />
         <span
           class="arco-badge-status-text"
@@ -635,7 +630,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -643,7 +638,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#FFB400"
-          style="background-color:#FFB400"
+          style="background-color: rgb(255, 180, 0);"
         />
         <span
           class="arco-badge-status-text"
@@ -654,7 +649,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -662,7 +657,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#168CFF"
-          style="background-color:#168CFF"
+          style="background-color: rgb(22, 140, 255);"
         />
         <span
           class="arco-badge-status-text"
@@ -673,7 +668,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
     </span>
     <span
       class="arco-badge"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
        
       <span
@@ -681,7 +676,7 @@ exports[`renders Badge/demo/color.md correctly 1`] = `
       >
         <span
           class="arco-badge-status-dot arco-badge-color-#FF5722"
-          style="background-color:#FF5722"
+          style="background-color: rgb(255, 87, 34);"
         />
         <span
           class="arco-badge-status-text"
@@ -700,7 +695,7 @@ exports[`renders Badge/demo/dot.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <span
       class="arco-badge"
@@ -711,8 +706,8 @@ exports[`renders Badge/demo/dot.md correctly 1`] = `
         Link
       </a>
       <span
-        class="arco-badge-dot"
-        style="margin-right:-6px;margin-top:-2px"
+        class="arco-badge-dot badge-zoom-appear badge-zoom-appear-active"
+        style="margin-right: -6px; margin-top: -2px;"
       />
     </span>
   </div>
@@ -729,7 +724,7 @@ exports[`renders Badge/demo/dot.md correctly 1`] = `
         focusable="false"
         stroke="currentColor"
         stroke-width="4"
-        style="color:#888;font-size:18px;vertical-align:-3px"
+        style="color: rgb(136, 136, 136); font-size: 18px; vertical-align: -3px;"
         viewBox="0 0 48 48"
       >
         <path
@@ -737,8 +732,8 @@ exports[`renders Badge/demo/dot.md correctly 1`] = `
         />
       </svg>
       <span
-        class="arco-badge-dot"
-        style="margin-right:-2px;margin-top:-2px"
+        class="arco-badge-dot badge-zoom-appear badge-zoom-appear-active"
+        style="margin-right: -2px; margin-top: -2px;"
       />
     </span>
   </div>
@@ -751,14 +746,13 @@ exports[`renders Badge/demo/max_count.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <span
       class="arco-badge"
     >
       <div
         class="arco-avatar arco-avatar-square"
-        style="font-size:"
       >
         <span
           class="arco-avatar-text"
@@ -786,7 +780,7 @@ exports[`renders Badge/demo/max_count.md correctly 1`] = `
         </span>
       </div>
       <span
-        class="arco-badge-number"
+        class="arco-badge-number badge-zoom-appear badge-zoom-appear-active"
       >
         <span
           class=""
@@ -798,14 +792,13 @@ exports[`renders Badge/demo/max_count.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <span
       class="arco-badge"
     >
       <div
         class="arco-avatar arco-avatar-square"
-        style="font-size:"
       >
         <span
           class="arco-avatar-text"
@@ -833,7 +826,7 @@ exports[`renders Badge/demo/max_count.md correctly 1`] = `
         </span>
       </div>
       <span
-        class="arco-badge-number"
+        class="arco-badge-number badge-zoom-appear badge-zoom-appear-active"
       >
         <span
           class=""
@@ -851,7 +844,6 @@ exports[`renders Badge/demo/max_count.md correctly 1`] = `
     >
       <div
         class="arco-avatar arco-avatar-square"
-        style="font-size:"
       >
         <span
           class="arco-avatar-text"
@@ -879,7 +871,7 @@ exports[`renders Badge/demo/max_count.md correctly 1`] = `
         </span>
       </div>
       <span
-        class="arco-badge-number"
+        class="arco-badge-number badge-zoom-appear badge-zoom-appear-active"
       >
         <span
           class=""
@@ -898,13 +890,13 @@ exports[`renders Badge/demo/no-children.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <span
       class="arco-badge arco-badge-no-children"
     >
       <span
-        class="arco-badge-number"
+        class="arco-badge-number badge-zoom-appear badge-zoom-appear-active"
       >
         <span
           class=""
@@ -916,14 +908,14 @@ exports[`renders Badge/demo/no-children.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <span
       class="arco-badge arco-badge-no-children"
     >
       <span
-        class="arco-badge-number"
-        style="background:#E5E6EB;color:#86909C"
+        class="arco-badge-number badge-zoom-appear badge-zoom-appear-active"
+        style="background: rgb(229, 230, 235); color: rgb(134, 144, 156);"
       >
         <span
           class=""
@@ -935,13 +927,13 @@ exports[`renders Badge/demo/no-children.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <span
       class="arco-badge arco-badge-no-children"
     >
       <span
-        class="arco-badge-number"
+        class="arco-badge-number badge-zoom-appear badge-zoom-appear-active"
       >
         <span
           class=""
@@ -958,7 +950,7 @@ exports[`renders Badge/demo/no-children.md correctly 1`] = `
       class="arco-badge arco-badge-no-children"
     >
       <span
-        class="arco-badge-number"
+        class="arco-badge-number badge-zoom-appear badge-zoom-appear-active"
       >
         <span
           class=""
@@ -977,14 +969,14 @@ exports[`renders Badge/demo/status.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <span
           class="arco-badge arco-badge-status arco-badge-no-children"
@@ -1000,7 +992,7 @@ exports[`renders Badge/demo/status.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <span
           class="arco-badge arco-badge-status arco-badge-no-children"
@@ -1016,7 +1008,7 @@ exports[`renders Badge/demo/status.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <span
           class="arco-badge arco-badge-status arco-badge-no-children"
@@ -1032,7 +1024,7 @@ exports[`renders Badge/demo/status.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <span
           class="arco-badge arco-badge-status arco-badge-no-children"
@@ -1071,7 +1063,7 @@ exports[`renders Badge/demo/status.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <span
           class="arco-badge arco-badge-status arco-badge-no-children"
@@ -1092,7 +1084,7 @@ exports[`renders Badge/demo/status.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <span
           class="arco-badge arco-badge-status arco-badge-no-children"
@@ -1113,7 +1105,7 @@ exports[`renders Badge/demo/status.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <span
           class="arco-badge arco-badge-status arco-badge-no-children"
@@ -1134,7 +1126,7 @@ exports[`renders Badge/demo/status.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <span
           class="arco-badge arco-badge-status arco-badge-no-children"
@@ -1184,14 +1176,13 @@ exports[`renders Badge/demo/text.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <span
       class="arco-badge"
     >
       <div
         class="arco-avatar arco-avatar-square"
-        style="font-size:"
       >
         <span
           class="arco-avatar-text"
@@ -1233,7 +1224,6 @@ exports[`renders Badge/demo/text.md correctly 1`] = `
     >
       <div
         class="arco-avatar arco-avatar-square"
-        style="font-size:"
       >
         <span
           class="arco-avatar-text"

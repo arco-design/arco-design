@@ -15,7 +15,7 @@ exports[`renders Drawer/demo/basic.md correctly 1`] = `
 
 exports[`renders Drawer/demo/container.md correctly 1`] = `
 <div
-  style="width:100%;height:300px;background-color:var(--color-fill-2);position:relative;overflow:hidden;line-height:300px;text-align:center"
+  style="width: 100%; height: 300px; position: relative; overflow: hidden; line-height: 300px; text-align: center;"
 >
   <button
     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -58,10 +58,11 @@ exports[`renders Drawer/demo/nofooter.md correctly 1`] = `
 <div>
   <label
     class="arco-checkbox"
-    style="margin-right:20px"
+    style="margin-right: 20px;"
   >
     <input
       type="checkbox"
+      value=""
     />
     <span
       class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -93,10 +94,11 @@ exports[`renders Drawer/demo/nofooter.md correctly 1`] = `
   </label>
   <label
     class="arco-checkbox"
-    style="margin-right:20px"
+    style="margin-right: 20px;"
   >
     <input
       type="checkbox"
+      value=""
     />
     <span
       class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -131,6 +133,7 @@ exports[`renders Drawer/demo/nofooter.md correctly 1`] = `
   >
     <input
       type="checkbox"
+      value=""
     />
     <span
       class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -163,7 +166,7 @@ exports[`renders Drawer/demo/nofooter.md correctly 1`] = `
   <br />
   <button
     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-top:20px"
+    style="margin-top: 20px;"
     type="button"
   >
     <span>
@@ -268,7 +271,7 @@ exports[`renders Drawer/demo/position.md correctly 1`] = `
   <br />
   <button
     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-top:20px"
+    style="margin-top: 20px;"
     type="button"
   >
     <span>
