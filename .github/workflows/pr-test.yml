@@ -65,11 +65,7 @@ jobs:
 
       - name: install react ${{ matrix.reactVersion }}
         run: |
-          npm ls react react-dom
-
-      - name: install react ${{ matrix.reactVersion }}
-        run: |
-          yarn add react@${{matrix.reactVersion}} react-dom@${{matrix.reactVersion}}
+          yarn add react@${{matrix.reactVersion}} react-dom@${{matrix.reactVersion}} react-test-renderer@${{matrix.reactVersion}}
           npm ls react react-dom
 
       - name: mock-time
