@@ -15,7 +15,7 @@ exports[`ConfigProvider componentConfig.Tabs default 1`] = `
       >
         <div
           class="arco-tabs-header"
-          style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+          style="transform: translateX(0px);"
         >
           <div
             class="arco-tabs-header-ink"
@@ -42,7 +42,7 @@ exports[`ConfigProvider componentConfig.Tabs set className globally 1`] = `
       >
         <div
           class="arco-tabs-header"
-          style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+          style="transform: translateX(0px);"
         >
           <div
             class="arco-tabs-header-ink"
@@ -69,7 +69,7 @@ exports[`ConfigProvider componentConfig.Tabs set className globally and componen
       >
         <div
           class="arco-tabs-header"
-          style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+          style="transform: translateX(0px);"
         >
           <div
             class="arco-tabs-header-ink"
@@ -97,7 +97,7 @@ exports[`ConfigProvider componentConfig.Tabs set data-* property 1`] = `
       >
         <div
           class="arco-tabs-header"
-          style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+          style="transform: translateX(0px);"
         >
           <div
             class="arco-tabs-header-ink"

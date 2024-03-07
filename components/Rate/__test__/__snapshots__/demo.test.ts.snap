@@ -3,7 +3,7 @@
 exports[`renders Rate/demo/allow-clear.md correctly 1`] = `
 Array [
   <div
-    style="display:flex;align-items:center;margin-bottom:15px"
+    style="display: flex; align-items: center; margin-bottom: 15px;"
   >
     <div
       class="arco-rate"
@@ -245,13 +245,13 @@ Array [
     </div>
     <span
       class="arco-typography"
-      style="margin:0 16px"
+      style="margin: 0px 16px;"
     >
       allowClear: true
     </span>
   </div>,
   <div
-    style="display:flex;align-items:center"
+    style="display: flex; align-items: center;"
   >
     <div
       class="arco-rate"
@@ -493,7 +493,7 @@ Array [
     </div>
     <span
       class="arco-typography"
-      style="margin:0 16px"
+      style="margin: 0px 16px;"
     >
       allowClear: false
     </span>
@@ -1007,7 +1007,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
 <div>
   <div
     class="arco-rate"
-    style="display:block;margin:10px 0"
+    style="display: block; margin: 10px 0px;"
   >
     <div
       class="arco-rate-inner"
@@ -1023,7 +1023,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-left"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             A
           </div>
@@ -1032,7 +1032,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-right"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             A
           </div>
@@ -1049,7 +1049,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-left"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             A
           </div>
@@ -1058,7 +1058,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-right"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             A
           </div>
@@ -1075,7 +1075,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-left"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             A
           </div>
@@ -1084,7 +1084,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-right"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             A
           </div>
@@ -1101,7 +1101,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-left"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             A
           </div>
@@ -1110,7 +1110,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-right"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             A
           </div>
@@ -1127,7 +1127,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-left"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             A
           </div>
@@ -1136,7 +1136,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-right"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             A
           </div>
@@ -1146,7 +1146,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
   </div>
   <div
     class="arco-rate"
-    style="display:block;margin:10px 0"
+    style="display: block; margin: 10px 0px;"
   >
     <div
       class="arco-rate-inner"
@@ -1162,7 +1162,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-left"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             1
           </div>
@@ -1171,7 +1171,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-right"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             1
           </div>
@@ -1188,7 +1188,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-left"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             2
           </div>
@@ -1197,7 +1197,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-right"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             2
           </div>
@@ -1214,7 +1214,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-left"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             3
           </div>
@@ -1223,7 +1223,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-right"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             3
           </div>
@@ -1240,7 +1240,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-left"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             4
           </div>
@@ -1249,7 +1249,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-right"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             4
           </div>
@@ -1266,7 +1266,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-left"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             5
           </div>
@@ -1275,7 +1275,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           class="arco-rate-character-right"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             5
           </div>
@@ -1285,7 +1285,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
   </div>
   <div
     class="arco-rate"
-    style="display:block;margin:10px 0"
+    style="display: block; margin: 10px 0px;"
   >
     <div
       class="arco-rate-inner"
@@ -1301,7 +1301,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             好
           </div>
@@ -1314,7 +1314,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             好
           </div>
@@ -1331,7 +1331,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             好
           </div>
@@ -1344,7 +1344,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             好
           </div>
@@ -1361,7 +1361,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             好
           </div>
@@ -1374,7 +1374,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             好
           </div>
@@ -1391,7 +1391,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             好
           </div>
@@ -1404,7 +1404,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             好
           </div>
@@ -1421,7 +1421,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             好
           </div>
@@ -1434,7 +1434,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             好
           </div>
@@ -1444,7 +1444,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
   </div>
   <div
     class="arco-rate"
-    style="display:block;margin:10px 0"
+    style="display: block; margin: 10px 0px;"
   >
     <div
       class="arco-rate-inner"
@@ -1460,7 +1460,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             <svg
               aria-hidden="true"
@@ -1469,7 +1469,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="font-size:18px"
+              style="font-size: 18px;"
               viewBox="0 0 48 48"
             >
               <path
@@ -1488,7 +1488,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             <svg
               aria-hidden="true"
@@ -1497,7 +1497,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="font-size:18px"
+              style="font-size: 18px;"
               viewBox="0 0 48 48"
             >
               <path
@@ -1520,7 +1520,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             <svg
               aria-hidden="true"
@@ -1529,7 +1529,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="font-size:18px"
+              style="font-size: 18px;"
               viewBox="0 0 48 48"
             >
               <path
@@ -1548,7 +1548,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             <svg
               aria-hidden="true"
@@ -1557,7 +1557,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="font-size:18px"
+              style="font-size: 18px;"
               viewBox="0 0 48 48"
             >
               <path
@@ -1580,7 +1580,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             <svg
               aria-hidden="true"
@@ -1589,7 +1589,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="font-size:18px"
+              style="font-size: 18px;"
               viewBox="0 0 48 48"
             >
               <path
@@ -1608,7 +1608,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             <svg
               aria-hidden="true"
@@ -1617,7 +1617,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="font-size:18px"
+              style="font-size: 18px;"
               viewBox="0 0 48 48"
             >
               <path
@@ -1640,7 +1640,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             <svg
               aria-hidden="true"
@@ -1649,7 +1649,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="font-size:18px"
+              style="font-size: 18px;"
               viewBox="0 0 48 48"
             >
               <path
@@ -1668,7 +1668,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             <svg
               aria-hidden="true"
@@ -1677,7 +1677,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="font-size:18px"
+              style="font-size: 18px;"
               viewBox="0 0 48 48"
             >
               <path
@@ -1700,7 +1700,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             <svg
               aria-hidden="true"
@@ -1709,7 +1709,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="font-size:18px"
+              style="font-size: 18px;"
               viewBox="0 0 48 48"
             >
               <path
@@ -1728,7 +1728,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
           role="radio"
         >
           <div
-            style="width:24px;line-height:24px;text-align:center;font-size:16px;font-weight:bold"
+            style="width: 24px; line-height: 24px; text-align: center; font-size: 16px; font-weight: bold;"
           >
             <svg
               aria-hidden="true"
@@ -1737,7 +1737,7 @@ exports[`renders Rate/demo/character.md correctly 1`] = `
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="font-size:18px"
+              style="font-size: 18px;"
               viewBox="0 0 48 48"
             >
               <path
@@ -3034,7 +3034,7 @@ exports[`renders Rate/demo/tooltips.md correctly 1`] = `
 
 exports[`renders Rate/demo/with-description.md correctly 1`] = `
 <div
-  style="display:flex;align-items:center"
+  style="display: flex; align-items: center;"
 >
   <div
     class="arco-rate"
@@ -3276,7 +3276,7 @@ exports[`renders Rate/demo/with-description.md correctly 1`] = `
   </div>
   <span
     class="arco-typography"
-    style="margin:0 16px"
+    style="margin: 0px 16px;"
   >
     Excellent
   </span>

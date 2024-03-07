@@ -7,7 +7,7 @@ exports[`renders ColorPicker/demo/basic.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <input
       class="arco-color-picker-input"
@@ -16,14 +16,14 @@ exports[`renders ColorPicker/demo/basic.md correctly 1`] = `
     />
   </div>
   <div
-    style="margin-top:10px"
+    style="margin-top: 10px;"
   />
   <div
     class="arco-color-picker arco-color-picker-size-default"
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <div
       class="arco-color-picker-value"
@@ -49,7 +49,7 @@ exports[`renders ColorPicker/demo/colors.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <div
       class="arco-color-picker-value"
@@ -63,7 +63,7 @@ exports[`renders ColorPicker/demo/colors.md correctly 1`] = `
     />
   </div>
   <div
-    style="margin-top:10px"
+    style="margin-top: 10px;"
   />
   <div>
     History & Preset: 
@@ -73,7 +73,7 @@ exports[`renders ColorPicker/demo/colors.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <div
       class="arco-color-picker-value"
@@ -110,14 +110,14 @@ exports[`renders ColorPicker/demo/control.md correctly 1`] = `
     </button>
   </div>
   <div
-    style="margin-top:10px"
+    style="margin-top: 10px;"
   />
   <div
     class="arco-color-picker arco-color-picker-size-default"
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <div
       class="arco-color-picker-value"
@@ -140,7 +140,7 @@ exports[`renders ColorPicker/demo/disabled.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <input
       class="arco-color-picker-input"
@@ -150,14 +150,14 @@ exports[`renders ColorPicker/demo/disabled.md correctly 1`] = `
     />
   </div>
   <div
-    style="margin-top:10px"
+    style="margin-top: 10px;"
   />
   <div
     class="arco-color-picker arco-color-picker-size-default arco-color-picker-disabled"
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <div
       class="arco-color-picker-value"
@@ -181,7 +181,7 @@ exports[`renders ColorPicker/demo/disabledAlpha.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <input
       class="arco-color-picker-input"
@@ -195,7 +195,7 @@ exports[`renders ColorPicker/demo/disabledAlpha.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF80"
+      style="background-color: rgba(22, 93, 255, 0.502);"
     />
     <input
       class="arco-color-picker-input"
@@ -211,7 +211,7 @@ exports[`renders ColorPicker/demo/format.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-fill"
     role="radiogroup"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <label
       class="arco-radio-button arco-radio-checked"
@@ -244,14 +244,14 @@ exports[`renders ColorPicker/demo/format.md correctly 1`] = `
     </label>
   </div>
   <div
-    style="margin-top:10px"
+    style="margin-top: 10px;"
   />
   <div
     class="arco-color-picker arco-color-picker-size-default"
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <div
       class="arco-color-picker-value"
@@ -274,7 +274,7 @@ exports[`renders ColorPicker/demo/size.md correctly 1`] = `
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <input
       class="arco-color-picker-input"
@@ -283,14 +283,14 @@ exports[`renders ColorPicker/demo/size.md correctly 1`] = `
     />
   </div>
   <div
-    style="margin-top:10px"
+    style="margin-top: 10px;"
   />
   <div
     class="arco-color-picker arco-color-picker-size-small"
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <input
       class="arco-color-picker-input"
@@ -299,14 +299,14 @@ exports[`renders ColorPicker/demo/size.md correctly 1`] = `
     />
   </div>
   <div
-    style="margin-top:10px"
+    style="margin-top: 10px;"
   />
   <div
     class="arco-color-picker arco-color-picker-size-default"
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <input
       class="arco-color-picker-input"
@@ -315,14 +315,14 @@ exports[`renders ColorPicker/demo/size.md correctly 1`] = `
     />
   </div>
   <div
-    style="margin-top:10px"
+    style="margin-top: 10px;"
   />
   <div
     class="arco-color-picker arco-color-picker-size-large"
   >
     <div
       class="arco-color-picker-preview"
-      style="background-color:#165DFF"
+      style="background-color: rgb(22, 93, 255);"
     />
     <input
       class="arco-color-picker-input"

@@ -6,7 +6,7 @@ exports[`renders Button/demo/basic.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -19,7 +19,7 @@ exports[`renders Button/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -32,7 +32,7 @@ exports[`renders Button/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-dashed arco-btn-size-default arco-btn-shape-square"
@@ -45,7 +45,7 @@ exports[`renders Button/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-outline arco-btn-size-default arco-btn-shape-square"
@@ -77,14 +77,14 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-btn-group"
@@ -160,7 +160,7 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-btn-group"
@@ -201,14 +201,14 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-btn-group"
         >
           <button
             class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-round"
-            style="padding:0 8px"
+            style="padding: 0px 8px;"
             type="button"
           >
             <svg
@@ -230,7 +230,7 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
           </button>
           <button
             class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-round"
-            style="padding:0 8px"
+            style="padding: 0px 8px;"
             type="button"
           >
             <span>
@@ -254,7 +254,7 @@ exports[`renders Button/demo/button-group.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <div
           class="arco-btn-group"
@@ -382,14 +382,14 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-disabled"
@@ -403,7 +403,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-disabled"
@@ -417,7 +417,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-dashed arco-btn-size-default arco-btn-shape-square arco-btn-disabled"
@@ -431,7 +431,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-outline arco-btn-size-default arco-btn-shape-square arco-btn-disabled"
@@ -460,14 +460,14 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger arco-btn-disabled"
@@ -481,7 +481,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger arco-btn-disabled"
@@ -495,7 +495,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-dashed arco-btn-size-default arco-btn-shape-square arco-btn-status-danger arco-btn-disabled"
@@ -509,7 +509,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-outline arco-btn-size-default arco-btn-shape-square arco-btn-status-danger arco-btn-disabled"
@@ -538,14 +538,14 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning arco-btn-disabled"
@@ -559,7 +559,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning arco-btn-disabled"
@@ -573,7 +573,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-dashed arco-btn-size-default arco-btn-shape-square arco-btn-status-warning arco-btn-disabled"
@@ -587,7 +587,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-outline arco-btn-size-default arco-btn-shape-square arco-btn-status-warning arco-btn-disabled"
@@ -622,7 +622,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-success arco-btn-disabled"
@@ -636,7 +636,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-status-success arco-btn-disabled"
@@ -650,7 +650,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-dashed arco-btn-size-default arco-btn-shape-square arco-btn-status-success arco-btn-disabled"
@@ -664,7 +664,7 @@ exports[`renders Button/demo/disabled.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <button
           class="arco-btn arco-btn-outline arco-btn-size-default arco-btn-shape-square arco-btn-status-success arco-btn-disabled"
@@ -700,7 +700,7 @@ exports[`renders Button/demo/icon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
@@ -752,7 +752,7 @@ exports[`renders Button/demo/icon.md correctly 1`] = `
 exports[`renders Button/demo/loading.md correctly 1`] = `
 <div>
   <div
-    style="display:grid;grid-template-columns:repeat(3, 100px);row-gap:24px;column-gap:24px;margin-left:24px"
+    style="display: grid; grid-template-columns: repeat(3, 100px); row-gap: 24px; column-gap: 24px; margin-left: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-loading"
@@ -874,7 +874,7 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
   </div>
   <button
     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin:24px"
+    style="margin: 24px;"
     type="button"
   >
     <span>
@@ -883,7 +883,7 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin:24px"
+    style="margin: 24px;"
     type="button"
   >
     <svg
@@ -906,7 +906,7 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
   <div
     class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
     role="separator"
-    style="width:440px;min-width:440px"
+    style="width: 440px; min-width: 440px;"
   >
     <span
       class="arco-divider-text arco-divider-text-center"
@@ -916,7 +916,7 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
   </div>
   <button
     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-loading-fixed-width"
-    style="margin:24px"
+    style="margin: 24px;"
     type="button"
   >
     <span>
@@ -929,11 +929,11 @@ exports[`renders Button/demo/loading.md correctly 1`] = `
 exports[`renders Button/demo/long.md correctly 1`] = `
 <div
   class="arco-space arco-space-vertical"
-  style="width:360px;border:1px solid var(--color-border);border-radius:4px;padding:20px"
+  style="width: 360px; border-radius: 4px; padding: 20px;"
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-long"
@@ -946,7 +946,7 @@ exports[`renders Button/demo/long.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-long"
@@ -959,7 +959,7 @@ exports[`renders Button/demo/long.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <button
       class="arco-btn arco-btn-dashed arco-btn-size-default arco-btn-shape-square arco-btn-long"
@@ -972,7 +972,7 @@ exports[`renders Button/demo/long.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-long"
@@ -1004,7 +1004,7 @@ exports[`renders Button/demo/shape.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only"
@@ -1027,7 +1027,7 @@ exports[`renders Button/demo/shape.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-circle arco-btn-icon-only"
@@ -1050,7 +1050,7 @@ exports[`renders Button/demo/shape.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-round"
@@ -1082,7 +1082,7 @@ exports[`renders Button/demo/size.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-mini arco-btn-shape-square"
@@ -1095,7 +1095,7 @@ exports[`renders Button/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-small arco-btn-shape-square"
@@ -1108,7 +1108,7 @@ exports[`renders Button/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -1136,7 +1136,7 @@ exports[`renders Button/demo/size.md correctly 1`] = `
 
 exports[`renders Button/demo/status.md correctly 1`] = `
 <div
-  style="display:grid;grid-template-columns:repeat(4, 100px);grid-row-gap:24px;grid-column-gap:24px"
+  style="display: grid; grid-template-columns: repeat(4, 100px);"
 >
   <button
     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning"

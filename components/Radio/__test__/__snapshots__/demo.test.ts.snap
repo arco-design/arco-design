@@ -6,7 +6,7 @@ exports[`renders Radio/demo/basic.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <label
       class="arco-radio"
@@ -61,7 +61,7 @@ exports[`renders Radio/demo/basic.md correctly 1`] = `
 exports[`renders Radio/demo/custom_render.md correctly 1`] = `
 <div>
   <div
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <div
       class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
@@ -141,7 +141,7 @@ exports[`renders Radio/demo/custom_render.md correctly 1`] = `
       >
         <div
           class="arco-space-item"
-          style="margin-right:8px"
+          style="margin-right: 8px;"
         >
           <div
             class="custom-radio-card-mask"
@@ -182,7 +182,7 @@ exports[`renders Radio/demo/custom_render.md correctly 1`] = `
       >
         <div
           class="arco-space-item"
-          style="margin-right:8px"
+          style="margin-right: 8px;"
         >
           <div
             class="custom-radio-card-mask"
@@ -331,7 +331,7 @@ exports[`renders Radio/demo/icon.md correctly 1`] = `
       >
         <img
           src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/c621ef94232e4b91917c7d2e5d9eae00~tplv-uwbnlip3yd-image.image"
-          style="width:30px;height:30px;vertical-align:middle"
+          style="width: 30px; height: 30px; vertical-align: middle;"
         />
         BCY
       </span>
@@ -355,7 +355,7 @@ exports[`renders Radio/demo/icon.md correctly 1`] = `
       >
         <img
           src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/cb76fb049c3c44128b26f02902a0373b~tplv-uwbnlip3yd-image.image"
-          style="width:30px;height:30px;vertical-align:middle"
+          style="width: 30px; height: 30px; vertical-align: middle;"
         />
         Pipidance
       </span>
@@ -380,7 +380,7 @@ exports[`renders Radio/demo/icon.md correctly 1`] = `
       >
         <img
           src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/74fb860e37aa4840a8eb235e6df6e6e0~tplv-uwbnlip3yd-image.image"
-          style="width:30px;height:30px;vertical-align:middle"
+          style="width: 30px; height: 30px; vertical-align: middle;"
         />
         Xigua Video
       </span>
@@ -394,7 +394,7 @@ exports[`renders Radio/demo/radio_button.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
     role="radiogroup"
-    style="margin-right:20px;margin-bottom:20px"
+    style="margin-right: 20px; margin-bottom: 20px;"
   >
     <label
       class="arco-radio-button"
@@ -463,7 +463,7 @@ exports[`renders Radio/demo/radio_group.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
     role="radiogroup"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-radio arco-radio-checked"
@@ -552,7 +552,7 @@ exports[`renders Radio/demo/radio_group.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
     role="radiogroup"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-radio"
@@ -730,7 +730,7 @@ exports[`renders Radio/demo/size.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-mini arco-radio-mode-outline"
     role="radiogroup"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-radio-button arco-radio-checked"
@@ -791,7 +791,7 @@ exports[`renders Radio/demo/size.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-small arco-radio-mode-outline"
     role="radiogroup"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-radio-button arco-radio-checked"
@@ -852,7 +852,7 @@ exports[`renders Radio/demo/size.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
     role="radiogroup"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-radio-button arco-radio-checked"
@@ -913,7 +913,7 @@ exports[`renders Radio/demo/size.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-large arco-radio-mode-outline"
     role="radiogroup"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-radio-button arco-radio-checked"

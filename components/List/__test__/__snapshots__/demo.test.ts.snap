@@ -3,7 +3,7 @@
 exports[`renders List/demo/action-layout.md correctly 1`] = `
 <div
   class="arco-list-wrapper"
-  style="max-width:830px"
+  style="max-width: 830px;"
 >
   <div
     class="arco-list arco-list-default arco-list-no-border list-demo-action-layout"
@@ -15,7 +15,7 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
       <div
         class="arco-list-item"
         role="listitem"
-        style="padding:20px 0;border-bottom:1px solid var(--color-fill-3)"
+        style="padding: 20px 0px;"
       >
         <div
           class="arco-list-item-main"
@@ -28,7 +28,6 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
             >
               <div
                 class="arco-avatar arco-avatar-square"
-                style="font-size:"
               >
                 <span
                   class="arco-avatar-image"
@@ -130,7 +129,7 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
       <div
         class="arco-list-item"
         role="listitem"
-        style="padding:20px 0;border-bottom:1px solid var(--color-fill-3)"
+        style="padding: 20px 0px;"
       >
         <div
           class="arco-list-item-main"
@@ -143,7 +142,6 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
             >
               <div
                 class="arco-avatar arco-avatar-square"
-                style="font-size:"
               >
                 <span
                   class="arco-avatar-image"
@@ -245,7 +243,7 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
       <div
         class="arco-list-item"
         role="listitem"
-        style="padding:20px 0;border-bottom:1px solid var(--color-fill-3)"
+        style="padding: 20px 0px;"
       >
         <div
           class="arco-list-item-main"
@@ -258,7 +256,6 @@ exports[`renders List/demo/action-layout.md correctly 1`] = `
             >
               <div
                 class="arco-avatar arco-avatar-square"
-                style="font-size:"
               >
                 <span
                   class="arco-avatar-image"
@@ -451,7 +448,7 @@ Array [
   >
     <div
       class="arco-list arco-list-default list-demo-actions"
-      style="width:700px;margin-bottom:48px"
+      style="width: 700px; margin-bottom: 48px;"
     >
       <div
         class="arco-list-content"
@@ -472,7 +469,6 @@ Array [
               >
                 <div
                   class="arco-avatar arco-avatar-square"
-                  style="font-size:"
                 >
                   <span
                     class="arco-avatar-text"
@@ -555,7 +551,6 @@ Array [
               >
                 <div
                   class="arco-avatar arco-avatar-square"
-                  style="font-size:"
                 >
                   <span
                     class="arco-avatar-text"
@@ -638,7 +633,6 @@ Array [
               >
                 <div
                   class="arco-avatar arco-avatar-square"
-                  style="font-size:"
                 >
                   <span
                     class="arco-avatar-text"
@@ -721,7 +715,6 @@ Array [
               >
                 <div
                   class="arco-avatar arco-avatar-square"
-                  style="font-size:"
                 >
                   <span
                     class="arco-avatar-text"
@@ -794,7 +787,7 @@ Array [
         class="arco-list-footer"
       >
         <div
-          style="display:flex;align-items:center;justify-content:center;cursor:pointer"
+          style="display: flex; align-items: center; justify-content: center; cursor: pointer;"
         >
           <span
             class="list-demo-actions-button"
@@ -808,7 +801,7 @@ Array [
               focusable="false"
               stroke="currentColor"
               stroke-width="4"
-              style="margin-left:8px"
+              style="margin-left: 8px;"
               viewBox="0 0 48 48"
             >
               <path
@@ -825,7 +818,7 @@ Array [
   >
     <div
       class="arco-list arco-list-default list-demo-actions"
-      style="width:700px"
+      style="width: 700px;"
     >
       <div
         class="arco-list-content"
@@ -846,7 +839,6 @@ Array [
               >
                 <div
                   class="arco-avatar arco-avatar-square"
-                  style="font-size:"
                 >
                   <span
                     class="arco-avatar-text"
@@ -905,7 +897,6 @@ Array [
               >
                 <div
                   class="arco-avatar arco-avatar-square"
-                  style="font-size:"
                 >
                   <span
                     class="arco-avatar-text"
@@ -964,7 +955,6 @@ Array [
               >
                 <div
                   class="arco-avatar arco-avatar-square"
-                  style="font-size:"
                 >
                   <span
                     class="arco-avatar-text"
@@ -1023,7 +1013,6 @@ Array [
               >
                 <div
                   class="arco-avatar arco-avatar-square"
-                  style="font-size:"
                 >
                   <span
                     class="arco-avatar-text"
@@ -1079,7 +1068,7 @@ exports[`renders List/demo/basic.md correctly 1`] = `
 >
   <div
     class="arco-list arco-list-small"
-    style="width:622px"
+    style="width: 622px;"
   >
     <div
       class="arco-list-header"
@@ -1499,7 +1488,7 @@ exports[`renders List/demo/meta.md correctly 1`] = `
 >
   <div
     class="arco-list arco-list-default"
-    style="width:600px"
+    style="width: 600px;"
   >
     <div
       class="arco-list-content"
@@ -1520,7 +1509,6 @@ exports[`renders List/demo/meta.md correctly 1`] = `
             >
               <div
                 class="arco-avatar arco-avatar-square"
-                style="font-size:"
               >
                 <span
                   class="arco-avatar-text"
@@ -1561,7 +1549,6 @@ exports[`renders List/demo/meta.md correctly 1`] = `
             >
               <div
                 class="arco-avatar arco-avatar-square"
-                style="font-size:"
               >
                 <span
                   class="arco-avatar-text"
@@ -1602,7 +1589,6 @@ exports[`renders List/demo/meta.md correctly 1`] = `
             >
               <div
                 class="arco-avatar arco-avatar-square"
-                style="font-size:"
               >
                 <span
                   class="arco-avatar-text"
@@ -1643,7 +1629,6 @@ exports[`renders List/demo/meta.md correctly 1`] = `
             >
               <div
                 class="arco-avatar arco-avatar-square"
-                style="font-size:"
               >
                 <span
                   class="arco-avatar-text"
@@ -2393,7 +2378,7 @@ exports[`renders List/demo/scrollLoad.md correctly 1`] = `
 >
   <div
     class="arco-list arco-list-default"
-    style="width:600px;max-height:320px"
+    style="width: 600px; max-height: 320px;"
   >
     <div
       class="arco-list-content"
@@ -2434,7 +2419,7 @@ Array [
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
     role="radiogroup"
-    style="margin-bottom:20px;border-radius:4px"
+    style="margin-bottom: 20px; border-radius: 4px;"
   >
     <label
       class="arco-radio-button"
@@ -2485,7 +2470,7 @@ Array [
   >
     <div
       class="arco-list arco-list-default"
-      style="width:622px"
+      style="width: 622px;"
     >
       <div
         class="arco-list-header"
@@ -2574,9 +2559,7 @@ Array [
 
 exports[`renders List/demo/virtual-list.md correctly 1`] = `
 Array [
-  <h3
-    style="color:var(--color-text-2)"
-  >
+  <h3>
     10000 items
   </h3>,
   <div
@@ -2584,18 +2567,18 @@ Array [
   >
     <div
       class="arco-list arco-list-default"
-      style="width:600px"
+      style="width: 600px;"
     >
       <div
         class="arco-list-content arco-list-virtual"
         role="list"
-        style="overflow-y:auto;overflow-anchor:none;max-height:560px"
+        style="overflow-y: auto; max-height: 560px;"
       >
         <div
-          style="height:320000px;position:relative;overflow:hidden;z-index:0"
+          style="height: 320000px; position: relative; overflow: hidden; z-index: 0;"
         >
           <div
-            style="display:flex;flex-direction:column;transform:translateY(0px);position:absolute;left:0;right:0;top:0"
+            style="display: flex; flex-direction: column; transform: translateY(0px); position: absolute; left: 0px; right: 0px; top: 0px;"
           >
             <div
               class="arco-list-item"
@@ -2612,7 +2595,6 @@ Array [
                   >
                     <div
                       class="arco-avatar arco-avatar-square"
-                      style="font-size:"
                     >
                       <span
                         class="arco-avatar-text"
@@ -2633,6 +2615,726 @@ Array [
                       class="arco-list-item-meta-description"
                     >
                       (00000) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00001) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00002) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00003) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00004) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00005) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00006) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00007) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00008) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00009) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00010) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00011) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00012) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00013) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00014) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00015) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00016) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00017) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="arco-list-item"
+              role="listitem"
+            >
+              <div
+                class="arco-list-item-main"
+              >
+                <div
+                  class="arco-list-item-meta"
+                >
+                  <div
+                    class="arco-list-item-meta-avatar"
+                  >
+                    <div
+                      class="arco-avatar arco-avatar-square"
+                    >
+                      <span
+                        class="arco-avatar-text"
+                      >
+                        A
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="arco-list-item-meta-content"
+                  >
+                    <div
+                      class="arco-list-item-meta-title"
+                    >
+                      Beijing Bytedance Technology Co., Ltd.
+                    </div>
+                    <div
+                      class="arco-list-item-meta-description"
+                    >
+                      (00018) Beijing ByteDance Technology Co., Ltd. is an enterprise located in China.
                     </div>
                   </div>
                 </div>
