@@ -54,6 +54,7 @@ A form with data collection, verification and submission functions, including ch
 |extra|Additional hint content.|ReactNode |`-`|-|
 |help|Custom help text|ReactNode |`-`|-|
 |label|Label text|ReactNode |`-`|-|
+|children|`ReactNode` type and Fuction type children|React.ReactNode \| [FormItemChildrenFn](#formitemchildrenfn)&lt;FormData, FieldValue, FieldKey&gt; |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |dependencies|the dependency fields. When the value of the dependent field changes, trigger its own validation.If you want to dynamically render a form control/form area, use shouldUpdate|string[] |`-`|2.40.0|
 |field|Unique identification of controlled components|FieldKey |`-`|-|
@@ -168,6 +169,19 @@ export type FieldError<FieldValue = any> = {
   type?: string;
   requiredError?: boolean;
 };
+```
+
+### FormItemChildrenFn
+
+```js
+export type FormItemChildrenFn<
+  FormData = any,
+  FieldValue = FormData[keyof FormData],
+  FieldKey extends KeyType = keyof FormData
+> = (
+  formData: any,
+  form: FormInstance<FormData, FieldValue, FieldKey>
+) => React.ReactNode;
 ```
 
 ### Rules

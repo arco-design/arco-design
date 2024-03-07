@@ -389,6 +389,10 @@ export interface FormItemProps<
    */
   requiredSymbol?: boolean | { position: 'start' | 'end' };
   isFormList?: boolean;
+  /**
+   * @zh `ReactNode` 类型与函数类型的 children
+   * @en `ReactNode` type and Fuction type children
+   */
   children?: React.ReactNode | FormItemChildrenFn<FormData, FieldValue, FieldKey>;
 }
 
