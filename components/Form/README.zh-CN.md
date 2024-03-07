@@ -44,6 +44,7 @@
 |disabled|是否禁用，优先级高于 `Form` 的 `disabled` 属性|boolean |`-`|-|
 |hasFeedback|是否显示校验图标，配置 validateStatus 使用。|boolean |`-`|-|
 |hidden|隐藏表单项. 表单字段值仍然会被获取|boolean |`-`|2.29.0|
+|isFormList|是否为 `FormList`|boolean |`-`|-|
 |required|是否必选，会在 `label` 标签前显示加重红色符号，如果这里不设置，会从 rules 中寻找是否是 required|boolean |`-`|-|
 |trigger|接管子节点，搜集子节点值的时机。|string |`onChange`|-|
 |triggerPropName|子节点被接管的值的属性名，默认是 `value`,比如 `<Checkbox>` 为 `checked`。|string |`value`|-|

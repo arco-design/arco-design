@@ -388,6 +388,10 @@ export interface FormItemProps<
    * @version `position` in 2.24.0
    */
   requiredSymbol?: boolean | { position: 'start' | 'end' };
+  /**
+   * @zh 是否为 `FormList`
+   * @en Whether the FormItem is `Form.List`
+   */
   isFormList?: boolean;
   /**
    * @zh `ReactNode` 类型与函数类型的 children

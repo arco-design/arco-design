@@ -44,6 +44,7 @@ A form with data collection, verification and submission functions, including ch
 |disabled|Whether the FormItem is disabled. Priority is higher than the `disabled` prop of `Form`|boolean |`-`|-|
 |hasFeedback|Whether to show the verification icon, configure `validateStatus` to use.|boolean |`-`|-|
 |hidden|hide the form item|boolean |`-`|2.29.0|
+|isFormList|Whether the FormItem is `Form.List`|boolean |`-`|-|
 |required|Whether The FormItem is Required, Will display an red symbol in front of the `label` label.If it is not set here, it will look for `required` from the rules|boolean |`-`|-|
 |trigger|When to take over and collecting the child nodes.|string |`onChange`|-|
 |triggerPropName|The attribute name of the child node being taken over, default is `value`, ex, `<Checkbox>` is `checked`.|string |`value`|-|
