@@ -393,8 +393,7 @@ export interface FormItemProps<
    */
   requiredSymbol?: boolean | { position: 'start' | 'end' };
   /**
-   * @zh 是否为 `FormList`
-   * @en Whether the FormItem is `Form.List`
+   * 内部使用属性，无需在文档上体现
    */
   isFormList?: boolean;
   /**
