@@ -49,6 +49,7 @@ A form with data collection, verification and submission functions, including ch
 |trigger|When to take over and collecting the child nodes.|string |`onChange`|-|
 |triggerPropName|The attribute name of the child node being taken over, default is `value`, ex, `<Checkbox>` is `checked`.|string |`value`|-|
 |labelAlign|Text alignment of `label`|'left' \| 'right' |`right`|-|
+|layout|The layout|'horizontal' \| 'vertical' \| 'inline' |`-`|-|
 |requiredSymbol|Whether show red symbol when item is required，Set position props, you can choose to place the symbol before/after the label|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
 |validateStatus|Validate status|'success' \| 'warning' \| 'error' \| 'validating' |`-`|-|
 |colon|Whether show colon after `label`. Priority is lower than `colon` in `Form.Item`.(`ReactNode` in `v2.41.0`)|boolean \| ReactNode |`-`|-|

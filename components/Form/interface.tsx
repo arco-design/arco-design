@@ -380,6 +380,10 @@ export interface FormItemProps<
    * @defaultValue right
    */
   labelAlign?: 'left' | 'right';
+  /**
+   * @zh 布局
+   * @en The layout
+   */
   layout?: 'horizontal' | 'vertical' | 'inline';
   /**
    * @zh 是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后
