@@ -308,7 +308,7 @@ export interface FormItemProps<
    * @zh
    * 是否必选，会在 `label` 标签前显示加重红色符号，如果这里不设置，会从 rules 中寻找是否是 required
    * @en
-   * Whether The FormItem is Required, Will display an red symbol in front of the `label` label.
+   * Whether the FormItem is Required, Will display an red symbol in front of the `label` label.
    * If it is not set here, it will look for `required` from the rules
    */
   required?: boolean;

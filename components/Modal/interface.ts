@@ -116,7 +116,7 @@ export interface ModalProps {
   afterClose?: () => void;
   /**
    * @zh 确认按钮加载中
-   * @en Whether The `ok` button is loading
+   * @en Whether the `ok` button is loading
    */
   confirmLoading?: boolean;
   /**
