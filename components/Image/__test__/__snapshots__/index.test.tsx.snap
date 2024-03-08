@@ -2,7 +2,7 @@
 
 exports[`ConfigProvider componentConfig.Image default 1`] = `
 <div
-  class="arco-image arco-image-before-load"
+  class="arco-image arco-image-loading"
 >
   <img
     class="arco-image-img"
@@ -16,7 +16,7 @@ exports[`ConfigProvider componentConfig.Image default 1`] = `
 
 exports[`ConfigProvider componentConfig.Image set className globally 1`] = `
 <div
-  class="arco-image arco-image-before-load global-default-class"
+  class="arco-image arco-image-loading global-default-class"
 >
   <img
     class="arco-image-img"
@@ -30,7 +30,7 @@ exports[`ConfigProvider componentConfig.Image set className globally 1`] = `
 
 exports[`ConfigProvider componentConfig.Image set className globally and component set className itself. 1`] = `
 <div
-  class="arco-image arco-image-before-load component-class"
+  class="arco-image arco-image-loading component-class"
 >
   <img
     class="arco-image-img"
@@ -44,7 +44,7 @@ exports[`ConfigProvider componentConfig.Image set className globally and compone
 
 exports[`ConfigProvider componentConfig.Image set data-* property 1`] = `
 <div
-  class="arco-image arco-image-before-load"
+  class="arco-image arco-image-loading"
 >
   <img
     class="arco-image-img"

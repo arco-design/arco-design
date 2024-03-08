@@ -6,7 +6,7 @@ exports[`renders Dropdown/demo/basic.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <button
       class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
@@ -35,12 +35,12 @@ exports[`renders Dropdown/demo/basic.md correctly 1`] = `
   >
     <span
       class=""
-      style="display:inline-block;cursor:not-allowed"
+      style="display: inline-block; cursor: not-allowed;"
     >
       <button
         class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square arco-btn-disabled"
         disabled=""
-        style="pointer-events:none"
+        style="pointer-events: none;"
         type="button"
       >
         <span>
@@ -99,7 +99,7 @@ exports[`renders Dropdown/demo/control.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"
@@ -157,7 +157,7 @@ exports[`renders Dropdown/demo/dropdown-button.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-btn-group"
@@ -197,7 +197,7 @@ exports[`renders Dropdown/demo/dropdown-button.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-btn-group"
@@ -213,12 +213,12 @@ exports[`renders Dropdown/demo/dropdown-button.md correctly 1`] = `
       </button>
       <span
         class=""
-        style="display:inline-block;cursor:not-allowed"
+        style="display: inline-block; cursor: not-allowed;"
       >
         <button
           class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-icon-only arco-btn-disabled"
           disabled=""
-          style="pointer-events:none"
+          style="pointer-events: none;"
           type="button"
         >
           <svg
@@ -245,7 +245,7 @@ exports[`renders Dropdown/demo/dropdown-button.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-btn-group"
@@ -405,7 +405,7 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -418,7 +418,7 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -431,7 +431,7 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -444,7 +444,7 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -457,7 +457,7 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -486,7 +486,7 @@ exports[`renders Dropdown/demo/position.md correctly 1`] = `
 exports[`renders Dropdown/demo/right-click.md correctly 1`] = `
 <div
   class="arco-row arco-row-align-center arco-row-justify-center"
-  style="width:320px;height:160px;background-color:var(--color-fill-2);color:var(--color-text-1)"
+  style="width: 320px; height: 160px;"
 >
   <span>
     Right-click
@@ -528,7 +528,7 @@ exports[`renders Dropdown/demo/trigger.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-text arco-btn-size-default arco-btn-shape-square"

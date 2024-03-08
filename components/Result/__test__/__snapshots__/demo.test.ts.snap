@@ -13,7 +13,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
       >
         <svg
           height="100%"
-          style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
+          style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;"
           viewBox="0 0 213 213"
           width="100%"
         >
@@ -28,7 +28,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   cx="1053.23"
                   cy="639.477"
                   r="106.477"
-                  style="fill:rgb(235, 238, 246)"
+                  style="fill: rgb(235, 238, 246);"
                 />
               </g>
               <g
@@ -42,7 +42,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="91"
-                      style="fill:rgb(253, 243, 228)"
+                      style="fill: rgb(253, 243, 228);"
                       width="105.078"
                       x="495.52"
                       y="1057.87"
@@ -53,7 +53,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="91"
-                      style="fill:rgb(202, 174, 136)"
+                      style="fill: rgb(202, 174, 136);"
                       width="105.078"
                       x="495.52"
                       y="1057.87"
@@ -64,7 +64,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="92"
-                      style="fill:rgb(196, 173, 142)"
+                      style="fill: rgb(196, 173, 142);"
                       width="106.232"
                       x="1844.06"
                       y="1192.54"
@@ -75,7 +75,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="92"
-                      style="fill:rgb(102, 102, 102)"
+                      style="fill: rgb(102, 102, 102);"
                       width="106.232"
                       x="1844.06"
                       y="1192.54"
@@ -89,7 +89,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <path
                         d="M2.25,10.5C2.25,10.5 1.5,10.5 1.5,9.75C1.5,9 2.25,6.75 6,6.75C9.75,6.75 10.5,9 10.5,9.75C10.5,10.5 9.75,10.5 9.75,10.5L2.25,10.5ZM6,6C7.234,6 8.25,4.984 8.25,3.75C8.25,2.516 7.234,1.5 6,1.5C4.766,1.5 3.75,2.516 3.75,3.75C3.75,4.984 4.766,6 6,6Z"
-                        style="fill:white"
+                        style="fill: white;"
                       />
                     </g>
                   </g>
@@ -98,7 +98,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="118.292"
-                      style="fill:rgb(240, 218, 183)"
+                      style="fill: rgb(240, 218, 183);"
                       width="143.183"
                       x="1663.92"
                       y="-407.511"
@@ -109,7 +109,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="13.378"
-                      style="fill:rgb(132, 97, 0)"
+                      style="fill: rgb(132, 97, 0);"
                       width="10.895"
                       x="1748.87"
                       y="1226.67"
@@ -121,7 +121,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                 >
                   <rect
                     height="145.08"
-                    style="fill-opacity:0.1"
+                    style="fill-opacity: 0.1;"
                     width="198.586"
                     x="657.012"
                     y="404.643"
@@ -135,7 +135,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="91"
-                      style="fill:rgb(253, 243, 228)"
+                      style="fill: rgb(253, 243, 228);"
                       width="105.078"
                       x="495.52"
                       y="1057.87"
@@ -146,7 +146,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="91"
-                      style="fill:rgb(202, 174, 136)"
+                      style="fill: rgb(202, 174, 136);"
                       width="105.078"
                       x="495.52"
                       y="1057.87"
@@ -157,7 +157,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="92"
-                      style="fill:rgb(196, 173, 142)"
+                      style="fill: rgb(196, 173, 142);"
                       width="106.232"
                       x="1844.06"
                       y="1192.54"
@@ -168,7 +168,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="92"
-                      style="fill:rgb(102, 102, 102)"
+                      style="fill: rgb(102, 102, 102);"
                       width="106.232"
                       x="1844.06"
                       y="1192.54"
@@ -182,7 +182,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <path
                         d="M2.25,10.5C2.25,10.5 1.5,10.5 1.5,9.75C1.5,9 2.25,6.75 6,6.75C9.75,6.75 10.5,9 10.5,9.75C10.5,10.5 9.75,10.5 9.75,10.5L2.25,10.5ZM6,6C7.234,6 8.25,4.984 8.25,3.75C8.25,2.516 7.234,1.5 6,1.5C4.766,1.5 3.75,2.516 3.75,3.75C3.75,4.984 4.766,6 6,6Z"
-                        style="fill:white"
+                        style="fill: white;"
                       />
                     </g>
                   </g>
@@ -191,7 +191,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="118.292"
-                      style="fill:rgb(240, 218, 183)"
+                      style="fill: rgb(240, 218, 183);"
                       width="143.183"
                       x="1663.92"
                       y="-407.511"
@@ -202,7 +202,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="13.378"
-                      style="fill:rgb(132, 97, 0)"
+                      style="fill: rgb(132, 97, 0);"
                       width="10.895"
                       x="1748.87"
                       y="1226.67"
@@ -217,7 +217,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="145.08"
-                      style="fill-opacity:0.1"
+                      style="fill-opacity: 0.1;"
                       width="198.586"
                       x="657.012"
                       y="404.643"
@@ -232,7 +232,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                       >
                         <rect
                           height="259.402"
-                          style="fill:rgb(235, 235, 235)"
+                          style="fill: rgb(235, 235, 235);"
                           width="124.002"
                           x="202.62"
                           y="575.419"
@@ -243,7 +243,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                       >
                         <rect
                           height="145.08"
-                          style="fill:rgb(34, 34, 34)"
+                          style="fill: rgb(34, 34, 34);"
                           width="198.586"
                           x="657.012"
                           y="404.643"
@@ -254,7 +254,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                       >
                         <rect
                           height="259.402"
-                          style="fill:rgb(51, 51, 51)"
+                          style="fill: rgb(51, 51, 51);"
                           width="124.002"
                           x="202.62"
                           y="575.419"
@@ -265,7 +265,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                       >
                         <rect
                           height="145.08"
-                          style="fill:rgb(102, 102, 102)"
+                          style="fill: rgb(102, 102, 102);"
                           width="198.586"
                           x="657.012"
                           y="404.643"
@@ -282,7 +282,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                       >
                         <rect
                           height="259.402"
-                          style="fill:rgb(235, 235, 235)"
+                          style="fill: rgb(235, 235, 235);"
                           width="124.002"
                           x="202.62"
                           y="575.419"
@@ -293,7 +293,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                       >
                         <rect
                           height="145.08"
-                          style="fill:rgb(34, 34, 34)"
+                          style="fill: rgb(34, 34, 34);"
                           width="198.586"
                           x="657.012"
                           y="404.643"
@@ -304,7 +304,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                       >
                         <rect
                           height="259.402"
-                          style="fill:rgb(51, 51, 51)"
+                          style="fill: rgb(51, 51, 51);"
                           width="124.002"
                           x="202.62"
                           y="575.419"
@@ -315,7 +315,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                       >
                         <rect
                           height="145.08"
-                          style="fill:rgb(102, 102, 102)"
+                          style="fill: rgb(102, 102, 102);"
                           width="198.586"
                           x="657.012"
                           y="404.643"
@@ -331,7 +331,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="145.08"
-                        style="fill:rgb(235, 235, 235)"
+                        style="fill: rgb(235, 235, 235);"
                         width="198.586"
                         x="657.012"
                         y="404.643"
@@ -342,7 +342,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="145.08"
-                        style="fill:rgb(235, 235, 235)"
+                        style="fill: rgb(235, 235, 235);"
                         width="198.586"
                         x="657.012"
                         y="404.643"
@@ -353,7 +353,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="145.08"
-                        style="fill:rgb(102, 102, 102)"
+                        style="fill: rgb(102, 102, 102);"
                         width="198.586"
                         x="657.012"
                         y="404.643"
@@ -364,7 +364,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="145.08"
-                        style="fill:rgb(51, 51, 51)"
+                        style="fill: rgb(51, 51, 51);"
                         width="198.586"
                         x="657.012"
                         y="404.643"
@@ -375,7 +375,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="145.08"
-                        style="fill:rgb(34, 34, 34)"
+                        style="fill: rgb(34, 34, 34);"
                         width="198.586"
                         x="657.012"
                         y="404.643"
@@ -386,7 +386,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(255, 125, 0)"
+                        style="fill: rgb(255, 125, 0);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -397,7 +397,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(255, 125, 0)"
+                        style="fill: rgb(255, 125, 0);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -408,7 +408,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(248, 248, 248)"
+                        style="fill: rgb(248, 248, 248);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -419,7 +419,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(248, 248, 248)"
+                        style="fill: rgb(248, 248, 248);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -430,7 +430,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(248, 248, 248)"
+                        style="fill: rgb(248, 248, 248);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -441,7 +441,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(255, 125, 0)"
+                        style="fill: rgb(255, 125, 0);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -452,7 +452,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(255, 125, 0)"
+                        style="fill: rgb(255, 125, 0);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -467,7 +467,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="145.08"
-                        style="fill:rgb(235, 235, 235)"
+                        style="fill: rgb(235, 235, 235);"
                         width="198.586"
                         x="657.012"
                         y="404.643"
@@ -478,7 +478,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="145.08"
-                        style="fill:rgb(235, 235, 235)"
+                        style="fill: rgb(235, 235, 235);"
                         width="198.586"
                         x="657.012"
                         y="404.643"
@@ -489,7 +489,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="145.08"
-                        style="fill:rgb(102, 102, 102)"
+                        style="fill: rgb(102, 102, 102);"
                         width="198.586"
                         x="657.012"
                         y="404.643"
@@ -500,7 +500,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="145.08"
-                        style="fill:rgb(51, 51, 51)"
+                        style="fill: rgb(51, 51, 51);"
                         width="198.586"
                         x="657.012"
                         y="404.643"
@@ -511,7 +511,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="145.08"
-                        style="fill:rgb(34, 34, 34)"
+                        style="fill: rgb(34, 34, 34);"
                         width="198.586"
                         x="657.012"
                         y="404.643"
@@ -522,7 +522,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(255, 125, 0)"
+                        style="fill: rgb(255, 125, 0);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -533,7 +533,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(255, 125, 0)"
+                        style="fill: rgb(255, 125, 0);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -544,7 +544,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(248, 248, 248)"
+                        style="fill: rgb(248, 248, 248);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -555,7 +555,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(248, 248, 248)"
+                        style="fill: rgb(248, 248, 248);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -566,7 +566,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(248, 248, 248)"
+                        style="fill: rgb(248, 248, 248);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -577,7 +577,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(255, 125, 0)"
+                        style="fill: rgb(255, 125, 0);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -588,7 +588,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="89.214"
-                        style="fill:rgb(255, 125, 0)"
+                        style="fill: rgb(255, 125, 0);"
                         width="89.214"
                         x="831"
                         y="1023.79"
@@ -603,7 +603,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <path
                         d="M855.598,410.446C855.598,407.244 852.515,404.643 848.718,404.643L663.891,404.643C660.094,404.643 657.012,407.244 657.012,410.446L657.012,543.92C657.012,547.123 660.094,549.723 663.891,549.723L848.718,549.723C852.515,549.723 855.598,547.123 855.598,543.92L855.598,410.446Z"
-                        style="fill:white"
+                        style="fill: white;"
                       />
                     </g>
                     <g
@@ -611,7 +611,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <path
                         d="M855.598,410.446C855.598,407.244 852.515,404.643 848.718,404.643L663.891,404.643C660.094,404.643 657.012,407.244 657.012,410.446L657.012,543.92C657.012,547.123 660.094,549.723 663.891,549.723L848.718,549.723C852.515,549.723 855.598,547.123 855.598,543.92L855.598,410.446Z"
-                        style="fill:white"
+                        style="fill: white;"
                       />
                     </g>
                     <g
@@ -619,7 +619,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <path
                         d="M1088.34,192.063C1089.79,191.209 1090.78,191.821 1090.78,191.821L1092.71,192.944C1092.71,192.944 1092.29,192.721 1091.7,192.763C1090.99,192.813 1090.34,193.215 1090.34,193.215C1090.34,193.215 1088.85,192.362 1088.34,192.063Z"
-                        style="fill:rgb(248, 248, 248)"
+                        style="fill: rgb(248, 248, 248);"
                       />
                     </g>
                     <g
@@ -627,7 +627,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <path
                         d="M1164.02,805.247C1164.05,802.517 1165.64,799.379 1167.67,798.118L1169.67,799.272C1167.58,800.648 1166.09,803.702 1166.02,806.402L1164.02,805.247Z"
-                        style="fill:url(#_Linear1)"
+                        style="fill: url(#_Linear1);"
                       />
                     </g>
                     <g
@@ -635,7 +635,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <path
                         d="M1011.2,933.14C1009.31,932.075 1008.05,929.696 1007.83,926.324L1012.87,929.235C1012.87,929.235 1012.96,930.191 1013.04,930.698C1013.16,931.427 1013.42,932.344 1013.62,932.845C1013.79,933.255 1014.59,935.155 1016.22,936.046C1015.83,935.781 1011.19,933.139 1011.19,933.139L1011.2,933.14Z"
-                        style="fill:rgb(238, 238, 238)"
+                        style="fill: rgb(238, 238, 238);"
                       />
                     </g>
                     <g
@@ -645,14 +645,14 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                         cx="975.681"
                         cy="316.681"
                         r="113.681"
-                        style="fill:rgb(245, 63, 63)"
+                        style="fill: rgb(245, 63, 63);"
                       />
                       <g
                         transform="matrix(1.08844,0,0,0.61677,-99.9184,125.436)"
                       >
                         <path
                           d="M1062,297.556C1062,296.697 1061.61,296 1061.12,296L915.882,296C915.395,296 915,296.697 915,297.556L915,333.356C915,334.215 915.395,334.912 915.882,334.912L1061.12,334.912C1061.61,334.912 1062,334.215 1062,333.356L1062,297.556Z"
-                          style="fill:white"
+                          style="fill: white;"
                         />
                       </g>
                     </g>
@@ -661,7 +661,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="6.511"
-                        style="fill:rgb(248, 248, 248)"
+                        style="fill: rgb(248, 248, 248);"
                         width="18.525"
                         x="1335.54"
                         y="694.688"
@@ -672,7 +672,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <rect
                         height="6.511"
-                        style="fill:rgb(238, 238, 238)"
+                        style="fill: rgb(238, 238, 238);"
                         width="18.525"
                         x="1335.54"
                         y="694.688"
@@ -688,7 +688,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="91"
-                      style="fill:rgb(253, 243, 228)"
+                      style="fill: rgb(253, 243, 228);"
                       width="105.078"
                       x="495.52"
                       y="1057.87"
@@ -699,7 +699,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="91"
-                      style="fill:rgb(202, 174, 136)"
+                      style="fill: rgb(202, 174, 136);"
                       width="105.078"
                       x="495.52"
                       y="1057.87"
@@ -710,7 +710,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="92"
-                      style="fill:rgb(196, 173, 142)"
+                      style="fill: rgb(196, 173, 142);"
                       width="106.232"
                       x="1844.06"
                       y="1192.54"
@@ -721,7 +721,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="92"
-                      style="fill:rgb(102, 102, 102)"
+                      style="fill: rgb(102, 102, 102);"
                       width="106.232"
                       x="1844.06"
                       y="1192.54"
@@ -735,7 +735,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                     >
                       <path
                         d="M2.25,10.5C2.25,10.5 1.5,10.5 1.5,9.75C1.5,9 2.25,6.75 6,6.75C9.75,6.75 10.5,9 10.5,9.75C10.5,10.5 9.75,10.5 9.75,10.5L2.25,10.5ZM6,6C7.234,6 8.25,4.984 8.25,3.75C8.25,2.516 7.234,1.5 6,1.5C4.766,1.5 3.75,2.516 3.75,3.75C3.75,4.984 4.766,6 6,6Z"
-                        style="fill:white"
+                        style="fill: white;"
                       />
                     </g>
                   </g>
@@ -744,7 +744,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="118.292"
-                      style="fill:rgb(240, 218, 183)"
+                      style="fill: rgb(240, 218, 183);"
                       width="143.183"
                       x="1663.92"
                       y="-407.511"
@@ -755,7 +755,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
                   >
                     <rect
                       height="13.378"
-                      style="fill:rgb(132, 97, 0)"
+                      style="fill: rgb(132, 97, 0);"
                       width="10.895"
                       x="1748.87"
                       y="1226.67"
@@ -766,7 +766,7 @@ exports[`renders Result/demo/403.md correctly 1`] = `
             </g>
           </g>
           <defs>
-            <linearGradient
+            <lineargradient
               gradientTransform="matrix(-2.64571,4.04098,-4.04098,-2.64571,1167.67,799.269)"
               gradientUnits="userSpaceOnUse"
               id="_Linear1"
@@ -777,13 +777,13 @@ exports[`renders Result/demo/403.md correctly 1`] = `
             >
               <stop
                 offset="0"
-                style="stop-color:rgb(248, 248, 248);stop-opacity:1"
+                style="stop-color: rgb(248, 248, 248); stop-opacity: 1;"
               />
               <stop
                 offset="1"
-                style="stop-color:rgb(248, 248, 248);stop-opacity:1"
+                style="stop-color: rgb(248, 248, 248); stop-opacity: 1;"
               />
-            </linearGradient>
+            </lineargradient>
           </defs>
         </svg>
       </span>
@@ -822,7 +822,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
       >
         <svg
           height="100%"
-          style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
+          style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;"
           viewBox="0 0 213 213"
           width="100%"
         >
@@ -837,7 +837,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                   cx="1053.23"
                   cy="639.477"
                   r="106.477"
-                  style="fill:rgb(235, 238, 246)"
+                  style="fill: rgb(235, 238, 246);"
                 />
               </g>
               <g
@@ -848,7 +848,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                 >
                   <rect
                     height="145.08"
-                    style="fill-opacity:0.1"
+                    style="fill-opacity: 0.1;"
                     width="198.586"
                     x="657.012"
                     y="404.643"
@@ -859,7 +859,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                 >
                   <rect
                     height="145.08"
-                    style="fill-opacity:0.1"
+                    style="fill-opacity: 0.1;"
                     width="198.586"
                     x="657.012"
                     y="404.643"
@@ -870,7 +870,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                 >
                   <path
                     d="M262.077,959.012L276.923,959.012L273.388,1004.01C273.388,1004.59 273.009,1005.16 272.25,1005.6C270.732,1006.48 268.268,1006.48 266.75,1005.6C265.991,1005.16 265.612,1004.59 265.612,1004.01L262.077,959.012Z"
-                    style="fill:rgb(196, 173, 142)"
+                    style="fill: rgb(196, 173, 142);"
                   />
                   <g
                     transform="matrix(0.866025,-0.5,1,0.57735,0,-45)"
@@ -880,7 +880,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                       cy="1004.25"
                       rx="6.062"
                       ry="5.25"
-                      style="fill:rgb(255, 125, 0)"
+                      style="fill: rgb(255, 125, 0);"
                     />
                   </g>
                 </g>
@@ -889,7 +889,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                 >
                   <path
                     d="M262.077,959.012L276.923,959.012L273.388,1004.01C273.388,1004.59 273.009,1005.16 272.25,1005.6C270.732,1006.48 268.268,1006.48 266.75,1005.6C265.991,1005.16 265.612,1004.59 265.612,1004.01L262.077,959.012Z"
-                    style="fill:rgb(196, 173, 142)"
+                    style="fill: rgb(196, 173, 142);"
                   />
                   <g
                     transform="matrix(0.866025,-0.5,1,0.57735,0,-45)"
@@ -899,7 +899,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                       cy="1004.25"
                       rx="6.062"
                       ry="5.25"
-                      style="fill:rgb(255, 125, 0)"
+                      style="fill: rgb(255, 125, 0);"
                     />
                   </g>
                 </g>
@@ -908,7 +908,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                 >
                   <path
                     d="M262.077,959.012L276.923,959.012L273.388,1004.01C273.388,1004.59 273.009,1005.16 272.25,1005.6C270.732,1006.48 268.268,1006.48 266.75,1005.6C265.991,1005.16 265.612,1004.59 265.612,1004.01L262.077,959.012Z"
-                    style="fill:rgb(196, 173, 142)"
+                    style="fill: rgb(196, 173, 142);"
                   />
                   <g
                     transform="matrix(0.866025,-0.5,1,0.57735,0,-45)"
@@ -918,7 +918,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                       cy="1004.25"
                       rx="6.062"
                       ry="5.25"
-                      style="fill:rgb(255, 125, 0)"
+                      style="fill: rgb(255, 125, 0);"
                     />
                   </g>
                 </g>
@@ -927,7 +927,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                 >
                   <path
                     d="M262.077,959.012L276.923,959.012L273.388,1004.01C273.388,1004.59 273.009,1005.16 272.25,1005.6C270.732,1006.48 268.268,1006.48 266.75,1005.6C265.991,1005.16 265.612,1004.59 265.612,1004.01L262.077,959.012Z"
-                    style="fill:rgb(196, 173, 142)"
+                    style="fill: rgb(196, 173, 142);"
                   />
                   <g
                     transform="matrix(0.866025,-0.5,1,0.57735,0,-45)"
@@ -937,7 +937,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                       cy="1004.25"
                       rx="6.062"
                       ry="5.25"
-                      style="fill:rgb(255, 125, 0)"
+                      style="fill: rgb(255, 125, 0);"
                     />
                   </g>
                 </g>
@@ -947,7 +947,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                   >
                     <rect
                       height="91"
-                      style="fill:rgb(253, 243, 228)"
+                      style="fill: rgb(253, 243, 228);"
                       width="105.078"
                       x="495.52"
                       y="1057.87"
@@ -958,7 +958,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                   >
                     <rect
                       height="92"
-                      style="fill:rgb(196, 173, 142)"
+                      style="fill: rgb(196, 173, 142);"
                       width="106.232"
                       x="1844.06"
                       y="1192.54"
@@ -969,7 +969,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                   >
                     <path
                       d="M1950.29,1194.38C1950.29,1193.37 1949.41,1192.54 1948.34,1192.54L1846.01,1192.54C1844.93,1192.54 1844.06,1193.37 1844.06,1194.38L1844.06,1282.7C1844.06,1283.72 1844.93,1284.54 1846.01,1284.54L1948.34,1284.54C1949.41,1284.54 1950.29,1283.72 1950.29,1282.7L1950.29,1194.38Z"
-                      style="fill:rgb(132, 97, 51)"
+                      style="fill: rgb(132, 97, 51);"
                     />
                   </g>
                   <g
@@ -977,7 +977,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                   >
                     <path
                       d="M1950.29,1194.38C1950.29,1193.37 1949.41,1192.54 1948.34,1192.54L1846.01,1192.54C1844.93,1192.54 1844.06,1193.37 1844.06,1194.38L1844.06,1282.7C1844.06,1283.72 1844.93,1284.54 1846.01,1284.54L1948.34,1284.54C1949.41,1284.54 1950.29,1283.72 1950.29,1282.7L1950.29,1194.38Z"
-                      style="fill:rgb(196, 173, 142)"
+                      style="fill: rgb(196, 173, 142);"
                     />
                   </g>
                   <g
@@ -985,7 +985,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                   >
                     <rect
                       height="118.292"
-                      style="fill:rgb(240, 218, 183)"
+                      style="fill: rgb(240, 218, 183);"
                       width="143.183"
                       x="1663.92"
                       y="-407.511"
@@ -996,7 +996,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                   >
                     <rect
                       height="91"
-                      style="fill:rgb(253, 243, 228)"
+                      style="fill: rgb(253, 243, 228);"
                       width="105.078"
                       x="495.52"
                       y="1057.87"
@@ -1007,7 +1007,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                   >
                     <rect
                       height="118.292"
-                      style="fill:rgb(240, 218, 183)"
+                      style="fill: rgb(240, 218, 183);"
                       width="143.183"
                       x="1663.92"
                       y="-407.511"
@@ -1018,7 +1018,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                   >
                     <rect
                       height="91"
-                      style="fill:rgb(253, 243, 228)"
+                      style="fill: rgb(253, 243, 228);"
                       width="105.078"
                       x="495.52"
                       y="1057.87"
@@ -1032,7 +1032,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="92"
-                        style="fill:rgb(196, 173, 142)"
+                        style="fill: rgb(196, 173, 142);"
                         width="106.232"
                         x="1844.06"
                         y="1192.54"
@@ -1043,7 +1043,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <path
                         d="M1950.29,1238.54C1950.29,1213.15 1944.73,1192.54 1937.88,1192.54L1856.47,1192.54C1849.62,1192.54 1844.06,1213.15 1844.06,1238.54C1844.06,1263.93 1849.62,1284.54 1856.47,1284.54L1937.88,1284.54C1944.73,1284.54 1950.29,1263.93 1950.29,1238.54Z"
-                        style="fill:rgb(132, 97, 51)"
+                        style="fill: rgb(132, 97, 51);"
                       />
                     </g>
                     <g
@@ -1051,7 +1051,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <path
                         d="M1950.29,1238.54C1950.29,1213.15 1948.14,1192.54 1945.5,1192.54L1848.85,1192.54C1846.2,1192.54 1844.06,1213.15 1844.06,1238.54C1844.06,1263.93 1846.2,1284.54 1848.85,1284.54L1945.5,1284.54C1948.14,1284.54 1950.29,1263.93 1950.29,1238.54Z"
-                        style="fill:rgb(246, 220, 185)"
+                        style="fill: rgb(246, 220, 185);"
                       />
                     </g>
                     <g
@@ -1059,7 +1059,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="91"
-                        style="fill:rgb(240, 218, 183)"
+                        style="fill: rgb(240, 218, 183);"
                         width="105.078"
                         x="495.52"
                         y="1057.87"
@@ -1070,7 +1070,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="118.292"
-                        style="fill:rgb(240, 218, 183)"
+                        style="fill: rgb(240, 218, 183);"
                         width="143.183"
                         x="1663.92"
                         y="-407.511"
@@ -1085,7 +1085,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="92"
-                        style="fill:rgb(196, 173, 142)"
+                        style="fill: rgb(196, 173, 142);"
                         width="106.232"
                         x="1844.06"
                         y="1192.54"
@@ -1096,7 +1096,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <path
                         d="M1950.29,1238.54C1950.29,1213.15 1944.73,1192.54 1937.88,1192.54L1856.47,1192.54C1849.62,1192.54 1844.06,1213.15 1844.06,1238.54C1844.06,1263.93 1849.62,1284.54 1856.47,1284.54L1937.88,1284.54C1944.73,1284.54 1950.29,1263.93 1950.29,1238.54Z"
-                        style="fill:rgb(132, 97, 51)"
+                        style="fill: rgb(132, 97, 51);"
                       />
                     </g>
                     <g
@@ -1104,7 +1104,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <path
                         d="M1950.29,1238.54C1950.29,1213.15 1948.14,1192.54 1945.5,1192.54L1848.85,1192.54C1846.2,1192.54 1844.06,1213.15 1844.06,1238.54C1844.06,1263.93 1846.2,1284.54 1848.85,1284.54L1945.5,1284.54C1948.14,1284.54 1950.29,1263.93 1950.29,1238.54Z"
-                        style="fill:rgb(246, 220, 185)"
+                        style="fill: rgb(246, 220, 185);"
                       />
                     </g>
                     <g
@@ -1112,7 +1112,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="91"
-                        style="fill:rgb(240, 218, 183)"
+                        style="fill: rgb(240, 218, 183);"
                         width="105.078"
                         x="495.52"
                         y="1057.87"
@@ -1123,7 +1123,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="118.292"
-                        style="fill:rgb(240, 218, 183)"
+                        style="fill: rgb(240, 218, 183);"
                         width="143.183"
                         x="1663.92"
                         y="-407.511"
@@ -1138,7 +1138,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="92"
-                        style="fill:rgb(196, 173, 142)"
+                        style="fill: rgb(196, 173, 142);"
                         width="106.232"
                         x="1844.06"
                         y="1192.54"
@@ -1149,7 +1149,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <path
                         d="M1950.29,1238.54C1950.29,1213.15 1944.73,1192.54 1937.88,1192.54L1856.47,1192.54C1849.62,1192.54 1844.06,1213.15 1844.06,1238.54C1844.06,1263.93 1849.62,1284.54 1856.47,1284.54L1937.88,1284.54C1944.73,1284.54 1950.29,1263.93 1950.29,1238.54Z"
-                        style="fill:rgb(132, 97, 51)"
+                        style="fill: rgb(132, 97, 51);"
                       />
                     </g>
                     <g
@@ -1157,7 +1157,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <path
                         d="M1950.29,1238.54C1950.29,1213.15 1948.14,1192.54 1945.5,1192.54L1848.85,1192.54C1846.2,1192.54 1844.06,1213.15 1844.06,1238.54C1844.06,1263.93 1846.2,1284.54 1848.85,1284.54L1945.5,1284.54C1948.14,1284.54 1950.29,1263.93 1950.29,1238.54Z"
-                        style="fill:rgb(246, 220, 185)"
+                        style="fill: rgb(246, 220, 185);"
                       />
                     </g>
                     <g
@@ -1165,7 +1165,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="91"
-                        style="fill:rgb(240, 218, 183)"
+                        style="fill: rgb(240, 218, 183);"
                         width="105.078"
                         x="495.52"
                         y="1057.87"
@@ -1176,7 +1176,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="118.292"
-                        style="fill:rgb(240, 218, 183)"
+                        style="fill: rgb(240, 218, 183);"
                         width="143.183"
                         x="1663.92"
                         y="-407.511"
@@ -1185,7 +1185,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                   </g>
                   <path
                     d="M555.753,832.474L555.753,921.408L630.693,878.141L630.693,789.207L555.753,832.474Z"
-                    style="fill-opacity:0.1"
+                    style="fill-opacity: 0.1;"
                   />
                   <g
                     transform="matrix(0.750082,0,0,0.750082,236.431,272.852)"
@@ -1195,7 +1195,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="91"
-                        style="fill:rgb(253, 243, 228)"
+                        style="fill: rgb(253, 243, 228);"
                         width="105.078"
                         x="495.52"
                         y="1057.87"
@@ -1206,7 +1206,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="91"
-                        style="fill:rgb(132, 97, 51)"
+                        style="fill: rgb(132, 97, 51);"
                         width="105.078"
                         x="495.52"
                         y="1057.87"
@@ -1217,7 +1217,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="91"
-                        style="fill:rgb(240, 218, 183)"
+                        style="fill: rgb(240, 218, 183);"
                         width="105.078"
                         x="495.52"
                         y="1057.87"
@@ -1228,7 +1228,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="92"
-                        style="fill:rgb(196, 173, 142)"
+                        style="fill: rgb(196, 173, 142);"
                         width="106.232"
                         x="1844.06"
                         y="1192.54"
@@ -1239,7 +1239,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="92"
-                        style="fill:rgb(196, 173, 142)"
+                        style="fill: rgb(196, 173, 142);"
                         width="106.232"
                         x="1844.06"
                         y="1192.54"
@@ -1250,7 +1250,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="118.292"
-                        style="fill:rgb(240, 218, 183)"
+                        style="fill: rgb(240, 218, 183);"
                         width="143.183"
                         x="1663.92"
                         y="-407.511"
@@ -1261,7 +1261,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                     >
                       <rect
                         height="92"
-                        style="fill:rgb(196, 173, 142)"
+                        style="fill: rgb(196, 173, 142);"
                         width="106.232"
                         x="1844.06"
                         y="1192.54"
@@ -1273,7 +1273,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                       >
                         <rect
                           height="92"
-                          style="fill:rgb(196, 173, 142)"
+                          style="fill: rgb(196, 173, 142);"
                           width="106.232"
                           x="1844.06"
                           y="1192.54"
@@ -1284,7 +1284,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                       >
                         <path
                           d="M1950.29,1238.54C1950.29,1213.15 1944.73,1192.54 1937.88,1192.54L1856.47,1192.54C1849.62,1192.54 1844.06,1213.15 1844.06,1238.54C1844.06,1263.93 1849.62,1284.54 1856.47,1284.54L1937.88,1284.54C1944.73,1284.54 1950.29,1263.93 1950.29,1238.54Z"
-                          style="fill:rgb(132, 97, 51)"
+                          style="fill: rgb(132, 97, 51);"
                         />
                       </g>
                       <g
@@ -1292,7 +1292,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                       >
                         <path
                           d="M1950.29,1238.54C1950.29,1213.15 1948.14,1192.54 1945.5,1192.54L1848.85,1192.54C1846.2,1192.54 1844.06,1213.15 1844.06,1238.54C1844.06,1263.93 1846.2,1284.54 1848.85,1284.54L1945.5,1284.54C1948.14,1284.54 1950.29,1263.93 1950.29,1238.54Z"
-                          style="fill:rgb(246, 220, 185)"
+                          style="fill: rgb(246, 220, 185);"
                         />
                       </g>
                       <g
@@ -1300,7 +1300,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                       >
                         <rect
                           height="91"
-                          style="fill:rgb(240, 218, 183)"
+                          style="fill: rgb(240, 218, 183);"
                           width="105.078"
                           x="495.52"
                           y="1057.87"
@@ -1311,7 +1311,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                       >
                         <rect
                           height="118.292"
-                          style="fill:rgb(240, 218, 183)"
+                          style="fill: rgb(240, 218, 183);"
                           width="143.183"
                           x="1663.92"
                           y="-407.511"
@@ -1324,7 +1324,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                   >
                     <rect
                       height="92"
-                      style="fill:rgb(196, 173, 142)"
+                      style="fill: rgb(196, 173, 142);"
                       width="106.232"
                       x="1844.06"
                       y="1192.54"
@@ -1337,7 +1337,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                   >
                     <path
                       d="M1776.14,1326C1776.14,1321.19 1772.15,1317.28 1767.24,1317.28L1684.37,1317.28C1679.46,1317.28 1675.47,1321.19 1675.47,1326L1675.47,1395.75C1675.47,1400.56 1679.46,1404.46 1684.37,1404.46L1767.24,1404.46C1772.15,1404.46 1776.14,1400.56 1776.14,1395.75L1776.14,1326Z"
-                      style="fill:white"
+                      style="fill: white;"
                     />
                   </g>
                   <g
@@ -1351,14 +1351,14 @@ exports[`renders Result/demo/404.md correctly 1`] = `
                         cy="770.575"
                         rx="6.303"
                         ry="5.459"
-                        style="fill:rgb(255, 125, 0)"
+                        style="fill: rgb(255, 125, 0);"
                       />
                     </g>
                     <g
                       transform="matrix(0.238212,-0.137532,0.178659,0.103149,875.064,207.93)"
                     >
                       <text
-                        style="font-family:NunitoSans-Bold, Nunito Sans;font-weight:700;font-size:41.569px;fill:white"
+                        style="font-family: NunitoSans-Bold, Nunito Sans; font-weight: 700; font-size: 41.569px; fill: white;"
                         x="413.474px"
                         y="892.067px"
                       >
@@ -1383,7 +1383,7 @@ exports[`renders Result/demo/404.md correctly 1`] = `
     >
       <button
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-        style="margin:0 16px"
+        style="margin: 0px 16px;"
         type="button"
       >
         <span>
@@ -1416,7 +1416,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
       >
         <svg
           height="100%"
-          style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
+          style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;"
           viewBox="0 0 213 213"
           width="100%"
         >
@@ -1431,7 +1431,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cx="1053.23"
                   cy="639.477"
                   r="106.477"
-                  style="fill:rgb(235, 238, 246)"
+                  style="fill: rgb(235, 238, 246);"
                 />
               </g>
               <g
@@ -1439,7 +1439,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M84.299,1269.38C84.299,1261.99 78.301,1256 70.913,1256L-56.874,1256C-64.261,1256 -70.259,1261.99 -70.259,1269.38L-70.259,1376.46C-70.259,1383.85 -64.261,1389.85 -56.874,1389.85L70.913,1389.85C78.301,1389.85 84.299,1383.85 84.299,1376.46L84.299,1269.38Z"
-                  style="fill-opacity:0.1"
+                  style="fill-opacity: 0.1;"
                 />
               </g>
               <g
@@ -1447,7 +1447,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M84.299,1269.38C84.299,1261.99 78.301,1256 70.913,1256L-56.874,1256C-64.261,1256 -70.259,1261.99 -70.259,1269.38L-70.259,1376.46C-70.259,1383.85 -64.261,1389.85 -56.874,1389.85L70.913,1389.85C78.301,1389.85 84.299,1383.85 84.299,1376.46L84.299,1269.38Z"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
@@ -1455,7 +1455,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M84.299,1269.38C84.299,1261.99 78.301,1256 70.913,1256L-56.874,1256C-64.261,1256 -70.259,1261.99 -70.259,1269.38L-70.259,1376.46C-70.259,1383.85 -64.261,1389.85 -56.874,1389.85L70.913,1389.85C78.301,1389.85 84.299,1383.85 84.299,1376.46L84.299,1269.38Z"
-                  style="fill:rgb(0, 85, 255)"
+                  style="fill: rgb(0, 85, 255);"
                 />
               </g>
               <g
@@ -1463,19 +1463,19 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M84.299,1269.38C84.299,1261.99 78.301,1256 70.913,1256L-56.874,1256C-64.261,1256 -70.259,1261.99 -70.259,1269.38L-70.259,1376.46C-70.259,1383.85 -64.261,1389.85 -56.874,1389.85L70.913,1389.85C78.301,1389.85 84.299,1383.85 84.299,1376.46L84.299,1269.38Z"
-                  style="fill:rgb(29, 105, 255)"
+                  style="fill: rgb(29, 105, 255);"
                 />
               </g>
               <g
                 transform="matrix(0.428916,0,0,0.428916,19.0588,329.956)"
               >
-                <clipPath
+                <clippath
                   id="_clip1"
                 >
                   <path
                     d="M1461.07,528.445C1461.07,530.876 1459.6,533.196 1456.6,534.928L1342.04,601.072C1335.41,604.896 1323.83,604.415 1316.18,600L1205.33,536C1201.14,533.585 1199,530.489 1199,527.555L1199,559.555C1199,562.489 1201.14,565.585 1205.33,568L1316.18,632C1323.83,636.415 1335.41,636.896 1342.04,633.072L1456.6,566.928C1459.6,565.196 1461.07,562.876 1461.07,560.445L1461.07,528.445Z"
                   />
-                </clipPath>
+                </clippath>
                 <g
                   clip-path="url(#_clip1)"
                 >
@@ -1498,7 +1498,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M1480.33,34.813C1480.33,34.162 1479.7,33.634 1478.94,33.634L1396.27,33.634C1395.5,33.634 1394.88,34.162 1394.88,34.813C1394.88,35.464 1395.5,35.993 1396.27,35.993L1478.94,35.993C1479.7,35.993 1480.33,35.464 1480.33,34.813Z"
-                  style="fill:white"
+                  style="fill: white;"
                 />
               </g>
               <g
@@ -1506,7 +1506,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M1480.33,34.813C1480.33,34.162 1479.7,33.634 1478.94,33.634L1396.27,33.634C1395.5,33.634 1394.88,34.162 1394.88,34.813C1394.88,35.464 1395.5,35.993 1396.27,35.993L1478.94,35.993C1479.7,35.993 1480.33,35.464 1480.33,34.813Z"
-                  style="fill:white"
+                  style="fill: white;"
                 />
               </g>
               <g
@@ -1514,7 +1514,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M1480.33,34.813C1480.33,34.162 1479.7,33.634 1478.94,33.634L1396.27,33.634C1395.5,33.634 1394.88,34.162 1394.88,34.813C1394.88,35.464 1395.5,35.993 1396.27,35.993L1478.94,35.993C1479.7,35.993 1480.33,35.464 1480.33,34.813Z"
-                  style="fill:white"
+                  style="fill: white;"
                 />
               </g>
               <g
@@ -1522,7 +1522,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <rect
                   height="5.947"
-                  style="fill:rgb(106, 161, 255)"
+                  style="fill: rgb(106, 161, 255);"
                   width="57.735"
                   x="1621.2"
                   y="1370.57"
@@ -1536,7 +1536,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
@@ -1547,7 +1547,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
@@ -1558,7 +1558,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:white"
+                  style="fill: white;"
                 />
               </g>
               <g
@@ -1569,7 +1569,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
@@ -1580,19 +1580,19 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
                 transform="matrix(0.384532,-0.222009,0.444019,0.256354,-0.569781,196.542)"
               >
-                <clipPath
+                <clippath
                   id="_clip3"
                 >
                   <path
                     d="M84.299,1269.38C84.299,1261.99 78.301,1256 70.913,1256L-56.874,1256C-64.261,1256 -70.259,1261.99 -70.259,1269.38L-70.259,1376.46C-70.259,1383.85 -64.261,1389.85 -56.874,1389.85L70.913,1389.85C78.301,1389.85 84.299,1383.85 84.299,1376.46L84.299,1269.38Z"
                   />
-                </clipPath>
+                </clippath>
                 <g
                   clip-path="url(#_clip3)"
                 >
@@ -1615,7 +1615,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M84.299,1269.38C84.299,1261.99 78.301,1256 70.913,1256L-56.874,1256C-64.261,1256 -70.259,1261.99 -70.259,1269.38L-70.259,1376.46C-70.259,1383.85 -64.261,1389.85 -56.874,1389.85L70.913,1389.85C78.301,1389.85 84.299,1383.85 84.299,1376.46L84.299,1269.38Z"
-                  style="fill:rgb(0, 85, 255)"
+                  style="fill: rgb(0, 85, 255);"
                 />
               </g>
               <g
@@ -1623,19 +1623,19 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M84.299,1269.38C84.299,1261.99 78.301,1256 70.913,1256L-56.874,1256C-64.261,1256 -70.259,1261.99 -70.259,1269.38L-70.259,1376.46C-70.259,1383.85 -64.261,1389.85 -56.874,1389.85L70.913,1389.85C78.301,1389.85 84.299,1383.85 84.299,1376.46L84.299,1269.38Z"
-                  style="fill:rgb(29, 105, 255)"
+                  style="fill: rgb(29, 105, 255);"
                 />
               </g>
               <g
                 transform="matrix(0.428916,0,0,0.428916,19.0588,307.652)"
               >
-                <clipPath
+                <clippath
                   id="_clip5"
                 >
                   <path
                     d="M1461.07,528.445C1461.07,530.876 1459.6,533.196 1456.6,534.928L1342.04,601.072C1335.41,604.896 1323.83,604.415 1316.18,600L1205.33,536C1201.14,533.585 1199,530.489 1199,527.555L1199,559.555C1199,562.489 1201.14,565.585 1205.33,568L1316.18,632C1323.83,636.415 1335.41,636.896 1342.04,633.072L1456.6,566.928C1459.6,565.196 1461.07,562.876 1461.07,560.445L1461.07,528.445Z"
                   />
-                </clipPath>
+                </clippath>
                 <g
                   clip-path="url(#_clip5)"
                 >
@@ -1658,7 +1658,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M1480.33,34.813C1480.33,34.162 1479.7,33.634 1478.94,33.634L1396.27,33.634C1395.5,33.634 1394.88,34.162 1394.88,34.813C1394.88,35.464 1395.5,35.993 1396.27,35.993L1478.94,35.993C1479.7,35.993 1480.33,35.464 1480.33,34.813Z"
-                  style="fill:white"
+                  style="fill: white;"
                 />
               </g>
               <g
@@ -1666,7 +1666,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M1480.33,34.813C1480.33,34.162 1479.7,33.634 1478.94,33.634L1396.27,33.634C1395.5,33.634 1394.88,34.162 1394.88,34.813C1394.88,35.464 1395.5,35.993 1396.27,35.993L1478.94,35.993C1479.7,35.993 1480.33,35.464 1480.33,34.813Z"
-                  style="fill:white"
+                  style="fill: white;"
                 />
               </g>
               <g
@@ -1674,7 +1674,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M1480.33,34.813C1480.33,34.162 1479.7,33.634 1478.94,33.634L1396.27,33.634C1395.5,33.634 1394.88,34.162 1394.88,34.813C1394.88,35.464 1395.5,35.993 1396.27,35.993L1478.94,35.993C1479.7,35.993 1480.33,35.464 1480.33,34.813Z"
-                  style="fill:white"
+                  style="fill: white;"
                 />
               </g>
               <g
@@ -1682,7 +1682,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <rect
                   height="5.947"
-                  style="fill:rgb(106, 161, 255)"
+                  style="fill: rgb(106, 161, 255);"
                   width="57.735"
                   x="1621.2"
                   y="1370.57"
@@ -1696,7 +1696,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
@@ -1707,7 +1707,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:white"
+                  style="fill: white;"
                 />
               </g>
               <g
@@ -1718,7 +1718,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
@@ -1729,7 +1729,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
@@ -1740,19 +1740,19 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
                 transform="matrix(0.384532,-0.222009,0.444019,0.256354,-0.569781,171.832)"
               >
-                <clipPath
+                <clippath
                   id="_clip6"
                 >
                   <path
                     d="M84.299,1269.38C84.299,1261.99 78.301,1256 70.913,1256L-56.874,1256C-64.261,1256 -70.259,1261.99 -70.259,1269.38L-70.259,1376.46C-70.259,1383.85 -64.261,1389.85 -56.874,1389.85L70.913,1389.85C78.301,1389.85 84.299,1383.85 84.299,1376.46L84.299,1269.38Z"
                   />
-                </clipPath>
+                </clippath>
                 <g
                   clip-path="url(#_clip6)"
                 >
@@ -1775,7 +1775,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M84.299,1269.38C84.299,1261.99 78.301,1256 70.913,1256L-56.874,1256C-64.261,1256 -70.259,1261.99 -70.259,1269.38L-70.259,1376.46C-70.259,1383.85 -64.261,1389.85 -56.874,1389.85L70.913,1389.85C78.301,1389.85 84.299,1383.85 84.299,1376.46L84.299,1269.38Z"
-                  style="fill:rgb(0, 85, 255)"
+                  style="fill: rgb(0, 85, 255);"
                 />
               </g>
               <g
@@ -1783,19 +1783,19 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M84.299,1269.38C84.299,1261.99 78.301,1256 70.913,1256L-56.874,1256C-64.261,1256 -70.259,1261.99 -70.259,1269.38L-70.259,1376.46C-70.259,1383.85 -64.261,1389.85 -56.874,1389.85L70.913,1389.85C78.301,1389.85 84.299,1383.85 84.299,1376.46L84.299,1269.38Z"
-                  style="fill:rgb(29, 105, 255)"
+                  style="fill: rgb(29, 105, 255);"
                 />
               </g>
               <g
                 transform="matrix(0.428916,0,0,0.428916,19.0588,282.943)"
               >
-                <clipPath
+                <clippath
                   id="_clip8"
                 >
                   <path
                     d="M1461.07,528.445C1461.07,530.876 1459.6,533.196 1456.6,534.928L1342.04,601.072C1335.41,604.896 1323.83,604.415 1316.18,600L1205.33,536C1201.14,533.585 1199,530.489 1199,527.555L1199,559.555C1199,562.489 1201.14,565.585 1205.33,568L1316.18,632C1323.83,636.415 1335.41,636.896 1342.04,633.072L1456.6,566.928C1459.6,565.196 1461.07,562.876 1461.07,560.445L1461.07,528.445Z"
                   />
-                </clipPath>
+                </clippath>
                 <g
                   clip-path="url(#_clip8)"
                 >
@@ -1818,7 +1818,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M1480.33,34.813C1480.33,34.162 1479.7,33.634 1478.94,33.634L1396.27,33.634C1395.5,33.634 1394.88,34.162 1394.88,34.813C1394.88,35.464 1395.5,35.993 1396.27,35.993L1478.94,35.993C1479.7,35.993 1480.33,35.464 1480.33,34.813Z"
-                  style="fill:white"
+                  style="fill: white;"
                 />
               </g>
               <g
@@ -1826,7 +1826,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M1480.33,34.813C1480.33,34.162 1479.7,33.634 1478.94,33.634L1396.27,33.634C1395.5,33.634 1394.88,34.162 1394.88,34.813C1394.88,35.464 1395.5,35.993 1396.27,35.993L1478.94,35.993C1479.7,35.993 1480.33,35.464 1480.33,34.813Z"
-                  style="fill:white"
+                  style="fill: white;"
                 />
               </g>
               <g
@@ -1834,7 +1834,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M1480.33,34.813C1480.33,34.162 1479.7,33.634 1478.94,33.634L1396.27,33.634C1395.5,33.634 1394.88,34.162 1394.88,34.813C1394.88,35.464 1395.5,35.993 1396.27,35.993L1478.94,35.993C1479.7,35.993 1480.33,35.464 1480.33,34.813Z"
-                  style="fill:white"
+                  style="fill: white;"
                 />
               </g>
               <g
@@ -1842,7 +1842,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <rect
                   height="5.947"
-                  style="fill:rgb(106, 161, 255)"
+                  style="fill: rgb(106, 161, 255);"
                   width="57.735"
                   x="1621.2"
                   y="1370.57"
@@ -1856,7 +1856,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:white"
+                  style="fill: white;"
                 />
               </g>
               <g
@@ -1867,7 +1867,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
@@ -1878,7 +1878,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
@@ -1889,7 +1889,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
@@ -1900,19 +1900,19 @@ exports[`renders Result/demo/500.md correctly 1`] = `
                   cy="1372.3"
                   rx="4"
                   ry="3.464"
-                  style="fill:rgb(64, 128, 255)"
+                  style="fill: rgb(64, 128, 255);"
                 />
               </g>
               <g
                 transform="matrix(0.365442,-0.210988,0.421976,0.243628,28.7259,185.45)"
               >
-                <clipPath
+                <clippath
                   id="_clip9"
                 >
                   <path
                     d="M84.299,1269.38C84.299,1261.99 78.301,1256 70.913,1256L-56.874,1256C-64.261,1256 -70.259,1261.99 -70.259,1269.38L-70.259,1376.46C-70.259,1383.85 -64.261,1389.85 -56.874,1389.85L70.913,1389.85C78.301,1389.85 84.299,1383.85 84.299,1376.46L84.299,1269.38Z"
                   />
-                </clipPath>
+                </clippath>
                 <g
                   clip-path="url(#_clip9)"
                 >
@@ -1935,19 +1935,19 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M84.299,1269.38C84.299,1261.99 78.301,1256 70.913,1256L-56.874,1256C-64.261,1256 -70.259,1261.99 -70.259,1269.38L-70.259,1376.46C-70.259,1383.85 -64.261,1389.85 -56.874,1389.85L70.913,1389.85C78.301,1389.85 84.299,1383.85 84.299,1376.46L84.299,1269.38Z"
-                  style="fill:url(#_Linear11)"
+                  style="fill: url(#_Linear11);"
                 />
               </g>
               <g
                 transform="matrix(0.407622,0,0,0.407622,47.38,278)"
               >
-                <clipPath
+                <clippath
                   id="_clip12"
                 >
                   <path
                     d="M1461.07,554.317C1461.07,556.747 1459.6,559.067 1456.6,560.8L1342.04,626.943C1335.41,630.767 1323.83,630.287 1316.18,625.871L1205.33,561.871C1201.14,559.456 1199,556.361 1199,553.426L1199,559.555C1199,562.489 1201.14,565.585 1205.33,568L1316.18,632C1323.83,636.415 1335.41,636.896 1342.04,633.072L1456.6,566.928C1459.6,565.196 1461.07,562.876 1461.07,560.445L1461.07,554.317Z"
                   />
-                </clipPath>
+                </clippath>
                 <g
                   clip-path="url(#_clip12)"
                 >
@@ -1968,13 +1968,13 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               <g
                 transform="matrix(0.371452,-0.214458,2.38096e-17,0.495269,-19.3677,248.256)"
               >
-                <clipPath
+                <clippath
                   id="_clip14"
                 >
                   <path
                     d="M1776.14,1326C1776.14,1321.19 1772.23,1317.28 1767.42,1317.28L1684.19,1317.28C1679.38,1317.28 1675.47,1321.19 1675.47,1326L1675.47,1395.75C1675.47,1400.56 1679.38,1404.46 1684.19,1404.46L1767.42,1404.46C1772.23,1404.46 1776.14,1400.56 1776.14,1395.75L1776.14,1326Z"
                   />
-                </clipPath>
+                </clippath>
                 <g
                   clip-path="url(#_clip14)"
                 >
@@ -1997,7 +1997,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M1776.14,1326C1776.14,1321.19 1772.23,1317.28 1767.42,1317.28L1684.19,1317.28C1679.38,1317.28 1675.47,1321.19 1675.47,1326L1675.47,1395.75C1675.47,1400.56 1679.38,1404.46 1684.19,1404.46L1767.42,1404.46C1772.23,1404.46 1776.14,1400.56 1776.14,1395.75L1776.14,1326Z"
-                  style="fill:white;stop-opacity:0.9"
+                  style="fill: white; stop-opacity: 0.9;"
                 />
               </g>
               <g
@@ -2005,14 +2005,14 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               >
                 <path
                   d="M1306.5,1286.73C1307.09,1285.72 1308.6,1285.48 1310.36,1286.12C1312.13,1286.76 1313.84,1288.16 1314.73,1289.7C1326.44,1309.98 1355.4,1360.15 1363.73,1374.57C1364.33,1375.61 1364.49,1376.61 1364.18,1377.35C1363.87,1378.09 1363.11,1378.5 1362.07,1378.5C1346.41,1378.5 1288.17,1378.5 1264.07,1378.5C1262.42,1378.5 1260.37,1377.48 1258.9,1375.94C1257.44,1374.41 1256.88,1372.67 1257.5,1371.6C1268.1,1353.25 1296.8,1303.53 1306.5,1286.73Z"
-                  style="fill:rgb(245, 63, 63) ;fill-opacity:0.9"
+                  style="fill: rgb(245, 63, 63) ;fill-opacity:0.9;"
                 />
               </g>
               <g
                 transform="matrix(0.254264,-0.1468,1.22235e-17,0.254264,329.57,364.144)"
               >
                 <text
-                  style="font-family:NunitoSans-Bold, Nunito Sans;font-weight:700;font-size:41.569px;fill:white;fill-opacity:0.9"
+                  style="font-family: NunitoSans-Bold, Nunito Sans; font-weight: 700; font-size: 41.569px; fill: white; fill-opacity: 0.9;"
                   x="1170.88px"
                   y="1451.42px"
                 >
@@ -2046,7 +2046,7 @@ exports[`renders Result/demo/500.md correctly 1`] = `
               id="_Image10"
               width="107px"
             />
-            <linearGradient
+            <lineargradient
               gradientTransform="matrix(-118.47,-106.79,210.785,-180.125,69.2121,1372.7)"
               gradientUnits="userSpaceOnUse"
               id="_Linear11"
@@ -2057,13 +2057,13 @@ exports[`renders Result/demo/500.md correctly 1`] = `
             >
               <stop
                 offset="0"
-                style="stop-color:rgb(64, 128, 255);stop-opacity:1"
+                style="stop-color: rgb(64, 128, 255); stop-opacity: 1;"
               />
               <stop
                 offset="1"
-                style="stop-color:rgb(64, 128, 255);stop-opacity:1"
+                style="stop-color: rgb(64, 128, 255); stop-opacity: 1;"
               />
-            </linearGradient>
+            </lineargradient>
             <image
               height="34px"
               href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGsAAAAiCAYAAABY6CeoAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABFElEQVRoge2aQRKDMAhFmx6it/P+x7Ab64xOmaAG8vnwFnWhiOGFOG3TPsu6vpS0djpuH61zXoz5F3s6r4rRxipiftddeUbp3t18QozEu3/JfdSzgCy5VWpTWcVYSlaPqcvDEUpZQPUdCqUsSAbMoJIViJIVCBNZrO+MHtbjrs4KRMkKBJUs9uXXTxZ7JR2g6ix27sly6BIxReIOHdpZWevoNe68y2DAmTVXFmDBAB9pJ29nBYRCln5jgkVyv1QUsrIAJyvtvg1F7iGykF/KlniPG66zKDCyWLI2IqwOJSsQz2URbqZEpTorEDCypn6xnciVYT+SlbS+08Zt01lJfv7xBmYZLPpgy6p/pA9gyxIArKMLXxexLNiBCThLAAAAAElFTkSuQmCC"
@@ -2158,7 +2158,7 @@ exports[`renders Result/demo/all.md correctly 1`] = `
     >
       <article
         class="arco-typography result-content"
-        style="background:var(--color-fill-2);padding:24px"
+        style="padding: 24px;"
       >
         <div
           class="arco-typography"
@@ -2220,7 +2220,7 @@ exports[`renders Result/demo/basic.md correctly 1`] = `
     >
       <button
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-        style="margin:0 16px"
+        style="margin: 0px 16px;"
         type="button"
       >
         <span>
@@ -2281,7 +2281,7 @@ exports[`renders Result/demo/error.md correctly 1`] = `
     >
       <button
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-        style="margin:0 16px"
+        style="margin: 0px 16px;"
         type="button"
       >
         <span>
@@ -2319,7 +2319,6 @@ exports[`renders Result/demo/icon.md correctly 1`] = `
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="color:rgb(var(--arcoblue-6))"
           viewBox="0 0 48 48"
         >
           <path

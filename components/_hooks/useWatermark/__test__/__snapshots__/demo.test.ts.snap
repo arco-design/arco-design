@@ -2,10 +2,10 @@
 
 exports[`renders _hooks/useWatermark/demo/basic.md correctly 1`] = `
 <div
-  style="position:relative"
+  style="position: relative;"
 >
   <div
-    style="height:200px;background:var(--color-primary-light-1)"
+    style="height: 200px;"
   />
 </div>
 `;

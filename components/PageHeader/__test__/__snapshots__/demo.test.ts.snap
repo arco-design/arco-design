@@ -2,7 +2,7 @@
 
 exports[`renders PageHeader/demo/background.md correctly 1`] = `
 <div
-  style="background-image:radial-gradient(var(--color-fill-3) 1px, rgba(0, 0, 0, 0) 1px);background-size:16px 16px;padding:20px"
+  style="background-size: 16px 16px; padding: 20px;"
 >
   <div
     class="arco-page-header"
@@ -112,11 +112,10 @@ exports[`renders PageHeader/demo/background.md correctly 1`] = `
 
 exports[`renders PageHeader/demo/basic.md correctly 1`] = `
 <div
-  style="background:var(--color-fill-2);padding:40px"
+  style="padding: 40px;"
 >
   <div
     class="arco-page-header"
-    style="background:var(--color-bg-2)"
   >
     <div
       class="arco-page-header-head-wrapper"
@@ -200,11 +199,10 @@ exports[`renders PageHeader/demo/basic.md correctly 1`] = `
 
 exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
 <div
-  style="background:var(--color-fill-2);padding:40px"
+  style="padding: 40px;"
 >
   <div
     class="arco-page-header arco-page-header-with-breadcrumb"
-    style="background:var(--color-bg-2)"
   >
     <div
       class="arco-page-header-head-wrapper"
@@ -357,11 +355,10 @@ exports[`renders PageHeader/demo/breadcrumb.md correctly 1`] = `
 
 exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
 <div
-  style="background:var(--color-fill-2);padding:40px"
+  style="padding: 40px;"
 >
   <div
     class="arco-page-header arco-page-header-with-breadcrumb arco-page-header-with-content"
-    style="background:var(--color-bg-2)"
   >
     <div
       class="arco-page-header-head-wrapper"
@@ -478,7 +475,7 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
             This is a description
             <div
               class="arco-tag arco-tag-red arco-tag-checked arco-tag-size-small"
-              style="margin-left:8px"
+              style="margin-left: 8px;"
             >
               <span
                 class="arco-tag-content"
@@ -494,7 +491,7 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
           <div>
             <button
               class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:12px"
+              style="margin-right: 12px;"
               type="button"
             >
               <span>
@@ -518,7 +515,7 @@ exports[`renders PageHeader/demo/conplex.md correctly 1`] = `
     >
       <div
         class="arco-typography"
-        style="font-size:16px;font-weight:600;margin-top:0;margin-bottom:20px"
+        style="font-size: 16px; font-weight: 600; margin-top: 0px; margin-bottom: 20px;"
       >
         For other uses, see Design
       </div>

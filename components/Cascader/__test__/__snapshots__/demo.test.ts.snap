@@ -6,11 +6,11 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       class="arco-cascader-wrapper"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
     >
       <div
         class="arco-cascader-addbefore"
@@ -19,6 +19,7 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
       </div>
       <div
         aria-autocomplete="list"
+        aria-controls="arco-cascader-popup-0"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-cascader arco-cascader-single arco-cascader-size-default"
@@ -36,7 +37,7 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
               autocomplete="off"
               class="arco-cascader-view-input"
               placeholder="Please select ..."
-              style="width:100%;pointer-events:none"
+              style="width: 100%; pointer-events: none;"
               tabindex="-1"
               value=""
             />
@@ -47,7 +48,7 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
             </span>
             <span
               class="arco-cascader-view-value"
-              style="display:none"
+              style="display: none;"
             >
               Please select ...
             </span>
@@ -83,7 +84,7 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
   >
     <div
       class="arco-cascader-wrapper"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
     >
       <div
         class="arco-cascader-addbefore"
@@ -92,6 +93,7 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
       </div>
       <div
         aria-autocomplete="list"
+        aria-controls="arco-cascader-popup-1"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
@@ -115,6 +117,7 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                   placeholder="Hover to expand"
+                  style="width: 2px;"
                   value=""
                 />
                 <span
@@ -161,15 +164,16 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <div
         aria-autocomplete="list"
+        aria-controls="arco-cascader-popup-2"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-cascader arco-cascader-single arco-cascader-size-default"
         role="combobox"
-        style="width:300px;margin-bottom:20px"
+        style="width: 300px; margin-bottom: 20px;"
         tabindex="0"
       >
         <div
@@ -183,7 +187,7 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
               autocomplete="off"
               class="arco-cascader-view-input"
               placeholder="Please select ..."
-              style="width:100%;pointer-events:none"
+              style="width: 100%; pointer-events: none;"
               tabindex="-1"
               value=""
             />
@@ -194,7 +198,7 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
             </span>
             <span
               class="arco-cascader-view-value"
-              style="display:none"
+              style="display: none;"
             >
               Please select ...
             </span>
@@ -229,11 +233,12 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
     >
       <div
         aria-autocomplete="list"
+        aria-controls="arco-cascader-popup-3"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-cascader arco-cascader-single arco-cascader-size-default"
         role="combobox"
-        style="width:300px;margin-bottom:20px"
+        style="width: 300px; margin-bottom: 20px;"
         tabindex="0"
       >
         <div
@@ -247,7 +252,7 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
               autocomplete="off"
               class="arco-cascader-view-input"
               placeholder="Hover to expand"
-              style="width:100%;pointer-events:none"
+              style="width: 100%; pointer-events: none;"
               tabindex="-1"
               value=""
             />
@@ -258,7 +263,7 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
             </span>
             <span
               class="arco-cascader-view-value"
-              style="display:none"
+              style="display: none;"
             >
               Hover to expand
             </span>
@@ -295,15 +300,16 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <div
         aria-autocomplete="list"
+        aria-controls="arco-cascader-popup-4"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-cascader arco-cascader-single arco-cascader-size-default arco-cascader-error"
         role="combobox"
-        style="width:300px;margin-bottom:20px"
+        style="width: 300px; margin-bottom: 20px;"
         tabindex="0"
       >
         <div
@@ -317,7 +323,7 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
               autocomplete="off"
               class="arco-cascader-view-input"
               placeholder="Please select ..."
-              style="width:100%;pointer-events:none"
+              style="width: 100%; pointer-events: none;"
               tabindex="-1"
               value=""
             />
@@ -328,7 +334,7 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
             </span>
             <span
               class="arco-cascader-view-value"
-              style="display:none"
+              style="display: none;"
             >
               Please select ...
             </span>
@@ -363,11 +369,12 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
     >
       <div
         aria-autocomplete="list"
+        aria-controls="arco-cascader-popup-5"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-cascader arco-cascader-single arco-cascader-size-default arco-cascader-warning"
         role="combobox"
-        style="width:300px;margin-bottom:20px"
+        style="width: 300px; margin-bottom: 20px;"
         tabindex="0"
       >
         <div
@@ -381,7 +388,7 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
               autocomplete="off"
               class="arco-cascader-view-input"
               placeholder="Hover to expand"
-              style="width:100%;pointer-events:none"
+              style="width: 100%; pointer-events: none;"
               tabindex="-1"
               value=""
             />
@@ -392,7 +399,7 @@ exports[`renders Cascader/demo/basic.md correctly 1`] = `
             </span>
             <span
               class="arco-cascader-view-value"
-              style="display:none"
+              style="display: none;"
             >
               Hover to expand
             </span>
@@ -432,15 +439,16 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-6"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -454,7 +462,7 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
             autocomplete="off"
             class="arco-cascader-view-input"
             placeholder="Please select ..."
-            style="width:100%"
+            style="width: 100%;"
             value=""
           />
           <span
@@ -464,7 +472,7 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
           </span>
           <span
             class="arco-cascader-view-value"
-            style="display:none"
+            style="display: none;"
           >
             Please select ...
           </span>
@@ -499,11 +507,12 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-7"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -523,6 +532,7 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -564,11 +574,12 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
 exports[`renders Cascader/demo/clear.md correctly 1`] = `
 <div
   aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-8"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-cascader arco-cascader-single arco-cascader-size-default"
   role="combobox"
-  style="width:300px"
+  style="width: 300px;"
   tabindex="0"
 >
   <div
@@ -583,7 +594,7 @@ exports[`renders Cascader/demo/clear.md correctly 1`] = `
         autocomplete="off"
         class="arco-cascader-view-input arco-cascader-hidden"
         placeholder="Please select ..."
-        style="width:100%;pointer-events:none"
+        style="width: 100%; pointer-events: none;"
         tabindex="-1"
         value=""
       />
@@ -642,15 +653,16 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-9"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -664,7 +676,7 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
             autocomplete="off"
             class="arco-cascader-view-input"
             placeholder="Please select ..."
-            style="width:100%"
+            style="width: 100%;"
             value=""
           />
           <span
@@ -674,7 +686,7 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
           </span>
           <span
             class="arco-cascader-view-value"
-            style="display:none"
+            style="display: none;"
           >
             Please select ...
           </span>
@@ -709,11 +721,12 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-10"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -733,6 +746,7 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -794,15 +808,16 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-12"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -817,7 +832,7 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
             autocomplete="off"
             class="arco-cascader-view-input arco-cascader-hidden"
             placeholder="Beijing / Beijing / Dongcheng / Chaoyangmen"
-            style="width:100%"
+            style="width: 100%;"
             value=""
           />
           <span
@@ -873,11 +888,12 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-13"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -917,6 +933,7 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -973,11 +990,12 @@ exports[`renders Cascader/demo/disabled.md correctly 1`] = `
 exports[`renders Cascader/demo/draggable.md correctly 1`] = `
 <div
   aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-14"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
   role="combobox"
-  style="width:600px"
+  style="width: 600px;"
   tabindex="0"
 >
   <div
@@ -999,7 +1017,7 @@ exports[`renders Cascader/demo/draggable.md correctly 1`] = `
             <li
               class="arco-draggable-item"
               draggable="true"
-              style="display:inline-block"
+              style="display: inline-block;"
             >
               <div
                 class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag arco-cascader-tag"
@@ -1035,12 +1053,13 @@ exports[`renders Cascader/demo/draggable.md correctly 1`] = `
             <li
               class="arco-draggable-item"
               draggable="true"
-              style="display:inline-block"
+              style="display: inline-block;"
             >
               <input
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -1100,15 +1119,16 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-15"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-size-default"
       role="combobox"
-      style="width:300px"
+      style="width: 300px;"
       tabindex="0"
     >
       <div
@@ -1122,7 +1142,7 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
             autocomplete="off"
             class="arco-cascader-view-input"
             placeholder="Please select ..."
-            style="width:100%;pointer-events:none"
+            style="width: 100%; pointer-events: none;"
             tabindex="-1"
             value=""
           />
@@ -1133,7 +1153,7 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
           </span>
           <span
             class="arco-cascader-view-value"
-            style="display:none"
+            style="display: none;"
           >
             Please select ...
           </span>
@@ -1168,11 +1188,12 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-16"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-size-default"
       role="combobox"
-      style="width:300px"
+      style="width: 300px;"
       tabindex="0"
     >
       <div
@@ -1185,7 +1206,7 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
           <input
             autocomplete="off"
             class="arco-cascader-view-input"
-            style="width:100%;pointer-events:none"
+            style="width: 100%; pointer-events: none;"
             tabindex="-1"
             value=""
           />
@@ -1194,7 +1215,7 @@ exports[`renders Cascader/demo/dropdown.md correctly 1`] = `
           />
           <span
             class="arco-cascader-view-value"
-            style="display:none"
+            style="display: none;"
           />
         </span>
         <div
@@ -1229,11 +1250,12 @@ exports[`renders Cascader/demo/filedNames.md correctly 1`] = `
 <div>
   <div
     aria-autocomplete="list"
+    aria-controls="arco-cascader-popup-17"
     aria-expanded="false"
     aria-haspopup="listbox"
     class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
     role="combobox"
-    style="width:300px"
+    style="width: 300px;"
     tabindex="0"
   >
     <div
@@ -1283,6 +1305,7 @@ exports[`renders Cascader/demo/filedNames.md correctly 1`] = `
               autocomplete="off"
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
               placeholder=""
+              style="width: 2px;"
               value=""
             />
             <span
@@ -1341,15 +1364,16 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-18"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -1364,7 +1388,7 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
             autocomplete="off"
             class="arco-cascader-view-input arco-cascader-hidden"
             placeholder="Shanghai / Shanghai / Huangpu"
-            style="width:100%"
+            style="width: 100%;"
             value=""
           />
           <span
@@ -1420,11 +1444,12 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-19"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -1474,6 +1499,7 @@ exports[`renders Cascader/demo/filter_option.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -1533,15 +1559,16 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-20"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="max-width:300px"
+      style="max-width: 300px;"
       tabindex="0"
     >
       <div
@@ -1556,7 +1583,7 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
             autocomplete="off"
             class="arco-cascader-view-input arco-cascader-hidden"
             placeholder="Shanghai / Shanghai / Huangpu"
-            style="width:100%"
+            style="width: 100%;"
             value=""
           />
           <span
@@ -1612,11 +1639,12 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-21"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="max-width:300px"
+      style="max-width: 300px;"
       tabindex="0"
     >
       <div
@@ -1666,6 +1694,7 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -1722,11 +1751,12 @@ exports[`renders Cascader/demo/footer.md correctly 1`] = `
 exports[`renders Cascader/demo/format.md correctly 1`] = `
 <div
   aria-autocomplete="list"
+  aria-controls="arco-cascader-popup-22"
   aria-expanded="false"
   aria-haspopup="listbox"
   class="arco-cascader arco-cascader-single arco-cascader-size-default"
   role="combobox"
-  style="width:300px"
+  style="width: 300px;"
   tabindex="0"
 >
   <div
@@ -1741,7 +1771,7 @@ exports[`renders Cascader/demo/format.md correctly 1`] = `
         autocomplete="off"
         class="arco-cascader-view-input arco-cascader-hidden"
         placeholder="Please select ..."
-        style="width:100%;pointer-events:none"
+        style="width: 100%; pointer-events: none;"
         tabindex="-1"
         value=""
       />
@@ -1800,15 +1830,16 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-23"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -1822,7 +1853,7 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
             autocomplete="off"
             class="arco-cascader-view-input"
             placeholder="Please select ..."
-            style="width:100%"
+            style="width: 100%;"
             value=""
           />
           <span
@@ -1832,7 +1863,7 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
           </span>
           <span
             class="arco-cascader-view-value"
-            style="display:none"
+            style="display: none;"
           >
             Please select ...
           </span>
@@ -1867,11 +1898,12 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-24"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -1891,6 +1923,7 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -1935,15 +1968,16 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:8px"
+    style="margin-right: 8px;"
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-25"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px"
+      style="width: 300px;"
       tabindex="0"
     >
       <div
@@ -1993,6 +2027,7 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -2031,11 +2066,12 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-26"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px"
+      style="width: 300px;"
       tabindex="0"
     >
       <div
@@ -2055,6 +2091,7 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -2096,13 +2133,14 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
 exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
 <div>
   <div
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-checkbox"
     >
       <input
         type="checkbox"
+        value=""
       />
       <span
         class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2138,15 +2176,16 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <div
         aria-autocomplete="list"
+        aria-controls="arco-cascader-popup-27"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
         role="combobox"
-        style="width:300px"
+        style="width: 300px;"
         tabindex="0"
       >
         <div
@@ -2160,7 +2199,7 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
               autocomplete="off"
               class="arco-cascader-view-input"
               placeholder="Please enter ..."
-              style="width:100%"
+              style="width: 100%;"
               value=""
             />
             <span
@@ -2170,7 +2209,7 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
             </span>
             <span
               class="arco-cascader-view-value"
-              style="display:none"
+              style="display: none;"
             >
               Please enter ...
             </span>
@@ -2205,11 +2244,12 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
     >
       <div
         aria-autocomplete="list"
+        aria-controls="arco-cascader-popup-28"
         aria-expanded="false"
         aria-haspopup="listbox"
         class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
         role="combobox"
-        style="width:300px"
+        style="width: 300px;"
         tabindex="0"
       >
         <div
@@ -2229,6 +2269,7 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                   placeholder="Please enter ..."
+                  style="width: 2px;"
                   value=""
                 />
                 <span
@@ -2274,15 +2315,16 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-29"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -2297,7 +2339,7 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
             autocomplete="off"
             class="arco-cascader-view-input arco-cascader-hidden"
             placeholder="Shanghai / Shanghai / Huangpu"
-            style="width:100%"
+            style="width: 100%;"
             value=""
           />
           <span
@@ -2336,11 +2378,12 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-30"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -2390,6 +2433,7 @@ exports[`renders Cascader/demo/render_option.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -2432,15 +2476,16 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-31"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -2455,7 +2500,7 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
             autocomplete="off"
             class="arco-cascader-view-input arco-cascader-hidden"
             placeholder="Shanghai / Shanghai / Huangpu"
-            style="width:100%"
+            style="width: 100%;"
             value=""
           />
           <span
@@ -2511,11 +2556,12 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
   >
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-32"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -2565,6 +2611,7 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -2621,13 +2668,14 @@ exports[`renders Cascader/demo/search.md correctly 1`] = `
 exports[`renders Cascader/demo/showEmptyChildren.md correctly 1`] = `
 <div>
   <div
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-checkbox"
     >
       <input
         type="checkbox"
+        value=""
       />
       <span
         class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -2660,11 +2708,12 @@ exports[`renders Cascader/demo/showEmptyChildren.md correctly 1`] = `
   </div>
   <div
     aria-autocomplete="list"
+    aria-controls="arco-cascader-popup-33"
     aria-expanded="false"
     aria-haspopup="listbox"
     class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
     role="combobox"
-    style="width:300px"
+    style="width: 300px;"
     tabindex="0"
   >
     <div
@@ -2678,7 +2727,7 @@ exports[`renders Cascader/demo/showEmptyChildren.md correctly 1`] = `
           autocomplete="off"
           class="arco-cascader-view-input"
           placeholder="Please select ..."
-          style="width:100%"
+          style="width: 100%;"
           value=""
         />
         <span
@@ -2688,7 +2737,7 @@ exports[`renders Cascader/demo/showEmptyChildren.md correctly 1`] = `
         </span>
         <span
           class="arco-cascader-view-value"
-          style="display:none"
+          style="display: none;"
         >
           Please select ...
         </span>
@@ -2725,7 +2774,7 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
     role="radiogroup"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-radio-button"
@@ -2788,11 +2837,12 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
   <div>
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-34"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-single arco-cascader-size-default"
       role="combobox"
-      style="width:300px;margin-bottom:20px"
+      style="width: 300px; margin-bottom: 20px;"
       tabindex="0"
     >
       <div
@@ -2806,7 +2856,7 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
             autocomplete="off"
             class="arco-cascader-view-input"
             placeholder="Please select ..."
-            style="width:100%;pointer-events:none"
+            style="width: 100%; pointer-events: none;"
             tabindex="-1"
             value=""
           />
@@ -2817,7 +2867,7 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
           </span>
           <span
             class="arco-cascader-view-value"
-            style="display:none"
+            style="display: none;"
           >
             Please select ...
           </span>
@@ -2849,11 +2899,12 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
     <br />
     <div
       aria-autocomplete="list"
+      aria-controls="arco-cascader-popup-35"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-cascader arco-cascader-multiple arco-cascader-show-search arco-cascader-size-default"
       role="combobox"
-      style="width:300px"
+      style="width: 300px;"
       tabindex="0"
     >
       <div
@@ -2873,6 +2924,7 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -2916,7 +2968,7 @@ exports[`renders Cascader/demo/visible.md correctly 1`] = `
   <p>
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-      style="margin-right:20px"
+      style="margin-right: 20px;"
       type="button"
     >
       <span>
@@ -2926,11 +2978,12 @@ exports[`renders Cascader/demo/visible.md correctly 1`] = `
   </p>
   <div
     aria-autocomplete="list"
+    aria-controls="arco-cascader-popup-36"
     aria-expanded="false"
     aria-haspopup="listbox"
     class="arco-cascader arco-cascader-single arco-cascader-size-default"
     role="combobox"
-    style="width:300px;margin-top:20px"
+    style="width: 300px; margin-top: 20px;"
     tabindex="0"
   >
     <div
@@ -2944,7 +2997,7 @@ exports[`renders Cascader/demo/visible.md correctly 1`] = `
           autocomplete="off"
           class="arco-cascader-view-input"
           placeholder="Please select ..."
-          style="width:100%;pointer-events:none"
+          style="width: 100%; pointer-events: none;"
           tabindex="-1"
           value=""
         />
@@ -2955,7 +3008,7 @@ exports[`renders Cascader/demo/visible.md correctly 1`] = `
         </span>
         <span
           class="arco-cascader-view-value"
-          style="display:none"
+          style="display: none;"
         >
           Please select ...
         </span>

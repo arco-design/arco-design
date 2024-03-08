@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render } from './util';
 
 // 此处Component的类型存在疑问，待完善
 export default function mountTest(Component: React.ComponentType<any> | React.ComponentType) {

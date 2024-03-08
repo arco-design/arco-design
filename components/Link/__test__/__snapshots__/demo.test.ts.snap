@@ -6,7 +6,7 @@ exports[`renders Link/demo/basic.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <a
       class="arco-link"
@@ -33,7 +33,7 @@ exports[`renders Link/demo/dropdown.md correctly 1`] = `
 <div>
   <span
     class="arco-link"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     City
     <svg
@@ -43,7 +43,7 @@ exports[`renders Link/demo/dropdown.md correctly 1`] = `
       focusable="false"
       stroke="currentColor"
       stroke-width="4"
-      style="font-size:12px;margin-left:6px"
+      style="font-size: 12px; margin-left: 6px;"
       viewBox="0 0 48 48"
     >
       <path
@@ -63,7 +63,7 @@ exports[`renders Link/demo/dropdown.md correctly 1`] = `
       focusable="false"
       stroke="currentColor"
       stroke-width="4"
-      style="font-size:12px;margin-left:6px"
+      style="font-size: 12px; margin-left: 6px;"
       viewBox="0 0 48 48"
     >
       <path
@@ -80,7 +80,7 @@ exports[`renders Link/demo/hoverable.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <span
       class="arco-link arco-link-hoverless"
@@ -106,14 +106,14 @@ exports[`renders Link/demo/icon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-bottom:0"
+    style="margin-bottom: 0px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <a
           class="arco-link arco-link-with-icon"
@@ -177,7 +177,7 @@ exports[`renders Link/demo/icon.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:24px"
+        style="margin-right: 24px;"
       >
         <a
           class="arco-link arco-link-with-icon"
@@ -238,7 +238,7 @@ exports[`renders Link/demo/icon.md correctly 1`] = `
 
 exports[`renders Link/demo/status.md correctly 1`] = `
 <div
-  style="display:grid;grid-template-columns:repeat(2, 100px);grid-column-gap:24px"
+  style="display: grid; grid-template-columns: repeat(2, 100px);"
 >
   <a
     class="arco-link arco-link-is-error"

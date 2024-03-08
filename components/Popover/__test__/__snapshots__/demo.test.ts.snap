@@ -17,7 +17,7 @@ exports[`renders Popover/demo/popupVisible.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -45,11 +45,11 @@ exports[`renders Popover/demo/popupVisible.md correctly 1`] = `
 
 exports[`renders Popover/demo/position.md correctly 1`] = `
 <div
-  style="position:relative;width:440px;height:280px"
+  style="position: relative; width: 440px; height: 280px;"
 >
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:0;left:70px"
+    style="position: absolute; width: 80px; top: 0px; left: 70px;"
     type="button"
   >
     <span>
@@ -58,7 +58,7 @@ exports[`renders Popover/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:0;left:180px"
+    style="position: absolute; width: 80px; top: 0px; left: 180px;"
     type="button"
   >
     <span>
@@ -67,7 +67,7 @@ exports[`renders Popover/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:0;left:290px"
+    style="position: absolute; width: 80px; top: 0px; left: 290px;"
     type="button"
   >
     <span>
@@ -76,7 +76,7 @@ exports[`renders Popover/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:60px;left:10px"
+    style="position: absolute; width: 80px; top: 60px; left: 10px;"
     type="button"
   >
     <span>
@@ -85,7 +85,7 @@ exports[`renders Popover/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:120px;left:10px"
+    style="position: absolute; width: 80px; top: 120px; left: 10px;"
     type="button"
   >
     <span>
@@ -94,7 +94,7 @@ exports[`renders Popover/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:180px;left:10px"
+    style="position: absolute; width: 80px; top: 180px; left: 10px;"
     type="button"
   >
     <span>
@@ -103,7 +103,7 @@ exports[`renders Popover/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:60px;left:350px"
+    style="position: absolute; width: 80px; top: 60px; left: 350px;"
     type="button"
   >
     <span>
@@ -112,7 +112,7 @@ exports[`renders Popover/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:120px;left:350px"
+    style="position: absolute; width: 80px; top: 120px; left: 350px;"
     type="button"
   >
     <span>
@@ -121,7 +121,7 @@ exports[`renders Popover/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:180px;left:350px"
+    style="position: absolute; width: 80px; top: 180px; left: 350px;"
     type="button"
   >
     <span>
@@ -130,7 +130,7 @@ exports[`renders Popover/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:240px;left:70px"
+    style="position: absolute; width: 80px; top: 240px; left: 70px;"
     type="button"
   >
     <span>
@@ -139,7 +139,7 @@ exports[`renders Popover/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:240px;left:180px"
+    style="position: absolute; width: 80px; top: 240px; left: 180px;"
     type="button"
   >
     <span>
@@ -148,7 +148,7 @@ exports[`renders Popover/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:240px;left:290px"
+    style="position: absolute; width: 80px; top: 240px; left: 290px;"
     type="button"
   >
     <span>
@@ -164,7 +164,7 @@ exports[`renders Popover/demo/trigger.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -177,7 +177,7 @@ exports[`renders Popover/demo/trigger.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"

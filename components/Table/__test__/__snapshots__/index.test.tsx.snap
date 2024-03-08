@@ -282,4 +282,4 @@ exports[`ConfigProvider componentConfig.Table set className globally and compone
 </div>
 `;
 
-exports[`ConfigProvider componentConfig.Table set data-* property 1`] = `null`;
+exports[`ConfigProvider componentConfig.Table set data-* property 1`] = `undefined`;

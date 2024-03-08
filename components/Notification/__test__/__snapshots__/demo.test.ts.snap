@@ -28,11 +28,11 @@ exports[`renders Notification/demo/icon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-      style="margin-bottom:20px"
+      style="margin-bottom: 20px;"
       type="button"
     >
       <span>
@@ -42,11 +42,11 @@ exports[`renders Notification/demo/icon.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-success"
-      style="margin-bottom:24px"
+      style="margin-bottom: 24px;"
       type="button"
     >
       <span>
@@ -56,11 +56,11 @@ exports[`renders Notification/demo/icon.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning"
-      style="margin-bottom:24px"
+      style="margin-bottom: 24px;"
       type="button"
     >
       <span>
@@ -70,11 +70,11 @@ exports[`renders Notification/demo/icon.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger"
-      style="margin-bottom:24px"
+      style="margin-bottom: 24px;"
       type="button"
     >
       <span>
@@ -87,7 +87,7 @@ exports[`renders Notification/demo/icon.md correctly 1`] = `
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-      style="margin-bottom:24px"
+      style="margin-bottom: 24px;"
       type="button"
     >
       <span>
@@ -104,7 +104,7 @@ exports[`renders Notification/demo/position.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -117,7 +117,7 @@ exports[`renders Notification/demo/position.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -130,7 +130,7 @@ exports[`renders Notification/demo/position.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -173,7 +173,7 @@ exports[`renders Notification/demo/type.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -186,7 +186,7 @@ exports[`renders Notification/demo/type.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-success"
@@ -199,7 +199,7 @@ exports[`renders Notification/demo/type.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning"
@@ -212,7 +212,7 @@ exports[`renders Notification/demo/type.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger"
@@ -266,7 +266,7 @@ exports[`renders Notification/demo/useNotification.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -279,7 +279,7 @@ exports[`renders Notification/demo/useNotification.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-success"
@@ -292,7 +292,7 @@ exports[`renders Notification/demo/useNotification.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-warning"
@@ -305,7 +305,7 @@ exports[`renders Notification/demo/useNotification.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:24px"
+    style="margin-right: 24px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-status-danger"

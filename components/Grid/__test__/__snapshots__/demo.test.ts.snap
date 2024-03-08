@@ -24,7 +24,7 @@ exports[`renders Grid/demo/adaptation.md correctly 1`] = `
 
 exports[`renders Grid/demo/adaptation_object.md correctly 1`] = `
 <div
-  style="width:100%"
+  style="width: 100%;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
@@ -51,11 +51,11 @@ exports[`renders Grid/demo/adaptation_object.md correctly 1`] = `
 exports[`renders Grid/demo/basic.md correctly 1`] = `
 <div
   class="grid-demo-background"
-  style="width:100%"
+  style="width: 100%;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="margin-bottom:16px"
+    style="margin-bottom: 16px;"
   >
     <div
       class="arco-col arco-col-24"
@@ -67,7 +67,7 @@ exports[`renders Grid/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="margin-bottom:16px"
+    style="margin-bottom: 16px;"
   >
     <div
       class="arco-col arco-col-12"
@@ -86,7 +86,7 @@ exports[`renders Grid/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="margin-bottom:16px"
+    style="margin-bottom: 16px;"
   >
     <div
       class="arco-col arco-col-8"
@@ -112,7 +112,7 @@ exports[`renders Grid/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="margin-bottom:16px"
+    style="margin-bottom: 16px;"
   >
     <div
       class="arco-col arco-col-6"
@@ -194,15 +194,15 @@ exports[`renders Grid/demo/basic.md correctly 1`] = `
 
 exports[`renders Grid/demo/flex.md correctly 1`] = `
 <div
-  style="width:100%"
+  style="width: 100%;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="margin-bottom:16px"
+    style="margin-bottom: 16px;"
   >
     <div
       class="arco-col"
-      style="flex:0 0 100px"
+      style="flex: 0 0 100px;"
     >
       <div>
         100px
@@ -210,7 +210,7 @@ exports[`renders Grid/demo/flex.md correctly 1`] = `
     </div>
     <div
       class="arco-col"
-      style="flex:auto"
+      style="flex-basis: auto;"
     >
       <div>
         auto
@@ -219,11 +219,11 @@ exports[`renders Grid/demo/flex.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="margin-bottom:16px"
+    style="margin-bottom: 16px;"
   >
     <div
       class="arco-col"
-      style="flex:0 0 100px"
+      style="flex: 0 0 100px;"
     >
       <div>
         100px
@@ -231,7 +231,7 @@ exports[`renders Grid/demo/flex.md correctly 1`] = `
     </div>
     <div
       class="arco-col"
-      style="flex:auto"
+      style="flex-basis: auto;"
     >
       <div>
         auto
@@ -239,7 +239,7 @@ exports[`renders Grid/demo/flex.md correctly 1`] = `
     </div>
     <div
       class="arco-col"
-      style="flex:0 0 100px"
+      style="flex: 0 0 100px;"
     >
       <div>
         100px
@@ -248,11 +248,11 @@ exports[`renders Grid/demo/flex.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="margin-bottom:16px"
+    style="margin-bottom: 16px;"
   >
     <div
       class="arco-col"
-      style="flex:3"
+      style="flex: 3;"
     >
       <div>
         3 / 12
@@ -260,7 +260,7 @@ exports[`renders Grid/demo/flex.md correctly 1`] = `
     </div>
     <div
       class="arco-col"
-      style="flex:4"
+      style="flex: 4;"
     >
       <div>
         4 / 12
@@ -268,7 +268,7 @@ exports[`renders Grid/demo/flex.md correctly 1`] = `
     </div>
     <div
       class="arco-col"
-      style="flex:5"
+      style="flex: 5;"
     >
       <div>
         5 / 12
@@ -280,10 +280,10 @@ exports[`renders Grid/demo/flex.md correctly 1`] = `
 
 exports[`renders Grid/demo/flex-align.md correctly 1`] = `
 <div
-  style="width:100%"
+  style="width: 100%;"
 >
   <p
-    style="font-size:12px;color:#141f33"
+    style="font-size: 12px; color: rgb(20, 31, 51);"
   >
     <span
       class="arco-typography"
@@ -293,11 +293,11 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
   </p>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="margin-bottom:40px;background-color:var(--color-fill-2)"
+    style="margin-bottom: 40px;"
   >
     <div
       class="arco-col arco-col-6"
-      style="height:90px;line-height:90px"
+      style="height: 90px; line-height: 90px;"
     >
       <div>
         col - 6
@@ -305,7 +305,7 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="height:48px;line-height:48px"
+      style="height: 48px; line-height: 48px;"
     >
       <div>
         col - 6
@@ -313,7 +313,7 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="height:120px;line-height:120px"
+      style="height: 120px; line-height: 120px;"
     >
       <div>
         col - 6
@@ -321,7 +321,7 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="height:60px;line-height:60px"
+      style="height: 60px; line-height: 60px;"
     >
       <div>
         col - 6
@@ -329,7 +329,7 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
     </div>
   </div>
   <p
-    style="font-size:12px;color:#141f33"
+    style="font-size: 12px; color: rgb(20, 31, 51);"
   >
     <span
       class="arco-typography"
@@ -339,11 +339,11 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
   </p>
   <div
     class="arco-row arco-row-align-center arco-row-justify-start grid-demo"
-    style="margin-bottom:40px;background-color:var(--color-fill-2)"
+    style="margin-bottom: 40px;"
   >
     <div
       class="arco-col arco-col-6"
-      style="height:90px;line-height:90px"
+      style="height: 90px; line-height: 90px;"
     >
       <div>
         col - 6
@@ -351,7 +351,7 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="height:48px;line-height:48px"
+      style="height: 48px; line-height: 48px;"
     >
       <div>
         col - 6
@@ -359,7 +359,7 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="height:120px;line-height:120px"
+      style="height: 120px; line-height: 120px;"
     >
       <div>
         col - 6
@@ -367,7 +367,7 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="height:60px;line-height:60px"
+      style="height: 60px; line-height: 60px;"
     >
       <div>
         col - 6
@@ -375,7 +375,7 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
     </div>
   </div>
   <p
-    style="font-size:12px;color:#141f33"
+    style="font-size: 12px; color: rgb(20, 31, 51);"
   >
     <span
       class="arco-typography"
@@ -385,11 +385,11 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
   </p>
   <div
     class="arco-row arco-row-align-end arco-row-justify-start grid-demo"
-    style="margin-bottom:40px;background-color:var(--color-fill-2)"
+    style="margin-bottom: 40px;"
   >
     <div
       class="arco-col arco-col-6"
-      style="height:90px;line-height:90px"
+      style="height: 90px; line-height: 90px;"
     >
       <div>
         col - 6
@@ -397,7 +397,7 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="height:48px;line-height:48px"
+      style="height: 48px; line-height: 48px;"
     >
       <div>
         col - 6
@@ -405,7 +405,7 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="height:120px;line-height:120px"
+      style="height: 120px; line-height: 120px;"
     >
       <div>
         col - 6
@@ -413,7 +413,7 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="height:60px;line-height:60px"
+      style="height: 60px; line-height: 60px;"
     >
       <div>
         col - 6
@@ -425,10 +425,10 @@ exports[`renders Grid/demo/flex-align.md correctly 1`] = `
 
 exports[`renders Grid/demo/flex-justify.md correctly 1`] = `
 <div
-  style="width:100%"
+  style="width: 100%;"
 >
   <p
-    style="font-size:12px;color:#141f33"
+    style="font-size: 12px; color: rgb(20, 31, 51);"
   >
     <span
       class="arco-typography"
@@ -438,7 +438,7 @@ exports[`renders Grid/demo/flex-justify.md correctly 1`] = `
   </p>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="margin-bottom:40px;background:var(--color-fill-2)"
+    style="margin-bottom: 40px;"
   >
     <div
       class="arco-col arco-col-4"
@@ -470,7 +470,7 @@ exports[`renders Grid/demo/flex-justify.md correctly 1`] = `
     </div>
   </div>
   <p
-    style="font-size:12px;color:#141f33"
+    style="font-size: 12px; color: rgb(20, 31, 51);"
   >
     <span
       class="arco-typography"
@@ -480,7 +480,7 @@ exports[`renders Grid/demo/flex-justify.md correctly 1`] = `
   </p>
   <div
     class="arco-row arco-row-align-start arco-row-justify-center grid-demo"
-    style="margin-bottom:40px;background:var(--color-fill-2)"
+    style="margin-bottom: 40px;"
   >
     <div
       class="arco-col arco-col-4"
@@ -512,7 +512,7 @@ exports[`renders Grid/demo/flex-justify.md correctly 1`] = `
     </div>
   </div>
   <p
-    style="font-size:12px;color:#141f33"
+    style="font-size: 12px; color: rgb(20, 31, 51);"
   >
     <span
       class="arco-typography"
@@ -522,7 +522,7 @@ exports[`renders Grid/demo/flex-justify.md correctly 1`] = `
   </p>
   <div
     class="arco-row arco-row-align-start arco-row-justify-end grid-demo"
-    style="margin-bottom:40px;background:var(--color-fill-2)"
+    style="margin-bottom: 40px;"
   >
     <div
       class="arco-col arco-col-4"
@@ -554,7 +554,7 @@ exports[`renders Grid/demo/flex-justify.md correctly 1`] = `
     </div>
   </div>
   <p
-    style="font-size:12px;color:#141f33"
+    style="font-size: 12px; color: rgb(20, 31, 51);"
   >
     <span
       class="arco-typography"
@@ -564,7 +564,7 @@ exports[`renders Grid/demo/flex-justify.md correctly 1`] = `
   </p>
   <div
     class="arco-row arco-row-align-start arco-row-justify-space-around grid-demo"
-    style="margin-bottom:40px;background:var(--color-fill-2)"
+    style="margin-bottom: 40px;"
   >
     <div
       class="arco-col arco-col-4"
@@ -596,7 +596,7 @@ exports[`renders Grid/demo/flex-justify.md correctly 1`] = `
     </div>
   </div>
   <p
-    style="font-size:12px;color:#141f33"
+    style="font-size: 12px; color: rgb(20, 31, 51);"
   >
     <span
       class="arco-typography"
@@ -606,7 +606,7 @@ exports[`renders Grid/demo/flex-justify.md correctly 1`] = `
   </p>
   <div
     class="arco-row arco-row-align-start arco-row-justify-space-between grid-demo"
-    style="margin-bottom:40px;background:var(--color-fill-2)"
+    style="margin-bottom: 40px;"
   >
     <div
       class="arco-col arco-col-4"
@@ -642,10 +642,10 @@ exports[`renders Grid/demo/flex-justify.md correctly 1`] = `
 
 exports[`renders Grid/demo/grid.md correctly 1`] = `
 <div
-  style="width:100%"
+  style="width: 100%;"
 >
   <div
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <span
       class="arco-typography"
@@ -665,59 +665,59 @@ exports[`renders Grid/demo/grid.md correctly 1`] = `
   </div>
   <div
     class="arco-grid grid-demo-grid"
-    style="gap:16px 12px;grid-template-columns:repeat(3, minmax(0px, 1fr))"
+    style="gap: 16px 12px; grid-template-columns: repeat(3, minmax(0px, 1fr));"
   >
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 1 / span 1;display:none"
+      style="grid-column: span 1 / span 1;"
     >
       item
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 1 / span 1;display:none"
+      style="grid-column: span 1 / span 1;"
     >
       item
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 1 / span 1;display:none"
+      style="grid-column: span 1 / span 1;"
     >
       item
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 2 / span 1;margin-left:calc(((100% - 12px) / 2 * 1) + 12px);display:none"
+      style="grid-column: span 2 / span 1;"
     >
       item | offset - 1
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 1 / span 1;display:none"
+      style="grid-column: span 1 / span 1;"
     >
       item
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 3 / span 3;display:none"
+      style="grid-column: span 3 / span 3;"
     >
       item | span - 3
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 1 / span 1;display:none"
+      style="grid-column: span 1 / span 1;"
     >
       item
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 1 / span 1;display:none"
+      style="grid-column: span 1 / span 1;"
     >
       item
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:3 / span 1;display:none"
+      style="grid-column: 3 / span 1;"
     >
       suffix | overflow: false
     </div>
@@ -727,51 +727,51 @@ exports[`renders Grid/demo/grid.md correctly 1`] = `
 
 exports[`renders Grid/demo/grid-responsive.md correctly 1`] = `
 <div
-  style="width:100%"
+  style="width: 100%;"
 >
   <div
     class="arco-grid grid-responsive-demo"
-    style="gap:16px 12px;grid-template-columns:repeat(6, minmax(0px, 1fr))"
+    style="gap: 16px 12px; grid-template-columns: repeat(24, minmax(0px, 1fr));"
   >
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 1 / span 1;display:none"
+      style="grid-column: span 1 / span 1;"
     >
       item
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 1 / span 1;display:none"
+      style="grid-column: span 1 / span 1;"
     >
       item
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 1 / span 1;display:none"
+      style="grid-column: span 1 / span 1;"
     >
       item
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 1 / span 1;display:none"
+      style="grid-column: span 1 / span 1;"
     >
       item
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 1 / span 1;display:none"
+      style="grid-column: span 1 / span 1;"
     >
       item
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:span 1 / span 1;display:none"
+      style="grid-column: span 1 / span 1;"
     >
       item
     </div>
     <div
       class="arco-grid-item demo-item"
-      style="grid-column:1 / span 6;display:none"
+      style="grid-column: 24 / span 1;"
     >
       suffix
     </div>
@@ -781,7 +781,7 @@ exports[`renders Grid/demo/grid-responsive.md correctly 1`] = `
 
 exports[`renders Grid/demo/gutter.md correctly 1`] = `
 <div
-  style="width:100%"
+  style="width: 100%;"
 >
   <div
     class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-left"
@@ -795,11 +795,11 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-gutter-demo"
-    style="margin-left:-12px;margin-right:-12px"
+    style="margin-left: -12px; margin-right: -12px;"
   >
     <div
       class="arco-col arco-col-12"
-      style="padding-left:12px;padding-right:12px"
+      style="padding-left: 12px; padding-right: 12px;"
     >
       <div>
         col - 12
@@ -807,7 +807,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-12"
-      style="padding-left:12px;padding-right:12px"
+      style="padding-left: 12px; padding-right: 12px;"
     >
       <div>
         col - 12
@@ -826,11 +826,11 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-gutter-demo"
-    style="margin-left:-16px;margin-right:-16px"
+    style="margin-left: -16px; margin-right: -16px;"
   >
     <div
       class="arco-col arco-col-6"
-      style="padding-left:16px;padding-right:16px"
+      style="padding-left: 16px; padding-right: 16px;"
     >
       <div>
         col - 6
@@ -838,7 +838,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="padding-left:16px;padding-right:16px"
+      style="padding-left: 16px; padding-right: 16px;"
     >
       <div>
         col - 6
@@ -846,7 +846,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="padding-left:16px;padding-right:16px"
+      style="padding-left: 16px; padding-right: 16px;"
     >
       <div>
         col - 6
@@ -854,7 +854,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="padding-left:16px;padding-right:16px"
+      style="padding-left: 16px; padding-right: 16px;"
     >
       <div>
         col - 6
@@ -873,11 +873,11 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-gutter-demo"
-    style="margin-left:-12px;margin-right:-12px;margin-top:-6px;margin-bottom:-6px"
+    style="margin: -6px -12px -6px -12px;"
   >
     <div
       class="arco-col arco-col-6"
-      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+      style="padding: 6px 12px 6px 12px;"
     >
       <div>
         col - 6
@@ -885,7 +885,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+      style="padding: 6px 12px 6px 12px;"
     >
       <div>
         col - 6
@@ -893,7 +893,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+      style="padding: 6px 12px 6px 12px;"
     >
       <div>
         col - 6
@@ -901,7 +901,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+      style="padding: 6px 12px 6px 12px;"
     >
       <div>
         col - 6
@@ -909,7 +909,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+      style="padding: 6px 12px 6px 12px;"
     >
       <div>
         col - 6
@@ -917,7 +917,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+      style="padding: 6px 12px 6px 12px;"
     >
       <div>
         col - 6
@@ -925,7 +925,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+      style="padding: 6px 12px 6px 12px;"
     >
       <div>
         col - 6
@@ -933,7 +933,7 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
     </div>
     <div
       class="arco-col arco-col-6"
-      style="padding-left:12px;padding-right:12px;padding-top:6px;padding-bottom:6px"
+      style="padding: 6px 12px 6px 12px;"
     >
       <div>
         col - 6
@@ -945,11 +945,11 @@ exports[`renders Grid/demo/gutter.md correctly 1`] = `
 
 exports[`renders Grid/demo/offset.md correctly 1`] = `
 <div
-  style="width:100%"
+  style="width: 100%;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="margin-bottom:16px;background-color:var(--color-fill-2)"
+    style="margin-bottom: 16px;"
   >
     <div
       class="arco-col arco-col-8"
@@ -964,7 +964,7 @@ exports[`renders Grid/demo/offset.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="margin-bottom:16px;background-color:var(--color-fill-2)"
+    style="margin-bottom: 16px;"
   >
     <div
       class="arco-col arco-col-6 arco-col-offset-8"
@@ -979,7 +979,6 @@ exports[`renders Grid/demo/offset.md correctly 1`] = `
   </div>
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="background-color:var(--color-fill-2)"
   >
     <div
       class="arco-col arco-col-12 arco-col-offset-8"
@@ -992,7 +991,7 @@ exports[`renders Grid/demo/offset.md correctly 1`] = `
 
 exports[`renders Grid/demo/order.md correctly 1`] = `
 <div
-  style="width:100%"
+  style="width: 100%;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
@@ -1031,11 +1030,11 @@ exports[`renders Grid/demo/order.md correctly 1`] = `
 
 exports[`renders Grid/demo/push_pull.md correctly 1`] = `
 <div
-  style="width:100%"
+  style="width: 100%;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start grid-demo"
-    style="margin-bottom:16px;background-color:var(--color-fill-2)"
+    style="margin-bottom: 16px;"
   >
     <div
       class="arco-col arco-col-8 arco-col-push-16"

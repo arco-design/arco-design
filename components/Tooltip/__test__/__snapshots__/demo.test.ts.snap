@@ -4,7 +4,7 @@ exports[`renders Tooltip/demo/basic.md correctly 1`] = `
 <div>
   <span
     class="arco-typography"
-    style="margin-right:20px"
+    style="margin-right: 20px;"
   >
     Mouse over to display tooltip
   </span>
@@ -20,7 +20,7 @@ exports[`renders Tooltip/demo/color.md correctly 1`] = `
 <div>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:20px;background:#3491FA;color:#fff"
+    style="margin-right: 20px; background: rgb(52, 145, 250); color: rgb(255, 255, 255);"
     type="button"
   >
     <span>
@@ -29,7 +29,7 @@ exports[`renders Tooltip/demo/color.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:20px;background:#165DFF;color:#fff"
+    style="margin-right: 20px; background: rgb(22, 93, 255); color: rgb(255, 255, 255);"
     type="button"
   >
     <span>
@@ -38,7 +38,7 @@ exports[`renders Tooltip/demo/color.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="margin-right:20px;background:#722ED1;color:#fff"
+    style="margin-right: 20px; background: rgb(114, 46, 209); color: rgb(255, 255, 255);"
     type="button"
   >
     <span>
@@ -52,7 +52,7 @@ exports[`renders Tooltip/demo/control.md correctly 1`] = `
 <div>
   <span
     class="arco-typography"
-    style="margin-right:10px"
+    style="margin-right: 10px;"
   >
     Show Tooltip
   </span>
@@ -89,11 +89,11 @@ exports[`renders Tooltip/demo/mini.md correctly 1`] = `
 
 exports[`renders Tooltip/demo/position.md correctly 1`] = `
 <div
-  style="position:relative;width:440px;height:280px"
+  style="position: relative; width: 440px; height: 280px;"
 >
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:0;left:70px"
+    style="position: absolute; width: 80px; top: 0px; left: 70px;"
     type="button"
   >
     <span>
@@ -102,7 +102,7 @@ exports[`renders Tooltip/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:0;left:180px"
+    style="position: absolute; width: 80px; top: 0px; left: 180px;"
     type="button"
   >
     <span>
@@ -111,7 +111,7 @@ exports[`renders Tooltip/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:0;left:290px"
+    style="position: absolute; width: 80px; top: 0px; left: 290px;"
     type="button"
   >
     <span>
@@ -120,7 +120,7 @@ exports[`renders Tooltip/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:60px;left:10px"
+    style="position: absolute; width: 80px; top: 60px; left: 10px;"
     type="button"
   >
     <span>
@@ -129,7 +129,7 @@ exports[`renders Tooltip/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:120px;left:10px"
+    style="position: absolute; width: 80px; top: 120px; left: 10px;"
     type="button"
   >
     <span>
@@ -138,7 +138,7 @@ exports[`renders Tooltip/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:180px;left:10px"
+    style="position: absolute; width: 80px; top: 180px; left: 10px;"
     type="button"
   >
     <span>
@@ -147,7 +147,7 @@ exports[`renders Tooltip/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:60px;left:350px"
+    style="position: absolute; width: 80px; top: 60px; left: 350px;"
     type="button"
   >
     <span>
@@ -156,7 +156,7 @@ exports[`renders Tooltip/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:120px;left:350px"
+    style="position: absolute; width: 80px; top: 120px; left: 350px;"
     type="button"
   >
     <span>
@@ -165,7 +165,7 @@ exports[`renders Tooltip/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:180px;left:350px"
+    style="position: absolute; width: 80px; top: 180px; left: 350px;"
     type="button"
   >
     <span>
@@ -174,7 +174,7 @@ exports[`renders Tooltip/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:240px;left:70px"
+    style="position: absolute; width: 80px; top: 240px; left: 70px;"
     type="button"
   >
     <span>
@@ -183,7 +183,7 @@ exports[`renders Tooltip/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:240px;left:180px"
+    style="position: absolute; width: 80px; top: 240px; left: 180px;"
     type="button"
   >
     <span>
@@ -192,7 +192,7 @@ exports[`renders Tooltip/demo/position.md correctly 1`] = `
   </button>
   <button
     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-    style="position:absolute;width:80px;top:240px;left:290px"
+    style="position: absolute; width: 80px; top: 240px; left: 290px;"
     type="button"
   >
     <span>

@@ -3,7 +3,7 @@
 exports[`renders Slider/demo/basic.md correctly 1`] = `
 <div
   class="arco-slider"
-  style="width:200px"
+  style="width: 200px;"
 >
   <div
     class="arco-slider-wrapper"
@@ -13,7 +13,7 @@ exports[`renders Slider/demo/basic.md correctly 1`] = `
     >
       <div
         class="arco-slider-bar"
-        style="left:0%;right:70%"
+        style="left: 0%; right: 70%;"
       />
       <div
         aria-disabled="false"
@@ -23,7 +23,7 @@ exports[`renders Slider/demo/basic.md correctly 1`] = `
         aria-valuetext="30"
         class="arco-slider-button"
         role="slider"
-        style="left:30%"
+        style="left: 30%;"
         tabindex="0"
       />
     </div>
@@ -34,14 +34,14 @@ exports[`renders Slider/demo/basic.md correctly 1`] = `
 exports[`renders Slider/demo/direction.md correctly 1`] = `
 <div
   class="arco-space arco-space-horizontal arco-space-align-center"
-  style="max-width:60%;min-width:20%"
+  style="max-width: 60%; min-width: 20%;"
 >
   <div
     class="arco-space-item"
-    style="margin-right:100px"
+    style="margin-right: 100px;"
   >
     <div
-      style="width:22px;text-align:center;display:inline-block"
+      style="width: 22px; text-align: center; display: inline-block;"
     >
       <div
         class="arco-slider arco-slider-vertical"
@@ -54,7 +54,7 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
           >
             <div
               class="arco-slider-bar"
-              style="bottom:0%;top:90%"
+              style="bottom: 0%; top: 90%;"
             />
             <div
               aria-disabled="false"
@@ -64,7 +64,7 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
               aria-valuetext="10"
               class="arco-slider-button"
               role="slider"
-              style="bottom:10%"
+              style="bottom: 10%;"
               tabindex="0"
             />
           </div>
@@ -77,7 +77,7 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
         focusable="false"
         stroke="currentColor"
         stroke-width="4"
-        style="font-size:16px;color:var(--color-text-1)"
+        style="font-size: 16px;"
         viewBox="0 0 48 48"
       >
         <path
@@ -95,7 +95,7 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
   >
     <div
       class="arco-slider arco-slider-vertical arco-slider-with-marks"
-      style="vertical-align:top"
+      style="vertical-align: top;"
     >
       <div
         class="arco-slider-wrapper"
@@ -105,14 +105,14 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
         >
           <div
             class="arco-slider-bar"
-            style="bottom:25%;top:50%"
+            style="bottom: 25%; top: 50%;"
           />
           <div
             class="arco-slider-dots"
           >
             <div
               class="arco-slider-dot-wrapper"
-              style="bottom:0%"
+              style="bottom: 0%;"
             >
               <div
                 class="arco-slider-dot"
@@ -120,7 +120,7 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
             </div>
             <div
               class="arco-slider-dot-wrapper"
-              style="bottom:25%"
+              style="bottom: 25%;"
             >
               <div
                 class="arco-slider-dot arco-slider-dot-active"
@@ -128,7 +128,7 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
             </div>
             <div
               class="arco-slider-dot-wrapper"
-              style="bottom:50%"
+              style="bottom: 50%;"
             >
               <div
                 class="arco-slider-dot arco-slider-dot-active"
@@ -136,7 +136,7 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
             </div>
             <div
               class="arco-slider-dot-wrapper"
-              style="bottom:100%"
+              style="bottom: 100%;"
             >
               <div
                 class="arco-slider-dot"
@@ -149,14 +149,14 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
             <div
               aria-hidden="true"
               class="arco-slider-marks-text"
-              style="bottom:25%"
+              style="bottom: 25%;"
             >
               5km
             </div>
             <div
               aria-hidden="true"
               class="arco-slider-marks-text"
-              style="bottom:50%"
+              style="bottom: 50%;"
             >
               10km
             </div>
@@ -169,7 +169,7 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
             aria-valuetext="5"
             class="arco-slider-button"
             role="slider"
-            style="bottom:25%"
+            style="bottom: 25%;"
             tabindex="0"
           />
           <div
@@ -180,7 +180,7 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
             aria-valuetext="10"
             class="arco-slider-button"
             role="slider"
-            style="bottom:50%"
+            style="bottom: 50%;"
             tabindex="0"
           />
         </div>
@@ -193,7 +193,7 @@ exports[`renders Slider/demo/direction.md correctly 1`] = `
 exports[`renders Slider/demo/fixed.md correctly 1`] = `
 <div
   class="arco-slider"
-  style="width:200px"
+  style="width: 200px;"
 >
   <div
     class="arco-slider-wrapper"
@@ -203,7 +203,7 @@ exports[`renders Slider/demo/fixed.md correctly 1`] = `
     >
       <div
         class="arco-slider-bar"
-        style="left:30%;right:40%"
+        style="left: 30%; right: 40%;"
       />
       <div
         aria-disabled="false"
@@ -213,7 +213,7 @@ exports[`renders Slider/demo/fixed.md correctly 1`] = `
         aria-valuetext="3"
         class="arco-slider-button"
         role="slider"
-        style="left:30%"
+        style="left: 30%;"
         tabindex="0"
       />
       <div
@@ -224,7 +224,7 @@ exports[`renders Slider/demo/fixed.md correctly 1`] = `
         aria-valuetext="6"
         class="arco-slider-button"
         role="slider"
-        style="left:60%"
+        style="left: 60%;"
         tabindex="0"
       />
     </div>
@@ -234,7 +234,7 @@ exports[`renders Slider/demo/fixed.md correctly 1`] = `
 
 exports[`renders Slider/demo/format-tooltip.md correctly 1`] = `
 <div
-  style="width:200px"
+  style="width: 200px;"
 >
   <div
     class="arco-slider"
@@ -247,7 +247,7 @@ exports[`renders Slider/demo/format-tooltip.md correctly 1`] = `
       >
         <div
           class="arco-slider-bar"
-          style="left:0%;right:80%"
+          style="left: 0%; right: 80%;"
         />
         <div
           aria-disabled="false"
@@ -256,7 +256,7 @@ exports[`renders Slider/demo/format-tooltip.md correctly 1`] = `
           aria-valuenow="20"
           class="arco-slider-button"
           role="slider"
-          style="left:20%"
+          style="left: 20%;"
           tabindex="0"
         />
       </div>
@@ -271,27 +271,27 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:60px"
+    style="margin-right: 60px;"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-center"
     >
       <div
         class="arco-space-item"
-        style="margin-right:8px"
+        style="margin-right: 8px;"
       >
         <img
           src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/48872c084d77494ebc0ddd0892d97e3d~tplv-uwbnlip3yd-image.image"
-          style="width:22px;vertical-align:bottom"
+          style="width: 22px; vertical-align: bottom;"
         />
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:8px"
+        style="margin-right: 8px;"
       >
         <div
           class="arco-slider"
-          style="width:200px"
+          style="width: 200px;"
         >
           <div
             class="arco-slider-wrapper"
@@ -301,7 +301,7 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
             >
               <div
                 class="arco-slider-bar"
-                style="left:0%;right:50%"
+                style="left: 0%; right: 50%;"
               />
               <div
                 aria-disabled="false"
@@ -311,7 +311,7 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
                 aria-valuetext="50"
                 class="arco-slider-button"
                 role="slider"
-                style="left:50%"
+                style="left: 50%;"
                 tabindex="0"
               />
             </div>
@@ -323,7 +323,7 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
       >
         <img
           src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/40b91e0c13cb4069976ae726da62aa75~tplv-uwbnlip3yd-image.image"
-          style="width:22px;vertical-align:bottom"
+          style="width: 22px; vertical-align: bottom;"
         />
       </div>
     </div>
@@ -336,7 +336,7 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:8px"
+        style="margin-right: 8px;"
       >
         <svg
           aria-hidden="true"
@@ -345,7 +345,7 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="font-size:16px;color:var(--color-text-4)"
+          style="font-size: 16px;"
           viewBox="0 0 48 48"
         >
           <path
@@ -355,11 +355,11 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:8px"
+        style="margin-right: 8px;"
       >
         <div
           class="arco-slider"
-          style="width:200px"
+          style="width: 200px;"
         >
           <div
             class="arco-slider-wrapper"
@@ -369,7 +369,7 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
             >
               <div
                 class="arco-slider-bar"
-                style="left:0%;right:90%"
+                style="left: 0%; right: 90%;"
               />
               <div
                 aria-disabled="false"
@@ -379,7 +379,7 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
                 aria-valuetext="10"
                 class="arco-slider-button"
                 role="slider"
-                style="left:10%"
+                style="left: 10%;"
                 tabindex="0"
               />
             </div>
@@ -396,7 +396,7 @@ exports[`renders Slider/demo/icon.md correctly 1`] = `
           focusable="false"
           stroke="currentColor"
           stroke-width="4"
-          style="font-size:16px;color:var(--color-text-1)"
+          style="font-size: 16px;"
           viewBox="0 0 48 48"
         >
           <path
@@ -420,11 +420,11 @@ Array [
   >
     <div
       class="arco-space-item"
-      style="margin-right:60px"
+      style="margin-right: 60px;"
     >
       <div
         class="arco-slider"
-        style="width:280px"
+        style="width: 280px;"
       >
         <div
           class="arco-slider-wrapper"
@@ -434,7 +434,7 @@ Array [
           >
             <div
               class="arco-slider-bar"
-              style="left:0%;right:19.999999999999996%"
+              style="left: 0%; right: 19.999999999999996%;"
             />
             <div
               aria-disabled="false"
@@ -444,7 +444,7 @@ Array [
               aria-valuetext="80"
               class="arco-slider-button"
               role="slider"
-              style="left:80%"
+              style="left: 80%;"
               tabindex="0"
             />
           </div>
@@ -483,7 +483,7 @@ Array [
     >
       <div
         class="arco-slider"
-        style="width:360px"
+        style="width: 360px;"
       >
         <div
           class="arco-slider-wrapper"
@@ -493,7 +493,7 @@ Array [
           >
             <div
               class="arco-slider-bar"
-              style="left:10%;right:19.999999999999996%"
+              style="left: 10%; right: 19.999999999999996%;"
             />
             <div
               aria-disabled="false"
@@ -503,7 +503,7 @@ Array [
               aria-valuetext="10"
               class="arco-slider-button"
               role="slider"
-              style="left:10%"
+              style="left: 10%;"
               tabindex="0"
             />
             <div
@@ -514,7 +514,7 @@ Array [
               aria-valuetext="80"
               class="arco-slider-button"
               role="slider"
-              style="left:80%"
+              style="left: 80%;"
               tabindex="0"
             />
           </div>
@@ -581,15 +581,15 @@ Array [
   </div>,
   <div
     class="arco-space arco-space-horizontal arco-space-align-center"
-    style="margin-top:20px"
+    style="margin-top: 20px;"
   >
     <div
       class="arco-space-item"
-      style="margin-right:60px"
+      style="margin-right: 60px;"
     >
       <div
         class="arco-slider"
-        style="width:280px"
+        style="width: 280px;"
       >
         <div
           class="arco-slider-wrapper"
@@ -599,7 +599,7 @@ Array [
           >
             <div
               class="arco-slider-bar"
-              style="left:0%;right:19.999999999999996%"
+              style="left: 0%; right: 19.999999999999996%;"
             />
             <div
               aria-disabled="false"
@@ -609,7 +609,7 @@ Array [
               aria-valuetext="80"
               class="arco-slider-button"
               role="slider"
-              style="left:80%"
+              style="left: 80%;"
               tabindex="0"
             />
           </div>
@@ -618,7 +618,7 @@ Array [
           >
             <div
               class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-              style="width:80px"
+              style="width: 80px;"
             >
               <span
                 class="arco-input-group"
@@ -688,7 +688,7 @@ Array [
     >
       <div
         class="arco-slider"
-        style="width:360px"
+        style="width: 360px;"
       >
         <div
           class="arco-slider-wrapper"
@@ -698,7 +698,7 @@ Array [
           >
             <div
               class="arco-slider-bar"
-              style="left:10%;right:19.999999999999996%"
+              style="left: 10%; right: 19.999999999999996%;"
             />
             <div
               aria-disabled="false"
@@ -708,7 +708,7 @@ Array [
               aria-valuetext="10"
               class="arco-slider-button"
               role="slider"
-              style="left:10%"
+              style="left: 10%;"
               tabindex="0"
             />
             <div
@@ -719,7 +719,7 @@ Array [
               aria-valuetext="80"
               class="arco-slider-button"
               role="slider"
-              style="left:80%"
+              style="left: 80%;"
               tabindex="0"
             />
           </div>
@@ -728,7 +728,7 @@ Array [
           >
             <div
               class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-              style="width:80px"
+              style="width: 80px;"
             >
               <span
                 class="arco-input-group"
@@ -798,7 +798,7 @@ Array [
             </div>
             <div
               class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-              style="width:80px"
+              style="width: 80px;"
             >
               <span
                 class="arco-input-group"
@@ -869,11 +869,11 @@ Array [
 
 exports[`renders Slider/demo/interval.md correctly 1`] = `
 <div
-  style="width:600px"
+  style="width: 600px;"
 >
   <form
     class="arco-form arco-form-inline arco-form-size-default"
-    style="margin:20px"
+    style="margin: 20px;"
   >
     <div
       class="arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-inline"
@@ -1041,7 +1041,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
     </div>
   </form>
   <div
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <span
       class="arco-typography"
@@ -1061,14 +1061,14 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
         >
           <div
             class="arco-slider-bar"
-            style="left:0%;right:50%"
+            style="left: 0%; right: 50%;"
           />
           <div
             class="arco-slider-dots"
           >
             <div
               class="arco-slider-dot-wrapper"
-              style="left:0%"
+              style="left: 0%;"
             >
               <div
                 class="arco-slider-dot arco-slider-dot-active"
@@ -1076,7 +1076,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
             </div>
             <div
               class="arco-slider-dot-wrapper"
-              style="left:50%"
+              style="left: 50%;"
             >
               <div
                 class="arco-slider-dot arco-slider-dot-active"
@@ -1084,7 +1084,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
             </div>
             <div
               class="arco-slider-dot-wrapper"
-              style="left:62.5%"
+              style="left: 62.5%;"
             >
               <div
                 class="arco-slider-dot"
@@ -1092,7 +1092,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
             </div>
             <div
               class="arco-slider-dot-wrapper"
-              style="left:75%"
+              style="left: 75%;"
             >
               <div
                 class="arco-slider-dot"
@@ -1100,7 +1100,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
             </div>
             <div
               class="arco-slider-dot-wrapper"
-              style="left:100%"
+              style="left: 100%;"
             >
               <div
                 class="arco-slider-dot"
@@ -1113,35 +1113,35 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
             <div
               aria-hidden="true"
               class="arco-slider-marks-text"
-              style="left:0%"
+              style="left: 0%;"
             >
               0km
             </div>
             <div
               aria-hidden="true"
               class="arco-slider-marks-text"
-              style="left:50%"
+              style="left: 50%;"
             >
               10km
             </div>
             <div
               aria-hidden="true"
               class="arco-slider-marks-text"
-              style="left:62.5%"
+              style="left: 62.5%;"
             >
               20km
             </div>
             <div
               aria-hidden="true"
               class="arco-slider-marks-text"
-              style="left:75%"
+              style="left: 75%;"
             >
               30km
             </div>
             <div
               aria-hidden="true"
               class="arco-slider-marks-text"
-              style="left:100%"
+              style="left: 100%;"
             >
               50km
             </div>
@@ -1154,7 +1154,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
             aria-valuetext="10"
             class="arco-slider-button"
             role="slider"
-            style="left:50%"
+            style="left: 50%;"
             tabindex="0"
           />
         </div>
@@ -1179,14 +1179,14 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
       >
         <div
           class="arco-slider-bar"
-          style="left:0%;right:80%"
+          style="left: 0%; right: 80%;"
         />
         <div
           class="arco-slider-dots"
         >
           <div
             class="arco-slider-dot-wrapper"
-            style="left:0%"
+            style="left: 0%;"
           >
             <div
               class="arco-slider-dot arco-slider-dot-active"
@@ -1194,7 +1194,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
           </div>
           <div
             class="arco-slider-dot-wrapper"
-            style="left:20%"
+            style="left: 20%;"
           >
             <div
               class="arco-slider-dot arco-slider-dot-active"
@@ -1202,7 +1202,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
           </div>
           <div
             class="arco-slider-dot-wrapper"
-            style="left:40%"
+            style="left: 40%;"
           >
             <div
               class="arco-slider-dot"
@@ -1210,7 +1210,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
           </div>
           <div
             class="arco-slider-dot-wrapper"
-            style="left:60%"
+            style="left: 60%;"
           >
             <div
               class="arco-slider-dot"
@@ -1218,7 +1218,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
           </div>
           <div
             class="arco-slider-dot-wrapper"
-            style="left:100%"
+            style="left: 100%;"
           >
             <div
               class="arco-slider-dot"
@@ -1231,35 +1231,35 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:0%"
+            style="left: 0%;"
           >
             0km
           </div>
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:20%"
+            style="left: 20%;"
           >
             10km
           </div>
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:40%"
+            style="left: 40%;"
           >
             20km
           </div>
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:60%"
+            style="left: 60%;"
           >
             30km
           </div>
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:100%"
+            style="left: 100%;"
           >
             50km
           </div>
@@ -1272,7 +1272,7 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
           aria-valuetext="10"
           class="arco-slider-button"
           role="slider"
-          style="left:20%"
+          style="left: 20%;"
           tabindex="0"
         />
       </div>
@@ -1283,11 +1283,11 @@ exports[`renders Slider/demo/interval.md correctly 1`] = `
 
 exports[`renders Slider/demo/marks.md correctly 1`] = `
 <div
-  style="width:240px"
+  style="width: 240px;"
 >
   <div
     class="arco-slider arco-slider-with-marks"
-    style="margin-bottom:80px"
+    style="margin-bottom: 80px;"
   >
     <div
       class="arco-slider-wrapper"
@@ -1297,14 +1297,14 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
       >
         <div
           class="arco-slider-bar"
-          style="left:0%;right:66.66666666666667%"
+          style="left: 0%; right: 66.66666666666667%;"
         />
         <div
           class="arco-slider-dots"
         >
           <div
             class="arco-slider-dot-wrapper"
-            style="left:0%"
+            style="left: 0%;"
           >
             <div
               class="arco-slider-dot arco-slider-dot-active"
@@ -1312,7 +1312,7 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           </div>
           <div
             class="arco-slider-dot-wrapper"
-            style="left:33.33333333333333%"
+            style="left: 33.33333333333333%;"
           >
             <div
               class="arco-slider-dot arco-slider-dot-active"
@@ -1320,7 +1320,7 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           </div>
           <div
             class="arco-slider-dot-wrapper"
-            style="left:66.66666666666666%"
+            style="left: 66.66666666666666%;"
           >
             <div
               class="arco-slider-dot"
@@ -1328,7 +1328,7 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           </div>
           <div
             class="arco-slider-dot-wrapper"
-            style="left:100%"
+            style="left: 100%;"
           >
             <div
               class="arco-slider-dot"
@@ -1341,28 +1341,28 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:0%"
+            style="left: 0%;"
           >
             0km
           </div>
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:33.33333333333333%"
+            style="left: 33.33333333333333%;"
           >
             5km
           </div>
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:66.66666666666666%"
+            style="left: 66.66666666666666%;"
           >
             10km
           </div>
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:100%"
+            style="left: 100%;"
           >
             15km
           </div>
@@ -1375,7 +1375,7 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           aria-valuetext="5"
           class="arco-slider-button"
           role="slider"
-          style="left:33.33333333333333%"
+          style="left: 33.33333333333333%;"
           tabindex="0"
         />
       </div>
@@ -1392,14 +1392,14 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
       >
         <div
           class="arco-slider-bar"
-          style="left:0%;right:33.333333333333336%"
+          style="left: 0%; right: 33.333333333333336%;"
         />
         <div
           class="arco-slider-dots"
         >
           <div
             class="arco-slider-dot-wrapper"
-            style="left:0%"
+            style="left: 0%;"
           >
             <div
               class="arco-slider-dot arco-slider-dot-active"
@@ -1407,7 +1407,7 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           </div>
           <div
             class="arco-slider-dot-wrapper"
-            style="left:33.33333333333333%"
+            style="left: 33.33333333333333%;"
           >
             <div
               class="arco-slider-dot arco-slider-dot-active"
@@ -1415,7 +1415,7 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           </div>
           <div
             class="arco-slider-dot-wrapper"
-            style="left:66.66666666666666%"
+            style="left: 66.66666666666666%;"
           >
             <div
               class="arco-slider-dot arco-slider-dot-active"
@@ -1423,7 +1423,7 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           </div>
           <div
             class="arco-slider-dot-wrapper"
-            style="left:100%"
+            style="left: 100%;"
           >
             <div
               class="arco-slider-dot"
@@ -1436,28 +1436,28 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:0%"
+            style="left: 0%;"
           >
             0km
           </div>
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:33.33333333333333%"
+            style="left: 33.33333333333333%;"
           >
             5km
           </div>
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:66.66666666666666%"
+            style="left: 66.66666666666666%;"
           >
             10km
           </div>
           <div
             aria-hidden="true"
             class="arco-slider-marks-text"
-            style="left:100%"
+            style="left: 100%;"
           >
             15km
           </div>
@@ -1470,7 +1470,7 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
           aria-valuetext="10"
           class="arco-slider-button"
           role="slider"
-          style="left:66.66666666666666%"
+          style="left: 66.66666666666666%;"
           tabindex="0"
         />
       </div>
@@ -1481,7 +1481,7 @@ exports[`renders Slider/demo/marks.md correctly 1`] = `
 
 exports[`renders Slider/demo/range.md correctly 1`] = `
 <div
-  style="width:200px"
+  style="width: 200px;"
 >
   <div
     class="arco-slider"
@@ -1494,7 +1494,7 @@ exports[`renders Slider/demo/range.md correctly 1`] = `
       >
         <div
           class="arco-slider-bar"
-          style="left:0%;right:50%"
+          style="left: 0%; right: 50%;"
         />
         <div
           aria-disabled="false"
@@ -1504,7 +1504,7 @@ exports[`renders Slider/demo/range.md correctly 1`] = `
           aria-valuetext="0"
           class="arco-slider-button"
           role="slider"
-          style="left:0%"
+          style="left: 0%;"
           tabindex="0"
         />
         <div
@@ -1515,7 +1515,7 @@ exports[`renders Slider/demo/range.md correctly 1`] = `
           aria-valuetext="50"
           class="arco-slider-button"
           role="slider"
-          style="left:50%"
+          style="left: 50%;"
           tabindex="0"
         />
       </div>
@@ -1528,11 +1528,11 @@ exports[`renders Slider/demo/reversed.md correctly 1`] = `
 Array [
   <div
     class="arco-space arco-space-horizontal arco-space-align-center"
-    style="margin-bottom:24px"
+    style="margin-bottom: 24px;"
   >
     <div
       class="arco-space-item"
-      style="margin-right:4px"
+      style="margin-right: 4px;"
     >
       <button
         aria-checked="true"
@@ -1558,7 +1558,7 @@ Array [
   <div>
     <div
       class="arco-slider arco-slider-with-marks arco-slider-reverse"
-      style="width:200px"
+      style="width: 200px;"
     >
       <div
         class="arco-slider-wrapper"
@@ -1568,66 +1568,66 @@ Array [
         >
           <div
             class="arco-slider-bar"
-            style="right:0%;left:33.333333333333336%"
+            style="right: 0%; left: 33.333333333333336%;"
           />
           <div
             class="arco-slider-ticks"
           >
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="right:6.666666666666667%"
+              style="right: 6.666666666666667%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="right:13.333333333333334%"
+              style="right: 13.333333333333334%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="right:20%"
+              style="right: 20%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="right:26.666666666666668%"
+              style="right: 26.666666666666668%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="right:33.33333333333333%"
+              style="right: 33.33333333333333%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="right:40%"
+              style="right: 40%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="right:46.666666666666664%"
+              style="right: 46.666666666666664%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="right:53.333333333333336%"
+              style="right: 53.333333333333336%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="right:60%"
+              style="right: 60%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="right:66.66666666666666%"
+              style="right: 66.66666666666666%;"
             />
             <div
               class="arco-slider-tick"
-              style="right:73.33333333333333%"
+              style="right: 73.33333333333333%;"
             />
             <div
               class="arco-slider-tick"
-              style="right:80%"
+              style="right: 80%;"
             />
             <div
               class="arco-slider-tick"
-              style="right:86.66666666666667%"
+              style="right: 86.66666666666667%;"
             />
             <div
               class="arco-slider-tick"
-              style="right:93.33333333333333%"
+              style="right: 93.33333333333333%;"
             />
           </div>
           <div
@@ -1635,7 +1635,7 @@ Array [
           >
             <div
               class="arco-slider-dot-wrapper"
-              style="right:0%"
+              style="right: 0%;"
             >
               <div
                 class="arco-slider-dot arco-slider-dot-active"
@@ -1643,7 +1643,7 @@ Array [
             </div>
             <div
               class="arco-slider-dot-wrapper"
-              style="right:33.33333333333333%"
+              style="right: 33.33333333333333%;"
             >
               <div
                 class="arco-slider-dot arco-slider-dot-active"
@@ -1651,7 +1651,7 @@ Array [
             </div>
             <div
               class="arco-slider-dot-wrapper"
-              style="right:66.66666666666666%"
+              style="right: 66.66666666666666%;"
             >
               <div
                 class="arco-slider-dot arco-slider-dot-active"
@@ -1659,7 +1659,7 @@ Array [
             </div>
             <div
               class="arco-slider-dot-wrapper"
-              style="right:100%"
+              style="right: 100%;"
             >
               <div
                 class="arco-slider-dot"
@@ -1672,28 +1672,28 @@ Array [
             <div
               aria-hidden="true"
               class="arco-slider-marks-text"
-              style="right:0%"
+              style="right: 0%;"
             >
               0km
             </div>
             <div
               aria-hidden="true"
               class="arco-slider-marks-text"
-              style="right:33.33333333333333%"
+              style="right: 33.33333333333333%;"
             >
               5km
             </div>
             <div
               aria-hidden="true"
               class="arco-slider-marks-text"
-              style="right:66.66666666666666%"
+              style="right: 66.66666666666666%;"
             >
               10km
             </div>
             <div
               aria-hidden="true"
               class="arco-slider-marks-text"
-              style="right:100%"
+              style="right: 100%;"
             >
               15km
             </div>
@@ -1706,7 +1706,7 @@ Array [
             aria-valuetext="10"
             class="arco-slider-button"
             role="slider"
-            style="right:66.66666666666666%"
+            style="right: 66.66666666666666%;"
             tabindex="0"
           />
         </div>
@@ -1722,11 +1722,11 @@ exports[`renders Slider/demo/set-range.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:16px"
+    style="margin-right: 16px;"
   >
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-      style="width:78px"
+      style="width: 78px;"
     >
       <span
         class="arco-input-group"
@@ -1790,11 +1790,11 @@ exports[`renders Slider/demo/set-range.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:16px"
+    style="margin-right: 16px;"
   >
     <div
       class="arco-slider"
-      style="width:200px"
+      style="width: 200px;"
     >
       <div
         class="arco-slider-wrapper"
@@ -1804,7 +1804,7 @@ exports[`renders Slider/demo/set-range.md correctly 1`] = `
         >
           <div
             class="arco-slider-bar"
-            style="left:0%;right:70%"
+            style="left: 0%; right: 70%;"
           />
           <div
             aria-disabled="false"
@@ -1814,7 +1814,7 @@ exports[`renders Slider/demo/set-range.md correctly 1`] = `
             aria-valuetext="30"
             class="arco-slider-button"
             role="slider"
-            style="left:30%"
+            style="left: 30%;"
             tabindex="0"
           />
         </div>
@@ -1826,7 +1826,7 @@ exports[`renders Slider/demo/set-range.md correctly 1`] = `
   >
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-      style="width:78px"
+      style="width: 78px;"
     >
       <span
         class="arco-input-group"
@@ -1897,11 +1897,11 @@ exports[`renders Slider/demo/status.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:60px"
+    style="margin-right: 60px;"
   >
     <div
       class="arco-slider"
-      style="width:200px"
+      style="width: 200px;"
     >
       <div
         class="arco-slider-wrapper"
@@ -1911,7 +1911,7 @@ exports[`renders Slider/demo/status.md correctly 1`] = `
         >
           <div
             class="arco-slider-bar"
-            style="left:0%;right:70%"
+            style="left: 0%; right: 70%;"
           />
           <div
             aria-disabled="false"
@@ -1921,7 +1921,7 @@ exports[`renders Slider/demo/status.md correctly 1`] = `
             aria-valuetext="30"
             class="arco-slider-button"
             role="slider"
-            style="left:30%"
+            style="left: 30%;"
             tabindex="0"
           />
         </div>
@@ -1933,7 +1933,7 @@ exports[`renders Slider/demo/status.md correctly 1`] = `
   >
     <div
       class="arco-slider"
-      style="width:200px"
+      style="width: 200px;"
     >
       <div
         class="arco-slider-wrapper"
@@ -1943,7 +1943,7 @@ exports[`renders Slider/demo/status.md correctly 1`] = `
         >
           <div
             class="arco-slider-bar"
-            style="left:0%;right:70%"
+            style="left: 0%; right: 70%;"
           />
           <div
             aria-disabled="true"
@@ -1953,7 +1953,7 @@ exports[`renders Slider/demo/status.md correctly 1`] = `
             aria-valuetext="30"
             class="arco-slider-button"
             role="slider"
-            style="left:30%"
+            style="left: 30%;"
             tabindex="-1"
           />
         </div>
@@ -1965,26 +1965,26 @@ exports[`renders Slider/demo/status.md correctly 1`] = `
 
 exports[`renders Slider/demo/step.md correctly 1`] = `
 <div
-  style="max-width:40%;min-width:20%"
+  style="max-width: 40%; min-width: 20%;"
 >
   <div
     class="arco-space arco-space-horizontal arco-space-align-center"
-    style="margin-bottom:20px;line-height:32px"
+    style="margin-bottom: 20px; line-height: 32px;"
   >
     <div
       class="arco-space-item"
-      style="margin-right:20px"
+      style="margin-right: 20px;"
     >
       <div>
         <span
           class="arco-typography"
-          style="margin:0 4px"
+          style="margin: 0px 4px;"
         >
           step
         </span>
         <div
           class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-          style="width:68px"
+          style="width: 68px;"
         >
           <span
             class="arco-input-group"
@@ -2053,7 +2053,7 @@ exports[`renders Slider/demo/step.md correctly 1`] = `
       <div>
         <span
           class="arco-typography"
-          style="margin:0 4px"
+          style="margin: 0px 4px;"
         >
           showTicks
         </span>
@@ -2078,7 +2078,7 @@ exports[`renders Slider/demo/step.md correctly 1`] = `
     </span>
     <div
       class="arco-slider"
-      style="width:258px;margin-left:8px;margin-right:8px;vertical-align:middle"
+      style="width: 258px; margin-left: 8px; margin-right: 8px; vertical-align: middle;"
     >
       <div
         class="arco-slider-wrapper"
@@ -2088,46 +2088,46 @@ exports[`renders Slider/demo/step.md correctly 1`] = `
         >
           <div
             class="arco-slider-bar"
-            style="left:0%;right:50%"
+            style="left: 0%; right: 50%;"
           />
           <div
             class="arco-slider-ticks"
           >
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="left:10%"
+              style="left: 10%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="left:20%"
+              style="left: 20%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="left:30%"
+              style="left: 30%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="left:40%"
+              style="left: 40%;"
             />
             <div
               class="arco-slider-tick arco-slider-tick-active"
-              style="left:50%"
+              style="left: 50%;"
             />
             <div
               class="arco-slider-tick"
-              style="left:60%"
+              style="left: 60%;"
             />
             <div
               class="arco-slider-tick"
-              style="left:70%"
+              style="left: 70%;"
             />
             <div
               class="arco-slider-tick"
-              style="left:80%"
+              style="left: 80%;"
             />
             <div
               class="arco-slider-tick"
-              style="left:90%"
+              style="left: 90%;"
             />
           </div>
           <div
@@ -2138,7 +2138,7 @@ exports[`renders Slider/demo/step.md correctly 1`] = `
             aria-valuetext="5"
             class="arco-slider-button"
             role="slider"
-            style="left:50%"
+            style="left: 50%;"
             tabindex="0"
           />
         </div>
@@ -2159,11 +2159,11 @@ exports[`renders Slider/demo/tooltip.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:60px"
+    style="margin-right: 60px;"
   >
     <div
       class="arco-slider"
-      style="width:200px;margin-right:100px"
+      style="width: 200px; margin-right: 100px;"
     >
       <div
         class="arco-slider-wrapper"
@@ -2173,7 +2173,7 @@ exports[`renders Slider/demo/tooltip.md correctly 1`] = `
         >
           <div
             class="arco-slider-bar"
-            style="left:0%;right:80%"
+            style="left: 0%; right: 80%;"
           />
           <div
             aria-disabled="false"
@@ -2183,7 +2183,7 @@ exports[`renders Slider/demo/tooltip.md correctly 1`] = `
             aria-valuetext="20"
             class="arco-slider-button arco-tooltip-open"
             role="slider"
-            style="left:20%"
+            style="left: 20%;"
             tabindex="0"
           />
         </div>
@@ -2195,7 +2195,7 @@ exports[`renders Slider/demo/tooltip.md correctly 1`] = `
   >
     <div
       class="arco-slider"
-      style="width:200px"
+      style="width: 200px;"
     >
       <div
         class="arco-slider-wrapper"
@@ -2205,7 +2205,7 @@ exports[`renders Slider/demo/tooltip.md correctly 1`] = `
         >
           <div
             class="arco-slider-bar"
-            style="left:0%;right:50%"
+            style="left: 0%; right: 50%;"
           />
           <div
             aria-disabled="false"
@@ -2215,7 +2215,7 @@ exports[`renders Slider/demo/tooltip.md correctly 1`] = `
             aria-valuetext="0"
             class="arco-slider-button arco-tooltip-open"
             role="slider"
-            style="left:0%"
+            style="left: 0%;"
             tabindex="0"
           />
           <div
@@ -2226,7 +2226,7 @@ exports[`renders Slider/demo/tooltip.md correctly 1`] = `
             aria-valuetext="50"
             class="arco-slider-button arco-tooltip-open"
             role="slider"
-            style="left:50%"
+            style="left: 50%;"
             tabindex="0"
           />
         </div>

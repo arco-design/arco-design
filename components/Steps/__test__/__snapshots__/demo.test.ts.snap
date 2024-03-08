@@ -3,7 +3,7 @@
 exports[`renders Steps/demo/arrow.md correctly 1`] = `
 <div
   class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default arco-steps-mode-arrow"
-  style="max-width:780px"
+  style="max-width: 780px;"
 >
   <div
     class="arco-steps-item arco-steps-item-finish"
@@ -66,7 +66,7 @@ exports[`renders Steps/demo/arrow-mini.md correctly 1`] = `
 <div>
   <div
     class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-small arco-steps-mode-arrow"
-    style="max-width:780px;margin-bottom:20px"
+    style="max-width: 780px; margin-bottom: 20px;"
   >
     <div
       class="arco-steps-item arco-steps-item-finish"
@@ -110,7 +110,7 @@ exports[`renders Steps/demo/arrow-mini.md correctly 1`] = `
   </div>
   <div
     class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-small arco-steps-mode-arrow"
-    style="max-width:780px"
+    style="max-width: 780px;"
   >
     <div
       class="arco-steps-item arco-steps-item-finish arco-steps-item-next-error"
@@ -159,7 +159,7 @@ exports[`renders Steps/demo/basic.md correctly 1`] = `
 <div>
   <div
     class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default"
-    style="max-width:780px;margin:0 auto"
+    style="max-width: 780px; margin: 0px auto;"
   >
     <div
       class="arco-steps-item arco-steps-item-finish"
@@ -245,7 +245,7 @@ exports[`renders Steps/demo/basic.md correctly 1`] = `
     role="separator"
   />
   <div
-    style="line-height:140px;text-align:center;color:#C9CDD4"
+    style="line-height: 140px; text-align: center; color: rgb(201, 205, 212);"
   >
     Step 2 Content
   </div>
@@ -254,7 +254,7 @@ exports[`renders Steps/demo/basic.md correctly 1`] = `
 
 exports[`renders Steps/demo/change_step.md correctly 1`] = `
 <div
-  style="max-width:780px"
+  style="max-width: 780px;"
 >
   <div
     class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default"
@@ -327,10 +327,10 @@ exports[`renders Steps/demo/change_step.md correctly 1`] = `
     </div>
   </div>
   <div
-    style="width:100%;height:200px;text-align:center;background:var(--color-bg-2);color:#C2C7CC"
+    style="width: 100%; height: 200px; text-align: center; color: rgb(194, 199, 204);"
   >
     <div
-      style="line-height:160px"
+      style="line-height: 160px;"
     >
       Step1 Content
     </div>
@@ -338,7 +338,7 @@ exports[`renders Steps/demo/change_step.md correctly 1`] = `
       <button
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-disabled"
         disabled=""
-        style="padding-left:8px"
+        style="padding-left: 8px;"
         type="button"
       >
         <svg
@@ -360,7 +360,7 @@ exports[`renders Steps/demo/change_step.md correctly 1`] = `
       </button>
       <button
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-        style="margin-left:20px;padding-right:8px"
+        style="margin-left: 20px; padding-right: 8px;"
         type="button"
       >
         <span>
@@ -387,11 +387,11 @@ exports[`renders Steps/demo/change_step.md correctly 1`] = `
 
 exports[`renders Steps/demo/customDot.md correctly 1`] = `
 <div
-  style="overflow:hidden;text-align:center"
+  style="overflow: hidden; text-align: center;"
 >
   <div
     class="arco-steps arco-steps-horizontal arco-steps-label-vertical arco-steps-size-default arco-steps-mode-dot"
-    style="margin-top:20px"
+    style="margin-top: 20px;"
   >
     <div
       class="arco-steps-item arco-steps-item-finish"
@@ -467,11 +467,11 @@ exports[`renders Steps/demo/customDot.md correctly 1`] = `
     </div>
   </div>
   <div
-    style="margin-top:40px"
+    style="margin-top: 40px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-      style="padding-left:8px"
+      style="padding-left: 8px;"
       type="button"
     >
       <svg
@@ -493,7 +493,7 @@ exports[`renders Steps/demo/customDot.md correctly 1`] = `
     </button>
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-      style="margin-left:20px;padding-right:8px"
+      style="margin-left: 20px; padding-right: 8px;"
       type="button"
     >
       <span>
@@ -520,7 +520,7 @@ exports[`renders Steps/demo/customDot.md correctly 1`] = `
 exports[`renders Steps/demo/description.md correctly 1`] = `
 <div
   class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default"
-  style="max-width:780px;margin-bottom:40px"
+  style="max-width: 780px; margin-bottom: 40px;"
 >
   <div
     class="arco-steps-item arco-steps-item-finish"
@@ -622,7 +622,7 @@ exports[`renders Steps/demo/dot.md correctly 1`] = `
 <div>
   <div
     class="arco-steps arco-steps-horizontal arco-steps-label-vertical arco-steps-size-default arco-steps-mode-dot"
-    style="max-width:780px;margin-bottom:40px"
+    style="max-width: 780px; margin-bottom: 40px;"
   >
     <div
       class="arco-steps-item arco-steps-item-finish"
@@ -699,7 +699,7 @@ exports[`renders Steps/demo/dot.md correctly 1`] = `
   </div>
   <div
     class="arco-steps arco-steps-vertical arco-steps-label-horizontal arco-steps-size-default arco-steps-mode-dot"
-    style="max-width:780px"
+    style="max-width: 780px;"
   >
     <div
       class="arco-steps-item arco-steps-item-finish"
@@ -780,7 +780,7 @@ exports[`renders Steps/demo/dot.md correctly 1`] = `
 exports[`renders Steps/demo/error.md correctly 1`] = `
 <div
   class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default"
-  style="max-width:780px;margin-bottom:40px"
+  style="max-width: 780px; margin-bottom: 40px;"
 >
   <div
     class="arco-steps-item arco-steps-item-finish arco-steps-item-next-error"
@@ -1021,7 +1021,7 @@ exports[`renders Steps/demo/label-placement.md correctly 1`] = `
 <div>
   <div
     class="arco-steps arco-steps-horizontal arco-steps-label-vertical arco-steps-size-default"
-    style="max-width:780px;margin:0 auto"
+    style="max-width: 780px; margin: 0px auto;"
   >
     <div
       class="arco-steps-item arco-steps-item-finish"
@@ -1131,7 +1131,7 @@ exports[`renders Steps/demo/label-placement.md correctly 1`] = `
     role="separator"
   />
   <div
-    style="line-height:140px;text-align:center;color:#C9CDD4"
+    style="line-height: 140px; text-align: center; color: rgb(201, 205, 212);"
   >
     Step 2 Content
   </div>
@@ -1141,7 +1141,7 @@ exports[`renders Steps/demo/label-placement.md correctly 1`] = `
 exports[`renders Steps/demo/lineless.md correctly 1`] = `
 <div
   class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default arco-steps-lineless"
-  style="max-width:780px;margin-bottom:40px"
+  style="max-width: 780px; margin-bottom: 40px;"
 >
   <div
     class="arco-steps-item arco-steps-item-finish"
@@ -1243,7 +1243,7 @@ exports[`renders Steps/demo/mini.md correctly 1`] = `
 <div>
   <div
     class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-small"
-    style="max-width:780px;margin:0 auto"
+    style="max-width: 780px; margin: 0px auto;"
   >
     <div
       class="arco-steps-item arco-steps-item-finish"
@@ -1329,7 +1329,7 @@ exports[`renders Steps/demo/mini.md correctly 1`] = `
     role="separator"
   />
   <div
-    style="line-height:140px;text-align:center;color:#C9CDD4"
+    style="line-height: 140px; text-align: center; color: rgb(201, 205, 212);"
   >
     Step 2 Content
   </div>
@@ -1340,7 +1340,7 @@ exports[`renders Steps/demo/navigation.md correctly 1`] = `
 <div>
   <div
     class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default arco-steps-change-onclick arco-steps-mode-navigation"
-    style="width:780px;margin-bottom:60px"
+    style="width: 780px; margin-bottom: 60px;"
   >
     <div
       class="arco-steps-item arco-steps-item-process arco-steps-item-active"
@@ -1411,7 +1411,7 @@ exports[`renders Steps/demo/navigation.md correctly 1`] = `
   </div>
   <div
     class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-small arco-steps-change-onclick arco-steps-mode-navigation"
-    style="width:780px;margin-bottom:60px"
+    style="width: 780px; margin-bottom: 60px;"
   >
     <div
       class="arco-steps-item arco-steps-item-process arco-steps-item-active"
@@ -1482,7 +1482,7 @@ exports[`renders Steps/demo/navigation.md correctly 1`] = `
   </div>
   <div
     class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default arco-steps-change-onclick arco-steps-mode-navigation"
-    style="width:780px"
+    style="width: 780px;"
   >
     <div
       class="arco-steps-item arco-steps-item-process arco-steps-item-active"
@@ -1573,7 +1573,7 @@ exports[`renders Steps/demo/onchange.md correctly 1`] = `
 <div>
   <div
     class="arco-steps arco-steps-horizontal arco-steps-label-horizontal arco-steps-size-default arco-steps-change-onclick arco-steps-mode-arrow"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <div
       class="arco-steps-item arco-steps-item-process arco-steps-item-active"
@@ -1729,14 +1729,14 @@ exports[`renders Steps/demo/onchange.md correctly 1`] = `
 
 exports[`renders Steps/demo/vertical.md correctly 1`] = `
 <div
-  style="display:flex;max-width:780px;padding:40px;background:var(--color-fill-2)"
+  style="display: flex; max-width: 780px; padding: 40px;"
 >
   <div
-    style="background:var(--color-bg-2);padding:24px;height:272px;box-sizing:border-box"
+    style="padding: 24px; height: 272px; box-sizing: border-box;"
   >
     <div
       class="arco-steps arco-steps-vertical arco-steps-label-horizontal arco-steps-size-default"
-      style="width:170px"
+      style="width: 170px;"
     >
       <div
         class="arco-steps-item arco-steps-item-process arco-steps-item-active"
@@ -1833,13 +1833,13 @@ exports[`renders Steps/demo/vertical.md correctly 1`] = `
   <div
     class="arco-divider arco-divider-vertical"
     role="separator"
-    style="display:block;height:auto"
+    style="display: block; height: auto;"
   />
   <div
-    style="width:100%;height:272px;text-align:center;background:var(--color-bg-2);color:#C2C7CC"
+    style="width: 100%; height: 272px; text-align: center; color: rgb(194, 199, 204);"
   >
     <div
-      style="line-height:200px"
+      style="line-height: 200px;"
     >
       Step1 Content
     </div>
@@ -1847,7 +1847,7 @@ exports[`renders Steps/demo/vertical.md correctly 1`] = `
       <button
         class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square arco-btn-disabled"
         disabled=""
-        style="padding-left:8px"
+        style="padding-left: 8px;"
         type="button"
       >
         <svg
@@ -1869,7 +1869,7 @@ exports[`renders Steps/demo/vertical.md correctly 1`] = `
       </button>
       <button
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-        style="margin-left:20px;padding-right:8px"
+        style="margin-left: 20px; padding-right: 8px;"
         type="button"
       >
         <span>

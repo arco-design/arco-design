@@ -4,7 +4,7 @@ exports[`renders Descriptions/demo/align.md correctly 1`] = `
 <div>
   <div
     class="arco-descriptions arco-descriptions-layout-horizontal"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <div
       class="arco-descriptions-title"
@@ -25,7 +25,7 @@ exports[`renders Descriptions/demo/align.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="text-align:right"
+              style="text-align: right;"
             >
               Name :
             </td>
@@ -36,7 +36,7 @@ exports[`renders Descriptions/demo/align.md correctly 1`] = `
             </td>
             <td
               class="arco-descriptions-item-label"
-              style="text-align:right"
+              style="text-align: right;"
             >
               Mobile :
             </td>
@@ -47,7 +47,7 @@ exports[`renders Descriptions/demo/align.md correctly 1`] = `
             </td>
             <td
               class="arco-descriptions-item-label"
-              style="text-align:right"
+              style="text-align: right;"
             >
               Residence :
             </td>
@@ -62,7 +62,7 @@ exports[`renders Descriptions/demo/align.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="text-align:right"
+              style="text-align: right;"
             >
               Hometown :
             </td>
@@ -73,7 +73,7 @@ exports[`renders Descriptions/demo/align.md correctly 1`] = `
             </td>
             <td
               class="arco-descriptions-item-label"
-              style="text-align:right"
+              style="text-align: right;"
             >
               Address :
             </td>
@@ -391,7 +391,7 @@ exports[`renders Descriptions/demo/layout.md correctly 1`] = `
 <div>
   <div
     class="arco-descriptions arco-descriptions-layout-inline-horizontal"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <div
       class="arco-descriptions-title"
@@ -492,7 +492,7 @@ exports[`renders Descriptions/demo/layout.md correctly 1`] = `
   </div>
   <div
     class="arco-descriptions arco-descriptions-border arco-descriptions-layout-horizontal"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <div
       class="arco-descriptions-title"
@@ -588,7 +588,7 @@ exports[`renders Descriptions/demo/layout.md correctly 1`] = `
   </div>
   <div
     class="arco-descriptions arco-descriptions-border arco-descriptions-layout-vertical"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <div
       class="arco-descriptions-title"
@@ -953,7 +953,7 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
 <div>
   <div
     class="arco-descriptions arco-descriptions-layout-horizontal"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <div
       class="arco-descriptions-title"
@@ -974,7 +974,7 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="padding-right:36px"
+              style="padding-right: 36px;"
             >
               Name
             </td>
@@ -989,7 +989,7 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="padding-right:36px"
+              style="padding-right: 36px;"
             >
               Mobile
             </td>
@@ -1004,7 +1004,7 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="padding-right:36px"
+              style="padding-right: 36px;"
             >
               Residence
             </td>
@@ -1019,7 +1019,7 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="padding-right:36px"
+              style="padding-right: 36px;"
             >
               Hometown
             </td>
@@ -1034,7 +1034,7 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="padding-right:36px"
+              style="padding-right: 36px;"
             >
               Address
             </td>
@@ -1070,7 +1070,7 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="text-align:right;padding-right:36px"
+              style="text-align: right; padding-right: 36px;"
             >
               Name
             </td>
@@ -1085,7 +1085,7 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="text-align:right;padding-right:36px"
+              style="text-align: right; padding-right: 36px;"
             >
               Mobile
             </td>
@@ -1100,7 +1100,7 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="text-align:right;padding-right:36px"
+              style="text-align: right; padding-right: 36px;"
             >
               Residence
             </td>
@@ -1115,7 +1115,7 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="text-align:right;padding-right:36px"
+              style="text-align: right; padding-right: 36px;"
             >
               Hometown
             </td>
@@ -1130,7 +1130,7 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="text-align:right;padding-right:36px"
+              style="text-align: right; padding-right: 36px;"
             >
               Address
             </td>
@@ -1152,7 +1152,7 @@ exports[`renders Descriptions/demo/size.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
     role="radiogroup"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <label
       class="arco-radio-button"
@@ -1223,7 +1223,7 @@ exports[`renders Descriptions/demo/size.md correctly 1`] = `
   </div>
   <div
     class="arco-descriptions arco-descriptions-border arco-descriptions-layout-horizontal arco-descriptions-size-default"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <div
       class="arco-descriptions-title"
@@ -1339,7 +1339,7 @@ exports[`renders Descriptions/demo/size.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="padding-right:40px"
+              style="padding-right: 40px;"
             >
               Name
             </td>
@@ -1354,7 +1354,7 @@ exports[`renders Descriptions/demo/size.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="padding-right:40px"
+              style="padding-right: 40px;"
             >
               Mobile
             </td>
@@ -1369,7 +1369,7 @@ exports[`renders Descriptions/demo/size.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="padding-right:40px"
+              style="padding-right: 40px;"
             >
               Residence
             </td>
@@ -1384,7 +1384,7 @@ exports[`renders Descriptions/demo/size.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="padding-right:40px"
+              style="padding-right: 40px;"
             >
               Hometown
             </td>
@@ -1399,7 +1399,7 @@ exports[`renders Descriptions/demo/size.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="padding-right:40px"
+              style="padding-right: 40px;"
             >
               Date of Birth
             </td>
@@ -1414,7 +1414,7 @@ exports[`renders Descriptions/demo/size.md correctly 1`] = `
           >
             <td
               class="arco-descriptions-item-label"
-              style="padding-right:40px"
+              style="padding-right: 40px;"
             >
               Address
             </td>

@@ -4,7 +4,7 @@ exports[`renders InputNumber/demo/basic.md correctly 1`] = `
 <div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-    style="width:160px;margin:10px 24px 10px 0"
+    style="width: 160px; margin: 10px 24px 10px 0px;"
   >
     <span
       class="arco-input-group"
@@ -67,7 +67,7 @@ exports[`renders InputNumber/demo/basic.md correctly 1`] = `
   </div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-group-wrapper-disabled arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-    style="width:160px;margin:10px 24px 10px 0"
+    style="width: 160px; margin: 10px 24px 10px 0px;"
   >
     <span
       class="arco-input-group"
@@ -136,7 +136,7 @@ exports[`renders InputNumber/demo/format.md correctly 1`] = `
 <div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-    style="width:160px;margin:10px 24px 10px 0"
+    style="width: 160px; margin: 10px 24px 10px 0px;"
   >
     <span
       class="arco-input-group"
@@ -208,7 +208,7 @@ exports[`renders InputNumber/demo/format.md correctly 1`] = `
   </div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-    style="width:160px;margin:10px 24px 10px 0"
+    style="width: 160px; margin: 10px 24px 10px 0px;"
   >
     <span
       class="arco-input-group"
@@ -285,7 +285,7 @@ exports[`renders InputNumber/demo/mode.md correctly 1`] = `
 <div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-button arco-input-number-size-default"
-    style="width:160px;margin:10px 24px 10px 0"
+    style="width: 160px; margin: 10px 24px 10px 0px;"
   >
     <span
       class="arco-input-group"
@@ -351,7 +351,7 @@ exports[`renders InputNumber/demo/mode.md correctly 1`] = `
   </div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-group-wrapper-disabled arco-input-number arco-input-number-mode-button arco-input-number-size-default"
-    style="width:160px;margin:10px 24px 10px 0"
+    style="width: 160px; margin: 10px 24px 10px 0px;"
   >
     <span
       class="arco-input-group"
@@ -423,7 +423,7 @@ exports[`renders InputNumber/demo/precision.md correctly 1`] = `
 <div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-    style="width:160px;margin:10px 24px 10px 0"
+    style="width: 160px; margin: 10px 24px 10px 0px;"
   >
     <span
       class="arco-input-group"
@@ -486,7 +486,7 @@ exports[`renders InputNumber/demo/precision.md correctly 1`] = `
   </div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-    style="width:160px;margin:10px 24px 10px 0"
+    style="width: 160px; margin: 10px 24px 10px 0px;"
   >
     <span
       class="arco-input-group"
@@ -555,7 +555,7 @@ exports[`renders InputNumber/demo/size.md correctly 1`] = `
   <div
     class="arco-radio-group arco-radio-group-type-button arco-radio-size-default arco-radio-mode-outline"
     role="radiogroup"
-    style="margin-bottom:20px;border-radius:4px"
+    style="margin-bottom: 20px; border-radius: 4px;"
   >
     <label
       class="arco-radio-button"
@@ -618,7 +618,7 @@ exports[`renders InputNumber/demo/size.md correctly 1`] = `
   <div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-      style="width:160px;margin:10px 24px 10px 0"
+      style="width: 160px; margin: 10px 24px 10px 0px;"
     >
       <span
         class="arco-input-group"
@@ -681,7 +681,7 @@ exports[`renders InputNumber/demo/size.md correctly 1`] = `
     </div>
     <div
       class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-button arco-input-number-size-default"
-      style="width:160px;margin:10px 24px 10px 0"
+      style="width: 160px; margin: 10px 24px 10px 0px;"
     >
       <span
         class="arco-input-group"
@@ -752,7 +752,7 @@ exports[`renders InputNumber/demo/size.md correctly 1`] = `
 exports[`renders InputNumber/demo/strictMode.md correctly 1`] = `
 <div
   class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-button arco-input-number-size-default"
-  style="width:480px"
+  style="width: 480px;"
 >
   <span
     class="arco-input-group"
@@ -822,7 +822,7 @@ exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
 <div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-    style="width:160px;margin:10px 24px 10px 0"
+    style="width: 160px; margin: 10px 24px 10px 0px;"
   >
     <span
       class="arco-input-group"
@@ -890,7 +890,7 @@ exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
   </div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
-    style="width:160px;margin:10px 24px 10px 0"
+    style="width: 160px; margin: 10px 24px 10px 0px;"
   >
     <span
       class="arco-input-group"
@@ -962,7 +962,7 @@ exports[`renders InputNumber/demo/suffix.md correctly 1`] = `
   </div>
   <div
     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-button arco-input-number-size-default"
-    style="width:160px;margin:10px 24px 10px 0"
+    style="width: 160px; margin: 10px 24px 10px 0px;"
   >
     <span
       class="arco-input-group"
