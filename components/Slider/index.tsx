@@ -6,7 +6,7 @@ import Marks from './marks';
 import Dots from './dots';
 import Input from './input';
 import Ticks from './ticks';
-import { isFunction, isObject, isArray } from '../_util/is';
+import { isFunction, isObject, isArray, isNumber } from '../_util/is';
 import { formatPercent, getIntervalOffset } from './utils';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
@@ -221,7 +221,7 @@ function Slider(baseProps: SliderProps, ref) {
       : { [isReverse ? 'right' : 'left']: formatPercent(offset) };
   }
 
-  function getTooltipProps() {
+  function getTooltipProps(point: 'begin' | 'end') {
     const tooltipProps: {
       tooltipPosition?: TooltipPosition;
       tooltipVisible?: boolean;
@@ -229,7 +229,21 @@ function Slider(baseProps: SliderProps, ref) {
       formatTooltip?: SliderProps['formatTooltip'];
     } = {
       getTooltipContainer: props.getTooltipContainer,
-      formatTooltip: props.formatTooltip,
+      formatTooltip: () => {
+        let [beginVal, endVal] = [min, min];
+        // Q: 这里为什么没有直接用已有的endvalue ，而是直接从 value 里再去取值？
+        // A: 用户传入了一个非法格式的值，且从来没有操作过时，value 的值和 tooltip 显示出来的值是对不上的，存在误导。
+        // demo: https://codepen.io/yinkaihui/pen/dyLGWMw?editors=0010
+        if (props.range && isArray(value)) {
+          endVal = value[1];
+          beginVal = value[0];
+        } else if (!props.range && isNumber(value)) {
+          endVal = value;
+        }
+
+        const formatTooltip = isFunction(props.formatTooltip) ? props.formatTooltip : (v) => v;
+        return formatTooltip(point === 'begin' ? beginVal : endVal);
+      },
     };
     if ('tooltipPosition' in props) {
       tooltipProps.tooltipPosition = tooltipPosition;
@@ -393,7 +407,7 @@ function Slider(baseProps: SliderProps, ref) {
               maxValue={max}
               minValue={min}
               vertical={vertical}
-              {...getTooltipProps()}
+              {...getTooltipProps('begin')}
               onMoveBegin={getPosition}
               onMoving={handleBeginMove}
               onMoveEnd={handleMoveEnd}
@@ -408,7 +422,7 @@ function Slider(baseProps: SliderProps, ref) {
             maxValue={max}
             minValue={min}
             vertical={vertical}
-            {...getTooltipProps()}
+            {...getTooltipProps('end')}
             onMoveBegin={getPosition}
             onMoving={handleEndMove}
             onMoveEnd={handleMoveEnd}
