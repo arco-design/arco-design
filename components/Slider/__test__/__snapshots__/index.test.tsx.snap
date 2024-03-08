@@ -12,7 +12,7 @@ exports[`ConfigProvider componentConfig.Slider default 1`] = `
     >
       <div
         class="arco-slider-bar"
-        style="left:0%;right:100%"
+        style="left: 0%; right: 100%;"
       />
       <div
         aria-disabled="false"
@@ -22,7 +22,7 @@ exports[`ConfigProvider componentConfig.Slider default 1`] = `
         aria-valuetext="0"
         class="arco-slider-button"
         role="slider"
-        style="left:0%"
+        style="left: 0%;"
         tabindex="0"
       />
     </div>
@@ -42,7 +42,7 @@ exports[`ConfigProvider componentConfig.Slider set className globally 1`] = `
     >
       <div
         class="arco-slider-bar"
-        style="left:0%;right:100%"
+        style="left: 0%; right: 100%;"
       />
       <div
         aria-disabled="false"
@@ -52,7 +52,7 @@ exports[`ConfigProvider componentConfig.Slider set className globally 1`] = `
         aria-valuetext="0"
         class="arco-slider-button"
         role="slider"
-        style="left:0%"
+        style="left: 0%;"
         tabindex="0"
       />
     </div>
@@ -72,7 +72,7 @@ exports[`ConfigProvider componentConfig.Slider set className globally and compon
     >
       <div
         class="arco-slider-bar"
-        style="left:0%;right:100%"
+        style="left: 0%; right: 100%;"
       />
       <div
         aria-disabled="false"
@@ -82,7 +82,7 @@ exports[`ConfigProvider componentConfig.Slider set className globally and compon
         aria-valuetext="0"
         class="arco-slider-button"
         role="slider"
-        style="left:0%"
+        style="left: 0%;"
         tabindex="0"
       />
     </div>
@@ -103,7 +103,7 @@ exports[`ConfigProvider componentConfig.Slider set data-* property 1`] = `
     >
       <div
         class="arco-slider-bar"
-        style="left:0%;right:100%"
+        style="left: 0%; right: 100%;"
       />
       <div
         aria-disabled="false"
@@ -113,7 +113,7 @@ exports[`ConfigProvider componentConfig.Slider set data-* property 1`] = `
         aria-valuetext="0"
         class="arco-slider-button"
         role="slider"
-        style="left:0%"
+        style="left: 0%;"
         tabindex="0"
       />
     </div>

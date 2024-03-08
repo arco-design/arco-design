@@ -1,11 +1,12 @@
 name: deploy-site-preview
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
   workflow_run:
-    workflows: [npm-publish]
-    types:
-      - completed
+    workflows: ['pr-test']
+    types: completed
+
+  push:
+    tags:
+      - .*
 
   workflow_dispatch:
 

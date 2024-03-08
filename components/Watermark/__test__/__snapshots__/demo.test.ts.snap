@@ -5,7 +5,7 @@ exports[`renders Watermark/demo/basic.md correctly 1`] = `
   class="arco-watermark"
 >
   <div
-    style="height:300px"
+    style="height: 300px;"
   />
 </div>
 `;
@@ -16,13 +16,13 @@ exports[`renders Watermark/demo/container.md correctly 1`] = `
 >
   <div
     id="demo-watermark-1"
-    style="width:400px;height:300px;line-height:300px;text-align:center;background:var(--color-primary-light-1)"
+    style="width: 400px; height: 300px; line-height: 300px; text-align: center;"
   >
     Click to mount the watermark here
   </div>
   <div
     id="demo-watermark-2"
-    style="width:400px;height:300px;line-height:300px;text-align:center;background:var(--color-warning-light-1)"
+    style="width: 400px; height: 300px; line-height: 300px; text-align: center;"
   >
     Click to mount the watermark here
   </div>
@@ -34,7 +34,7 @@ exports[`renders Watermark/demo/contents.md correctly 1`] = `
   class="arco-watermark"
 >
   <div
-    style="height:300px"
+    style="height: 300px;"
   />
 </div>
 `;
@@ -44,7 +44,7 @@ exports[`renders Watermark/demo/image.md correctly 1`] = `
   class="arco-watermark"
 >
   <div
-    style="height:300px"
+    style="height: 300px;"
   />
 </div>
 `;
@@ -52,7 +52,7 @@ exports[`renders Watermark/demo/image.md correctly 1`] = `
 exports[`renders Watermark/demo/props.md correctly 1`] = `
 <div
   class="arco-row arco-row-align-start arco-row-justify-start"
-  style="color:var(--color-text-2);flex-wrap:nowrap"
+  style="flex-wrap: nowrap;"
 >
   <div
     class="arco-watermark"
@@ -72,7 +72,7 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
       </span>
        是一套设计系统的简称。
       <ul
-        style="list-style-type:circle;padding-left:20px"
+        style="list-style-type: circle; padding-left: 20px;"
       >
         <li>
           ArcoDesign 的目标, 即通过通用的设计系统去解决产品中的体验问题, 并为产品设计提供指导原则解决业务问题，同时它能够促进设计部门和研发部门之间协作, 成为开发者之间沟通的语言。
@@ -88,7 +88,7 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
       </h2>
       <img
         src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/f50ceefbbf0946c894d492c961e9da8d~tplv-uwbnlip3yd-image.image"
-        style="z-index:50;position:relative"
+        style="z-index: 50; position: relative;"
         width="600"
       />
       <h3
@@ -98,7 +98,7 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
       </h3>
       务实=同理心 浪漫=想象力
       <ul
-        style="list-style-type:circle;padding-left:20px"
+        style="list-style-type: circle; padding-left: 20px;"
       >
         <li>
           首先在于务实能够通过设计系统去解决大部分需求极大提高效率解放双手。让设计师&开发能去做一些更"浪漫"即发挥创新&想象力的东西。
@@ -114,7 +114,7 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
   </div>
   <form
     class="arco-form arco-form-vertical arco-form-size-default"
-    style="width:264px;flex-shrink:0;border-left:1px solid var(--color-border-2);padding-left:24px;margin-left:24px"
+    style="width: 264px; flex-shrink: 0; padding-left: 24px; margin-left: 24px;"
   >
     <div
       class="arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-vertical"
@@ -496,7 +496,7 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
                   >
                     <div
                       class="arco-slider-bar"
-                      style="left:0%;right:95.45454545454545%"
+                      style="left: 0%; right: 95.45454545454545%;"
                     />
                     <div
                       aria-disabled="false"
@@ -506,7 +506,7 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
                       aria-valuetext="16"
                       class="arco-slider-button"
                       role="slider"
-                      style="left:4.545454545454546%"
+                      style="left: 4.545454545454546%;"
                       tabindex="0"
                     />
                   </div>
@@ -554,7 +554,7 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
                   >
                     <div
                       class="arco-slider-bar"
-                      style="left:0%;right:41.666666666666664%"
+                      style="left: 0%; right: 41.666666666666664%;"
                     />
                     <div
                       aria-disabled="false"
@@ -564,7 +564,7 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
                       aria-valuetext="30"
                       class="arco-slider-button"
                       role="slider"
-                      style="left:58.333333333333336%"
+                      style="left: 58.333333333333336%;"
                       tabindex="0"
                     />
                   </div>
@@ -612,7 +612,7 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
                   >
                     <div
                       class="arco-slider-bar"
-                      style="left:0%;right:98.01980198019803%"
+                      style="left: 0%; right: 98.01980198019803%;"
                     />
                     <div
                       aria-disabled="false"
@@ -622,7 +622,7 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
                       aria-valuetext="1"
                       class="arco-slider-button"
                       role="slider"
-                      style="left:1.98019801980198%"
+                      style="left: 1.98019801980198%;"
                       tabindex="0"
                     />
                   </div>
@@ -660,7 +660,7 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
               >
                 <div
                   class="arco-space-item"
-                  style="margin-right:8px"
+                  style="margin-right: 8px;"
                 >
                   <div
                     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"
@@ -828,7 +828,7 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
               >
                 <div
                   class="arco-space-item"
-                  style="margin-right:8px"
+                  style="margin-right: 8px;"
                 >
                   <div
                     class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-input-number arco-input-number-mode-embed arco-input-number-size-default"

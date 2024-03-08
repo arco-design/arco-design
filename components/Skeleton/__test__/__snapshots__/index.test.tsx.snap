@@ -18,7 +18,7 @@ exports[`ConfigProvider componentConfig.Skeleton default 1`] = `
       />
       <li
         class="arco-skeleton-text-row"
-        style="width:60%"
+        style="width: 60%;"
       />
     </ul>
   </div>
@@ -43,7 +43,7 @@ exports[`ConfigProvider componentConfig.Skeleton set className globally 1`] = `
       />
       <li
         class="arco-skeleton-text-row"
-        style="width:60%"
+        style="width: 60%;"
       />
     </ul>
   </div>
@@ -68,7 +68,7 @@ exports[`ConfigProvider componentConfig.Skeleton set className globally and comp
       />
       <li
         class="arco-skeleton-text-row"
-        style="width:60%"
+        style="width: 60%;"
       />
     </ul>
   </div>
@@ -94,7 +94,7 @@ exports[`ConfigProvider componentConfig.Skeleton set data-* property 1`] = `
       />
       <li
         class="arco-skeleton-text-row"
-        style="width:60%"
+        style="width: 60%;"
       />
     </ul>
   </div>

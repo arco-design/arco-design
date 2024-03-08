@@ -9,7 +9,6 @@ exports[`renders Comment/demo/align.md correctly 1`] = `
   >
     <div
       class="arco-avatar arco-avatar-circle"
-      style="font-size:"
     >
       <span
         class="arco-avatar-image"
@@ -61,7 +60,7 @@ exports[`renders Comment/demo/align.md correctly 1`] = `
             focusable="false"
             stroke="currentColor"
             stroke-width="4"
-            style="color:#f53f3f"
+            style="color: rgb(245, 63, 63);"
             viewBox="0 0 48 48"
           >
             <path
@@ -82,7 +81,7 @@ exports[`renders Comment/demo/align.md correctly 1`] = `
             focusable="false"
             stroke="currentColor"
             stroke-width="4"
-            style="color:#ffb400"
+            style="color: rgb(255, 180, 0);"
             viewBox="0 0 48 48"
           >
             <path
@@ -126,7 +125,6 @@ exports[`renders Comment/demo/basic.md correctly 1`] = `
   >
     <div
       class="arco-avatar arco-avatar-circle"
-      style="font-size:"
     >
       <span
         class="arco-avatar-image"

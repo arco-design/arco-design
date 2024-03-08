@@ -4,7 +4,7 @@ exports[`renders Form/demo/async-validate.md correctly 1`] = `
 <form
   autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="width:600px"
+  style="width: 600px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -73,7 +73,7 @@ exports[`renders Form/demo/async-validate.md correctly 1`] = `
           >
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="submit"
             >
               <span>
@@ -82,7 +82,7 @@ exports[`renders Form/demo/async-validate.md correctly 1`] = `
             </button>
             <button
               class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="button"
             >
               <span>
@@ -101,7 +101,7 @@ exports[`renders Form/demo/basic.md correctly 1`] = `
 <form
   autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="width:600px"
+  style="width: 600px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -187,6 +187,7 @@ exports[`renders Form/demo/basic.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -254,7 +255,7 @@ exports[`renders Form/demo/basic.md correctly 1`] = `
 
 exports[`renders Form/demo/control.md correctly 1`] = `
 <div
-  style="max-width:650px"
+  style="max-width: 650px;"
 >
   <form
     autocomplete="off"
@@ -543,6 +544,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-cascader-popup-0"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
@@ -561,7 +563,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                       autocomplete="off"
                       class="arco-cascader-view-input"
                       placeholder="please select"
-                      style="width:100%"
+                      style="width: 100%;"
                       value=""
                     />
                     <span
@@ -571,7 +573,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     </span>
                     <span
                       class="arco-cascader-view-value"
-                      style="display:none"
+                      style="display: none;"
                     >
                       please select
                     </span>
@@ -713,6 +715,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-select-popup-1"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default"
@@ -731,7 +734,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                       autocomplete="off"
                       class="arco-select-view-input"
                       placeholder="please select"
-                      style="width:100%;pointer-events:none"
+                      style="width: 100%; pointer-events: none;"
                       tabindex="-1"
                       value=""
                     />
@@ -742,7 +745,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     </span>
                     <span
                       class="arco-select-view-value"
-                      style="display:none"
+                      style="display: none;"
                     >
                       please select
                     </span>
@@ -817,6 +820,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-select-popup-2"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -871,6 +875,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                           autocomplete="off"
                           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                           placeholder=""
+                          style="width: 2px;"
                           value=""
                         />
                         <span
@@ -949,6 +954,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-tree-select-popup-0"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
@@ -967,7 +973,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                       autocomplete="off"
                       class="arco-tree-select-view-input"
                       placeholder="please select"
-                      style="width:100%;pointer-events:none"
+                      style="width: 100%; pointer-events: none;"
                       tabindex="-1"
                       value=""
                     />
@@ -978,7 +984,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                     </span>
                     <span
                       class="arco-tree-select-view-value"
-                      style="display:none"
+                      style="display: none;"
                     >
                       please select
                     </span>
@@ -1574,7 +1580,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                   >
                     <div
                       class="arco-slider-bar"
-                      style="left:0%;right:80%"
+                      style="left: 0%; right: 80%;"
                     />
                     <div
                       aria-disabled="false"
@@ -1584,7 +1590,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
                       aria-valuetext="20"
                       class="arco-slider-button"
                       role="slider"
-                      style="left:20%"
+                      style="left: 20%;"
                       tabindex="0"
                     />
                   </div>
@@ -1695,7 +1701,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
               >
                 <input
                   multiple=""
-                  style="display:none"
+                  style="display: none;"
                   type="file"
                 />
                 <div
@@ -1757,6 +1763,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
               >
                 <input
                   type="checkbox"
+                  value=""
                 />
                 <span
                   class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -1808,7 +1815,7 @@ exports[`renders Form/demo/control.md correctly 1`] = `
             >
               <button
                 class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-                style="margin-right:24px"
+                style="margin-right: 24px;"
                 type="button"
               >
                 <span>
@@ -1844,7 +1851,7 @@ exports[`renders Form/demo/control-below.md correctly 1`] = `
 <form
   autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="max-width:650px"
+  style="max-width: 650px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -2012,7 +2019,7 @@ exports[`renders Form/demo/custom.md correctly 1`] = `
   <form
     autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
-    style="max-width:650px"
+    style="max-width: 650px;"
   >
     <div
       class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -2064,11 +2071,12 @@ exports[`renders Form/demo/custom.md correctly 1`] = `
                   >
                     <div
                       aria-autocomplete="list"
+                      aria-controls="arco-select-popup-3"
                       aria-expanded="false"
                       aria-haspopup="listbox"
                       class="arco-select arco-select-single arco-select-size-default"
                       role="combobox"
-                      style="width:100px"
+                      style="width: 100px;"
                       tabindex="0"
                     >
                       <div
@@ -2082,7 +2090,7 @@ exports[`renders Form/demo/custom.md correctly 1`] = `
                             autocomplete="off"
                             class="arco-select-view-input"
                             placeholder="Please select ..."
-                            style="width:100%;pointer-events:none"
+                            style="width: 100%; pointer-events: none;"
                             tabindex="-1"
                             value=""
                           />
@@ -2093,7 +2101,7 @@ exports[`renders Form/demo/custom.md correctly 1`] = `
                           </span>
                           <span
                             class="arco-select-view-value"
-                            style="display:none"
+                            style="display: none;"
                           >
                             Please select ...
                           </span>
@@ -2154,7 +2162,7 @@ exports[`renders Form/demo/custom.md correctly 1`] = `
 
 exports[`renders Form/demo/disabled.md correctly 1`] = `
 <div
-  style="max-width:650px"
+  style="max-width: 650px;"
 >
   <form
     autocomplete="off"
@@ -2449,6 +2457,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-cascader-popup-1"
                 aria-disabled="true"
                 aria-expanded="false"
                 aria-haspopup="listbox"
@@ -2469,7 +2478,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                       class="arco-cascader-view-input"
                       disabled=""
                       placeholder="please select"
-                      style="width:100%"
+                      style="width: 100%;"
                       value=""
                     />
                     <span
@@ -2479,7 +2488,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     </span>
                     <span
                       class="arco-cascader-view-value"
-                      style="display:none"
+                      style="display: none;"
                     >
                       please select
                     </span>
@@ -2622,6 +2631,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-select-popup-5"
                 aria-disabled="true"
                 aria-expanded="false"
                 aria-haspopup="listbox"
@@ -2642,7 +2652,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                       class="arco-select-view-input"
                       disabled=""
                       placeholder="please select"
-                      style="width:100%;pointer-events:none"
+                      style="width: 100%; pointer-events: none;"
                       tabindex="-1"
                       value=""
                     />
@@ -2653,7 +2663,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                     </span>
                     <span
                       class="arco-select-view-value"
-                      style="display:none"
+                      style="display: none;"
                     >
                       please select
                     </span>
@@ -2728,6 +2738,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-select-popup-6"
                 aria-disabled="true"
                 aria-expanded="false"
                 aria-haspopup="listbox"
@@ -2764,6 +2775,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-disabled arco-input-tag-input-autowidth"
                           disabled=""
                           placeholder=""
+                          style="width: 2px;"
                           value=""
                         />
                         <span
@@ -3368,7 +3380,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                   >
                     <div
                       class="arco-slider-bar"
-                      style="left:0%;right:80%"
+                      style="left: 0%; right: 80%;"
                     />
                     <div
                       aria-disabled="true"
@@ -3378,7 +3390,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                       aria-valuetext="20"
                       class="arco-slider-button"
                       role="slider"
-                      style="left:20%"
+                      style="left: 20%;"
                       tabindex="-1"
                     />
                   </div>
@@ -3469,7 +3481,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
               >
                 <input
                   multiple=""
-                  style="display:none"
+                  style="display: none;"
                   type="file"
                 />
                 <div
@@ -3533,6 +3545,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
                 <input
                   disabled=""
                   type="checkbox"
+                  value=""
                 />
                 <span
                   class="arco-icon-hover arco-checkbox-icon-hover arco-icon-hover-disabled arco-checkbox-mask-wrapper"
@@ -3585,7 +3598,7 @@ exports[`renders Form/demo/disabled.md correctly 1`] = `
               <button
                 class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-disabled"
                 disabled=""
-                style="margin-right:24px"
+                style="margin-right: 24px;"
                 type="button"
               >
                 <span>
@@ -3623,7 +3636,7 @@ exports[`renders Form/demo/form-context.md correctly 1`] = `
 <form
   autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="width:600px"
+  style="width: 600px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -3836,7 +3849,7 @@ exports[`renders Form/demo/form-context.md correctly 1`] = `
           >
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="submit"
             >
               <span>
@@ -3845,7 +3858,7 @@ exports[`renders Form/demo/form-context.md correctly 1`] = `
             </button>
             <button
               class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="button"
             >
               <span>
@@ -3868,11 +3881,11 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
   >
     <div
       class="arco-row arco-row-align-start arco-row-justify-start"
-      style="margin-left:-12px;margin-right:-12px"
+      style="margin-left: -12px; margin-right: -12px;"
     >
       <div
         class="arco-col arco-col-8"
-        style="padding-left:12px;padding-right:12px"
+        style="padding-left: 12px; padding-right: 12px;"
       >
         <div
           class="arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-vertical"
@@ -3913,7 +3926,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
       </div>
       <div
         class="arco-col arco-col-8"
-        style="padding-left:12px;padding-right:12px"
+        style="padding-left: 12px; padding-right: 12px;"
       >
         <div
           class="arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-vertical"
@@ -3942,6 +3955,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                 >
                   <div
                     aria-autocomplete="list"
+                    aria-controls="arco-select-popup-7"
                     aria-expanded="false"
                     aria-haspopup="listbox"
                     class="arco-select arco-select-single arco-select-size-default"
@@ -3960,7 +3974,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                           autocomplete="off"
                           class="arco-select-view-input"
                           placeholder="select gender"
-                          style="width:100%;pointer-events:none"
+                          style="width: 100%; pointer-events: none;"
                           tabindex="-1"
                           value=""
                         />
@@ -3971,7 +3985,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                         </span>
                         <span
                           class="arco-select-view-value"
-                          style="display:none"
+                          style="display: none;"
                         >
                           select gender
                         </span>
@@ -4008,7 +4022,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
       </div>
       <div
         class="arco-col arco-col-8"
-        style="padding-left:12px;padding-right:12px"
+        style="padding-left: 12px; padding-right: 12px;"
       >
         <div
           class="arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-vertical"
@@ -4110,7 +4124,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
     >
       <div
         class="arco-space-item"
-        style="margin-right:8px"
+        style="margin-right: 8px;"
       >
         <div
           class="arco-tag arco-tag-arcoblue arco-tag-checked arco-tag-size-default"
@@ -4125,7 +4139,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
       </div>
       <div
         class="arco-space-item"
-        style="margin-right:8px"
+        style="margin-right: 8px;"
       >
         <button
           class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -4157,7 +4171,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
   >
     <span
       class="arco-typography"
-      style="font-size:18px"
+      style="font-size: 18px;"
     >
       <b>
         Result
@@ -4166,7 +4180,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
     <form
       class="arco-form arco-form-inline arco-form-size-default"
       id="refreshForm"
-      style="width:auto"
+      style="width: auto;"
     >
       <div
         class="arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-inline"
@@ -4751,7 +4765,7 @@ exports[`renders Form/demo/layout.md correctly 1`] = `
 <form
   autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="max-width:600px"
+  style="max-width: 600px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -4887,7 +4901,7 @@ exports[`renders Form/demo/layout.md correctly 1`] = `
               class="arco-input arco-input-size-default"
               id="username_input"
               placeholder="please enter your name"
-              style="width:270px"
+              style="width: 270px;"
               value=""
             />
           </div>
@@ -4920,7 +4934,7 @@ exports[`renders Form/demo/layout.md correctly 1`] = `
             <input
               class="arco-input arco-input-size-default"
               placeholder="please enter your post"
-              style="width:270px"
+              style="width: 270px;"
               value=""
             />
           </div>
@@ -4948,6 +4962,7 @@ exports[`renders Form/demo/layout.md correctly 1`] = `
             >
               <input
                 type="checkbox"
+                value=""
               />
               <span
                 class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -5018,11 +5033,11 @@ exports[`renders Form/demo/list.md correctly 1`] = `
   <form
     autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
-    style="width:600px"
+    style="width: 600px;"
   >
     <div
       class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
-      style="width:370px"
+      style="width: 370px;"
     >
       <div
         class="arco-col arco-col-5 arco-form-label-item"
@@ -5093,7 +5108,7 @@ exports[`renders Form/demo/list.md correctly 1`] = `
                           >
                             <div
                               class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
-                              style="width:370px"
+                              style="width: 370px;"
                             >
                               <div
                                 class="arco-col arco-col-24 arco-form-label-item arco-form-label-item-flex"
@@ -5143,7 +5158,7 @@ exports[`renders Form/demo/list.md correctly 1`] = `
                             </div>
                             <button
                               class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-circle arco-btn-status-danger arco-btn-icon-only"
-                              style="margin:0 20px"
+                              style="margin: 0px 20px;"
                               type="button"
                             >
                               <svg
@@ -5197,7 +5212,7 @@ exports[`renders Form/demo/list.md correctly 1`] = `
                           >
                             <div
                               class="arco-space-item"
-                              style="margin-right:20px"
+                              style="margin-right: 20px;"
                             >
                               <button
                                 class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -5234,7 +5249,7 @@ exports[`renders Form/demo/list.md correctly 1`] = `
     </div>
     <div
       class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
-      style="margin-top:20px"
+      style="margin-top: 20px;"
     >
       <div
         class="arco-col arco-col-19 arco-form-item-wrapper"
@@ -5253,7 +5268,7 @@ exports[`renders Form/demo/list.md correctly 1`] = `
               >
                 <div
                   class="arco-space-item"
-                  style="margin-right:20px"
+                  style="margin-right: 20px;"
                 >
                   <button
                     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -5266,7 +5281,7 @@ exports[`renders Form/demo/list.md correctly 1`] = `
                 </div>
                 <div
                   class="arco-space-item"
-                  style="margin-right:20px"
+                  style="margin-right: 20px;"
                 >
                   <button
                     class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -5304,7 +5319,7 @@ exports[`renders Form/demo/list-nest.md correctly 1`] = `
   <form
     autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
-    style="width:600px"
+    style="width: 600px;"
   >
     <div>
       <div>
@@ -5335,7 +5350,7 @@ exports[`renders Form/demo/list-nest.md correctly 1`] = `
                   >
                     <div
                       class="arco-space-item"
-                      style="margin-right:8px"
+                      style="margin-right: 8px;"
                     >
                       <input
                         class="arco-input arco-input-size-default"
@@ -5345,7 +5360,7 @@ exports[`renders Form/demo/list-nest.md correctly 1`] = `
                     </div>
                     <div
                       class="arco-space-item"
-                      style="margin-right:8px"
+                      style="margin-right: 8px;"
                     >
                       <input
                         class="arco-input arco-input-size-default"
@@ -5419,7 +5434,7 @@ exports[`renders Form/demo/methods.md correctly 1`] = `
 <form
   autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="width:600px"
+  style="width: 600px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -5595,7 +5610,7 @@ exports[`renders Form/demo/methods.md correctly 1`] = `
           >
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="submit"
             >
               <span>
@@ -5604,7 +5619,7 @@ exports[`renders Form/demo/methods.md correctly 1`] = `
             </button>
             <button
               class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="button"
             >
               <span>
@@ -5640,7 +5655,7 @@ exports[`renders Form/demo/nest.md correctly 1`] = `
   <form
     autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
-    style="max-width:650px"
+    style="max-width: 650px;"
   >
     <div
       class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -5870,9 +5885,7 @@ exports[`renders Form/demo/nest.md correctly 1`] = `
       </div>
     </div>
   </form>
-  <div
-    style="color:var(--color-text-2)"
-  >
+  <div>
     <p>
       Form data:
     </p>
@@ -5886,11 +5899,11 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
   <form
     autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
-    style="max-width:500px"
+    style="max-width: 500px;"
   >
     <div
       class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
-      style="margin-bottom:0"
+      style="margin-bottom: 0px;"
     >
       <div
         class="arco-col arco-col-5 arco-form-label-item"
@@ -5927,11 +5940,11 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
             >
               <div
                 class="arco-row arco-row-align-start arco-row-justify-start"
-                style="margin-left:-4px;margin-right:-4px"
+                style="margin-left: -4px; margin-right: -4px;"
               >
                 <div
                   class="arco-col arco-col-12"
-                  style="padding-left:4px;padding-right:4px"
+                  style="padding-left: 4px; padding-right: 4px;"
                 >
                   <div
                     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -5963,7 +5976,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                 </div>
                 <div
                   class="arco-col arco-col-12"
-                  style="padding-left:4px;padding-right:4px"
+                  style="padding-left: 4px; padding-right: 4px;"
                 >
                   <div
                     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -6040,12 +6053,13 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
               >
                 <div
                   aria-autocomplete="list"
+                  aria-controls="arco-select-popup-8"
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   class="arco-select arco-select-single arco-select-size-default"
                   id="gender_input"
                   role="combobox"
-                  style="flex:1"
+                  style="flex: 1;"
                   tabindex="0"
                 >
                   <div
@@ -6059,7 +6073,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                         autocomplete="off"
                         class="arco-select-view-input"
                         placeholder="please enter you gender"
-                        style="width:100%;pointer-events:none"
+                        style="width: 100%; pointer-events: none;"
                         tabindex="-1"
                         value=""
                       />
@@ -6070,7 +6084,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                       </span>
                       <span
                         class="arco-select-view-value"
-                        style="display:none"
+                        style="display: none;"
                       >
                         please enter you gender
                       </span>
@@ -6106,7 +6120,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                   focusable="false"
                   stroke="currentColor"
                   stroke-width="4"
-                  style="margin:0 8px;color:rgb(var(--arcoblue-6))"
+                  style="margin: 0px 8px;"
                   viewBox="0 0 48 48"
                 >
                   <path
@@ -6160,6 +6174,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-select-popup-9"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default"
@@ -6178,7 +6193,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                       autocomplete="off"
                       class="arco-select-view-input"
                       placeholder="please select"
-                      style="width:100%;pointer-events:none"
+                      style="width: 100%; pointer-events: none;"
                       tabindex="-1"
                       value=""
                     />
@@ -6189,7 +6204,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
                     </span>
                     <span
                       class="arco-select-view-value"
-                      style="display:none"
+                      style="display: none;"
                     >
                       please select
                     </span>
@@ -6250,7 +6265,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
               >
                 <div
                   class="arco-space-item"
-                  style="margin-right:24px"
+                  style="margin-right: 24px;"
                 >
                   <button
                     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -6286,7 +6301,7 @@ exports[`renders Form/demo/nest-form-item.md correctly 1`] = `
 exports[`renders Form/demo/normalize.md correctly 1`] = `
 <form
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="width:600px"
+  style="width: 600px;"
 >
   <div
     autocomplete="off"
@@ -6497,7 +6512,7 @@ exports[`renders Form/demo/register.md correctly 1`] = `
 <form
   autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="width:320px"
+  style="width: 320px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -6625,7 +6640,7 @@ exports[`renders Form/demo/scrollToField.md correctly 1`] = `
   <form
     autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
-    style="max-width:500px;margin-top:20px;padding-right:16px;height:300px;overflow:auto"
+    style="max-width: 500px; margin-top: 20px; padding-right: 16px; height: 300px; overflow: auto;"
   >
     <div
       class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -6995,7 +7010,7 @@ exports[`renders Form/demo/setFields.md correctly 1`] = `
 <form
   autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="width:600px"
+  style="width: 600px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -7171,7 +7186,7 @@ exports[`renders Form/demo/setFields.md correctly 1`] = `
           >
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="submit"
             >
               <span>
@@ -7180,7 +7195,7 @@ exports[`renders Form/demo/setFields.md correctly 1`] = `
             </button>
             <button
               class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="button"
             >
               <span>
@@ -7205,7 +7220,7 @@ exports[`renders Form/demo/setFields.md correctly 1`] = `
 
 exports[`renders Form/demo/size.md correctly 1`] = `
 <div
-  style="max-width:650px"
+  style="max-width: 650px;"
 >
   <form
     autocomplete="off"
@@ -7441,6 +7456,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-cascader-popup-2"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-cascader arco-cascader-single arco-cascader-show-search arco-cascader-size-default"
@@ -7458,7 +7474,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                       autocomplete="off"
                       class="arco-cascader-view-input"
                       placeholder="please select"
-                      style="width:100%"
+                      style="width: 100%;"
                       value=""
                     />
                     <span
@@ -7468,7 +7484,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                     </span>
                     <span
                       class="arco-cascader-view-value"
-                      style="display:none"
+                      style="display: none;"
                     >
                       please select
                     </span>
@@ -7576,6 +7592,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-select-popup-11"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-single arco-select-size-default"
@@ -7593,7 +7610,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                       autocomplete="off"
                       class="arco-select-view-input"
                       placeholder="please select"
-                      style="width:100%;pointer-events:none"
+                      style="width: 100%; pointer-events: none;"
                       tabindex="-1"
                       value=""
                     />
@@ -7604,7 +7621,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                     </span>
                     <span
                       class="arco-select-view-value"
-                      style="display:none"
+                      style="display: none;"
                     >
                       please select
                     </span>
@@ -7662,6 +7679,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-select-popup-12"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -7685,6 +7703,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                           autocomplete="off"
                           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                           placeholder="please select"
+                          style="width: 2px;"
                           value=""
                         />
                         <span
@@ -7748,6 +7767,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-tree-select-popup-1"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
@@ -7765,7 +7785,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                       autocomplete="off"
                       class="arco-tree-select-view-input"
                       placeholder="please select"
-                      style="width:100%;pointer-events:none"
+                      style="width: 100%; pointer-events: none;"
                       tabindex="-1"
                       value=""
                     />
@@ -7776,7 +7796,7 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                     </span>
                     <span
                       class="arco-tree-select-view-value"
-                      style="display:none"
+                      style="display: none;"
                     >
                       please select
                     </span>
@@ -7887,7 +7907,7 @@ exports[`renders Form/demo/update.md correctly 1`] = `
   <form
     autocomplete="off"
     class="arco-form arco-form-horizontal arco-form-size-default"
-    style="max-width:650px"
+    style="max-width: 650px;"
   >
     <div
       class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -8136,7 +8156,9 @@ exports[`renders Form/demo/useFormState.md correctly 1`] = `
                 <span
                   class="arco-typography"
                 >
-                  <code />
+                  <code>
+                    false
+                  </code>
                 </span>
               </div>
               <div>
@@ -8152,7 +8174,9 @@ exports[`renders Form/demo/useFormState.md correctly 1`] = `
                 <span
                   class="arco-typography"
                 >
-                  <code />
+                  <code>
+                    []
+                  </code>
                 </span>
               </div>
               <div>
@@ -8160,7 +8184,9 @@ exports[`renders Form/demo/useFormState.md correctly 1`] = `
                 <span
                   class="arco-typography"
                 >
-                  <code />
+                  <code>
+                    []
+                  </code>
                 </span>
               </div>
             </div>
@@ -8195,7 +8221,7 @@ exports[`renders Form/demo/useFormState.md correctly 1`] = `
               >
                 <div
                   class="arco-space-item"
-                  style="margin-right:8px"
+                  style="margin-right: 8px;"
                 >
                   <button
                     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -8405,7 +8431,7 @@ exports[`renders Form/demo/validate.md correctly 1`] = `
 <form
   autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="width:600px"
+  style="width: 600px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -8581,7 +8607,7 @@ exports[`renders Form/demo/validate.md correctly 1`] = `
           >
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="button"
             >
               <span>
@@ -8590,7 +8616,7 @@ exports[`renders Form/demo/validate.md correctly 1`] = `
             </button>
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="button"
             >
               <span>
@@ -8599,7 +8625,7 @@ exports[`renders Form/demo/validate.md correctly 1`] = `
             </button>
             <button
               class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="button"
             >
               <span>
@@ -8618,7 +8644,7 @@ exports[`renders Form/demo/validate-messages.md correctly 1`] = `
 <form
   autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="width:600px"
+  style="width: 600px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -8794,7 +8820,7 @@ exports[`renders Form/demo/validate-messages.md correctly 1`] = `
           >
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="submit"
             >
               <span>
@@ -8803,7 +8829,7 @@ exports[`renders Form/demo/validate-messages.md correctly 1`] = `
             </button>
             <button
               class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="button"
             >
               <span>
@@ -8820,7 +8846,7 @@ exports[`renders Form/demo/validate-messages.md correctly 1`] = `
 
 exports[`renders Form/demo/validate-status.md correctly 1`] = `
 <div
-  style="max-width:650px"
+  style="max-width: 650px;"
 >
   <form
     autocomplete="off"
@@ -8991,7 +9017,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
           </div>
         </div>
         <div
-          class="arco-form-message arco-form-message-help"
+          class="arco-form-message arco-form-message-help formblink-appear formblink-appear-active"
         >
           This is custom message
         </div>
@@ -9053,7 +9079,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
           </div>
         </div>
         <div
-          class="arco-form-message arco-form-message-help"
+          class="arco-form-message arco-form-message-help formblink-appear formblink-appear-active"
         >
           This is custom message
         </div>
@@ -9081,7 +9107,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
             >
               <div
                 class="arco-input-group-wrapper arco-input-group-wrapper-default arco-input-has-suffix arco-autocomplete"
-                style="width:100%"
+                style="width: 100%;"
               >
                 <span
                   class="arco-input-group"
@@ -9128,7 +9154,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
           </div>
         </div>
         <div
-          class="arco-form-message arco-form-message-help"
+          class="arco-form-message arco-form-message-help formblink-appear formblink-appear-active"
         >
           Choose at least one
         </div>
@@ -9151,7 +9177,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
             >
               <div
                 class="arco-picker arco-picker-range arco-picker-size-default"
-                style="width:100%"
+                style="width: 100%;"
               >
                 <div
                   class="arco-picker-input arco-picker-input-active"
@@ -9249,7 +9275,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
               >
                 <div
                   class="arco-picker arco-picker-size-default"
-                  style="width:48%"
+                  style="width: 48%;"
                 >
                   <div
                     class="arco-picker-input"
@@ -9283,13 +9309,13 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                   </div>
                 </div>
                 <span
-                  style="width:4%;display:inline-block;text-align:center"
+                  style="width: 4%; display: inline-block; text-align: center;"
                 >
                   -
                 </span>
                 <div
                   class="arco-picker arco-picker-size-default"
-                  style="width:48%"
+                  style="width: 48%;"
                 >
                   <div
                     class="arco-picker-input"
@@ -9348,7 +9374,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
           </div>
         </div>
         <div
-          class="arco-form-message arco-form-message-help"
+          class="arco-form-message arco-form-message-help formblink-appear formblink-appear-active"
         >
           Please select date
         </div>
@@ -9371,6 +9397,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-cascader-popup-3"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-cascader arco-cascader-single arco-cascader-size-default"
@@ -9388,7 +9415,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                       autocomplete="off"
                       class="arco-cascader-view-input"
                       placeholder="Cascader..."
-                      style="width:100%;pointer-events:none"
+                      style="width: 100%; pointer-events: none;"
                       tabindex="-1"
                       value=""
                     />
@@ -9399,7 +9426,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                     </span>
                     <span
                       class="arco-cascader-view-value"
-                      style="display:none"
+                      style="display: none;"
                     >
                       Cascader...
                     </span>
@@ -9453,7 +9480,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
           </div>
         </div>
         <div
-          class="arco-form-message arco-form-message-help"
+          class="arco-form-message arco-form-message-help formblink-appear formblink-appear-active"
         >
           Choose at least one
         </div>
@@ -9476,6 +9503,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-select-popup-14"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
@@ -9499,6 +9527,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                           autocomplete="off"
                           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                           placeholder="Select..."
+                          style="width: 2px;"
                           value=""
                         />
                         <span
@@ -9661,7 +9690,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
           </div>
         </div>
         <div
-          class="arco-form-message arco-form-message-help"
+          class="arco-form-message arco-form-message-help formblink-appear formblink-appear-active"
         >
           This is InputNumber
         </div>
@@ -9684,6 +9713,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
             >
               <div
                 aria-autocomplete="list"
+                aria-controls="arco-tree-select-popup-2"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 class="arco-tree-select arco-tree-select-single arco-tree-select-size-default"
@@ -9701,7 +9731,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                       autocomplete="off"
                       class="arco-tree-select-view-input"
                       placeholder="TreeSelect..."
-                      style="width:100%;pointer-events:none"
+                      style="width: 100%; pointer-events: none;"
                       tabindex="-1"
                       value=""
                     />
@@ -9712,7 +9742,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                     </span>
                     <span
                       class="arco-tree-select-view-value"
-                      style="display:none"
+                      style="display: none;"
                     >
                       TreeSelect...
                     </span>
@@ -9766,7 +9796,7 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
           </div>
         </div>
         <div
-          class="arco-form-message arco-form-message-help"
+          class="arco-form-message arco-form-message-help formblink-appear formblink-appear-active"
         >
           Select tree node
         </div>
@@ -9780,7 +9810,7 @@ exports[`renders Form/demo/validateLevel.md correctly 1`] = `
 <form
   autocomplete="off"
   class="arco-form arco-form-horizontal arco-form-size-default"
-  style="width:600px"
+  style="width: 600px;"
 >
   <div
     class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
@@ -9956,7 +9986,7 @@ exports[`renders Form/demo/validateLevel.md correctly 1`] = `
           >
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="button"
             >
               <span>
@@ -9965,7 +9995,7 @@ exports[`renders Form/demo/validateLevel.md correctly 1`] = `
             </button>
             <button
               class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="button"
             >
               <span>
@@ -9974,7 +10004,7 @@ exports[`renders Form/demo/validateLevel.md correctly 1`] = `
             </button>
             <button
               class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-              style="margin-right:24px"
+              style="margin-right: 24px;"
               type="button"
             >
               <span>

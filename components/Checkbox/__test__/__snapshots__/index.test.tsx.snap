@@ -6,6 +6,7 @@ exports[`ConfigProvider componentConfig.Checkbox default 1`] = `
 >
   <input
     type="checkbox"
+    value=""
   />
   <span
     class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -38,6 +39,7 @@ exports[`ConfigProvider componentConfig.Checkbox set className globally 1`] = `
 >
   <input
     type="checkbox"
+    value=""
   />
   <span
     class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -70,6 +72,7 @@ exports[`ConfigProvider componentConfig.Checkbox set className globally and comp
 >
   <input
     type="checkbox"
+    value=""
   />
   <span
     class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -103,6 +106,7 @@ exports[`ConfigProvider componentConfig.Checkbox set data-* property 1`] = `
 >
   <input
     type="checkbox"
+    value=""
   />
   <span
     class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"

@@ -18,6 +18,7 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -158,6 +159,7 @@ exports[`ConfigProvider componentConfig.Transfer default 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -259,6 +261,7 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -399,6 +402,7 @@ exports[`ConfigProvider componentConfig.Transfer set className globally 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -500,6 +504,7 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -640,6 +645,7 @@ exports[`ConfigProvider componentConfig.Transfer set className globally and comp
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -742,6 +748,7 @@ exports[`ConfigProvider componentConfig.Transfer set data-* property 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"
@@ -882,6 +889,7 @@ exports[`ConfigProvider componentConfig.Transfer set data-* property 1`] = `
         >
           <input
             type="checkbox"
+            value=""
           />
           <span
             class="arco-icon-hover arco-checkbox-icon-hover arco-checkbox-mask-wrapper"

@@ -4,7 +4,7 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
 <div>
   <div
     class="arco-row arco-row-align-center arco-row-justify-start"
-    style="margin-bottom:20px"
+    style="margin-bottom: 20px;"
   >
     <span
       class="arco-typography"
@@ -13,11 +13,12 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
     </span>
     <div
       aria-autocomplete="list"
+      aria-controls="arco-select-popup-0"
       aria-expanded="false"
       aria-haspopup="listbox"
       class="arco-select arco-select-multiple arco-select-show-search arco-select-size-default"
       role="combobox"
-      style="width:300px;margin:0 20px"
+      style="width: 300px; margin: 0px 20px;"
       tabindex="0"
     >
       <div
@@ -67,6 +68,7 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder=""
+                style="width: 2px;"
                 value=""
               />
               <span
@@ -114,14 +116,14 @@ exports[`renders Trigger/demo/alignPoint.md correctly 1`] = `
 
 exports[`renders Trigger/demo/arrow.md correctly 1`] = `
 <div
-  style="background:var(--color-fill-2);padding:40px"
+  style="padding: 40px;"
 >
   <div
     class="arco-space arco-space-horizontal arco-space-align-center"
   >
     <div
       class="arco-space-item"
-      style="margin-right:40px"
+      style="margin-right: 40px;"
     >
       <button
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -152,14 +154,14 @@ exports[`renders Trigger/demo/auto.md correctly 1`] = `
 <div
   class="popup-container"
   directions="right,bottom"
-  style="width:300px;height:300px;overflow:auto"
+  style="width: 300px; height: 300px; overflow: auto;"
 >
   <div
-    style="width:450px;height:300px;position:relative"
+    style="width: 450px; height: 300px; position: relative;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
-      style="margin:0 200px"
+      style="margin: 0px 200px;"
       type="button"
     >
       <span>
@@ -173,22 +175,22 @@ exports[`renders Trigger/demo/auto.md correctly 1`] = `
 exports[`renders Trigger/demo/basic.md correctly 1`] = `
 <div
   class="arco-space arco-space-horizontal arco-space-align-center"
-  style="width:1000px;overflow:auto"
+  style="width: 1000px; overflow: auto;"
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <span
       class="arco-typography"
-      style="margin-right:20px"
+      style="margin-right: 20px;"
     >
       Hover me
     </span>
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -205,7 +207,7 @@ exports[`renders Trigger/demo/basic.md correctly 1`] = `
     <input
       class="arco-input arco-input-size-default"
       placeholder="Focus on me"
-      style="width:200px"
+      style="width: 200px;"
       tabindex="0"
       value=""
     />
@@ -222,7 +224,7 @@ exports[`renders Trigger/demo/boundaryDistance.md correctly 1`] = `
   </article>
   <button
     class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-    style="margin-top:80px"
+    style="margin-top: 80px;"
     type="button"
   >
     <span>
@@ -238,7 +240,7 @@ exports[`renders Trigger/demo/control.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -251,7 +253,7 @@ exports[`renders Trigger/demo/control.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -268,7 +270,7 @@ exports[`renders Trigger/demo/control.md correctly 1`] = `
     <input
       class="arco-input arco-input-size-default"
       placeholder="Focus Me (controlled)"
-      style="width:200px"
+      style="width: 200px;"
       tabindex="0"
       value=""
     />
@@ -301,14 +303,14 @@ exports[`renders Trigger/demo/nest.md correctly 1`] = `
 
 exports[`renders Trigger/demo/popupAlign.md correctly 1`] = `
 <div
-  style="background:var(--color-fill-2);padding:40px"
+  style="padding: 40px;"
 >
   <div
     class="arco-space arco-space-horizontal arco-space-align-center arco-space-wrap"
   >
     <div
       class="arco-space-item"
-      style="margin-right:40px;margin-bottom:10px"
+      style="margin-right: 40px; margin-bottom: 10px;"
     >
       <button
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -321,7 +323,7 @@ exports[`renders Trigger/demo/popupAlign.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:40px;margin-bottom:10px"
+      style="margin-right: 40px; margin-bottom: 10px;"
     >
       <button
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -334,7 +336,7 @@ exports[`renders Trigger/demo/popupAlign.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:40px;margin-bottom:10px"
+      style="margin-right: 40px; margin-bottom: 10px;"
     >
       <button
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -347,7 +349,7 @@ exports[`renders Trigger/demo/popupAlign.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:40px;margin-bottom:10px"
+      style="margin-right: 40px; margin-bottom: 10px;"
     >
       <button
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -360,7 +362,7 @@ exports[`renders Trigger/demo/popupAlign.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:40px;margin-bottom:10px"
+      style="margin-right: 40px; margin-bottom: 10px;"
     >
       <button
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -373,7 +375,7 @@ exports[`renders Trigger/demo/popupAlign.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-bottom:10px"
+      style="margin-bottom: 10px;"
     >
       <button
         class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
@@ -394,7 +396,7 @@ exports[`renders Trigger/demo/triggers.md correctly 1`] = `
 >
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <button
       class="arco-btn arco-btn-secondary arco-btn-size-default arco-btn-shape-square"
@@ -407,12 +409,12 @@ exports[`renders Trigger/demo/triggers.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
-    style="margin-right:40px"
+    style="margin-right: 40px;"
   >
     <input
       class="arco-input arco-input-size-default"
       placeholder="Click/Hover/Focus Me"
-      style="width:200px"
+      style="width: 200px;"
       tabindex="0"
       value=""
     />
@@ -423,7 +425,7 @@ exports[`renders Trigger/demo/triggers.md correctly 1`] = `
     <input
       class="arco-input arco-input-size-default"
       placeholder="Hover/Focus Me"
-      style="width:200px"
+      style="width: 200px;"
       tabindex="0"
       value=""
     />
@@ -433,14 +435,14 @@ exports[`renders Trigger/demo/triggers.md correctly 1`] = `
 
 exports[`renders Trigger/demo/updateAtScroll.md correctly 1`] = `
 <div
-  style="background:var(--color-fill-2);padding:40px;height:100px;overflow:auto"
+  style="padding: 40px; height: 100px; overflow: auto;"
 >
   <div
-    style="height:200px"
+    style="height: 200px;"
   >
     <button
       class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
-      style="margin-top:80px"
+      style="margin-top: 80px;"
       type="button"
     >
       <span>

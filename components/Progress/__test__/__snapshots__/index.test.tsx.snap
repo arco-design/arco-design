@@ -13,11 +13,11 @@ exports[`ConfigProvider componentConfig.Progress default 1`] = `
       aria-valuenow="0"
       class="arco-progress-line-outer"
       role="progressbar"
-      style="height:4px"
+      style="height: 4px;"
     >
       <div
         class="arco-progress-line-inner"
-        style="width:0%"
+        style="width: 0%;"
       />
     </div>
     <div
@@ -42,11 +42,11 @@ exports[`ConfigProvider componentConfig.Progress set className globally 1`] = `
       aria-valuenow="0"
       class="arco-progress-line-outer"
       role="progressbar"
-      style="height:4px"
+      style="height: 4px;"
     >
       <div
         class="arco-progress-line-inner"
-        style="width:0%"
+        style="width: 0%;"
       />
     </div>
     <div
@@ -71,11 +71,11 @@ exports[`ConfigProvider componentConfig.Progress set className globally and comp
       aria-valuenow="0"
       class="arco-progress-line-outer"
       role="progressbar"
-      style="height:4px"
+      style="height: 4px;"
     >
       <div
         class="arco-progress-line-inner"
-        style="width:0%"
+        style="width: 0%;"
       />
     </div>
     <div
@@ -101,11 +101,11 @@ exports[`ConfigProvider componentConfig.Progress set data-* property 1`] = `
       aria-valuenow="0"
       class="arco-progress-line-outer"
       role="progressbar"
-      style="height:4px"
+      style="height: 4px;"
     >
       <div
         class="arco-progress-line-inner"
-        style="width:0%"
+        style="width: 0%;"
       />
     </div>
     <div

@@ -3,7 +3,7 @@
 exports[`renders VerificationCode/demo/basic.md correctly 1`] = `
 <div
   class="arco-verification-code"
-  style="width:300px"
+  style="width: 300px;"
 >
   <input
     class="arco-input arco-verification-code-input"
@@ -45,7 +45,7 @@ exports[`renders VerificationCode/demo/hook.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <input
         class="custom-code-input"
@@ -54,7 +54,7 @@ exports[`renders VerificationCode/demo/hook.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <input
         class="custom-code-input"
@@ -63,7 +63,7 @@ exports[`renders VerificationCode/demo/hook.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <input
         class="custom-code-input"
@@ -72,7 +72,7 @@ exports[`renders VerificationCode/demo/hook.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <input
         class="custom-code-input"
@@ -81,7 +81,7 @@ exports[`renders VerificationCode/demo/hook.md correctly 1`] = `
     </div>
     <div
       class="arco-space-item"
-      style="margin-right:24px"
+      style="margin-right: 24px;"
     >
       <input
         class="custom-code-input"
@@ -104,7 +104,7 @@ exports[`renders VerificationCode/demo/mask.md correctly 1`] = `
 <div>
   <div
     class="arco-verification-code"
-    style="width:300px"
+    style="width: 300px;"
   >
     <input
       class="arco-input arco-verification-code-input"
@@ -143,7 +143,7 @@ exports[`renders VerificationCode/demo/mask.md correctly 1`] = `
 exports[`renders VerificationCode/demo/seperator.md correctly 1`] = `
 <div
   class="arco-verification-code"
-  style="width:400px"
+  style="width: 400px;"
 >
   <input
     class="arco-input arco-verification-code-input"
@@ -202,10 +202,10 @@ exports[`renders VerificationCode/demo/status.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:8px"
+      style="margin-right: 8px;"
     >
       <div
-        style="width:80px"
+        style="width: 80px;"
       >
         <span
           class="arco-typography"
@@ -219,7 +219,7 @@ exports[`renders VerificationCode/demo/status.md correctly 1`] = `
     >
       <div
         class="arco-verification-code"
-        style="width:300px"
+        style="width: 300px;"
       >
         <input
           class="arco-input arco-verification-code-input arco-input-disabled"
@@ -267,10 +267,10 @@ exports[`renders VerificationCode/demo/status.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:8px"
+      style="margin-right: 8px;"
     >
       <div
-        style="width:80px"
+        style="width: 80px;"
       >
         <span
           class="arco-typography"
@@ -284,7 +284,7 @@ exports[`renders VerificationCode/demo/status.md correctly 1`] = `
     >
       <div
         class="arco-verification-code"
-        style="width:300px"
+        style="width: 300px;"
       >
         <input
           class="arco-input arco-verification-code-input"
@@ -332,10 +332,10 @@ exports[`renders VerificationCode/demo/status.md correctly 1`] = `
   >
     <div
       class="arco-space-item"
-      style="margin-right:8px"
+      style="margin-right: 8px;"
     >
       <div
-        style="width:80px"
+        style="width: 80px;"
       >
         <span
           class="arco-typography"
@@ -349,7 +349,7 @@ exports[`renders VerificationCode/demo/status.md correctly 1`] = `
     >
       <div
         class="arco-verification-code"
-        style="width:300px"
+        style="width: 300px;"
       >
         <input
           class="arco-input arco-verification-code-input arco-input-error"
@@ -390,7 +390,7 @@ exports[`renders VerificationCode/demo/status.md correctly 1`] = `
 exports[`renders VerificationCode/demo/validate.md correctly 1`] = `
 <div>
   <div
-    style="width:200px"
+    style="width: 200px;"
   >
     <div
       class="arco-typography"
@@ -400,7 +400,7 @@ exports[`renders VerificationCode/demo/validate.md correctly 1`] = `
   </div>
   <div
     class="arco-verification-code"
-    style="width:300px"
+    style="width: 300px;"
   >
     <input
       class="arco-input arco-verification-code-input"
@@ -436,7 +436,7 @@ exports[`renders VerificationCode/demo/validate.md correctly 1`] = `
   <br />
   <br />
   <div
-    style="width:200px"
+    style="width: 200px;"
   >
     <div
       class="arco-typography"
@@ -446,7 +446,7 @@ exports[`renders VerificationCode/demo/validate.md correctly 1`] = `
   </div>
   <div
     class="arco-verification-code"
-    style="width:300px"
+    style="width: 300px;"
   >
     <input
       class="arco-input arco-verification-code-input"
@@ -551,7 +551,7 @@ exports[`renders VerificationCode/demo/with-form.md correctly 1`] = `
     </div>
     <button
       class="arco-btn arco-btn-primary arco-btn-size-large arco-btn-shape-square"
-      style="margin-top:20px"
+      style="margin-top: 20px;"
       type="submit"
     >
       <span>
