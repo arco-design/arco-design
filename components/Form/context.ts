@@ -36,6 +36,7 @@ export const FormContext = createContext<FormContextProps>({
       innerGetStore: NOOP,
       registerStateWatcher: NOOP,
       registerWatcher: NOOP,
+      innerGetStoreStatus: NOOP,
     }),
   } as any,
 });
