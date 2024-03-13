@@ -158,7 +158,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
         if ((refImg.current.src || src) && refImg.current.src !== src) {
           refImg.current.src = src;
         }
-        if (!loaded.current) {
+        if (!loaded.current && !refImg.current.complete) {
           setStatus('loading');
         }
       } else {
