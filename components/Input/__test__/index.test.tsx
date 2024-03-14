@@ -153,6 +153,37 @@ describe('Test Search', () => {
     expect(onSearch.mock.calls).toHaveLength(2);
     expect(onPressEnter.mock.calls).toHaveLength(1);
   });
+
+  it('composition event handlers', () => {
+    const rest = {
+      onCompositionStart: jest.fn(),
+      onCompositionUpdate: jest.fn(),
+      onCompositionEnd: jest.fn(),
+    };
+
+    const { getByTestId } = render(
+      <Input
+        data-testid="input"
+        onCompositionStart={rest.onCompositionStart}
+        onCompositionUpdate={rest.onCompositionUpdate}
+        onCompositionEnd={rest.onCompositionEnd}
+      />
+    );
+
+    const input = getByTestId('input');
+
+    // Trigger composition start event
+    fireEvent.compositionStart(input);
+    expect(rest.onCompositionStart).toHaveBeenCalledTimes(1);
+
+    // Trigger composition update event
+    fireEvent.compositionUpdate(input);
+    expect(rest.onCompositionUpdate).toHaveBeenCalledTimes(1);
+
+    // Trigger composition end event
+    fireEvent.compositionEnd(input);
+    expect(rest.onCompositionEnd).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe('Test Textarea', () => {
