@@ -600,15 +600,11 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   delayToDo = (delay: number, callback: () => void) => {
-    if (delay) {
-      this.clearDelayTimer();
-      this.delayTimer = setTimeout(() => {
-        callback();
-        this.clearDelayTimer();
-      }, delay);
-    } else {
+    this.clearDelayTimer();
+    this.delayTimer = setTimeout(() => {
       callback();
-    }
+      this.clearDelayTimer();
+    }, delay);
   };
 
   clearDelayTimer() {
