@@ -308,7 +308,7 @@ export interface FormItemProps<
    * @zh
    * 是否必选，会在 `label` 标签前显示加重红色符号，如果这里不设置，会从 rules 中寻找是否是 required
    * @en
-   * Whether The FormItem is Required, Will display an red symbol in front of the `label` label.
+   * Whether the FormItem is Required, Will display an red symbol in front of the `label` label.
    * If it is not set here, it will look for `required` from the rules
    */
   required?: boolean;
@@ -380,6 +380,10 @@ export interface FormItemProps<
    * @defaultValue right
    */
   labelAlign?: 'left' | 'right';
+  /**
+   * @zh 布局
+   * @en The layout
+   */
   layout?: 'horizontal' | 'vertical' | 'inline';
   /**
    * @zh 是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后
@@ -388,7 +392,14 @@ export interface FormItemProps<
    * @version `position` in 2.24.0
    */
   requiredSymbol?: boolean | { position: 'start' | 'end' };
+  /**
+   * 内部使用属性，无需在文档上体现
+   */
   isFormList?: boolean;
+  /**
+   * @zh `ReactNode` 类型与函数类型的 children
+   * @en `ReactNode` type and Fuction type children
+   */
   children?: React.ReactNode | FormItemChildrenFn<FormData, FieldValue, FieldKey>;
 }
 
