@@ -329,6 +329,47 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
             class="arco-col arco-col-6 arco-form-label-item"
           >
             <label
+              for="expandableSingle_input"
+            >
+               展示操作按钮（单行）
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+                id="expandableSingle"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <button
+                    aria-checked="false"
+                    class="arco-switch arco-switch-small arco-switch-type-circle"
+                    id="expandableSingle_input"
+                    role="switch"
+                    type="button"
+                  >
+                    <div
+                      class="arco-switch-dot"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label
               for="disabled_input"
             >
                禁用省略
@@ -511,6 +552,21 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
                   class="arco-descriptions-item-label"
                   style="padding-right:36px"
                 >
+                  expandableSingle
+                </td>
+                <td
+                  class="arco-descriptions-item-value"
+                >
+                  false
+                </td>
+              </tr>
+              <tr
+                class="arco-descriptions-row"
+              >
+                <td
+                  class="arco-descriptions-item-label"
+                  style="padding-right:36px"
+                >
                   expanded
                 </td>
                 <td
@@ -546,7 +602,7 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
                 <td
                   class="arco-descriptions-item-value"
                 >
-                  4
+                  1
                 </td>
               </tr>
             </tbody>
@@ -563,8 +619,8 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
       class="arco-ellipsis"
     >
       <div
-        class="arco-ellipsis-content-mirror arco-ellipsis-multiple arco-ellipsis-collapsed"
-        style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:4"
+        class="arco-ellipsis-content-mirror arco-ellipsis-single"
+        style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:1"
       >
         <span
           class="arco-ellipsis-text"
@@ -573,8 +629,7 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
         </span>
       </div>
       <div
-        class="arco-ellipsis-content arco-ellipsis-multiple arco-ellipsis-collapsed"
-        style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:4"
+        class="arco-ellipsis-content arco-ellipsis-single"
       >
         <span
           class="arco-ellipsis-text"
