@@ -238,11 +238,11 @@ export interface TypographyEllipsisProps {
    */
   showTooltip?: boolean | TooltipProps;
   /**
-   * @zh 是否显示操控按钮
-   * @en Whether to show control button
+   * @zh 是否显示操控按钮。`2.61.0` 版本支持 `single` 属性
+   * @en Whether to show control button. `2.61.0` version supports `single` attribute
    * @defaultValue true
    */
-  expandable?: boolean;
+  expandable?: boolean | { single?: boolean };
   /**
    * @zh 自定义渲染操控按钮
    * @en Custom rendering control buttons
