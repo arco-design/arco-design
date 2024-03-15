@@ -1,3 +1,11 @@
+## 2.61.0
+
+2024-03-15
+
+### 🐛 BugFix
+
+- Fix `Table` console warning due to missing ReactKey.([#2592](https://github.com/arco-design/arco-design/pull/2592))
+
 ## 2.60.2
 
 2024-03-01

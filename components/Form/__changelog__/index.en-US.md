@@ -1,3 +1,11 @@
+## 2.61.0
+
+2024-03-15
+
+### 🐛 BugFix
+
+- Fixed the bug of internal method call error caused by `Form.useFormContext` not being used under `Form` component.([#2590](https://github.com/arco-design/arco-design/pull/2590))
+
 ## 2.60.3
 
 2024-03-08

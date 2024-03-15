@@ -1,3 +1,11 @@
+## 2.61.0
+
+2024-03-15
+
+### 🆕 功能升级
+
+- `Input` 组件支持 `onCompositionStart`、  `onCompositionUpdate`、 `onCompositionEnd` 事件([#2589](https://github.com/arco-design/arco-design/pull/2589))
+
 ## 2.55.1
 
 2023-11-03
