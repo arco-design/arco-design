@@ -60,7 +60,13 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
   });
   const [overflow, setOverflow] = useState(false);
 
-  const single = useMemo(() => `${rows}` === '1', [rows]);
+  const single = useMemo(() => {
+    if (isObject(expandable)) {
+      return !expandable.single && rows === 1;
+    }
+    return rows === 1;
+  }, [rows, expandable]);
+
   const tooltipData = useMemo(() => {
     if (isObject(showTooltip)) {
       return {
