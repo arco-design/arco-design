@@ -13,8 +13,18 @@ import { isObject } from '../_util/is';
 const Search = React.forwardRef<RefInputType, InputSearchProps>((props: InputSearchProps, ref) => {
   const { getPrefixCls } = useContext(ConfigContext);
 
-  const { className, style, placeholder, disabled, searchButton, loading, defaultValue, ...rest } =
-    props;
+  const {
+    className,
+    style,
+    placeholder,
+    disabled,
+    searchButton,
+    loading,
+    defaultValue,
+    addAfter,
+    suffix,
+    ...rest
+  } = props;
 
   const trueMaxLength = isObject(props.maxLength) ? props.maxLength.length : props.maxLength;
   const mergedMaxLength =
@@ -48,7 +58,9 @@ const Search = React.forwardRef<RefInputType, InputSearchProps>((props: InputSea
       ref={ref}
       placeholder={placeholder}
       addAfter={
-        searchButton ? (
+        addAfter !== undefined ? (
+          addAfter
+        ) : searchButton ? (
           <Button
             disabled={disabled}
             size={rest.size}
@@ -63,7 +75,11 @@ const Search = React.forwardRef<RefInputType, InputSearchProps>((props: InputSea
           </Button>
         ) : null
       }
-      suffix={!searchButton && (loading ? <IconLoading /> : <IconSearch onClick={onSearch} />)}
+      suffix={
+        suffix !== undefined
+          ? suffix
+          : !searchButton && (loading ? <IconLoading /> : <IconSearch onClick={onSearch} />)
+      }
       onChange={(value, e) => {
         setValue(value);
         props.onChange && props.onChange(value, e);
