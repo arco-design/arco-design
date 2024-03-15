@@ -12,7 +12,7 @@ const useFormContext = (): { form: FormInstance; disabled: boolean; isSubmitting
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const setSubmitting = useCallback(() => {
-    const { submitStatus } = formInstance?.getInnerMethods(true).innerGetStoreStatus();
+    const { submitStatus } = formInstance?.getInnerMethods(true)?.innerGetStoreStatus?.() || {};
     const newIsSubmitting = submitStatus === SubmitStatus.submitting;
     if (isSubmitting !== newIsSubmitting) {
       setIsSubmitting(newIsSubmitting);
