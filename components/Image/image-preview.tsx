@@ -60,6 +60,7 @@ const defaultProps: Partial<ImagePreviewProps> = {
   getPopupContainer: () => document.body,
   escToExit: true,
   scales: defaultScales,
+  resetTranslate: true,
 };
 
 function Preview(baseProps: ImagePreviewProps, ref) {
@@ -84,6 +85,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
     imgAttributes = {},
     imageRender,
     extra: extraNode = null,
+    resetTranslate,
   } = mergedProps;
   const mergedSrc = previewGroup ? previewUrlMap.get(currentIndex) : src;
   const [previewImgSrc, setPreviewImgSrc] = useState(mergedSrc);
@@ -339,14 +341,16 @@ function Preview(baseProps: ImagePreviewProps, ref) {
 
   // Correct translate after moved
   useEffect(() => {
-    if (!moving) {
+    if (resetTranslate && !moving) {
       checkAndFixTranslate();
     }
   }, [moving, translate]);
 
   // Correct translate when scale changes
   useEffect(() => {
-    checkAndFixTranslate();
+    if (resetTranslate) {
+      checkAndFixTranslate();
+    }
   }, [scale]);
 
   // Reset when preview is opened
