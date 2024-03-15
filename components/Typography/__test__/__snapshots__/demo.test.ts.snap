@@ -163,8 +163,8 @@ exports[`renders Typography/demo/ellipsis-action.md correctly 1`] = `
     class="arco-ellipsis"
   >
     <div
-      class="arco-ellipsis-content-mirror"
-      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:1"
+      class="arco-ellipsis-content-mirror arco-ellipsis-multiple arco-ellipsis-collapsed"
+      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:4"
     >
       <span
         class="arco-ellipsis-text"
@@ -173,7 +173,8 @@ exports[`renders Typography/demo/ellipsis-action.md correctly 1`] = `
       </span>
     </div>
     <div
-      class="arco-ellipsis-content"
+      class="arco-ellipsis-content arco-ellipsis-multiple"
+      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:4"
     >
       <span
         class="arco-ellipsis-text"
@@ -188,27 +189,435 @@ exports[`renders Typography/demo/ellipsis-action.md correctly 1`] = `
 exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
 <div>
   <div
-    class="arco-ellipsis"
+    class="arco-space arco-space-horizontal arco-space-align-start"
   >
     <div
-      class="arco-ellipsis-content-mirror"
-      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:2"
+      class="arco-space-item"
+      style="margin-right:120px"
     >
-      <span
-        class="arco-ellipsis-text"
+      <form
+        class="arco-form arco-form-horizontal arco-form-size-small"
+        style="width:400px"
       >
-        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
-      </span>
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label
+              for="expanded_input"
+            >
+               展开/折叠
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+                id="expanded"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <button
+                    aria-checked="false"
+                    class="arco-switch arco-switch-small arco-switch-type-circle"
+                    id="expanded_input"
+                    role="switch"
+                    type="button"
+                  >
+                    <div
+                      class="arco-switch-dot"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label
+              for="showTooltip_input"
+            >
+               省略提示
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+                id="showTooltip"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <button
+                    aria-checked="false"
+                    class="arco-switch arco-switch-small arco-switch-type-circle"
+                    id="showTooltip_input"
+                    role="switch"
+                    type="button"
+                  >
+                    <div
+                      class="arco-switch-dot"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label
+              for="expandable_input"
+            >
+               展示操作按钮
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+                id="expandable"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <button
+                    aria-checked="true"
+                    class="arco-switch arco-switch-small arco-switch-type-circle arco-switch-checked"
+                    id="expandable_input"
+                    role="switch"
+                    type="button"
+                  >
+                    <div
+                      class="arco-switch-dot"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label
+              for="disabled_input"
+            >
+               禁用省略
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+                id="disabled"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <button
+                    aria-checked="false"
+                    class="arco-switch arco-switch-small arco-switch-type-circle"
+                    id="disabled_input"
+                    role="switch"
+                    type="button"
+                  >
+                    <div
+                      class="arco-switch-dot"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label>
+               省略展示
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <div
+                    class="arco-space arco-space-horizontal arco-space-align-center"
+                  >
+                    <div
+                      class="arco-space-item"
+                      style="margin-right:16px"
+                    >
+                      <button
+                        class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-square"
+                        type="button"
+                      >
+                        <span>
+                          row-
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="arco-space-item"
+                    >
+                      <button
+                        class="arco-btn arco-btn-secondary arco-btn-size-small arco-btn-shape-square"
+                        type="button"
+                      >
+                        <span>
+                          row+
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="arco-row arco-row-align-start arco-row-justify-start arco-form-item arco-form-layout-horizontal"
+        >
+          <div
+            class="arco-col arco-col-6 arco-form-label-item"
+          >
+            <label>
+               文字操作
+            </label>
+          </div>
+          <div
+            class="arco-col arco-col-18 arco-form-item-wrapper"
+          >
+            <div
+              class="arco-form-item-control-wrapper"
+            >
+              <div
+                class="arco-form-item-control"
+              >
+                <div
+                  class="arco-form-item-control-children"
+                >
+                  <textarea
+                    class="arco-textarea"
+                  >
+                    A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
+                  </textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
     <div
-      class="arco-ellipsis-content arco-ellipsis-collapsed"
-      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:2"
+      class="arco-space-item"
     >
-      <span
-        class="arco-ellipsis-text"
+      <div
+        class="arco-descriptions arco-descriptions-layout-horizontal"
+        style="margin-bottom:20px"
       >
-        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
-      </span>
+        <div
+          class="arco-descriptions-title"
+        >
+          当前配置
+        </div>
+        <div
+          class="arco-descriptions-body"
+        >
+          <table
+            cellpadding="0"
+            cellspacing="0"
+            class="arco-descriptions-table"
+          >
+            <tbody>
+              <tr
+                class="arco-descriptions-row"
+              >
+                <td
+                  class="arco-descriptions-item-label"
+                  style="padding-right:36px"
+                >
+                  disabled
+                </td>
+                <td
+                  class="arco-descriptions-item-value"
+                >
+                  false
+                </td>
+              </tr>
+              <tr
+                class="arco-descriptions-row"
+              >
+                <td
+                  class="arco-descriptions-item-label"
+                  style="padding-right:36px"
+                >
+                  expandable
+                </td>
+                <td
+                  class="arco-descriptions-item-value"
+                >
+                  true
+                </td>
+              </tr>
+              <tr
+                class="arco-descriptions-row"
+              >
+                <td
+                  class="arco-descriptions-item-label"
+                  style="padding-right:36px"
+                >
+                  expanded
+                </td>
+                <td
+                  class="arco-descriptions-item-value"
+                >
+                  false
+                </td>
+              </tr>
+              <tr
+                class="arco-descriptions-row"
+              >
+                <td
+                  class="arco-descriptions-item-label"
+                  style="padding-right:36px"
+                >
+                  showTooltip
+                </td>
+                <td
+                  class="arco-descriptions-item-value"
+                >
+                  false
+                </td>
+              </tr>
+              <tr
+                class="arco-descriptions-row"
+              >
+                <td
+                  class="arco-descriptions-item-label"
+                  style="padding-right:36px"
+                >
+                  rows
+                </td>
+                <td
+                  class="arco-descriptions-item-value"
+                >
+                  4
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-resizebox"
+    style="width:500px;min-width:100px"
+  >
+    <div
+      class="arco-ellipsis"
+    >
+      <div
+        class="arco-ellipsis-content-mirror arco-ellipsis-multiple arco-ellipsis-collapsed"
+        style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:4"
+      >
+        <span
+          class="arco-ellipsis-text"
+        >
+          A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
+        </span>
+      </div>
+      <div
+        class="arco-ellipsis-content arco-ellipsis-multiple arco-ellipsis-collapsed"
+        style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:4"
+      >
+        <span
+          class="arco-ellipsis-text"
+        >
+          A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
+        </span>
+      </div>
+    </div>
+    <div
+      class="arco-resizebox-trigger arco-resizebox-trigger-vertical arco-resizebox-direction-right"
+    >
+      <div
+        class="arco-resizebox-trigger-icon-wrapper"
+      >
+        <span
+          class="arco-resizebox-trigger-icon-empty"
+        />
+        <span
+          class="arco-resizebox-trigger-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="arco-icon arco-icon-drag-dot-vertical"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            stroke-width="4"
+            viewBox="0 0 48 48"
+          >
+            <path
+              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+              fill="currentColor"
+              stroke="none"
+            />
+            <path
+              d="M17 8h2v2h-2V8ZM17 23h2v2h-2v-2ZM17 38h2v2h-2v-2ZM29 8h2v2h-2V8ZM29 23h2v2h-2v-2ZM29 38h2v2h-2v-2Z"
+            />
+          </svg>
+        </span>
+        <span
+          class="arco-resizebox-trigger-icon-empty"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -536,35 +945,6 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
       A design is a plan or specification for the construction of an object or system or for the
 implementation of an activity or process. A design is a plan or specification for the
 construction of an object or system or for the implementation of an activity or process. 
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders Typography/demo/ellipsis-tooltip.md correctly 1`] = `
-<div>
-  <div
-    class="arco-ellipsis"
-  >
-    <div
-      class="arco-ellipsis-content-mirror"
-      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:1"
-    >
-      <span
-        class="arco-ellipsis-text"
-      >
-        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
-      </span>
-    </div>
-    <div
-      class="arco-ellipsis-content arco-ellipsis-collapsed"
-      style="-webkit-box-orient:vertical;-moz-box-orient:vertical;-webkit-line-clamp:1"
-    >
-      <span
-        class="arco-ellipsis-text"
-      >
-        A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design. A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. The verb to design expresses the process of developing a design.
-      </span>
     </div>
   </div>
 </div>

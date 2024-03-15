@@ -1146,6 +1146,99 @@ exports[`renders ConfigProvider/demo/local-setting.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders ConfigProvider/demo/modal-setting.md correctly 1`] = `
+<div
+  class="arco-space arco-space-vertical"
+>
+  <div
+    class="arco-space-item"
+  >
+    <h6
+      class="arco-typography arco-typography-rtl"
+    >
+      局部 RTL 视图
+    </h6>
+    <div
+      class="arco-tabs arco-tabs-horizontal arco-tabs-line arco-tabs-top arco-tabs-size-default arco-tabs-rtl"
+      style="margin-bottom:20px"
+    >
+      <div
+        class="arco-tabs-header-nav arco-tabs-header-nav-horizontal arco-tabs-header-nav-top arco-tabs-header-size-default arco-tabs-header-nav-line"
+      >
+        <div
+          class="arco-tabs-header-scroll"
+        >
+          <div
+            class="arco-tabs-header-wrapper"
+          >
+            <div
+              class="arco-tabs-header"
+              style="transform:translateX(0px);-webkit-transform:translateX(0px);-ms-transform:translateX(0px);-moz-transform:translateX(0px);-o-transform:translateX(0px)"
+            >
+              <div
+                aria-selected="true"
+                class="arco-tabs-header-title arco-tabs-header-title-active"
+                role="tab"
+                tabindex="0"
+              >
+                <span
+                  class="arco-tabs-header-title-text"
+                >
+                  Tab 1
+                </span>
+              </div>
+              <div
+                aria-selected="false"
+                class="arco-tabs-header-title"
+                role="tab"
+                tabindex="0"
+              >
+                <span
+                  class="arco-tabs-header-title-text"
+                >
+                  Tab 2
+                </span>
+              </div>
+              <div
+                aria-selected="false"
+                class="arco-tabs-header-title"
+                role="tab"
+                tabindex="0"
+              >
+                <span
+                  class="arco-tabs-header-title-text"
+                >
+                  Tab 3
+                </span>
+              </div>
+              <div
+                class="arco-tabs-header-ink"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="arco-space arco-space-horizontal arco-space-align-center arco-space-rtl"
+    >
+      <div
+        class="arco-space-item"
+      >
+        <button
+          class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square arco-btn-rtl"
+          type="button"
+        >
+          <span>
+            Confirm
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders ConfigProvider/demo/renderEmpty.md correctly 1`] = `
 Array [
   <div

@@ -48,9 +48,9 @@ const Input = function (props: InputProps) {
           {...{ hideControl: true, ...beginExtraProps, ...baseProps }}
           value={innerValue[0]}
           key={0}
-          onChange={(val) => {
+          onChange={(val, reason) => {
             handleChange([val, innerValue[1]]);
-            beginExtraProps?.onChange && beginExtraProps?.onChange(val);
+            beginExtraProps?.onChange && beginExtraProps?.onChange(val, reason);
           }}
         />,
         <div key={1} className={`${prefixCls}-input-range`}>
@@ -61,9 +61,9 @@ const Input = function (props: InputProps) {
         {...{ hideControl: true, ...endExtraProps, ...baseProps }}
         key={2}
         value={innerValue[1]}
-        onChange={(val) => {
+        onChange={(val, reason) => {
           handleChange([innerValue[0], val]);
-          endExtraProps?.onChange && endExtraProps?.onChange(val);
+          endExtraProps?.onChange && endExtraProps?.onChange(val, reason);
         }}
       />
     </div>

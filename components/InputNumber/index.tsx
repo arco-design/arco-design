@@ -16,8 +16,8 @@ import cs from '../_util/classNames';
 import { ArrowUp, ArrowDown } from '../_util/keycode';
 import { ConfigContext } from '../ConfigProvider';
 import Input, { InputProps } from '../Input';
-import { RefInputType } from '../Input/interface';
-import { InputNumberProps } from './interface';
+import type { RefInputType } from '../Input/interface';
+import type { InputNumberProps, InputNumberValueChangeReason } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import omit from '../_util/omit';
 import useSelectionRange from './useSelectionRange';
@@ -109,7 +109,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
   useImperativeHandle(ref, () => refInput.current, []);
 
-  const setValue = (newValue: Decimal) => {
+  const setValue = (newValue: Decimal, reason: InputNumberValueChangeReason) => {
     setInnerValue(newValue);
     if (!newValue.equals(value) && onChange) {
       const newValueStr = newValue.toString({ safe: true, precision: mergedPrecision });
@@ -120,7 +120,8 @@ function InputNumber(baseProps: InputNumberProps, ref) {
           ? (newValueStr as any)
           : newValue.isNaN
           ? NaN
-          : Number(newValueStr)
+          : Number(newValueStr),
+        reason
       );
     }
   };
@@ -158,7 +159,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
     // Don't correct the illegal value caused by prop value. Wait for user to take actions.
     if (_isOutOfRange && refHasOperateSincePropValueChanged.current) {
-      setValue(getLegalValue(value));
+      setValue(getLegalValue(value), 'outOfRange');
     }
 
     setIsOutOfRange(_isOutOfRange);
@@ -177,7 +178,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       ? getDecimal(min === -Infinity || (min <= 0 && max >= 0) ? 0 : min)
       : value.add(method === 'plus' ? step : -step);
 
-    setValue(getLegalValue(finalValue));
+    setValue(getLegalValue(finalValue), method === 'plus' ? 'increase' : 'decrease');
     refInput.current && refInput.current.focus();
 
     // auto change while holding
@@ -219,7 +220,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
       if (isNumber(+parsedValue) || parsedValue === '-' || !parsedValue || parsedValue === '.') {
         setInputValue(rawText);
-        setValue(getLegalValue(getDecimal(parsedValue)));
+        setValue(getLegalValue(getDecimal(parsedValue)), 'manual');
         updateSelectionRangePosition(event);
       }
     },
@@ -243,7 +244,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
       onFocus?.(e);
     },
     onBlur: (e) => {
-      setValue(getLegalValue(value));
+      setValue(getLegalValue(value), 'outOfRange');
       setIsUserTyping(false);
       onBlur?.(e);
     },
