@@ -46,6 +46,7 @@ export const FileList = (props: UploadListProps) => {
       <TransitionGroup
         className={cs(`${prefixCls}-list`, `${prefixCls}-list-type-${listType}`, {
           [`${prefixCls}-list-rtl`]: rtl,
+          [`${prefixCls}-list-empty`]: fileList.length === 0,
         })}
       >
         {fileList.map((file, index) => {
