@@ -246,6 +246,13 @@ export interface ConfigProviderProps {
    * @version 2.40.0
    */
   effectGlobalNotice?: boolean;
+  /**
+   * @zh 是否全局设置所有 `Modal` 的配置。
+   * @en Whether to set all `Modal` configuration globally.
+   * @defaultValue true
+   * @version 2.61.0
+   */
+  effectGlobalModal?: boolean;
   zIndex?: number;
   children?: ReactNode;
 }
