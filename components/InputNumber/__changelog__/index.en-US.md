@@ -1,3 +1,11 @@
+## 2.61.0
+
+2024-03-15
+
+### 🆕 Feature
+
+- The `onChange` callback of the `InputNumber` component adds a `reason` parameter to notify the component of the reason for the value change.([#2595](https://github.com/arco-design/arco-design/pull/2595))
+
 ## 2.58.1
 
 2024-01-05

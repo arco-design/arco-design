@@ -2,6 +2,25 @@
 changelog: true
 ---
 
+## 2.61.0
+
+2024-03-15
+
+### 🆕 功能升级
+
+- `Typography.Ellipsis` 支持单行展开按钮的展示([#2596](https://github.com/arco-design/arco-design/pull/2596))
+- `InputNumber` 组件 `onChange` 回调新增 `reason` 参数用于通知组件值改变的原因。([#2595](https://github.com/arco-design/arco-design/pull/2595))
+- `Slider` 支持范围内多点选择([#2594](https://github.com/arco-design/arco-design/pull/2594))
+- `Image` 新增 `resetTranslate` 属性([#2593](https://github.com/arco-design/arco-design/pull/2593))
+- `Input` 组件支持 `onCompositionStart`、  `onCompositionUpdate`、 `onCompositionEnd` 事件([#2589](https://github.com/arco-design/arco-design/pull/2589))
+- `ConfigProvider` 组件增加 `effectGlobalModal` 属性([#2562](https://github.com/arco-design/arco-design/pull/2562))
+
+### 🐛 问题修复
+
+- 修复 `Table` 由于 ReactKey 缺失导致的控制台警告。([#2592](https://github.com/arco-design/arco-design/pull/2592))
+- 修复 `Form.useFormContext` 未在 `Form` 组件下使用导致的内部方法调用报错的 bug。([#2590](https://github.com/arco-design/arco-design/pull/2590))
+- 修复 `Image` 组件图片链接触发内存缓存时图片一直处于loading状态的问题([#2587](https://github.com/arco-design/arco-design/pull/2587))
+
 ## 2.60.3
 
 2024-03-08

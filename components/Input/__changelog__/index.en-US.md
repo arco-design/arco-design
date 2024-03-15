@@ -1,3 +1,11 @@
+## 2.61.0
+
+2024-03-15
+
+### 🆕 Feature
+
+- `Input` supports `onCompositionStart`、  `onCompositionUpdate`、 `onCompositionEnd` property([#2589](https://github.com/arco-design/arco-design/pull/2589))
+
 ## 2.55.1
 
 2023-11-03

@@ -1,3 +1,15 @@
+## 2.61.0
+
+2024-03-15
+
+### 🆕 Feature
+
+- `Image`  supports `resetTranslate`property([#2593](https://github.com/arco-design/arco-design/pull/2593))
+
+### 🐛 BugFix
+
+- Fix the problem that the image is always in the loading state when the `Image` component image link triggers the memory cache.([#2587](https://github.com/arco-design/arco-design/pull/2587))
+
 ## 2.60.2
 
 2024-03-01
