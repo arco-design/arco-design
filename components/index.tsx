@@ -230,3 +230,4 @@ export type { ImageProps, ImagePreviewProps, ImagePreviewActionProps, ImagePrevi
 export { default as Image } from './Image';
 
 export const version = '2.60.3';
+
