@@ -7,7 +7,7 @@ import { IntervalConfig } from './hooks/useInterval';
 interface TicksProps {
   min: number;
   max: number;
-  value: number[];
+  valueRange: [number, number];
   prefixCls: string;
   vertical: boolean;
   reverse?: boolean;
@@ -15,7 +15,7 @@ interface TicksProps {
 }
 
 export default memo(function Ticks(props: TicksProps) {
-  const { min, max, value, prefixCls, vertical, reverse, intervalConfigs } = props;
+  const { min, max, valueRange, prefixCls, vertical, reverse, intervalConfigs } = props;
 
   const stepsMap: Map<string, { offset: string; isActive: boolean }> = new Map();
 
@@ -26,7 +26,7 @@ export default memo(function Ticks(props: TicksProps) {
       const stepVal = plus(i * step, begin);
       if (stepVal <= min || stepVal >= max) continue;
       const offset = formatPercent(getIntervalOffset(stepVal, intervalConfigs));
-      stepsMap.set(offset, { offset, isActive: valueInRange(stepVal, value) });
+      stepsMap.set(offset, { offset, isActive: valueInRange(stepVal, valueRange) });
     }
   };
 

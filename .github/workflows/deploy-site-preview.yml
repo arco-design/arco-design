@@ -1,8 +1,7 @@
 name: deploy-site-preview
 on:
-  workflow_run:
-    workflows: ['pr_check']
-    types: completed
+  pull_request:
+    types: [opened, synchronize, reopened]
 
   push:
     tags:
@@ -65,7 +64,7 @@ jobs:
 
       - name: get PreviewID
         run: |
-          if ${{ github.event_name == 'pull_request' }}; then
+          if ${{ github.event_name == 'push' }}; then
             echo "PreviewID=${{ github.event.number }}" >> $GITHUB_ENV
           else
             echo "PreviewID=main" >> $GITHUB_ENV
