@@ -288,7 +288,7 @@ describe('InputNumber ', () => {
 
     fireEvent.mouseDown(wrapper.querySelectorAll('.arco-input-number-step-button')[1]);
     expect(getInputValue(wrapper)).toBe(valueStrAfterAddOnce);
-    expect(onChange).toBeCalledWith(valueStrAfterAddOnce);
+    expect(onChange).toBeCalledWith(valueStrAfterAddOnce, 'increase');
   });
 
   it('avoid Number.toFixed() error while precision is larger than 100', () => {
