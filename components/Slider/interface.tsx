@@ -113,8 +113,8 @@ export interface SliderProps {
    */
   vertical?: boolean;
   /**
-   * @zh 是否展示输入框，`onlyMarkValue` 为 `true` 时输入框始终隐藏。可接受 `InputNumber` 的 `props`。
-   * @en Whether to display the input box. If `onlyMarkValue` is `true`, the input box will always be hidden. Accepts `props` for `InputNumber`.
+   * @zh 是否展示输入框，`onlyMarkValue` 为 `true` 或范围内多点选择时输入框始终隐藏。可接受 `InputNumber` 的 `props`。
+   * @en Whether to display the input box. When setting `onlyMarkValue` to `true` or selecting multiple points within the range, the input box will never be displayed. Accepts `props` for `InputNumber`.
    * @version `InputNumberProps` in `2.32.0`
    */
   showInput?: boolean | InputNumberProps | InputNumberProps[];
