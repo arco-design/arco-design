@@ -79,6 +79,12 @@
         opacity: 0;
         transform: translateX(-50%) translateZ(-400px);
         animation: ~'@{prefix}-carousel-card-middle-to-bottom';
+
+        .@{carousel-prefix-cls}-rtl & {
+          left: unset;
+          right: 50%;
+          animation: ~'@{prefix}-carousel-card-middle-to-bottom-rtl';
+        }
       }
 
       // prev 右边对齐容器中线
@@ -86,6 +92,11 @@
         opacity: 0.4;
         transform: translateX(-100%) translateZ(-200px);
         animation: ~'@{prefix}-carousel-card-top-to-middle';
+
+        .@{carousel-prefix-cls}-rtl & {
+          transform: translateX(100%) translateZ(-200px);
+          animation: ~'@{prefix}-carousel-card-top-to-middle-rtl';
+        }
       }
 
       // next 左边对齐容器中线
@@ -100,6 +111,11 @@
         opacity: 1;
         transform: translateX(-50%) translateZ(0);
         animation: ~'@{prefix}-carousel-card-middle-to-top';
+
+        .@{carousel-prefix-cls}-rtl & {
+          transform: translateX(50%) translateZ(0);
+          animation: ~'@{prefix}-carousel-card-middle-to-top-rtl';
+        }
       }
 
       &.@{carousel-prefix-cls}-negative {
@@ -110,16 +126,28 @@
         // prev 右边对齐容器中线
         .@{carousel-prefix-cls}-item-prev {
           animation: ~'@{prefix}-carousel-card-bottom-to-middle-reverse';
+
+          .@{carousel-prefix-cls}-rtl & {
+            animation: ~'@{prefix}-carousel-card-bottom-to-middle-reverse-rtl';
+          }
         }
 
         // next 左边对齐容器中线
         .@{carousel-prefix-cls}-item-next {
           animation: ~'@{prefix}-carousel-card-top-to-middle-reverse';
+
+          .@{carousel-prefix-cls}-rtl & {
+            animation: ~'@{prefix}-carousel-card-top-to-middle-reverse-rtl';
+          }
         }
 
         // current 居中
         .@{carousel-prefix-cls}-item-current {
           animation: ~'@{prefix}-carousel-card-middle-to-top-reverse';
+
+          .@{carousel-prefix-cls}-rtl & {
+            animation: ~'@{prefix}-carousel-card-middle-to-top-reverse-rtl';
+          }
         }
       }
     }
@@ -458,6 +486,10 @@
     .@{carousel-prefix-cls}-arrow-hover div {
       opacity: 1;
     }
+  }
+
+  &-rtl {
+    direction: rtl;
   }
 
   &-rtl &-indicator-dot &-indicator-item:not(:last-child) {
