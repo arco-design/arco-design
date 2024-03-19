@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { ConfigProviderProps } from '../../ConfigProvider';
 import { UploadListProps, STATUS, CustomIconType } from '../interface';
 import { UploadItem } from '../upload';
@@ -11,7 +11,8 @@ import IconUpload from '../../../icon/react-icon/IconUpload';
 import useKeyboardEvent from '../../_util/hooks/useKeyboardEvent';
 
 const PictureItem = (
-  props: UploadListProps & { file: UploadItem; locale: ConfigProviderProps['locale'] }
+  props: UploadListProps & { file: UploadItem; locale: ConfigProviderProps['locale'] },
+  ref
 ) => {
   const { disabled, prefixCls, file, showUploadList, locale } = props;
   const keyboardEvents = useKeyboardEvent();
@@ -25,7 +26,7 @@ const PictureItem = (
   const actionIcons = isObject(showUploadList) ? (showUploadList as CustomIconType) : {};
 
   return (
-    <div className={cls}>
+    <div className={cls} ref={ref}>
       {status === STATUS.uploading ? (
         <UploadProgress
           onReupload={props.onReupload}
@@ -117,4 +118,7 @@ const PictureItem = (
   );
 };
 
-export default PictureItem;
+export default forwardRef<
+  HTMLDivElement,
+  UploadListProps & { file: UploadItem; locale: ConfigProviderProps['locale'] }
+>(PictureItem);

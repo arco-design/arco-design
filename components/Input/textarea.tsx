@@ -121,6 +121,9 @@ const TextArea = (props: TextAreaProps, ref) => {
       blur: () => {
         textareaRef.current && textareaRef.current.blur && textareaRef.current.blur();
       },
+      getRootDOMNode: () => {
+        return textareaRef.current;
+      },
     }),
     []
   );

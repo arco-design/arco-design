@@ -1,5 +1,4 @@
 import React, { CSSProperties, useContext, ReactNode } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import cs from '../../_util/classNames';
 import useStateWithPromise from '../../_util/hooks/useStateWithPromise';
 import { MenuSubMenuProps } from '../interface';
@@ -11,6 +10,7 @@ import pick from '../../_util/pick';
 import omit from '../../_util/omit';
 import { Enter } from '../../_util/keycode';
 import useId from '../../_util/hooks/useId';
+import ArcoCSSTransition from '../../_util/CSSTransition';
 
 // Use visibility: hidden to avoid Menu.Item get focused by Tab key
 const CONTENT_HIDDEN_STYLE: CSSProperties = { height: 0, visibility: 'hidden' };
@@ -92,12 +92,13 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
       {...omit(rest, ['key', 'popup', 'triggerProps'])}
     >
       {header}
-      <CSSTransition
+      <ArcoCSSTransition
         in={isOpen}
         timeout={200}
         classNames={baseClassName}
         unmountOnExit={false}
         onEnter={async (element) => {
+          if (!element) return;
           await setContentStyle(CONTENT_HIDDEN_STYLE);
           await setContentStyle({ height: element.scrollHeight });
         }}
@@ -105,12 +106,13 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
           setContentStyle({ height: 'auto' });
         }}
         onExit={async (element) => {
+          if (!element) return;
           await setContentStyle({ height: element.scrollHeight });
           await setContentStyle(CONTENT_HIDDEN_STYLE);
         }}
       >
         {content}
-      </CSSTransition>
+      </ArcoCSSTransition>
     </div>
   );
 };

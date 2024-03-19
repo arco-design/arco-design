@@ -9,8 +9,8 @@ import React, {
   useMemo,
   WheelEvent,
 } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import { findDOMNode } from 'react-dom';
+import ArcoCSSTransition from '../_util/CSSTransition';
+import { findDOMNode } from '../_util/react-dom';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import cs from '../_util/classNames';
@@ -110,6 +110,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
   const refImage = useRef<HTMLImageElement>();
   const refImageContainer = useRef<HTMLDivElement>();
   const refWrapper = useRef<HTMLDivElement>();
+  const refRootWrapper = useRef<HTMLDivElement>();
   const keyboardEventOn = useRef<boolean>(false);
 
   const refMoveData = useRef({
@@ -149,6 +150,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
 
   useImperativeHandle<ImagePreviewHandle, ImagePreviewHandle>(ref, () => ({
     reset,
+    getRootDOMNode: () => refRootWrapper.current,
   }));
 
   const [container, setContainer] = useState<HTMLElement>();
@@ -489,8 +491,9 @@ function Preview(baseProps: ImagePreviewProps, ref) {
             ...(style || {}),
             ...(isFixed ? {} : { zIndex: 'inherit', position: 'absolute' }),
           }}
+          ref={refRootWrapper}
         >
-          <CSSTransition
+          <ArcoCSSTransition
             in={visible}
             timeout={400}
             appear
@@ -498,18 +501,20 @@ function Preview(baseProps: ImagePreviewProps, ref) {
             mountOnEnter
             unmountOnExit={false}
             onEnter={(e) => {
+              if (!e) return;
               e.parentNode.style.display = 'block';
               e.style.display = 'block';
             }}
             onExited={(e) => {
+              if (!e) return;
               e.parentNode.style.display = '';
               e.style.display = 'none';
             }}
           >
             <div className={`${previewPrefixCls}-mask`} />
-          </CSSTransition>
+          </ArcoCSSTransition>
           {visible && (
-            <ResizeObserver onResize={onWrapperResize}>
+            <ResizeObserver onResize={onWrapperResize} getTargetDOMNode={() => refWrapper.current}>
               <div
                 ref={refWrapper}
                 className={`${previewPrefixCls}-wrapper`}
@@ -528,7 +533,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
                     </div>
                   )}
                 </div>
-                <CSSTransition
+                <ArcoCSSTransition
                   in={scaleValueVisible}
                   timeout={400}
                   appear
@@ -538,7 +543,7 @@ function Preview(baseProps: ImagePreviewProps, ref) {
                   <div className={`${previewPrefixCls}-scale-value`}>
                     {(scale * 100).toFixed(0)}%
                   </div>
-                </CSSTransition>
+                </ArcoCSSTransition>
                 {isLoaded && (
                   <ImagePreviewToolbar
                     prefixCls={prefixCls}

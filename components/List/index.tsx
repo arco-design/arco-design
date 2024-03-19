@@ -102,6 +102,7 @@ function List<T extends unknown = any>(baseProps: ListProps<T>, ref) {
             });
         }
       },
+      getRootDOMNode: () => refDom.current,
     };
   });
 

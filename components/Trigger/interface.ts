@@ -240,6 +240,7 @@ export interface TriggerProps {
    */
   updateOnScroll?: boolean;
   children?: ReactNode;
+  getTargetDOMNode?: () => HTMLElement;
   __onExit?: (event) => void;
   __onExited?: (event) => void;
 }

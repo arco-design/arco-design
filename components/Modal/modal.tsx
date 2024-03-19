@@ -1,4 +1,3 @@
-import { findDOMNode } from 'react-dom';
 import React, {
   useState,
   PropsWithChildren,
@@ -10,7 +9,6 @@ import React, {
   useCallback,
   ReactElement,
 } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import FocusLock from 'react-focus-lock';
 import IconClose from '../../icon/react-icon/IconClose';
 import cs from '../_util/classNames';
@@ -29,6 +27,8 @@ import useModal from './useModal';
 import { ModalProps, ModalReturnProps } from './interface';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { findDOMNode } from '../_util/react-dom';
+import ArcoCSSTransition from '../_util/CSSTransition';
 
 type CursorPositionType = { left: number; top: number } | null;
 let cursorPosition: CursorPositionType | null = null;
@@ -342,7 +342,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
     <Portal visible={visible} forceRender={forceRender} getContainer={getPopupContainer}>
       <div ref={ref}>
         {mask ? (
-          <CSSTransition
+          <ArcoCSSTransition
             in={visible}
             timeout={400}
             appear
@@ -350,14 +350,16 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
             classNames="fadeModal"
             unmountOnExit={unmountOnExit}
             onEnter={(e) => {
+              if (!e) return;
               e.style.display = 'block';
             }}
             onExited={(e) => {
+              if (!e) return;
               e.style.display = 'none';
             }}
           >
             <div aria-hidden className={`${prefixCls}-mask`} style={maskStyle} />
-          </CSSTransition>
+          </ArcoCSSTransition>
         ) : null}
         <div
           {...omit(rest, [
@@ -399,7 +401,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
           }}
           onClick={onClickMask}
         >
-          <CSSTransition
+          <ArcoCSSTransition
             in={visible}
             timeout={400}
             appear
@@ -407,6 +409,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
             unmountOnExit={unmountOnExit}
             mountOnEnter={mountOnEnter}
             onEnter={(e: HTMLDivElement) => {
+              if (!e) return;
               setWrapperVisible(true);
               cursorPositionRef.current = cursorPosition;
               haveOriginTransformOrigin.current = !!e.style.transformOrigin;
@@ -415,6 +418,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
               modalRef.current = e;
             }}
             onEntered={(e: HTMLDivElement) => {
+              if (!e) return;
               setTransformOrigin(e);
               cursorPositionRef.current = null;
               afterOpen?.();
@@ -423,6 +427,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
               inExit.current = true;
             }}
             onExited={(e) => {
+              if (!e) return;
               setWrapperVisible(false);
               setTransformOrigin(e);
               afterClose?.();
@@ -443,7 +448,7 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
                 },
               }
             )}
-          </CSSTransition>
+          </ArcoCSSTransition>
         </div>
       </div>
     </Portal>

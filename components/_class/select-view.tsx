@@ -188,6 +188,7 @@ const MAX_TAG_COUNT_VALUE_PLACEHOLDER = '__arco_value_tag_placeholder';
 
 export type SelectViewHandle = {
   dom: HTMLDivElement;
+  getRootDOMNode: () => HTMLDivElement;
   focus: () => void;
   blur: () => void;
   getWidth: () => number;
@@ -307,6 +308,7 @@ const CoreSelectView = React.forwardRef(
 
     useImperativeHandle<any, SelectViewHandle>(ref, () => ({
       dom: refWrapper.current,
+      getRootDOMNode: () => refWrapper.current,
       focus: handleFocus.bind(null, 'focus'),
       blur: handleFocus.bind(null, 'blur'),
       getWidth: () => refWrapper.current && refWrapper.current.clientWidth,
