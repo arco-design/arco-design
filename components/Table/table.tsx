@@ -683,7 +683,9 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       easing: 'quintInOut',
       duration: 300,
       onUpdate: (keys) => {
-        refTableBody.current.scrollTop = keys.scrollTop;
+        if (refTableBody.current) {
+          refTableBody.current.scrollTop = keys.scrollTop;
+        }
       },
     });
     tween.start();
