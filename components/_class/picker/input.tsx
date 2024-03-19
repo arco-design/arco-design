@@ -82,6 +82,7 @@ function DateInput(
     blur() {
       input.current && input.current.blur && input.current.blur();
     },
+    getRootDOMNode: () => input.current,
   }));
 
   function onKeyDown(e) {

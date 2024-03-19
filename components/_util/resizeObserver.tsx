@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { ReactElement, cloneElement, isValidElement } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import lodashThrottle from 'lodash/throttle';
-import { findDOMNode } from 'react-dom';
+import { callbackOriginRef, findDOMNode } from '../_util/react-dom';
+import { supportRef } from './is';
 
 export interface ResizeProps {
   throttle?: boolean;
   onResize?: (entry: ResizeObserverEntry[]) => void;
   children?: React.ReactNode;
+  getTargetDOMNode?: () => any;
 }
 
 class ResizeObserverComponent extends React.Component<ResizeProps> {
-  resizeObserver: any;
+  resizeObserver: ResizeObserver;
+
+  rootDOMRef: any;
+
+  getRootElement = () => {
+    const { getTargetDOMNode } = this.props;
+    return findDOMNode(getTargetDOMNode?.() || this.rootDOMRef, this);
+  };
+
+  getRootDOMNode = () => {
+    return this.getRootElement();
+  };
 
   componentDidMount() {
     if (!React.isValidElement(this.props.children)) {
@@ -21,7 +34,7 @@ class ResizeObserverComponent extends React.Component<ResizeProps> {
   }
 
   componentDidUpdate() {
-    if (!this.resizeObserver && findDOMNode(this)) {
+    if (!this.resizeObserver && this.getRootElement()) {
       this.createResizeObserver();
     }
   }
@@ -48,7 +61,8 @@ class ResizeObserverComponent extends React.Component<ResizeProps> {
       }
       resizeHandler(entry);
     });
-    this.resizeObserver.observe(findDOMNode(this) as Element);
+    const targetNode = this.getRootElement();
+    targetNode && this.resizeObserver.observe(targetNode as Element);
   };
 
   destroyResizeObserver = () => {
@@ -57,6 +71,18 @@ class ResizeObserverComponent extends React.Component<ResizeProps> {
   };
 
   render() {
+    const { children } = this.props;
+
+    if (supportRef(children) && isValidElement(children) && !this.props.getTargetDOMNode) {
+      return cloneElement(children as ReactElement, {
+        ref: (node) => {
+          this.rootDOMRef = node;
+
+          callbackOriginRef(children, node);
+        },
+      });
+    }
+    this.rootDOMRef = null;
     return this.props.children;
   }
 }

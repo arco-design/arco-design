@@ -658,6 +658,7 @@ export interface TbodyProps<T = any> {
   getRowKey?: GetRowKeyType<T>;
   placeholder?: ReactNode;
   saveVirtualListRef?: (ref: VirtualListHandle) => void;
+  saveRef?: (ref: HTMLElement | HTMLDivElement) => void;
 }
 
 export interface TfootProps<T = any> {

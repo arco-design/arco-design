@@ -1,4 +1,4 @@
-import { findDOMNode } from 'react-dom';
+import { findDOMNode } from '../../../_util/react-dom';
 import getStringLength from '../../../_util/getStringLength';
 
 /**

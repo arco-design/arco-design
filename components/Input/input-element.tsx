@@ -173,6 +173,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       () => {
         return {
           dom: refInput.current,
+          getRootDOMNode: () => refInput.current,
           focus: () => {
             refInput.current && refInput.current.focus && refInput.current.focus();
           },
@@ -272,6 +273,7 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
         )}
         {autoFitWidth && (
           <ResizeObserver
+            getTargetDOMNode={() => refInputMirror.current}
             onResize={() => {
               const inputWidth = refInputMirror.current.offsetWidth;
               if (typeof autoFitWidth === 'object') {

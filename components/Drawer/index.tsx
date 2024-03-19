@@ -7,9 +7,9 @@ import React, {
   useState,
   useImperativeHandle,
 } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import FocusLock from 'react-focus-lock';
-import { findDOMNode } from 'react-dom';
+import ArcoCSSTransition from '../_util/CSSTransition';
+import { findDOMNode } from '../_util/react-dom';
 import IconClose from '../../icon/react-icon/IconClose';
 import cs from '../_util/classNames';
 import Button from '../Button';
@@ -235,7 +235,7 @@ function Drawer(baseProps: DrawerProps, ref) {
         }
       >
         {mask ? (
-          <CSSTransition
+          <ArcoCSSTransition
             in={visible}
             appear
             timeout={300}
@@ -252,10 +252,10 @@ function Drawer(baseProps: DrawerProps, ref) {
                 }
               }}
             />
-          </CSSTransition>
+          </ArcoCSSTransition>
         ) : null}
 
-        <CSSTransition
+        <ArcoCSSTransition
           in={visible}
           appear
           timeout={300}
@@ -270,6 +270,7 @@ function Drawer(baseProps: DrawerProps, ref) {
           mountOnEnter={mountOnEnter}
           unmountOnExit={unmountOnExit}
           onEnter={(e) => {
+            if (!e) return;
             e.parentNode.style.display = 'block';
             setInExit(false);
           }}
@@ -282,6 +283,7 @@ function Drawer(baseProps: DrawerProps, ref) {
             setInExit(true);
           }}
           onExited={(e) => {
+            if (!e) return;
             setInExit(false);
             e.parentNode.style.display = ''; // don't set display='none'
             afterClose?.();
@@ -301,7 +303,7 @@ function Drawer(baseProps: DrawerProps, ref) {
               </ConfigProvider>
             </div>
           </div>
-        </CSSTransition>
+        </ArcoCSSTransition>
       </div>
     </Portal>
   );

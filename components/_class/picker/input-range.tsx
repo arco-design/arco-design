@@ -82,6 +82,7 @@ function DateInput(
   const { getPrefixCls, size: ctxSize, locale, rtl } = useContext(ConfigContext);
   const input0 = useRef<HTMLInputElement>(null);
   const input1 = useRef<HTMLInputElement>(null);
+  const refRootWrapper = useRef<HTMLDivElement>(null);
 
   const disabled1 = isArray(disabled) ? disabled[0] : disabled;
   const disabled2 = isArray(disabled) ? disabled[1] : disabled;
@@ -101,6 +102,9 @@ function DateInput(
       if (focusedInputIndex === 1) {
         input1.current && input1.current.blur && input1.current.blur();
       }
+    },
+    getRootDOMNode: () => {
+      return refRootWrapper.current;
     },
   }));
 
@@ -173,7 +177,12 @@ function DateInput(
   }
 
   return (
-    <div style={style} className={inputClassNames} {...omit(rest, ['onChange', 'onPressEnter'])}>
+    <div
+      style={style}
+      ref={refRootWrapper}
+      className={inputClassNames}
+      {...omit(rest, ['onChange', 'onPressEnter'])}
+    >
       {prefix && <div className={`${prefixCls}-prefix`}>{prefix}</div>}
       <div className={getFocusInputClassName(0)}>
         <input

@@ -76,6 +76,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
 
   const prefixCls = getPrefixCls('upload');
   const uploaderRef = useRef<Uploader>();
+  const inputWrapperRef = useRef<HTMLDivElement>();
 
   const [innerUploadState, setInnerUploadState] = useState<UploadItem[]>(() => {
     return 'fileList' in props
@@ -156,6 +157,9 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
       reupload: (file: UploadItem) => {
         reuploadFile(file);
       },
+      getRootDOMNode: () => {
+        return inputWrapperRef.current;
+      },
     };
   });
 
@@ -226,6 +230,7 @@ const Upload: React.ForwardRefRenderFunction<UploadInstance, PropsWithChildren<U
         className
       )}
       style={style}
+      ref={inputWrapperRef}
     >
       <Uploader
         ref={uploaderRef}

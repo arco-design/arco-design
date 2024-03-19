@@ -16,13 +16,6 @@ The basic usage. The popup layer has no style by default.
 ```js
 import { Trigger, Button, Tooltip, Input, Skeleton, Typography,Space } from '@arco-design/web-react';
 
-function Element(props) {
-  return (
-    <Typography.Text {...props} style={{ marginRight: 20 }}>
-      Hover me
-    </Typography.Text>
-  );
-}
 
 function Popup() {
   return (
@@ -44,7 +37,9 @@ function App() {
         mouseLeaveDelay={400}
         position="bottom"
       >
-        <Element />
+        <Typography.Text style={{ marginRight: 20 }}>
+          Hover me
+        </Typography.Text>
       </Trigger>
       <Trigger  popup={() => <Popup />} trigger="click" position="bottom" classNames="zoomInTop">
         <Button>Click me</Button>

@@ -29,10 +29,10 @@ const App = () => {
         <InputTag
           style={{ width: 350 }}
           placeholder="Please input"
-          defaultValue={['1', '2', '3', '4', '5']}
+          defaultValue={['11', '22', '33', '4', '55']}
           maxTagCount={{
             count: 3,
-            render: (invisibleTagCount) => <span style={{ marginLeft: 4, fontSize: 12 }}>{invisibleTagCount} More</span>,
+            render: (invisibleTagCount) => <span key="more" style={{ marginLeft: 4, fontSize: 12 }}>{invisibleTagCount} More</span>,
           }}
         />
       </Space>

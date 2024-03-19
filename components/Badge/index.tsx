@@ -1,11 +1,11 @@
 import React, { useContext, forwardRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { isObject } from '../_util/is';
 import Count from './count';
 import { BadgeProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import ArcoCSSTransition from '../_util/CSSTransition';
 
 const InnerColors = [
   'red',
@@ -95,7 +95,7 @@ function Badge(baseProps: BadgeProps, ref) {
     }
     if ((dot || color) && count > 0) {
       return (
-        <CSSTransition
+        <ArcoCSSTransition
           classNames="badge-zoom"
           in={dot || !!color}
           timeout={200}
@@ -113,7 +113,7 @@ function Badge(baseProps: BadgeProps, ref) {
             )}
             style={{ ...colorStyle, ...dotStyle }}
           />
-        </CSSTransition>
+        </ArcoCSSTransition>
       );
     }
     return (

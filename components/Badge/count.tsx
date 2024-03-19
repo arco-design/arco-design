@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import cs from '../_util/classNames';
 import usePrevious from '../_util/hooks/usePrevious';
+import ArcoCSSTransition from '../_util/CSSTransition';
 
-export default function Count({ prefixCls, maxCount, count, className, style }) {
+function Count({ prefixCls, maxCount, count, className, style }) {
   const [isEntered, setIsEntered] = useState(false);
   const oldCount = usePrevious(count);
   const isChanged = count !== oldCount;
 
   return (
-    <CSSTransition
+    <ArcoCSSTransition
       classNames="badge-zoom"
       in={count > 0}
       timeout={300}
@@ -25,6 +25,8 @@ export default function Count({ prefixCls, maxCount, count, className, style }) 
           {maxCount && count > maxCount ? `${maxCount}+` : count}
         </span>
       </span>
-    </CSSTransition>
+    </ArcoCSSTransition>
   );
 }
+
+export default Count;

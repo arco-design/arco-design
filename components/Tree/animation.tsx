@@ -4,13 +4,13 @@
 
 import React, { PropsWithChildren, useMemo, useContext, useEffect, useRef } from 'react';
 
-import { CSSTransition } from 'react-transition-group';
 import { TreeContext } from './context';
 import { NodeProps } from './interface';
 import VirtualList from '../_class/VirtualList';
 import { ConfigContext } from '../ConfigProvider';
 import Node from './node';
 import { isNumber } from '../_util/is';
+import ArcoCSSTransition from '../_util/CSSTransition';
 
 function getKey(option) {
   return option.key || option._key;
@@ -95,7 +95,7 @@ const TreeAnimation = (props: PropsWithChildren<NodeProps>) => {
   }, [filtedData, currentExpandKeys]);
 
   return (
-    <CSSTransition
+    <ArcoCSSTransition
       in={currentExpandKeys.indexOf(props._key) > -1 && filtedData.length > 0}
       unmountOnExit
       classNames="tree-slide-expand"
@@ -104,18 +104,22 @@ const TreeAnimation = (props: PropsWithChildren<NodeProps>) => {
         exit: 0,
       }}
       onEnter={(e) => {
+        if (!e) return;
         const scrollHeight = e.scrollHeight;
         e.style.height = expanded ? 0 : `${Math.min(realHeight || scrollHeight, e.scrollHeight)}px`;
       }}
       onEntering={(e) => {
+        if (!e) return;
         const scrollHeight = e.scrollHeight;
         e.style.height = expanded ? `${Math.min(realHeight || scrollHeight, scrollHeight)}px` : 0;
       }}
       onEntered={(e) => {
+        if (!e) return;
         e.style.height = props.expanded ? '' : 0;
         treeContext.onExpandEnd(props._key);
       }}
       onExit={(e) => {
+        if (!e) return;
         e.style.display = 'none';
       }}
     >
@@ -132,7 +136,7 @@ const TreeAnimation = (props: PropsWithChildren<NodeProps>) => {
           return <Node {...child} />;
         }}
       </VirtualList>
-    </CSSTransition>
+    </ArcoCSSTransition>
   );
 };
 

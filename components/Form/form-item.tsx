@@ -10,7 +10,6 @@ import React, {
   ReactNode,
   useRef,
 } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import cs from '../_util/classNames';
 import { isArray, isFunction, isUndefined, isObject } from '../_util/is';
 import Grid from '../Grid';
@@ -33,6 +32,7 @@ import { ConfigContext } from '../ConfigProvider';
 import omit from '../_util/omit';
 import FormItemLabel from './form-label';
 import { formatValidateMsg } from './utils';
+import ArcoCSSTransition from '../_util/CSSTransition';
 
 const Row = Grid.Row;
 const Col = Grid.Col;
@@ -71,7 +71,7 @@ const FormItemTip: React.FC<FormItemTipProps> = ({
 
   return (
     visible && (
-      <CSSTransition in={visible} appear classNames="formblink" timeout={300} unmountOnExit>
+      <ArcoCSSTransition in={visible} appear classNames="formblink" timeout={300} unmountOnExit>
         <div
           className={cs(`${prefixCls}-message`, {
             [`${prefixCls}-message-help`]: isHelpTip,
@@ -86,7 +86,7 @@ const FormItemTip: React.FC<FormItemTipProps> = ({
             </>
           )}
         </div>
-      </CSSTransition>
+      </ArcoCSSTransition>
     )
   );
 };
