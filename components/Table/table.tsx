@@ -130,6 +130,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     props.size || (['default', 'middle', 'small'].indexOf(ctxSize) > -1 ? ctxSize : 'default');
   const refTableHead = useRef<HTMLElement | null>(null);
   const refTableBody = useRef<HTMLElement | null>(null);
+  const refTBody = useRef<HTMLElement | null>(null);
   const refTableFoot = useRef<HTMLDivElement | null>(null);
   const refTable = useRef<HTMLDivElement | null>(null);
   const refVirtualList = useRef<VirtualListHandle | null>(null);
@@ -525,6 +526,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         refVirtualList.current.scrollTo({ key: dataIndex });
       }
     },
+    getRootDOMNode: getRootDomElement,
   }));
 
   function getRootDomElement() {
@@ -830,6 +832,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const tbodyNode = (
     <Tbody<T>
       {...props}
+      saveRef={(node) => (refTBody.current = node)}
       selectedRowKeys={selectedRowKeys}
       indeterminateKeys={indeterminateKeys}
       expandedRowKeys={expandedRowKeys}
@@ -876,7 +879,10 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       data.length > 0;
 
     return (
-      <ResizeObserver onResize={setScrollBarStyle}>
+      <ResizeObserver
+        onResize={setScrollBarStyle}
+        getTargetDOMNode={() => refTableBody.current || refTBody.current}
+      >
         {fixedHeader && !virtualized ? (
           <ComponentBodyWrapper
             ref={refTableBody}

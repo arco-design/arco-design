@@ -88,6 +88,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
     ref,
     () => ({
       dom: wrapperRef.current,
+      getRootDOMNode: () => wrapperRef.current,
     }),
     []
   );

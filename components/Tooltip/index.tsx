@@ -79,6 +79,9 @@ function Tooltip(baseProps: PropsWithChildren<TooltipProps>, ref) {
     ref,
     () => ({
       updatePopupPosition,
+      getRootDOMNode: () => {
+        return refTrigger.current?.getRootDOMNode?.();
+      },
     }),
     []
   );

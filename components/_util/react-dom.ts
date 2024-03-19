@@ -1,6 +1,7 @@
-import { ReactElement } from 'react';
+import { Component, ReactElement, ReactInstance } from 'react';
 import ReactDOM from 'react-dom';
-import { isObject } from './is';
+import { isObject, isFunction } from './is';
+import warning from './warning';
 
 type CreateRootFnType = (container: Element | DocumentFragment) => {
   render: (container: ReactElement) => void;
@@ -72,5 +73,54 @@ if (isReact18 && createRoot) {
     };
   };
 }
+
+/**
+ *
+ * @param element
+ * @param instance: 兜底 findDOMNode 查找，一般都是 this
+ * @returns
+ */
+export const findDOMNode = (element: any, instance?: ReactInstance) => {
+  // 类组件，非 forwardRef(function component) 都拿不到真实dom
+  if (element && element instanceof Element) {
+    return element;
+  }
+
+  if (element && element.current && element.current instanceof Element) {
+    return element.current;
+  }
+
+  if (element instanceof Component) {
+    return ReactDOM.findDOMNode(element);
+  }
+
+  if (element && isFunction(element.getRootDOMNode)) {
+    return element.getRootDOMNode();
+  }
+
+  // 一般 useImperativeHandle 的元素拿到的 ref 不是 dom 元素且不存在 getRootDOMNode ，会走到这里。
+  if (instance) {
+    warning(
+      true,
+      'Element does not define the `getRootDOMNode` method causing a call to React.findDOMNode. but findDOMNode is deprecated in StrictMode. Please check the code logic',
+      { element, instance }
+    );
+    return ReactDOM.findDOMNode(instance);
+  }
+
+  return null;
+};
+
+// 回调children的原始 ref ，适配函数 ref or ref.current 场景
+export const callbackOriginRef = (children: any, node) => {
+  if (children && children.ref) {
+    if (isFunction(children.ref)) {
+      children?.ref(node);
+    }
+    if ('current' in children.ref) {
+      children.ref.current = node;
+    }
+  }
+};
 
 export const render = copyRender;

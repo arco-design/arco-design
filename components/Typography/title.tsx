@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { TypographyTitleProps } from './interface';
 import Base from './base';
 
-function Title(props: TypographyTitleProps) {
+function TitleComponent(props: TypographyTitleProps, ref) {
   const { heading = 1, ...rest } = props;
-  return <Base heading={heading} {...rest} componentType="Title" />;
+  return <Base heading={heading} {...rest} componentType="Title" ref={ref} />;
 }
+
+const Title = forwardRef(TitleComponent);
 
 Title.displayName = 'Title';
 

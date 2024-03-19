@@ -1,4 +1,4 @@
-import React, { useState, useContext, PropsWithChildren, useEffect } from 'react';
+import React, { useState, useContext, forwardRef, PropsWithChildren, useEffect } from 'react';
 import cs from '../_util/classNames';
 import Button from '../Button';
 import IconUpload from '../../icon/react-icon/IconUpload';
@@ -8,7 +8,7 @@ import { ConfigContext } from '../ConfigProvider';
 import { getFiles, loopDirectory } from './util';
 import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
-const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
+const TriggerNode = (props: PropsWithChildren<TriggerProps>, ref) => {
   const getKeyboardEvents = useKeyboardEvent();
   const { locale } = useContext(ConfigContext);
   const [isDragging, setIsDragging] = useState(false);
@@ -33,6 +33,7 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
           !disabled && props.onClick?.();
         },
       })}
+      ref={ref}
       onDragEnter={() => {
         setDragEnterCount(dragEnterCount + 1);
       }}
@@ -138,4 +139,4 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
   );
 };
 
-export default TriggerNode;
+export default forwardRef<HTMLDivElement, PropsWithChildren<TriggerProps>>(TriggerNode);

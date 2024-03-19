@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import isEqualWith from 'lodash/isEqualWith';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { TransitionGroup } from 'react-transition-group';
 import cs from '../../_util/classNames';
 import Option from './option';
 import { isFunction, isObject, isString } from '../../_util/is';
@@ -13,6 +13,7 @@ import Node from '../base/node';
 import { getMultipleCheckValue } from '../util';
 import VirtualList, { VirtualListHandle } from '../../_class/VirtualList';
 import { on, off } from '../../_util/dom';
+import ArcoCSSTransition from '../../_util/CSSTransition';
 
 const getLegalActiveNode = (options) => {
   for (let index = 0; index < options.length; index++) {
@@ -269,7 +270,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
         const footer = renderFooter ? renderFooter(level, activeNode || null) : null;
 
         return list.length === 0 && !showEmptyChildren ? null : (
-          <CSSTransition
+          <ArcoCSSTransition
             key={level}
             timeout={{
               enter: 300,
@@ -277,12 +278,15 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
             }}
             classNames="cascaderSlide"
             onEnter={(e: HTMLDivElement) => {
+              if (!e) return;
               e.style.marginLeft = `-${e.scrollWidth}px`;
             }}
             onEntering={(e: HTMLDivElement) => {
+              if (!e) return;
               e.style.marginLeft = `0px`;
             }}
             onEntered={(e) => {
+              if (!e) return;
               e.style.marginLeft = '';
             }}
           >
@@ -397,7 +401,7 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
                 level
               )}
             </div>
-          </CSSTransition>
+          </ArcoCSSTransition>
         );
       })}
     </TransitionGroup>

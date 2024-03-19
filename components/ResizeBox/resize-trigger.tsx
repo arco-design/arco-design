@@ -1,4 +1,4 @@
-import React, { useContext, CSSProperties, ReactNode, PropsWithChildren } from 'react';
+import React, { useContext, CSSProperties, ReactNode, PropsWithChildren, useRef } from 'react';
 import cs from '../_util/classNames';
 import ResizeObserver from '../_util/resizeObserver';
 import { ConfigContext } from '../ConfigProvider';
@@ -64,6 +64,7 @@ export default function ResizeTrigger(props: PropsWithChildren<ResizeTriggerProp
     { [`${prefixCls}-rtl`]: rtl },
     className
   );
+  const refDiv = useRef<HTMLDivElement>();
 
   const verticalTriggerIcon = rtlReverse
     ? [<IconCaretRight key="prev" />, <IconCaretLeft key="next" />]
@@ -153,8 +154,8 @@ export default function ResizeTrigger(props: PropsWithChildren<ResizeTriggerProp
   }
 
   return (
-    <ResizeObserver onResize={onResize}>
-      <div {...omit(rest, ['style'])} className={classNames} onMouseDown={onMouseDown}>
+    <ResizeObserver onResize={onResize} getTargetDOMNode={() => refDiv.current}>
+      <div ref={refDiv} {...omit(rest, ['style'])} className={classNames} onMouseDown={onMouseDown}>
         {isFunction(renderChildren)
           ? renderChildren(prev, trigger, next)
           : children || renderIcon()}

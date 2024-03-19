@@ -1,4 +1,11 @@
-import React, { useState, useContext, PropsWithChildren } from 'react';
+import React, {
+  useState,
+  useContext,
+  PropsWithChildren,
+  forwardRef,
+  useRef,
+  useImperativeHandle,
+} from 'react';
 import { ConfigContext } from '../ConfigProvider';
 import ResizeObserverComponent from '../_util/resizeObserver';
 import {
@@ -62,7 +69,7 @@ function getClassNameAndComponentName(props: BaseProps, prefixCls: string) {
   };
 }
 
-function Base(props: BaseProps) {
+function Base(props: BaseProps, ref) {
   const {
     componentType,
     style,
@@ -78,6 +85,7 @@ function Base(props: BaseProps) {
   const { getPrefixCls, rtl } = configContext;
   const prefixCls = getPrefixCls('typography');
 
+  const rootDOMRef = useRef();
   const { component, className: componentClassName } = getClassNameAndComponentName(
     props,
     prefixCls
@@ -163,6 +171,8 @@ function Base(props: BaseProps) {
     ellipsisConfig.onEllipsis && ellipsisConfig.onEllipsis(isEllipsis);
   }, [isEllipsis]);
 
+  useImperativeHandle(ref, () => rootDOMRef.current);
+
   function wrap(content, component, props, innerProps = {}) {
     let currentContent = content;
     component.forEach((c, _index) => {
@@ -208,8 +218,14 @@ function Base(props: BaseProps) {
     const addTooltip = isEllipsis && showTooltip && !expanding;
 
     const node = (
-      <ResizeObserverComponent onResize={handleResize}>
+      <ResizeObserverComponent
+        onResize={handleResize}
+        getTargetDOMNode={() => {
+          return rootDOMRef.current;
+        }}
+      >
         <TextComponent
+          ref={rootDOMRef}
           className={cs(prefixCls, componentClassName, { [`${prefixCls}-rtl`]: rtl }, className)}
           {...baseProps}
           {...omit(rest, [
@@ -260,6 +276,7 @@ function Base(props: BaseProps) {
 
   return mergedEditing ? (
     <EditContent
+      ref={ref}
       {...props}
       className={cs(
         prefixCls,
@@ -277,4 +294,4 @@ function Base(props: BaseProps) {
   );
 }
 
-export default Base;
+export default forwardRef(Base);
