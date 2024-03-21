@@ -9,7 +9,7 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 import { isEmptyReactNode } from '../_util/is';
 
 function Spin(baseProps: SpinProps, ref) {
-  const { getPrefixCls, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<SpinProps>(baseProps, {}, componentConfig?.Spin);
   const {
     style,
@@ -62,6 +62,7 @@ function Spin(baseProps: SpinProps, ref) {
           [`${prefixCls}-block`]: block,
           [`${prefixCls}-loading`]: _usedLoading,
           [`${prefixCls}-with-tip`]: tip && !children,
+          [`${prefixCls}-rtl`]: rtl,
         },
         className
       )}

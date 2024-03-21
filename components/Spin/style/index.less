@@ -108,6 +108,14 @@
     position: relative;
     height: @spin-dot-size-width;
   }
+
+  &-rtl {
+    direction: rtl;
+  }
+
+  &-rtl &-dot {
+    animation-name: ~'@{prefix}-dot-loading-rtl';
+  }
 }
 
 @keyframes ~'@{prefix}-dot-loading' {
@@ -117,6 +125,23 @@
     // 半径
     @radius: 280%;
     @xOffset: round((sin((pi() / 180 * @value * 10)) * @radius), 3) * -1;
+    @zOffset: round(cos((pi() / 180 * @value * 10)), 3) * -1px;
+
+    @scaleOffset: round((1 - cos((pi() / 180) * @value * 10)) * 0.75 + 0.5, 3 );
+
+    @{percent} {
+      transform: ~'translate3D(@{xOffset}, 0, @{zOffset}) scale(@{scaleOffset})'
+    }
+  });
+}
+
+@keyframes ~'@{prefix}-dot-loading-rtl' {
+  each(range(36), {
+    @percent: round(percentage(((@value - 1) / 36)), 3);
+
+    // 半径
+    @radius: 280%;
+    @xOffset: round((sin((pi() / 180 * @value * 10)) * @radius), 3);
     @zOffset: round(cos((pi() / 180 * @value * 10)), 3) * -1px;
 
     @scaleOffset: round((1 - cos((pi() / 180) * @value * 10)) * 0.75 + 0.5, 3 );
