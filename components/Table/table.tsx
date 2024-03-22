@@ -516,7 +516,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
   useUpdate(() => {
     setFixedColumnClassNames();
-  }, [data, hasFixedColumnLeft, hasFixedColumnRight]);
+  }, [data, hasFixedColumnLeft, hasFixedColumnRight, rtl]);
 
   useImperativeHandle(ref, () => ({
     getRootDomElement,
@@ -575,7 +575,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         table && resetTableClassName(table.classList);
       }
     }, 100),
-    [refTable.current, refTableBody.current, fixedHeader]
+    [refTable.current, refTableBody.current, fixedHeader, rtl]
   );
 
   function setFixedColumnClassNames() {
