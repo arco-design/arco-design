@@ -1,3 +1,13 @@
+## 2.61.1
+
+2024-03-22
+
+### 🐛 问题修复
+
+- 修复 `Input` 组件设置 `allowClear`且自适应宽度时，清除图标错位的 bug。([#2606](https://github.com/arco-design/arco-design/pull/2606))
+- 自适应宽度的 `Input` 组件在文本被 Hover 时不显示省略状态。([#2606](https://github.com/arco-design/arco-design/pull/2606))
+- 修复 `Input.Search` 无法透传 `suffix` 和 `addAfter` 的问题([#2591](https://github.com/arco-design/arco-design/pull/2591))
+
 ## 2.61.0
 
 2024-03-15

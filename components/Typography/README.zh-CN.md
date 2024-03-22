@@ -93,10 +93,10 @@
 |---|---|---|---|
 |defaultExpanded|默认展开|boolean |`-`|
 |disabled|是否禁用省略功能|boolean |`-`|
-|expandable|是否显示操控按钮|boolean |`true`|
 |expanded|是否展开|boolean |`-`|
 |rows|显示省略的行数|number |`1`|
 |className|节点类名|string \| string[] |`-`|
+|expandable|是否显示操控按钮。`2.61.0` 版本支持 `single` 属性|boolean \| { single?: boolean } |`true`|
 |showTooltip|是否显示弹出提示|boolean \| [TooltipProps](tooltip#tooltip) |`-`|
 |style|节点样式|CSSProperties |`-`|
 |expandRender|自定义渲染操控按钮|(expanded: boolean) => ReactNode |`-`|

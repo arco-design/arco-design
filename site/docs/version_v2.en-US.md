@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.61.1
+
+2024-03-22
+
+### 🐛 BugFix
+
+- Fixed the bug of icon misalignment when the `Input` component is set to `allowClear` and the width is adaptive.([#2606](https://github.com/arco-design/arco-design/pull/2606))
+- The autowidth `Input` component does not show the omitted state when the text is hovered.([#2606](https://github.com/arco-design/arco-design/pull/2606))
+- ([#2602](https://github.com/arco-design/arco-design/pull/2602))
+- Fix the problem that the `Table` component may report an error when dynamically changing scrollY([#2599](https://github.com/arco-design/arco-design/pull/2599))
+- Fix the problem that `Input.Search` cannot transparently transmit `suffix` and `addAfter`([#2591](https://github.com/arco-design/arco-design/pull/2591))
+
 ## 2.61.0
 
 2024-03-15
