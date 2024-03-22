@@ -29,7 +29,7 @@
 |defaultValue|默认值|number \| number[] |`-`|-|
 |marks|标签。是一个对象。key 为在[min, max]内的整数。|Record&lt;number, ReactNode&gt; |`-`|-|
 |range|是否是范围选择|boolean \| { draggableBar: boolean } |`-`|2.14.0|
-|showInput|是否展示输入框，`onlyMarkValue` 为 `true` 时输入框始终隐藏。可接受 `InputNumber` 的 `props`。|boolean \| [InputNumberProps](input-number#inputnumber) \| [InputNumberProps](input-number#inputnumber)[] |`-`|`InputNumberProps` in `2.32.0`|
+|showInput|是否展示输入框，`onlyMarkValue` 为 `true` 或范围内多点选择时输入框始终隐藏。可接受 `InputNumber` 的 `props`。|boolean \| [InputNumberProps](input-number#inputnumber) \| [InputNumberProps](input-number#inputnumber)[] |`-`|`InputNumberProps` in `2.32.0`|
 |style|节点样式|CSSProperties |`-`|-|
 |value|值|number \| number[] |`-`|-|
 |getIntervalConfig|针对区间配置，返回区间步长和相对于整个滑动轴的宽度比例(如 0.5 或 "50%")。**只在`marks`场景下生效**|(range: number[],index: number) => { step?: number; width?: number \| string } |`-`|2.30.0|

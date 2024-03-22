@@ -29,7 +29,7 @@ A Slider component for displaying current value and intervals in range.
 |defaultValue|To set default value|number \| number[] |`-`|-|
 |marks|The labels on the render ruler. `marks` is an Object, it's `key` is an integer within [min, max].|Record&lt;number, ReactNode&gt; |`-`|-|
 |range|Whether to allow range selection|boolean \| { draggableBar: boolean } |`-`|2.14.0|
-|showInput|Whether to display the input box. If `onlyMarkValue` is `true`, the input box will always be hidden. Accepts `props` for `InputNumber`.|boolean \| [InputNumberProps](input-number#inputnumber) \| [InputNumberProps](input-number#inputnumber)[] |`-`|`InputNumberProps` in `2.32.0`|
+|showInput|Whether to display the input box. When setting `onlyMarkValue` to `true` or selecting multiple points within the range, the input box will never be displayed. Accepts `props` for `InputNumber`.|boolean \| [InputNumberProps](input-number#inputnumber) \| [InputNumberProps](input-number#inputnumber)[] |`-`|`InputNumberProps` in `2.32.0`|
 |style|Additional style|CSSProperties |`-`|-|
 |value|To set value|number \| number[] |`-`|-|
 |getIntervalConfig|For interval configuration, returns the interval step size and the ratio of the width relative to the entire sliding axis (e.g. 0.5 or "50%"). **Only valid in `marks` scene**|(range: number[],index: number) => { step?: number; width?: number \| string } |`-`|2.30.0|
