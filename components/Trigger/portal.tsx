@@ -29,6 +29,7 @@ const Portal = (props: PortalProps) => {
       }
     };
   }, []);
+
   return containerRef.current ? ReactDOM.createPortal(children, containerRef.current) : null;
 };
 

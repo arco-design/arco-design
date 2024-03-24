@@ -1,5 +1,6 @@
 ---
 order: 0
+skip: true
 title:
   zh-CN: 基本用法
   en-US: Basic

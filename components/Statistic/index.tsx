@@ -48,6 +48,8 @@ function Statistic(baseProps: StatisticProps, ref) {
   } = props;
 
   const tween = useRef<BTween>();
+  const wrapperRef = useRef<HTMLDivElement>();
+
   const [value, setValue] = useState<string | number | Dayjs>(
     'value' in props ? props.value : undefined
   );
@@ -99,6 +101,7 @@ function Statistic(baseProps: StatisticProps, ref) {
 
   useImperativeHandle<any, StatisticHandle>(ref, () => ({
     countUp,
+    getRootDOMNode: () => wrapperRef.current,
   }));
 
   const { int, decimal } = useMemo(() => {
@@ -139,6 +142,7 @@ function Statistic(baseProps: StatisticProps, ref) {
       className={cs(`${prefixCls}`, { [`${prefixCls}-rtl`]: rtl }, className)}
       style={style}
       {...omit(rest, ['value', 'countUp', 'countFrom', 'countDuration'])}
+      ref={wrapperRef}
     >
       {title && <div className={`${prefixCls}-title`}>{title}</div>}
       <div className={`${prefixCls}-content`}>

@@ -1,5 +1,4 @@
 import React, { useState, useContext, ReactNode, forwardRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import IconCheckCircleFill from '../../icon/react-icon/IconCheckCircleFill';
 import IconCloseCircleFill from '../../icon/react-icon/IconCloseCircleFill';
 import IconInfoCircleFill from '../../icon/react-icon/IconInfoCircleFill';
@@ -9,6 +8,7 @@ import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import { AlertProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import ArcoCSSTransition from '../_util/CSSTransition';
 
 const defaultProps: AlertProps = {
   showIcon: true,
@@ -75,7 +75,7 @@ function Alert(baseProps: AlertProps, ref) {
   const _closable = 'closeable' in props ? closeable : closable;
 
   return (
-    <CSSTransition
+    <ArcoCSSTransition
       in={visible}
       timeout={300}
       classNames="zoomInTop"
@@ -97,7 +97,7 @@ function Alert(baseProps: AlertProps, ref) {
           </button>
         )}
       </div>
-    </CSSTransition>
+    </ArcoCSSTransition>
   );
 }
 

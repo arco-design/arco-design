@@ -8,7 +8,7 @@ import React, {
   PropsWithChildren,
   ReactNode,
 } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { TransitionGroup } from 'react-transition-group';
 import { ConfigContext } from '../ConfigProvider';
 import Tag, { TagProps } from '../Tag';
 import Popover from '../Popover';
@@ -26,6 +26,7 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 import Draggable from '../_class/Draggable';
 import omit from '../_util/omit';
 import fillNBSP from '../_util/fillNBSP';
+import ArcoCSSTransition from '../_util/CSSTransition';
 
 const CSS_TRANSITION_DURATION = 300;
 const REACT_KEY_FOR_INPUT = `__input_${Math.random().toFixed(10).slice(2)}`;
@@ -140,6 +141,8 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
   const refInput = useRef<ElementRef<typeof InputComponent>>();
   const refTSLastSeparateTriggered = useRef<number>(null);
 
+  const refRootWrapper = useRef<HTMLDivElement>();
+
   const [focused, setFocused] = useState(false);
   const [value, setValue] = useMergeValue<ObjectValueType[]>([], {
     defaultValue: 'defaultValue' in props ? formatValue(props.defaultValue) : undefined,
@@ -157,6 +160,9 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       return {
         blur: refInput.current?.blur,
         focus: refInput.current?.focus,
+        getRootDOMNOde: () => {
+          return refRootWrapper.current;
+        },
       };
     },
     []
@@ -346,19 +352,19 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       const isRepeat = value.findIndex((item) => item.value === x.value) !== i;
       const eleTag = mergedRenderTag(x, i);
       return React.isValidElement(eleTag) ? (
-        <CSSTransition
+        <ArcoCSSTransition
           key={typeof x.value === 'object' ? i : isRepeat ? `${x.value}-${i}` : x.value}
           timeout={CSS_TRANSITION_DURATION}
           classNames="zoomIn"
         >
           {eleTag}
-        </CSSTransition>
+        </ArcoCSSTransition>
       ) : (
         eleTag
       );
     })
     .concat(
-      <CSSTransition
+      <ArcoCSSTransition
         key={REACT_KEY_FOR_INPUT}
         timeout={CSS_TRANSITION_DURATION}
         classNames="zoomIn"
@@ -420,7 +426,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
             handleTokenSeparators(event.clipboardData.getData('text'));
           }}
         />
-      </CSSTransition>
+      </ArcoCSSTransition>
     );
 
   const hasPrefix = !isEmptyNode(prefix);
@@ -456,6 +462,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
           onClick(e);
         }
       }}
+      ref={!needWrapper ? refRootWrapper : undefined}
     >
       <div className={`${prefixCls}-view`}>
         {hasPrefix && (
@@ -517,6 +524,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         },
         propsAppliedToRoot.className
       )}
+      ref={refRootWrapper}
     >
       {needAddBefore && <div className={`${prefixCls}-addbefore`}>{addBefore}</div>}
       {eleInputTagCore}

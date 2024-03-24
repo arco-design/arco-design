@@ -154,6 +154,10 @@ function TBody<T>(props: TbodyProps<T>) {
     saveVirtualListRef,
   } = props;
 
+  const saveRef = (node) => {
+    props.saveRef?.(node);
+  };
+
   const { ComponentTbody } = useComponent(components);
 
   let scrollStyleX: CSSProperties = {};
@@ -209,14 +213,17 @@ function TBody<T>(props: TbodyProps<T>) {
         outerStyle={{ ...scrollStyleX, minWidth: '100%', overflow: 'visible' }}
         innerStyle={{ right: 'auto', minWidth: '100%' }}
         className={`${prefixCls}-body`}
-        ref={(ref) => saveVirtualListRef(ref)}
+        ref={(ref) => {
+          saveVirtualListRef(ref);
+          saveRef(ref?.dom);
+        }}
         itemKey={getRowKey}
         {...virtualListProps}
       >
         {renderDataRecord}
       </VirtualList>
     ) : (
-      <div className={`${prefixCls}-body`}>
+      <div className={`${prefixCls}-body`} ref={saveRef}>
         <table>
           <tbody>{noDataTr}</tbody>
         </table>
@@ -224,7 +231,11 @@ function TBody<T>(props: TbodyProps<T>) {
     );
   }
 
-  return <ComponentTbody>{data.length > 0 ? data.map(renderDataRecord) : noDataTr}</ComponentTbody>;
+  return (
+    <ComponentTbody ref={saveRef}>
+      {data.length > 0 ? data.map(renderDataRecord) : noDataTr}
+    </ComponentTbody>
+  );
 }
 
 export default TBody;

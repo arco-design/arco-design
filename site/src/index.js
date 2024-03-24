@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { StrictMode, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
@@ -77,7 +77,12 @@ if (isProduction) {
 
 // Don't render itself if flag is set under which case it will be rendered by its host app
 if (typeof process === 'undefined' || process?.env?.RENDER_BY_HOST !== 'true') {
-  ReactDOM.render(<Index />, document.getElementById('root'));
+  ReactDOM.render(
+    <StrictMode>
+      <Index />
+    </StrictMode>,
+    document.getElementById('root')
+  );
 }
 
 tea({ name: 'site_components_zh' });

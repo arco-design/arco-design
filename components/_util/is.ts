@@ -1,4 +1,6 @@
 import { Dayjs } from 'dayjs';
+import { isValidElement } from 'react';
+import { isForwardRef } from 'react-is';
 
 const opt = Object.prototype.toString;
 
@@ -100,3 +102,33 @@ export function isDayjs(time): time is Dayjs {
 export function isBoolean(value: any): value is Boolean {
   return typeof value === 'boolean';
 }
+
+export const isReactComponent = (element: any): boolean => {
+  return element && isValidElement(element) && typeof element.type === 'function';
+};
+
+export const isClassComponent = (element: any): boolean => {
+  return isReactComponent(element) && !!element.type.prototype?.isReactComponent;
+};
+
+// element 是合成的 dom 元素或者字符串，数字等
+export const isDOMElement = (element: any): boolean => {
+  return isValidElement(element) && typeof element.type === 'string';
+};
+
+// 传入的元素是否可以设置 ref 饮用
+export const supportRef = (element: any): boolean => {
+  if (isDOMElement(element)) {
+    return true;
+  }
+
+  if (isForwardRef(element)) {
+    return true;
+  }
+
+  if (isReactComponent(element)) {
+    return isClassComponent(element); // 函数组件且没有被 forwardRef，无法设置 ref
+  }
+
+  return false;
+};

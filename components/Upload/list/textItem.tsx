@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import IconFile from '../../../icon/react-icon/IconFile';
 import IconFilePdf from '../../../icon/react-icon/IconFilePdf';
 import IconFileImage from '../../../icon/react-icon/IconFileImage';
@@ -49,7 +49,8 @@ const getIconType = (file: UploadItem) => {
 };
 
 const TextItem = (
-  props: UploadListProps & { file: UploadItem; locale: ConfigProviderProps['locale'] }
+  props: UploadListProps & { file: UploadItem; locale: ConfigProviderProps['locale'] },
+  ref
 ) => {
   const { prefixCls, disabled, file, locale } = props;
   const cls = `${prefixCls}-list-item-text`;
@@ -79,7 +80,7 @@ const TextItem = (
   }
 
   return (
-    <div className={`${prefixCls}-list-item ${prefixCls}-list-item-${file.status}`}>
+    <div className={`${prefixCls}-list-item ${prefixCls}-list-item-${file.status}`} ref={ref}>
       <div className={cls}>
         {props.listType === 'picture-list' && (
           <div className={`${cls}-thumbnail`}>
@@ -159,4 +160,7 @@ const TextItem = (
   );
 };
 
-export default TextItem;
+export default forwardRef<
+  HTMLDivElement,
+  UploadListProps & { file: UploadItem; locale: ConfigProviderProps['locale'] }
+>(TextItem);

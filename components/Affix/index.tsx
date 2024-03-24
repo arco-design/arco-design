@@ -166,10 +166,13 @@ function Affix(baseProps: PropsWithChildren<AffixProps>, ref) {
 
   useImperativeHandle<any, AffixHandle>(ref, () => ({
     updatePosition,
+    getRootDOMNode: () => {
+      return wrapperRef.current;
+    },
   }));
 
   return (
-    <ResizeObserver onResize={updatePosition}>
+    <ResizeObserver onResize={updatePosition} getTargetDOMNode={() => wrapperRef.current}>
       <div className={cs(className)} style={style} ref={wrapperRef} {...rest}>
         {isFixed && <div style={sizeStyles} />}
         <div

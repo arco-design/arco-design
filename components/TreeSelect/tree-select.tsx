@@ -251,6 +251,9 @@ const TreeSelect: ForwardRefRenderFunction<
     blur() {
       refSelectView.current && refSelectView.current.blur();
     },
+    getRootDOMNode: () => {
+      return refSelectView.current?.getRootDOMNode?.();
+    },
   }));
 
   const filterNode = useCallback(

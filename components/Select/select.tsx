@@ -760,6 +760,7 @@ function Select(baseProps: SelectProps, ref) {
       getOptionInfoByValue,
       getOptionInfoList: () => [...optionInfoMap.values()].filter((info) => info._valid),
       scrollIntoView,
+      getRootDOMNode: refSelectView.current?.getRootDOMNode,
     }),
     [hotkeyHandler, optionInfoMap, valueActive, getOptionInfoByValue, scrollIntoView]
   );

@@ -33,6 +33,7 @@ function PageHeader(baseProps: PropsWithChildren<PageHeaderProps>) {
           setPageWrap(pageRef.current.offsetWidth < 768);
         }
       }}
+      getTargetDOMNode={() => pageRef.current}
     >
       <div
         {...omit(rest, ['onBack'])}
