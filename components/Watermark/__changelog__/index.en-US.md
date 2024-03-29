@@ -1,3 +1,11 @@
+## 2.61.2
+
+2024-03-29
+
+### 🐛 BugFix
+
+- Fix the bug of incomplete display of `Watermark` when pixel ratio=1.([#2614](https://github.com/arco-design/arco-design/pull/2614))
+
 ## 2.59.0
 
 2024-01-19

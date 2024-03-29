@@ -1,3 +1,12 @@
+## 2.61.2
+
+2024-03-29
+
+### 🐛 BugFix
+
+- Fixed the bug where the Carousel indicator behaved abnormally in the component rtl view.([#2605](https://github.com/arco-design/arco-design/pull/2605))
+- Fixed the bug of abnormal display of animation='card' under Carousel component rtl([#2605](https://github.com/arco-design/arco-design/pull/2605))
+
 ## 2.59.0
 
 2024-01-19

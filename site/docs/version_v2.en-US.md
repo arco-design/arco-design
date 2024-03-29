@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.61.2
+
+2024-03-29
+
+### 🐛 BugFix
+
+- Fix the bug of incomplete display of `Watermark` when pixel ratio=1.([#2614](https://github.com/arco-design/arco-design/pull/2614))
+- Fixed the bug where the Carousel indicator behaved abnormally in the component rtl view.([#2605](https://github.com/arco-design/arco-design/pull/2605))
+- Fixed the bug of abnormal display of animation='card' under Carousel component rtl([#2605](https://github.com/arco-design/arco-design/pull/2605))
+- Fix the issue where the content view of `Trigger` is still `ltr` when setting the component `rtl`([#2604](https://github.com/arco-design/arco-design/pull/2604))
+
 ## 2.61.1
 
 2024-03-22

@@ -1,3 +1,12 @@
+## 2.61.2
+
+2024-03-29
+
+### 🐛 问题修复
+
+- 修复 Carousel 在组件 rtl  视图下指示器表现异常的 bug。([#2605](https://github.com/arco-design/arco-design/pull/2605))
+- 修复 Carousel 组件 rtl 下 animation='card' 展示异常的 bug([#2605](https://github.com/arco-design/arco-design/pull/2605))
+
 ## 2.59.0
 
 2024-01-19
