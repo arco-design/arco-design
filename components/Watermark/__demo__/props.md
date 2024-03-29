@@ -25,6 +25,7 @@ import {
   Typography,
   Watermark,
   Slider,
+  ColorPicker,
   Space
 } from '@arco-design/web-react';
 
@@ -128,13 +129,7 @@ const App = () => {
           <Radio.Group options={['sans-serif', 'serif']} />
         </Form.Item>
         <Form.Item label="颜色" field="color" initialValue={defaultValue.color}>
-          <Radio.Group>
-            <Radio value="rgba(0,0,0,0.02)">极浅</Radio>
-            <Radio value="rgba(0,0,0,0.08)">浅</Radio>
-            <Radio value="rgba(0,0,0,0.12)">正常</Radio>
-            <Radio value="rgba(0,0,0,0.2)">深</Radio>
-            <Radio value="rgba(0,0,0,0.3)">极深</Radio>
-          </Radio.Group>
+          <ColorPicker showText />
         </Form.Item>
         <Form.Item label="字体大小" field="fontSize" initialValue={defaultValue.fontSize}>
           <Slider min={12} max={100}/>

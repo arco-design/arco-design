@@ -349,110 +349,22 @@ exports[`renders Watermark/demo/props.md correctly 1`] = `
               class="arco-form-item-control-children"
             >
               <div
-                class="arco-radio-group arco-radio-size-default arco-radio-mode-outline"
-                role="radiogroup"
+                class="arco-color-picker arco-color-picker-size-default"
               >
-                <label
-                  class="arco-radio"
+                <div
+                  class="arco-color-picker-preview"
+                  style="background-color:rgba(0,0,0,0.12)"
+                />
+                <div
+                  class="arco-color-picker-value"
                 >
-                  <input
-                    type="radio"
-                    value="rgba(0,0,0,0.02)"
-                  />
-                  <span
-                    class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
-                  >
-                    <div
-                      class="arco-radio-mask"
-                    />
-                  </span>
-                  <span
-                    class="arco-radio-text"
-                  >
-                    极浅
-                  </span>
-                </label>
-                <label
-                  class="arco-radio"
-                >
-                  <input
-                    type="radio"
-                    value="rgba(0,0,0,0.08)"
-                  />
-                  <span
-                    class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
-                  >
-                    <div
-                      class="arco-radio-mask"
-                    />
-                  </span>
-                  <span
-                    class="arco-radio-text"
-                  >
-                    浅
-                  </span>
-                </label>
-                <label
-                  class="arco-radio arco-radio-checked"
-                >
-                  <input
-                    checked=""
-                    type="radio"
-                    value="rgba(0,0,0,0.12)"
-                  />
-                  <span
-                    class="arco-icon-hover arco-radio-icon-hover arco-icon-hover-disabled arco-radio-mask-wrapper"
-                  >
-                    <div
-                      class="arco-radio-mask"
-                    />
-                  </span>
-                  <span
-                    class="arco-radio-text"
-                  >
-                    正常
-                  </span>
-                </label>
-                <label
-                  class="arco-radio"
-                >
-                  <input
-                    type="radio"
-                    value="rgba(0,0,0,0.2)"
-                  />
-                  <span
-                    class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
-                  >
-                    <div
-                      class="arco-radio-mask"
-                    />
-                  </span>
-                  <span
-                    class="arco-radio-text"
-                  >
-                    深
-                  </span>
-                </label>
-                <label
-                  class="arco-radio"
-                >
-                  <input
-                    type="radio"
-                    value="rgba(0,0,0,0.3)"
-                  />
-                  <span
-                    class="arco-icon-hover arco-radio-icon-hover arco-radio-mask-wrapper"
-                  >
-                    <div
-                      class="arco-radio-mask"
-                    />
-                  </span>
-                  <span
-                    class="arco-radio-text"
-                  >
-                    极深
-                  </span>
-                </label>
+                  rgba(0,0,0,0.12)
+                </div>
+                <input
+                  class="arco-color-picker-input"
+                  readonly=""
+                  value="rgba(0,0,0,0.12)"
+                />
               </div>
             </div>
           </div>
