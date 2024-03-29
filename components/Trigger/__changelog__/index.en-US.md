@@ -1,3 +1,11 @@
+## 2.61.2
+
+2024-03-29
+
+### 🐛 BugFix
+
+- Fix the issue where the content view of `Trigger` is still `ltr` when setting the component `rtl`([#2604](https://github.com/arco-design/arco-design/pull/2604))
+
 ## 2.59.0
 
 2024-01-19
