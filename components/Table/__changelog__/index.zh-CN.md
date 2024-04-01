@@ -1,3 +1,20 @@
+## 2.61.1
+
+2024-03-22
+
+### 🐛 问题修复
+
+- 修复rtl切换时fixedClassName错误的问题([#2602](https://github.com/arco-design/arco-design/pull/2602))
+- 修复 `Table` 组件动态变化 scrollY 可能报错的问题([#2599](https://github.com/arco-design/arco-design/pull/2599))
+
+## 2.61.0
+
+2024-03-15
+
+### 🐛 问题修复
+
+- 修复 `Table` 由于 ReactKey 缺失导致的控制台警告。([#2592](https://github.com/arco-design/arco-design/pull/2592))
+
 ## 2.60.2
 
 2024-03-01

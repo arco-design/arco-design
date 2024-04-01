@@ -8,12 +8,12 @@ title:
 ## zh-CN
 
 当文字内容超出容器后会自动显示省略号。
-当 `rows = 1` 时为单行省略，此时操作按钮不会展示。
+当 `rows = 1` 时为单行省略，此时操作按钮默认不会展示，可以设置 `expandable = { single: true }` 开启。
 
 ## en-US
 
 When the text content exceeds the container, an ellipsis will be automatically displayed.
-When `rows = 1`, a single row is omitted, and the operation button will not be displayed.
+When `rows = 1`, a single row is omitted. At this time, the operation button will not be displayed by default. You can set `expandable = { single: true }` to enable it.
 
 ```js
 import {
@@ -34,11 +34,12 @@ function App() {
   const [config, setConfig] = useState({
     disabled: false,
     expandable: true,
+    expandableSingle: false,
     expanded: false,
     showTooltip: false
   });
   const [text, setText] = useState(defaultText);
-  const [rows, setRows] = useState(4);
+  const [rows, setRows] = useState(1);
 
   return (
     <div>
@@ -59,6 +60,9 @@ function App() {
             <Switch/>
           </Form.Item>
           <Form.Item label="展示操作按钮" field="expandable" triggerPropName="checked">
+            <Switch/>
+          </Form.Item>
+          <Form.Item label="展示操作按钮（单行）" field="expandableSingle" triggerPropName="checked">
             <Switch/>
           </Form.Item>
           <Form.Item label="禁用省略" field="disabled" triggerPropName="checked">
@@ -99,9 +103,12 @@ function App() {
           minWidth: 100,
         }}
       >
-        <Typography.Ellipsis rows={rows} {...config} onExpand={(v) => form.setFieldsValue({
-          expanded: v
-        })}>{text}</Typography.Ellipsis>
+        <Typography.Ellipsis
+          rows={rows} {...config}
+          expandable={config.expandableSingle ? { single: true } : config.expandable}
+          onExpand={(v) => form.setFieldsValue({
+            expanded: v
+          })}>{text}</Typography.Ellipsis>
       </ResizeBox>
     </div>
   );

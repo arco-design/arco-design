@@ -93,10 +93,10 @@ Used to display titles, paragraphs, and text content.
 |---|---|---|---|
 |defaultExpanded|Expand by default|boolean |`-`|
 |disabled|Whether to disable the text ellipsis|boolean |`-`|
-|expandable|Whether to show control button|boolean |`true`|
 |expanded|Whether to expand|boolean |`-`|
 |rows|The number of omitted rows|number |`1`|
 |className|Additional css class|string \| string[] |`-`|
+|expandable|Whether to show control button. `2.61.0` version supports `single` attribute|boolean \| { single?: boolean } |`true`|
 |showTooltip|Whether to display pop-up prompts|boolean \| [TooltipProps](tooltip#tooltip) |`-`|
 |style|Additional style|CSSProperties |`-`|
 |expandRender|Custom rendering control buttons|(expanded: boolean) => ReactNode |`-`|

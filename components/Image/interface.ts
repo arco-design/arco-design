@@ -182,6 +182,13 @@ export interface ImagePreviewProps {
    * @version 2.58.0
    */
   imageRender?: (originalNode: ReactElement) => ReactNode;
+  /**
+   * @zh 开启位置修正
+   * @en Enable position correction
+   * @defaultValue true
+   * @version 2.61.0
+   */
+  resetTranslate?: boolean;
 }
 
 export type PartialImagePreviewProps = Partial<ImagePreviewProps>;

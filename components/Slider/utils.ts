@@ -60,3 +60,28 @@ export function getIntervalOffset(val, intervalConfig: IntervalConfig[]) {
     return plus(beginOffset, offset);
   }
 }
+
+// 从小到大排序
+export function sortNumberArray(arr: number[]) {
+  const copyArr = arr.slice(0);
+  copyArr.sort((a, b) => a - b);
+  return copyArr;
+}
+
+// 是否需要排序
+export function needSort(arr: number[]) {
+  return arr.some((x, i) => x > arr[i + 1]);
+}
+
+// 找到 value 在 array 中的索引。value: 5 ,arrry: [1, 3, 8]， return: 2.
+export function findNearestIndex(value: number, array: number[]): [number, number] {
+  let valueIndex = array.indexOf(value);
+  if (valueIndex === -1) {
+    const arr = sortNumberArray(array.concat(value));
+
+    valueIndex = arr.indexOf(value);
+
+    return [Math.max(valueIndex - 1, 0), Math.min(valueIndex, array.length - 1)];
+  }
+  return [valueIndex, valueIndex + 1];
+}

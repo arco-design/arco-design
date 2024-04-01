@@ -11,7 +11,7 @@ type MaskType = {
 
 interface MaskProps {
   data: MaskType[];
-  value?: number[];
+  valueRange?: [number, number];
   vertical?: boolean;
   prefixCls?: string;
   reverse?: boolean;
@@ -20,7 +20,7 @@ interface MaskProps {
 }
 
 const Dots = function (props: MaskProps) {
-  const { data = [], value = [], vertical, prefixCls, reverse, intervalConfigs } = props;
+  const { data = [], valueRange = [], vertical, prefixCls, reverse, intervalConfigs } = props;
   if (!data.length) return null;
 
   return (
@@ -47,7 +47,7 @@ const Dots = function (props: MaskProps) {
             ) : (
               <div
                 className={cs(`${prefixCls}-dot`, {
-                  [`${prefixCls}-dot-active`]: valueInRange(key, value),
+                  [`${prefixCls}-dot-active`]: valueInRange(key, valueRange),
                 })}
               />
             )}

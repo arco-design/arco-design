@@ -1,3 +1,15 @@
+## 2.61.0
+
+2024-03-15
+
+### 🆕 功能升级
+
+- `Image` 新增 `resetTranslate` 属性([#2593](https://github.com/arco-design/arco-design/pull/2593))
+
+### 🐛 问题修复
+
+- 修复 `Image` 组件图片链接触发内存缓存时图片一直处于loading状态的问题([#2587](https://github.com/arco-design/arco-design/pull/2587))
+
 ## 2.60.2
 
 2024-03-01

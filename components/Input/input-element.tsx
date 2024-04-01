@@ -149,9 +149,18 @@ const InputComponent = React.forwardRef<RefInputType, InputComponentProps>(
       className: inputClassNames,
       onKeyDown: keyDownHandler,
       onChange: valueChangeHandler,
-      onCompositionStart: compositionHandler,
-      onCompositionUpdate: compositionHandler,
-      onCompositionEnd: compositionHandler,
+      onCompositionStart: (e) => {
+        rest.onCompositionStart?.(e);
+        compositionHandler(e);
+      },
+      onCompositionUpdate: (e) => {
+        rest.onCompositionUpdate?.(e);
+        compositionHandler(e);
+      },
+      onCompositionEnd: (e) => {
+        rest.onCompositionEnd?.(e);
+        compositionHandler(e);
+      },
       onBlur: (e) => {
         props.onBlur?.(e);
         const normalize = normalizeHandler('onBlur');

@@ -48,12 +48,14 @@
 |trigger|接管子节点，搜集子节点值的时机。|string |`onChange`|-|
 |triggerPropName|子节点被接管的值的属性名，默认是 `value`,比如 `<Checkbox>` 为 `checked`。|string |`value`|-|
 |labelAlign|标签的文本对齐方式，优先级高于 `Form`|'left' \| 'right' |`right`|-|
+|layout|布局|'horizontal' \| 'vertical' \| 'inline' |`-`|-|
 |requiredSymbol|是否在 required 的时候显示加重的红色星号，设置 position 可选择将星号置于 label 前/后|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
 |validateStatus|校验状态|'success' \| 'warning' \| 'error' \| 'validating' |`-`|-|
 |colon|是否显示标签后的一个冒号，优先级小于 `Form.Item` 中 `colon` 的优先级。(`ReactNode` in `v2.41.0`)|boolean \| ReactNode |`-`|-|
 |extra|额外的提示内容。|ReactNode |`-`|-|
 |help|自定义校验文案|ReactNode |`-`|-|
 |label|标签的文本|ReactNode |`-`|-|
+|children|`ReactNode` 类型与函数类型的 children|React.ReactNode \| [FormItemChildrenFn](#formitemchildrenfn)&lt;FormData, FieldValue, FieldKey&gt; |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
 |dependencies|设置依赖字段。当依赖的字段值改变时，触发自身的校验。如果是想动态渲染某个表单控件/表单区域，使用 shouldUpdate|string[] |`-`|2.40.0|
 |field|受控组件的唯一标示|FieldKey |`-`|-|
@@ -168,6 +170,19 @@ export type FieldError<FieldValue = any> = {
   type?: string;
   requiredError?: boolean;
 };
+```
+
+### FormItemChildrenFn
+
+```js
+export type FormItemChildrenFn<
+  FormData = any,
+  FieldValue = FormData[keyof FormData],
+  FieldKey extends KeyType = keyof FormData
+> = (
+  formData: any,
+  form: FormInstance<FormData, FieldValue, FieldKey>
+) => React.ReactNode;
 ```
 
 ### Rules

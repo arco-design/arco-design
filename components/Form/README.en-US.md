@@ -44,16 +44,18 @@ A form with data collection, verification and submission functions, including ch
 |disabled|Whether the FormItem is disabled. Priority is higher than the `disabled` prop of `Form`|boolean |`-`|-|
 |hasFeedback|Whether to show the verification icon, configure `validateStatus` to use.|boolean |`-`|-|
 |hidden|hide the form item|boolean |`-`|2.29.0|
-|required|Whether The FormItem is Required, Will display an red symbol in front of the `label` label.If it is not set here, it will look for `required` from the rules|boolean |`-`|-|
+|required|Whether the FormItem is Required, Will display an red symbol in front of the `label` label.If it is not set here, it will look for `required` from the rules|boolean |`-`|-|
 |trigger|When to take over and collecting the child nodes.|string |`onChange`|-|
 |triggerPropName|The attribute name of the child node being taken over, default is `value`, ex, `<Checkbox>` is `checked`.|string |`value`|-|
 |labelAlign|Text alignment of `label`|'left' \| 'right' |`right`|-|
+|layout|The layout|'horizontal' \| 'vertical' \| 'inline' |`-`|-|
 |requiredSymbol|Whether show red symbol when item is required，Set position props, you can choose to place the symbol before/after the label|boolean \| { position: 'start' \| 'end' } |`true`|`position` in 2.24.0|
 |validateStatus|Validate status|'success' \| 'warning' \| 'error' \| 'validating' |`-`|-|
 |colon|Whether show colon after `label`. Priority is lower than `colon` in `Form.Item`.(`ReactNode` in `v2.41.0`)|boolean \| ReactNode |`-`|-|
 |extra|Additional hint content.|ReactNode |`-`|-|
 |help|Custom help text|ReactNode |`-`|-|
 |label|Label text|ReactNode |`-`|-|
+|children|`ReactNode` type and Fuction type children|React.ReactNode \| [FormItemChildrenFn](#formitemchildrenfn)&lt;FormData, FieldValue, FieldKey&gt; |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
 |dependencies|the dependency fields. When the value of the dependent field changes, trigger its own validation.If you want to dynamically render a form control/form area, use shouldUpdate|string[] |`-`|2.40.0|
 |field|Unique identification of controlled components|FieldKey |`-`|-|
@@ -168,6 +170,19 @@ export type FieldError<FieldValue = any> = {
   type?: string;
   requiredError?: boolean;
 };
+```
+
+### FormItemChildrenFn
+
+```js
+export type FormItemChildrenFn<
+  FormData = any,
+  FieldValue = FormData[keyof FormData],
+  FieldKey extends KeyType = keyof FormData
+> = (
+  formData: any,
+  form: FormInstance<FormData, FieldValue, FieldKey>
+) => React.ReactNode;
 ```
 
 ### Rules

@@ -63,7 +63,15 @@ const componentConfig = {};
 
 function ConfigProvider(baseProps: ConfigProviderProps) {
   const props = useMergeProps<ConfigProviderProps>(baseProps, defaultProps, componentConfig);
-  const { theme, prefixCls, children, locale, rtl, effectGlobalNotice = true } = props;
+  const {
+    theme,
+    prefixCls,
+    children,
+    locale,
+    rtl,
+    effectGlobalNotice = true,
+    effectGlobalModal = true,
+  } = props;
 
   useEffect(() => {
     setTheme(theme);
@@ -86,8 +94,10 @@ function ConfigProvider(baseProps: ConfigProviderProps) {
   };
 
   useEffect(() => {
-    setConfigProviderProps({ locale, prefixCls, rtl });
-  }, [locale, prefixCls]);
+    if (effectGlobalModal) {
+      setConfigProviderProps({ locale, prefixCls, rtl });
+    }
+  }, [locale, prefixCls, rtl, effectGlobalModal]);
 
   let child = children;
 

@@ -1,3 +1,11 @@
+## 2.61.0
+
+2024-03-15
+
+### 🆕 Feature
+
+- `Slider` supports multi-point selection within a range([#2594](https://github.com/arco-design/arco-design/pull/2594))
+
 ## 2.56.0
 
 2023-11-17

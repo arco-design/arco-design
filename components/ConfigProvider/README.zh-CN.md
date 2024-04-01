@@ -15,6 +15,7 @@
 |参数名|描述|类型|默认值|版本|
 |---|---|---|---|---|
 |autoInsertSpaceInButton|当按钮中是两个汉字时，自动在两个汉字中添加一个空格。|boolean |`-`|2.3.0|
+|effectGlobalModal|是否全局设置所有 `Modal` 的配置。|boolean |`true`|2.61.0|
 |effectGlobalNotice|是否全局设置所有 `Message` 和 `Notification` 的配置。如果用了 `useMessage` 的 hook 局部设置请设置为 false|boolean |`true`|2.40.0|
 |rtl|视图的表现形式是从右开始向左结束。|boolean |`-`|2.36.0|
 |prefixCls|全局组件类名前缀|string |`arco`|-|

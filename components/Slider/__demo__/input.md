@@ -7,7 +7,7 @@ title:
 
 ## zh-CN
 
-当 `showInput` 为 true 时，将显示输入框。当设置 `onlyMarkValue` 为 `true` 时，输入框始终不会显示。
+当 `showInput` 为 true 时，将显示输入框。当设置 `onlyMarkValue` 为 `true` 或者范围内多点选择时，输入框始终不会显示。
 
 当 `showInput` 传入 `InputNumberProps` 时，`min`、`max`、`step` 属性会以 `SliderProps` 为先。
 
@@ -15,7 +15,7 @@ title:
 
 ## en-US
 
-When `showInput` is set to true, the input box will be displayed. But when setting `onlyMarkValue` to `true`, the input box will never be displayed.
+When `showInput` is set to true, the input box will be displayed. But when setting `onlyMarkValue` to `true` or selecting multiple points within the range, the input box will never be displayed.
 
 When `showInput` is passed `InputNumberProps`, the `min`, `max`, `step` properties will be preceded by `SliderProps`.
 

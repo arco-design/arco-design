@@ -1,3 +1,20 @@
+## 2.61.1
+
+2024-03-22
+
+### 🐛 BugFix
+
+- ([#2602](https://github.com/arco-design/arco-design/pull/2602))
+- Fix the problem that the `Table` component may report an error when dynamically changing scrollY([#2599](https://github.com/arco-design/arco-design/pull/2599))
+
+## 2.61.0
+
+2024-03-15
+
+### 🐛 BugFix
+
+- Fix `Table` console warning due to missing ReactKey.([#2592](https://github.com/arco-design/arco-design/pull/2592))
+
 ## 2.60.2
 
 2024-03-01

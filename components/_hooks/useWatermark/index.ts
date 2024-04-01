@@ -56,9 +56,11 @@ const measureTextSize = (
   const angle = (rotate * Math.PI) / 180;
 
   return {
-    originWidth: width,
-    originHeight: height,
+    originWidth: width, // 原始宽度
+    originHeight: height, // 原始高度
+    // rotate 旋转后的实际占位宽度
     width: Math.ceil(Math.abs(Math.sin(angle) * height) + Math.abs(Math.cos(angle) * width)),
+    // rotate 旋转后的实际占位高度
     height: Math.ceil(Math.abs(Math.sin(angle) * width) + Math.abs(height * Math.cos(angle))),
     lineSize,
   };
@@ -86,7 +88,7 @@ const getCanvasData = async (
     canvas.style.width = `${canvasWidth}px`;
     canvas.style.height = `${canvasHeight}px`;
 
-    ctx.translate(canvasWidth, canvasHeight);
+    ctx.translate((canvasWidth * ratio) / 2, (canvasHeight * ratio) / 2);
     ctx.scale(ratio, ratio);
 
     const RotateAngle = (rotate * Math.PI) / 180;

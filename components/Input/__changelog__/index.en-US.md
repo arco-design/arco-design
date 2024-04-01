@@ -1,3 +1,21 @@
+## 2.61.1
+
+2024-03-22
+
+### 🐛 BugFix
+
+- Fixed the bug of icon misalignment when the `Input` component is set to `allowClear` and the width is adaptive.([#2606](https://github.com/arco-design/arco-design/pull/2606))
+- The autowidth `Input` component does not show the omitted state when the text is hovered.([#2606](https://github.com/arco-design/arco-design/pull/2606))
+- Fix the problem that `Input.Search` cannot transparently transmit `suffix` and `addAfter`([#2591](https://github.com/arco-design/arco-design/pull/2591))
+
+## 2.61.0
+
+2024-03-15
+
+### 🆕 Feature
+
+- `Input` supports `onCompositionStart`、  `onCompositionUpdate`、 `onCompositionEnd` property([#2589](https://github.com/arco-design/arco-design/pull/2589))
+
 ## 2.55.1
 
 2023-11-03

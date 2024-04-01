@@ -1,3 +1,11 @@
+## 2.61.0
+
+2024-03-15
+
+### 🆕 Feature
+
+- `Typography.Ellipsis` to support the display of single-line expand buttons([#2596](https://github.com/arco-design/arco-design/pull/2596))
+
 ## 2.60.1
 
 2024-02-28

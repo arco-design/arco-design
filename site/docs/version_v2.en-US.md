@@ -2,6 +2,48 @@
 changelog: true
 ---
 
+## 2.61.2
+
+2024-03-29
+
+### 🐛 BugFix
+
+- Fix the bug of incomplete display of `Watermark` when pixel ratio=1.([#2614](https://github.com/arco-design/arco-design/pull/2614))
+- Fixed the bug where the Carousel indicator behaved abnormally in the component rtl view.([#2605](https://github.com/arco-design/arco-design/pull/2605))
+- Fixed the bug of abnormal display of animation='card' under Carousel component rtl([#2605](https://github.com/arco-design/arco-design/pull/2605))
+- Fix the issue where the content view of `Trigger` is still `ltr` when setting the component `rtl`([#2604](https://github.com/arco-design/arco-design/pull/2604))
+
+## 2.61.1
+
+2024-03-22
+
+### 🐛 BugFix
+
+- Fixed the bug of icon misalignment when the `Input` component is set to `allowClear` and the width is adaptive.([#2606](https://github.com/arco-design/arco-design/pull/2606))
+- The autowidth `Input` component does not show the omitted state when the text is hovered.([#2606](https://github.com/arco-design/arco-design/pull/2606))
+- ([#2602](https://github.com/arco-design/arco-design/pull/2602))
+- Fix the problem that the `Table` component may report an error when dynamically changing scrollY([#2599](https://github.com/arco-design/arco-design/pull/2599))
+- Fix the problem that `Input.Search` cannot transparently transmit `suffix` and `addAfter`([#2591](https://github.com/arco-design/arco-design/pull/2591))
+
+## 2.61.0
+
+2024-03-15
+
+### 🆕 Feature
+
+- `Typography.Ellipsis` to support the display of single-line expand buttons([#2596](https://github.com/arco-design/arco-design/pull/2596))
+- The `onChange` callback of the `InputNumber` component adds a `reason` parameter to notify the component of the reason for the value change.([#2595](https://github.com/arco-design/arco-design/pull/2595))
+- `Slider` supports multi-point selection within a range([#2594](https://github.com/arco-design/arco-design/pull/2594))
+- `Image`  supports `resetTranslate`property([#2593](https://github.com/arco-design/arco-design/pull/2593))
+- `Input` supports `onCompositionStart`、  `onCompositionUpdate`、 `onCompositionEnd` property([#2589](https://github.com/arco-design/arco-design/pull/2589))
+- `ConfigProvider` component adds `effectGlobalModal` attribute([#2562](https://github.com/arco-design/arco-design/pull/2562))
+
+### 🐛 BugFix
+
+- Fix `Table` console warning due to missing ReactKey.([#2592](https://github.com/arco-design/arco-design/pull/2592))
+- Fixed the bug of internal method call error caused by `Form.useFormContext` not being used under `Form` component.([#2590](https://github.com/arco-design/arco-design/pull/2590))
+- Fix the problem that the image is always in the loading state when the `Image` component image link triggers the memory cache.([#2587](https://github.com/arco-design/arco-design/pull/2587))
+
 ## 2.60.3
 
 2024-03-08

@@ -1524,6 +1524,70 @@ exports[`renders Slider/demo/range.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Slider/demo/range-multi.md correctly 1`] = `
+<div
+  style="width:200px"
+>
+  <div
+    class="arco-slider"
+  >
+    <div
+      class="arco-slider-wrapper"
+    >
+      <div
+        class="arco-slider-road"
+      >
+        <div
+          class="arco-slider-bar"
+          style="left:0%;right:50%"
+        />
+        <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="0"
+          aria-valuetext="0"
+          class="arco-slider-button"
+          role="slider"
+          style="left:0%"
+          tabindex="0"
+        />
+        <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="20"
+          aria-valuetext="20"
+          class="arco-slider-button"
+          role="slider"
+          style="left:20%"
+          tabindex="0"
+        />
+        <div
+          aria-disabled="false"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="50"
+          aria-valuetext="50"
+          class="arco-slider-button"
+          role="slider"
+          style="left:50%"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </div>
+  <br />
+  <span
+    class="arco-typography"
+  >
+    <code>
+      value: [0,20,50]
+    </code>
+  </span>
+</div>
+`;
+
 exports[`renders Slider/demo/reversed.md correctly 1`] = `
 Array [
   <div

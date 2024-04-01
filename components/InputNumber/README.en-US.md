@@ -35,10 +35,21 @@ An input box which only allows to enter number.
 |value|To set value|undefined \| number \| string |`-`|-|
 |formatter|Specifies the format of the value presented|(value: number \| string, info: { userTyping: boolean; input: string }) => string |`-`|Param `info` in `2.41.0`|
 |onBlur|Callback when the input is blurred|(e) => void |`-`|-|
-|onChange|Callback when the value changes|(value: number) => void |`-`|-|
+|onChange|Callback when the value changes|(value: number, reason?: [InputNumberValueChangeReason](#inputnumbervaluechangereason)) => void |`-`|`reason` in 2.61.0|
 |onFocus|Callback when the input is focused|(e) => void |`-`|-|
 |onKeyDown|Callback when the keyboard is pressed|(e: Event) => void |`-`|-|
 |parser|Specifies the value extracted from formatter|(value: string) => number \| string |`(input) => input.replace(/[^\w\.-]+/g, '')`|-|
+
+### InputNumberValueChangeReason
+
+```js
+// 造成输入框值改变的原因：用户输入、增加、减少、超出范围值修正
+export type InputNumberValueChangeReason =
+  | "manual"
+  | "increase"
+  | "decrease"
+  | "outOfRange";
+```
 
 ## Methods
 
