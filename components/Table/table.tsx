@@ -955,7 +955,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
                   {body}
                 </ComponentTable>
               )}
-              e{' '}
             </div>
           </div>
         </div>
