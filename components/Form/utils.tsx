@@ -74,7 +74,7 @@ export function isSyntheticEvent(e: any): boolean {
 }
 
 export async function schemaValidate(field, value, _rules: RulesProps[], validateMessages) {
-  const rules: RulesProps[] = [..._rules];
+  const rules: RulesProps[] = [...(_rules || [])];
   let current = 0;
 
   return new Promise(async (resolve) => {

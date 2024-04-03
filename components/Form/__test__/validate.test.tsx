@@ -293,6 +293,9 @@ describe('validate form', () => {
         >
           <Input placeholder="please enter your username" />
         </Form.Item>
+        <Form.Item label="Password" field="password" required>
+          <Input placeholder="please enter your password" />
+        </Form.Item>
       </Form>
     );
 
