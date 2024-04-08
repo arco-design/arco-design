@@ -44,6 +44,7 @@
 |maskClosable|点击 mask 是否触发关闭|boolean |`true`|-|
 |resetTranslate|开启位置修正|boolean |`true`|2.61.0|
 |visible|是否可见，受控属性|boolean |`-`|-|
+|wheelZoomable|是否允许鼠标滚轮缩放|boolean |`true`|-|
 |breakPoint|触发 toolbar 切换为 simple 模式的宽度|number |`316`|-|
 |src|图片获取地址, 在 Image 中默认是 Image 的 src|string  **(必填)**|`-`|-|
 |imgAttributes|图片属性，透传至预览弹窗中的 `img` 标签上|Omit&lt;ImgHTMLAttributes&lt;HTMLImageElement&gt;, 'src'&gt; |`-`|2.39.0|
@@ -71,6 +72,7 @@
 |maskClosable|点击 mask 是否触发关闭|boolean |`true`|-|
 |resetTranslate|开启位置修正|boolean |`true`|2.61.0|
 |visible|是否可见，受控属性|boolean |`-`|-|
+|wheelZoomable|是否允许鼠标滚轮缩放|boolean |`true`|-|
 |breakPoint|触发 toolbar 切换为 simple 模式的宽度|number |`316`|-|
 |current|当前展示的图片的下标 (受控属性)|number |`-`|-|
 |defaultCurrent|第一张展示的图片的下标|number |`-`|-|
