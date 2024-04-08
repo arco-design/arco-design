@@ -256,6 +256,16 @@ describe('Image', () => {
     expect(wrapper.find('.arco-image-preview-img-moving')[0]).toBeUndefined();
   });
 
+  it('turn off mousewheel zoom', () => {
+    const wrapper = render(<Image.Preview src={imgSrc} wheelZoomable={false} visible />);
+    jest.runAllTimers();
+    const ele = wrapper.find('.arco-image-preview-img-container')[0];
+    expect(ele.style.transform).toEqual(`scale(1, 1)`);
+    act(() => {
+      fireEvent.wheel(ele, { deltaY: 10 });
+    });
+    expect(ele.style.transform).toBe(`scale(1, 1)`);
+  });
   it('handle zoom event correctly when set custom scales', () => {
     const customsScale = [-90, 20, 120];
 

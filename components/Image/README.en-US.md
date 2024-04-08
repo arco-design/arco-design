@@ -44,6 +44,7 @@ Show and preview pictures.
 |maskClosable|Whether click mask to close|boolean |`true`|-|
 |resetTranslate|Enable position correction|boolean |`true`|2.61.0|
 |visible|Whether is visible|boolean |`-`|-|
+|wheelZoomable|Whether to allow mouse wheel zoom|boolean |`true`|-|
 |breakPoint|The width that triggers the toolbar to switch to simple mode|number |`316`|-|
 |src|Image path, The default in Image is the src of Image|string  **(Required)**|`-`|-|
 |imgAttributes|Image props, passthrough to the `img` tag in the preview modal|Omit&lt;ImgHTMLAttributes&lt;HTMLImageElement&gt;, 'src'&gt; |`-`|2.39.0|
@@ -71,6 +72,7 @@ Start from `v2.14.0`
 |maskClosable|Whether click mask to close|boolean |`true`|-|
 |resetTranslate|Enable position correction|boolean |`true`|2.61.0|
 |visible|Whether is visible|boolean |`-`|-|
+|wheelZoomable|Whether to allow mouse wheel zoom|boolean |`true`|-|
 |breakPoint|The width that triggers the toolbar to switch to simple mode|number |`316`|-|
 |current|The index of current image (controlled prop)|number |`-`|-|
 |defaultCurrent|The default index of first image|number |`-`|-|
