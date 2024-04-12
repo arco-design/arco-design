@@ -40,7 +40,7 @@ const defaultProps: InputNumberProps = {
 };
 
 function InputNumber(baseProps: InputNumberProps, ref) {
-  const { getPrefixCls, size: ctxSize, componentConfig } = useContext(ConfigContext);
+  const { getPrefixCls, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<InputNumberProps>(
     baseProps,
     defaultProps,
@@ -297,6 +297,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
         `${prefixCls}-mode-${mode}`,
         `${prefixCls}-size-${mergedSize}`,
         {
+          [`${prefixCls}-rtl`]: rtl,
           [`${prefixCls}-readonly`]: readOnly,
           [`${prefixCls}-illegal-value`]: !value.isEmpty && isOutOfRange,
         },
