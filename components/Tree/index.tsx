@@ -197,6 +197,7 @@ class Tree extends Component<TreeProps, TreeState> {
         !isEqualWith(this.props.expandedKeys, prevProps.expandedKeys)
       ) {
         newState.expandedKeys = this.props.expandedKeys;
+
         // 比较前后expandKeys的改变，去重，得到需要收起/展开的动画
         // 例如 [...[1, 2, 3], ...[1, 3, 4]] 。那么 2 会收起，4会展开。
         // 如果父节点正在执行收起/展开逻辑，子节点不需要出现在 currentExpandKeys 数组。
@@ -736,12 +737,16 @@ class Tree extends Component<TreeProps, TreeState> {
   };
 
   handleExpandEnd = (key) => {
-    const { currentExpandKeys } = this.state;
-    if (currentExpandKeys.indexOf(key) > -1) {
-      this.setState({
-        currentExpandKeys: currentExpandKeys.filter((v) => v !== key),
-      });
-    }
+    // 获取最新 state 并更新，因为在 react 18 下批处理，可能多个节点并行执行动画时，导致更新 currentExpandKeys 相互覆盖
+    this.setState((state) => {
+      const { currentExpandKeys } = state;
+      if (currentExpandKeys.indexOf(key) > -1) {
+        return {
+          currentExpandKeys: currentExpandKeys.filter((v) => v !== key),
+        };
+      }
+      return {};
+    });
   };
 
   // 获取tree的state数据，在子组件里使用。
