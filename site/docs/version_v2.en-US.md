@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.61.3
+
+2024-04-12
+
+### 🐛 BugFix
+
+- Fix `Form` rtl view style issue([#2635](https://github.com/arco-design/arco-design/pull/2635))
+- Fix `InputNumber` rtl view style issue([#2635](https://github.com/arco-design/arco-design/pull/2635))
+- Fixed the bug where the collapsed nodes of the `Tree` component in the lower boundary scene of React 18 cannot be expanded.([#2634](https://github.com/arco-design/arco-design/pull/2634))
+- Fix the bug that the global componentConfig of the `Dropdown` component does not take effect([#2632](https://github.com/arco-design/arco-design/pull/2632))
+- Fix the bug that `Form.useFormContext` component `isSubmitting` is incorrect.([#2631](https://github.com/arco-design/arco-design/pull/2631))
+- Fixed an error issue when `Form` component rules is not set and validate method validateOnly is true([#2620](https://github.com/arco-design/arco-design/pull/2620))
+- Fix the bug of text misalignment in `Tooltip` component under rtl([#2618](https://github.com/arco-design/arco-design/pull/2618))
+
 ## 2.61.2
 
 2024-03-29

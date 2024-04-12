@@ -1,3 +1,11 @@
+## 2.61.3
+
+2024-04-12
+
+### 🐛 BugFix
+
+- Fix the bug that the global componentConfig of the `Dropdown` component does not take effect([#2632](https://github.com/arco-design/arco-design/pull/2632))
+
 ## 2.51.0
 
 2023-07-28

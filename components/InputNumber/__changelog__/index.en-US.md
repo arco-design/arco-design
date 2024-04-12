@@ -1,3 +1,11 @@
+## 2.61.3
+
+2024-04-12
+
+### 🐛 BugFix
+
+- Fix `InputNumber` rtl view style issue([#2635](https://github.com/arco-design/arco-design/pull/2635))
+
 ## 2.61.0
 
 2024-03-15

@@ -1,3 +1,13 @@
+## 2.61.3
+
+2024-04-12
+
+### 🐛 BugFix
+
+- Fix `Form` rtl view style issue([#2635](https://github.com/arco-design/arco-design/pull/2635))
+- Fix the bug that `Form.useFormContext` component `isSubmitting` is incorrect.([#2631](https://github.com/arco-design/arco-design/pull/2631))
+- Fixed an error issue when `Form` component rules is not set and validate method validateOnly is true([#2620](https://github.com/arco-design/arco-design/pull/2620))
+
 ## 2.61.0
 
 2024-03-15

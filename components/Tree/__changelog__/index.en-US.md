@@ -1,3 +1,11 @@
+## 2.61.3
+
+2024-04-12
+
+### 🐛 BugFix
+
+- Fixed the bug where the collapsed nodes of the `Tree` component in the lower boundary scene of React 18 cannot be expanded.([#2634](https://github.com/arco-design/arco-design/pull/2634))
+
 ## 2.56.2
 
 2023-12-01

@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.61.3
+
+2024-04-12
+
+### 🐛 问题修复
+
+- 修复 `Form` rtl 视图样式问题([#2635](https://github.com/arco-design/arco-design/pull/2635))
+- 修复 `InputNumber` rtl 视图样式问题([#2635](https://github.com/arco-design/arco-design/pull/2635))
+- 修复 `Tree` 组件在 React 18 下边界场景出现折叠后的节点无法展开的 bug([#2634](https://github.com/arco-design/arco-design/pull/2634))
+- 修复 `Dropdown` 组件的全局 componentConfig 不生效的 bug([#2632](https://github.com/arco-design/arco-design/pull/2632))
+- 修复 `Form.useFormContext` 组件 `isSubmitting` 有误的 bug。([#2631](https://github.com/arco-design/arco-design/pull/2631))
+- 修复 `Form` 组件 rules 未设置且 validate 方法 validateOnly 为 true 时报错问题([#2620](https://github.com/arco-design/arco-design/pull/2620))
+- 修复 `Tooltip`组件在 rtl 下文本未对齐的 bug([#2618](https://github.com/arco-design/arco-design/pull/2618))
+
 ## 2.61.2
 
 2024-03-29

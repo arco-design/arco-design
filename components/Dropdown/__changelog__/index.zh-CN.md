@@ -1,3 +1,11 @@
+## 2.61.3
+
+2024-04-12
+
+### 🐛 问题修复
+
+- 修复 `Dropdown` 组件的全局 componentConfig 不生效的 bug([#2632](https://github.com/arco-design/arco-design/pull/2632))
+
 ## 2.51.0
 
 2023-07-28
