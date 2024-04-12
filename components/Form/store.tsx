@@ -549,14 +549,20 @@ class Store<
         result = onSubmitFailed(errors);
       }
 
-      this.toggleSubmitStatus(errors ? SubmitStatus.error : SubmitStatus.success);
-
       if (result && result.then) {
         // resolve 或者 reject， 都需要更新 submitting 的提交状态
-        result.catch((error) => {
-          // 保持以前的逻辑
-          return Promise.reject(error);
-        });
+        result
+          .then((data) => {
+            this.toggleSubmitStatus(SubmitStatus.success);
+            return data;
+          })
+          .catch((error) => {
+            // 保持以前的逻辑
+            this.toggleSubmitStatus(SubmitStatus.error);
+            return Promise.reject(error);
+          });
+      } else {
+        this.toggleSubmitStatus(errors ? SubmitStatus.error : SubmitStatus.success);
       }
     });
   };
