@@ -170,26 +170,28 @@
   }
 }
 
-.@{form-prefix-cls}-item-has-feedback {
+.form-item-has-feedback(@rtl) {
+  @direction: if(@rtl = ~'rtl', left, right);
+
   .select-view(@prefix) {
     .@{prefix}.@{prefix}-multiple .@{prefix}-view,
     .@{prefix}.@{prefix}-single .@{prefix}-view {
-      padding-right: 28px;
+      padding-@{direction}: 28px;
     }
 
     .@{prefix}.@{prefix}-multiple .@{prefix}-suffix {
-      padding-right: 0;
+      padding-@{direction}: 0;
     }
   }
 
   .@{prefix}-input,
   .@{prefix}-input-inner-wrapper,
   .@{prefix}-textarea {
-    padding-right: 28px;
+    padding-@{direction}: 28px;
   }
 
   .@{prefix}-input-number-mode-embed .@{prefix}-input-number-step-layer {
-    right: 24px;
+    @direction: 24px;
   }
 
   .select-view(~'@{prefix}-select');
@@ -198,7 +200,7 @@
 
   // datepicker timepicker
   .@{prefix}-picker {
-    padding-right: 28px;
+    padding-@{direction}: 28px;
   }
 
   .@{prefix}-picker-suffix {
@@ -211,10 +213,25 @@
 
   // InputTag
   .@{prefix}-input-tag {
-    padding-right: 23px;
+    padding-@{direction}: 23px;
 
     &-suffix {
-      padding-right: 0;
+      padding-@{direction}: 0;
     }
   }
+}
+
+.@{form-prefix-cls}-item-has-feedback {
+  .form-item-has-feedback(ltr);
+}
+
+// rtl
+
+.@{form-prefix-cls}-rtl .@{form-prefix-cls}-item-feedback {
+  right: unset;
+  left: 9px;
+}
+
+.@{form-prefix-cls}-rtl .@{form-prefix-cls}-item-has-feedback {
+  .form-item-has-feedback(rtl);
 }
