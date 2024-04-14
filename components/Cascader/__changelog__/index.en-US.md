@@ -1,3 +1,11 @@
+## 2.57.0
+
+2023-12-08
+
+### 🆕 Feature
+
+- Additional parameters `options` are added to the `showSearch.renderOption` function of the `Cascader` component([#2384](https://github.com/arco-design/arco-design/pull/2384))
+
 ## 2.54.0
 
 2023-10-09

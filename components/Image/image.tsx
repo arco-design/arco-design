@@ -83,8 +83,8 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
 
   const previewSrc = previewProps.src || src;
   const [showFooter] = useShowFooter({ title, description, actions });
-  const { isLoading, isError, isLoaded, isLazyLoad, isBeforeLoad, setStatus } =
-    useImageStatus('beforeLoad');
+  const { isLoading, isError, isLoaded, isBeforeLoad, setStatus } = useImageStatus('beforeLoad');
+  const loaded = useRef(false);
   const [previewVisible, setPreviewVisible] = useMergeValue(false, {
     defaultValue: previewProps.defaultVisible,
     value: previewProps.visible,
@@ -115,11 +115,13 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   const refImg = useRef<HTMLImageElement>();
 
   function onImgLoaded(e) {
+    loaded.current = true;
     setStatus('loaded');
     onLoad && onLoad(e);
   }
 
   function onImgLoadError(e) {
+    loaded.current = true;
     setStatus('error');
     onError && onError(e);
   }
@@ -146,11 +148,17 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   });
 
   useEffect(() => {
+    loaded.current = false;
+  }, [src]);
+
+  useEffect(() => {
     if (refImg.current) {
       if (inView) {
         // avoid set img.src to undefined when its doesn't have [src] attribute
         if ((refImg.current.src || src) && refImg.current.src !== src) {
           refImg.current.src = src;
+        }
+        if (!loaded.current && !refImg.current.complete) {
           setStatus('loading');
         }
       } else {
@@ -221,7 +229,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
       {!isLoaded && (
         <div className={`${prefixCls}-overlay`}>
           {isError && (error || defaultError)}
-          {(isLoading || isLazyLoad) && renderLoader()}
+          {isLoading && renderLoader()}
         </div>
       )}
       {isLoaded && showFooter && (

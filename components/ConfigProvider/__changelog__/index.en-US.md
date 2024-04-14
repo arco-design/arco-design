@@ -1,3 +1,19 @@
+## 2.61.0
+
+2024-03-15
+
+### 🆕 Feature
+
+- `ConfigProvider` component adds `effectGlobalModal` attribute([#2562](https://github.com/arco-design/arco-design/pull/2562))
+
+## 2.59.1
+
+2024-01-26
+
+### 🐛 BugFix
+
+- Fixed a bug where the default value of `ConfigProvider` was mistakenly changed when Notice was called.([#2511](https://github.com/arco-design/arco-design/pull/2511))
+
 ## 2.41.0
 
 2022-10-28

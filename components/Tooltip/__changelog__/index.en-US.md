@@ -1,3 +1,11 @@
+## 2.61.3
+
+2024-04-12
+
+### 🐛 BugFix
+
+- Fix the bug of text misalignment in `Tooltip` component under rtl([#2618](https://github.com/arco-design/arco-design/pull/2618))
+
 ## 2.35.1
 
 2022-06-17

@@ -31,7 +31,7 @@ function App() {
 
   return (
     <Space direction="vertical" size={20}>
-      <ConfigProvider rtl effectGlobalNotice={false}>
+      <ConfigProvider rtl effectGlobalNotice={false} effectGlobalModal={false}>
         <Typography.Title heading={6}> 局部 RTL 视图</Typography.Title>
         <div className="demo-holder-wrapper">
           {messageHolder}

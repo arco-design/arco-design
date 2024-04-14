@@ -2,6 +2,242 @@
 changelog: true
 ---
 
+## 2.61.3
+
+2024-04-12
+
+### 🐛 BugFix
+
+- Fix `Form` rtl view style issue([#2635](https://github.com/arco-design/arco-design/pull/2635))
+- Fix `InputNumber` rtl view style issue([#2635](https://github.com/arco-design/arco-design/pull/2635))
+- Fixed the bug where the collapsed nodes of the `Tree` component in the lower boundary scene of React 18 cannot be expanded.([#2634](https://github.com/arco-design/arco-design/pull/2634))
+- Fix the bug that the global componentConfig of the `Dropdown` component does not take effect([#2632](https://github.com/arco-design/arco-design/pull/2632))
+- Fix the bug that `Form.useFormContext` component `isSubmitting` is incorrect.([#2631](https://github.com/arco-design/arco-design/pull/2631))
+- Fixed an error issue when `Form` component rules is not set and validate method validateOnly is true([#2620](https://github.com/arco-design/arco-design/pull/2620))
+- Fix the bug of text misalignment in `Tooltip` component under rtl([#2618](https://github.com/arco-design/arco-design/pull/2618))
+
+## 2.61.2
+
+2024-03-29
+
+### 🐛 BugFix
+
+- Fix the bug of incomplete display of `Watermark` when pixel ratio=1.([#2614](https://github.com/arco-design/arco-design/pull/2614))
+- Fixed the bug where the Carousel indicator behaved abnormally in the component rtl view.([#2605](https://github.com/arco-design/arco-design/pull/2605))
+- Fixed the bug of abnormal display of animation='card' under Carousel component rtl([#2605](https://github.com/arco-design/arco-design/pull/2605))
+- Fix the issue where the content view of `Trigger` is still `ltr` when setting the component `rtl`([#2604](https://github.com/arco-design/arco-design/pull/2604))
+
+## 2.61.1
+
+2024-03-22
+
+### 🐛 BugFix
+
+- Fixed the bug of icon misalignment when the `Input` component is set to `allowClear` and the width is adaptive.([#2606](https://github.com/arco-design/arco-design/pull/2606))
+- The autowidth `Input` component does not show the omitted state when the text is hovered.([#2606](https://github.com/arco-design/arco-design/pull/2606))
+- ([#2602](https://github.com/arco-design/arco-design/pull/2602))
+- Fix the problem that the `Table` component may report an error when dynamically changing scrollY([#2599](https://github.com/arco-design/arco-design/pull/2599))
+- Fix the problem that `Input.Search` cannot transparently transmit `suffix` and `addAfter`([#2591](https://github.com/arco-design/arco-design/pull/2591))
+
+## 2.61.0
+
+2024-03-15
+
+### 🆕 Feature
+
+- `Typography.Ellipsis` to support the display of single-line expand buttons([#2596](https://github.com/arco-design/arco-design/pull/2596))
+- The `onChange` callback of the `InputNumber` component adds a `reason` parameter to notify the component of the reason for the value change.([#2595](https://github.com/arco-design/arco-design/pull/2595))
+- `Slider` supports multi-point selection within a range([#2594](https://github.com/arco-design/arco-design/pull/2594))
+- `Image`  supports `resetTranslate`property([#2593](https://github.com/arco-design/arco-design/pull/2593))
+- `Input` supports `onCompositionStart`、  `onCompositionUpdate`、 `onCompositionEnd` property([#2589](https://github.com/arco-design/arco-design/pull/2589))
+- `ConfigProvider` component adds `effectGlobalModal` attribute([#2562](https://github.com/arco-design/arco-design/pull/2562))
+
+### 🐛 BugFix
+
+- Fix `Table` console warning due to missing ReactKey.([#2592](https://github.com/arco-design/arco-design/pull/2592))
+- Fixed the bug of internal method call error caused by `Form.useFormContext` not being used under `Form` component.([#2590](https://github.com/arco-design/arco-design/pull/2590))
+- Fix the problem that the image is always in the loading state when the `Image` component image link triggers the memory cache.([#2587](https://github.com/arco-design/arco-design/pull/2587))
+
+## 2.60.3
+
+2024-03-08
+
+### 🐛 BugFix
+
+- Fixed the bug of internal method call error caused by `Form.useFormContext` not being used under `Form` component.([#2574](https://github.com/arco-design/arco-design/pull/2574))
+
+## 2.60.2
+
+2024-03-01
+
+### 💎 Enhancement
+
+- Optimize the problem that the underline position is not adjusted when the default type of `Tabs` component activeTab does not exist.([#2571](https://github.com/arco-design/arco-design/pull/2571))
+- `Table` component supports expanding rows and tree data when virtual scrolling is turned on.([#2553](https://github.com/arco-design/arco-design/pull/2553))
+
+### 🐛 BugFix
+
+- Fix the problem of `loading` status display of `Image` component([#2550](https://github.com/arco-design/arco-design/pull/2550))
+
+### 💅 Style
+
+- The font size of the selection box under the `large` size of the `Select` component is adjusted from `16px` to `14px`.([#2570](https://github.com/arco-design/arco-design/pull/2570))
+
+## 2.60.1
+
+2024-02-28
+
+### 🐛 BugFix
+
+- Fix the problem of single line omission failure in `Ellipsis` component([#2564](https://github.com/arco-design/arco-design/pull/2564))
+
+## 2.60.0
+
+2024-02-23
+
+### 🆕 Feature
+
+- The `DatePicker` component adds the `inputProps` parameter.([#2551](https://github.com/arco-design/arco-design/pull/2551))
+- `ColorPicker` component adds support for custom trigger elements([#2548](https://github.com/arco-design/arco-design/pull/2548))
+- Add `Typography.Ellipsis` Component([#2525](https://github.com/arco-design/arco-design/pull/2525))
+- `DatePicker` supports `inputProps` property([#2519](https://github.com/arco-design/arco-design/pull/2519))
+- `DatePicker.RangePicker` adds `inputProps`.([#2516](https://github.com/arco-design/arco-design/pull/2516))
+
+### 🐛 BugFix
+
+- Add support for disabledAlpha([#2538](https://github.com/arco-design/arco-design/pull/2538))
+- Fix the issue where the `scrollbar-color` property in the `Table` component causes incorrect width calculations.([#2533](https://github.com/arco-design/arco-design/pull/2533))
+- Fix the bug that triggers `onChange` when `ColorPicker` is initialized([#2521](https://github.com/arco-design/arco-design/pull/2521))
+- Fix the bug of missing on-demand style introduction in `ColorPicker`([#2520](https://github.com/arco-design/arco-design/pull/2520))
+
+### 🆎 TypeScript
+
+- `Table` component column attribute TS definition adjustment([#2531](https://github.com/arco-design/arco-design/pull/2531))
+
+## 2.59.1
+
+2024-01-26
+
+### 🐛 BugFix
+
+- Fixed a bug where the default value of `ConfigProvider` was mistakenly changed when Notice was called.([#2511](https://github.com/arco-design/arco-design/pull/2511))
+
+## 2.59.0
+
+2024-01-19
+
+### 💎 Enhancement
+
+- The `Popover` component does not display the popup box when the content is empty.([#2504](https://github.com/arco-design/arco-design/pull/2504))
+
+### 🆕 Feature
+
+- `InputTag` adds a `maxTagCount` property to support customizing the maximum number of displayed tags.([#2503](https://github.com/arco-design/arco-design/pull/2503))
+- `Trigger` supports setting the viewport offset when automatically adjusting the position according to the viewport.([#2502](https://github.com/arco-design/arco-design/pull/2502))
+- 新增数据色色彩序列([#2494](https://github.com/arco-design/arco-design/pull/2494))
+- VirtualList add new `wrapperChild` and `onScroll` properties.([#2483](https://github.com/arco-design/arco-design/pull/2483))
+- The `card` mode of the `Carousel` component adds vertical arrangement support([#2462](https://github.com/arco-design/arco-design/pull/2462))
+
+### 🐛 BugFix
+
+- Fixed the bug of incomplete display of `Watermark` content in boundary scenes.([#2507](https://github.com/arco-design/arco-design/pull/2507))
+- Fixed a bug that caused all form items to be reset when the `resetFields` method of the `Form` component passed in non-string/array type parameters.([#2505](https://github.com/arco-design/arco-design/pull/2505))
+- Fix `Typography` component `resize` throttling issue([#2488](https://github.com/arco-design/arco-design/pull/2488))
+
+## 2.58.3
+
+2024-01-11
+
+### 💎 Enhancement
+
+- Optimize that when the `Image` component is in `lazyload`, elements outside the viewport do not display placeholder loading to avoid page reflow.([#2492](https://github.com/arco-design/arco-design/pull/2492))
+
+### 🐛 BugFix
+
+- Fixed the bug causing white screen due to loop rendering in `Image` component boundary scene.([#2489](https://github.com/arco-design/arco-design/pull/2489))
+
+## 2.58.2
+
+2024-01-08
+
+### 🐛 BugFix
+
+- Fix the `effect` infinite loop that may occur in edge cases in `Select` after turning on `allowCreate`.([#2484](https://github.com/arco-design/arco-design/pull/2484))
+
+## 2.58.1
+
+2024-01-05
+
+### 🐛 BugFix
+
+- Fixed the issue where the `Space` component wrapping Fragment could not be parsed correctly.([#2480](https://github.com/arco-design/arco-design/pull/2480))
+- Adjust the `InputNumber` component to only prevent specific keyboard events from bubbling up([#2479](https://github.com/arco-design/arco-design/pull/2479))
+- Fixed the bug of extra delimiters appearing when conditional rendering exists in `Breadcrumb.Item`.([#2477](https://github.com/arco-design/arco-design/pull/2477))
+- Fixes `Table` component `loading` configuration not being effective.([#2474](https://github.com/arco-design/arco-design/pull/2474))
+- Fixed page error caused by updating the value to `undefined` when `allowCreate` is enabled `Select` single-mode.([#2473](https://github.com/arco-design/arco-design/pull/2473))
+
+## 2.58.0
+
+2023-12-29
+
+### 💎 Enhancement
+
+- Optimize the issue of vertical jitter when clearing all tags in `InputTag`.([#2455](https://github.com/arco-design/arco-design/pull/2455))
+
+### 🆕 Feature
+
+- The `Image.Preview` component adds the `imageRender` attribute to allow custom image rendering, and the `imgAttributes` attribute customizes src content.([#2458](https://github.com/arco-design/arco-design/pull/2458))
+- The `Image.PreviewGroup` component adds the `renderImages` attribute for loading images in advance([#2458](https://github.com/arco-design/arco-design/pull/2458))
+- Add  `ColorPicker` component([#2383](https://github.com/arco-design/arco-design/pull/2383))
+
+### 🐛 BugFix
+
+- Fix the problem that `Message` is called with the same id and is not updated during([#2459](https://github.com/arco-design/arco-design/pull/2459))
+- Fix the problem that `Notification` is called with the same id and is not updated during([#2456](https://github.com/arco-design/arco-design/pull/2456))
+
+## 2.57.2
+
+2023-12-22
+
+### 🐛 BugFix
+
+- Fixed the issue where the `creating` parameter of the `allowCreate.formatter` property of the `Select` is always `true` in single-select mode.([#2447](https://github.com/arco-design/arco-design/pull/2447))
+
+## 2.57.1
+
+2023-12-15
+
+### 💎 Enhancement
+
+- Optimize `Typography` component node length calculation logic([#2435](https://github.com/arco-design/arco-design/pull/2435))
+
+### 🐛 BugFix
+
+- Fix the bug of text deformation after `Watermark` is rotated.([#2437](https://github.com/arco-design/arco-design/pull/2437))
+
+### 🆎 TypeScript
+
+- Adjust the `content` attribute ts definition of the Watermark component([#2430](https://github.com/arco-design/arco-design/pull/2430))
+
+## 2.57.0
+
+2023-12-08
+
+### 💎 Enhancement
+
+- Optimize the time-consuming problem of `Trigger` part of the logic([#2427](https://github.com/arco-design/arco-design/pull/2427))
+
+### 🆕 Feature
+
+- Support `pt-br` locale([#2429](https://github.com/arco-design/arco-design/pull/2429))
+- The `Typography` component supports `tooltip` configuration for copy and edit buttons.([#2428](https://github.com/arco-design/arco-design/pull/2428))
+- `Menu` component adds a `onEllipsisChange` callback to notify the horizontal menu ellipsis status changed.([#2426](https://github.com/arco-design/arco-design/pull/2426))
+- Additional parameters `options` are added to the `showSearch.renderOption` function of the `Cascader` component([#2384](https://github.com/arco-design/arco-design/pull/2384))
+
+### 🐛 BugFix
+
+- Fixed the issue  that `Upload` would add the folder to the list as a file when `directory = false`([#2425](https://github.com/arco-design/arco-design/pull/2425))
+
 ## 2.56.2
 
 2023-12-01

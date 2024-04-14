@@ -4,7 +4,7 @@ import { ConfigContext } from '../ConfigProvider';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
 import { WatermarkProps } from './interface';
-import useWatermark from './hooks/useWatermark';
+import useWatermark from '../_hooks/useWatermark';
 
 const defaultProps = {};
 

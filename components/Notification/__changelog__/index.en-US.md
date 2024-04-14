@@ -1,3 +1,11 @@
+## 2.58.0
+
+2023-12-29
+
+### 🐛 BugFix
+
+- Fix the problem that `Notification` is called with the same id and is not updated during([#2456](https://github.com/arco-design/arco-design/pull/2456))
+
 ## 2.56.2
 
 2023-12-01

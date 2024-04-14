@@ -1,3 +1,27 @@
+## 2.61.3
+
+2024-04-12
+
+### 🐛 问题修复
+
+- 修复 `InputNumber` rtl 视图样式问题([#2635](https://github.com/arco-design/arco-design/pull/2635))
+
+## 2.61.0
+
+2024-03-15
+
+### 🆕 功能升级
+
+- `InputNumber` 组件 `onChange` 回调新增 `reason` 参数用于通知组件值改变的原因。([#2595](https://github.com/arco-design/arco-design/pull/2595))
+
+## 2.58.1
+
+2024-01-05
+
+### 🐛 问题修复
+
+- 调整 `InputNumber` 组件仅阻止特定键盘事件的冒泡。([#2479](https://github.com/arco-design/arco-design/pull/2479))
+
 ## 2.54.0
 
 2023-10-09

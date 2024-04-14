@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders _hooks/useWatermark/demo/basic.md correctly 1`] = `
+<div
+  style="position:relative"
+>
+  <div
+    style="height:200px;background:var(--color-primary-light-1)"
+  />
+</div>
+`;

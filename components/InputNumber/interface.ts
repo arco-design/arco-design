@@ -1,5 +1,8 @@
 import { CSSProperties, InputHTMLAttributes, ReactNode } from 'react';
 
+// 造成输入框值改变的原因：用户输入、增加、减少、超出范围值修正
+export type InputNumberValueChangeReason = 'manual' | 'increase' | 'decrease' | 'outOfRange';
+
 /**
  * @title InputNumber
  */
@@ -106,8 +109,9 @@ export interface InputNumberProps
   /**
    * @zh 变化回调
    * @en Callback when the value changes
+   * @version `reason` in 2.61.0
    */
-  onChange?: (value: number) => void;
+  onChange?: (value: number, reason?: InputNumberValueChangeReason) => void;
   /**
    * @zh 输入框聚焦事件的回调
    * @en Callback when the input is focused

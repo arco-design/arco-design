@@ -117,4 +117,20 @@ describe('Space', () => {
       'arco-space arco-space-vertical arco-space-align-start'
     );
   });
+
+  it('fragment', () => {
+    const component = render(
+      <Space>
+        <>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+        </>
+      </Space>
+    );
+
+    expect(getItemStyle(component, 0)).toEqual('margin-right: 8px;');
+    expect(getItemStyle(component, 1)).toEqual('margin-right: 8px;');
+    expect(getItemStyle(component, 2)).toEqual('');
+  });
 });

@@ -66,6 +66,8 @@ import { TriggerProps } from '../Trigger/interface';
 import { UploadProps } from '../Upload/interface';
 import { VerificationCodeProps } from '../VerificationCode/interface';
 import { WatermarkProps } from '../Watermark/interface';
+import { ColorPickerProps } from '../ColorPicker';
+import { TypographyEllipsisProps } from '../Typography';
 
 export type ThemeConfig = Record<string, any>;
 
@@ -88,6 +90,7 @@ export type ComponentConfig = {
   Checkbox?: CheckboxProps;
   Collapse?: CollapseProps;
   Comment?: CommentProps;
+  ColorPicker?: ColorPickerProps;
   DatePicker?: Omit<
     DatePickerCommonProps,
     | 'placeholder'
@@ -97,6 +100,7 @@ export type ComponentConfig = {
     | 'defaultPickerValue'
     | 'pickerValue'
     | 'onPickerValueChange'
+    | 'inputProps'
   >;
   Descriptions?: DescriptionsProps;
   Divider?: DividerProps;
@@ -104,6 +108,7 @@ export type ComponentConfig = {
   Dropdown?: DropdownProps;
   'Dropdown.Button'?: DropdownButtonProps;
   Empty?: EmptyProps;
+  'Typography.Ellipsis'?: TypographyEllipsisProps;
   Form?: FormProps;
   'Grid.Row'?: RowProps;
   'Grid.Col'?: ColProps;
@@ -241,6 +246,13 @@ export interface ConfigProviderProps {
    * @version 2.40.0
    */
   effectGlobalNotice?: boolean;
+  /**
+   * @zh 是否全局设置所有 `Modal` 的配置。
+   * @en Whether to set all `Modal` configuration globally.
+   * @defaultValue true
+   * @version 2.61.0
+   */
+  effectGlobalModal?: boolean;
   zIndex?: number;
   children?: ReactNode;
 }

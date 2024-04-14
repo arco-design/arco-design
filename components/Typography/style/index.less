@@ -2,6 +2,7 @@
 @import '../../Input/style/token.less';
 
 @typography-prefix-cls: ~'@{prefix}-typography';
+@ellipsis-cls: ~'@{prefix}-ellipsis';
 
 // Title
 .@{typography-prefix-cls} {
@@ -263,5 +264,73 @@
       margin-left: -(@textarea-padding-horizontal + @input-border-width);
       margin-right: 0;
     }
+  }
+}
+
+.@{ellipsis-cls} {
+  display: flex;
+  position: relative;
+
+  &-content {
+    &.@{ellipsis-cls}-multiple::before {
+      content: ' ';
+      float: right;
+      height: 100%;
+      margin-bottom: -21px;
+    }
+
+    .@{ellipsis-cls}-action {
+      display: inline-block;
+
+      &-collapsed {
+        float: right;
+        clear: both;
+      }
+    }
+
+    .@{ellipsis-cls}-action-text {
+      color: @ellipsis-action-text-color;
+      margin: 0 4px;
+      cursor: pointer;
+
+      &:hover {
+        color: @ellipsis-action-text-color_hover;
+      }
+
+      //&:focus-visible {
+      //  box-shadow: 0 0 0 2px @typography-color-box-shadow;
+      //  border-radius: @radius-small;
+      //}
+    }
+  }
+
+  &-single {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &-multiple {
+    display: block;
+    word-break: break-all;
+  }
+
+  /* stylelint-disable */
+
+  &-collapsed {
+    display: -webkit-box;
+    display: -moz-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+  }
+
+  /* stylelint-enable */
+
+  &-content-mirror {
+    position: absolute;
+    width: 100%;
+    visibility: hidden;
   }
 }

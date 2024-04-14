@@ -37,6 +37,7 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |defaultPickerValue|Default displayed date of panel|[CalendarValue](#calendarvalue) |`-`|-|
 |disabled|Whether to disable|boolean \| boolean[] |`-`|-|
 |icons|Icon configuration of panel.|{prev?: ReactNode;prevDouble?: ReactNode;next?: ReactNode;nextDouble?: ReactNode;inputSuffix?: ReactNode;} |`-`|2.20.0|
+|inputProps|Native input attributes|React.InputHTMLAttributes&lt;HTMLInputElement&gt; |`-`|2.60.0|
 |locale|Internationalization configuration.|Record&lt;string, any&gt; |`-`|-|
 |pickerValue|Displayed date of panel.|[CalendarValue](#calendarvalue) |`-`|2.9.0|
 |placeholder|The placeholder of date input|string \| string[] |`-`|-|
@@ -114,6 +115,7 @@ Choose a date. Support year, month, week, day type, support range selection, etc
 |defaultValue|To set default date|[CalendarValue](#calendarvalue)[] |`-`|-|
 |disabled|Whether to disable input box|boolean \| boolean[] |`-`|-|
 |format|Date format, refer to [dayjs](https://github.com/iamkun/dayjs)|string \| string[] |`YYYY-MM-DD`|string[] in 2.55.0|
+|inputProps|Native input attributes|React.InputHTMLAttributes&lt;HTMLInputElement&gt;[] |`-`|2.60.0|
 |pickerValue|Displayed date of panel.|[CalendarValue](#calendarvalue)[] |`-`|2.9.0|
 |placeholder|The placeholder of input|string[] |`-`|-|
 |showTime|Whether to show time selection, if an object is passed in, the parameters will be passed to the built-in TimePicker.|boolean \| [TimePickerRangeProps](#timepickerrangeprops) |`-`|-|

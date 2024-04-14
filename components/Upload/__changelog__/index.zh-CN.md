@@ -1,3 +1,11 @@
+## 2.57.0
+
+2023-12-08
+
+### 🐛 问题修复
+
+- 修复 `Upload` 组件在 directory = false 场景下，手动拖拽文件夹到上传区域时会将文件夹作为文件加入列表的问题([#2425](https://github.com/arco-design/arco-design/pull/2425))
+
 ## 2.56.0
 
 2023-11-17

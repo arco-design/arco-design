@@ -30,6 +30,7 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     onChange,
     visible: propVisible,
     defaultVisible,
+    forceRender,
     onVisibleChange,
     ...restProps
   } = props;
@@ -47,9 +48,15 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
   const isFirstRender = useIsFirstRender();
   const getPreviewUrlMap = () => (propPreviewUrlMap ? new Map(propPreviewUrlMap) : new Map());
   const [previewUrlMap, setPreviewUrlMap] = useState<PreviewUrlMap>(getPreviewUrlMap());
-  const [previewPropsMap, setPreviewPropsMap] = useState<Map<number, Partial<ImagePreviewProps>>>(
-    new Map()
-  );
+
+  const previewPropsMapRef = useRef<Map<number, Partial<ImagePreviewProps>>>();
+  const previewPropsMap = previewPropsMapRef.current || new Map();
+
+  const setPreviewPropsMap = (
+    cb: (prev: Map<number, Partial<ImagePreviewProps>>) => Map<number, Partial<ImagePreviewProps>>
+  ) => {
+    previewPropsMapRef.current = cb(previewPropsMapRef.current);
+  };
 
   useEffect(() => {
     if (isFirstRender) return;
@@ -148,6 +155,20 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
     return loop(children);
   };
 
+  const renderList = () => {
+    const array = Array.from(canPreviewUrlMap.values());
+    if (array.length > 0) {
+      return (
+        <div style={{ display: 'none' }}>
+          {array.map((src) => (
+            <img key={src} src={src} />
+          ))}
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <PreviewGroupContext.Provider
       value={{
@@ -172,6 +193,7 @@ function PreviewGroup(props: PropsWithChildren<ImagePreviewGroupProps>, ref) {
         onVisibleChange={handleVisibleChange}
         {...restProps}
       />
+      {forceRender && renderList()}
     </PreviewGroupContext.Provider>
   );
 }

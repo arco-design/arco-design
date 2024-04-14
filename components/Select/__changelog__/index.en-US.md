@@ -1,3 +1,35 @@
+## 2.60.2
+
+2024-03-01
+
+### 💅 Style
+
+- The font size of the selection box under the `large` size of the `Select` component is adjusted from `16px` to `14px`.([#2570](https://github.com/arco-design/arco-design/pull/2570))
+
+## 2.58.2
+
+2024-01-08
+
+### 🐛 BugFix
+
+- Fix the `effect` infinite loop that may occur in edge cases in `Select` after turning on `allowCreate`.([#2484](https://github.com/arco-design/arco-design/pull/2484))
+
+## 2.58.1
+
+2024-01-05
+
+### 🐛 BugFix
+
+- Fixed page error caused by updating the value to `undefined` when `allowCreate` is enabled `Select` single-mode.([#2473](https://github.com/arco-design/arco-design/pull/2473))
+
+## 2.57.2
+
+2023-12-22
+
+### 🐛 BugFix
+
+- Fixed the issue where the `creating` parameter of the `allowCreate.formatter` property of the `Select` is always `true` in single-select mode.([#2447](https://github.com/arco-design/arco-design/pull/2447))
+
 ## 2.54.0
 
 2023-10-09

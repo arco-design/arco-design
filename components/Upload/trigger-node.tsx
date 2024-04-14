@@ -60,8 +60,25 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
               props.onDragFiles && props.onDragFiles(files);
             });
           } else {
-            const files = getFiles(e.dataTransfer.files, accept);
-            props.onDragFiles && props.onDragFiles(multiple ? files : files.slice(0, 1));
+            const directoryIndices = [].slice
+              .call(e.dataTransfer.items || [])
+              .reduce((result, item, index) => {
+                if (item.webkitGetAsEntry) {
+                  const entry = item.webkitGetAsEntry();
+                  if (entry.isDirectory) {
+                    return [...result, index];
+                  }
+                  return result;
+                }
+              }, []);
+            // Filter out directories
+            const droppedFiles = [].slice.call(e.dataTransfer.files || []).filter((_, index) => {
+              return !directoryIndices.includes(index);
+            });
+            const files = getFiles(droppedFiles, accept);
+            if (files.length > 0) {
+              props.onDragFiles && props.onDragFiles(multiple ? files : files.slice(0, 1));
+            }
           }
           props.onDrop && props.onDrop(e);
         }

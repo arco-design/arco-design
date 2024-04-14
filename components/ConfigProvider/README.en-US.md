@@ -15,6 +15,7 @@ Configure in the outermost layer of the application to set global params.
 |Property|Description|Type|DefaultValue|Version|
 |---|---|---|---|---|
 |autoInsertSpaceInButton|When there are two Chinese characters in the button, a space is automatically added between two Chinese characters.|boolean |`-`|2.3.0|
+|effectGlobalModal|Whether to set all `Modal` configuration globally.|boolean |`true`|2.61.0|
 |effectGlobalNotice|Whether to update the configuration of all `Message` and `Notification` with one click. Set to false if using the hook locale of `useMessage`|boolean |`true`|2.40.0|
 |rtl|View starts from the right and ends on the left.|boolean |`-`|2.36.0|
 |prefixCls|Global ClassName prefix|string |`arco`|-|
@@ -50,6 +51,7 @@ export type ComponentConfig = {
   Checkbox?: CheckboxProps;
   Collapse?: CollapseProps;
   Comment?: CommentProps;
+  ColorPicker?: ColorPickerProps;
   DatePicker?: Omit<
     DatePickerCommonProps,
     | "placeholder"
@@ -59,6 +61,7 @@ export type ComponentConfig = {
     | "defaultPickerValue"
     | "pickerValue"
     | "onPickerValueChange"
+    | "inputProps"
   >;
   Descriptions?: DescriptionsProps;
   Divider?: DividerProps;
@@ -66,6 +69,7 @@ export type ComponentConfig = {
   Dropdown?: DropdownProps;
   "Dropdown.Button"?: DropdownButtonProps;
   Empty?: EmptyProps;
+  "Typography.Ellipsis"?: TypographyEllipsisProps;
   Form?: FormProps;
   "Grid.Row"?: RowProps;
   "Grid.Col"?: ColProps;
@@ -143,6 +147,7 @@ export interface Locale {
   Transfer: Record<string, any>;
   ImagePreview: Record<string, any>;
   Form?: Record<string, any>;
+  ColorPicker: Record<string, any>;
 }
 ```
 

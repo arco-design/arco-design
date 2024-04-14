@@ -28,12 +28,12 @@ Used to display titles, paragraphs, and text content.
 |underline|Underline style|boolean |`-`|-|
 |type|Text type|'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
-|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
+|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)。Deprecated, `Typography.Ellipsis` is recommended instead|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |heading|Heading level, equivalent to `h1` `h2` `h3` `h4` `h5` `h6`|1 \| 2 \| 3 \| 4 \| 5 \| 6 |`1`|-|
 |mark|Mark style|boolean \| { color: string } |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
-|copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];} |`-`|`onCopy` params `e` in `2.31.0`|
-|editable|If editable. Can control edit state when is object|\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
+|copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
+|editable|If editable. Can control edit state when is object|\| boolean\| {editing?: boolean;tooltipProps?: [TooltipProps](tooltip#tooltip);onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
 
 ### Typography.Paragraph
 
@@ -48,11 +48,11 @@ Used to display titles, paragraphs, and text content.
 |spacing|The line height of the paragraph. The default line height is recommended for long text (more than 5 lines),and the close line height of `close` is recommended for short text (less than or equal to 3 lines).|'default' \| 'close' |`default`|-|
 |type|Text type|'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
-|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
+|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)。Deprecated, `Typography.Ellipsis` is recommended instead|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |mark|Mark style|boolean \| { color: string } |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
-|copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];} |`-`|`onCopy` params `e` in `2.31.0`|
-|editable|If editable. Can control edit state when is object|\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
+|copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
+|editable|If editable. Can control edit state when is object|\| boolean\| {editing?: boolean;tooltipProps?: [TooltipProps](tooltip#tooltip);onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
 
 ### Typography.Text
 
@@ -65,11 +65,11 @@ Used to display titles, paragraphs, and text content.
 |underline|Underline style|boolean |`-`|-|
 |type|Text type|'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' |`-`|-|
 |className|Additional css class|string \| string[] |`-`|-|
-|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
+|ellipsis|Auto overflow omitted, see [EllipsisConfig](#ellipsisconfig)。Deprecated, `Typography.Ellipsis` is recommended instead|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |mark|Mark style|boolean \| { color: string } |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
-|copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];} |`-`|`onCopy` params `e` in `2.31.0`|
-|editable|If editable. Can control edit state when is object|\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
+|copyable|Whether to be copyable|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
+|editable|If editable. Can control edit state when is object|\| boolean\| {editing?: boolean;tooltipProps?: [TooltipProps](tooltip#tooltip);onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
 
 ### EllipsisConfig
 
@@ -86,6 +86,22 @@ Used to display titles, paragraphs, and text content.
 |expandNodes|Configure expand elements|ReactNode[] |`-`|-|
 |onEllipsis|Callback when the ellipsis state changes, usually triggered by window resize。|(isEllipsis: boolean) => void |`-`|-|
 |onExpand|Callback when the expand state changes, usually triggered by clicking the button|(isExpand: boolean, e) => void |`-`|e in `2.27.0`|
+
+### Typography.Ellipsis
+
+|Property|Description|Type|DefaultValue|
+|---|---|---|---|
+|defaultExpanded|Expand by default|boolean |`-`|
+|disabled|Whether to disable the text ellipsis|boolean |`-`|
+|expanded|Whether to expand|boolean |`-`|
+|rows|The number of omitted rows|number |`1`|
+|className|Additional css class|string \| string[] |`-`|
+|expandable|Whether to show control button. `2.61.0` version supports `single` attribute|boolean \| { single?: boolean } |`true`|
+|showTooltip|Whether to display pop-up prompts|boolean \| [TooltipProps](tooltip#tooltip) |`-`|
+|style|Additional style|CSSProperties |`-`|
+|expandRender|Custom rendering control buttons|(expanded: boolean) => ReactNode |`-`|
+|onEllipsis|Triggered when the omission status changes, and also when omitted for the first time.|(isEllipsis: boolean) => void |`-`|
+|onExpand|Triggered when clicked to expand or collapse|(isExpand: boolean, ev: Event) => void |`-`|
 
 ## About exceeding omission
 

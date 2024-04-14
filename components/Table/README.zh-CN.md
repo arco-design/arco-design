@@ -24,7 +24,7 @@
 |indentSize|树形数据每个层级向左偏移的像素|number |`15`|-|
 |childrenColumnName|树形数据在 `data` 中的字段名，默认是 `children`|string |`children`|-|
 |onChange|分页、排序、筛选时的回调|(pagination: [PaginationProps](pagination#pagination),sorter: [SorterInfo](#sorterinfo) \| [SorterInfo](#sorterinfo)[],filters: Partial&lt;Record&lt;keyof T, string[]&gt;&gt;,extra: { currentData: T[]; currentAllData: T[]; action: 'paginate' \| 'sort' \| 'filter' }) =&gt; void |`-`|extra in `2.19.0`, currentAllData in 2.53.0|
-|pagePosition|设置分页器的位置，有四个方位 `右下` `左下` `右上` `左上` `上中` `下中`|'br' \| 'bl' \| 'tr' \| 'tl' \| 'topCenter' \| 'bottomCenter' |`br`|-|
+|pagePosition|设置分页器的位置，有六个方位 `右下` `左下` `右上` `左上` `上中` `下中`|'br' \| 'bl' \| 'tr' \| 'tl' \| 'topCenter' \| 'bottomCenter' |`br`|-|
 |size|表格尺寸，分为 默认，`默认` `中` `小` `迷你` 四个尺寸|'default' \| 'middle' \| 'small' \| 'mini' |`-`|-|
 |noDataElement|没有数据的时候显示的元素|string \| ReactNode |`-`|-|
 |placeholder|当单元格内容为空时，显示占位符，优先级低于 `column.placeholder`。|ReactNode |`-`|2.23.0|
@@ -202,7 +202,13 @@ export type RowCallbackProps = {
 ```js
 export type AvailableVirtualListProps = Pick<
   VirtualListProps<any>,
-  "height" | "itemHeight" | "threshold" | "isStaticItemHeight" | "scrollOptions"
+  | "height"
+  | "itemHeight"
+  | "threshold"
+  | "isStaticItemHeight"
+  | "scrollOptions"
+  | "onScroll"
+  | "wrapperChild"
 >;
 ```
 

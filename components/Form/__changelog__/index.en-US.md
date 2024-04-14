@@ -1,3 +1,37 @@
+## 2.61.3
+
+2024-04-12
+
+### 🐛 BugFix
+
+- Fix `Form` rtl view style issue([#2635](https://github.com/arco-design/arco-design/pull/2635))
+- Fix the bug that `Form.useFormContext` component `isSubmitting` is incorrect.([#2631](https://github.com/arco-design/arco-design/pull/2631))
+- Fixed an error issue when `Form` component rules is not set and validate method validateOnly is true([#2620](https://github.com/arco-design/arco-design/pull/2620))
+
+## 2.61.0
+
+2024-03-15
+
+### 🐛 BugFix
+
+- Fixed the bug of internal method call error caused by `Form.useFormContext` not being used under `Form` component.([#2590](https://github.com/arco-design/arco-design/pull/2590))
+
+## 2.60.3
+
+2024-03-08
+
+### 🐛 BugFix
+
+- Fixed the bug of internal method call error caused by `Form.useFormContext` not being used under `Form` component.([#2574](https://github.com/arco-design/arco-design/pull/2574))
+
+## 2.59.0
+
+2024-01-19
+
+### 🐛 BugFix
+
+- Fixed a bug that caused all form items to be reset when the `resetFields` method of the `Form` component passed in non-string/array type parameters.([#2505](https://github.com/arco-design/arco-design/pull/2505))
+
 ## 2.56.2
 
 2023-12-01

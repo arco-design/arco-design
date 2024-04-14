@@ -1,3 +1,11 @@
+## 2.58.1
+
+2024-01-05
+
+### 🐛 BugFix
+
+- Fixed the issue where the `Space` component wrapping Fragment could not be parsed correctly.([#2480](https://github.com/arco-design/arco-design/pull/2480))
+
 ## 2.40.0
 
 2022-09-16

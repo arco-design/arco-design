@@ -155,4 +155,33 @@ describe('Form.useFormContext', () => {
 
     expect(formInstance).toBe(form);
   });
+
+  it('form useFormContext submiting', async () => {
+    const setSubmitting = jest.fn();
+
+    function Child() {
+      const { isSubmitting } = Form.useFormContext();
+
+      setSubmitting(isSubmitting);
+
+      return <span />;
+    }
+
+    render(
+      <Form onSubmit={() => {}}>
+        <Child />
+        <button type="submit">submit</button>
+      </Form>
+    );
+
+    fireEvent.click(document.querySelector('button[type=submit]') as HTMLElement);
+
+    await sleep(10);
+
+    expect(setSubmitting).toBeCalledTimes(3);
+
+    expect(setSubmitting).toHaveBeenNthCalledWith(1, false);
+    expect(setSubmitting).toHaveBeenNthCalledWith(2, true);
+    expect(setSubmitting).toHaveBeenNthCalledWith(3, false);
+  });
 });

@@ -78,10 +78,12 @@ export default function useLegalValue(props: {
       if (isRange) {
         if (isArray(val)) {
           beginVal = getLegalValue(val[0]);
-          endVal = getLegalValue(val[1]);
-        } else {
-          console.error('value must be an array when range is true');
+          // endVal = getLegalValue(val[1]);
+          return val.map((v) => {
+            return getLegalValue(v);
+          });
         }
+        console.error('value must be an array when range is true');
       } else if (isNumber(val)) {
         endVal = getLegalValue(val);
       } else {

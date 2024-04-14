@@ -17,7 +17,7 @@ Open a floating layer on the current page to carry related operations.
 |alignCenter|Modal is centered vertically and horizontally|boolean |`true`|-|
 |autoFocus|Whether to focus the first focusable element|boolean |`true`|-|
 |closable|Whether to show the close button in TitleBar|boolean |`-`|-|
-|confirmLoading|Whether The `ok` button is loading|boolean |`-`|-|
+|confirmLoading|Whether the `ok` button is loading|boolean |`-`|-|
 |escToExit|Whether enable press `ESC` to close Modal|boolean |`true`|-|
 |focusLock|Whether to lock the focus in the Modal|boolean |`true`|-|
 |mask|Whether show mask|boolean |`true`|-|

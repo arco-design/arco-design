@@ -1,3 +1,19 @@
+## 2.61.0
+
+2024-03-15
+
+### 🆕 功能升级
+
+- `ConfigProvider` 组件增加 `effectGlobalModal` 属性([#2562](https://github.com/arco-design/arco-design/pull/2562))
+
+## 2.59.1
+
+2024-01-26
+
+### 🐛 问题修复
+
+- 修复 `ConfigProvider` 的默认值在 Notice  被调用时被误改的 bug。([#2511](https://github.com/arco-design/arco-design/pull/2511))
+
 ## 2.41.0
 
 2022-10-28

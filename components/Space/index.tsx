@@ -4,6 +4,7 @@ import { ConfigContext } from '../ConfigProvider';
 import { isArray, isNumber } from '../_util/is';
 import { SpaceSize, SpaceProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import toArray from './toArray';
 
 const defaultProps: SpaceProps = {
   size: 'small',
@@ -48,7 +49,7 @@ function Space(baseProps: SpaceProps, ref) {
     }
   }
 
-  const childrenList = React.Children.toArray(children);
+  const childrenList = toArray(children);
 
   function getMarginStyle(index) {
     // const isLastOne =

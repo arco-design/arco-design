@@ -35,4 +35,5 @@ export interface Locale {
   Transfer: Record<string, any>;
   ImagePreview: Record<string, any>;
   Form?: Record<string, any>;
+  ColorPicker: Record<string, any>;
 }

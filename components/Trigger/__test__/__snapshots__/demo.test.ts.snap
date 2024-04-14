@@ -213,6 +213,25 @@ exports[`renders Trigger/demo/basic.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Trigger/demo/boundaryDistance.md correctly 1`] = `
+<div>
+  <article
+    class="arco-typography"
+  >
+    滚动当前 demo 到视口顶部距离大于 200px 的位置，点击 button ，弹出层将会在 button 上方出现。隐藏弹出层后再向上滚动页面，直到 button 距离视口小于 200px 的位置，再次点击 button。 弹出层将会出现在 button 下方。
+  </article>
+  <button
+    class="arco-btn arco-btn-primary arco-btn-size-default arco-btn-shape-square"
+    style="margin-top:80px"
+    type="button"
+  >
+    <span>
+      Button (boundaryDistance: \`top: 200\`)
+    </span>
+  </button>
+</div>
+`;
+
 exports[`renders Trigger/demo/control.md correctly 1`] = `
 <div
   class="arco-space arco-space-horizontal arco-space-align-center"

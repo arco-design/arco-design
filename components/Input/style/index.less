@@ -79,6 +79,11 @@
   &-autowidth {
     overflow: hidden;
     text-overflow: ellipsis;
+    flex: 1;
+
+    &:hover {
+      text-overflow: unset;
+    }
   }
 
   // 禁用样式
@@ -223,6 +228,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     flex: 1;
+
+    &:hover {
+      text-overflow: unset;
+    }
   }
 }
 

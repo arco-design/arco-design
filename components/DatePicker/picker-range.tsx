@@ -119,6 +119,7 @@ const Picker = (baseProps: RangePickerProps) => {
     separator,
     utcOffset,
     timezone,
+    inputProps,
   } = props;
 
   const prefixCls = getPrefixCls('picker-range');
@@ -413,7 +414,6 @@ const Picker = (baseProps: RangePickerProps) => {
   }
 
   function changeFocusedInputIndex(index: number, silent?: boolean) {
-    setInputValue(undefined);
     setFocusedInputIndex(index);
     if (panelValue && panelValue.length && !silent) {
       const newPageShowDates = getShowDatesFromFocused(panelValue, index);
@@ -453,6 +453,12 @@ const Picker = (baseProps: RangePickerProps) => {
       newValueShow[focusedInputIndex] = getDayjsValue(niv, format) as Dayjs;
       setValueShow(newValueShow);
       setFixedPageShowDates(newValueShow);
+      setInputValue(undefined);
+    }
+  }
+
+  function onBlurInput() {
+    if (inputValue) {
       setInputValue(undefined);
     }
   }
@@ -880,6 +886,7 @@ const Picker = (baseProps: RangePickerProps) => {
             <DateInputRange
               {...pickDataAttributes(props)}
               {...baseInputProps}
+              inputProps={inputProps}
               ref={refInput}
               placeholder={placeholders}
               value={valueShow || mergedValue}
@@ -889,6 +896,7 @@ const Picker = (baseProps: RangePickerProps) => {
               focusedInputIndex={focusedInputIndex}
               isPlaceholder={!!hoverPlaceholderValue}
               separator={separator}
+              onBlur={onBlurInput}
             />
           )}
         </Trigger>

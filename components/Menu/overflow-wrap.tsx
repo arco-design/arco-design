@@ -3,6 +3,7 @@ import SubMenu from './sub-menu';
 import { getStyle } from '../_util/style';
 import MenuContext from './context';
 import ResizeObserver from '../_util/resizeObserver';
+import type { MenuProps } from './interface';
 
 const OVERFLOW_THRESHOLD = 5;
 
@@ -20,10 +21,11 @@ function translatePxToNumber(str): number {
 interface OverflowWrapProps {
   ellipsisText?: ReactNode;
   children: ReactNode;
+  onEllipsisChange?: MenuProps['onEllipsisChange'];
 }
 
 const OverflowWrap = (props: OverflowWrapProps) => {
-  const { children, ellipsisText = '···' } = props;
+  const { children, ellipsisText = '···', onEllipsisChange } = props;
   const { prefixCls } = useContext(MenuContext);
 
   const refUl = useRef(null);
@@ -32,6 +34,18 @@ const OverflowWrap = (props: OverflowWrapProps) => {
   const overflowSubMenuClass = `${prefixCls}-overflow-sub-menu`;
   const overflowMenuItemClass = `${prefixCls}-overflow-hidden-menu-item`;
   const overflowSubMenuMirrorClass = `${prefixCls}-overflow-sub-menu-mirror`;
+
+  const tryUpdateEllipsisStatus = (_lastVisibleIndex: number) => {
+    if (_lastVisibleIndex !== lastVisibleIndex) {
+      const childNodes = React.Children.toArray(children);
+      const noOverflow = _lastVisibleIndex === null;
+      onEllipsisChange?.({
+        lastVisibleIndex: noOverflow ? childNodes.length - 1 : _lastVisibleIndex,
+        overflowNodes: noOverflow ? [] : childNodes.slice(_lastVisibleIndex + 1),
+      });
+      setLastVisibleIndex(_lastVisibleIndex);
+    }
+  };
 
   function computeLastVisibleIndex() {
     if (!refUl.current) {
@@ -72,7 +86,7 @@ const OverflowWrap = (props: OverflowWrapProps) => {
 
       // 将要溢出的菜单项
       if (currentItemRight > maxWidth) {
-        setLastVisibleIndex(
+        tryUpdateEllipsisStatus(
           // 判断如果将最后一个菜单项换为 ... 是否会超出宽度
           menuItemIndex - (currentItemRight - nodeWidth + overflowSubMenuWidth <= maxWidth ? 1 : 2)
         );
@@ -84,7 +98,7 @@ const OverflowWrap = (props: OverflowWrapProps) => {
     }
 
     // 全部可见
-    setLastVisibleIndex(null);
+    tryUpdateEllipsisStatus(null);
   }
 
   const renderOverflowSubMenu = (children, isMirror = false) => {

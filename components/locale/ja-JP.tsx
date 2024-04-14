@@ -212,4 +212,9 @@ export default {
       },
     },
   },
+  ColorPicker: {
+    history: '最近使用した色',
+    preset: 'システムのデフォルトの色',
+    empty: '空の',
+  },
 };

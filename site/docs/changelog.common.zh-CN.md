@@ -1,3 +1,20 @@
+## 2.59.0
+
+2024-01-19
+
+### 🆕 功能升级
+
+- 新增数据色色彩序列([#2494](https://github.com/arco-design/arco-design/pull/2494))
+- 虚拟列表新增 `wrapperChild` 和 `onScroll` 属性。([#2483](https://github.com/arco-design/arco-design/pull/2483))
+
+## 2.57.0
+
+2023-12-08
+
+### 🆕 功能升级
+
+- 支持 `pt-br` 语言。([#2429](https://github.com/arco-design/arco-design/pull/2429))
+
 ## 2.53.0
 
 2023-09-08

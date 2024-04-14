@@ -28,12 +28,12 @@
 |underline|下划线样式|boolean |`-`|-|
 |type|文本类型|'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
-|ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
+|ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)。不推荐使用，建议 `Typography.Ellipsis` 替代|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |heading|标题级别，相当于 `h1` `h2` `h3` `h4` `h5` `h6`|1 \| 2 \| 3 \| 4 \| 5 \| 6 |`1`|-|
 |mark|标记样式|boolean \| { color: string } |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
-|copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];} |`-`|`onCopy` params `e` in `2.31.0`|
-|editable|开启可编辑功能|\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
+|copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
+|editable|开启可编辑功能|\| boolean\| {editing?: boolean;tooltipProps?: [TooltipProps](tooltip#tooltip);onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
 
 ### Typography.Paragraph
 
@@ -48,11 +48,11 @@
 |spacing|段落的的行高，长文本(大于5行)的时候推荐使用默认行高，短文本(小于等于3行)推荐使用 `close` 紧密的行高。|'default' \| 'close' |`default`|-|
 |type|文本类型|'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
-|ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
+|ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)。不推荐使用，建议 `Typography.Ellipsis` 替代|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |mark|标记样式|boolean \| { color: string } |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
-|copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];} |`-`|`onCopy` params `e` in `2.31.0`|
-|editable|开启可编辑功能|\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
+|copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
+|editable|开启可编辑功能|\| boolean\| {editing?: boolean;tooltipProps?: [TooltipProps](tooltip#tooltip);onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
 
 ### Typography.Text
 
@@ -65,11 +65,11 @@
 |underline|下划线样式|boolean |`-`|-|
 |type|文本类型|'primary' \| 'secondary' \| 'success' \| 'error' \| 'warning' |`-`|-|
 |className|节点类名|string \| string[] |`-`|-|
-|ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
+|ellipsis|自动溢出省略（只支持字符串），具体参数配置看 [EllipsisConfig](#ellipsisconfig)。不推荐使用，建议 `Typography.Ellipsis` 替代|boolean \| [EllipsisConfig](typography#ellipsisconfig) |`-`|-|
 |mark|标记样式|boolean \| { color: string } |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
-|copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];} |`-`|`onCopy` params `e` in `2.31.0`|
-|editable|开启可编辑功能|\| boolean\| {editing?: boolean;onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
+|copyable|开启复制功能|\| boolean\| {text?: string;onCopy?: (text: string, e) => void;icon?: ReactNode;tooltips?: [ReactNode, ReactNode];tooltipProps?: [TooltipProps](tooltip#tooltip);} |`-`|`onCopy` params `e` in `2.31.0`|
+|editable|开启可编辑功能|\| boolean\| {editing?: boolean;tooltipProps?: [TooltipProps](tooltip#tooltip);onStart?: (text, e) => void;onChange?: (text) => void;onEnd?: (text) => void;} |`-`|`onStart` params `e` in `2.31.0`|
 
 ### EllipsisConfig
 
@@ -86,6 +86,22 @@
 |expandNodes|配置 折叠 / 展开 的元素|ReactNode[] |`-`|-|
 |onEllipsis|在省略发生改变的时候触发，通常是窗口resize情况会触发。|(isEllipsis: boolean) => void |`-`|-|
 |onExpand|在折叠/展开状态发生改变的时候触发，通常是点击折叠/展开按钮触发。|(isExpand: boolean, e) => void |`-`|e in `2.27.0`|
+
+### Typography.Ellipsis
+
+|参数名|描述|类型|默认值|
+|---|---|---|---|
+|defaultExpanded|默认展开|boolean |`-`|
+|disabled|是否禁用省略功能|boolean |`-`|
+|expanded|是否展开|boolean |`-`|
+|rows|显示省略的行数|number |`1`|
+|className|节点类名|string \| string[] |`-`|
+|expandable|是否显示操控按钮。`2.61.0` 版本支持 `single` 属性|boolean \| { single?: boolean } |`true`|
+|showTooltip|是否显示弹出提示|boolean \| [TooltipProps](tooltip#tooltip) |`-`|
+|style|节点样式|CSSProperties |`-`|
+|expandRender|自定义渲染操控按钮|(expanded: boolean) => ReactNode |`-`|
+|onEllipsis|当省略状态发生改变时触发，首次省略时也会触发|(isEllipsis: boolean) => void |`-`|
+|onExpand|点击展开、折叠时触发|(isExpand: boolean, ev: Event) => void |`-`|
 
 ## 关于超出省略
 

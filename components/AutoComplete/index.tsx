@@ -130,7 +130,12 @@ function AutoComplete(baseProps: AutoCompleteProps, ref) {
     ...inputProps,
     ...pickDataAttributes(props),
     // Empty tag to ensure the consistency of the dom structure of input, such that input won't accidentally lose focus due to structure change on input.
-    suffix: loading ? <IconLoading /> : inputProps?.suffix || <i />,
+    suffix: loading ? (
+      <IconLoading />
+    ) : (usedTriggerElement?.type as unknown as { displayName: string })?.displayName ===
+      'Search' ? undefined : (
+      inputProps?.suffix || <i />
+    ),
     onFocus: (event) => {
       setIsFocused(true);
       onFocus?.(event);

@@ -330,6 +330,11 @@
     }
   }
 
+  // make sure expanded-icon is horizontal-center while using div as td
+  div&-expand-icon-cell {
+    justify-content: center;
+  }
+
   &-cell-expand-icon {
     // https://github.com/arco-design/arco-design/issues/298
     float: left;
@@ -560,7 +565,7 @@
   }
 
   &-header {
-    scrollbar-color: transparent transparent;
+    scrollbar-color: inherit;
     background-color: @table-color-bg-header-cell;
 
     &::-webkit-scrollbar {
@@ -742,7 +747,7 @@
     width: 100%;
     overflow-x: scroll;
     background-color: @table-color-bg-tfoot;
-    scrollbar-color: transparent transparent;
+    scrollbar-color: inherit;
     position: relative;
     z-index: 1;
     box-shadow: 0 -@table-border-width 0 @table-color-border;

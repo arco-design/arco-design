@@ -1,3 +1,11 @@
+## 2.57.0
+
+2023-12-08
+
+### 🆕 功能升级
+
+- `Cascader` 组件 `showSearch.renderOption`  函数中增加额外参数  `options`([#2384](https://github.com/arco-design/arco-design/pull/2384))
+
 ## 2.54.0
 
 2023-10-09

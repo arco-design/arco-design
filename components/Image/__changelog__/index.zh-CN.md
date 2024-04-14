@@ -1,3 +1,44 @@
+## 2.61.0
+
+2024-03-15
+
+### 🆕 功能升级
+
+- `Image` 新增 `resetTranslate` 属性([#2593](https://github.com/arco-design/arco-design/pull/2593))
+
+### 🐛 问题修复
+
+- 修复 `Image` 组件图片链接触发内存缓存时图片一直处于loading状态的问题([#2587](https://github.com/arco-design/arco-design/pull/2587))
+
+## 2.60.2
+
+2024-03-01
+
+### 🐛 问题修复
+
+- 修复 `Image` 组件 `loading` 状态展示的问题([#2550](https://github.com/arco-design/arco-design/pull/2550))
+
+## 2.58.3
+
+2024-01-11
+
+### 💎 功能优化
+
+- 优化 `Image` 组件在 `lazyload` 时视口外的元素不显示占位 loading，避免页面重排([#2492](https://github.com/arco-design/arco-design/pull/2492))
+
+### 🐛 问题修复
+
+- 修复 `Image` 组件边界场景下循环渲染导致白屏的 bug。([#2489](https://github.com/arco-design/arco-design/pull/2489))
+
+## 2.58.0
+
+2023-12-29
+
+### 🆕 功能升级
+
+- `Image.Preview` 组件增加 `imageRender` 属性允许自定义图片渲染，`imgAttributes` 属性自定义 src 内容([#2458](https://github.com/arco-design/arco-design/pull/2458))
+- `Image.PreviewGroup` 组件增加 `forceRender` 属性，用于提前加载图片([#2458](https://github.com/arco-design/arco-design/pull/2458))
+
 ## 2.55.0
 
 2023-10-27

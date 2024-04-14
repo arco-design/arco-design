@@ -25,7 +25,7 @@ const trigerPopupAlign = {
 
 function Dropdown(baseProps: DropdownProps, _) {
   const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
-  const props = useMergeProps<DropdownProps>(baseProps, defaultProps, componentConfig?.Button);
+  const props = useMergeProps<DropdownProps>(baseProps, defaultProps, componentConfig?.Dropdown);
   const {
     trigger,
     droplist,

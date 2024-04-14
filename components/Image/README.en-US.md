@@ -42,6 +42,7 @@ Show and preview pictures.
 |defaultVisible|Whether visible by default|boolean |`-`|-|
 |escToExit|Whether to enable pressing `ESC` to close the preview.|boolean |`true`|2.24.0|
 |maskClosable|Whether click mask to close|boolean |`true`|-|
+|resetTranslate|Enable position correction|boolean |`true`|2.61.0|
 |visible|Whether is visible|boolean |`-`|-|
 |breakPoint|The width that triggers the toolbar to switch to simple mode|number |`316`|-|
 |src|Image path, The default in Image is the src of Image|string  **(Required)**|`-`|-|
@@ -53,6 +54,7 @@ Show and preview pictures.
 |scales|The zoom percentage in the current array is used when previewing zooms. If `100%` is not included, the `100%` scale will be automatically added in the most adjacent position.|number[] |`[25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500];`|2.30.0|
 |style|Additional style|CSSProperties |`-`|-|
 |getPopupContainer|Get popup's parent node|() => HTMLElement |`() => document.body`|2.16.0|
+|imageRender|Rendering of custom IMG elements|(originalNode: ReactElement) => ReactNode |`-`|2.58.0|
 |onVisibleChange|Callback when visibility changes|(visible: boolean, preVisible: boolean) => void |`-`|-|
 
 ### Image.PreviewGroup
@@ -64,8 +66,10 @@ Start from `v2.14.0`
 |closable|Whether display close button|boolean |`true`|2.16.0|
 |defaultVisible|Whether visible by default|boolean |`-`|-|
 |escToExit|Whether to enable pressing `ESC` to close the preview.|boolean |`true`|2.24.0|
+|forceRender|Whether to render the image list for loading images in advance|boolean |`-`|2.58.0|
 |infinite|Whether to loop infinitely|boolean |`-`|-|
 |maskClosable|Whether click mask to close|boolean |`true`|-|
+|resetTranslate|Enable position correction|boolean |`true`|2.61.0|
 |visible|Whether is visible|boolean |`-`|-|
 |breakPoint|The width that triggers the toolbar to switch to simple mode|number |`316`|-|
 |current|The index of current image (controlled prop)|number |`-`|-|
@@ -79,6 +83,7 @@ Start from `v2.14.0`
 |srcList|Image path list（After setting this property, the information of the `Image` sub-component will no longer be collected)|string[] |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |getPopupContainer|Get popup's parent node|() => HTMLElement |`() => document.body`|2.16.0|
+|imageRender|Rendering of custom IMG elements|(originalNode: ReactElement) => ReactNode |`-`|2.58.0|
 |onChange|Callback when image switches|(index: number) => void |`-`|-|
 |onVisibleChange|Callback when visibility changes|(visible: boolean, preVisible: boolean) => void |`-`|-|
 

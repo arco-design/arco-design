@@ -787,3 +787,80 @@ exports[`renders Carousel/demo/vertical.md correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`renders Carousel/demo/vertical-card.md correctly 1`] = `
+<div
+  autoplay=""
+  class="arco-carousel arco-carousel-indicator-position-outer-right"
+  style="height:300px;width:600px"
+>
+  <div
+    class="arco-carousel-card arco-carousel-vertical"
+  >
+    <div
+      aria-hidden="false"
+      class="arco-carousel-item-current"
+      style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms;height:200px"
+    >
+      <img
+        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/cd7a1aaea8e1c5e3d26fe2591e561798.png~tplv-uwbnlip3yd-webp.webp"
+        style="height:100%"
+      />
+    </div>
+    <div
+      aria-hidden="true"
+      class="arco-carousel-item-next"
+      style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms;height:200px"
+    >
+      <img
+        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/6480dbc69be1b5de95010289787d64f1.png~tplv-uwbnlip3yd-webp.webp"
+        style="height:100%"
+      />
+    </div>
+    <div
+      aria-hidden="true"
+      class=""
+      style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms;height:200px"
+    >
+      <img
+        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/0265a04fddbd77a19602a15d9d55d797.png~tplv-uwbnlip3yd-webp.webp"
+        style="height:100%"
+      />
+    </div>
+    <div
+      aria-hidden="true"
+      class="arco-carousel-item-prev"
+      style="transition-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);transition-duration:500ms;animation-timing-function:cubic-bezier(0.34, 0.69, 0.1, 1);animation-duration:500ms;height:200px"
+    >
+      <img
+        src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/24e0dd27418d2291b65db1b21aa62254.png~tplv-uwbnlip3yd-webp.webp"
+        style="height:100%"
+      />
+    </div>
+  </div>
+  <div
+    class="arco-carousel-indicator-wrapper arco-carousel-indicator-wrapper-outer-right"
+  >
+    <div
+      class="arco-carousel-indicator arco-carousel-indicator-line arco-carousel-indicator-outer-right"
+    >
+      <span
+        class="arco-carousel-indicator-item arco-carousel-indicator-item-active"
+        data-index="0"
+      />
+      <span
+        class="arco-carousel-indicator-item"
+        data-index="1"
+      />
+      <span
+        class="arco-carousel-indicator-item"
+        data-index="2"
+      />
+      <span
+        class="arco-carousel-indicator-item"
+        data-index="3"
+      />
+    </div>
+  </div>
+</div>
+`;

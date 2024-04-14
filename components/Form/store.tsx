@@ -4,7 +4,7 @@ import setWith from 'lodash/setWith';
 import has from 'lodash/has';
 import omit from 'lodash/omit';
 import { cloneDeep, set, iterativelyGetKeys } from './utils';
-import { isArray, isFunction, isObject, isString } from '../_util/is';
+import { isArray, isFunction, isObject, isExist } from '../_util/is';
 import Control from './control';
 import {
   FieldError,
@@ -426,7 +426,7 @@ class Store<
 
   public resetFields = (fieldKeys?: FieldKey | FieldKey[]) => {
     const prev = cloneDeep(this.store);
-    const fields = isString(fieldKeys) ? [fieldKeys as FieldKey] : fieldKeys;
+    const fields = isExist(fieldKeys) && !isArray(fieldKeys) ? [fieldKeys as FieldKey] : fieldKeys;
     if (fields && isArray(fields)) {
       const changeValues = {} as any;
       fields.forEach((field) => {
@@ -549,14 +549,20 @@ class Store<
         result = onSubmitFailed(errors);
       }
 
-      this.toggleSubmitStatus(errors ? SubmitStatus.error : SubmitStatus.success);
-
       if (result && result.then) {
         // resolve 或者 reject， 都需要更新 submitting 的提交状态
-        result.catch((error) => {
-          // 保持以前的逻辑
-          return Promise.reject(error);
-        });
+        result
+          .then((data) => {
+            this.toggleSubmitStatus(SubmitStatus.success);
+            return data;
+          })
+          .catch((error) => {
+            // 保持以前的逻辑
+            this.toggleSubmitStatus(SubmitStatus.error);
+            return Promise.reject(error);
+          });
+      } else {
+        this.toggleSubmitStatus(errors ? SubmitStatus.error : SubmitStatus.success);
       }
     });
   };
@@ -593,7 +599,7 @@ class Store<
 
   public clearFields = (fieldKeys?: FieldKey | FieldKey[]) => {
     const prev = cloneDeep(this.store);
-    const fields = isString(fieldKeys) ? [fieldKeys as FieldKey] : fieldKeys;
+    const fields = isExist(fieldKeys) && !isArray(fieldKeys) ? [fieldKeys as FieldKey] : fieldKeys;
     if (fields && isArray(fields)) {
       const changeValues = {} as any;
       fields.forEach((field) => {

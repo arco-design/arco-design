@@ -1,3 +1,13 @@
+## 2.60.0
+
+2024-02-23
+
+### 🆕 功能升级
+
+- `DatePicker` 组件增加 `inputProps` 参数。([#2551](https://github.com/arco-design/arco-design/pull/2551))
+- `DatePicker` 支持 `inputProps` 属性([#2519](https://github.com/arco-design/arco-design/pull/2519))
+- `DatePicker.RangePicker` 新增 `inputProps`.([#2516](https://github.com/arco-design/arco-design/pull/2516))
+
 ## 2.55.0
 
 2023-10-27

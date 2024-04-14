@@ -1,5 +1,6 @@
 const playwright = require('playwright');
 const Arco = require('../lib');
+const ArcoHooks = require('../hooks/lib');
 
 // const components = Object.keys(Arco).filter((key) => typeof Arco[key] === 'object');
 
@@ -47,10 +48,19 @@ const mockInterfaces = async (page) => {
     args: ['--font-render-hinting=none'],
     // headless: false,
   });
-  const componentNames = Object.keys(Arco).filter((key) => typeof Arco[key] === 'object');
+  const list = Object.keys(Arco)
+    .filter((key) => typeof Arco[key] === 'object')
+    .map((name) => ({
+      name: name
+        .replace(/([A-Z])/g, '-$1')
+        .toLowerCase()
+        .replace('-', ''),
+      pagePath: '/components',
+    }))
+    .concat(Object.keys(ArcoHooks).map((name) => ({ name, pagePath: '/hooks' })));
 
   let total = 0;
-  const componentCount = componentNames.length;
+  const totalItems = list.length;
   const page = await browser.newPage({
     viewport: {
       width: 1440,
@@ -61,14 +71,10 @@ const mockInterfaces = async (page) => {
   await mockRoute(page);
   await mockInterfaces(page);
 
-  const genComponentScreenshots = async (componentName) => {
+  const genComponentScreenshots = async ({ name, pagePath }) => {
     // eslint-disable-next-line
-    const name = componentName
-      .replace(/([A-Z])/g, '-$1')
-      .toLowerCase()
-      .replace('-', '');
 
-    await page.goto(`${baseURL}/components/${name}`);
+    await page.goto(`${baseURL}${pagePath}/${name}`);
     await page.evaluate(() => {
       // 隐藏下悬浮按钮，避免截图干扰
       document.querySelector('.arco-page + div').style.display = 'none';
@@ -85,19 +91,15 @@ const mockInterfaces = async (page) => {
         const id = await demo.getAttribute('id');
         await demo.locator('.demo').screenshot({
           animations: 'disabled',
-          path: `${__dirname}/__screenshots__/${componentName}/${id}.png`,
+          path: `${__dirname}/__screenshots__/${name}/${id}.png`,
           type: 'png',
         });
       })
     );
     // eslint-disable-next-line
-    console.log(
-      `[${
-        componentCount - componentNames.length
-      }/${componentCount}]: ${componentName} (${totalElements})`
-    );
-    if (componentNames.length) {
-      genComponentScreenshots(componentNames.pop());
+    console.log(`[${totalItems - list.length}/${totalItems}]: ${name} (${totalElements})`);
+    if (list.length) {
+      genComponentScreenshots(list.pop());
     } else {
       // eslint-disable-next-line
       console.log('end________', total);
@@ -106,7 +108,7 @@ const mockInterfaces = async (page) => {
     }
   };
 
-  genComponentScreenshots(componentNames.pop());
+  genComponentScreenshots(list.pop());
 
   // await browser.close();
 

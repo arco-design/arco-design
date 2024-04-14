@@ -1,31 +1,9 @@
 import merge from 'lodash/merge';
-import { CSSProperties, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { isServerRendering } from '../../_util/dom';
-import getPixelRatio from '../utils';
+import { getPixelRatio } from './utils';
 import { isNumber } from '../../_util/is';
-
-export interface WatermarkOptions {
-  zIndex?: CSSProperties['zIndex'];
-  width?: number;
-  height?: number;
-  rotate?: number;
-  image?: string;
-  content?: string | string[];
-  fontStyle?: {
-    color?: string;
-    fontFamily?: string;
-    fontSize?: number | string;
-    fontWeight?: number | string;
-  };
-  gap?: [number, number];
-  offset?: [number, number];
-  getContainer?: () => HTMLElement;
-}
-
-type WatermarkReturnType = {
-  destroy: () => void;
-  setWatermark: (options: WatermarkOptions) => void;
-};
+import { WatermarkOptions, WatermarkReturnType } from './interface';
 
 const toNumber = (value: string | number, defaultValue: number) => {
   if (isNumber(value)) {
@@ -78,9 +56,11 @@ const measureTextSize = (
   const angle = (rotate * Math.PI) / 180;
 
   return {
-    originWidth: width,
-    originHeight: height,
+    originWidth: width, // 原始宽度
+    originHeight: height, // 原始高度
+    // rotate 旋转后的实际占位宽度
     width: Math.ceil(Math.abs(Math.sin(angle) * height) + Math.abs(Math.cos(angle) * width)),
+    // rotate 旋转后的实际占位高度
     height: Math.ceil(Math.abs(Math.sin(angle) * width) + Math.abs(height * Math.cos(angle))),
     lineSize,
   };
@@ -88,10 +68,10 @@ const measureTextSize = (
 
 // 画布绘制转为base64url
 const getCanvasData = async (
-  options: Pick<
-    WatermarkOptions,
-    'offset' | 'rotate' | 'image' | 'content' | 'fontStyle' | 'width' | 'height'
-  >
+  options: Pick<WatermarkOptions, 'offset' | 'rotate' | 'image' | 'content' | 'fontStyle'> & {
+    width: number;
+    height: number;
+  }
 ): Promise<{ width: number; height: number; base64Url: string }> => {
   const { offset, rotate, image, content, fontStyle } = options;
   const canvas = document.createElement('canvas');
@@ -108,7 +88,7 @@ const getCanvasData = async (
     canvas.style.width = `${canvasWidth}px`;
     canvas.style.height = `${canvasHeight}px`;
 
-    ctx.translate(canvasWidth, canvasHeight);
+    ctx.translate((canvasWidth * ratio) / 2, (canvasHeight * ratio) / 2);
     ctx.scale(ratio, ratio);
 
     const RotateAngle = (rotate * Math.PI) / 180;
@@ -140,7 +120,12 @@ const getCanvasData = async (
       const xStartPoint = -lineWidth / 2;
       const yStartPoint = -(options.height || measureSize.originHeight) / 2 + lineHeight * index;
 
-      ctx.fillText(content as string, xStartPoint, yStartPoint, width);
+      ctx.fillText(
+        content as string,
+        xStartPoint,
+        yStartPoint,
+        options.width || measureSize.originWidth
+      );
     });
     return { base64Url: canvas.toDataURL(), height, width };
   };
@@ -270,6 +255,7 @@ export default function useWatermark(params: WatermarkOptions): WatermarkReturnT
   right:0;
   pointer-events: none;
   z-index:${zIndex};
+  background-position: 0 0;
   background-size:${gap[0] + width}px ${gap[1] + height}px;
   background-repeat: repeat;
   background-image:url(${base64Url})`;

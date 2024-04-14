@@ -10,7 +10,8 @@ import React, {
 } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { ConfigContext } from '../ConfigProvider';
-import Tag from '../Tag';
+import Tag, { TagProps } from '../Tag';
+import Popover from '../Popover';
 import useMergeValue from '../_util/hooks/useMergeValue';
 import cs from '../_util/classNames';
 import InputComponent from '../Input/input-element';
@@ -120,6 +121,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     validate,
     renderTag,
     tagClassName,
+    maxTagCount,
     onInputChange,
     onKeyDown,
     onPaste,
@@ -214,7 +216,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     }
   };
 
-  const mergedRenderTag = (item: ObjectValueType, index: number) => {
+  const mergedRenderTag = (item: ObjectValueType, index: number, inTooltip = false) => {
     const { value: itemValue, label } = item;
     const closable = !readOnly && !disabled && item.closable !== false;
     const onClose = (event) => {
@@ -234,23 +236,47 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       );
     }
 
-    return (
-      <Tag
-        visible
-        className={cs(`${prefixCls}-tag`, {
-          [tagClassName]: tagClassName,
-        })}
-        closable={closable}
-        closeIcon={icon && icon.removeIcon}
-        __closeIconProps={{
-          onMouseDown: keepFocus,
-        }}
-        title={typeof label === 'string' ? label : undefined}
-        onClose={onClose}
-      >
-        {fillNBSP(label)}
-      </Tag>
-    );
+    const tagProps: Partial<TagProps> = {
+      closable,
+      onClose,
+      visible: true,
+      children: fillNBSP(label),
+      closeIcon: icon?.removeIcon,
+      __closeIconProps: {
+        onMouseDown: keepFocus,
+      },
+      className: cs(`${prefixCls}-tag`, {
+        [tagClassName]: tagClassName,
+      }),
+      title: typeof label === 'string' ? label : undefined,
+    };
+
+    const maxTagCountInNumber = typeof maxTagCount === 'object' ? maxTagCount.count : maxTagCount;
+    if (!inTooltip && typeof maxTagCountInNumber === 'number' && index >= maxTagCountInNumber) {
+      if (index === value.length - 1) {
+        const invisibleTagCount = value.length - maxTagCountInNumber;
+        const renderEllipsisLabel =
+          typeof maxTagCount === 'object'
+            ? maxTagCount.render
+            : () => <span className={`${prefixCls}-tag-ellipsis`}>+{invisibleTagCount}</span>;
+        return (
+          <Popover
+            children={renderEllipsisLabel(invisibleTagCount, value)}
+            content={
+              <>
+                {value
+                  .map((v, index) => ({ tagValue: v, tagIndex: index }))
+                  .slice(-invisibleTagCount)
+                  .map(({ tagValue, tagIndex }) => mergedRenderTag(tagValue, tagIndex, true))}
+              </>
+            }
+          />
+        );
+      }
+      return null;
+    }
+
+    return <Tag {...tagProps} />;
   };
 
   const handleTokenSeparators = async (str: string) => {
@@ -349,7 +375,6 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
           autoFitWidth={{
             delay: () => refDelay.current,
             pure: true,
-            minWidth: value.length ? undefined : '100%',
           }}
           onPressEnter={async (e) => {
             inputValue && e.preventDefault();

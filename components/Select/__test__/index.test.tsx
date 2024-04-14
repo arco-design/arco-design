@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fireEvent } from '@testing-library/dom';
 import { sleep, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
@@ -516,5 +516,39 @@ describe('Select', () => {
 
     await sleep(100);
     expect(wrapper.querySelector('.arco-select-option')).toHaveTextContent('Enter to create hello');
+
+    const wrapperSingle = render(
+      <Select
+        value="hello"
+        allowCreate={{
+          formatter: (inputValue, creating) => {
+            return {
+              label: `${creating ? 'Enter to create' : 'Created'} ${inputValue}`,
+              value: inputValue,
+            };
+          },
+        }}
+      />
+    );
+
+    await sleep(100);
+    expect(wrapperSingle.querySelector('.arco-select-view-value')).toHaveTextContent(
+      'Created hello'
+    );
+  });
+
+  it('allowCreate with updating value to undefined', () => {
+    const Demo = () => {
+      const [value, setValue] = useState('a');
+
+      useEffect(() => {
+        setValue(undefined);
+      }, []);
+
+      return <Select allowCreate value={value} />;
+    };
+
+    const wrapper = render(<Demo />);
+    expect(wrapper.querySelector('.arco-select-view-value')).toHaveTextContent('');
   });
 });

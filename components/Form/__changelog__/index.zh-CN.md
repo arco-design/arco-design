@@ -1,3 +1,37 @@
+## 2.61.3
+
+2024-04-12
+
+### 🐛 问题修复
+
+- 修复 `Form` rtl 视图样式问题([#2635](https://github.com/arco-design/arco-design/pull/2635))
+- 修复 `Form.useFormContext` 组件 `isSubmitting` 有误的 bug。([#2631](https://github.com/arco-design/arco-design/pull/2631))
+- 修复 `Form` 组件 rules 未设置且 validate 方法 validateOnly 为 true 时报错问题([#2620](https://github.com/arco-design/arco-design/pull/2620))
+
+## 2.61.0
+
+2024-03-15
+
+### 🐛 问题修复
+
+- 修复 `Form.useFormContext` 未在 `Form` 组件下使用导致的内部方法调用报错的 bug。([#2590](https://github.com/arco-design/arco-design/pull/2590))
+
+## 2.60.3
+
+2024-03-08
+
+### 🐛 问题修复
+
+- 修复 `Form.useFormContext` 未在 `Form` 组件下使用导致的内部方法调用报错的 bug。([#2574](https://github.com/arco-design/arco-design/pull/2574))
+
+## 2.59.0
+
+2024-01-19
+
+### 🐛 问题修复
+
+- 修复 `Form` 组件的 `resetFields` 方法传入非 string/array 类型 的参数时，所有表单项都被重置的 bug。([#2505](https://github.com/arco-design/arco-design/pull/2505))
+
 ## 2.56.2
 
 2023-12-01

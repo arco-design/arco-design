@@ -1,3 +1,51 @@
+## 2.61.0
+
+2024-03-15
+
+### 🆕 Feature
+
+- `Typography.Ellipsis` to support the display of single-line expand buttons([#2596](https://github.com/arco-design/arco-design/pull/2596))
+
+## 2.60.1
+
+2024-02-28
+
+### 🐛 BugFix
+
+- Fix the problem of single line omission failure in `Ellipsis` component([#2564](https://github.com/arco-design/arco-design/pull/2564))
+
+## 2.60.0
+
+2024-02-23
+
+### 🆕 Feature
+
+- Add `Typography.Ellipsis` Component([#2525](https://github.com/arco-design/arco-design/pull/2525))
+
+## 2.59.0
+
+2024-01-19
+
+### 🐛 BugFix
+
+- Fix `Typography` component `resize` throttling issue([#2488](https://github.com/arco-design/arco-design/pull/2488))
+
+## 2.57.1
+
+2023-12-15
+
+### 💎 Enhancement
+
+- Optimize `Typography` component node length calculation logic([#2435](https://github.com/arco-design/arco-design/pull/2435))
+
+## 2.57.0
+
+2023-12-08
+
+### 🆕 Feature
+
+- The `Typography` component supports `tooltip` configuration for copy and edit buttons.([#2428](https://github.com/arco-design/arco-design/pull/2428))
+
 ## 2.51.0
 
 2023-07-28

@@ -1,3 +1,27 @@
+## 2.61.2
+
+2024-03-29
+
+### 🐛 BugFix
+
+- Fix the issue where the content view of `Trigger` is still `ltr` when setting the component `rtl`([#2604](https://github.com/arco-design/arco-design/pull/2604))
+
+## 2.59.0
+
+2024-01-19
+
+### 🆕 Feature
+
+- `Trigger` supports setting the viewport offset when automatically adjusting the position according to the viewport.([#2502](https://github.com/arco-design/arco-design/pull/2502))
+
+## 2.57.0
+
+2023-12-08
+
+### 💎 Enhancement
+
+- Optimize the time-consuming problem of `Trigger` part of the logic([#2427](https://github.com/arco-design/arco-design/pull/2427))
+
 ## 2.56.1
 
 2023-11-24

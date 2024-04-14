@@ -6,6 +6,7 @@ import React, {
   useState,
   ReactNode,
   CSSProperties,
+  UIEvent,
 } from 'react';
 import {
   Key,
@@ -39,7 +40,8 @@ export type RenderFunc<T> = (
 
 type Status = 'NONE' | 'MEASURE_START' | 'MEASURE_DONE';
 
-export interface VirtualListProps<T> extends Omit<React.HTMLAttributes<any>, 'children'> {
+export interface VirtualListProps<T>
+  extends Omit<React.HTMLAttributes<any>, 'children' | 'onScroll'> {
   children: RenderFunc<T>;
   data: T[];
   /* Viewable area height (`2.11.0` starts support `string` type such as `80%`) */
@@ -62,12 +64,19 @@ export interface VirtualListProps<T> extends Omit<React.HTMLAttributes<any>, 'ch
   /** Custom filler outer style */
   outerStyle?: CSSProperties;
   innerStyle?: CSSProperties;
-  onScroll?: React.UIEventHandler<HTMLElement>;
+  onScroll?: (event: UIEvent<HTMLElement>, info: { index: number }) => void;
+  wrapperChild?: string | React.FC<any> | React.ComponentClass<any>;
 }
 
 export type AvailableVirtualListProps = Pick<
   VirtualListProps<any>,
-  'height' | 'itemHeight' | 'threshold' | 'isStaticItemHeight' | 'scrollOptions'
+  | 'height'
+  | 'itemHeight'
+  | 'threshold'
+  | 'isStaticItemHeight'
+  | 'scrollOptions'
+  | 'onScroll'
+  | 'wrapperChild'
 >;
 
 interface RelativeScroll {
@@ -170,6 +179,7 @@ const VirtualList: React.ForwardRefExoticComponent<
     needFiller = true,
     outerStyle,
     innerStyle,
+    wrapperChild: WrapperChildTagName = React.Fragment,
     ...restProps
   } = props;
   // Compatible with setting the height of the list through style.maxHeight
@@ -350,7 +360,7 @@ const VirtualList: React.ForwardRefExoticComponent<
       itemOffsetPtg: offsetPtg,
     });
 
-    event && onScroll && onScroll(event);
+    event && onScroll?.(event, { index });
   };
 
   // Modify the state and recalculate the position in the next render
@@ -388,7 +398,7 @@ const VirtualList: React.ForwardRefExoticComponent<
       status: 'MEASURE_START',
     });
 
-    event && onScroll && onScroll(event);
+    event && onScroll?.(event, { index: itemIndex });
   };
 
   useEffect(() => {
@@ -684,16 +694,18 @@ const VirtualList: React.ForwardRefExoticComponent<
               innerStyle={innerStyle}
               offset={state.status === 'MEASURE_DONE' ? state.startItemTop : 0}
             >
-              {renderChildren(data.slice(state.startIndex, state.endIndex + 1), state.startIndex)}
+              <WrapperChildTagName>
+                {renderChildren(data.slice(state.startIndex, state.endIndex + 1), state.startIndex)}
+              </WrapperChildTagName>
             </Filler>
             {renderLongestItem()}
           </>
         ) : needFiller ? (
           <Filler height={viewportHeight} outerStyle={outerStyle} innerStyle={innerStyle}>
-            {renderChildren(data, 0)}
+            <WrapperChildTagName>{renderChildren(data, 0)}</WrapperChildTagName>
           </Filler>
         ) : (
-          renderChildren(data, 0)
+          <WrapperChildTagName>{renderChildren(data, 0)}</WrapperChildTagName>
         )}
       </WrapperTagName>
     </ResizeObserver>

@@ -77,7 +77,6 @@ const Form = <
   const size = 'size' in props ? props.size : ctx.size;
   const innerMethods = formInstance.getInnerMethods(true);
 
-
   useCreate(() => {
     innerMethods.innerSetInitialValues(props.initialValues);
   });

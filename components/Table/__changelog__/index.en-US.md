@@ -1,3 +1,48 @@
+## 2.61.1
+
+2024-03-22
+
+### 🐛 BugFix
+
+- ([#2602](https://github.com/arco-design/arco-design/pull/2602))
+- Fix the problem that the `Table` component may report an error when dynamically changing scrollY([#2599](https://github.com/arco-design/arco-design/pull/2599))
+
+## 2.61.0
+
+2024-03-15
+
+### 🐛 BugFix
+
+- Fix `Table` console warning due to missing ReactKey.([#2592](https://github.com/arco-design/arco-design/pull/2592))
+
+## 2.60.2
+
+2024-03-01
+
+### 💎 Enhancement
+
+- `Table` component supports expanding rows and tree data when virtual scrolling is turned on.([#2553](https://github.com/arco-design/arco-design/pull/2553))
+
+## 2.60.0
+
+2024-02-23
+
+### 🐛 BugFix
+
+- Fix the issue where the `scrollbar-color` property in the `Table` component causes incorrect width calculations.([#2533](https://github.com/arco-design/arco-design/pull/2533))
+
+### 🆎 TypeScript
+
+- `Table` component column attribute TS definition adjustment([#2531](https://github.com/arco-design/arco-design/pull/2531))
+
+## 2.58.1
+
+2024-01-05
+
+### 🐛 BugFix
+
+- Fixes `Table` component `loading` configuration not being effective.([#2474](https://github.com/arco-design/arco-design/pull/2474))
+
 ## 2.56.1
 
 2023-11-24

@@ -1,3 +1,51 @@
+## 2.61.0
+
+2024-03-15
+
+### 🆕 功能升级
+
+- `Typography.Ellipsis` 支持单行展开按钮的展示([#2596](https://github.com/arco-design/arco-design/pull/2596))
+
+## 2.60.1
+
+2024-02-28
+
+### 🐛 问题修复
+
+- 修复 `Ellipsis` 组件单行省略失效的问题([#2564](https://github.com/arco-design/arco-design/pull/2564))
+
+## 2.60.0
+
+2024-02-23
+
+### 🆕 功能升级
+
+- 新增 `Typography.Ellipsis` 组件，支持文本省略功能。([#2525](https://github.com/arco-design/arco-design/pull/2525))
+
+## 2.59.0
+
+2024-01-19
+
+### 🐛 问题修复
+
+- 修复 `Typography` 组件 `resize` 节流问题([#2488](https://github.com/arco-design/arco-design/pull/2488))
+
+## 2.57.1
+
+2023-12-15
+
+### 💎 功能优化
+
+- 优化 `Typography` 组件节点长度计算逻辑([#2435](https://github.com/arco-design/arco-design/pull/2435))
+
+## 2.57.0
+
+2023-12-08
+
+### 🆕 功能升级
+
+- `Typography` 组件支持配置 copy 和 编辑按钮的 `tooltip` 配置([#2428](https://github.com/arco-design/arco-design/pull/2428))
+
 ## 2.51.0
 
 2023-07-28

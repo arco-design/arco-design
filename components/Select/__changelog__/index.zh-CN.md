@@ -1,3 +1,35 @@
+## 2.60.2
+
+2024-03-01
+
+### 💅 样式更新
+
+- `Select` 组件 `large` 尺寸下的选择框文本由 `16px` 调整为 `14px`。([#2570](https://github.com/arco-design/arco-design/pull/2570))
+
+## 2.58.2
+
+2024-01-08
+
+### 🐛 问题修复
+
+- 修复 `Select` 在开启 `allowCreate` 后在边缘情况可能出现的 `effect` 无限循环。([#2484](https://github.com/arco-design/arco-design/pull/2484))
+
+## 2.58.1
+
+2024-01-05
+
+### 🐛 问题修复
+
+- 修复 `Select` 单选模式开启 `allowCreate` 时，将值更新为 `undefined` 后导致的页面报错。([#2473](https://github.com/arco-design/arco-design/pull/2473))
+
+## 2.57.2
+
+2023-12-22
+
+### 🐛 问题修复
+
+- 修复 `Select` 组件 `allowCreate.formatter` 属性在单选模式下 `creating` 参数始终为 `true` 的问题。([#2447](https://github.com/arco-design/arco-design/pull/2447))
+
 ## 2.54.0
 
 2023-10-09

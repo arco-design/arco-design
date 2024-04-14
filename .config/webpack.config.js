@@ -7,7 +7,14 @@ const { version } = require('../package.json');
 
 // 组件 dist 打包
 exports.component = (config) => {
-  config.entry = path.resolve(__dirname, '../components/index.tsx');
+  if (process.env.BUILD_TYPE === 'hooks') {
+    config.entry = path.resolve(__dirname, '../hooks/src-es/index.ts');
+    config.output.filename = 'arco-hooks.min.js';
+    config.output.library = 'arcohooks';
+  } else {
+    config.entry = path.resolve(__dirname, '../components/index.tsx');
+  }
+
   config.plugins.pop();
   config.plugins.push(
     new webpack.BannerPlugin({

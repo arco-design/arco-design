@@ -1,3 +1,11 @@
+## 2.58.1
+
+2024-01-05
+
+### 🐛 BugFix
+
+- Fixed the bug of extra delimiters appearing when conditional rendering exists in `Breadcrumb.Item`.([#2477](https://github.com/arco-design/arco-design/pull/2477))
+
 ## 2.40.0
 
 2022-09-16

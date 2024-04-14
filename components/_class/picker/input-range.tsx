@@ -39,6 +39,8 @@ export interface DateInputRangeProps {
   focusedInputIndex?: number;
   isPlaceholder?: boolean;
   prefix?: ReactNode;
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>[];
+  onBlur?: (e) => void;
 }
 
 type DateInputHandle = {
@@ -71,6 +73,8 @@ function DateInput(
     focusedInputIndex,
     isPlaceholder,
     prefix,
+    inputProps = [],
+    onBlur,
     ...rest
   }: DateInputRangeProps,
   ref
@@ -100,14 +104,19 @@ function DateInput(
     },
   }));
 
-  function changeFocusedInput(index: number) {
+  function changeFocusedInput(e, index: number) {
+    inputProps?.[index]?.onClick?.(e);
+
     if (focusedInputIndex !== index) {
       changeFocusedInputIndex(index);
     }
   }
 
-  function onKeyDown(e) {
+  function onKeyDown(e, index) {
     const keyCode = e.keyCode || e.which;
+
+    inputProps?.[index]?.onKeyDown?.(e);
+
     if (keyCode === Enter.code) {
       onPressEnter?.();
     }
@@ -117,9 +126,15 @@ function DateInput(
     }
   }
 
-  function onChangeInput(e) {
+  function onChangeInput(e, index) {
     e.stopPropagation();
+    inputProps?.[index]?.onChange?.(e);
     onChange && onChange(e);
+  }
+
+  function onBlurInput(e, index) {
+    inputProps?.[index]?.onBlur?.(e);
+    onBlur?.(e);
   }
 
   const prefixCls = getPrefixCls('picker');
@@ -163,12 +178,14 @@ function DateInput(
       <div className={getFocusInputClassName(0)}>
         <input
           ref={input0}
+          {...inputProps[0]}
           disabled={disabled1}
           placeholder={placeholder[0]}
           value={getInputValue(0)}
-          onChange={onChangeInput}
-          onKeyDown={onKeyDown}
-          onClick={() => changeFocusedInput(0)}
+          onChange={(e) => onChangeInput(e, 0)}
+          onKeyDown={(e) => onKeyDown(e, 0)}
+          onClick={(e) => changeFocusedInput(e, 0)}
+          onBlur={(e) => onBlurInput(e, 0)}
           {...readOnlyProps}
         />
       </div>
@@ -176,12 +193,14 @@ function DateInput(
       <div className={getFocusInputClassName(1)}>
         <input
           ref={input1}
+          {...inputProps[1]}
           disabled={disabled2}
           placeholder={placeholder[1]}
           value={getInputValue(1)}
-          onChange={onChangeInput}
-          onKeyDown={onKeyDown}
-          onClick={() => changeFocusedInput(1)}
+          onChange={(e) => onChangeInput(e, 1)}
+          onKeyDown={(e) => onKeyDown(e, 1)}
+          onClick={(e) => changeFocusedInput(e, 1)}
+          onBlur={(e) => onBlurInput(e, 1)}
           {...readOnlyProps}
         />
       </div>

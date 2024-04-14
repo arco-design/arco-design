@@ -33,7 +33,7 @@ Display options in a multi-level cascading dropdown component.
 |checkedStrategy|Customize the return value<br/> parent:Only return the parent node when all child nodes are selected <br/> child: Return child nodes|'parent' \| 'child' |`child`|2.31.0|
 |expandTrigger|Set the way to display the next level menu. One of hover and click|'click' \| 'hover' |`click`|-|
 |mode|Set mode|'multiple' |`-`|-|
-|showSearch|Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,`{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.`{ panelMode: 'select' }` Display options as a search panel (`2.39.0`)`renderOption` Custom rendering search option (`2.39.0`)|\| boolean\| {panelMode?: 'cascader' \| 'select';renderOption?: (inputValue: string, option: NodeProps&lt;T&gt;) =&gt; ReactNode;retainInputValue?: boolean;retainInputValueWhileSelect?: boolean;} |`-`|-|
+|showSearch|Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,`{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.`{ panelMode: 'select' }` Display options as a search panel (`2.39.0`)`renderOption` Custom rendering search option (`2.39.0`)|\| boolean\| {panelMode?: 'cascader' \| 'select';renderOption?: (inputValue: string,option: NodeProps&lt;T&gt;,options: [extraOptions](#extraoptions)) =&gt; ReactNode;retainInputValue?: boolean;retainInputValueWhileSelect?: boolean;} |`-`|-|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
 |virtualListProps|virtual list props. After virtual scrolling is enabled, there will be a default width for each column of cascading menus, which can be adjusted by `dropdownMenuColumnStyle`|Pick&lt;VirtualListProps&lt;any&gt;, 'threshold' \| 'isStaticItemHeight'&gt; |`-`|2.35.0|
@@ -71,6 +71,14 @@ Display options in a multi-level cascading dropdown component.
 |onVisibleChange|Callback when popup shown or hidden.|(visible: boolean) => void |`-`|-|
 |renderFormat|The return value will be displayed in the input box.|(valueShow: any[]) => ReactNode |`-`|-|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|
+
+### extraOptions
+
+```js
+export interface extraOptions {
+  checked: boolean;
+}
+```
 
 ### FieldNamesType
 

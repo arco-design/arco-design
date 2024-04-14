@@ -213,6 +213,81 @@ const TimePickerZoneDemo = () => {
 
 export const TimePickerZone = () => <TimePickerZoneDemo />;
 
+const RangePickerInputPropsDemo = () => {
+  const [value, setValue] = useState<Dayjs>();
+  const [rangeValue, setRangeValue] = useState<Dayjs[]>([]);
+
+  function onBlur(e: React.FocusEvent<HTMLInputElement>, index: number) {
+    const inputValue = e.target.value;
+    const newValue = [...rangeValue];
+    if (dayjs(inputValue, 'YYYY-MM-DD HH:mm:ss', true).isValid()) {
+      newValue[index] = dayjs(inputValue, 'YYYY-MM-DD HH:mm:ss');
+      setRangeValue(newValue);
+    }
+  }
+
+  return (
+    <Space direction="vertical">
+      <DatePicker
+        inputProps={{
+          onChange: (e) => {
+            const inputValue = e.target.value;
+            if (dayjs(inputValue, 'YYYY-MM-DD', true).isValid()) {
+              setValue(dayjs(inputValue));
+            }
+          },
+        }}
+        value={value}
+        onChange={(_, dv) => {
+          console.log(dv);
+          setValue(dv);
+        }}
+      />
+      <DatePicker.RangePicker
+        inputProps={[
+          {
+            onBlur: (e) => {
+              onBlur(e, 0);
+            },
+            onClick: (e) => {
+              console.log('onClick1', e);
+            },
+            onChange: (e) => {
+              console.log('onChange1', e.target.value);
+            },
+            onKeyDown: (e) => {
+              console.log('onKeyDown1', e);
+            },
+          },
+          {
+            onBlur: (e) => {
+              onBlur(e, 1);
+            },
+            onClick: (e) => {
+              console.log('onClick2', e);
+            },
+            onChange: (e) => {
+              console.log('onChange2', e.target.value);
+            },
+            onKeyDown: (e) => {
+              console.log('onKeyDown2', e);
+            },
+          },
+        ]}
+        format="YYYY-MM-DD HH:mm:ss.SSS"
+        showTime
+        value={rangeValue}
+        onChange={(_, dv) => {
+          setRangeValue(dv);
+        }}
+        style={{ width: 450 }}
+      />
+    </Space>
+  );
+};
+
+export const RangePickerInputProps = () => <RangePickerInputPropsDemo />;
+
 export default {
   title: 'DatePicker',
 };

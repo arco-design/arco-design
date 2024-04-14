@@ -18,9 +18,9 @@ Watermark component. `2.56.0` supported
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
 |rotate|Single watermark rotation angle|number |`-20`|
-|content|The text content of the watermark|string |`-`|
 |image|Watermark image source has higher priority than text content|string |`-`|
 |className|Additional css class|string \| string[] |`-`|
+|content|The text content of the watermark|string \| string[] |`-`|
 |fontStyle|Watermark text style|{color?: string;fontFamily?: string;fontSize?: number \| string;fontWeight?: number \| string;} |`{color:`rgba(0, 0, 0, 0.12)`, fontFamily: `sans-serif`, fontSize: `14px`, fontWeight: `normal` }`|
 |gap|spacing between watermarks|[number, number] |`[100, 100]`|
 |height|The height of a single watermark|number \| string |`-`|

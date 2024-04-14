@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, HTMLAttributes, ImgHTMLAttributes } from 'react';
+import { CSSProperties, ReactNode, HTMLAttributes, ImgHTMLAttributes, ReactElement } from 'react';
 
 /**
  * @title Image
@@ -176,6 +176,19 @@ export interface ImagePreviewProps {
    * @version 2.24.0
    */
   escToExit?: boolean;
+  /**
+   * @zh 自定义 IMG 元素的渲染
+   * @en Rendering of custom IMG elements
+   * @version 2.58.0
+   */
+  imageRender?: (originalNode: ReactElement) => ReactNode;
+  /**
+   * @zh 开启位置修正
+   * @en Enable position correction
+   * @defaultValue true
+   * @version 2.61.0
+   */
+  resetTranslate?: boolean;
 }
 
 export type PartialImagePreviewProps = Partial<ImagePreviewProps>;
@@ -206,6 +219,12 @@ export interface ImagePreviewGroupProps extends Omit<PartialImagePreviewProps, '
    * @en Whether to loop infinitely
    */
   infinite?: boolean;
+  /**
+   * @zh 是否渲染图片列表，用于提前加载图片
+   * @en Whether to render the image list for loading images in advance
+   * @version 2.58.0
+   */
+  forceRender?: boolean;
   /**
    * @zh 切换图片触发的事件
    * @en Callback when image switches

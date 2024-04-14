@@ -1,3 +1,11 @@
+## 2.57.0
+
+2023-12-08
+
+### 🆕 Feature
+
+- `Menu` component adds a `onEllipsisChange` callback to notify the horizontal menu ellipsis status changed.([#2426](https://github.com/arco-design/arco-design/pull/2426))
+
 ## 2.52.2
 
 2023-09-01

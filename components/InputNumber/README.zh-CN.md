@@ -35,10 +35,21 @@
 |value|当前值|undefined \| number \| string |`-`|-|
 |formatter|定义输入框展示值|(value: number \| string, info: { userTyping: boolean; input: string }) => string |`-`|Param `info` in `2.41.0`|
 |onBlur|输入框失去聚焦事件的回调|(e) => void |`-`|-|
-|onChange|变化回调|(value: number) => void |`-`|-|
+|onChange|变化回调|(value: number, reason?: [InputNumberValueChangeReason](#inputnumbervaluechangereason)) => void |`-`|`reason` in 2.61.0|
 |onFocus|输入框聚焦事件的回调|(e) => void |`-`|-|
 |onKeyDown|键盘事件回调|(e: Event) => void |`-`|-|
 |parser|从 formatter 转换为数字，和 formatter 搭配使用。|(value: string) => number \| string |`(input) => input.replace(/[^\w\.-]+/g, '')`|-|
+
+### InputNumberValueChangeReason
+
+```js
+// 造成输入框值改变的原因：用户输入、增加、减少、超出范围值修正
+export type InputNumberValueChangeReason =
+  | "manual"
+  | "increase"
+  | "decrease"
+  | "outOfRange";
+```
 
 ## 方法/Methods
 
