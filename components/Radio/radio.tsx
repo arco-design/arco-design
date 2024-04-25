@@ -22,7 +22,7 @@ function Radio(baseProps: RadioProps) {
 
   if (context.group) {
     mergeProps.checked = context.value === props.value;
-    mergeProps.disabled = !!(context.disabled || props.disabled);
+    mergeProps.disabled = 'disabled' in props ? props.disabled : context.disabled;
   }
 
   const { disabled, children, value, style, className, ...rest } = mergeProps;
