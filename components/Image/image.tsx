@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, LegacyRef, useRef } from 'react';
+import React, { useContext, useEffect, useMemo, LegacyRef, useRef, SyntheticEvent } from 'react';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import IconLoading from '../../icon/react-icon/IconLoading';
@@ -114,7 +114,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
 
   const refImg = useRef<HTMLImageElement>();
 
-  function onImgLoaded(e) {
+  function onImgLoaded(e: SyntheticEvent<HTMLImageElement>) {
     loaded.current = true;
     setStatus('loaded');
     onLoad && onLoad(e);
