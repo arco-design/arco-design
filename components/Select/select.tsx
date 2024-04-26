@@ -45,6 +45,9 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 import { SelectOptionProps } from '../index';
 import useId from '../_util/hooks/useId';
 
+// 用户创建中的option的origin标识
+const USER_CREATING_OPTION_ORIGIN = 'userCreatingOption';
+
 const defaultProps: SelectProps = {
   trigger: 'click',
   bordered: true,
@@ -185,7 +188,12 @@ function Select(baseProps: SelectProps, ref) {
       // if it's not rendered (e.g. filtered by user-search), ignore it
       const isFirstValueOptionSelectable =
         !isNoOptionSelected && optionInfoMap.get(firstValue)?._valid;
-      return isFirstValueOptionSelectable
+
+      // 是否第一个 option 是创建中选项
+      const isFirstCreatingOption =
+        optionInfoMap?.get(optionValueList[0])?._origin === USER_CREATING_OPTION_ORIGIN;
+
+      return isFirstValueOptionSelectable && !isFirstCreatingOption
         ? firstValue
         : optionValueList[optionIndexListForArrowKey[0]];
     }
@@ -305,7 +313,7 @@ function Select(baseProps: SelectProps, ref) {
           .filter((v) => {
             const option =
               optionInfoMap.get(v) || refValueMap.current.find((item) => item.value === v)?.option;
-            return !option || option._origin === 'userCreatingOption';
+            return !option || option._origin === USER_CREATING_OPTION_ORIGIN;
           })
           .map((op) => userCreatedOptionFormatter(op as string));
         // 将 value 中不存在的 Option 移除
