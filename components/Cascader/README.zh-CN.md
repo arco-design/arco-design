@@ -32,6 +32,7 @@
 |autoWidth|设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |checkedStrategy|定制回填方式 <br/> parent: 子节点都被选中时候返回父节点 <br/> child: 返回子节点|'parent' \| 'child' |`child`|2.31.0|
 |expandTrigger|展开下一级方式|'click' \| 'hover' |`click`|-|
+|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。设置 `responsive` 响应式显示标签数不建议在选项较多时使用，可能存在性能问题，|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
 |mode|是否开启多选|'multiple' |`-`|-|
 |showSearch|使单选模式可搜索，传入 `{ retainInputValue: true }` 在搜索框聚焦时保留现有内容传入 `{ retainInputValueWhileSelect: true }` 在多选选择时保留输入框内容。传入 `{ panelMode: 'select' }` 以搜索面板形式展示可选项 (`2.39.0`)`renderOption` 自定义渲染搜索项 (`2.39.0`)|\| boolean\| {panelMode?: 'cascader' \| 'select';renderOption?: (inputValue: string,option: NodeProps&lt;T&gt;,options: [extraOptions](#extraoptions)) =&gt; ReactNode;retainInputValue?: boolean;retainInputValueWhileSelect?: boolean;} |`-`|-|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
@@ -61,7 +62,6 @@
 |dropdownColumnRender|自定义下拉菜单每一列的展示。|(menu: ReactNode, level: number) => ReactNode |`-`|2.15.0, `level` in 2.17.0|
 |dropdownRender|自定义下拉菜单的展示。|(menu: ReactNode) => ReactNode |`-`|2.15.0|
 |getPopupContainer|弹出框挂在的父节点|(node: HTMLElement) => Element |`-`|-|
-|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。|\| number\| {count: number;render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0|
 |onChange|点击选择框的回调。|(value: (string \| string[])[],selectedOptions,extra: { dropdownVisible?: boolean }) => void |`-`|-|
 |onClear|点击清除时触发，参数是当前下拉框的展开状态。|(visible: boolean) => void |`-`|-|
 |onClick|鼠标点击下拉框时的回调|(e) => void |`-`|-|

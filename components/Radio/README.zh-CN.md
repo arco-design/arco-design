@@ -26,6 +26,7 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
+|disabled|禁用|boolean |`-`|
 |name|`Radio` 的 name|string |`-`|
 |disabled|禁用所有子单选器|boolean |`-`|
 |direction|方向|'vertical' \| 'horizontal' |`horizontal`|

@@ -25,6 +25,7 @@ import useForceUpdate from '../_util/hooks/useForceUpdate';
 import IconHover from './icon-hover';
 import { Backspace, Enter } from '../_util/keycode';
 import fillNBSP from '../_util/fillNBSP';
+import Tag from '../Tag';
 
 export interface SelectViewCommonProps
   extends Pick<InputTagProps<unknown>, 'animation' | 'renderTag' | 'dragToSort'> {
@@ -86,14 +87,15 @@ export interface SelectViewCommonProps
    */
   allowClear?: boolean;
   /**
-   * @zh 最多显示多少个 `tag`，仅在多选或标签模式有效。
-   * @en The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode.
-   * @version Object type in 2.37.0
+   * @zh 最多显示多少个 `tag`，仅在多选或标签模式有效。设置 `responsive` 响应式显示标签数不建议在选项较多时使用，可能存在性能问题，
+   * @en The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode. Setting the number of `responsive` responsive display tags is not recommended when there are many options, as there may be performance issues.
+   * @version Object type in 2.37.0. `responsive ` in `2.62.0`
    */
   maxTagCount?:
     | number
+    | 'responsive'
     | {
-        count: number;
+        count: number | 'responsive';
         render?: (invisibleTagCount: number) => ReactNode;
       };
   /**
@@ -183,8 +185,6 @@ const SearchStatus = {
   EDITING: 1,
   NONE: 2,
 };
-
-const MAX_TAG_COUNT_VALUE_PLACEHOLDER = '__arco_value_tag_placeholder';
 
 export type SelectViewHandle = {
   dom: HTMLDivElement;
@@ -430,42 +430,43 @@ const CoreSelectView = React.forwardRef(
 
     const renderMultiple = () => {
       const usedValue = isUndefined(value) ? [] : [].concat(value as []);
-      const maxTagCountNumber = isObject(maxTagCount) ? maxTagCount.count : maxTagCount;
+      // const maxTagCountValue = isObject(maxTagCount) ? maxTagCount.count : maxTagCount;
 
-      const maxTagCountRender =
-        isObject(maxTagCount) && isFunction(maxTagCount.render)
-          ? maxTagCount.render
-          : (invisibleCount) => `+${invisibleCount}...`;
+      const maxTagCountRender = (invisibleCount) => {
+        return (
+          <Tag className={cs(`${getPrefixCls('input-tag')}-tag`, `${prefixCls}-tag`)}>
+            {isObject(maxTagCount) && isFunction(maxTagCount.render)
+              ? maxTagCount.render(invisibleCount)
+              : `+${invisibleCount}...`}
+          </Tag>
+        );
+      };
 
-      const usedMaxTagCount =
-        typeof maxTagCountNumber === 'number' ? Math.max(maxTagCountNumber, 0) : usedValue.length;
       const tagsToShow: ObjectValueType[] = [];
       let lastClosableTagIndex = -1;
 
       for (let i = usedValue.length - 1; i >= 0; i--) {
         const v = usedValue[i];
         const result = renderText(v);
-        if (i < usedMaxTagCount) {
-          tagsToShow.unshift({
-            value: v,
-            label: result.text,
-            closable: !result.disabled,
-          });
-        }
+        tagsToShow.unshift({
+          value: v,
+          label: result.text,
+          closable: !result.disabled,
+        });
         if (!result.disabled && lastClosableTagIndex === -1) {
           lastClosableTagIndex = i;
         }
       }
 
-      const invisibleTagCount = usedValue.length - usedMaxTagCount;
-      if (invisibleTagCount > 0) {
-        tagsToShow.push({
-          label: maxTagCountRender(invisibleTagCount),
-          closable: false,
-          // InputTag needs to extract value as key
-          value: MAX_TAG_COUNT_VALUE_PLACEHOLDER,
-        });
-      }
+      // const invisibleTagCount = usedValue.length - usedMaxTagCount;
+      // if (invisibleTagCount > 0) {
+      //   tagsToShow.push({
+      //     label: maxTagCountRender(invisibleTagCount),
+      //     closable: false,
+      //     // InputTag needs to extract value as key
+      //     value: MAX_TAG_COUNT_VALUE_PLACEHOLDER,
+      //   });
+      // }
 
       const eventHandlers = {
         onPaste: inputEventHandlers.paste,
@@ -514,18 +515,27 @@ const CoreSelectView = React.forwardRef(
           tagClassName={`${prefixCls}-tag`}
           renderTag={renderTag}
           icon={{ removeIcon }}
+          maxTagCount={
+            maxTagCount
+              ? {
+                  count: isObject(maxTagCount) ? maxTagCount.count : maxTagCount,
+                  render: maxTagCountRender,
+                  popoverProps: { disabled: true },
+                }
+              : undefined
+          }
           onChange={(newValue, reason) => {
             if (onSort && reason === 'sort') {
-              const indexOfMaxTagCount = newValue.indexOf(MAX_TAG_COUNT_VALUE_PLACEHOLDER);
-              // inject the invisible values tags to middle after dragging the "+x" tag
-              if (indexOfMaxTagCount > -1) {
-                const headArr = newValue.slice(0, indexOfMaxTagCount);
-                const tailArr = newValue.slice(indexOfMaxTagCount + 1);
-                const midArr = usedValue.slice(-invisibleTagCount);
-                onSort(headArr.concat(midArr, tailArr));
-              } else {
-                onSort(newValue);
-              }
+              // const indexOfMaxTagCount = newValue.indexOf(MAX_TAG_COUNT_VALUE_PLACEHOLDER);
+              // // inject the invisible values tags to middle after dragging the "+x" tag
+              // if (indexOfMaxTagCount > -1) {
+              //   const headArr = newValue.slice(0, indexOfMaxTagCount);
+              //   const tailArr = newValue.slice(indexOfMaxTagCount + 1);
+              //   const midArr = usedValue.slice(-invisibleTagCount);
+              //   onSort(headArr.concat(midArr, tailArr));
+              // } else {
+              // }
+              onSort(newValue);
             }
           }}
           {...eventHandlers}

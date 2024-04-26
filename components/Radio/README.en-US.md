@@ -26,6 +26,7 @@ In a set of related and mutually exclusive data, the user can only select one op
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
+|disabled|disabled|boolean |`-`|
 |name|`Radio`'s name attr|string |`-`|
 |disabled|Whether to disable all radios in the group|boolean |`-`|
 |direction|Arrangement direction|'vertical' \| 'horizontal' |`horizontal`|

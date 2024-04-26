@@ -25,6 +25,7 @@ An input box which will display your input as tags.
 |saveOnBlur|Whether to automatically store the text entering when blur InputTag|boolean |`-`|2.25.0|
 |inputValue|To set input value|string |`-`|-|
 |placeholder|Placeholder of input element|string |`-`|-|
+|maxTagCount|The maximum number of `tags` is displayed|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number, value: T[]) =&gt; ReactNode;popoverProps?: Partial&lt;[PopoverProps](popover#popover)&gt;;} |`-`|2.59.0. `responsive ` in `2.62.0`|
 |size|Different sizes|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
 |addAfter|The label text displayed after (on the right side of) the input-tag field|ReactNode |`-`|2.47.0|
@@ -38,7 +39,6 @@ An input box which will display your input as tags.
 |tokenSeparators|Separator used to tokenize|string[] |`-`|2.44.0|
 |validate|Function to check user's input, which is triggered when `Enter` is pressed|(inputValue: string, values: T[]) =&gt; boolean \| Promise&lt;boolean&gt; \| T \| Promise&lt;T&gt; |`(inputValue, values) => inputValue && values.every((item) => item !== inputValue)`|return type T and `Promise<T>` in 2.37.0|
 |value|To set value|T[] |`-`|-|
-|maxTagCount|The maximum number of `tags` is displayed|\| number\| {count: number;render?: (invisibleTagCount: number, value: T[]) => ReactNode;} |`-`|2.59.0|
 |onBlur|Callback when input is blurred|(e) => void |`-`|-|
 |onChange|Callback when value changes|(value: T[], reason: [ValueChangeReason](#valuechangereason)) => void |`-`|`reason` in 2.27.0|
 |onClear|Callback when clear button is clicked|() => void |`-`|2.20.0|

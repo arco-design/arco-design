@@ -7,6 +7,7 @@ import React, {
   useEffect,
   PropsWithChildren,
   ReactNode,
+  useMemo,
 } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { ConfigContext } from '../ConfigProvider';
@@ -26,8 +27,12 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 import Draggable from '../_class/Draggable';
 import omit from '../_util/omit';
 import fillNBSP from '../_util/fillNBSP';
+import OverflowEllipsis from '../_class/OverflowEllipsis';
+
+const MAX_TAG_COUNT_VALUE_PLACEHOLDER = '__arco_value_tag_placeholder';
 
 const CSS_TRANSITION_DURATION = 300;
+const MAX_TAG_RESPONSIVE = 'responsive';
 const REACT_KEY_FOR_INPUT = `__input_${Math.random().toFixed(10).slice(2)}`;
 
 const isEmptyNode = (node: ReactNode): boolean => {
@@ -80,13 +85,14 @@ const UsedTransitionGroup = ({
   prefixCls,
   children,
   animation,
-}: PropsWithChildren<{ prefixCls: string; animation: boolean }>) => {
-  return animation ? (
-    <TransitionGroup component="div" className={`${prefixCls}-inner`}>
-      {children}
-    </TransitionGroup>
-  ) : (
-    <div className={`${prefixCls}-inner`}>{children}</div>
+}: PropsWithChildren<{
+  prefixCls: string;
+  animation: boolean;
+}>) => {
+  return (
+    <div className={`${prefixCls}-inner`}>
+      {animation ? <TransitionGroup component={null}>{children}</TransitionGroup> : children}
+    </div>
   );
 };
 
@@ -136,6 +142,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
   } = props;
   const prefixCls = getPrefixCls('input-tag');
   const size = 'size' in props ? props.size : ctxSize;
+  const maxTagCountValue = typeof maxTagCount === 'object' ? maxTagCount.count : maxTagCount;
 
   const refInput = useRef<ElementRef<typeof InputComponent>>();
   const refTSLastSeparateTriggered = useRef<number>(null);
@@ -216,24 +223,51 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     }
   };
 
-  const mergedRenderTag = (item: ObjectValueType, index: number, inTooltip = false) => {
-    const { value: itemValue, label } = item;
-    const closable = !readOnly && !disabled && item.closable !== false;
+  const mergedRenderTag = (
+    item: ObjectValueType,
+    index: number,
+    inTooltip = false
+  ): { valueKey: string | number; dom: ReactNode } => {
+    let { value: itemValue, label } = item;
+    let closable = !readOnly && !disabled && item.closable !== false;
+
+    // 当前 Tag 的key
+    let valueKey = typeof itemValue === 'object' ? index : itemValue;
+
     const onClose = (event) => {
       tagCloseHandler(item, index, event);
     };
 
+    if (!inTooltip && typeof maxTagCountValue === 'number' && index >= maxTagCountValue) {
+      if (index === value.length - 1) {
+        // 为什么这里要重新赋值呢？ 因为select里之前 maxTagCount 会执行 renderTag 逻辑
+        // https://github.com/arco-design/arco-design/blob/main/components/_class/select-view.tsx#L462
+        label = renderEllipsisNode(value.length - Number(maxTagCountValue));
+        itemValue = MAX_TAG_COUNT_VALUE_PLACEHOLDER;
+        closable = false;
+        valueKey = MAX_TAG_COUNT_VALUE_PLACEHOLDER;
+        if (!renderTag) {
+          return { valueKey, dom: label };
+        }
+      } else {
+        return { valueKey, dom: null };
+      }
+    }
+
     if (renderTag) {
-      return renderTag(
-        {
-          value: itemValue,
-          label,
-          closable,
-          onClose,
-        },
-        index,
-        value
-      );
+      return {
+        valueKey,
+        dom: renderTag(
+          {
+            value: itemValue,
+            label,
+            closable,
+            onClose,
+          },
+          index,
+          value
+        ),
+      };
     }
 
     const tagProps: Partial<TagProps> = {
@@ -251,33 +285,30 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       title: typeof label === 'string' ? label : undefined,
     };
 
-    const maxTagCountInNumber = typeof maxTagCount === 'object' ? maxTagCount.count : maxTagCount;
-    if (!inTooltip && typeof maxTagCountInNumber === 'number' && index >= maxTagCountInNumber) {
-      if (index === value.length - 1) {
-        const invisibleTagCount = value.length - maxTagCountInNumber;
-        const renderEllipsisLabel =
-          typeof maxTagCount === 'object'
-            ? maxTagCount.render
-            : () => <span className={`${prefixCls}-tag-ellipsis`}>+{invisibleTagCount}</span>;
-        return (
-          <Popover
-            children={renderEllipsisLabel(invisibleTagCount, value)}
-            content={
-              <>
-                {value
-                  .map((v, index) => ({ tagValue: v, tagIndex: index }))
-                  .slice(-invisibleTagCount)
-                  .map(({ tagValue, tagIndex }) => mergedRenderTag(tagValue, tagIndex, true))}
-              </>
-            }
-          />
-        );
-      }
-      return null;
-    }
-
-    return <Tag {...tagProps} />;
+    return { valueKey, dom: <Tag key={`${valueKey}-tag`} {...tagProps} /> };
   };
+
+  function renderEllipsisNode(invisibleTagCount: number) {
+    const renderEllipsisLabel =
+      typeof maxTagCount === 'object'
+        ? maxTagCount.render
+        : () => <span className={`${prefixCls}-tag-ellipsis`}>+{invisibleTagCount}</span>;
+
+    return (
+      <Popover
+        {...(isObject(maxTagCount) ? maxTagCount.popoverProps : {})}
+        children={renderEllipsisLabel(invisibleTagCount, value)}
+        content={
+          <>
+            {value
+              .map((v, index) => ({ tagValue: v, tagIndex: index }))
+              .slice(-invisibleTagCount)
+              .map(({ tagValue, tagIndex }) => mergedRenderTag(tagValue, tagIndex, true)?.dom)}
+          </>
+        }
+      />
+    );
+  }
 
   const handleTokenSeparators = async (str: string) => {
     // clear the timestamp, and then we can judge whether tokenSeparators has been triggered
@@ -340,14 +371,14 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
 
   // CSSTransition needs to be a direct child of TransitionGroup, otherwise the animation will NOT work
   // https://github.com/arco-design/arco-design/issues/622
-  const childrenWithAnimation = value
-    .map((x, i) => {
+  const childrenTagWithAnimation = useMemo<ReactNode[]>(() => {
+    const items = value.map((x, i) => {
       // Check whether two tags have same value. If so, set different key for them to avoid only rendering one tag.
       const isRepeat = value.findIndex((item) => item.value === x.value) !== i;
-      const eleTag = mergedRenderTag(x, i);
+      const { dom: eleTag, valueKey } = mergedRenderTag(x, i);
       return React.isValidElement(eleTag) ? (
         <CSSTransition
-          key={typeof x.value === 'object' ? i : isRepeat ? `${x.value}-${i}` : x.value}
+          key={isRepeat ? `${valueKey}-${i}` : valueKey}
           timeout={CSS_TRANSITION_DURATION}
           classNames="zoomIn"
         >
@@ -356,72 +387,71 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       ) : (
         eleTag
       );
-    })
-    .concat(
-      <CSSTransition
-        key={REACT_KEY_FOR_INPUT}
-        timeout={CSS_TRANSITION_DURATION}
-        classNames="zoomIn"
-      >
-        <InputComponent
-          autoComplete="off"
-          size={size}
-          disabled={disableInputComponent}
-          readOnly={readOnly}
-          ref={refInput}
-          autoFocus={autoFocus}
-          placeholder={!value.length ? placeholder : ''}
-          prefixCls={`${prefixCls}-input`}
-          autoFitWidth={{
-            delay: () => refDelay.current,
-            pure: true,
-          }}
-          onPressEnter={async (e) => {
-            inputValue && e.preventDefault();
-            onPressEnter?.(e);
+    });
+    return items;
+  }, [value]);
+
+  const suffixInput = [
+    <CSSTransition key={REACT_KEY_FOR_INPUT} timeout={CSS_TRANSITION_DURATION} classNames="zoomIn">
+      <InputComponent
+        autoComplete="off"
+        size={size}
+        disabled={disableInputComponent}
+        readOnly={readOnly}
+        ref={refInput}
+        autoFocus={autoFocus}
+        placeholder={!value.length ? placeholder : ''}
+        prefixCls={`${prefixCls}-input`}
+        autoFitWidth={{
+          delay: () => refDelay.current,
+          pure: true,
+        }}
+        onPressEnter={async (e) => {
+          inputValue && e.preventDefault();
+          onPressEnter?.(e);
+          await tryAddInputValueToTag();
+        }}
+        onFocus={(e) => {
+          if (!disableInputComponent && !readOnly) {
+            setFocused(true);
+            onFocus?.(e);
+          }
+        }}
+        onBlur={async (e) => {
+          setFocused(false);
+          onBlur?.(e);
+          if (saveOnBlur) {
             await tryAddInputValueToTag();
-          }}
-          onFocus={(e) => {
-            if (!disableInputComponent && !readOnly) {
-              setFocused(true);
-              onFocus?.(e);
-            }
-          }}
-          onBlur={async (e) => {
-            setFocused(false);
-            onBlur?.(e);
-            if (saveOnBlur) {
-              await tryAddInputValueToTag();
-            }
+          }
+          setInputValue('');
+        }}
+        value={inputValue}
+        onChange={(value, event) => {
+          // Only fire callback on user input to ensure parent component can get real input value on controlled mode.
+          onInputChange?.(value, event);
+
+          // Pasting in the input box will trigger onPaste first and then onChange, but the value of onChange does not contain a newline character.
+          // If word segmentation has just been triggered due to pasting, onChange will no longer attempt word segmentation.
+          // Do NOT use await, need to update input value right away.
+          event.nativeEvent.inputType !== 'insertFromPaste' && handleTokenSeparators(value);
+
+          if (refTSLastSeparateTriggered.current) {
             setInputValue('');
-          }}
-          value={inputValue}
-          onChange={(value, event) => {
-            // Only fire callback on user input to ensure parent component can get real input value on controlled mode.
-            onInputChange?.(value, event);
-
-            // Pasting in the input box will trigger onPaste first and then onChange, but the value of onChange does not contain a newline character.
-            // If word segmentation has just been triggered due to pasting, onChange will no longer attempt word segmentation.
-            // Do NOT use await, need to update input value right away.
-            event.nativeEvent.inputType !== 'insertFromPaste' && handleTokenSeparators(value);
-
-            if (refTSLastSeparateTriggered.current) {
-              setInputValue('');
-            } else {
-              setInputValue(value);
-            }
-          }}
-          onKeyDown={(event) => {
-            hotkeyHandler(event as any);
-            onKeyDown?.(event);
-          }}
-          onPaste={(event) => {
-            onPaste?.(event);
-            handleTokenSeparators(event.clipboardData.getData('text'));
-          }}
-        />
-      </CSSTransition>
-    );
+          } else {
+            setInputValue(value);
+          }
+        }}
+        onKeyDown={(event) => {
+          hotkeyHandler(event as any);
+          onKeyDown?.(event);
+        }}
+        onPaste={(event) => {
+          onPaste?.(event);
+          handleTokenSeparators(event.clipboardData.getData('text'));
+        }}
+      />
+    </CSSTransition>,
+  ];
 
   const hasPrefix = !isEmptyNode(prefix);
   const hasSuffix = !isEmptyNode(suffix) || !isEmptyNode(clearIcon);
@@ -484,12 +514,20 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
                 valueChangeHandler(moveItem(value, prevIndex, index), 'sort');
               }}
             >
-              {childrenWithAnimation}
+              {childrenTagWithAnimation.concat(suffixInput)}
             </Draggable>
           </UsedTransitionGroup>
         ) : (
           <UsedTransitionGroup prefixCls={prefixCls} animation={animation}>
-            {childrenWithAnimation}
+            {maxTagCountValue === MAX_TAG_RESPONSIVE ? (
+              <OverflowEllipsis
+                items={childrenTagWithAnimation}
+                suffixItems={suffixInput}
+                ellipsisNode={({ ellipsisCount }) => renderEllipsisNode(ellipsisCount)}
+              />
+            ) : (
+              childrenTagWithAnimation.concat(suffixInput)
+            )}
           </UsedTransitionGroup>
         )}
 

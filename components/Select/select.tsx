@@ -185,6 +185,7 @@ function Select(baseProps: SelectProps, ref) {
       // if it's not rendered (e.g. filtered by user-search), ignore it
       const isFirstValueOptionSelectable =
         !isNoOptionSelected && optionInfoMap.get(firstValue)?._valid;
+
       return isFirstValueOptionSelectable
         ? firstValue
         : optionValueList[optionIndexListForArrowKey[0]];

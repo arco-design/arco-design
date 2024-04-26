@@ -25,6 +25,7 @@
 |saveOnBlur|是否在失焦时自动存储正在输入的文本|boolean |`-`|2.25.0|
 |inputValue|控件的输入框内的值|string |`-`|-|
 |placeholder|预设文案|string |`-`|-|
+|maxTagCount|最多显示多少个 `tag`|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number, value: T[]) =&gt; ReactNode;popoverProps?: Partial&lt;[PopoverProps](popover#popover)&gt;;} |`-`|2.59.0. `responsive ` in `2.62.0`|
 |size|不同尺寸|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|状态|'error' \| 'warning' |`-`|2.45.0|
 |addAfter|输入框后添加元素|ReactNode |`-`|2.47.0|
@@ -38,7 +39,6 @@
 |tokenSeparators|触发自动分词的分隔符|string[] |`-`|2.44.0|
 |validate|校验函数，默认在 按下enter时候触发。|(inputValue: string, values: T[]) =&gt; boolean \| Promise&lt;boolean&gt; \| T \| Promise&lt;T&gt; |`(inputValue, values) => inputValue && values.every((item) => item !== inputValue)`|return type T and `Promise<T>` in 2.37.0|
 |value|控件值|T[] |`-`|-|
-|maxTagCount|最多显示多少个 `tag`|\| number\| {count: number;render?: (invisibleTagCount: number, value: T[]) => ReactNode;} |`-`|2.59.0|
 |onBlur|失去焦点时候触发|(e) => void |`-`|-|
 |onChange|控件值改变时触发|(value: T[], reason: [ValueChangeReason](#valuechangereason)) => void |`-`|`reason` in 2.27.0|
 |onClear|点击清除按钮的回调|() => void |`-`|2.20.0|

@@ -31,6 +31,7 @@ Can choose tree structure data.Only Single choice is supports.
 |placeholder|Placeholder of element|string |`-`|-|
 |autoWidth|auto width. minWidth defaults to 0, maxWidth defaults to 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |fieldNames|Custom field name for key, title, isLeaf, disabled and children|[TreeProps](tree#tree)['fieldNames'] |`DefaultFieldNames`|2.11.0|
+|maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode. Setting the number of `responsive` responsive display tags is not recommended when there are many options, as there may be performance issues.|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
 |treeCheckedStrategy|Customize the return value|[TreeProps](tree#tree)['checkedStrategy'] |`all`|-|
@@ -54,7 +55,6 @@ Can choose tree structure data.Only Single choice is supports.
 |filterTreeNode|Filter data based on entered value. Accepted two parameters, inputText and treeNode.When the option matches the filter conditions, it returns true, otherwise it returns false. treeNode is the tree node.|(inputText, treeNode: any) => boolean \| void |`-`|-|
 |getPopupContainer|The parent node of the popup|(node: HTMLElement) => Element |`-`|-|
 |loadMore|Callback when loaded data asynchronously|(treeNode: [NodeProps](tree#treenode), dataRef) => void |`-`|-|
-|maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode.|\| number\| {count: number;render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0|
 |onChange|Callback when the selection changed|(value: any,extra: {trigger?: [NodeProps](tree#treenode);checked?: boolean;selected?: boolean;}) => void |`-`|`extra` in `2.29.0`|
 |onClear|Callback when clicked clear, the parameter is the visible state of current dropdown|(visible: boolean) => void |`-`|-|
 |onClick|Callback when the mouse clicks on the drop-down box|(e) => void |`-`|-|
