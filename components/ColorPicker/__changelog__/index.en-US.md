@@ -1,3 +1,11 @@
+## 2.62.0
+
+2024-04-26
+
+### 🆕 Feature
+
+- `ColorPicker` component adds `onChangeComplete` and `renderFooter` properties([#2633](https://github.com/arco-design/arco-design/pull/2633))
+
 ## 2.60.0
 
 2024-02-23

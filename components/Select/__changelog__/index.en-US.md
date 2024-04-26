@@ -1,3 +1,15 @@
+## 2.62.0
+
+2024-04-26
+
+### 💎 Enhancement
+
+- Optimize `Select` component focus control([#2657](https://github.com/arco-design/arco-design/pull/2657))
+
+### 🆕 Feature
+
+- `Select` supports responsive Tag number([#2656](https://github.com/arco-design/arco-design/pull/2656))
+
 ## 2.60.2
 
 2024-03-01

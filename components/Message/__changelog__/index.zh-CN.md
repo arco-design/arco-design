@@ -1,3 +1,11 @@
+## 2.62.0
+
+2024-04-26
+
+### 🆕 功能升级
+
+- `Message.config` 支持 `closable` 参数([#2659](https://github.com/arco-design/arco-design/pull/2659))
+
 ## 2.58.0
 
 2023-12-29

@@ -1,3 +1,11 @@
+## 2.62.0
+
+2024-04-26
+
+### 🐛 BugFix
+
+- Fixed the issue where entering a minus sign in the Slider component triggered an onChange value of NaN.([#2660](https://github.com/arco-design/arco-design/pull/2660))
+
 ## 2.61.0
 
 2024-03-15

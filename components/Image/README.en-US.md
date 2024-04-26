@@ -30,11 +30,11 @@ Show and preview pictures.
 |height|Image height|string \| number |`-`|-|
 |lazyload|lazyload loading [Intersection_Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)|boolean \| IntersectionObserverInit |`-`|2.47.0|
 |loaderClassName|The style of the loader, will override the default transition effect|string \| string[] |`-`|-|
+|onError|Triggered when image loading fails|(ev: SyntheticEvent&lt;HTMLImageElement&gt;) =&gt; void |`-`|-|
+|onLoad|Triggered when the image is loaded|(ev: SyntheticEvent&lt;HTMLImageElement&gt;) =&gt; void |`-`|-|
 |previewProps|Preview options (all options are optional) [ImagePreviewProps](#imagepreview)|PartialImagePreviewProps |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |width|Image width|string \| number |`-`|-|
-|onError|Triggered when image loading fails|(ev: Event) => void |`-`|-|
-|onLoad|Triggered when the image is loaded|(ev: Event) => void |`-`|-|
 
 ### Image.Preview
 

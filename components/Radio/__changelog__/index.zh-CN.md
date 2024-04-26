@@ -1,3 +1,11 @@
+## 2.62.0
+
+2024-04-26
+
+### 🐛 问题修复
+
+- 修复 `Radio.Group` 设置 disabled 后，内部 Radio 的 `disabled` 配置无效的问题 。([#2653](https://github.com/arco-design/arco-design/pull/2653))
+
 ## 2.51.0
 
 2023-07-28

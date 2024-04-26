@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.62.0
+
+2024-04-26
+
+### 💎 功能优化
+
+- 优化 `Select` 组件焦点控制([#2657](https://github.com/arco-design/arco-design/pull/2657))
+
+### 🆕 功能升级
+
+- `Message.config` 支持 `closable` 参数([#2659](https://github.com/arco-design/arco-design/pull/2659))
+- `Select` 支持响应式 Tag 数([#2656](https://github.com/arco-design/arco-design/pull/2656))
+- `InputTag` 支持响应式 Tag 数([#2656](https://github.com/arco-design/arco-design/pull/2656))
+- `ColorPicker` 组件增加 `onChangeComplete` 和 `renderFooter` 属性([#2633](https://github.com/arco-design/arco-design/pull/2633))
+
+### 🐛 问题修复
+
+- 修复 `Typography.Ellipsis`  在 safari 下不显示的问题。因环境差异， safari 下为兼容显示([#2662](https://github.com/arco-design/arco-design/pull/2662))
+- 修复`Slider`组件输入负号触发`onChange`的值为`NaN`的问题。([#2660](https://github.com/arco-design/arco-design/pull/2660))
+- 修复`Tabs`组件的`ref`引用可能为`null`的问题。([#2660](https://github.com/arco-design/arco-design/pull/2660))
+- 修复 `Radio.Group` 设置 disabled 后，内部 Radio 的 `disabled` 配置无效的问题 。([#2653](https://github.com/arco-design/arco-design/pull/2653))
+
 ## 2.61.3
 
 2024-04-12

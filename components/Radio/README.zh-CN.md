@@ -28,7 +28,6 @@
 |---|---|---|---|
 |disabled|禁用|boolean |`-`|
 |name|`Radio` 的 name|string |`-`|
-|disabled|禁用所有子单选器|boolean |`-`|
 |direction|方向|'vertical' \| 'horizontal' |`horizontal`|
 |size|按钮类型的单选框尺寸（只在按钮类型下生效）|'small' \| 'default' \| 'large' \| 'mini' |`-`|
 |type|单选的类型，是单选还是按钮|'radio' \| 'button' |`radio`|

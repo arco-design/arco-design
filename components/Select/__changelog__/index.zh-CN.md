@@ -1,3 +1,15 @@
+## 2.62.0
+
+2024-04-26
+
+### 💎 功能优化
+
+- 优化 `Select` 组件焦点控制([#2657](https://github.com/arco-design/arco-design/pull/2657))
+
+### 🆕 功能升级
+
+- `Select` 支持响应式 Tag 数([#2656](https://github.com/arco-design/arco-design/pull/2656))
+
 ## 2.60.2
 
 2024-03-01

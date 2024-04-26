@@ -1,3 +1,11 @@
+## 2.62.0
+
+2024-04-26
+
+### 🐛 BugFix
+
+- Fixed the issue where the ref reference in the Tabs component could be null.([#2660](https://github.com/arco-design/arco-design/pull/2660))
+
 ## 2.60.2
 
 2024-03-01

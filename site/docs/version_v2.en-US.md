@@ -2,6 +2,28 @@
 changelog: true
 ---
 
+## 2.62.0
+
+2024-04-26
+
+### 💎 Enhancement
+
+- Optimize `Select` component focus control([#2657](https://github.com/arco-design/arco-design/pull/2657))
+
+### 🆕 Feature
+
+- `Message.config` supports `closable` parameter([#2659](https://github.com/arco-design/arco-design/pull/2659))
+- `Select` supports responsive Tag number([#2656](https://github.com/arco-design/arco-design/pull/2656))
+- `InputTag` supports responsive Tag number([#2656](https://github.com/arco-design/arco-design/pull/2656))
+- `ColorPicker` component adds `onChangeComplete` and `renderFooter` properties([#2633](https://github.com/arco-design/arco-design/pull/2633))
+
+### 🐛 BugFix
+
+- Fix the problem that `Typography.Ellipsis` is not displayed in safari. Due to environmental differences, compatibility is displayed under safari.([#2662](https://github.com/arco-design/arco-design/pull/2662))
+- Fixed the issue where entering a minus sign in the Slider component triggered an onChange value of NaN.([#2660](https://github.com/arco-design/arco-design/pull/2660))
+- Fixed the issue where the ref reference in the Tabs component could be null.([#2660](https://github.com/arco-design/arco-design/pull/2660))
+- Fixed the issue where the `disabled` configuration of the internal Radio is invalid after `Radio.Group` is set to disabled.([#2653](https://github.com/arco-design/arco-design/pull/2653))
+
 ## 2.61.3
 
 2024-04-12

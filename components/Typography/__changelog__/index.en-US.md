@@ -1,3 +1,11 @@
+## 2.62.0
+
+2024-04-26
+
+### 🐛 BugFix
+
+- Fix the problem that `Typography.Ellipsis` is not displayed in safari. Due to environmental differences, compatibility is displayed under safari.([#2662](https://github.com/arco-design/arco-design/pull/2662))
+
 ## 2.61.0
 
 2024-03-15

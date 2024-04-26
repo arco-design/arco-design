@@ -1,3 +1,11 @@
+## 2.62.0
+
+2024-04-26
+
+### 🆕 Feature
+
+- `Message.config` supports `closable` parameter([#2659](https://github.com/arco-design/arco-design/pull/2659))
+
 ## 2.58.0
 
 2023-12-29

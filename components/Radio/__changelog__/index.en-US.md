@@ -1,3 +1,11 @@
+## 2.62.0
+
+2024-04-26
+
+### 🐛 BugFix
+
+- Fixed the issue where the `disabled` configuration of the internal Radio is invalid after `Radio.Group` is set to disabled.([#2653](https://github.com/arco-design/arco-design/pull/2653))
+
 ## 2.51.0
 
 2023-07-28
