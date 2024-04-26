@@ -41,6 +41,10 @@ export interface RadioProps<T = any>
 export interface RadioGroupProps {
   style?: CSSProperties;
   className?: string | string[];
+  /**
+   * @zh 禁用
+   * @en disabled
+   */
   disabled?: boolean;
   /**
    * @zh `Radio` 的 name

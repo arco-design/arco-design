@@ -49,8 +49,11 @@ const Input = function (props: InputProps) {
           value={innerValue[0]}
           key={0}
           onChange={(val, reason) => {
-            handleChange([val, innerValue[1]]);
-            beginExtraProps?.onChange && beginExtraProps?.onChange(val, reason);
+            // eslint-disable-next-line no-self-compare
+            if (!(isNaN(val) && val !== val)) {
+              handleChange([val, innerValue[1]]);
+              beginExtraProps?.onChange && beginExtraProps?.onChange(val, reason);
+            }
           }}
         />,
         <div key={1} className={`${prefixCls}-input-range`}>
@@ -62,8 +65,11 @@ const Input = function (props: InputProps) {
         key={2}
         value={innerValue[1]}
         onChange={(val, reason) => {
-          handleChange([innerValue[0], val]);
-          endExtraProps?.onChange && endExtraProps?.onChange(val, reason);
+          // eslint-disable-next-line no-self-compare
+          if (!(isNaN(val) && val !== val)) {
+            handleChange([innerValue[0], val]);
+            endExtraProps?.onChange && endExtraProps?.onChange(val, reason);
+          }
         }}
       />
     </div>

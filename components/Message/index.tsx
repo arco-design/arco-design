@@ -22,6 +22,7 @@ export type ConfigProps = {
   getContainer?: () => HTMLElement;
   duration?: number;
   rtl?: boolean;
+  closable?: boolean;
 };
 
 let maxCount;
@@ -29,6 +30,7 @@ let prefixCls;
 let duration;
 let container;
 let rtl;
+let closable;
 
 export interface MessageType {
   (): void;
@@ -138,6 +140,9 @@ class Message extends BaseNotification {
     if (typeof options.rtl === 'boolean') {
       rtl = options.rtl;
     }
+    if (typeof options.closable === 'boolean') {
+      closable = options.closable;
+    }
     if (options.getContainer && options.getContainer() !== container) {
       container = options.getContainer();
       Object.values(messageInstance).forEach(({ instance }) => instance?.clear());
@@ -174,10 +179,12 @@ class Message extends BaseNotification {
       transitionTimeout: _transitionTimeout,
       prefixCls: _prefixCls,
       rtl: _rtl,
+      closable: _closable,
     } = this.props;
     const { notices, position } = this.state;
     const mergedPrefixCls = _prefixCls || prefixCls;
     const mergedRtl = !isUndefined(_rtl) ? _rtl : rtl;
+    const mergeClosable = !isUndefined(_closable) ? _closable : closable;
     const prefixClsMessage = mergedPrefixCls ? `${mergedPrefixCls}-message` : 'arco-message';
     const transitionTimeout = {
       enter: isNumber(_transitionTimeout?.enter) ? _transitionTimeout?.enter : 100,
@@ -212,6 +219,7 @@ class Message extends BaseNotification {
                 onClose={this.remove}
                 noticeType="message"
                 rtl={mergedRtl}
+                {...(isUndefined(mergeClosable) ? {} : { closable: mergeClosable })}
               />
             </CSSTransition>
           ))}

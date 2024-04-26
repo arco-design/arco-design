@@ -65,7 +65,9 @@ const TriggerNode = (props: PropsWithChildren<TriggerProps>) => {
               .reduce((result, item, index) => {
                 if (item.webkitGetAsEntry) {
                   const entry = item.webkitGetAsEntry();
-                  if (entry.isDirectory) {
+
+                  // https://github.com/arco-design/arco-design/issues/2643
+                  if (entry?.isDirectory) {
                     return [...result, index];
                   }
                   return result;
