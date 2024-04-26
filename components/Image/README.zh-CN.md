@@ -33,6 +33,8 @@
 |previewProps|预览的配置项 （所有选项都是可选的）[ImagePreviewProps](#imagepreview)|PartialImagePreviewProps |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
 |width|图片显示宽度|string \| number |`-`|-|
+|onError|图片加载失败时触发|(ev: Event) => void |`-`|-|
+|onLoad|图片加载完成时触发|(ev: Event) => void |`-`|-|
 
 ### Image.Preview
 

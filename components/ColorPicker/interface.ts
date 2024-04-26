@@ -101,6 +101,12 @@ export interface ColorPickerProps {
    * @en Callback when popup shown or hidden.
    */
   onVisibleChange?: (visible: boolean) => void;
+  /**
+   * @zh 自定义面板底部内容
+   * @en Customize the bottom content of the panel
+   * @version 2.62.0
+   */
+  renderFooter?: () => ReactNode;
 }
 
 export interface RGB {

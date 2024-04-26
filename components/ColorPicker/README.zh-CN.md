@@ -32,4 +32,5 @@
 |triggerProps|可以接受所有 Trigger 组件的 Props|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|
 |onChange|颜色值改变时触发|(value: string) => void |`-`|-|
 |onVisibleChange|下拉框收起展开时触发。|(visible: boolean) => void |`-`|-|
+|renderFooter|自定义面板底部内容|() => ReactNode |`-`|2.62.0|
 |triggerElement|自定义触发元素。|ReactNode \| ((params: { value: string }) => ReactNode) |`-`|2.60.0|
