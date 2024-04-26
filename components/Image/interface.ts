@@ -85,6 +85,16 @@ export interface ImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'c
    * @version 2.47.0
    */
   lazyload?: boolean | IntersectionObserverInit;
+  /**
+   * @zh 图片加载完成时触发
+   * @en Triggered when the image is loaded
+   */
+  onLoad?: (ev: Event) => void;
+  /**
+   * @zh 图片加载失败时触发
+   * @en Triggered when image loading fails
+   */
+  onError?: (ev: Event) => void;
 }
 
 /**

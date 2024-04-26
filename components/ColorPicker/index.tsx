@@ -34,6 +34,7 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
     presetColors,
     showHistory,
     showPreset,
+    renderFooter,
   } = props;
 
   const prefixCls = getPrefixCls('color-picker');
@@ -87,6 +88,7 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
         onHsvChange={onHsvChange}
         onAlphaChange={onAlphaChange}
         disabledAlpha={disabledAlpha}
+        renderFooter={renderFooter}
       />
     );
   };

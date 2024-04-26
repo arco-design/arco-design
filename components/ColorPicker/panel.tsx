@@ -20,6 +20,7 @@ interface PanelProps {
   renderHistory?: () => ReactNode;
   renderPreset?: () => ReactNode;
   renderPickSection?: () => ReactNode;
+  renderFooter?: () => ReactNode;
   onHsvChange: (value: HSV) => void;
   onAlphaChange: (value: number) => void;
 }
@@ -36,6 +37,7 @@ export const Panel: React.FC<PanelProps> = ({
   renderPreset,
   renderHistory,
   renderPickSection,
+  renderFooter,
   onHsvChange,
   onAlphaChange,
 }) => {
@@ -197,6 +199,7 @@ export const Panel: React.FC<PanelProps> = ({
         </div>
       </div>
       {renderColorSec()}
+      {typeof renderFooter === 'function' ? renderFooter() : null}
     </div>
   );
 };

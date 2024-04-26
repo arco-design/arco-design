@@ -33,6 +33,8 @@ Show and preview pictures.
 |previewProps|Preview options (all options are optional) [ImagePreviewProps](#imagepreview)|PartialImagePreviewProps |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |width|Image width|string \| number |`-`|-|
+|onError|Triggered when image loading fails|(ev: Event) => void |`-`|-|
+|onLoad|Triggered when the image is loaded|(ev: Event) => void |`-`|-|
 
 ### Image.Preview
 

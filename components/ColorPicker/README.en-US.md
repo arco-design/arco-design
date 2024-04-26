@@ -33,4 +33,5 @@ Used for select and display colors
 |triggerProps|All `Trigger` component props|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|
 |onChange|Callback when the color value changes|(value: string) => void |`-`|-|
 |onVisibleChange|Callback when popup shown or hidden.|(visible: boolean) => void |`-`|-|
+|renderFooter|Customize the bottom content of the panel|() => ReactNode |`-`|2.62.0|
 |triggerElement|The trigger element which executes the dropdown action.|ReactNode \| ((params: { value: string }) => ReactNode) |`-`|2.60.0|
