@@ -16,6 +16,7 @@ import throttleByRaf from '../_util/throttleByRaf';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import { isObject } from '../_util/is';
 import useMergeValue from '../_util/hooks/useMergeValue';
+import { isServerRendering } from '../_util/dom';
 
 const defaultProps: TypographyEllipsisProps = {
   rows: 1,
@@ -46,7 +47,9 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
     onEllipsis,
   } = props;
   const { locale } = ctx;
-
+  const isSafari = isServerRendering
+    ? false
+    : /^((?!chrome|android).)*safari/i.test(navigator?.userAgent ?? '');
   const wrapperRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
   const [text, setText] = useState('');
@@ -189,6 +192,31 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
         </div>
       );
     }
+    if (isSafari) {
+      return (
+        <div
+          className={cs(`${prefix}-content`, `${prefix}-multiple`)}
+          title={!tooltipData.tooltip && overflow && !expanded ? text : undefined}
+        >
+          {!expanded && renderAction()}
+          <span
+            ref={textRef}
+            className={cs(`${prefix}-text`, {
+              [`${prefix}-collapsed`]: !expanded,
+            })}
+            style={{
+              WebkitBoxOrient: 'vertical',
+              MozBoxOrient: 'vertical',
+              WebkitLineClamp: rows,
+            }}
+          >
+            {children}
+          </span>
+          {expanded && renderAction()}
+        </div>
+      );
+    }
+
     return (
       <div
         className={cs(`${prefix}-content`, `${prefix}-multiple`, {
