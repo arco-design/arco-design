@@ -1,4 +1,11 @@
-import { CSSProperties, ReactNode, HTMLAttributes, ImgHTMLAttributes, ReactElement } from 'react';
+import {
+  CSSProperties,
+  ReactNode,
+  HTMLAttributes,
+  ImgHTMLAttributes,
+  ReactElement,
+  SyntheticEvent,
+} from 'react';
 
 /**
  * @title Image
@@ -89,12 +96,12 @@ export interface ImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'c
    * @zh 图片加载完成时触发
    * @en Triggered when the image is loaded
    */
-  onLoad?: (ev: Event) => void;
+  onLoad?: (ev: SyntheticEvent<HTMLImageElement>) => void;
   /**
    * @zh 图片加载失败时触发
    * @en Triggered when image loading fails
    */
-  onError?: (ev: Event) => void;
+  onError?: (ev: SyntheticEvent<HTMLImageElement>) => void;
 }
 
 /**
