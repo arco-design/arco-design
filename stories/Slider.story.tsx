@@ -67,6 +67,23 @@ function DemoSlider() {
 
 export const Demo = () => <DemoSlider />;
 
+export function Input() {
+  return (
+    <>
+      <Slider
+        defaultValue={80}
+        showInput
+        step={0.1}
+        min={-10}
+        style={{ width: 280 }}
+        onChange={(v) => {
+          console.log(v);
+        }}
+      />
+    </>
+  );
+}
+
 export default {
   title: 'Slider',
 };
