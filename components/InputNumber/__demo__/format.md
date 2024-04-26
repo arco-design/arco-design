@@ -33,6 +33,7 @@ function App() {
         value={value}
         onChange={setValue}
         prefix="¥"
+        // 正则表达式：(/\B(?=(\d{3})+(?!\d))/g, ',')}
         formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
         parser={(value) => value.replace(/,/g, '')}
       />

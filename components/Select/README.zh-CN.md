@@ -30,6 +30,7 @@
 |placeholder|选择框默认文字。|string |`-`|-|
 |allowCreate|是否允许通过输入创建新的选项。|\| boolean\| {formatter: (inputValue: string, creating: boolean) => [SelectProps](select#select)['options'][number];} |`-`|2.13.0, `{ formatter }` in 2.54.0|
 |autoWidth|设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
+|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。设置 `responsive` 响应式显示标签数不建议在选项较多时使用，可能存在性能问题，|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
 |mode|是否开启多选模式或标签模式 (**`tags` 推荐使用 `mode: multiple; allowCreate: true` 替代，下一大版本将移除此模式**)|'multiple' \| 'tags' |`-`|-|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|状态|'error' \| 'warning' |`-`|2.45.0|
@@ -55,7 +56,6 @@
 |dropdownRender|自定义弹出内容。|(menu: ReactNode) => ReactNode |`-`|-|
 |filterOption|是否根据输入的值筛选数据。如果传入函数的话，接收 `inputValue` 和 `option` 两个参数，当option符合筛选条件时，返回 `true`，反之返回 `false`。|boolean \| ((inputValue: string, option: ReactElement) => boolean) |`true`|-|
 |getPopupContainer|弹出框挂载的父节点。|(node: HTMLElement) => Element |`-`|-|
-|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。|\| number\| {count: number;render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0|
 |onBlur|失去焦点时的回调|(e) => void |`-`|-|
 |onChange|点击选择框的回调|(value, option: [OptionInfo](#optioninfo) \| [OptionInfo](#optioninfo)[]) => void |`-`|-|
 |onClear|点击清除时触发，参数是当前下拉框的展开状态。|(visible: boolean) => void |`-`|-|

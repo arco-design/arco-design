@@ -1,4 +1,5 @@
 import { CSSProperties, ReactNode } from 'react';
+import { PopoverProps } from '../Popover';
 
 export type ObjectValueType = {
   value?: any;
@@ -99,13 +100,15 @@ export interface InputTagProps<T = any> {
   /**
    * @zh 最多显示多少个 `tag`
    * @en The maximum number of `tags` is displayed
-   * @version 2.59.0
+   * @version 2.59.0. `responsive ` in `2.62.0`
    */
   maxTagCount?:
     | number
+    | 'responsive'
     | {
-        count: number;
+        count: number | 'responsive';
         render?: (invisibleTagCount: number, value: T[]) => ReactNode;
+        popoverProps?: Partial<PopoverProps>;
       };
   /**
    * @zh 添加前缀文字或者图标

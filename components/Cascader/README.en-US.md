@@ -32,6 +32,7 @@ Display options in a multi-level cascading dropdown component.
 |autoWidth|auto width. minWidth defaults to 0, maxWidth defaults to 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |checkedStrategy|Customize the return value<br/> parent:Only return the parent node when all child nodes are selected <br/> child: Return child nodes|'parent' \| 'child' |`child`|2.31.0|
 |expandTrigger|Set the way to display the next level menu. One of hover and click|'click' \| 'hover' |`click`|-|
+|maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode. Setting the number of `responsive` responsive display tags is not recommended when there are many options, as there may be performance issues.|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
 |mode|Set mode|'multiple' |`-`|-|
 |showSearch|Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,`{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.`{ panelMode: 'select' }` Display options as a search panel (`2.39.0`)`renderOption` Custom rendering search option (`2.39.0`)|\| boolean\| {panelMode?: 'cascader' \| 'select';renderOption?: (inputValue: string,option: NodeProps&lt;T&gt;,options: [extraOptions](#extraoptions)) =&gt; ReactNode;retainInputValue?: boolean;retainInputValueWhileSelect?: boolean;} |`-`|-|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
@@ -61,7 +62,6 @@ Display options in a multi-level cascading dropdown component.
 |dropdownColumnRender|Customize columns of the menu.|(menu: ReactNode, level: number) => ReactNode |`-`|2.15.0, `level` in 2.17.0|
 |dropdownRender|Customize the popup menu.|(menu: ReactNode) => ReactNode |`-`|2.15.0|
 |getPopupContainer|ParentNode which the selector should be rendered to.|(node: HTMLElement) => Element |`-`|-|
-|maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode.|\| number\| {count: number;render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0|
 |onChange|Callback when finishing select.|(value: (string \| string[])[],selectedOptions,extra: { dropdownVisible?: boolean }) => void |`-`|-|
 |onClear|Callback when click clear icon.|(visible: boolean) => void |`-`|-|
 |onClick|Callback when the mouse clicks on the drop-down box|(e) => void |`-`|-|

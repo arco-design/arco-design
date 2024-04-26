@@ -31,6 +31,7 @@
 |placeholder|选择框默认文字。|string |`-`|-|
 |autoWidth|设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |fieldNames|指定 key，title，isLeaf，disabled，children 对应的字段|[TreeProps](tree#tree)['fieldNames'] |`DefaultFieldNames`|2.11.0|
+|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。设置 `responsive` 响应式显示标签数不建议在选项较多时使用，可能存在性能问题，|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|状态|'error' \| 'warning' |`-`|2.45.0|
 |treeCheckedStrategy|定制回显方式|[TreeProps](tree#tree)['checkedStrategy'] |`all`|-|
@@ -54,7 +55,6 @@
 |filterTreeNode|根据输入的值筛选数据。接收 `inputText` 和 `treeNode` 两个参数，当 `option` 符合筛选条件时，返回 `true`，反之返回 `false`。treeNode 是树节点。|(inputText, treeNode: any) => boolean \| void |`-`|-|
 |getPopupContainer|弹出框挂载的父节点|(node: HTMLElement) => Element |`-`|-|
 |loadMore|动态加载数据|(treeNode: [NodeProps](tree#treenode), dataRef) => void |`-`|-|
-|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。|\| number\| {count: number;render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0|
 |onChange|选中值改变的回调|(value: any,extra: {trigger?: [NodeProps](tree#treenode);checked?: boolean;selected?: boolean;}) => void |`-`|`extra` in `2.29.0`|
 |onClear|点击清除时触发，参数是当前下拉框的展开状态。|(visible: boolean) => void |`-`|-|
 |onClick|鼠标点击下拉框时的回调|(e) => void |`-`|-|

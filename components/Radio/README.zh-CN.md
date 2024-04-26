@@ -26,6 +26,7 @@
 
 |参数名|描述|类型|默认值|
 |---|---|---|---|
+|disabled|禁用|boolean |`-`|
 |name|`Radio` 的 name|string |`-`|
 |direction|方向|'vertical' \| 'horizontal' |`horizontal`|
 |size|按钮类型的单选框尺寸（只在按钮类型下生效）|'small' \| 'default' \| 'large' \| 'mini' |`-`|

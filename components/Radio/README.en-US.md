@@ -26,6 +26,7 @@ In a set of related and mutually exclusive data, the user can only select one op
 
 |Property|Description|Type|DefaultValue|
 |---|---|---|---|
+|disabled|disabled|boolean |`-`|
 |name|`Radio`'s name attr|string |`-`|
 |direction|Arrangement direction|'vertical' \| 'horizontal' |`horizontal`|
 |size|The size of radio button style(Only effective under `button` type)|'small' \| 'default' \| 'large' \| 'mini' |`-`|

@@ -1,0 +1,29 @@
+@import '../../../style/theme/default.less';
+
+@arco-overflow-prefix-cls: ~'@{prefix}-overflow';
+
+.@{arco-overflow-prefix-cls} {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow: hidden;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+
+  &-item {
+    display: inline-flex;
+    max-width: 100%;
+
+    &-hidden {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+  }
+
+  // &-suffix-item {
+  //   display: inline-flex;
+  //   max-width: 100%;
+  // }
+}
