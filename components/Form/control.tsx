@@ -337,7 +337,6 @@ export default class Control<
       });
     }
 
-    gotoValidatingStatus();
     return Promise.resolve({ error: null, value, field });
   };
 
