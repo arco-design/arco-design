@@ -1,3 +1,11 @@
+## 2.62.1
+
+2024-05-17
+
+### 🐛 BugFix
+
+- Fix the bug that the verification status appears validating when rules are not set in `Form.Item`([#2676](https://github.com/arco-design/arco-design/pull/2676))
+
 ## 2.61.3
 
 2024-04-12

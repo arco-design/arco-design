@@ -1,3 +1,11 @@
+## 2.62.1
+
+2024-05-17
+
+### 🐛 问题修复
+
+- 修复 `InputTag` 组件 maxTagCount.render 属性报错的 bug.([#2684](https://github.com/arco-design/arco-design/pull/2684))
+
 ## 2.62.0
 
 2024-04-26

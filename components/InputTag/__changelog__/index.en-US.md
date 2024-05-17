@@ -1,3 +1,11 @@
+## 2.62.1
+
+2024-05-17
+
+### 🐛 BugFix
+
+- Fixed the bug where the maxTagCount.render property of the `InputTag` component reported an error.([#2684](https://github.com/arco-design/arco-design/pull/2684))
+
 ## 2.62.0
 
 2024-04-26

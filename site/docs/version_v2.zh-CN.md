@@ -2,6 +2,15 @@
 changelog: true
 ---
 
+## 2.62.1
+
+2024-05-17
+
+### 🐛 问题修复
+
+- 修复 `InputTag` 组件 maxTagCount.render 属性报错的 bug.([#2684](https://github.com/arco-design/arco-design/pull/2684))
+- 修复 `Form.Item` 未设置 rules 时，校验状态出现 validating 的 bug。([#2676](https://github.com/arco-design/arco-design/pull/2676))
+
 ## 2.62.0
 
 2024-04-26

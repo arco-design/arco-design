@@ -2,6 +2,15 @@
 changelog: true
 ---
 
+## 2.62.1
+
+2024-05-17
+
+### 🐛 BugFix
+
+- Fixed the bug where the maxTagCount.render property of the `InputTag` component reported an error.([#2684](https://github.com/arco-design/arco-design/pull/2684))
+- Fix the bug that the verification status appears validating when rules are not set in `Form.Item`([#2676](https://github.com/arco-design/arco-design/pull/2676))
+
 ## 2.62.0
 
 2024-04-26
