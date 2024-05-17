@@ -290,7 +290,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
 
   function renderEllipsisNode(invisibleTagCount: number) {
     const renderEllipsisLabel =
-      typeof maxTagCount === 'object'
+      typeof maxTagCount === 'object' && maxTagCount.render
         ? maxTagCount.render
         : () => <span className={`${prefixCls}-tag-ellipsis`}>+{invisibleTagCount}</span>;
 
