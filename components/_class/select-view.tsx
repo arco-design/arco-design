@@ -7,6 +7,7 @@ import React, {
   useRef,
   useEffect,
   ReactElement,
+  useMemo,
 } from 'react';
 import { pickDataAttributes } from '../_util/pick';
 import { isUndefined, isObject, isFunction } from '../_util/is';
@@ -22,6 +23,7 @@ import { ObjectValueType } from '../InputTag/interface';
 import { InputComponentProps } from '../Input/interface';
 import include from '../_util/include';
 import useForceUpdate from '../_util/hooks/useForceUpdate';
+import usePersistCallback from '../_util/hooks/usePersistCallback';
 import IconHover from './icon-hover';
 import { Backspace, Enter } from '../_util/keycode';
 import fillNBSP from '../_util/fillNBSP';
@@ -185,6 +187,8 @@ const SearchStatus = {
   EDITING: 1,
   NONE: 2,
 };
+
+const DUMMY_TAG_COUNT = 1;
 
 export type SelectViewHandle = {
   dom: HTMLDivElement;
@@ -428,9 +432,37 @@ const CoreSelectView = React.forwardRef(
       );
     };
 
+    const renderTextFn = usePersistCallback(renderText);
+
+    const tagsToShow = useMemo(() => {
+      if (!isMultiple) {
+        return [];
+      }
+      const usedValue = isUndefined(value) ? [] : [].concat(value as []);
+      const tagsToShow: ObjectValueType[] = [];
+      const maxTagCountValue = isObject(maxTagCount) ? maxTagCount.count : maxTagCount;
+      const maxTagCountIsNumber = typeof maxTagCountValue === 'number';
+
+      // loop from start
+      for (let i = 0; i < usedValue.length; i++) {
+        if (maxTagCountIsNumber && tagsToShow.length >= maxTagCountValue + DUMMY_TAG_COUNT) {
+          break;
+        }
+        const v = usedValue[i];
+        const result = renderTextFn(v);
+
+        tagsToShow.push({
+          value: v,
+          label: result.text,
+          closable: !result.disabled,
+        });
+      }
+      return tagsToShow;
+    }, [value, isMultiple, maxTagCount, renderTextFn]);
+
     const renderMultiple = () => {
       const usedValue = isUndefined(value) ? [] : [].concat(value as []);
-      // const maxTagCountValue = isObject(maxTagCount) ? maxTagCount.count : maxTagCount;
+      const maxTagCountValue = isObject(maxTagCount) ? maxTagCount.count : maxTagCount;
 
       const maxTagCountRender = (invisibleCount) => {
         return (
@@ -442,31 +474,18 @@ const CoreSelectView = React.forwardRef(
         );
       };
 
-      const tagsToShow: ObjectValueType[] = [];
-      let lastClosableTagIndex = -1;
-
-      for (let i = usedValue.length - 1; i >= 0; i--) {
-        const v = usedValue[i];
-        const result = renderText(v);
-        tagsToShow.unshift({
-          value: v,
-          label: result.text,
-          closable: !result.disabled,
-        });
-        if (!result.disabled && lastClosableTagIndex === -1) {
-          lastClosableTagIndex = i;
+      const findLastClosableTagIndex = () => {
+        // loop from end
+        for (let i = usedValue.length - 1; i >= 0; i--) {
+          const v = usedValue[i];
+          const result = renderTextFn(v);
+          if (!result.disabled) {
+            return i;
+          }
         }
-      }
 
-      // const invisibleTagCount = usedValue.length - usedMaxTagCount;
-      // if (invisibleTagCount > 0) {
-      //   tagsToShow.push({
-      //     label: maxTagCountRender(invisibleTagCount),
-      //     closable: false,
-      //     // InputTag needs to extract value as key
-      //     value: MAX_TAG_COUNT_VALUE_PLACEHOLDER,
-      //   });
-      // }
+        return -1;
+      };
 
       const eventHandlers = {
         onPaste: inputEventHandlers.paste,
@@ -477,7 +496,11 @@ const CoreSelectView = React.forwardRef(
         onRemove: (value, index, event) => {
           // Should always delete the last option value when press Backspace
           const keyCode = event.keyCode || event.which;
-          if (keyCode === Backspace.code && lastClosableTagIndex > -1) {
+          let lastClosableTagIndex = -1;
+          if (
+            keyCode === Backspace.code &&
+            (lastClosableTagIndex = findLastClosableTagIndex()) !== -1
+          ) {
             value = usedValue[lastClosableTagIndex];
             index = lastClosableTagIndex;
           }
@@ -519,7 +542,10 @@ const CoreSelectView = React.forwardRef(
             maxTagCount
               ? {
                   count: isObject(maxTagCount) ? maxTagCount.count : maxTagCount,
-                  render: maxTagCountRender,
+                  render:
+                    maxTagCountValue === 'responsive'
+                      ? maxTagCountRender
+                      : () => maxTagCountRender(usedValue.length - maxTagCountValue),
                   popoverProps: { disabled: true },
                 }
               : undefined
