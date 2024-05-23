@@ -372,9 +372,13 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
   // CSSTransition needs to be a direct child of TransitionGroup, otherwise the animation will NOT work
   // https://github.com/arco-design/arco-design/issues/622
   const childrenTagWithAnimation = useMemo<ReactNode[]>(() => {
+    // a map for duplication check, avoid O(n^2) complexity.
+    const valueCountMap: Record<string, number | undefined> = {};
     const items = value.map((x, i) => {
       // Check whether two tags have same value. If so, set different key for them to avoid only rendering one tag.
-      const isRepeat = value.findIndex((item) => item.value === x.value) !== i;
+      const valueCount = valueCountMap[x.value] || 0;
+      const isRepeat = valueCount >= 1;
+      valueCountMap[x.value] = valueCount + 1;
       const { dom: eleTag, valueKey } = mergedRenderTag(x, i);
       return React.isValidElement(eleTag) ? (
         <CSSTransition
