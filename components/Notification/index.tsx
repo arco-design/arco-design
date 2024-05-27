@@ -1,5 +1,5 @@
 import React, { ReactInstance } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { TransitionGroup } from 'react-transition-group';
 import { createPortal } from 'react-dom';
 import { render as ReactDOMRender } from '../_util/react-dom';
 import BaseNotification from '../_class/notification';
@@ -8,6 +8,7 @@ import cs from '../_util/classNames';
 import { isNumber, isUndefined } from '../_util/is';
 import { NotificationProps, NotificationHookReturnType } from './interface';
 import useNotification from './useNotification';
+import ArcoCSSTransition from '../_util/CSSTransition';
 
 const notificationTypes = ['info', 'success', 'error', 'warning', 'normal'];
 
@@ -192,7 +193,7 @@ class Notification extends BaseNotification {
       <div className={classNames}>
         <TransitionGroup component={null}>
           {notices.map((notice) => (
-            <CSSTransition
+            <ArcoCSSTransition
               key={notice.id}
               timeout={{
                 enter: 400,
@@ -200,12 +201,15 @@ class Notification extends BaseNotification {
               }}
               classNames={transitionClass}
               onExit={(e) => {
+                if (!e) return;
                 e.style.height = `${e.scrollHeight}px`;
               }}
               onExiting={(e) => {
+                if (!e) return;
                 e.style.height = 0;
               }}
               onExited={(e) => {
+                if (!e) return;
                 e.style.height = 0;
                 notice.onClose && notice.onClose();
               }}
@@ -219,7 +223,7 @@ class Notification extends BaseNotification {
                 noticeType="notification"
                 rtl={mergedRtl}
               />
-            </CSSTransition>
+            </ArcoCSSTransition>
           ))}
         </TransitionGroup>
       </div>

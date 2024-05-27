@@ -1,9 +1,16 @@
-import React, { PureComponent, ReactElement, PropsWithChildren, CSSProperties } from 'react';
-import { findDOMNode } from 'react-dom';
-import { CSSTransition } from 'react-transition-group';
+import React, {
+  PureComponent,
+  ReactElement,
+  PropsWithChildren,
+  CSSProperties,
+  createRef,
+  RefObject,
+} from 'react';
 import ResizeObserverPolyfill from 'resize-observer-polyfill';
+import { CSSTransition } from 'react-transition-group';
+import { callbackOriginRef, findDOMNode } from '../_util/react-dom';
 import { on, off, contains, getScrollElements, isScrollElement } from '../_util/dom';
-import { isFunction, isObject, isArray } from '../_util/is';
+import { isFunction, isObject, isArray, supportRef } from '../_util/is';
 import { pickDataAttributes } from '../_util/pick';
 import { Esc } from '../_util/keycode';
 import Portal from './portal';
@@ -116,7 +123,12 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
   popupContainer;
 
-  triggerRef: HTMLSpanElement | null;
+  rootElementRef: any;
+
+  triggerRef: RefObject<HTMLSpanElement | null>;
+
+  // 标志 popup 是否被销毁
+  triggerRefDestoried: boolean;
 
   delayTimer: any = null;
 
@@ -190,6 +202,8 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       'popupVisible' in mergedProps ? mergedProps.popupVisible : mergedProps.defaultPopupVisible;
     this.popupOpen = !!popupVisible;
 
+    this.triggerRef = createRef();
+
     this.state = {
       popupVisible: !!popupVisible,
       popupStyle: {},
@@ -197,8 +211,12 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   }
 
   getRootElement = (): HTMLElement => {
-    this.childrenDom = findDOMNode(this) as HTMLElement;
+    this.childrenDom = findDOMNode(this.props.getTargetDOMNode?.() || this.rootElementRef, this);
     return this.childrenDom;
+  };
+
+  getPopupElement = (): HTMLSpanElement | null => {
+    return this.triggerRef?.current || null;
   };
 
   componentDidMount() {
@@ -421,7 +439,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   getTransformOrigin = (position) => {
-    const content = this.triggerRef as HTMLElement;
+    const content = this.getPopupElement() as HTMLElement;
     if (!content) return {};
 
     const { showArrow, classNames } = this.getMergedProps(['showArrow', 'classNames']);
@@ -488,7 +506,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     }
 
     const mountContainer = this.popupContainer as Element;
-    const content = this.triggerRef;
+    const content = this.triggerRef.current;
     const child: HTMLElement = this.getRootElement();
 
     // offsetParent=null when display:none or position: fixed
@@ -538,6 +556,10 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       }
     );
   });
+
+  getRootDOMNode = () => {
+    return this.getRootElement();
+  };
 
   updatePopupPosition = (delay = 0, callback?: () => void) => {
     const currentVisible = this.state.popupVisible;
@@ -624,7 +646,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       'onClickOutside',
       'clickOutsideToClose',
     ]);
-    const triggerNode = this.triggerRef;
+    const triggerNode = this.getPopupElement();
     const childrenDom = this.getRootElement();
 
     if (
@@ -1010,9 +1032,20 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     );
 
     const childrenComponent = isExistChildren && (
-      <ResizeObserver onResize={this.onResize}>
+      <ResizeObserver
+        onResize={this.onResize}
+        getTargetDOMNode={() => {
+          return this.rootElementRef;
+        }}
+      >
         {React.cloneElement(child, {
           ...mergeProps,
+          ref: !supportRef(child)
+            ? undefined
+            : (node) => {
+                this.rootElementRef = node;
+                callbackOriginRef(child, node);
+              },
         })}
       </ResizeObserver>
     );
@@ -1025,7 +1058,12 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
         unmountOnExit={unmountOnExit}
         appear
         mountOnEnter
-        onEnter={(e) => {
+        onEnter={() => {
+          this.triggerRefDestoried = false;
+          const e = this.getPopupElement();
+          if (!e) {
+            return;
+          }
           e.style.display = 'initial';
           e.style.pointerEvents = 'none';
           if (classNames === 'slideDynamicOrigin') {
@@ -1033,35 +1071,52 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
             e.style.transform = this.getTransformTranslate();
           }
         }}
-        onEntering={(e) => {
+        onEntering={() => {
+          const e = this.getPopupElement();
+          if (!e) {
+            return;
+          }
           if (classNames === 'slideDynamicOrigin') {
             // 下拉菜单
             e.style.transform = '';
           }
         }}
-        onEntered={(e) => {
+        onEntered={() => {
+          const e = this.getPopupElement();
+          if (!e) {
+            return;
+          }
           e.style.pointerEvents = 'auto';
           this.forceUpdate();
         }}
-        onExit={(e) => {
+        onExit={() => {
+          const e = this.getPopupElement();
+          if (!e) {
+            return;
+          }
           // 避免消失动画时对元素的快速点击触发意外的操作
           e.style.pointerEvents = 'none';
           __onExit?.(e);
         }}
-        onExited={(e) => {
+        onExited={() => {
+          const e = this.getPopupElement();
+          if (!e) {
+            return;
+          }
           e.style.display = 'none';
           // 这里立即设置为null是为了在setState popupStyle引起重新渲染时，能触发 Portal的卸载事件。移除父节点。
           // 否则只有在下个循环中 triggerRef 才会变为null，需要重新forceUpdate，才能触发Portal的unmount。
           if (unmountOnExit) {
-            this.triggerRef = null;
+            this.triggerRefDestoried = true;
           }
           this.setState({ popupStyle: {} });
           __onExited?.(e);
         }}
+        nodeRef={this.triggerRef}
       >
         <ResizeObserver
           onResize={() => {
-            const target = this.triggerRef;
+            const target = this.triggerRef.current;
             if (target) {
               // Avoid the flickering problem caused by the size change and positioning not being recalculated in time.
               // TODO: Consider changing the popup style directly  in the next major version
@@ -1072,9 +1127,10 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
             }
             this.onResize();
           }}
+          getTargetDOMNode={() => this.getPopupElement()}
         >
           <span
-            ref={(node) => (this.triggerRef = node)}
+            ref={this.triggerRef}
             trigger-placement={this.realPosition}
             style={
               {
@@ -1124,7 +1180,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
     // 如果 triggerRef 不存在，说明弹出层内容被销毁，可以隐藏portal。
     const portal =
-      popupVisible || this.triggerRef ? (
+      popupVisible || (this.getPopupElement() && !this.triggerRefDestoried) ? (
         <Portal getContainer={this.getContainer}>{portalContent}</Portal>
       ) : null;
 

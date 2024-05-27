@@ -1,5 +1,5 @@
 import React, { useContext, ReactNode, useState, useMemo } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { TransitionGroup } from 'react-transition-group';
 import cs from '../../_util/classNames';
 import PictureItem from './pictureItem';
 import TextItem from './textItem';
@@ -7,6 +7,7 @@ import { ConfigContext } from '../../ConfigProvider';
 import { STATUS, UploadListProps } from '../interface';
 import { isFunction } from '../../_util/is';
 import ImagePreviewGroup from '../../Image/image-preview-group';
+import ArcoCSSTransition from '../../_util/CSSTransition';
 
 export const FileList = (props: UploadListProps) => {
   const { locale, rtl } = useContext(ConfigContext);
@@ -69,42 +70,49 @@ export const FileList = (props: UploadListProps) => {
             originNode = renderUploadItem(originNode, file, fileList);
           }
           return listType === 'picture-card' ? (
-            <CSSTransition
+            <ArcoCSSTransition
               key={file.uid}
               timeout={{ enter: 200, exit: 400 }}
               classNames={`${prefixCls}-slide-inline`}
               onEntered={(e) => {
+                if (!e) return;
                 e.style.width = '';
               }}
               onExit={(e) => {
+                if (!e) return;
                 e.style.width = `${e.scrollWidth}px`;
               }}
               onExiting={(e) => {
+                if (!e) return;
                 e.style.width = 0;
               }}
               onExited={(e) => {
+                if (!e) return;
                 e.style.width = 0;
               }}
             >
               {originNode}
-            </CSSTransition>
+            </ArcoCSSTransition>
           ) : (
-            <CSSTransition
+            <ArcoCSSTransition
               key={file.uid}
               timeout={{ enter: 200, exit: 400 }}
               classNames={`${prefixCls}-slide-up`}
               onExit={(e) => {
+                if (!e) return;
                 e.style.height = `${e.scrollHeight}px`;
               }}
               onExiting={(e) => {
+                if (!e) return;
                 e.style.height = 0;
               }}
               onExited={(e) => {
+                if (!e) return;
                 e.style.height = 0;
               }}
             >
               {originNode}
-            </CSSTransition>
+            </ArcoCSSTransition>
           );
         })}
       </TransitionGroup>

@@ -498,6 +498,7 @@ const VirtualList: React.ForwardRefExoticComponent<
     ref,
     () => ({
       dom: refList.current,
+      getRootDOMNode: () => refList.current,
       // Scroll to a certain height or an element
       scrollTo: (arg) => {
         refRafId.current && caf(refRafId.current);
@@ -673,6 +674,7 @@ const VirtualList: React.ForwardRefExoticComponent<
           setStateHeight(clientHeight);
         }
       }}
+      getTargetDOMNode={() => refList.current}
     >
       <WrapperTagName
         ref={refList}

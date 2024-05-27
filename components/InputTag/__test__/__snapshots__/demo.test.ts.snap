@@ -574,12 +574,12 @@ exports[`renders InputTag/demo/max-tag-count.md correctly 1`] = `
           >
             <div
               class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
-              title="1"
+              title="11"
             >
               <span
                 class="arco-tag-content"
               >
-                1
+                11
               </span>
               <span
                 aria-label="Close"
@@ -604,12 +604,12 @@ exports[`renders InputTag/demo/max-tag-count.md correctly 1`] = `
             </div>
             <div
               class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
-              title="2"
+              title="22"
             >
               <span
                 class="arco-tag-content"
               >
-                2
+                22
               </span>
               <span
                 aria-label="Close"
@@ -634,12 +634,12 @@ exports[`renders InputTag/demo/max-tag-count.md correctly 1`] = `
             </div>
             <div
               class="arco-tag arco-tag-checked arco-tag-size-default arco-input-tag-tag"
-              title="3"
+              title="33"
             >
               <span
                 class="arco-tag-content"
               >
-                3
+                33
               </span>
               <span
                 aria-label="Close"
