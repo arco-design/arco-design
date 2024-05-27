@@ -1,10 +1,10 @@
 import React from 'react';
-import { CSSTransition } from 'react-transition-group';
 import uploadRequest from './request';
 import { UploaderProps, STATUS, UploadItem, UploadRequestReturn } from './interface';
 import { isNumber, isFunction, isFile, isObject } from '../_util/is';
 import TriggerNode from './trigger-node';
 import { isAcceptFile } from './util';
+import ArcoCSSTransition from '../_util/CSSTransition';
 
 export type UploaderType = {
   upload: (file: UploadItem) => void;
@@ -243,7 +243,7 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
             e.stopPropagation();
           }}
         />
-        <CSSTransition
+        <ArcoCSSTransition
           key="trigger-node"
           in={!hide}
           timeout={100}
@@ -269,7 +269,7 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
           >
             {isFunction(children) ? children({ fileList: this.props.fileList }) : children}
           </TriggerNode>
-        </CSSTransition>
+        </ArcoCSSTransition>
         {tip && listType !== 'picture-card' && !drag ? (
           <div key="trigger-tip" className={`${prefixCls}-trigger-tip`}>
             {tip}

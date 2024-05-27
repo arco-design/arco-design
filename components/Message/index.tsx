@@ -1,5 +1,6 @@
 import React from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { TransitionGroup } from 'react-transition-group';
+import ArcoCSSTransition from '../_util/CSSTransition';
 import { render } from '../_util/react-dom';
 import BaseNotification from '../_class/notification';
 import Notice from '../_class/notice';
@@ -196,17 +197,20 @@ class Message extends BaseNotification {
       <div className={classNames}>
         <TransitionGroup component={null}>
           {notices.map((notice) => (
-            <CSSTransition
+            <ArcoCSSTransition
               key={notice.id}
               timeout={transitionTimeout}
               classNames={transitionClassNames || `fadeMessage`}
               onExit={(e) => {
+                if (!e) return;
                 e.style.height = `${e.scrollHeight}px`;
               }}
               onExiting={(e) => {
+                if (!e) return;
                 e.style.height = 0;
               }}
               onExited={(e) => {
+                if (!e) return;
                 e.style.height = 0;
                 notice.onClose && notice.onClose();
               }}
@@ -221,7 +225,7 @@ class Message extends BaseNotification {
                 rtl={mergedRtl}
                 {...(isUndefined(mergeClosable) ? {} : { closable: mergeClosable })}
               />
-            </CSSTransition>
+            </ArcoCSSTransition>
           ))}
         </TransitionGroup>
       </div>

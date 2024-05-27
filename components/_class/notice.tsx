@@ -1,4 +1,4 @@
-import React, { Component, ReactNode, CSSProperties } from 'react';
+import React, { Component, ReactNode, CSSProperties, createRef } from 'react';
 import IconClose from '../../icon/react-icon/IconClose';
 import IconCheckCircleFill from '../../icon/react-icon/IconCheckCircleFill';
 import IconCloseCircleFill from '../../icon/react-icon/IconCloseCircleFill';
@@ -49,6 +49,18 @@ class Notice extends Component<NoticeProps, {}> {
   wrapper: Element;
 
   timer: any;
+
+  rootDOMRef;
+
+  constructor(props) {
+    super(props);
+
+    this.rootDOMRef = createRef();
+  }
+
+  getRootDOMNode = () => {
+    return this.rootDOMRef.current;
+  };
 
   componentDidMount() {
     this.startTimer();
@@ -181,6 +193,7 @@ class Notice extends Component<NoticeProps, {}> {
             style={{ textAlign: 'center' }}
             onMouseEnter={this.onMouseEnter}
             onMouseLeave={this.onMouseLeave}
+            ref={this.rootDOMRef}
           >
             <div className={classNames} style={style} role="alert">
               {shouldRenderIcon && this.renderIcon()}
@@ -208,7 +221,11 @@ class Notice extends Component<NoticeProps, {}> {
     if (noticeType === 'notification') {
       return (
         <ConfigProvider {...configContext}>
-          <div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
+          <div
+            ref={this.rootDOMRef}
+            onMouseEnter={this.onMouseEnter}
+            onMouseLeave={this.onMouseLeave}
+          >
             <div className={classNames} style={style} role="alert">
               {shouldRenderIcon && <div className={`${prefixCls}-left`}>{this.renderIcon()}</div>}
               <div className={`${prefixCls}-right`}>

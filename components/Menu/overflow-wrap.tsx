@@ -143,7 +143,7 @@ const OverflowWrap = (props: OverflowWrapProps) => {
   };
 
   return (
-    <ResizeObserver onResize={computeLastVisibleIndex}>
+    <ResizeObserver onResize={computeLastVisibleIndex} getTargetDOMNode={() => refUl.current}>
       <div className={`${prefixCls}-overflow-wrap`} ref={refUl}>
         {renderChildren()}
       </div>

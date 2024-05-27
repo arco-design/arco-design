@@ -19,9 +19,7 @@ const TreeNode = TreeSelect.Node;
 
 const App = () => {
   return (
-    <TreeSelect defaultValue="node1" style={{ width: 300 }} allowClear onVisibleChange={() => {
-      console.log('a')
-    }}>
+    <TreeSelect defaultValue="node1" style={{ width: 300 }} allowClear>
       <TreeNode key="node1" title="Trunk">
         <TreeNode key="node2" title="Leaf" />
       </TreeNode>
