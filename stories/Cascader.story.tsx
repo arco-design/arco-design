@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { Cascader } from '@self';
 
@@ -37,6 +38,101 @@ function Demo1() {
 }
 
 export const Demo = () => <Demo1 />;
+
+export const LabelDemo = () => {
+  const options = [
+    {
+      value: 'beijing',
+      label: 'Beijing',
+      children: [
+        {
+          value: 'Beijing',
+          label: 'Beijing',
+          children: [
+            {
+              value: 'chaoyang',
+              label: 'Chaoyang',
+              children: [
+                {
+                  value: 'datunli',
+                  label: 'Datunli',
+                },
+              ],
+            },
+            {
+              value: 'dongcheng',
+              label: <span>dd</span>,
+            },
+            {
+              value: 'xicheng',
+              label: 'Xicheng',
+            },
+            {
+              value: 'haidian',
+              label: 'Haidian',
+            },
+            {
+              value: 'fengtai',
+              label: 'fengtai',
+            },
+            {
+              value: 'shijingshan',
+              label: 'Shijingshan',
+            },
+            {
+              value: 'mentougou',
+              label: 'Mentougou',
+            },
+            {
+              value: 'fangshan',
+              label: 'Fangshan',
+            },
+            {
+              value: 'tongzhou',
+              label: 'Tongzhou',
+            },
+            {
+              value: 'shunyi',
+              label: 'Shunyi',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      value: 'shanghai',
+      label: 'Shanghai',
+      children: [
+        {
+          value: 'shanghaishi',
+          label: 'Shanghai',
+          children: [
+            {
+              value: 'huangpu',
+              label: 'Huangpu',
+            },
+          ],
+        },
+      ],
+    },
+  ];
+
+  return (
+    <Cascader
+      placeholder="Please select ..."
+      // inputValue="dongcheng"
+      style={{ width: 300, marginBottom: 20 }}
+      options={options}
+      // defaultValue={['shanghai', 'shanghaishi', 'huangpu']}
+      filterOption={(input, node) => {
+        // console.log(node);
+        return node.value.indexOf(input) > -1;
+      }}
+      showSearch
+      allowClear
+    />
+  );
+};
 
 export default {
   title: 'Cascader',
