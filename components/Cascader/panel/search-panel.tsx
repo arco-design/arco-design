@@ -185,7 +185,6 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
   }, [currentHoverIndex, options]);
 
   refActiveItem.current = null;
-
   return options.length ? (
     <div className={`${prefixCls}-list-wrapper`}>
       <VirtualList
@@ -205,9 +204,14 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
           [`${prefixCls}-list-rtl`]: rtl,
         })}
       >
-        {(item, i) => {
+        {(item: Node<T>, i) => {
           const pathNodes = item.getPathNodes();
-          const pathLabel = pathNodes.map((x) => x.label).join(' / ');
+          const pathLabel = pathNodes.map((path) => (
+            <span key={`${path.label}_${path._level}`}>
+              {path.label}
+              {path.isLeaf ? '' : ' / '}
+            </span>
+          ));
           const isChecked = item._checked;
           const options = { checked: isChecked };
           const label = isFunction(props.renderOption)
