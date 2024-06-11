@@ -433,12 +433,19 @@ const CoreSelectView = React.forwardRef(
       // const maxTagCountValue = isObject(maxTagCount) ? maxTagCount.count : maxTagCount;
 
       const maxTagCountRender = (invisibleCount) => {
+        const dom =
+          isObject(maxTagCount) && isFunction(maxTagCount.render)
+            ? maxTagCount.render(invisibleCount)
+            : `+${invisibleCount}...`;
+
+        if (renderTag) {
+          // 执行 renderTag 逻辑。。 这里只是为了兼容以前 select-view 里会对 +x... 节点执行 renderTag 逻辑
+          // 可能不大合理，按理说 maxTagCount.render 就行，但这里要保持以前的行为不变。
+          return dom;
+        }
+
         return (
-          <Tag className={cs(`${getPrefixCls('input-tag')}-tag`, `${prefixCls}-tag`)}>
-            {isObject(maxTagCount) && isFunction(maxTagCount.render)
-              ? maxTagCount.render(invisibleCount)
-              : `+${invisibleCount}...`}
-          </Tag>
+          <Tag className={cs(`${getPrefixCls('input-tag')}-tag`, `${prefixCls}-tag`)}>{dom}</Tag>
         );
       };
 
