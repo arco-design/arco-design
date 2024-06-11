@@ -133,4 +133,4 @@ jobs:
 
       - name: upload screenshots to argos-cli
         # run: npx @argos-ci/cli upload ./tests/__screenshots__
-        run: yarn add @argos-ci/cli -D  && yarn run argos upload ./tests/__screenshots__
+        run: yarn add @argos-ci/cli@1 -D  && yarn run argos upload ./tests/__screenshots__
