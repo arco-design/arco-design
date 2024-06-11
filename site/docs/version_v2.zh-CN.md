@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.63.0
+
+2024-06-11
+
+### 💎 功能优化
+
+- 优化 SelectView 渲染逻辑，避免选中多个结点时渲染卡顿([#2690](https://github.com/arco-design/arco-design/pull/2690))
+- 优化 InputTag 渲染逻辑，降低时间复杂度([#2690](https://github.com/arco-design/arco-design/pull/2690))
+- 整体优化 findDOMNode 逻辑，避免 API 废弃警告([#2540](https://github.com/arco-design/arco-design/pull/2540))
+
+### 🐛 问题修复
+
+- 修复 `Select` renderTag 和 maxTagCount 同时使用时渲染节点样式有误的 bug(`2.62.0` 引入)。([#2706](https://github.com/arco-design/arco-design/pull/2706))
+- 修复`Cascader`组件在搜索时， `ReactNode` 类型的`label`数据被转换成字符串的问题。([#2698](https://github.com/arco-design/arco-design/pull/2698))
+
 ## 2.62.1
 
 2024-05-17

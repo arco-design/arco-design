@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.63.0
+
+2024-06-11
+
+### 💎 Enhancement
+
+- Enhance the rendering performance of SelectView([#2690](https://github.com/arco-design/arco-design/pull/2690))
+- reduce time complexity of InputTag([#2690](https://github.com/arco-design/arco-design/pull/2690))
+- 优化 findDOMNode 逻辑([#2540](https://github.com/arco-design/arco-design/pull/2540))
+
+### 🐛 BugFix
+
+- Fixed a bug in which the rendering node style is incorrect when `Select` renderTag and maxTagCount are used at the same time (introduced in `2.62.0`).([#2706](https://github.com/arco-design/arco-design/pull/2706))
+- Fix the issue where the `label` data of type `ReactNode` in the `Cascader` component is converted to a string during search.([#2698](https://github.com/arco-design/arco-design/pull/2698))
+
 ## 2.62.1
 
 2024-05-17

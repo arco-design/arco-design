@@ -1,3 +1,11 @@
+## 2.63.0
+
+2024-06-11
+
+### 💎 Enhancement
+
+- reduce time complexity of InputTag([#2690](https://github.com/arco-design/arco-design/pull/2690))
+
 ## 2.62.1
 
 2024-05-17

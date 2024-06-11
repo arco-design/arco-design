@@ -1,3 +1,11 @@
+## 2.63.0
+
+2024-06-11
+
+### 🐛 BugFix
+
+- Fix the issue where the `label` data of type `ReactNode` in the `Cascader` component is converted to a string during search.([#2698](https://github.com/arco-design/arco-design/pull/2698))
+
 ## 2.57.0
 
 2023-12-08

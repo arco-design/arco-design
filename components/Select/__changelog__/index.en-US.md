@@ -1,3 +1,15 @@
+## 2.63.0
+
+2024-06-11
+
+### 💎 Enhancement
+
+- Enhance the rendering performance of SelectView([#2690](https://github.com/arco-design/arco-design/pull/2690))
+
+### 🐛 BugFix
+
+- Fixed a bug in which the rendering node style is incorrect when `Select` renderTag and maxTagCount are used at the same time (introduced in `2.62.0`).([#2706](https://github.com/arco-design/arco-design/pull/2706))
+
 ## 2.62.0
 
 2024-04-26
