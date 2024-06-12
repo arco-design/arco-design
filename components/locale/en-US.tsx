@@ -73,11 +73,11 @@ export default {
   DatePicker: {
     Calendar,
     placeholder: {
-      date: 'Please select date',
-      week: 'Please select week',
-      month: 'Please select month',
-      year: 'Please select year',
-      quarter: 'Please select quarter',
+      date: 'Select date',
+      week: 'Select week',
+      month: 'Select month',
+      year: 'Select year',
+      quarter: 'Select quarter',
     },
     placeholders: {
       date: ['Start date', 'End date'],
