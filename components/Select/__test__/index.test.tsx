@@ -398,7 +398,7 @@ describe('Select', () => {
   });
 
   it('show placeholder correctly', async () => {
-    const placeholder = 'Please select';
+    const placeholder = 'select';
     const wrapper = render(
       <div>
         <Select value="" placeholder={placeholder} />

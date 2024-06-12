@@ -24,7 +24,7 @@ const App = () => {
     <Space size="large">
       <Select
         addBefore="Select city"
-        placeholder="Please select"
+        placeholder="Select city"
         style={{ width: 300 }}
         onChange={(value) =>
           Message.info({
@@ -39,7 +39,12 @@ const App = () => {
           </Option>
         ))}
       </Select>
-      <Select addBefore="Select city" style={{ width: 300 }} mode="multiple">
+      <Select
+        addBefore="Select city"
+        placeholder="Select city"
+        style={{ width: 300 }}
+        mode="multiple"
+      >
         {options.map((option, index) => (
           <Option key={option} disabled={index === 4} value={option}>
             {option}

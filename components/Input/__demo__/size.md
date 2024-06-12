@@ -80,13 +80,13 @@ class App extends React.Component {
             {...props}
             style={{ width: 350, margin: 12 }}
             prefix={<IconClockCircle />}
-            placeholder="Please enter something"
+            placeholder="Enter something"
           />
           <Input
             {...props}
              style={{ width: 350, margin: 12 }}
             suffix={<IconInfoCircle />}
-            placeholder="Please enter something"
+            placeholder="Enter something"
           />
         </div>
         <div>
@@ -94,13 +94,13 @@ class App extends React.Component {
             {...props}
             style={{ width: 350, margin: 12 }}
             addAfter="KG"
-            placeholder="Please enter something"
+            placeholder="Enter something"
           />
           <Input
             {...props}
             style={{ width: 350, margin: 12 }}
             addBefore="+86"
-            placeholder="Please enter something"
+            placeholder="Enter phone number"
           />
         </div>
         <div>
@@ -112,11 +112,11 @@ class App extends React.Component {
             prefix={<IconClockCircle />}
             suffix={<IconInfoCircle />}
             allowClear
-            placeholder="Please enter something"
+            placeholder="Enter phone number"
           />
           <InputSearch
             {...props}
-            placeholder="Please enter something"
+            placeholder="Enter something"
             style={{ width: 350, margin: 12 }}
             searchButton={true}
           />
@@ -126,19 +126,19 @@ class App extends React.Component {
             {...props}
             style={{ width: 350, margin: 12 }}
             addBefore={
-              <Select size={size} placeholder="Please select" style={{ width: 100 }}>
+              <Select size={size} placeholder="Select protocol" style={{ width: 100 }}>
                 <Select.Option value="http://">http://</Select.Option>
                 <Select.Option value="https://">https://</Select.Option>
               </Select>
             }
             allowClear={true}
-            placeholder="Please enter something"
+            placeholder="Enter something"
           />
           <Input
             {...props}
             style={{ width: 350, margin: 12 }}
             allowClear={true}
-            placeholder="Please enter something"
+            placeholder="Enter something"
           />
         </div>
       </div>

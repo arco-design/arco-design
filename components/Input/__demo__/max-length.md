@@ -31,13 +31,13 @@ function App() {
         <Input
           maxLength={10}
           showWordLimit
-          placeholder="Please enter no more than 10 letters"
+          placeholder="Enter no more than 10 letters"
           style={{ width: 300 }}
         />
         <Input.TextArea
           maxLength={50}
           showWordLimit
-          placeholder="Please enter no more than 50 letters"
+          placeholder="Enter no more than 50 letters"
           wrapperStyle={{ width: 300 }}
         />
       </Space>

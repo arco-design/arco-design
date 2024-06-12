@@ -48,7 +48,7 @@ class App extends React.Component {
         <div>
           <Select
             size={this.state.value}
-            placeholder="Please select"
+            placeholder="Select city"
             showSearch
             style={{ width: 345, marginBottom: 20 }}
           >
@@ -62,7 +62,7 @@ class App extends React.Component {
           <Select
             mode={'multiple'}
             size={this.state.value}
-            placeholder="Please select"
+            placeholder="Select cities"
             showSearch
             style={{ width: 345 }}
           >
