@@ -23,7 +23,7 @@ const App = () => {
     <div>
     <Space size="large">
       <Select
-        placeholder="Please select"
+        placeholder="Select city"
         style={{ width: 154 }}
         onChange={(value) =>
           Message.info({
@@ -51,7 +51,7 @@ const App = () => {
     <Space size="large">
       <Select
         status="error"
-        placeholder="Please select"
+        placeholder="Select city"
         style={{ width: 154 }}
         onChange={(value) =>
           Message.info({

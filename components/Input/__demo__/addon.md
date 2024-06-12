@@ -21,8 +21,8 @@ const App = () => {
   return (
     <Space direction="vertical">
       <Space wrap>
-        <Input style={{ width: 350 }} addAfter="RMB" placeholder="Please enter" />
-        <Input style={{ width: 350 }} addBefore="+86" placeholder="Please enter" />
+        <Input style={{ width: 350 }} addAfter="RMB" placeholder="Enter amount" />
+        <Input style={{ width: 350 }} addBefore="+86" placeholder="Enter phone number" />
       </Space>
       <Space wrap>
         <Input
@@ -37,9 +37,9 @@ const App = () => {
             </Select>
           }
           allowClear
-          placeholder="Please enter"
+          placeholder="Enter host"
         />
-        <Input style={{ width: 350 }} addBefore="www." addAfter=".com" placeholder="Please enter" />
+        <Input style={{ width: 350 }} addBefore="www." addAfter=".com" placeholder="Enter host" />
       </Space>
     </Space>
   );

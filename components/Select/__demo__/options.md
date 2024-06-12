@@ -31,7 +31,7 @@ const App = () => {
         mode="multiple"
         options={options}
         defaultValue={['Beijing', 'Shanghai']}
-        placeholder="Please select"
+        placeholder="Select cities"
         style={{
           width: 345,
         }}

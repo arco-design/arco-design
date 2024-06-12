@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <Select
-        placeholder="Please select"
+        placeholder="Select an item"
         style={{ width: 345, marginRight: 20 }}
         mode="multiple"
         onChange={(value) => setOptions(OPTIONS.filter((option) => value.indexOf(option) === -1))}

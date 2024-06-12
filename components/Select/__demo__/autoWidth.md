@@ -27,6 +27,7 @@ const App = () => {
         </Divider>
         <Select
           autoWidth={{minWidth: 200, maxWidth: 500}}
+          placeholder="Select an item"
           options={options}
           allowClear
           showSearch
@@ -35,6 +36,7 @@ const App = () => {
         <br/><br/>
         <Select
           autoWidth={{minWidth: 200, maxWidth: 500}}
+          placeholder="Select an item"
           options={options}
           allowClear
           showSearch
@@ -49,7 +51,7 @@ const App = () => {
         </Divider>
         <Select
           autoWidth={{ maxWidth: 500}}
-          placeholder="Please select"
+          placeholder="Select an item"
           options={options}
           allowClear
           showSearch
@@ -58,7 +60,7 @@ const App = () => {
         <br/><br/>
         <Select
           autoWidth={{ maxWidth: 500}}
-          placeholder="Please select"
+          placeholder="Select an item"
           options={options}
           allowClear
           showSearch
@@ -73,7 +75,7 @@ const App = () => {
         </Divider>
         <Select
           autoWidth={{ minWidth: 300 }}
-          placeholder="Please select"
+          placeholder="Select an item"
           options={options}
           allowClear
           mode="multiple"
@@ -85,7 +87,7 @@ const App = () => {
         <Select
           addBefore="Select"
           autoWidth={{ minWidth: 300 }}
-          placeholder="Please select"
+          placeholder="Select an item"
           options={options}
           allowClear
           mode="multiple"

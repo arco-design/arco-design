@@ -21,12 +21,12 @@ const App = () => {
   return (
     <Space direction="vertical">
       <Space wrap>
-        <Input style={{ width: 350 }} prefix={<IconUser />} placeholder="Please enter" />
+        <Input style={{ width: 350 }} prefix={<IconUser />} placeholder="Enter something" />
         <Input
           allowClear
           style={{ width: 350 }}
           suffix={<IconInfoCircle />}
-          placeholder="Please enter"
+          placeholder="Enter something"
         />
       </Space>
       <Space wrap>
@@ -34,7 +34,7 @@ const App = () => {
           style={{ width: 350 }}
           prefix={<IconUser />}
           suffix={<IconInfoCircle />}
-          placeholder="Please enter"
+          placeholder="Enter something"
         />
         <Input
           style={{ width: 350 }}
@@ -43,7 +43,7 @@ const App = () => {
           prefix={<IconUser />}
           suffix={<IconInfoCircle />}
           allowClear
-          placeholder="Please enter"
+          placeholder="Enter something"
         />
       </Space>
     </Space>

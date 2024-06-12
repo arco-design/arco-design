@@ -22,6 +22,7 @@ const App = () => {
       <div>
         <Typography.Paragraph>trim whitespace when out of focus：</Typography.Paragraph>
         <Input
+          placeholder="Enter something"
           onChange={v => { console.log('current value: ', v); }}
           normalizeTrigger={['onBlur']}
           normalize={v => v ? v.trim() : v}
@@ -32,6 +33,7 @@ const App = () => {
 
         <Typography.Paragraph>trim whitespace when press enter：</Typography.Paragraph>
         <Input
+          placeholder="Enter something"
           onChange={v => { console.log('current value: ', v); }}
           normalize={v => v ? v.trim() : v}
           normalizeTrigger={['onPressEnter']}

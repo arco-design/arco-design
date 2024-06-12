@@ -50,7 +50,7 @@ const App = () => {
         <Select
           style={{ maxWidth: 350, marginRight: 20 }}
           allowClear
-          placeholder="Please Select"
+          placeholder="Select color"
           mode={'multiple'}
           defaultValue={options.slice(0, 2)}
           options={options}

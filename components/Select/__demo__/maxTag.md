@@ -30,7 +30,7 @@ const App = () => {
           defaultValue={options.slice(0, 4)}
           maxTagCount={3}
           style={{ width: 350 }}
-          placeholder="Please select"
+          placeholder="Select an item"
           options={options}
           allowClear
           mode="multiple"
@@ -43,7 +43,7 @@ const App = () => {
           defaultValue={options.slice(0, 4)}
           maxTagCount={{ count: 3, render: (invisibleCount) => `+${invisibleCount}` }}
           style={{ width: 350 }}
-          placeholder="Please select"
+          placeholder="Select an item"
           options={options}
           allowClear
           mode="multiple"
@@ -56,7 +56,7 @@ const App = () => {
           defaultValue={options.slice(0, 4)}
           maxTagCount="responsive"
           style={{ width: 350 }}
-          placeholder="Please select"
+          placeholder="Select an item"
           options={options}
           allowClear
           mode="multiple"

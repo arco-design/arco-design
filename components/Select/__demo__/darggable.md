@@ -21,7 +21,7 @@ const options = ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen','a', 'b'];
 const App = () => {
   return (
     <Select
-      placeholder="Please select"
+      placeholder="Select city"
       style={{ width: 345 }}
       mode="multiple"
       dragToSort

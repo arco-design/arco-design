@@ -23,7 +23,7 @@ const App = () => {
       <Input.Password
         defaultValue="password"
         defaultVisibility={true}
-        placeholder="Please enter ..."
+        placeholder="Enter password"
         style={{ width: 350 }}
       />
     </Space>
