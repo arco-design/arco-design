@@ -41,7 +41,7 @@ function App() {
                 onClick={() => {
                   Modal.info({
                     title: '预览',
-                    content: <img src={file.url} width="100%" />,
+                    content: <img src={url || file.url} width="100%" />,
                   });
                 }}
               >
