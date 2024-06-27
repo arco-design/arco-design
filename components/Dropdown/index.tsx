@@ -16,7 +16,7 @@ const defaultProps: DropdownProps = {
   unmountOnExit: true,
 };
 
-const trigerPopupAlign = {
+const triggerPopupAlign = {
   left: 4,
   right: 4,
   top: 4,
@@ -121,7 +121,7 @@ function Dropdown(baseProps: DropdownProps, _) {
       unmountOnExit={unmountOnExit}
       position={position}
       popupVisible={popupVisible}
-      popupAlign={trigerPopupAlign}
+      popupAlign={triggerPopupAlign}
       getPopupContainer={getPopupContainer}
       alignPoint={trigger === 'contextMenu'}
       {...pick(rest, EventsByTriggerNeed)}
