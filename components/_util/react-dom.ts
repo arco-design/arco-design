@@ -74,6 +74,18 @@ if (isReact18 && createRoot) {
   };
 }
 
+let warnedInstancesWeakSet: WeakSet<Function> | undefined;
+function hasInstanceWarned(instance: ReactInstance) {
+  const ctor = instance.constructor;
+  if (typeof ctor !== 'function') return false;
+  if (!warnedInstancesWeakSet && typeof WeakSet === 'function') {
+    warnedInstancesWeakSet = new WeakSet();
+  }
+  const hasWarned = !!warnedInstancesWeakSet?.has(ctor);
+  warnedInstancesWeakSet?.add(ctor);
+  return hasWarned;
+}
+
 /**
  *
  * @param element
@@ -101,7 +113,7 @@ export const findDOMNode = (element: any, instance?: ReactInstance) => {
   // 一般 useImperativeHandle 的元素拿到的 ref 不是 dom 元素且不存在 getRootDOMNode ，会走到这里。
   if (instance) {
     warning(
-      true,
+      !hasInstanceWarned(instance),
       'Element does not define the `getRootDOMNode` method causing a call to React.findDOMNode. but findDOMNode is deprecated in StrictMode. Please check the code logic',
       { element, instance }
     );
