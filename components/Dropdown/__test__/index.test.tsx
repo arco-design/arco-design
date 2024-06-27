@@ -30,7 +30,7 @@ describe('Dropdown', () => {
 
   it("dropdown's children can be string", () => {
     const wrapper = render(
-      <Dropdown droplist={Droplist}>
+      <Dropdown droplist={Droplist} trigger="click">
         {(open) => <Button>{open ? 'open' : 'close'}</Button>}
       </Dropdown>
     );
