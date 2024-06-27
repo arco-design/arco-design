@@ -51,7 +51,7 @@ function Dropdown(baseProps: DropdownProps, _) {
 
   const prefixCls = getPrefixCls('dropdown');
 
-  const triggerRef = useRef(null);
+  const triggerRef = useRef<Trigger>(null);
   const [popupVisible, setPopupVisible] = useMergeValue(false, {
     defaultValue: props.defaultPopupVisible,
     value: props.popupVisible,
@@ -136,7 +136,7 @@ function Dropdown(baseProps: DropdownProps, _) {
 
   return (
     <Trigger
-      ref={(ref) => (triggerRef.current = ref)}
+      ref={triggerRef}
       classNames="slideDynamicOrigin"
       childrenPrefix={prefixCls}
       trigger={trigger}
