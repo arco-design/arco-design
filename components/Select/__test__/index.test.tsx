@@ -551,4 +551,40 @@ describe('Select', () => {
     const wrapper = render(<Demo />);
     expect(wrapper.querySelector('.arco-select-view-value')).toHaveTextContent('');
   });
+
+  it('allowCreate with updating value to undefined', () => {
+    const Demo = () => {
+      const [value, setValue] = useState<string[]>([]);
+      const [options, setOptions] = useState<any[]>();
+
+      React.useEffect(() => {
+        setValue(['1']);
+      }, []);
+
+      return (
+        <div>
+          <Select mode="multiple" options={options} value={value} />
+
+          <button
+            onClick={() => {
+              setOptions([
+                { label: 'aaa', value: '1' },
+                { label: 'bbb', value: '2' },
+              ]);
+            }}
+          >
+            click
+          </button>
+        </div>
+      );
+    };
+
+    const wrapper = render(<Demo />);
+
+    expect(wrapper.querySelector('.arco-tag-content')).toHaveTextContent('1');
+
+    fireEvent.click(wrapper.querySelector('button') as HTMLElement);
+
+    expect(wrapper.querySelector('.arco-tag-content')).toHaveTextContent('aaa');
+  });
 });

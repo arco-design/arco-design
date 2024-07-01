@@ -70,6 +70,35 @@ export function Demo() {
   );
 }
 
+export function App() {
+  const [value, setValue] = useState([]);
+  const [options, setOptions] = useState();
+
+  React.useEffect(() => {
+    setValue(['1']);
+    setOptions([
+      { label: '222222', value: '2' },
+      { label: '111111', value: '1' },
+    ]);
+  }, []);
+
+  return (
+    <div>
+      <Select mode="multiple" options={options} value={value} />
+
+      <button
+        onClick={() => {
+          setOptions([
+            { label: '222222', value: '2' },
+            { label: '111117771', value: '1' },
+          ]);
+        }}
+      >
+        click
+      </button>
+    </div>
+  );
+}
 export default {
   title: 'Select',
 };
