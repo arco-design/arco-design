@@ -23,7 +23,7 @@ const App = () => {
     <Space size="large" direction="vertical">
       <Select
         mode="multiple"
-        placeholder="Please select"
+        placeholder="Select cities"
         style={{ width: 345 }}
         defaultValue={['Beijing', 'Shenzhen']}
         allowClear
@@ -38,7 +38,7 @@ const App = () => {
       <Select
         mode="multiple"
         maxTagCount={2}
-        placeholder="Please select"
+        placeholder="Select cities"
         style={{ width: 345 }}
         defaultValue={['Beijing', 'Shenzhen', 'Wuhan']}
         allowClear
@@ -54,7 +54,7 @@ const App = () => {
       <Select
         mode="multiple"
         maxTagCount={{count: 2, render: (invisibleNumber) => `+${invisibleNumber} more`}}
-        placeholder="Please select"
+        placeholder="Select cities"
         style={{ width: 345 }}
         defaultValue={['Beijing', 'Shenzhen', 'Wuhan']}
         allowClear
@@ -68,7 +68,7 @@ const App = () => {
 
       <Select
         mode="multiple"
-        placeholder="Please select"
+        placeholder="Select"
         style={{ width: 345 }}
         defaultValue={['Beijing', 'Shenzhen', 'Wuhan']}
         allowClear

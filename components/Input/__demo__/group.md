@@ -36,7 +36,7 @@ const App = () => {
               <Select.Option value="Tianjin">Tianjin</Select.Option>
               <Select.Option value="Shanghai">Shanghai</Select.Option>
             </Select>
-            <Input style={{ width: '75%' }} placeholder="Please enter an address" />
+            <Input style={{ width: '75%' }} placeholder="Enter an address" />
           </Input.Group>
         </div>
         <div

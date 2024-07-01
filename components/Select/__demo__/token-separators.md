@@ -22,7 +22,7 @@ const App = () => {
   return (
     <Select
       mode="multiple"
-      placeholder="Please select"
+      placeholder="Select cities"
       tokenSeparators={[',', '|', '/']}
       allowCreate
       allowClear

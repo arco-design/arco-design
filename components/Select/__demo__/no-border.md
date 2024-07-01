@@ -22,7 +22,7 @@ const App = () => {
   return (
     <Space size="large">
       <Select
-        placeholder="Please select"
+        placeholder="Select city"
         bordered={false}
         style={{ width: 154 }}
         onChange={(value) =>
@@ -39,7 +39,7 @@ const App = () => {
         ))}
       </Select>
       <Select
-        placeholder="Please select"
+        placeholder="Select city"
         bordered={false}
         style={{ width: 154 }}
         defaultValue="Beijing"

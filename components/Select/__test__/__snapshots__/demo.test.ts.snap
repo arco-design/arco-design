@@ -35,7 +35,7 @@ exports[`renders Select/demo/addbefore.md correctly 1`] = `
             <input
               autocomplete="off"
               class="arco-select-view-input"
-              placeholder="Please select"
+              placeholder="Select city"
               style="width:100%;pointer-events:none"
               tabindex="-1"
               value=""
@@ -43,13 +43,13 @@ exports[`renders Select/demo/addbefore.md correctly 1`] = `
             <span
               class="arco-select-view-value-mirror"
             >
-              Please select
+              Select city
             </span>
             <span
               class="arco-select-view-value"
               style="display:none"
             >
-              Please select
+              Select city
             </span>
           </span>
           <div
@@ -114,11 +114,14 @@ exports[`renders Select/demo/addbefore.md correctly 1`] = `
                 <input
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+                  placeholder="Select city"
                   value=""
                 />
                 <span
                   class="arco-input-tag-input-mirror"
-                />
+                >
+                  Select city
+                </span>
               </div>
             </div>
           </div>
@@ -444,16 +447,21 @@ exports[`renders Select/demo/autoWidth.md correctly 1`] = `
           <input
             autocomplete="off"
             class="arco-select-view-input"
+            placeholder="Select an item"
             style="width:100%"
             value=""
           />
           <span
             class="arco-select-view-value-mirror"
-          />
+          >
+            Select an item
+          </span>
           <span
             class="arco-select-view-value"
             style="display:none"
-          />
+          >
+            Select an item
+          </span>
         </span>
         <div
           aria-hidden="true"
@@ -508,16 +516,21 @@ exports[`renders Select/demo/autoWidth.md correctly 1`] = `
             <input
               autocomplete="off"
               class="arco-select-view-input"
+              placeholder="Select an item"
               style="width:100%"
               value=""
             />
             <span
               class="arco-select-view-value-mirror"
-            />
+            >
+              Select an item
+            </span>
             <span
               class="arco-select-view-value"
               style="display:none"
-            />
+            >
+              Select an item
+            </span>
           </span>
           <div
             aria-hidden="true"
@@ -583,20 +596,20 @@ exports[`renders Select/demo/autoWidth.md correctly 1`] = `
           <input
             autocomplete="off"
             class="arco-select-view-input"
-            placeholder="Please select"
+            placeholder="Select an item"
             style="width:100%"
             value=""
           />
           <span
             class="arco-select-view-value-mirror"
           >
-            Please select
+            Select an item
           </span>
           <span
             class="arco-select-view-value"
             style="display:none"
           >
-            Please select
+            Select an item
           </span>
         </span>
         <div
@@ -652,20 +665,20 @@ exports[`renders Select/demo/autoWidth.md correctly 1`] = `
             <input
               autocomplete="off"
               class="arco-select-view-input"
-              placeholder="Please select"
+              placeholder="Select an item"
               style="width:100%"
               value=""
             />
             <span
               class="arco-select-view-value-mirror"
             >
-              Please select
+              Select an item
             </span>
             <span
               class="arco-select-view-value"
               style="display:none"
             >
-              Please select
+              Select an item
             </span>
           </span>
           <div
@@ -738,13 +751,13 @@ exports[`renders Select/demo/autoWidth.md correctly 1`] = `
               <input
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-                placeholder="Please select"
+                placeholder="Select an item"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
               >
-                Please select
+                Select an item
               </span>
             </div>
           </div>
@@ -808,13 +821,13 @@ exports[`renders Select/demo/autoWidth.md correctly 1`] = `
                 <input
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-                  placeholder="Please select"
+                  placeholder="Select an item"
                   value=""
                 />
                 <span
                   class="arco-input-tag-input-mirror"
                 >
-                  Please select
+                  Select an item
                 </span>
               </div>
             </div>
@@ -876,7 +889,7 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
             <input
               autocomplete="off"
               class="arco-select-view-input"
-              placeholder="Please select"
+              placeholder="Select city"
               style="width:100%;pointer-events:none"
               tabindex="-1"
               value=""
@@ -884,13 +897,13 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
             <span
               class="arco-select-view-value-mirror"
             >
-              Please select
+              Select city
             </span>
             <span
               class="arco-select-view-value"
               style="display:none"
             >
-              Please select
+              Select city
             </span>
           </span>
           <div
@@ -1008,7 +1021,7 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
             <input
               autocomplete="off"
               class="arco-select-view-input"
-              placeholder="Please select"
+              placeholder="Select city"
               style="width:100%;pointer-events:none"
               tabindex="-1"
               value=""
@@ -1016,13 +1029,13 @@ exports[`renders Select/demo/basic.md correctly 1`] = `
             <span
               class="arco-select-view-value-mirror"
             >
-              Please select
+              Select city
             </span>
             <span
               class="arco-select-view-value"
               style="display:none"
             >
-              Please select
+              Select city
             </span>
           </span>
           <div
@@ -1133,7 +1146,7 @@ exports[`renders Select/demo/clear.md correctly 1`] = `
       <input
         autocomplete="off"
         class="arco-select-view-input"
-        placeholder="Please select"
+        placeholder="Select"
         style="width:100%;pointer-events:none"
         tabindex="-1"
         value=""
@@ -1141,13 +1154,13 @@ exports[`renders Select/demo/clear.md correctly 1`] = `
       <span
         class="arco-select-view-value-mirror"
       >
-        Please select
+        Select
       </span>
       <span
         class="arco-select-view-value"
         style="display:none"
       >
-        Please select
+        Select
       </span>
     </span>
     <div
@@ -1203,7 +1216,7 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
           <input
             autocomplete="off"
             class="arco-select-view-input"
-            placeholder="Please select"
+            placeholder="Select city"
             style="width:100%;pointer-events:none"
             tabindex="-1"
             value=""
@@ -1211,13 +1224,13 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
           <span
             class="arco-select-view-value-mirror"
           >
-            Please select
+            Select city
           </span>
           <span
             class="arco-select-view-value"
             style="display:none"
           >
-            Please select
+            Select city
           </span>
         </span>
         <div
@@ -1267,7 +1280,7 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
           <input
             autocomplete="off"
             class="arco-select-view-input"
-            placeholder="Please select"
+            placeholder="Select city"
             style="width:100%;pointer-events:none"
             tabindex="-1"
             value=""
@@ -1275,13 +1288,13 @@ exports[`renders Select/demo/custom-popup-width.md correctly 1`] = `
           <span
             class="arco-select-view-value-mirror"
           >
-            Please select
+            Select city
           </span>
           <span
             class="arco-select-view-value"
             style="display:none"
           >
-            Please select
+            Select city
           </span>
         </span>
         <div
@@ -1661,13 +1674,13 @@ exports[`renders Select/demo/hide-selected-option.md correctly 1`] = `
           <input
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-            placeholder="Please select"
+            placeholder="Select an item"
             value=""
           />
           <span
             class="arco-input-tag-input-mirror"
           >
-            Please select
+            Select an item
           </span>
         </div>
       </div>
@@ -2878,7 +2891,7 @@ exports[`renders Select/demo/no-border.md correctly 1`] = `
           <input
             autocomplete="off"
             class="arco-select-view-input"
-            placeholder="Please select"
+            placeholder="Select city"
             style="width:100%;pointer-events:none"
             tabindex="-1"
             value=""
@@ -2886,13 +2899,13 @@ exports[`renders Select/demo/no-border.md correctly 1`] = `
           <span
             class="arco-select-view-value-mirror"
           >
-            Please select
+            Select city
           </span>
           <span
             class="arco-select-view-value"
             style="display:none"
           >
-            Please select
+            Select city
           </span>
         </span>
         <div
@@ -2945,7 +2958,7 @@ exports[`renders Select/demo/no-border.md correctly 1`] = `
             autocomplete="off"
             class="arco-select-view-input arco-select-hidden"
             disabled=""
-            placeholder="Please select"
+            placeholder="Select city"
             style="width:100%;pointer-events:none"
             tabindex="-1"
             value=""
@@ -4011,20 +4024,20 @@ exports[`renders Select/demo/size.md correctly 1`] = `
           <input
             autocomplete="off"
             class="arco-select-view-input"
-            placeholder="Please select"
+            placeholder="Select city"
             style="width:100%"
             value=""
           />
           <span
             class="arco-select-view-value-mirror"
           >
-            Please select
+            Select city
           </span>
           <span
             class="arco-select-view-value"
             style="display:none"
           >
-            Please select
+            Select city
           </span>
         </span>
         <div
@@ -4077,13 +4090,13 @@ exports[`renders Select/demo/size.md correctly 1`] = `
               <input
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-                placeholder="Please select"
+                placeholder="Select cities"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
               >
-                Please select
+                Select cities
               </span>
             </div>
           </div>
@@ -4142,13 +4155,13 @@ exports[`renders Select/demo/token-separators.md correctly 1`] = `
           <input
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-            placeholder="Please select"
+            placeholder="Select cities"
             value=""
           />
           <span
             class="arco-input-tag-input-mirror"
           >
-            Please select
+            Select cities
           </span>
         </div>
       </div>

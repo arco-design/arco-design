@@ -24,7 +24,7 @@ const App = () => {
       </Divider>
 
       <Input
-        placeholder="Please Enter"
+        placeholder="Enter something"
         autoWidth={{ maxWidth: 500}}
       />
 
@@ -32,14 +32,16 @@ const App = () => {
         <Typography.Text code>{JSON.stringify({minWidth: 300, maxWidth: 500})}</Typography.Text>
       </Divider>
 
-      <Input autoWidth={{minWidth: 300, maxWidth: 500}}/>
+      <Input autoWidth={{minWidth: 300, maxWidth: 500}} placeholder="Enter something" />
       <br/><br/>
       <Input
+        placeholder="Enter something"
         prefix="Prefix"
         autoWidth={{minWidth: 300, maxWidth: 500}}
       />
       <br/><br/>
       <Input
+        placeholder="Enter something"
         addBefore="Before"
         prefix="Prefix"
         autoWidth={{minWidth: 300, maxWidth: 500}}

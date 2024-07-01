@@ -20,7 +20,7 @@ const options = ['Beijing', 'Shanghai', 'Guangzhou', 'Disabled'];
 
 const App = () => {
   return (
-    <Select placeholder="Please select" style={{ width: 154 }} allowClear>
+    <Select placeholder="Select" style={{ width: 154 }} allowClear>
       {options.map((option, index) => (
         <Option key={option} disabled={index === 3} value={option}>
           {option}

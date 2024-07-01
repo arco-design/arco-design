@@ -27,7 +27,7 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
             >
               <input
                 class="arco-input arco-input-size-default"
-                placeholder="Please enter"
+                placeholder="Enter amount"
                 value=""
               />
             </span>
@@ -60,7 +60,7 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
             >
               <input
                 class="arco-input arco-input-size-default"
-                placeholder="Please enter"
+                placeholder="Enter phone number"
                 value=""
               />
             </span>
@@ -96,7 +96,7 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
             >
               <input
                 class="arco-input arco-input-size-default"
-                placeholder="Please enter"
+                placeholder="Enter host"
                 value=""
               />
             </span>
@@ -182,7 +182,7 @@ exports[`renders Input/demo/addon.md correctly 1`] = `
             >
               <input
                 class="arco-input arco-input-size-default"
-                placeholder="Please enter"
+                placeholder="Enter host"
                 value=""
               />
             </span>
@@ -219,7 +219,7 @@ exports[`renders Input/demo/autoWidth.md correctly 1`] = `
   </div>
   <input
     class="arco-input arco-input-size-default arco-input-autowidth"
-    placeholder="Please Enter"
+    placeholder="Enter something"
     style="min-width:0;max-width:500px;width:auto"
     value=""
   />
@@ -227,7 +227,7 @@ exports[`renders Input/demo/autoWidth.md correctly 1`] = `
     class="arco-input-mirror"
     style="min-width:0;max-width:500px;width:auto"
   >
-    Please Enter
+    Enter something
   </span>
   <div
     class="arco-divider arco-divider-horizontal arco-divider-with-text arco-divider-with-text-center"
@@ -247,13 +247,16 @@ exports[`renders Input/demo/autoWidth.md correctly 1`] = `
   </div>
   <input
     class="arco-input arco-input-size-default arco-input-autowidth"
+    placeholder="Enter something"
     style="min-width:300px;max-width:500px;width:auto"
     value=""
   />
   <span
     class="arco-input-mirror"
     style="min-width:300px;max-width:500px;width:auto"
-  />
+  >
+    Enter something
+  </span>
   <br />
   <br />
   <div
@@ -273,11 +276,14 @@ exports[`renders Input/demo/autoWidth.md correctly 1`] = `
         </span>
         <input
           class="arco-input arco-input-size-default arco-input-autowidth"
+          placeholder="Enter something"
           value=""
         />
         <span
           class="arco-input-mirror"
-        />
+        >
+          Enter something
+        </span>
       </span>
     </span>
   </div>
@@ -305,11 +311,14 @@ exports[`renders Input/demo/autoWidth.md correctly 1`] = `
         </span>
         <input
           class="arco-input arco-input-size-default arco-input-autowidth"
+          placeholder="Enter something"
           value=""
         />
         <span
           class="arco-input-mirror"
-        />
+        >
+          Enter something
+        </span>
       </span>
     </span>
   </div>
@@ -323,7 +332,7 @@ exports[`renders Input/demo/basic.md correctly 1`] = `
 >
   <input
     class="arco-input arco-input-size-default"
-    placeholder="Please Enter something"
+    placeholder="Enter something"
     value=""
   />
 </span>
@@ -396,7 +405,7 @@ exports[`renders Input/demo/group.md correctly 1`] = `
         </div>
         <input
           class="arco-input arco-input-size-default"
-          placeholder="Please enter an address"
+          placeholder="Enter an address"
           style="width:75%"
           value=""
         />
@@ -686,7 +695,7 @@ exports[`renders Input/demo/max-length.md correctly 1`] = `
               <input
                 class="arco-input arco-input-size-default"
                 maxlength="10"
-                placeholder="Please enter no more than 10 letters"
+                placeholder="Enter no more than 10 letters"
                 value=""
               />
               <span
@@ -712,7 +721,7 @@ exports[`renders Input/demo/max-length.md correctly 1`] = `
           <textarea
             class="arco-textarea"
             maxlength="50"
-            placeholder="Please enter no more than 50 letters"
+            placeholder="Enter no more than 50 letters"
           />
           <span
             class="arco-textarea-word-limit"
@@ -800,6 +809,7 @@ exports[`renders Input/demo/normalize.md correctly 1`] = `
       </div>
       <input
         class="arco-input arco-input-size-default"
+        placeholder="Enter something"
         style="width:350px"
         value=""
       />
@@ -817,6 +827,7 @@ exports[`renders Input/demo/normalize.md correctly 1`] = `
       </div>
       <input
         class="arco-input arco-input-size-default"
+        placeholder="Enter something"
         style="width:350px"
         value=""
       />
@@ -887,7 +898,7 @@ exports[`renders Input/demo/password.md correctly 1`] = `
         >
           <input
             class="arco-input arco-input-size-default"
-            placeholder="Please enter ..."
+            placeholder="Enter password"
             type="text"
             value="password"
           />
@@ -967,7 +978,7 @@ exports[`renders Input/demo/prefix_suffix.md correctly 1`] = `
               </span>
               <input
                 class="arco-input arco-input-size-default"
-                placeholder="Please enter"
+                placeholder="Enter something"
                 value=""
               />
             </span>
@@ -990,7 +1001,7 @@ exports[`renders Input/demo/prefix_suffix.md correctly 1`] = `
             >
               <input
                 class="arco-input arco-input-size-default"
-                placeholder="Please enter"
+                placeholder="Enter something"
                 value=""
               />
               <span
@@ -1060,7 +1071,7 @@ exports[`renders Input/demo/prefix_suffix.md correctly 1`] = `
               </span>
               <input
                 class="arco-input arco-input-size-default"
-                placeholder="Please enter"
+                placeholder="Enter something"
                 value=""
               />
               <span
@@ -1127,7 +1138,7 @@ exports[`renders Input/demo/prefix_suffix.md correctly 1`] = `
               </span>
               <input
                 class="arco-input arco-input-size-default"
-                placeholder="Please enter"
+                placeholder="Enter something"
                 value=""
               />
               <span
@@ -1569,7 +1580,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
           </span>
           <input
             class="arco-input arco-input-size-default"
-            placeholder="Please enter something"
+            placeholder="Enter something"
             value=""
           />
         </span>
@@ -1587,7 +1598,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
         >
           <input
             class="arco-input arco-input-size-default"
-            placeholder="Please enter something"
+            placeholder="Enter something"
             value=""
           />
           <span
@@ -1624,7 +1635,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
         >
           <input
             class="arco-input arco-input-size-default"
-            placeholder="Please enter something"
+            placeholder="Enter something"
             value=""
           />
         </span>
@@ -1652,7 +1663,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
         >
           <input
             class="arco-input arco-input-size-default"
-            placeholder="Please enter something"
+            placeholder="Enter phone number"
             value=""
           />
         </span>
@@ -1694,7 +1705,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
           </span>
           <input
             class="arco-input arco-input-size-default"
-            placeholder="Please enter something"
+            placeholder="Enter phone number"
             value=""
           />
           <span
@@ -1746,7 +1757,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
         >
           <input
             class="arco-input arco-input-size-default"
-            placeholder="Please enter something"
+            placeholder="Enter something"
             value=""
           />
         </span>
@@ -1805,7 +1816,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
                 <input
                   autocomplete="off"
                   class="arco-select-view-input"
-                  placeholder="Please select"
+                  placeholder="Select protocol"
                   style="width:100%;pointer-events:none"
                   tabindex="-1"
                   value=""
@@ -1813,13 +1824,13 @@ exports[`renders Input/demo/size.md correctly 1`] = `
                 <span
                   class="arco-select-view-value-mirror"
                 >
-                  Please select
+                  Select protocol
                 </span>
                 <span
                   class="arco-select-view-value"
                   style="display:none"
                 >
-                  Please select
+                  Select protocol
                 </span>
               </span>
               <div
@@ -1852,7 +1863,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
         >
           <input
             class="arco-input arco-input-size-default"
-            placeholder="Please enter something"
+            placeholder="Enter something"
             value=""
           />
         </span>
@@ -1864,7 +1875,7 @@ exports[`renders Input/demo/size.md correctly 1`] = `
     >
       <input
         class="arco-input arco-input-size-default"
-        placeholder="Please enter something"
+        placeholder="Enter something"
         value=""
       />
     </span>
@@ -1924,7 +1935,7 @@ exports[`renders Input/demo/textarea.md correctly 1`] = `
   >
     <textarea
       class="arco-textarea"
-      placeholder="Please enter ..."
+      placeholder="Enter something"
       style="min-height:64px;width:350px"
     />
   </div>
@@ -1953,7 +1964,7 @@ exports[`renders Input/demo/textarea_autosize.md correctly 1`] = `
   >
     <textarea
       class="arco-textarea"
-      placeholder="Please enter ..."
+      placeholder="Enter something"
       style="width:350px"
     >
       This is the contents of the textarea. 
@@ -1965,7 +1976,7 @@ exports[`renders Input/demo/textarea_autosize.md correctly 1`] = `
   >
     <textarea
       class="arco-textarea"
-      placeholder="Please enter ..."
+      placeholder="Enter something"
       style="width:350px"
     >
       This is the contents of the textarea. This is the contents of the textarea. This is the contents of the textarea. 
