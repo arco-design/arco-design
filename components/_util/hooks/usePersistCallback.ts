@@ -11,6 +11,6 @@ export default function usePersistCallback<T extends (...args: any[]) => any>(fn
       const fn = ref.current;
       return fn && fn(...args);
     },
-    [ref]
+    [ref.current]
   );
 }
