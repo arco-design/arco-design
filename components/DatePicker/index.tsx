@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, forwardRef } from 'react';
 import Picker from './picker';
 import PickerRange from './picker-range';
 import DatePickerPanel from './panels/date';
@@ -16,19 +16,20 @@ import {
   RangePickerProps,
   DatePickerDecorator,
   ModeType,
+  DatePickerHandle,
 } from './interface';
 
 function wrapper<P = any>(
   picker: ReactElement<P>,
   options: { displayName: string; mode: ModeType }
 ) {
-  return class PickerWrapper extends React.Component<P> {
-    static displayName = options.displayName;
+  const PickerWrapper = forwardRef<DatePickerHandle, P>((props, ref) => {
+    return <Picker {...props} ref={ref} picker={picker} mode={options.mode} />;
+  });
 
-    render() {
-      return <Picker {...this.props} picker={picker} mode={options.mode} />;
-    }
-  };
+  PickerWrapper.displayName = options.displayName;
+
+  return PickerWrapper;
 }
 
 const DatePicker = wrapper<DatePickerProps>(<DatePickerPanel />, {

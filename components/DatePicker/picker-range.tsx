@@ -1,8 +1,15 @@
-import React, { useState, useRef, useEffect, useContext } from 'react';
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useContext,
+  useImperativeHandle,
+  forwardRef,
+} from 'react';
 import { Dayjs, UnitType, QUnitType } from 'dayjs';
 import Trigger from '../Trigger';
 import DateInputRange from '../_class/picker/input-range';
-import { RangePickerProps, ShortcutType, ModeType } from './interface';
+import { RangePickerProps, ShortcutType, ModeType, RangePickerHandle } from './interface';
 import { isArray, isDayjs, isObject, isUndefined } from '../_util/is';
 import cs from '../_util/classNames';
 import { pickDataAttributes } from '../_util/pick';
@@ -73,7 +80,7 @@ const defaultProps: RangePickerProps = {
 
 const triggerPopupAlign = { bottom: 4 };
 
-const Picker = (baseProps: RangePickerProps) => {
+const Picker = (baseProps: RangePickerProps, ref) => {
   const { getPrefixCls, locale, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
   if (rtl) {
     defaultProps.position = 'br';
@@ -134,6 +141,19 @@ const Picker = (baseProps: RangePickerProps) => {
 
   const shortcutEnterTimer = useRef(null);
   const shortcutLeaveTimer = useRef(null);
+
+  useImperativeHandle<any, RangePickerHandle>(
+    ref,
+    () => ({
+      focus(index?: number) {
+        refInput.current && refInput.current.focus && refInput.current.focus(index);
+      },
+      blur() {
+        refInput.current && refInput.current.blur && refInput.current.blur();
+      },
+    }),
+    []
+  );
 
   const format = getFormat(props);
 
@@ -905,6 +925,8 @@ const Picker = (baseProps: RangePickerProps) => {
   );
 };
 
-Picker.displayName = 'RangePicker';
+const PickerComponent = forwardRef<RangePickerHandle, RangePickerProps>(Picker);
 
-export default Picker;
+PickerComponent.displayName = 'RangePicker';
+
+export default PickerComponent;
