@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.63.1
+
+2024-07-02
+
+### 💎 功能优化
+
+- 优化 `findDOMNode` 控制台 warning([#2727](https://github.com/arco-design/arco-design/pull/2727))
+
+### 🐛 问题修复
+
+- 修复 `Select` 组件 options 改变时，选中项展示未及时更新的 bug（`2.63.0` 引入）([#2732](https://github.com/arco-design/arco-design/pull/2732))
+- 移除 DatePicker 默认 placeholder "Please"([#2709](https://github.com/arco-design/arco-design/pull/2709))
+- 修复 `Avatar` 组件内部 img 元素存在空白的样式问题([#2692](https://github.com/arco-design/arco-design/pull/2692))
+
 ## 2.63.0
 
 2024-06-11

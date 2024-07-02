@@ -1,3 +1,11 @@
+## 2.63.1
+
+2024-07-02
+
+### 🐛 BugFix
+
+- Prevent phantom space in avatar image([#2692](https://github.com/arco-design/arco-design/pull/2692))
+
 ## 2.45.1
 
 2023-03-01

@@ -1,3 +1,11 @@
+## 2.63.1
+
+2024-07-02
+
+### 🐛 BugFix
+
+- Fixed a bug where the selected item display was not updated in time when the `Select` component options changed (introduced in `2.63.0`)([#2732](https://github.com/arco-design/arco-design/pull/2732))
+
 ## 2.63.0
 
 2024-06-11

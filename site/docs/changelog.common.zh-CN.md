@@ -1,3 +1,11 @@
+## 2.63.1
+
+2024-07-02
+
+### 💎 功能优化
+
+- 优化 `findDOMNode` 控制台 warning([#2727](https://github.com/arco-design/arco-design/pull/2727))
+
 ## 2.63.0
 
 2024-06-11

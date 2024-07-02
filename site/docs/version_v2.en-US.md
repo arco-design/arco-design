@@ -2,6 +2,20 @@
 changelog: true
 ---
 
+## 2.63.1
+
+2024-07-02
+
+### 💎 Enhancement
+
+- Optimize `findDOMNode` console warning([#2727](https://github.com/arco-design/arco-design/pull/2727))
+
+### 🐛 BugFix
+
+- Fixed a bug where the selected item display was not updated in time when the `Select` component options changed (introduced in `2.63.0`)([#2732](https://github.com/arco-design/arco-design/pull/2732))
+- DatePicker default placeholder remove "Please"([#2709](https://github.com/arco-design/arco-design/pull/2709))
+- Prevent phantom space in avatar image([#2692](https://github.com/arco-design/arco-design/pull/2692))
+
 ## 2.63.0
 
 2024-06-11

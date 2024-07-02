@@ -1,3 +1,11 @@
+## 2.63.1
+
+2024-07-02
+
+### 🐛 问题修复
+
+- 移除 DatePicker 默认 placeholder "Please"([#2709](https://github.com/arco-design/arco-design/pull/2709))
+
 ## 2.60.0
 
 2024-02-23
