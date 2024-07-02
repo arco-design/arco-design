@@ -606,7 +606,6 @@ export interface TheadProps<T = any> {
   data: T[];
   onHandleFilter: (column, filter) => void;
   onHandleFilterReset: (filter) => void;
-  currentSorter: SorterInfo;
   activeSorters: SorterInfo[];
   selectedRowKeys: (string | number)[];
   onHeaderRow?: (columns, index: number) => RowCallbackProps;
@@ -688,3 +687,5 @@ export interface SummaryProps {
   fixed?: 'top' | 'bottom';
   children?: ReactNode;
 }
+
+export type FilterType<T> = Partial<Record<keyof T, string[]>>;
