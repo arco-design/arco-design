@@ -532,10 +532,26 @@ export interface ShortcutsProps {
   showTime?: boolean | TimePickerProps;
 }
 
-export interface DatePickerDecorator extends React.ComponentClass<DatePickerProps> {
-  MonthPicker: React.ComponentClass<MonthPickerProps>;
-  YearPicker: React.ComponentClass<YearPickerProps>;
-  WeekPicker: React.ComponentClass<WeekPickerProps>;
-  QuarterPicker: React.ComponentClass<QuarterPickerProps>;
-  RangePicker: React.ComponentClass<RangePickerProps>;
+export type DateInputHandle = {
+  focus: () => void;
+  blur: () => void;
+};
+
+export interface DatePickerDecorator
+  extends React.ForwardRefExoticComponent<DatePickerProps & React.RefAttributes<DateInputHandle>> {
+  MonthPicker: React.ForwardRefExoticComponent<
+    MonthPickerProps & React.RefAttributes<DateInputHandle>
+  >;
+  YearPicker: React.ForwardRefExoticComponent<
+    YearPickerProps & React.RefAttributes<DateInputHandle>
+  >;
+  WeekPicker: React.ForwardRefExoticComponent<
+    WeekPickerProps & React.RefAttributes<DateInputHandle>
+  >;
+  QuarterPicker: React.ForwardRefExoticComponent<
+    QuarterPickerProps & React.RefAttributes<DateInputHandle>
+  >;
+  RangePicker: React.ForwardRefExoticComponent<
+    RangePickerProps & React.RefAttributes<DateInputHandle>
+  >;
 }
