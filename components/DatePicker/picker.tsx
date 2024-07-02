@@ -388,8 +388,10 @@ const Picker = (baseProps: InnerPickerProps) => {
 
   function onSelectNow() {
     const now = getLocaleDayjsValue(getNow(utcOffset, timezone), locale.dayjsLocale);
-    handlePickerValueChange(now);
-    onHandleSelect(now.format(format), now, true);
+    if (isValid(now)) {
+      handlePickerValueChange(now);
+      onHandleSelect(now.format(format), now, true);
+    }
   }
 
   function onMouseEnterCell(value: Dayjs, disabled: boolean) {
