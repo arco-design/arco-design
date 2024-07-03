@@ -5,6 +5,7 @@ import React, {
   useContext,
   CSSProperties,
   ReactNode,
+  useState,
 } from 'react';
 import { Dayjs } from 'dayjs';
 import omit from '../../_util/omit';
@@ -73,6 +74,7 @@ function DateInput(
 ) {
   const { getPrefixCls, size: ctxSize, locale, rtl } = useContext(ConfigContext);
   const input = useRef<HTMLInputElement>(null);
+  const [focused, setFocused] = useState(false);
   const size = propSize || ctxSize;
 
   useImperativeHandle<any, DateInputHandle>(ref, () => ({
@@ -114,11 +116,12 @@ function DateInput(
   const prefixCls = propPrefixCls || getPrefixCls('picker');
 
   const inputStatus = status || (error ? 'error' : undefined);
+  const mergedFocused = focused || popupVisible;
   const classNames = cs(
     prefixCls,
     `${prefixCls}-size-${size}`,
     {
-      [`${prefixCls}-focused`]: !!popupVisible,
+      [`${prefixCls}-focused`]: mergedFocused,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-has-prefix`]: prefix,
       [`${prefixCls}-${inputStatus}`]: inputStatus,
@@ -143,6 +146,14 @@ function DateInput(
           onKeyDown={onKeyDown}
           onChange={onChangeInput}
           {...readOnlyProps}
+          onFocus={() => {
+            if (!disabled && editable) {
+              setFocused(true);
+            }
+          }}
+          onBlur={() => {
+            setFocused(false);
+          }}
         />
       </div>
       <div className={`${prefixCls}-suffix`}>
