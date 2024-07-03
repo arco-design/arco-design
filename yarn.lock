@@ -7541,10 +7541,10 @@ flush-write-stream@^1.0.0, flush-write-stream@^1.0.2:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-focus-lock@^0.11.2:
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/focus-lock/-/focus-lock-0.11.2.tgz#aeef3caf1cea757797ac8afdebaec8fd9ab243ed"
-  integrity sha512-pZ2bO++NWLHhiKkgP1bEXHhR1/OjVcSvlCJ98aNJDFeb7H5OOQaO+SKOZle6041O9rv2tmbrO4JzClAvDUHf0g==
+focus-lock@^1.3.5:
+  version "1.3.5"
+  resolved "https://bnpm.byted.org/focus-lock/-/focus-lock-1.3.5.tgz#aa644576e5ec47d227b57eb14e1efb2abf33914c"
+  integrity sha512-QFaHbhv9WPUeLYBDe/PAuLKJ4Dd9OPvKs9xZBr3yLXnUrDNaVXKu2baDBXe3naPY30hgHYSsf2JW4jzas2mDEQ==
   dependencies:
     tslib "^2.0.3"
 
@@ -13184,16 +13184,16 @@ react-fast-compare@^3.0.1, react-fast-compare@^3.1.1, react-fast-compare@^3.2.0:
   resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
-react-focus-lock@^2.9.1:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/react-focus-lock/-/react-focus-lock-2.9.1.tgz#094cfc19b4f334122c73bb0bff65d77a0c92dd16"
-  integrity sha512-pSWOQrUmiKLkffPO6BpMXN7SNKXMsuOakl652IBuALAu1esk+IcpJyM+ALcYzPTTFz1rD0R54aB9A4HuP5t1Wg==
+react-focus-lock@^2.12.1:
+  version "2.12.1"
+  resolved "https://bnpm.byted.org/react-focus-lock/-/react-focus-lock-2.12.1.tgz#0eaefd5fc34de8998967043d902e426352393349"
+  integrity sha512-lfp8Dve4yJagkHiFrC1bGtib3mF2ktqwPJw4/WGcgPW+pJ/AVQA5X2vI7xgp13FcxFEpYBBHpXai/N2DBNC0Jw==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    focus-lock "^0.11.2"
+    focus-lock "^1.3.5"
     prop-types "^15.6.2"
     react-clientside-effect "^1.2.6"
-    use-callback-ref "^1.3.0"
+    use-callback-ref "^1.3.2"
     use-sidecar "^1.1.2"
 
 react-helmet-async@^1.0.7:
@@ -15764,10 +15764,10 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
-use-callback-ref@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/use-callback-ref/-/use-callback-ref-1.3.0.tgz#772199899b9c9a50526fedc4993fc7fa1f7e32d5"
-  integrity sha512-3FT9PRuRdbB9HfXhEq35u4oZkvpJ5kuYbpqhCfmiZyReuRgpnhDlbr2ZEnnuS0RrJAPn6l23xjFg9kpDM+Ms7w==
+use-callback-ref@^1.3.2:
+  version "1.3.2"
+  resolved "https://bnpm.byted.org/use-callback-ref/-/use-callback-ref-1.3.2.tgz#6134c7f6ff76e2be0b56c809b17a650c942b1693"
+  integrity sha512-elOQwe6Q8gqZgDA8mrh44qRTQqpIHDcZ3hXTLjBe1i4ph8XpNJnO+aQf3NaG+lriLopI4HMx9VjQLfPQ6vhnoA==
   dependencies:
     tslib "^2.0.0"
 
