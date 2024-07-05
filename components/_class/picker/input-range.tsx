@@ -5,6 +5,7 @@ import React, {
   forwardRef,
   CSSProperties,
   ReactNode,
+  useState,
 } from 'react';
 import { Dayjs } from 'dayjs';
 import IconClose from '../../../icon/react-icon/IconClose';
@@ -35,7 +36,7 @@ export interface DateInputRangeProps {
   onChange?: (e) => void;
   inputValue?: string;
   separator?: ReactNode;
-  changeFocusedInputIndex?: (index: number) => void;
+  changeFocusedInputIndex?: (index: number, silent?: boolean) => void;
   focusedInputIndex?: number;
   isPlaceholder?: boolean;
   prefix?: ReactNode;
@@ -83,6 +84,7 @@ function DateInput(
   const input0 = useRef<HTMLInputElement>(null);
   const input1 = useRef<HTMLInputElement>(null);
   const refRootWrapper = useRef<HTMLDivElement>(null);
+  const [focused, setFocused] = useState([false, false]);
 
   const disabled1 = isArray(disabled) ? disabled[0] : disabled;
   const disabled2 = isArray(disabled) ? disabled[1] : disabled;
@@ -125,7 +127,7 @@ function DateInput(
       onPressEnter?.();
     }
     if (keyCode === Tab.code) {
-      e.preventDefault();
+      // e.preventDefault(); // fix: cannot move focus away from the component with tab
       onPressTab && onPressTab(e);
     }
   }
@@ -137,20 +139,38 @@ function DateInput(
   }
 
   function onBlurInput(e, index) {
+    setFocused((prev) => {
+      prev[index] = false;
+      return [...prev];
+    });
     inputProps?.[index]?.onBlur?.(e);
     onBlur?.(e);
+  }
+
+  function onFocusInput(e, index) {
+    if ((index === 0 && !disabled1 && editable) || (index === 1 && !disabled2 && editable)) {
+      setFocused((prev) => {
+        prev[index] = true;
+        return [...prev];
+      });
+      if (focusedInputIndex !== index) {
+        changeFocusedInputIndex(index, true);
+      }
+    }
+    inputProps?.[index]?.onFocus?.(e);
   }
 
   const prefixCls = getPrefixCls('picker');
   const size = propSize || ctxSize;
 
+  const mergedFocused = focused[0] || focused[1] || !!popupVisible;
   const inputStatus = status || (error ? 'error' : undefined);
   const inputClassNames = cs(
     prefixCls,
     `${prefixCls}-range`,
     `${prefixCls}-size-${size}`,
     {
-      [`${prefixCls}-focused`]: !!popupVisible,
+      [`${prefixCls}-focused`]: mergedFocused,
       [`${prefixCls}-disabled`]: disabled1 && disabled2,
       [`${prefixCls}-${inputStatus}`]: inputStatus,
       [`${prefixCls}-rtl`]: rtl,
@@ -195,6 +215,7 @@ function DateInput(
           onKeyDown={(e) => onKeyDown(e, 0)}
           onClick={(e) => changeFocusedInput(e, 0)}
           onBlur={(e) => onBlurInput(e, 0)}
+          onFocus={(e) => onFocusInput(e, 0)}
           {...readOnlyProps}
         />
       </div>
@@ -210,6 +231,7 @@ function DateInput(
           onKeyDown={(e) => onKeyDown(e, 1)}
           onClick={(e) => changeFocusedInput(e, 1)}
           onBlur={(e) => onBlurInput(e, 1)}
+          onFocus={(e) => onFocusInput(e, 1)}
           {...readOnlyProps}
         />
       </div>
