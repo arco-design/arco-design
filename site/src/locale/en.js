@@ -134,6 +134,12 @@ export default {
   'routes.material.api-material': 'Query Materials',
   'routes.material.api-group': 'Query Groups',
   'routes.permission': 'Permission Control',
+  'routes.material.2.x.change': '2.0 ChangeLog',
+  'routes.material.2.x.start': 'Quick Start',
+  'routes.material.2.x.workspace': 'Workspace',
+  'routes.material.2.x.env': 'Env',
+  'routes.material.2.x.team': 'Team',
+  'routes.material.2.x.migration': 'Migration from 1.x',
   ...homeLocale,
   ...customerLocale,
 };

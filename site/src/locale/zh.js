@@ -134,6 +134,12 @@ export default {
   'routes.material.api-material': '物料查询',
   'routes.material.api-group': '团队查询',
   'routes.permission': '权限控制',
+  'routes.material.2.x.change': '2.0 变化',
+  'routes.material.2.x.start': '快速开始',
+  'routes.material.2.x.workspace': '工作区',
+  'routes.material.2.x.env': 'Env',
+  'routes.material.2.x.team': '物料团队',
+  'routes.material.2.x.migration': '从 1.x 迁移',
   ...homeLocale,
   ...customerLocale,
 };

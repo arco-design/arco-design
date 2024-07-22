@@ -1,41 +1,18 @@
 import React, { useState, useEffect, useMemo, useContext } from 'react';
-import { Menu, Grid, Tag } from '@arco-design/web-react';
+import { Menu, Tag } from '@arco-design/web-react';
 import { useHistory } from 'react-router-dom';
 import NProgress from 'nprogress';
 import cs from 'classnames';
 import { GlobalNoticeContext } from '../../context';
 import MenuHeader from '../MenuHeader';
 import { getPath } from '../../utils/i18n';
+import { getFlattenRoutes } from '../../routes';
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 const MenuItem = Menu.Item;
 
 NProgress.configure({ minimum: 0.4, showSpinner: false });
-
-function getFlattenRoutes(routes) {
-  let flattenRoutes = [];
-  Object.keys(routes).forEach((routeKey) => {
-    const level1 = routes[routeKey];
-    Object.keys(level1.children).forEach((level2Key) => {
-      const level2 = level1.children[level2Key];
-      if (level2.items) {
-        flattenRoutes = flattenRoutes.concat(
-          level2.items.map((l2) => {
-            l2.parentKey = level1.key;
-            l2.module = level1.module;
-            return l2;
-          })
-        );
-      } else {
-        level2.parentKey = level1.key;
-        level2.module = level1.module;
-        flattenRoutes = flattenRoutes.concat(level2);
-      }
-    });
-  });
-  return flattenRoutes;
-}
 
 function ACMenu(props) {
   const { routes, style, menuCollapse, lang } = props;
@@ -46,10 +23,11 @@ function ACMenu(props) {
   const [selectedKeys, setSelectedKeys] = useState(defaultSelectedKeys);
 
   const defaultOpenKeys = useMemo(() => {
+    console.log(flattenRoutes);
     const route = flattenRoutes.find((r) => {
       return getPath(r.module, r.path, lang) === selectedKeys[0];
     });
-    return route ? [route.parentKey] : [];
+    return route ? [route.parentKey, ...route.path.split('/')] : [];
   }, []);
 
   const history = useHistory();
@@ -79,6 +57,52 @@ function ACMenu(props) {
     }
   }
 
+  const renderMenuItems = (routes, parentGroup) => {
+    const renderMenuItem = (item, parent) => {
+      return (
+        <MenuItem key={getPath(parent.module, item.path, lang)}>
+          <a
+            href={getPath(parent.module, item.path, lang)}
+            // Menuitem and Link will repeat TAB
+            tabIndex={-1}
+            onClick={onClickPrevent}
+            className="menu-link"
+          >
+            <span>{item.name}</span>
+
+            {item.new && (
+              <Tag color="green" size="small" style={{ marginLeft: 12 }}>
+                new
+              </Tag>
+            )}
+          </a>
+        </MenuItem>
+      );
+    };
+
+    return routes.map((group) => {
+      if (group.children) {
+        return group.hide ? null : (
+          <SubMenu key={group.key} title={group.name} className="title-1">
+            {group.children.map((child) => {
+              if (child.items) {
+                return (
+                  <MenuItemGroup key={child.key} title={child.name}>
+                    {child.items.map((item) => (!item.hide ? renderMenuItem(item, group) : null))}
+                  </MenuItemGroup>
+                );
+              }
+              return !child.hide && child.children
+                ? renderMenuItems([child], child)
+                : renderMenuItem(child, group);
+            })}
+          </SubMenu>
+        );
+      }
+      return renderMenuItem(group, parentGroup);
+    });
+  };
+
   return (
     <div
       className={cs('ac-menu-wrapper', {
@@ -96,81 +120,7 @@ function ACMenu(props) {
             style={{ width: 260 }}
             onClickMenuItem={onClickMenuItem}
           >
-            {routes.map((group) => {
-              if (group.children) {
-                return group.hide ? null : (
-                  <SubMenu key={group.key} title={group.name} className="title-1">
-                    {group.children.map((child) => {
-                      if (child.items) {
-                        return (
-                          <MenuItemGroup key={child.key} title={child.name}>
-                            {child.items.map((item) =>
-                              !item.hide ? (
-                                <MenuItem key={getPath(group.module, item.path, lang)}>
-                                  <a
-                                    href={getPath(group.module, item.path, lang)}
-                                    // Menuitem and Link will repeat TAB
-                                    tabIndex={-1}
-                                    onClick={onClickPrevent}
-                                    className="menu-link"
-                                  >
-                                    <span>{item.name}</span>
-
-                                    {item.new && (
-                                      <Tag color="green" size="small" style={{ marginLeft: 12 }}>
-                                        new
-                                      </Tag>
-                                    )}
-                                  </a>
-                                </MenuItem>
-                              ) : null
-                            )}
-                          </MenuItemGroup>
-                        );
-                      }
-                      return (
-                        !child.hide && (
-                          <MenuItem key={getPath(group.module, child.path, lang)}>
-                            <a
-                              href={getPath(group.module, child.path, lang)}
-                              onClick={onClickPrevent}
-                              tabIndex={-1}
-                              className="menu-link"
-                            >
-                              <span>{child.name}</span>
-
-                              {child.new && (
-                                <Tag color="green" size="small" style={{ marginLeft: 12 }}>
-                                  new
-                                </Tag>
-                              )}
-                            </a>
-                          </MenuItem>
-                        )
-                      );
-                    })}
-                  </SubMenu>
-                );
-              }
-              return (
-                <MenuItem key={getPath(group.module, child.path, lang)}>
-                  <a
-                    href={getPath(group.module, child.path, lang)}
-                    onClick={onClickPrevent}
-                    tabIndex={-1}
-                    className="menu-link"
-                  >
-                    <span>{group.name}</span>
-
-                    {group.new && (
-                      <Tag color="green" size="small" style={{ marginLeft: 12 }}>
-                        new
-                      </Tag>
-                    )}
-                  </a>
-                </MenuItem>
-              );
-            })}
+            {renderMenuItems(routes)}
           </Menu>
         </div>
       </div>
