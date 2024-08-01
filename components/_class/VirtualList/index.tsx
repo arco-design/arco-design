@@ -170,7 +170,7 @@ const VirtualList: React.ForwardRefExoticComponent<
     itemKey,
     threshold = 100,
     wrapper: WrapperTagName = 'div',
-    height: propHeight = '100%',
+    height: propHeight = '100vh',
     isStaticItemHeight = true,
     itemHeight: propItemHeight,
     measureLongestItem,
