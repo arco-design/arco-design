@@ -1,4 +1,4 @@
-import React, { ReactElement, forwardRef } from 'react';
+import React, { ReactElement } from 'react';
 import Picker from './picker';
 import PickerRange from './picker-range';
 import DatePickerPanel from './panels/date';
@@ -19,17 +19,32 @@ import {
   DatePickerHandle,
 } from './interface';
 
-function wrapper<P = any>(
+function wrapper<P = any, T extends DatePickerHandle = DatePickerHandle>(
   picker: ReactElement<P>,
   options: { displayName: string; mode: ModeType }
 ) {
-  const PickerWrapper = forwardRef<DatePickerHandle, P>((props, ref) => {
-    return <Picker {...props} ref={ref} picker={picker} mode={options.mode} />;
-  });
+  return class PickerWrapper extends React.Component<P> {
+    static displayName = options.displayName;
 
-  PickerWrapper.displayName = options.displayName;
+    refPicker: React.RefObject<T>;
 
-  return PickerWrapper;
+    constructor(props) {
+      super(props);
+      this.refPicker = React.createRef();
+    }
+
+    focus() {
+      this.refPicker.current && this.refPicker.current.focus && this.refPicker.current.focus();
+    }
+
+    blur() {
+      this.refPicker.current && this.refPicker.current.blur && this.refPicker.current.blur();
+    }
+
+    render() {
+      return <Picker {...this.props} ref={this.refPicker} picker={picker} mode={options.mode} />;
+    }
+  };
 }
 
 const DatePicker = wrapper<DatePickerProps>(<DatePickerPanel />, {
@@ -55,9 +70,13 @@ const QuarterPicker = wrapper<QuarterPickerProps>(<QuarterPickerPanel />, {
 
 const RangePicker = PickerRange;
 
-Object.assign(DatePicker, { MonthPicker, YearPicker, WeekPicker, QuarterPicker, RangePicker });
-
-export default DatePicker as DatePickerDecorator;
+export default Object.assign(DatePicker, {
+  MonthPicker,
+  YearPicker,
+  WeekPicker,
+  QuarterPicker,
+  RangePicker,
+}) as DatePickerDecorator;
 
 export {
   DatePickerProps,

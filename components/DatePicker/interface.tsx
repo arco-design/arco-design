@@ -542,20 +542,11 @@ export type RangePickerHandle = {
   blur: () => void;
 };
 
-export interface DatePickerDecorator
-  extends React.ForwardRefExoticComponent<DatePickerProps & React.RefAttributes<DatePickerHandle>> {
-  MonthPicker: React.ForwardRefExoticComponent<
-    MonthPickerProps & React.RefAttributes<DatePickerHandle>
-  >;
-  YearPicker: React.ForwardRefExoticComponent<
-    YearPickerProps & React.RefAttributes<DatePickerHandle>
-  >;
-  WeekPicker: React.ForwardRefExoticComponent<
-    WeekPickerProps & React.RefAttributes<DatePickerHandle>
-  >;
-  QuarterPicker: React.ForwardRefExoticComponent<
-    QuarterPickerProps & React.RefAttributes<DatePickerHandle>
-  >;
+export interface DatePickerDecorator extends React.ComponentClass<DatePickerProps> {
+  MonthPicker: React.ComponentClass<MonthPickerProps>;
+  YearPicker: React.ComponentClass<YearPickerProps>;
+  WeekPicker: React.ComponentClass<WeekPickerProps>;
+  QuarterPicker: React.ComponentClass<QuarterPickerProps>;
   RangePicker: React.ForwardRefExoticComponent<
     RangePickerProps & React.RefAttributes<RangePickerHandle>
   >;
