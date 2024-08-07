@@ -79,7 +79,7 @@ export const loopDirectory = (items: DataTransferItemList, accept, callback) => 
   const _loopDirectory = (item) => {
     restFileCount += 1;
 
-    if (item.isFile) {
+    if (item?.isFile) {
       item.file((file) => {
         restFileCount -= 1;
         if (isAcceptFile(file, accept)) {
@@ -92,7 +92,7 @@ export const loopDirectory = (items: DataTransferItemList, accept, callback) => 
       });
       return;
     }
-    if (item.isDirectory) {
+    if (item?.isDirectory) {
       // item 是个文件夹
       const reader = item.createReader();
       let flag = false;
