@@ -1,8 +1,16 @@
-import React, { useState, useRef, useEffect, useContext, ReactElement } from 'react';
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useContext,
+  ReactElement,
+  useImperativeHandle,
+  forwardRef,
+} from 'react';
 import { Dayjs, UnitType } from 'dayjs';
 import Trigger from '../Trigger';
 import DateInput from '../_class/picker/input';
-import { PickerProps, CalendarValue, ShortcutType, ModeType } from './interface';
+import { PickerProps, CalendarValue, ShortcutType, ModeType, DatePickerHandle } from './interface';
 import { TimePickerProps } from '../TimePicker/interface';
 import { isArray, isDayjs, isObject, isUndefined } from '../_util/is';
 import cs from '../_util/classNames';
@@ -81,7 +89,7 @@ const defaultProps: Partial<InnerPickerProps> = {
 
 const triggerPopupAlign = { bottom: 4 };
 
-const Picker = (baseProps: InnerPickerProps) => {
+const Picker = (baseProps: InnerPickerProps, ref) => {
   const { getPrefixCls, locale, size: ctxSize, componentConfig, rtl } = useContext(ConfigContext);
   if (rtl) {
     defaultProps.position = 'br';
@@ -141,6 +149,19 @@ const Picker = (baseProps: InnerPickerProps) => {
   const refInput = useRef(null);
   const refPanel = useRef(null);
   const refShortcuts = useRef(null);
+
+  useImperativeHandle<any, DatePickerHandle>(
+    ref,
+    () => ({
+      focus() {
+        refInput.current && refInput.current.focus && refInput.current.focus();
+      },
+      blur() {
+        refInput.current && refInput.current.blur && refInput.current.blur();
+      },
+    }),
+    []
+  );
 
   const realFormat = getFormat(props);
   let format = realFormat;
@@ -598,4 +619,6 @@ const Picker = (baseProps: InnerPickerProps) => {
   );
 };
 
-export default Picker;
+const PickerComponent = forwardRef<DatePickerHandle, InnerPickerProps>(Picker);
+
+export default PickerComponent;
