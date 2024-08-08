@@ -138,6 +138,9 @@ function Affix(baseProps: PropsWithChildren<AffixProps>, ref) {
 
   useEffect(() => {
     updatePosition();
+    return ()=>{
+      updatePosition.cancel();
+    }
   }, [target, targetContainer, offsetBottom, offsetTop, updatePosition]);
 
   // listen to scroll and resize event of target and update position correspondingly
