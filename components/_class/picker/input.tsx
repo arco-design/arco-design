@@ -146,13 +146,13 @@ function DateInput(
           onKeyDown={onKeyDown}
           onChange={onChangeInput}
           {...readOnlyProps}
-          onFocus={() => {
-            if (!disabled && editable) {
-              setFocused(true);
-            }
+          onFocus={(e) => {
+            setFocused(true);
+            inputProps?.onFocus?.(e);
           }}
-          onBlur={() => {
+          onBlur={(e) => {
             setFocused(false);
+            inputProps?.onBlur?.(e);
           }}
         />
       </div>
