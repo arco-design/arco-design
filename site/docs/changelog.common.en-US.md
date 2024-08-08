@@ -1,3 +1,12 @@
+## 2.63.2
+
+2024-08-08
+
+### 💎 Enhancement
+
+- Compatible with react 19 findDOMNode error([#2755](https://github.com/arco-design/arco-design/pull/2755))
+- Upgrade the dependency `react-focus-lock` version to solve the WeakRef incompatibility issue([#2735](https://github.com/arco-design/arco-design/pull/2735))
+
 ## 2.63.1
 
 2024-07-02

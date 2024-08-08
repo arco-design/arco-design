@@ -1,3 +1,12 @@
+## 2.63.2
+
+2024-08-08
+
+### 💎 Enhancement
+
+- Optimize the error message display of `Upload` component([#2774](https://github.com/arco-design/arco-design/pull/2774))
+- Optimize the logic of judging empty files when reading files in folder upload of `Upload` component to avoid errors in edge scenarios([#2771](https://github.com/arco-design/arco-design/pull/2771))
+
 ## 2.57.0
 
 2023-12-08

@@ -1,3 +1,12 @@
+## 2.63.2
+
+2024-08-08
+
+### 💎 功能优化
+
+- 兼容 react 19 findDOMNode 报错([#2755](https://github.com/arco-design/arco-design/pull/2755))
+- 升级依赖 `react-focus-lock` 版本，解决  WeakRef 不兼容问题([#2735](https://github.com/arco-design/arco-design/pull/2735))
+
 ## 2.63.1
 
 2024-07-02

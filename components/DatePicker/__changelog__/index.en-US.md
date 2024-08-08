@@ -1,3 +1,12 @@
+## 2.63.2
+
+2024-08-08
+
+### 🐛 BugFix
+
+- `DatePicker` displays the focus style when it gets focus through tab([#2738](https://github.com/arco-design/arco-design/pull/2738))
+- Fixed a bug where `DatePicker` and `DatePicker.RangePicker` components missing refs, add `forwardRef` to expose refs.([#2734](https://github.com/arco-design/arco-design/pull/2734))
+
 ## 2.63.1
 
 2024-07-02

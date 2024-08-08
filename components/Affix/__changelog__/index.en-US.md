@@ -1,3 +1,11 @@
+## 2.63.2
+
+2024-08-08
+
+### 💎 Enhancement
+
+- Avoid calling location update logic when `Affix` component is unmounted([#2772](https://github.com/arco-design/arco-design/pull/2772))
+
 ## 2.31.2
 
 2022-04-01

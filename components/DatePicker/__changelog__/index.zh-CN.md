@@ -1,3 +1,12 @@
+## 2.63.2
+
+2024-08-08
+
+### 🐛 问题修复
+
+- `DatePicker` 通过 tab 获取焦点时显示 focus 的样式([#2738](https://github.com/arco-design/arco-design/pull/2738))
+- 修复`DatePicker`和`DatePicker.RangePicker`组件缺失ref的问题，使用`forwardRef`转发ref([#2734](https://github.com/arco-design/arco-design/pull/2734))
+
 ## 2.63.1
 
 2024-07-02

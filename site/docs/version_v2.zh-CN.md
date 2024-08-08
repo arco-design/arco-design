@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.63.2
+
+2024-08-08
+
+### 💎 功能优化
+
+- 优化 `Upload` 组件展示错误提示信息报错([#2774](https://github.com/arco-design/arco-design/pull/2774))
+- `Affix` 组件卸载时避免调用位置更新逻辑([#2772](https://github.com/arco-design/arco-design/pull/2772))
+- 优化 `Upload`  组件文件夹上传读取文件判空逻辑，避免边界场景下报错([#2771](https://github.com/arco-design/arco-design/pull/2771))
+- 兼容 react 19 findDOMNode 报错([#2755](https://github.com/arco-design/arco-design/pull/2755))
+- 升级依赖 `react-focus-lock` 版本，解决  WeakRef 不兼容问题([#2735](https://github.com/arco-design/arco-design/pull/2735))
+
+### 🐛 问题修复
+
+- 修复 `Tree` 组件在 `onDragStart` 设置 `dataTransfer.setData` 不生效的 bug。([#2743](https://github.com/arco-design/arco-design/pull/2743))
+- `DatePicker` 通过 tab 获取焦点时显示 focus 的样式([#2738](https://github.com/arco-design/arco-design/pull/2738))
+- 修复`DatePicker`和`DatePicker.RangePicker`组件缺失ref的问题，使用`forwardRef`转发ref([#2734](https://github.com/arco-design/arco-design/pull/2734))
+
 ## 2.63.1
 
 2024-07-02

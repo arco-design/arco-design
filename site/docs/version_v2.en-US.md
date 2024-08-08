@@ -2,6 +2,24 @@
 changelog: true
 ---
 
+## 2.63.2
+
+2024-08-08
+
+### 💎 Enhancement
+
+- Optimize the error message display of `Upload` component([#2774](https://github.com/arco-design/arco-design/pull/2774))
+- Avoid calling location update logic when `Affix` component is unmounted([#2772](https://github.com/arco-design/arco-design/pull/2772))
+- Optimize the logic of judging empty files when reading files in folder upload of `Upload` component to avoid errors in edge scenarios([#2771](https://github.com/arco-design/arco-design/pull/2771))
+- Compatible with react 19 findDOMNode error([#2755](https://github.com/arco-design/arco-design/pull/2755))
+- Upgrade the dependency `react-focus-lock` version to solve the WeakRef incompatibility issue([#2735](https://github.com/arco-design/arco-design/pull/2735))
+
+### 🐛 BugFix
+
+- Fixed the bug where `dataTransfer.setData` does not take effect when setting `dataTransfer.setData` in `onDragStart` of `Tree` component.([#2743](https://github.com/arco-design/arco-design/pull/2743))
+- `DatePicker` displays the focus style when it gets focus through tab([#2738](https://github.com/arco-design/arco-design/pull/2738))
+- Fixed a bug where `DatePicker` and `DatePicker.RangePicker` components missing refs, add `forwardRef` to expose refs.([#2734](https://github.com/arco-design/arco-design/pull/2734))
+
 ## 2.63.1
 
 2024-07-02

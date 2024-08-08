@@ -1,3 +1,11 @@
+## 2.63.2
+
+2024-08-08
+
+### 🐛 问题修复
+
+- 修复 `Tree` 组件在 `onDragStart` 设置 `dataTransfer.setData` 不生效的 bug。([#2743](https://github.com/arco-design/arco-design/pull/2743))
+
 ## 2.61.3
 
 2024-04-12
