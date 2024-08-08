@@ -258,7 +258,7 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
             e.stopPropagation();
             // 当前节点正在被拖拽
             setState({ ...state, isDragging: true });
-            
+
             try {
               // ie throw error
               // firefox-need-it
@@ -266,7 +266,7 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
             } catch (error) {
               // empty
             }
-            
+
             treeContext.onNodeDragStart && treeContext.onNodeDragStart(e, props);
           }}
           onDragEnd={(e) => {
