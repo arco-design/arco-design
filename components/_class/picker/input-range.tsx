@@ -148,7 +148,7 @@ function DateInput(
   }
 
   function onFocusInput(e, index) {
-    if ((index === 0 && !disabled1 && editable) || (index === 1 && !disabled2 && editable)) {
+    if (index === 0 || index === 1) {
       setFocused((prev) => {
         prev[index] = true;
         return [...prev];
