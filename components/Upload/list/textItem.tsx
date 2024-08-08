@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, isValidElement } from 'react';
 import IconFile from '../../../icon/react-icon/IconFile';
 import IconFilePdf from '../../../icon/react-icon/IconFilePdf';
 import IconFileImage from '../../../icon/react-icon/IconFileImage';
@@ -109,7 +109,11 @@ const TextItem = (
             )}
             {file.status === STATUS.fail && actionIcons.errorIcon !== null && (
               <Tooltip
-                content={file.response || locale.Upload.error}
+                content={
+                  (typeof file.response === 'object'
+                    ? isValidElement(file.response) && file.response
+                    : file.response) || locale.Upload.error
+                }
                 {...triggerProps}
                 disabled={file.status !== STATUS.fail}
               >
