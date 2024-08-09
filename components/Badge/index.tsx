@@ -75,7 +75,7 @@ function Badge(baseProps: BadgeProps, ref) {
         </span>
       );
     }
-    if (status || (color && count <= 0)) {
+    if (status || (color && typeof count === 'number' && count <= 0)) {
       return (
         <span className={`${prefixCls}-status-wrapper`}>
           <span
@@ -93,7 +93,7 @@ function Badge(baseProps: BadgeProps, ref) {
         </span>
       );
     }
-    if ((dot || color) && count > 0) {
+    if ((dot || color) && typeof count === 'number' && count > 0) {
       return (
         <ArcoCSSTransition
           classNames="badge-zoom"
