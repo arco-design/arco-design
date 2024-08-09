@@ -53,7 +53,7 @@ const getInitCheckKeys = (
   indeterminateKeys,
   props: TreeSelectProps
 ) => {
-  if (!props.treeCheckStrictly) {
+  if (props.treeCheckStrictly) {
     const { checkedKeys: allCheckedKeys, indeterminateKeys: halfKeys } = getCheckedKeysByInitKeys(
       keys,
       key2nodeProps

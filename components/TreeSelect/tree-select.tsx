@@ -183,7 +183,7 @@ const TreeSelect: ForwardRefRenderFunction<
       return;
     }
     const itemValue = isObject(item.value) ? item.value.value : item.value;
-    if (!props.treeCheckable || props.treeCheckStrictly || !key2nodeProps[itemValue]) {
+    if (!props.treeCheckable || !props.treeCheckStrictly || !key2nodeProps[itemValue]) {
       const newValue = value.filter((_, i) => i !== index);
 
       triggerChange(newValue, {
