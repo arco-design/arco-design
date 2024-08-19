@@ -90,10 +90,10 @@ export default {
     selectDate: 'Select Date',
     today: 'Today',
     now: 'Now',
-    ok: 'Ok',
+    ok: 'OK',
   },
   Drawer: {
-    okText: 'Ok',
+    okText: 'OK',
     cancelText: 'Cancel',
   },
   Empty: {
@@ -120,7 +120,7 @@ export default {
     cancelText: 'Cancel',
   },
   Table: {
-    okText: 'Ok',
+    okText: 'OK',
     resetText: 'Reset',
     sortAscend: 'Click to sort ascending',
     sortDescend: 'Click to sort descending',

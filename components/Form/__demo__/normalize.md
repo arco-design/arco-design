@@ -56,7 +56,7 @@ const App = () => {
       </FormItem>
       <FormItem wrapperCol={{ offset: 5 }}>
         <Button type="primary" htmlType="submit">
-          Ok
+          OK
         </Button>
       </FormItem>
       <FormItem shouldUpdate>

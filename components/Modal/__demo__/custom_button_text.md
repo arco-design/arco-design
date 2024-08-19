@@ -25,7 +25,7 @@ function App() {
       title: 'Confirm deletion',
       content:
         'Are you sure you want to delete the 3 selected items? Once you press the delete button, the items will be deleted immediately. You can’t undo this action.',
-      okText: 'Ok',
+      okText: 'OK',
       cancelText: 'Cancel',
     });
   }

@@ -89,10 +89,10 @@ export default {
     selectDate: 'Selecionar data',
     today: 'Hoje',
     now: 'Agora',
-    ok: 'Ok',
+    ok: 'OK',
   },
   Drawer: {
-    okText: 'Ok',
+    okText: 'OK',
     cancelText: 'Cancelar',
   },
   Empty: {
@@ -119,7 +119,7 @@ export default {
     cancelText: 'Cancelar',
   },
   Table: {
-    okText: 'Ok',
+    okText: 'OK',
     resetText: 'Redefinir',
     sortAscend: 'Clique para classificar em ordem crescente',
     sortDescend: 'Clique para classificar decrescente',
