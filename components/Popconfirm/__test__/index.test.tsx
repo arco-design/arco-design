@@ -12,7 +12,7 @@ describe('Popconfirm', () => {
 
   it('render correctly', () => {
     const component = render(
-      <Popconfirm title="Are you Ok?">
+      <Popconfirm title="Are you OK?">
         <span>Edit</span>
       </Popconfirm>
     );
@@ -24,14 +24,14 @@ describe('Popconfirm', () => {
     fireEvent.click(triggerEle);
 
     expect(component.find('.arco-popconfirm').length).toBe(1);
-    expect(component.find('.arco-popconfirm-title-text')[0].innerHTML).toBe('Are you Ok?');
+    expect(component.find('.arco-popconfirm-title-text')[0].innerHTML).toBe('Are you OK?');
   });
 
   it('onOk and onCancel correctly', async () => {
     const onOk = jest.fn();
     const onCancel = jest.fn();
     const component = render(
-      <Popconfirm title="Are you Ok?" onOk={onOk} onCancel={onCancel}>
+      <Popconfirm title="Are you OK?" onOk={onOk} onCancel={onCancel}>
         <span>Edit</span>
       </Popconfirm>
     );
@@ -72,7 +72,7 @@ describe('Popconfirm', () => {
       onOk();
     };
     const component = render(
-      <Popconfirm title="Are you Ok?" onOk={asyncOnOk}>
+      <Popconfirm title="Are you OK?" onOk={asyncOnOk}>
         <span>Edit</span>
       </Popconfirm>
     );

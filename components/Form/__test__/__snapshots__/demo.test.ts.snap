@@ -6459,7 +6459,7 @@ exports[`renders Form/demo/normalize.md correctly 1`] = `
               type="submit"
             >
               <span>
-                Ok
+                OK
               </span>
             </button>
           </div>
@@ -7984,7 +7984,7 @@ exports[`renders Form/demo/update.md correctly 1`] = `
                 type="button"
               >
                 <span>
-                  Ok
+                  OK
                 </span>
               </button>
             </div>

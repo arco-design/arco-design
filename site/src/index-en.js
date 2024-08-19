@@ -71,7 +71,7 @@ export function Index() {
 if (isProduction) {
   registerServiceWorker({
     content: 'New doc content is available, refresh page to get the latest version？',
-    okText: 'Ok',
+    okText: 'OK',
     cancelText: 'Cancel',
   });
 }

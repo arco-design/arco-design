@@ -34,7 +34,7 @@ function updateNotification() {
           Cancel
         </Button>
         <Button type="primary" size="small" onClick={() => Notification.remove(id)}>
-          Ok
+          OK
         </Button>
       </span>
     ),

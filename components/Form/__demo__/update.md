@@ -63,7 +63,7 @@ function App() {
               console.log(form.getFieldsValue());
             }}
           >
-            Ok
+            OK
           </Button>
         </Form.Item>
       </Form>
