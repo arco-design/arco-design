@@ -115,6 +115,7 @@ function QuarterPicker(props: InnerQuarterPickerProps & PrivateCType) {
         value={pageShowDate}
         mode={panelMode}
         onChangePanel={onChangePanel}
+        DATEPICKER_LOCALE={DATEPICKER_LOCALE}
         rtl={rtl}
       />
       <div className={`${prefixCls}-wrapper`}>{renderCalendar()}</div>

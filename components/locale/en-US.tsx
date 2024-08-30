@@ -2,9 +2,15 @@ import 'dayjs/locale/en';
 import { DefaultValidateMessage } from 'b-validate';
 
 const Calendar = {
+  // only used in calendar
   formatYear: 'YYYY',
+  // only used in calendar
   formatMonth: 'MMM YYYY',
   monthBeforeYear: true,
+  // DatePicker panel header format
+  monthFormat: 'MMM',
+  // DatePicker panel header format
+  yearFormat: 'YYYY',
   today: 'Today',
   view: {
     month: 'Month',

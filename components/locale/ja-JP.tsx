@@ -2,8 +2,10 @@ import 'dayjs/locale/ja';
 
 const Calendar = {
   formatYear: 'YYYY',
-  formatMonth: 'MMM YYYY',
-  monthBeforeYear: true,
+  formatMonth: 'YYYY MM',
+  monthBeforeYear: false,
+  monthFormat: 'M月',
+  yearFormat: 'YYYY年',
   today: '今日',
   view: {
     month: '月',

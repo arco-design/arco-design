@@ -5,6 +5,8 @@ const Calendar = {
   formatMonth: 'YYYY 年 MM 月',
   // 月份在前
   monthBeforeYear: false,
+  yearFormat: 'YYYY年',
+  monthFormat: 'MM月',
   today: '今天',
   view: {
     month: '月',
