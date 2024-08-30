@@ -24,27 +24,27 @@ describe('RangePicker (date)', () => {
         expect(component.find('.arco-picker-header-value').item(1).textContent).toBe(labels[1]);
       }
 
-      checkHeaderLabel(['2020-04', '2020-05']);
+      checkHeaderLabel(['2020年4月', '2020年5月']);
 
       // go prev month
       fireEvent.click(component.find('.arco-icon-left')[0]);
 
-      checkHeaderLabel(['2020-03', '2020-04']);
+      checkHeaderLabel(['2020年3月', '2020年4月']);
 
       // go prev year
       fireEvent.click(component.find('.arco-icon-double-left')[0]);
 
-      checkHeaderLabel(['2019-03', '2019-04']);
+      checkHeaderLabel(['2019年3月', '2019年4月']);
 
       // go next month
       fireEvent.click(component.find('.arco-icon-right')[0]);
 
-      checkHeaderLabel(['2019-04', '2019-05']);
+      checkHeaderLabel(['2019年4月', '2019年5月']);
 
       // go next year
       fireEvent.click(component.find('.arco-icon-double-right')[0]);
 
-      checkHeaderLabel(['2020-04', '2020-05']);
+      checkHeaderLabel(['2020年4月', '2020年5月']);
     }
 
     testPicker();
@@ -65,7 +65,7 @@ describe('RangePicker (date)', () => {
       expect(component.find('.arco-picker-header-value').item(1).textContent).toBe(labels[1]);
     }
 
-    checkHeaderLabel(['2020', '2021']);
+    checkHeaderLabel(['2020年', '2021年']);
 
     expect(component.find('.arco-icon-left')).toHaveLength(0);
     expect(component.find('.arco-icon-right')).toHaveLength(0);
@@ -75,12 +75,12 @@ describe('RangePicker (date)', () => {
     // go prev year
     fireEvent.click(component.find('.arco-icon-double-left')[0]);
 
-    checkHeaderLabel(['2019', '2020']);
+    checkHeaderLabel(['2019年', '2020年']);
 
     // go next year
     fireEvent.click(component.find('.arco-icon-double-right')[0]);
 
-    checkHeaderLabel(['2020', '2021']);
+    checkHeaderLabel(['2020年', '2021年']);
   });
 
   it('year', () => {
@@ -129,7 +129,7 @@ describe('RangePicker (date)', () => {
       expect(component.find('.arco-picker-header-value').item(1).textContent).toBe(labels[1]);
     }
 
-    checkHeaderLabel(['2020', '2021']);
+    checkHeaderLabel(['2020年', '2021年']);
 
     expect(component.find('.arco-icon-left')).toHaveLength(0);
     expect(component.find('.arco-icon-right')).toHaveLength(0);
@@ -139,11 +139,11 @@ describe('RangePicker (date)', () => {
     // go prev year
     fireEvent.click(component.find('.arco-icon-double-left')[0]);
 
-    checkHeaderLabel(['2019', '2020']);
+    checkHeaderLabel(['2019年', '2020年']);
 
     // go next year
     fireEvent.click(component.find('.arco-icon-double-right')[0]);
 
-    checkHeaderLabel(['2020', '2021']);
+    checkHeaderLabel(['2020年', '2021年']);
   });
 });

@@ -292,15 +292,15 @@ describe('RangePicker', () => {
       return component.find('.arco-picker-header-value').item(1).textContent;
     }
 
-    expect(getFirstPickerHeaderValue(component)).toBe('2020-04');
+    expect(getFirstPickerHeaderValue(component)).toBe('2020年4月');
 
-    expect(getSecondPickerHeaderValue(component)).toBe('2020-05');
+    expect(getSecondPickerHeaderValue(component)).toBe('2020年5月');
 
     component.rerender(<RangePicker popupVisible mode="month" />);
 
-    expect(getFirstPickerHeaderValue(component)).toBe('2020');
+    expect(getFirstPickerHeaderValue(component)).toBe('2020年');
 
-    expect(getSecondPickerHeaderValue(component)).toBe('2021');
+    expect(getSecondPickerHeaderValue(component)).toBe('2021年');
 
     component.rerender(<RangePicker popupVisible mode="year" />);
 
@@ -310,15 +310,15 @@ describe('RangePicker', () => {
 
     component.rerender(<RangePicker popupVisible mode="quarter" />);
 
-    expect(getFirstPickerHeaderValue(component)).toBe('2020');
+    expect(getFirstPickerHeaderValue(component)).toBe('2020年');
 
-    expect(getSecondPickerHeaderValue(component)).toBe('2021');
+    expect(getSecondPickerHeaderValue(component)).toBe('2021年');
 
     component.rerender(<RangePicker popupVisible mode="week" />);
 
-    expect(getFirstPickerHeaderValue(component)).toBe('2020-04');
+    expect(getFirstPickerHeaderValue(component)).toBe('2020年4月');
 
-    expect(getSecondPickerHeaderValue(component)).toBe('2020-05');
+    expect(getSecondPickerHeaderValue(component)).toBe('2020年5月');
 
     expect(component.find('.arco-picker-cell-week')).toHaveLength(12);
   });
