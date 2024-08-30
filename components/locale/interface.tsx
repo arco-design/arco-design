@@ -12,6 +12,8 @@ type CalendarType = {
   formatYear?: string;
   formatMonth?: string;
   monthBeforeYear?: boolean;
+  monthFormat?: string;
+  yearFormat?: string;
 };
 
 export interface Locale {

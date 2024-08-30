@@ -1,10 +1,16 @@
 import 'dayjs/locale/zh-cn';
 
 const Calendar = {
+  // 仅用于日历组件
   formatYear: 'YYYY 年',
+  // 仅用于日历组件
   formatMonth: 'YYYY 年 MM 月',
   // 月份在前
   monthBeforeYear: false,
+  // DatePicker 相关组件面板头部的格式
+  monthFormat: 'M月',
+  // DatePicker 相关组件面板头部的格式
+  yearFormat: 'YYYY年',
   today: '今天',
   view: {
     month: '月',

@@ -49,39 +49,31 @@ function Header(props: HeaderProps) {
   };
 
   function renderHeaderLabel() {
+    const { monthBeforeYear, monthFormat, yearFormat } = DATEPICKER_LOCALE?.Calendar || {};
     if (title) {
       return title;
     }
 
     if (mode === 'date' || mode === 'week') {
-      const { monthBeforeYear } = DATEPICKER_LOCALE?.Calendar || {};
-
       const yearNode = (
         <span className={`${prefixCls}-header-label`} onClick={() => onChangePanel('year')}>
-          {value.format('YYYY')}
+          {value.format(yearFormat || 'YYYY')}
         </span>
       );
 
       const monthNode = (
         <span className={`${prefixCls}-header-label`} onClick={() => onChangePanel('month')}>
-          {value.format('MM')}
+          {value.format(monthFormat || 'MM')}
         </span>
       );
 
-      return monthBeforeYear ? (
-        <>
-          {monthNode}/{yearNode}
-        </>
-      ) : (
-        <>
-          {yearNode}-{monthNode}
-        </>
-      );
+      return monthBeforeYear ? [monthNode, yearNode] : [yearNode, monthNode];
     }
+
     if (mode === 'month' || mode === 'quarter') {
       return (
         <span className={`${prefixCls}-header-label`} onClick={() => onChangePanel('year')}>
-          {value.format('YYYY')}
+          {value.format(yearFormat || 'YYYY')}
         </span>
       );
     }
