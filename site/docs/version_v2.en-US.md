@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.64.0
+
+2024-08-30
+
+### 🆕 Feature
+
+- `DatePicker` supports customizing the time format of the panel header by configuring `yearFormat` and `monthFormat` in the `locale` file.([#2795](https://github.com/arco-design/arco-design/pull/2795))
+
+### 🐛 BugFix
+
+- Fixed the problem that the popup layer position of the `DatePicker` component is not aligned with the selection box style([#2794](https://github.com/arco-design/arco-design/pull/2794))
+
 ## 2.63.2
 
 2024-08-08

@@ -1,3 +1,15 @@
+## 2.64.0
+
+2024-08-30
+
+### 🆕 功能升级
+
+- `DatePicker` 支持通过配置 `locale` 文件中的 `yearFormat` 和 `monthFormat` 来定制面板头部的时间格式。([#2795](https://github.com/arco-design/arco-design/pull/2795))
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件弹出层位置未对齐选择框的样式问题([#2794](https://github.com/arco-design/arco-design/pull/2794))
+
 ## 2.63.2
 
 2024-08-08
