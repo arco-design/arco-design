@@ -1383,13 +1383,12 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
             <span
               class="arco-picker-header-label"
             >
-              2020
+              2020年
             </span>
-            -
             <span
               class="arco-picker-header-label"
             >
-              04
+              4月
             </span>
           </div>
           <div
@@ -2115,13 +2114,12 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 <span
                   class="arco-picker-header-label"
                 >
-                  2020
+                  2020年
                 </span>
-                -
                 <span
                   class="arco-picker-header-label"
                 >
-                  04
+                  4月
                 </span>
               </div>
               <div
@@ -2767,13 +2765,12 @@ exports[`renders DatePicker/demo/panel.md correctly 1`] = `
                 <span
                   class="arco-picker-header-label"
                 >
-                  2020
+                  2020年
                 </span>
-                -
                 <span
                   class="arco-picker-header-label"
                 >
-                  05
+                  5月
                 </span>
               </div>
               <div
