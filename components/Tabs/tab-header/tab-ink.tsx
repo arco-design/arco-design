@@ -48,7 +48,7 @@ const TabInk = ({
 
       if (newStyle && !isEqualWith(inkStyleRef.current, newStyle)) {
         inkStyleRef.current = newStyle;
-        if (inkRef.current) {
+        if (inkRef.current?.style) {
           Object.keys(newStyle).forEach((key) => {
             inkRef.current.style[key] = newStyle[key];
           });
