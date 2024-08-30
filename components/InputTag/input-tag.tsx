@@ -183,7 +183,8 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       setValue(value);
     }
 
-    onChange && onChange(labelInValue ? value : value.map((x) => x.value), reason);
+    // x?.value 一般不会出现 x 空值，这里仅作为优化兼容逻辑，避免报错
+    onChange && onChange(labelInValue ? value : value.map((x) => x?.value), reason);
   };
 
   const tagCloseHandler = (itemValue: ObjectValueType, index: number, event) => {
