@@ -76,6 +76,7 @@ function DateInput(
   const input = useRef<HTMLInputElement>(null);
   const [focused, setFocused] = useState(false);
   const size = propSize || ctxSize;
+  const inputWrapperRef = useRef<HTMLDivElement>(null);
 
   useImperativeHandle<any, DateInputHandle>(ref, () => ({
     focus() {
@@ -84,7 +85,7 @@ function DateInput(
     blur() {
       input.current && input.current.blur && input.current.blur();
     },
-    getRootDOMNode: () => input.current,
+    getRootDOMNode: () => inputWrapperRef.current,
   }));
 
   function onKeyDown(e) {
@@ -131,7 +132,12 @@ function DateInput(
   );
 
   return (
-    <div style={style} className={classNames} {...omit(rest, ['onChange', 'onPressEnter'])}>
+    <div
+      style={style}
+      className={classNames}
+      ref={inputWrapperRef}
+      {...omit(rest, ['onChange', 'onPressEnter'])}
+    >
       {prefix && <div className={`${prefixCls}-prefix`}>{prefix}</div>}
       <div
         className={cs(`${prefixCls}-input`, { [`${prefixCls}-input-placeholder`]: isPlaceholder })}
