@@ -25,7 +25,7 @@
 |multiple|是否多选|boolean |`-`|-|
 |popupVisible|控制下拉框的展开收起|boolean |`-`|-|
 |treeCheckable|是否展示复选框|boolean |`-`|-|
-|treeCheckStrictly|父子节点是否关联|boolean |`-`|-|
+|treeCheckStrictly|树选项是否严格选中。设置为`true`时候，表示严格选中，不与父节点关联；设置为`false`时候，表示非严格选中，与父节点关联变化|boolean |`-`|-|
 |unmountOnExit|是否在隐藏之后销毁 DOM 结构|boolean |`-`|-|
 |inputValue|输入框搜索文本的受控值|string |`-`|2.39.0|
 |placeholder|选择框默认文字。|string |`-`|-|
