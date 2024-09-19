@@ -4,7 +4,7 @@ import useUpdate from '../../_util/hooks/useUpdate';
 
 function useCurrentRef<T>(initFunc: () => T, deps: DependencyList): T {
   const ref = useRef<T>(null);
-  const forceUdpate = useForceUpdate();
+  const forceUpdate = useForceUpdate();
 
   if (!ref.current) {
     ref.current = initFunc();
@@ -12,7 +12,7 @@ function useCurrentRef<T>(initFunc: () => T, deps: DependencyList): T {
 
   useUpdate(() => {
     ref.current = initFunc();
-    forceUdpate();
+    forceUpdate();
   }, [...deps]);
 
   return ref.current;
