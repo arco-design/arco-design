@@ -879,6 +879,10 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   getContainer = () => {
+    if (!this.isDidMount) {
+      return null;
+    }
+
     const popupContainer = document.createElement('div');
 
     popupContainer.style.width = '100%';
