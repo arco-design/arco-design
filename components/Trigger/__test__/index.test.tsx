@@ -267,10 +267,7 @@ describe('default popupVisible', () => {
       </Trigger>
     );
 
-    // 等待组件挂载完成
-    await act(async () => {
-      await sleep(50);
-    });
+    await sleep(10);
 
     expect(wrapper.find('#test')).toHaveLength(1);
   });
