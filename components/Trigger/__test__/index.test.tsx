@@ -268,7 +268,6 @@ describe('default popupVisible', () => {
     );
 
     await sleep(10);
-
     expect(wrapper.find('#test')).toHaveLength(1);
   });
 });
