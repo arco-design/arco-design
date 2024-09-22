@@ -76,8 +76,8 @@ export interface TreeSelectProps extends SelectViewCommonProps {
    */
   treeCheckable?: boolean;
   /**
-   * @zh 父子节点是否关联
-   * @en Whether the parent and child nodes are related
+   * @zh 树选项是否严格选中。设置为`true`时候，表示严格选中，不与父节点关联；设置为`false`时候，表示非严格选中，与父节点关联变化
+   * @en Whether the tree option strictly selected. When set to 'true', it means strictly selected and not associated with the parent node; When set to 'false', it means that it is not strictly selected and is associated with changes in the parent node
    */
   treeCheckStrictly?: boolean;
   /**
