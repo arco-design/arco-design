@@ -122,7 +122,7 @@ const OverflowWrap = (props: OverflowWrapProps) => {
       if (lastVisibleIndex !== null) {
         if (index > lastVisibleIndex) {
           item = React.cloneElement(child as ReactElement, {
-            className: overflowMenuItemClass,
+            className: `${(child as ReactElement).props.className} ${overflowMenuItemClass}`,
           });
         }
 
