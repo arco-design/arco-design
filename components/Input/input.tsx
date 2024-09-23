@@ -81,6 +81,7 @@ function Input(baseProps: InputProps, ref) {
 
   const [focus, setFocus] = useState(false);
   const inputRef = useRef<RefInputType>();
+  const rootNodeRef = useRef<HTMLDivElement>();
   const inputWrapperRef = useRef();
   const [value, setValue] = useMergeValue('', {
     defaultValue:
@@ -88,7 +89,16 @@ function Input(baseProps: InputProps, ref) {
     value: 'value' in props ? formatValue(props.value, mergedMaxLength) : undefined,
   });
 
-  useImperativeHandle(ref, () => inputRef.current, []);
+  useImperativeHandle(
+    ref,
+    () => ({
+      focus: inputRef.current?.focus,
+      blur: inputRef.current?.blur,
+      dom: inputRef.current?.dom, // 保持之前逻辑
+      getRootDOMNode: () => rootNodeRef.current || inputRef.current?.dom,
+    }),
+    []
+  );
 
   const onChange = (value, e) => {
     if (!('value' in props)) {
@@ -171,7 +181,11 @@ function Input(baseProps: InputProps, ref) {
   });
 
   return needWrapper ? (
-    <div className={classnames} style={{ ...style, ...(isCustomHeight ? { height } : {}) }}>
+    <div
+      ref={rootNodeRef}
+      className={classnames}
+      style={{ ...style, ...(isCustomHeight ? { height } : {}) }}
+    >
       <span className={`${prefixCls}-group`}>
         {inputAddon(`${prefixCls}-group-addbefore`, addBefore, beforeStyle)}
         <span
@@ -203,6 +217,7 @@ function Input(baseProps: InputProps, ref) {
     </div>
   ) : allowClear ? (
     <span
+      ref={rootNodeRef}
       className={cs(className, innerWrapperClassnames)}
       style={{ ...style, ...(isCustomHeight ? { height } : {}) }}
       onMouseDown={keepFocus}
