@@ -25,10 +25,10 @@ document.body.removeAttribute('arco-theme');
 ```js
 const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
 
-darkThemeMq.addListener(e => {
- if (e.matches) {
-   document.body.setAttribute('arco-theme', 'dark');
- } else {
+darkThemeMq.addEventListener('change', e => {
+  if (e.matches) {
+    document.body.setAttribute('arco-theme', 'dark');
+  } else {
     document.body.removeAttribute('arco-theme');
   }
 });
