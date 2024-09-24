@@ -40,6 +40,7 @@ export const useControlBlock = ({ value, onChange }: ControlBlockParams) => {
   };
 
   const onMouseDown = (ev: MouseEvent) => {
+    ev.preventDefault();
     setActive(true);
     setCurrentPosition(ev);
     window.addEventListener('mousemove', onMouseMove);
