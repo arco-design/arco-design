@@ -194,9 +194,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
   const displayedInputValue = useMemo<string>(() => {
     let _value: string;
 
-    if (isUserTyping) {
-      _value = parser ? `${parser(inputValue)}` : inputValue;
-    } else if (isNumber(mergedPrecision)) {
+    if (isNumber(mergedPrecision)) {
       _value = value.toString({ safe: true, precision: mergedPrecision });
     } else if (value.isInvalid) {
       _value = '';
@@ -205,7 +203,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     }
 
     return formatter ? formatter(_value, { userTyping: isUserTyping, input: inputValue }) : _value;
-  }, [value, inputValue, isUserTyping, mergedPrecision, parser, formatter]);
+  }, [value, inputValue, isUserTyping, mergedPrecision, formatter]);
 
   const updateSelectionRangePosition = useSelectionRange({
     inputElement: refInput.current?.dom,
