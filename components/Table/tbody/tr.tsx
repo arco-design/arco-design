@@ -50,6 +50,9 @@ function Tr<T>(props: TrType<T>, ref) {
     type,
     shouldRowExpand,
     level,
+    setColumnWidths,
+    columnWidths,
+    scroll,
   } = props;
   const { rtl } = useContext(ConfigContext);
   const originRecord = getOriginData(record);
@@ -90,6 +93,8 @@ function Tr<T>(props: TrType<T>, ref) {
 
   // tree data
   function isDataHaveChildren() {
+    // 虚拟滚动不支持 tree data ，这里直接返回 false，减少遍历
+    if (virtualized) return false;
     return data.find((d) => isChildrenNotEmpty(d));
   }
 
@@ -228,6 +233,9 @@ function Tr<T>(props: TrType<T>, ref) {
 
         return (
           <Td
+            scroll={scroll}
+            columnWidths={columnWidths}
+            setColumnWidths={setColumnWidths}
             key={colIndex}
             prefixCls={prefixCls}
             virtualized={virtualized}
@@ -247,6 +255,7 @@ function Tr<T>(props: TrType<T>, ref) {
             recordHaveChildren={recordHaveChildren}
             rowKey={rowK}
             renderExpandIcon={renderExpandIcon}
+            hasRowSelection={!!rowSelection}
           />
         );
       })}

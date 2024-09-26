@@ -24,13 +24,47 @@ const columns = [
   {
     title: 'Name',
     dataIndex: 'name',
-    width: 140,
     fixed: 'left' as const,
   },
   {
     title: 'Salary',
     dataIndex: 'salary',
-    width: 100,
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+  },
+  {
+    title: 'Email',
+    dataIndex: 'email',
+  },
+    {
+    title: 'Salary',
+    dataIndex: 'salary',
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+  },
+  {
+    title: 'Email',
+    dataIndex: 'email',
+  },
+    {
+    title: 'Salary',
+    dataIndex: 'salary',
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+  },
+  {
+    title: 'Email',
+    dataIndex: 'email',
+  },
+    {
+    title: 'Salary',
+    dataIndex: 'salary',
   },
   {
     title: 'Address',
@@ -67,7 +101,7 @@ const App = () => {
         virtualized
         scroll={{
           y: 500,
-          x: 1000,
+          x: 'max-content',
         }}
         border
         columns={columns}

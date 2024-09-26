@@ -1,4 +1,12 @@
-import React, { CSSProperties, ReactNode, memo, useContext, useMemo } from 'react';
+import React, {
+  CSSProperties,
+  ReactNode,
+  memo,
+  useContext,
+  useMemo,
+  useRef,
+  useEffect,
+} from 'react';
 import get from 'lodash/get';
 import pick from '../../_util/pick';
 import { isObject, isString } from '../../_util/is';
@@ -27,6 +35,10 @@ type TdType = {
   recordHaveChildren?: boolean;
   rowKey?: string;
   renderExpandIcon?: (record, rowKey: string) => ReactNode;
+  setColumnWidths: React.Dispatch<React.SetStateAction<number[]>>;
+  columnWidths: number[];
+  hasRowSelection?: boolean;
+  scroll?: { x?: number | string | boolean; y?: number | string | boolean };
 };
 
 function isInvalidRenderElement(element) {
@@ -53,9 +65,16 @@ function Td(props: TdType) {
     rowKey,
     recordHaveChildren,
     haveTreeData,
+    setColumnWidths,
+    columnWidths,
+    hasRowSelection,
+    scroll,
   } = props;
   const { rtl } = useContext(ConfigContext);
   const { ComponentBodyCell } = useComponent(components);
+
+  const tdRef = useRef<HTMLElement>();
+  const cellContentRef = useRef<HTMLElement>();
 
   const classNameTd = cs(
     `${prefixCls}-td`,
@@ -107,6 +126,26 @@ function Td(props: TdType) {
     styleTd.maxWidth = column.width;
   }
 
+  // 开启虚拟滚动时，没有使用 Colgroup 组件，此时如果没有配置 column width, 需要在这里计算 column width，将其同步到表头上
+  const shouldSyncColumnWidth = !column.width && scroll?.x === 'max-content' && virtualized;
+
+  let cellValueStyle: CSSProperties = {};
+
+  if (shouldSyncColumnWidth) {
+    const mainColumnIndex = hasRowSelection ? columnIndex - 1 : columnIndex;
+
+    if (columnWidths[mainColumnIndex]) {
+      styleTd.width = columnWidths[mainColumnIndex];
+      styleTd.minWidth = columnWidths[mainColumnIndex];
+      styleTd.maxWidth = columnWidths[mainColumnIndex];
+    }
+
+    cellValueStyle = {
+      display: 'inline-block',
+      width: 'max-content',
+    };
+  }
+
   const { onHandleSave, ...cellProps } = column.onCell
     ? column.onCell(record, trIndex)
     : { onHandleSave: () => {} };
@@ -123,6 +162,26 @@ function Td(props: TdType) {
     colSpan = tdProps.colSpan;
     renderElement = renderElement.children;
   }
+
+  useEffect(() => {
+    if (tdRef.current && cellContentRef.current && shouldSyncColumnWidth) {
+      const { width: cellContentWidth } = cellContentRef.current.getBoundingClientRect();
+
+      const mainColumnIndex = hasRowSelection ? columnIndex - 1 : columnIndex;
+
+      const { paddingLeft, paddingRight } = getComputedStyle(tdRef.current);
+
+      const tdPaddingWidth = parseInt(paddingLeft) + parseInt(paddingRight);
+
+      const currentColumnWidth = Math.ceil(cellContentWidth) + tdPaddingWidth;
+
+      setColumnWidths((prev: number[]) => {
+        const width = Math.max(currentColumnWidth, prev[mainColumnIndex] || 0);
+        prev[mainColumnIndex] = width;
+        return prev.slice();
+      });
+    }
+  }, []);
 
   if (rowSpan === 0 || colSpan === 0) {
     return null;
@@ -156,16 +215,22 @@ function Td(props: TdType) {
         <span className={`${prefixCls}-cell-expand-icon`}>{renderExpandIcon(record, rowKey)}</span>
       ) : null}
       {(isString(ComponentBodyCell) as JSX.IntrinsicAttributes) ? (
-        <ComponentBodyCell className={`${prefixCls}-cell-wrap-value`}>
+        <ComponentBodyCell
+          className={`${prefixCls}-cell-wrap-value`}
+          style={cellValueStyle}
+          ref={cellContentRef}
+        >
           {cellChildren}
         </ComponentBodyCell>
       ) : (
         <ComponentBodyCell
+          ref={cellContentRef}
           rowData={getOriginData(record)}
           className={`${prefixCls}-cell-wrap-value`}
           column={column}
           onHandleSave={onHandleSave}
           {...cellProps}
+          style={cellValueStyle}
         >
           {cellChildren}
         </ComponentBodyCell>
@@ -175,6 +240,7 @@ function Td(props: TdType) {
 
   return (
     <InnerComponentTd
+      ref={tdRef}
       className={classNameTd}
       key={column.key || column.dataIndex || columnIndex}
       style={styleTd}

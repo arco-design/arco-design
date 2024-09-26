@@ -832,6 +832,8 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const tbodyNode = (
     <Tbody<T>
       {...props}
+      columnWidths={columnWidths}
+      setColumnWidths={setColumnWidths}
       saveRef={(node) => (refTBody.current = node)}
       selectedRowKeys={selectedRowKeys}
       indeterminateKeys={indeterminateKeys}

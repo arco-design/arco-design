@@ -659,6 +659,8 @@ export interface TbodyProps<T = any> {
   placeholder?: ReactNode;
   saveVirtualListRef?: (ref: VirtualListHandle) => void;
   saveRef?: (ref: HTMLElement | HTMLDivElement) => void;
+  setColumnWidths: React.Dispatch<React.SetStateAction<number[]>>;
+  columnWidths: number[];
 }
 
 export interface TfootProps<T = any> {
