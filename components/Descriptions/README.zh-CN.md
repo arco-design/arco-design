@@ -35,5 +35,6 @@ export type DataType = {
   label?: ReactNode;
   value?: ReactNode;
   span?: number;
+  columnSpan?: number; // 列跨度，默认为 1，仅在 layout 为 horizontal 时生效
 }[];
 ```
