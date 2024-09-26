@@ -15855,19 +15855,22 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
               <div
                 class="arco-table-header"
               >
-                <table
-                  style="width:1000px"
-                >
+                <table>
                   <colgroup>
                     <col
                       class="arco-table-selection-col"
                     />
-                    <col
-                      style="width:140px"
-                    />
-                    <col
-                      style="width:100px"
-                    />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <col />
                     <col />
                     <col />
                   </colgroup>
@@ -15967,6 +15970,123 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                           </span>
                         </div>
                       </th>
+                      <th
+                        class="arco-table-th"
+                      >
+                        <div
+                          class="arco-table-th-item"
+                        >
+                          <span
+                            class="arco-table-th-item-title"
+                          >
+                            Salary
+                          </span>
+                        </div>
+                      </th>
+                      <th
+                        class="arco-table-th"
+                      >
+                        <div
+                          class="arco-table-th-item"
+                        >
+                          <span
+                            class="arco-table-th-item-title"
+                          >
+                            Address
+                          </span>
+                        </div>
+                      </th>
+                      <th
+                        class="arco-table-th"
+                      >
+                        <div
+                          class="arco-table-th-item"
+                        >
+                          <span
+                            class="arco-table-th-item-title"
+                          >
+                            Email
+                          </span>
+                        </div>
+                      </th>
+                      <th
+                        class="arco-table-th"
+                      >
+                        <div
+                          class="arco-table-th-item"
+                        >
+                          <span
+                            class="arco-table-th-item-title"
+                          >
+                            Salary
+                          </span>
+                        </div>
+                      </th>
+                      <th
+                        class="arco-table-th"
+                      >
+                        <div
+                          class="arco-table-th-item"
+                        >
+                          <span
+                            class="arco-table-th-item-title"
+                          >
+                            Address
+                          </span>
+                        </div>
+                      </th>
+                      <th
+                        class="arco-table-th"
+                      >
+                        <div
+                          class="arco-table-th-item"
+                        >
+                          <span
+                            class="arco-table-th-item-title"
+                          >
+                            Email
+                          </span>
+                        </div>
+                      </th>
+                      <th
+                        class="arco-table-th"
+                      >
+                        <div
+                          class="arco-table-th-item"
+                        >
+                          <span
+                            class="arco-table-th-item-title"
+                          >
+                            Salary
+                          </span>
+                        </div>
+                      </th>
+                      <th
+                        class="arco-table-th"
+                      >
+                        <div
+                          class="arco-table-th-item"
+                        >
+                          <span
+                            class="arco-table-th-item-title"
+                          >
+                            Address
+                          </span>
+                        </div>
+                      </th>
+                      <th
+                        class="arco-table-th"
+                      >
+                        <div
+                          class="arco-table-th-item"
+                        >
+                          <span
+                            class="arco-table-th-item-title"
+                          >
+                            Email
+                          </span>
+                        </div>
+                      </th>
                     </tr>
                   </thead>
                 </table>
@@ -15976,7 +16096,7 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                 style="overflow-y:auto;overflow-anchor:none;max-height:500px"
               >
                 <div
-                  style="height:3200000px;position:relative;overflow:visible;z-index:0;width:1000px;min-width:100%"
+                  style="height:3200000px;position:relative;overflow:visible;z-index:0;width:max-content;min-width:100%"
                 >
                   <div
                     style="display:flex;flex-direction:column;transform:translateY(0px);position:absolute;left:0;right:auto;top:0;min-width:100%"
@@ -16021,13 +16141,14 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
-                        style="left:40px;width:140px;min-width:140px;max-width:140px"
+                        style="left:40px"
                       >
                         <div
                           class="arco-table-cell"
                         >
                           <span
                             class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
                           >
                             Kevin 0
                           </span>
@@ -16035,13 +16156,13 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                       </div>
                       <div
                         class="arco-table-td"
-                        style="width:100px;min-width:100px;max-width:100px"
                       >
                         <div
                           class="arco-table-cell"
                         >
                           <span
                             class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
                           >
                             22000
                           </span>
@@ -16055,6 +16176,7 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                         >
                           <span
                             class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
                           >
                             0 Park Road, London
                           </span>
@@ -16068,6 +16190,133 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                         >
                           <span
                             class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
+                          >
+                            kevin.sandra_0@example.com
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="arco-table-td"
+                      >
+                        <div
+                          class="arco-table-cell"
+                        >
+                          <span
+                            class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
+                          >
+                            22000
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="arco-table-td"
+                      >
+                        <div
+                          class="arco-table-cell"
+                        >
+                          <span
+                            class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
+                          >
+                            0 Park Road, London
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="arco-table-td"
+                      >
+                        <div
+                          class="arco-table-cell"
+                        >
+                          <span
+                            class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
+                          >
+                            kevin.sandra_0@example.com
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="arco-table-td"
+                      >
+                        <div
+                          class="arco-table-cell"
+                        >
+                          <span
+                            class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
+                          >
+                            22000
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="arco-table-td"
+                      >
+                        <div
+                          class="arco-table-cell"
+                        >
+                          <span
+                            class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
+                          >
+                            0 Park Road, London
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="arco-table-td"
+                      >
+                        <div
+                          class="arco-table-cell"
+                        >
+                          <span
+                            class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
+                          >
+                            kevin.sandra_0@example.com
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="arco-table-td"
+                      >
+                        <div
+                          class="arco-table-cell"
+                        >
+                          <span
+                            class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
+                          >
+                            22000
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="arco-table-td"
+                      >
+                        <div
+                          class="arco-table-cell"
+                        >
+                          <span
+                            class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
+                          >
+                            0 Park Road, London
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="arco-table-td"
+                      >
+                        <div
+                          class="arco-table-cell"
+                        >
+                          <span
+                            class="arco-table-cell-wrap-value"
+                            style="display:inline-block;width:max-content"
                           >
                             kevin.sandra_0@example.com
                           </span>
