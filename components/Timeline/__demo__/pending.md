@@ -29,7 +29,7 @@ function App() {
         align="center"
         style={{ marginBottom: 24, }} >
         <Checkbox
-          checked={!!pendingProps.direction}
+          checked={pendingProps.direction==='horizontal'}
           onChange={(v) => {
             setPendingProps({
               ...pendingProps,
