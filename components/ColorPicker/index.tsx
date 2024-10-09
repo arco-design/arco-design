@@ -18,7 +18,7 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
   const { getPrefixCls, componentConfig, size: ctxSize } = useContext(ConfigContext);
   const props = useMergeProps<ColorPickerProps>(
     baseProps,
-    defaultProps,
+    { ...defaultProps, size: ctxSize || defaultProps.size },
     componentConfig?.ColorPicker
   );
   const {
@@ -59,12 +59,10 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
       return customTriggerElement;
     }
 
-    const actualSize = size || ctxSize;
-
     return (
       <div
         className={cs(prefixCls, className, {
-          [`${prefixCls}-size-${actualSize}`]: actualSize,
+          [`${prefixCls}-size-${size}`]: size,
           [`${prefixCls}-disabled`]: disabled,
         })}
         style={style}
