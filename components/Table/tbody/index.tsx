@@ -5,7 +5,7 @@ import cs from '../../_util/classNames';
 import useComponent from '../hooks/useComponent';
 import VirtualList from '../../_class/VirtualList';
 import Tr from './tr';
-import { getOriginData } from '../utils';
+import { getOriginData, isChildrenNotEmpty } from '../utils';
 
 type TBodyDataRecord = TbodyProps['data'][number];
 
@@ -44,15 +44,10 @@ const DataRecordRenderer = forwardRef(function (
     type = 'checkbox';
   }
 
-  const er = expandedRowRender
-    ? (r, i) => expandedRowRender(getOriginData(r), i)
-    : expandedRowRender;
-
-  const isChildrenNotEmpty = (record: TBodyDataRecord) => {
-    return isArray(record[childrenColumnName]) && record[childrenColumnName].length;
-  };
+  function shouldRowExpand(record, index) {
 
   const shouldRowExpand = (record: TBodyDataRecord, index: number) => {
+
     if ('rowExpandable' in expandProps && typeof expandProps.rowExpandable === 'function') {
       return expandProps.rowExpandable(record);
     }
@@ -92,7 +87,7 @@ const DataRecordRenderer = forwardRef(function (
                 index={i}
               />
             );
-            if (isChildrenNotEmpty(child)) {
+            if (isChildrenNotEmpty(child, childrenColumnName)) {
               travel(child[childrenColumnName], getRowKey(child), level + 1);
             }
           }

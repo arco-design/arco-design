@@ -215,3 +215,23 @@ export function getSorterPriority(sorter: ColumnProps['sorter']): number | undef
     return sorter.multiple;
   }
 }
+
+// flattenColumns 在构造时优先使用了 column.key 作为主键，在查询时使用 getColumnByDataIndex 方法可能会导致bug。
+export function getColumnByUniqueKey(flattenColumns, key: string | number) {
+  return flattenColumns.find((column, index) => {
+    if (typeof column.key !== 'undefined') {
+      if (typeof column.key === 'number' && typeof key === 'string') {
+        return column.key.toString() === key;
+      }
+      return column.key === key;
+    }
+    // unnecessary
+    if (typeof column.dataIndex !== 'undefined') {
+      return column.dataIndex === key;
+    }
+    if (typeof key === 'number') {
+      return index === key;
+    }
+    return false;
+  });
+}
