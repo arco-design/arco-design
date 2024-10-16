@@ -540,7 +540,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       const ele =
         root.querySelector(`.${prefixCls}-body`) ||
         root.querySelector(`.${prefixCls}-content-inner`);
-      if(checkIsVisible(ele){
+      if(ele&&ele.offsetParent){
         const tableViewWidth = ele.getBoundingClientRect().width;
         setTableViewWidth(tableViewWidth);
       }
