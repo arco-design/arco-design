@@ -537,7 +537,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     setFixedColumnClassNames();
     const root = getRootDomElement();
     if (root && (hasFixedColumn || (scroll && scroll.x))) {
-      const ele =
+      const ele:HTMLDivElement =
         root.querySelector(`.${prefixCls}-body`) ||
         root.querySelector(`.${prefixCls}-content-inner`);
       if(ele&&ele.offsetParent){
