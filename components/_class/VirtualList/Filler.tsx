@@ -45,6 +45,9 @@ const Filler: React.FC<FillerProps> = ({
       top: 0,
       ...propsInnerStyle,
     };
+  } else {
+    outerStyle = { ...propsOuterStyle };
+    innerStyle = { ...innerStyle, ...propsInnerStyle };
   }
 
   return (
