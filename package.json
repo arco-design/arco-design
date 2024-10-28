@@ -141,7 +141,7 @@
     "react-is": "^18.2.0",
     "react-transition-group": "^4.3.0",
     "resize-observer-polyfill": "^1.5.1",
-    "scroll-into-view-if-needed": "2.2.20",
+    "scroll-into-view-if-needed": "^2.2.20",
     "shallowequal": "^1.1.0"
   },
   "sideEffects": [
