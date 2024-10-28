@@ -2,6 +2,23 @@
 changelog: true
 ---
 
+## 2.64.1
+
+2024-10-28
+
+### 🐛 BugFix
+
+- Dependency library `scroll-into-view-if-needed` version number updated([#2848](https://github.com/arco-design/arco-design/pull/2848))
+- Fixed the bug that the currently highlighted option did not automatically scroll to the viewport when using the keyboard in the `Cascader` search panel.([#2848](https://github.com/arco-design/arco-design/pull/2848))
+- `Table` component fixes the problem that fixed columns become invalid when the virtual list is enabled and the amount of data is small([#2847](https://github.com/arco-design/arco-design/pull/2847))
+- Fix for `ColorPicker` to select the outer DOM element when the mouse is moved out of the popup artboard after pressing the mouse([#2824](https://github.com/arco-design/arco-design/pull/2824))
+- Fixed the bug that the size attribute provided by `ConfigProvider` for `ColorPicker` does not take effect.([#2822](https://github.com/arco-design/arco-design/pull/2822))
+- 修复 `AutoComplete` 下拉框未完全对齐 bug。([#2804](https://github.com/arco-design/arco-design/pull/2804))
+
+### 🆎 TypeScript
+
+- Fix `count` type issue of `Badge` component.([#2750](https://github.com/arco-design/arco-design/pull/2750))
+
 ## 2.64.0
 
 2024-08-30

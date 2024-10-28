@@ -1,3 +1,11 @@
+## 2.64.1
+
+2024-10-28
+
+### 🐛 BugFix
+
+- `Table` component fixes the problem that fixed columns become invalid when the virtual list is enabled and the amount of data is small([#2847](https://github.com/arco-design/arco-design/pull/2847))
+
 ## 2.61.1
 
 2024-03-22

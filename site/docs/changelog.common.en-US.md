@@ -1,3 +1,11 @@
+## 2.64.1
+
+2024-10-28
+
+### 🐛 BugFix
+
+- Dependency library `scroll-into-view-if-needed` version number updated([#2848](https://github.com/arco-design/arco-design/pull/2848))
+
 ## 2.63.2
 
 2024-08-08

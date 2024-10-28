@@ -1,3 +1,12 @@
+## 2.64.1
+
+2024-10-28
+
+### 🐛 问题修复
+
+- 修复 `ColorPicker` 在弹出画板上按下鼠标后，鼠标移出画板时，会选中外层 DOM 元素([#2824](https://github.com/arco-design/arco-design/pull/2824))
+- 修复 `ConfigProvider` 对 `ColorPicker` 提供的 size 属性不生效 bug。([#2822](https://github.com/arco-design/arco-design/pull/2822))
+
 ## 2.62.0
 
 2024-04-26

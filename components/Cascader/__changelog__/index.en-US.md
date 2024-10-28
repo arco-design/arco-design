@@ -1,3 +1,11 @@
+## 2.64.1
+
+2024-10-28
+
+### 🐛 BugFix
+
+- Fixed the bug that the currently highlighted option did not automatically scroll to the viewport when using the keyboard in the `Cascader` search panel.([#2848](https://github.com/arco-design/arco-design/pull/2848))
+
 ## 2.63.0
 
 2024-06-11

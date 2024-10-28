@@ -2,6 +2,23 @@
 changelog: true
 ---
 
+## 2.64.1
+
+2024-10-28
+
+### 🐛 问题修复
+
+- 依赖库 `scroll-into-view-if-needed` 版本号更新([#2848](https://github.com/arco-design/arco-design/pull/2848))
+- 修复 `Cascader` 搜索面板键盘操作时当前高亮选项未自动滚动到视口的 bug。([#2848](https://github.com/arco-design/arco-design/pull/2848))
+- `Table` 组件修复开启虚拟列表且数据量少时，固定列失效的问题([#2847](https://github.com/arco-design/arco-design/pull/2847))
+- 修复 `ColorPicker` 在弹出画板上按下鼠标后，鼠标移出画板时，会选中外层 DOM 元素([#2824](https://github.com/arco-design/arco-design/pull/2824))
+- 修复 `ConfigProvider` 对 `ColorPicker` 提供的 size 属性不生效 bug。([#2822](https://github.com/arco-design/arco-design/pull/2822))
+- 修复 `AutoComplete` 下拉框未完全对齐 bug。([#2804](https://github.com/arco-design/arco-design/pull/2804))
+
+### 🆎 类型修正
+
+- 修复 `Badge` 组件 `count` 类型问题。([#2750](https://github.com/arco-design/arco-design/pull/2750))
+
 ## 2.64.0
 
 2024-08-30

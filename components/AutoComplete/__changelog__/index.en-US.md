@@ -1,3 +1,11 @@
+## 2.64.1
+
+2024-10-28
+
+### 🐛 BugFix
+
+- 修复 `AutoComplete` 下拉框未完全对齐 bug。([#2804](https://github.com/arco-design/arco-design/pull/2804))
+
 ## 2.31.0
 
 2022-03-25

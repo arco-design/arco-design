@@ -1,3 +1,11 @@
+## 2.64.1
+
+2024-10-28
+
+### 🆎 TypeScript
+
+- Fix `count` type issue of `Badge` component.([#2750](https://github.com/arco-design/arco-design/pull/2750))
+
 ## 2.45.1
 
 2023-03-01

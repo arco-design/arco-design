@@ -1,3 +1,12 @@
+## 2.64.1
+
+2024-10-28
+
+### 🐛 BugFix
+
+- Fix for `ColorPicker` to select the outer DOM element when the mouse is moved out of the popup artboard after pressing the mouse([#2824](https://github.com/arco-design/arco-design/pull/2824))
+- Fixed the bug that the size attribute provided by `ConfigProvider` for `ColorPicker` does not take effect.([#2822](https://github.com/arco-design/arco-design/pull/2822))
+
 ## 2.62.0
 
 2024-04-26
