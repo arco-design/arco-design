@@ -118,7 +118,7 @@ function Anchor(baseProps: AnchorPropsWithChildren, ref) {
 
       if (node && hash !== currentLink) {
         scrollIntoViewIfNeeded(node, {
-          behavior: 'instant',
+          behavior: 'auto',
           block: 'nearest',
           scrollMode: 'if-needed',
           boundary: wrapperRef.current,

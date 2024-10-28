@@ -176,7 +176,7 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
 
     if (target && (isKeyboardHover.current || isFirstRender)) {
       scrollIntoView(target, {
-        behavior: 'instant',
+        behavior: 'auto',
         block: 'nearest',
         scrollMode: 'if-needed',
         boundary: target.parentNode?.parentNode as Element,
