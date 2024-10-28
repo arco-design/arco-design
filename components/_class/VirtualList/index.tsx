@@ -22,7 +22,7 @@ import {
   getLocationItem,
 } from './utils/itemUtil';
 import { raf, caf } from '../../_util/raf';
-import { isNumber } from '../../_util/is';
+import { isFunction, isNumber } from '../../_util/is';
 import usePrevious from '../../_util/hooks/usePrevious';
 import { findListDiffIndex, getIndexByStartLoc } from './utils/algorithmUtil';
 import Filler from './Filler';
@@ -633,6 +633,10 @@ const VirtualList: React.ForwardRefExoticComponent<
             } else {
               heightMap[key] = getNodeHeight(ele, true);
             }
+          }
+
+          if (isFunction((node as unknown as any)?.ref)) {
+            (node as unknown as any)?.ref(ele);
           }
         },
       });
