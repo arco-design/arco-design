@@ -227,6 +227,7 @@ exports[`renders Mentions/demo/prefix.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
+    style="margin-right:40px"
   >
     <div
       class="arco-mentions arco-mentions-align-textarea"
@@ -235,6 +236,27 @@ exports[`renders Mentions/demo/prefix.md correctly 1`] = `
       <textarea
         class="arco-textarea arco-mentions-textarea"
         placeholder="Input *"
+        rows="1"
+      />
+      <div
+        class="arco-mentions-measure"
+      >
+        <span
+          class="arco-mentions-measure-trigger"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-mentions arco-mentions-align-textarea"
+      style="width:154px;margin-bottom:10px"
+    >
+      <textarea
+        class="arco-textarea arco-mentions-textarea"
+        placeholder="Input \${"
         rows="1"
       />
       <div
