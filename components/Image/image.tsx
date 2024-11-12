@@ -52,6 +52,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
     onError,
     onLoad,
     lazyload,
+    fit = 'unset',
     ...restProps
   } = props;
 
@@ -213,6 +214,9 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
         ref={refImg}
         className={`${prefixCls}-img`}
         tabIndex={0}
+        style={{
+          objectFit: fit
+        }}
         {...getKeyboardEvents({
           onPressEnter: onImgClick,
         })}
