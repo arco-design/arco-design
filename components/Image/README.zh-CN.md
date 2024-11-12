@@ -35,7 +35,7 @@
 |previewProps|预览的配置项 （所有选项都是可选的）[ImagePreviewProps](#imagepreview)|PartialImagePreviewProps |`-`|-|
 |style|节点样式（非图片本身样式）|CSSProperties |`-`|-|
 |width|图片显示宽度|string \| number |`-`|-|
-|fit|确定图片如何适应容器框，同原生 object-fit|string|fill \| contain \| cover \| none \| scale-down|-|
+|fit|确定图片如何适应容器框，同原生 object-fit|fill \| contain \| cover \| none \| scale-down|`-`|-|
 
 ### Image.Preview
 
