@@ -186,8 +186,8 @@ export default class Control<
       }
       if (dependencies) {
         if (
-          isArray(dependencies) ||
-          (dependencies as string[]).some((depField) => isFieldMatch(depField, fields))
+          isArray(dependencies) &&
+          dependencies.some((depField) => isFieldMatch(depField, fields))
         ) {
           if (this.isTouched()) {
             this.validateField();
