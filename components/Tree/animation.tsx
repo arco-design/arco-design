@@ -81,7 +81,7 @@ const TreeAnimation = (props: PropsWithChildren<NodeProps>) => {
       });
     }
     return treeContext.getNodeProps(result);
-  }, [childrenPropsList, props._key, expanded]);
+  }, [childrenPropsList, props._key, expanded, expandedKeys]);
 
   let realHeight = treeContext.virtualListProps?.height;
   realHeight = isNumber(realHeight) ? realHeight : 0;
