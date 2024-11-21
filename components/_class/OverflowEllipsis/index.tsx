@@ -69,7 +69,7 @@ export default function OverflowEllipsis(props: OverflowEllipsisProps) {
     >
       <div className={cs(prefixCls, props.className)}>
         {items.map((item, index) => {
-          const key = `${(item as ReactElement)?.key || index}_overflow_item`;
+          const key = `${(item as ReactElement)?.key || index}_overflow_item_${index}`;
           return (
             <OverflowItem
               key={key}
