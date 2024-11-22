@@ -207,10 +207,10 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
       >
         {(item: Node<T>, i) => {
           const pathNodes = item.getPathNodes();
-          const pathLabel = pathNodes.map((path) => (
+          const pathLabel = pathNodes.map((path, index) => (
             <span key={`${path.label}_${path._level}`}>
               {path.label}
-              {path.isLeaf ? '' : ' / '}
+              {pathNodes.length === index + 1 ? '' : ' / '}
             </span>
           ));
           const isChecked = item._checked;
