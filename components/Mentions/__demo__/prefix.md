@@ -36,6 +36,12 @@ const App = () => {
         placeholder="Input *"
         options={['Bytedance', 'Bytedesign', 'Bytenumner']}
       />
+       <Mentions
+        style={{ width: 154, marginBottom: 10 }}
+        prefix="${"
+        placeholder="Input ${"
+        options={['Bytedance', 'Bytedesign', 'Bytenumner']}
+      />
     </Space>
   );
 };
