@@ -15,7 +15,7 @@ const defaultProps: AlertProps = {
   type: 'info',
 };
 
-function Alert(baseProps: AlertProps, ref) {
+const Alert: React.ForwardRefRenderFunction<HTMLDivElement, AlertProps> = (baseProps, ref) => {
   const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<AlertProps>(baseProps, defaultProps, componentConfig?.Alert);
   const {
@@ -39,7 +39,7 @@ function Alert(baseProps: AlertProps, ref) {
   const prefixCls = getPrefixCls('alert');
   const [visible, setVisible] = useState<boolean>(true);
 
-  function renderIcon(type: string | void): ReactNode | null {
+  const iconNode = React.useMemo<React.ReactNode>(() => {
     if (icon) {
       return icon;
     }
@@ -55,12 +55,12 @@ function Alert(baseProps: AlertProps, ref) {
       default:
         return null;
     }
-  }
+  }, [icon, type]);
 
-  function onHandleClose(e) {
+  const onHandleClose: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     setVisible(false);
     onClose?.(e);
-  }
+  };
 
   const classNames = cs(
     prefixCls,
@@ -85,7 +85,7 @@ function Alert(baseProps: AlertProps, ref) {
       }}
     >
       <div ref={ref} style={style} className={classNames} role="alert" {...rest}>
-        {showIcon && <div className={`${prefixCls}-icon-wrapper`}>{renderIcon(type)}</div>}
+        {showIcon && <div className={`${prefixCls}-icon-wrapper`}>{iconNode}</div>}
         <div className={`${prefixCls}-content-wrapper`}>
           {title && <div className={`${prefixCls}-title`}>{title}</div>}
           {content && <div className={`${prefixCls}-content`}>{content}</div>}
@@ -99,9 +99,9 @@ function Alert(baseProps: AlertProps, ref) {
       </div>
     </ArcoCSSTransition>
   );
-}
+};
 
-const AlertComponent = forwardRef<unknown, AlertProps>(Alert);
+const AlertComponent = forwardRef<HTMLDivElement, AlertProps>(Alert);
 
 AlertComponent.displayName = 'Alert';
 
