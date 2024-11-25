@@ -56,7 +56,7 @@ const needMergeKeys = [
 ] as const;
 
 type MergedPropsType = {
-  [key in typeof needMergeKeys[number]]?: TreeProps[key];
+  [key in (typeof needMergeKeys)[number]]?: TreeProps[key];
 };
 
 class Tree extends Component<TreeProps, TreeState> {
