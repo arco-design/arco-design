@@ -14,14 +14,7 @@ import BTween from 'b-tween';
 import { isObject, isArray, isNumber } from '../_util/is';
 import cs from '../_util/classNames';
 import Spin, { SpinProps } from '../Spin';
-import {
-  TableProps,
-  ColumnProps,
-  GetRowKeyType,
-  SorterInfo,
-  SortDirection,
-  SorterFn,
-} from './interface';
+import { TableProps, GetRowKeyType, FilterType, SorterInfo } from './interface';
 import { VirtualListHandle } from '../_class/VirtualList';
 import Thead from './thead/index';
 import Tbody from './tbody/index';
@@ -35,8 +28,8 @@ import {
   getScrollBarWidth,
   deepCloneData,
   getOriginData,
-  getSorterFn,
   getSorterPriority,
+  getSorterFn,
 } from './utils';
 import ColGroup from './colgroup';
 import useExpand from './hooks/useExpand';
@@ -51,13 +44,12 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
 import { pickDataAttributes } from '../_util/pick';
 import useSorter from './hooks/useSorter';
+import useFilter from './hooks/useFilter';
 
 export interface TableInstance {
   getRootDomElement: () => HTMLDivElement;
   scrollIntoView: (dataIndex: React.Key) => void;
 }
-
-type FilterType<T> = Partial<Record<keyof T, string[]>>;
 
 const EMPTY_DATA = [];
 const EMPTY_COLUMNS = [];
@@ -141,13 +133,10 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const scrollbarChanged = useRef<boolean>(false);
   const [groupColumns, flattenColumns] = useColumns<T>(props);
 
-  const { currentFilters, defaultSorters } = getDefaultFiltersAndSorters();
-
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [innerPageSize, setInnerPageSize] = useState<number>(
     mergePagination.pageSize || mergePagination.defaultPageSize || 10
   );
-  const [filters, setFilters] = useState<FilterType<T>>(currentFilters);
   const [tableViewWidth, setTableViewWidth] = useState<number>(0);
 
   const [columnWidths, setColumnWidths] = useState<number[]>([]);
@@ -157,10 +146,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     groupColumns,
     flattenColumns,
     prefixCls
-  );
-  const { currentSorter, activeSorters, getNextActiveSorters, updateStateSorters } = useSorter(
-    flattenColumns,
-    defaultSorters
   );
 
   const { ComponentTable, ComponentBodyWrapper, ComponentHeaderWrapper } = useComponent(components);
@@ -173,6 +158,24 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     return (record) => record[rowKey];
   }, [rowKey]);
 
+  const hasFixedColumnLeft = !!flattenColumns.find((c) => c.fixed === 'left');
+  const hasFixedColumnRight = !!flattenColumns.find((c) => c.fixed === 'right');
+  const hasFixedColumn = hasFixedColumnLeft || hasFixedColumnRight;
+  const { currentFilters, defaultSorters } = getDefaultFiltersAndSorters();
+  const { activeSorters, onSort, getSortedData } = useSorter(
+    flattenColumns,
+    childrenColumnName,
+    handleOnChange,
+    defaultSorters
+  );
+  const { innerFilters, onHandleFilter, onHandleFilterReset, getFilteredData } = useFilter(
+    flattenColumns,
+    handleOnChange,
+    currentFilters
+  );
+
+  // todo 如果要把下面这个函数拆开放到useSorter和useFilter里面
+  // todo useFilter和useSorter不处理数据，暴露出函数在<table/>组件内处理数据
   function getDefaultFiltersAndSorters() {
     const currentFilters = {} as Partial<Record<keyof T, string[]>>;
     let defaultSorters: SorterInfo[] = [];
@@ -210,180 +213,18 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     return { currentFilters, defaultSorters };
   }
 
-  const controlledFilter = useMemo(() => {
-    // 允许 filteredValue 设置为 undefined 表示不筛选
-    const flattenFilteredValueColumns = flattenColumns.filter(
-      (column) => 'filteredValue' in column
-    );
-    const newFilters = {};
-    // 受控的筛选，当columns中的筛选发生改变时，更新state
-    if (flattenFilteredValueColumns.length) {
-      flattenFilteredValueColumns.forEach((column, index) => {
-        const innerDataIndex = column.key || column.dataIndex || index;
-        if (innerDataIndex !== undefined) {
-          newFilters[innerDataIndex] = column.filteredValue;
-        }
-      });
-    }
-    return newFilters;
-  }, [flattenColumns]);
-
-  const innerFilters = useMemo<FilterType<T>>(() => {
-    return Object.keys(controlledFilter).length ? controlledFilter : filters;
-  }, [filters, controlledFilter]);
-
-  /** ----------- Sorter ----------- */
-
-  function onSort(direction, field) {
-    const column = getColumnByUniqueKey(field);
-    if (!column) {
-      return;
-    }
-    const sorter: SorterInfo = {
-      direction,
-      field,
-      sorterFn: getSorterFn(column.sorter),
-      priority: getSorterPriority(column.sorter),
-    };
-    const nextActiveSorters = getNextActiveSorters(sorter);
-    updateStateSorters(sorter, nextActiveSorters);
-    const newProcessedData = getProcessedData(sorter, nextActiveSorters, innerFilters);
-    const currentData = getPageData(newProcessedData);
-    onChange &&
-      onChange(getPaginationProps(newProcessedData), sorter, innerFilters, {
-        currentData: getOriginData(currentData),
-        currentAllData: getOriginData(newProcessedData),
-        action: 'sort',
-      });
-  }
-
-  function compareFn(activeSorters: SorterInfo[]) {
-    const compare = function (fn: SorterFn, direction: SortDirection) {
-      return (a, b) => {
-        const result = fn(a, b);
-        return direction === 'descend' ? -result : result;
-      };
-    };
-    const sorters = [...activeSorters];
-    sorters.sort((a, b) => b.priority - a.priority);
-    return (a, b) => {
-      for (let i = 0, l = sorters.length; i < l; i++) {
-        const { sorterFn, direction } = sorters[i];
-        if (typeof sorterFn !== 'function') {
-          continue;
-        }
-        const result = compare(sorterFn, direction)(a, b);
-        if (result !== 0) {
-          return result;
-        }
-      }
-      return 0;
-    };
-  }
-
-  /** ----------- Sorter End ----------- */
-
-  /** ----------- Filters ----------- */
-  function onHandleFilter(column, filter: string[]) {
-    const newFilters = {
-      ...innerFilters,
-      [column.dataIndex]: filter,
-    };
-    const mergedFilters = {
-      ...newFilters,
-      ...controlledFilter,
-    };
-    if (isArray(filter) && filter.length) {
-      setFilters(mergedFilters);
-      const newProcessedData = getProcessedData(currentSorter, activeSorters, newFilters);
-      const currentData = getPageData(newProcessedData);
-      onChange &&
-        onChange(
-          getPaginationProps(newProcessedData),
-          activeSorters.length === 1 ? activeSorters[0] : activeSorters,
-          newFilters,
-          {
-            currentData: getOriginData(currentData),
-            currentAllData: getOriginData(newProcessedData),
-            action: 'filter',
-          }
-        );
-    } else if (isArray(filter) && !filter.length) {
-      onHandleFilterReset(column);
-    }
-  }
-
-  function onHandleFilterReset({ dataIndex }) {
-    const newFilters = {
-      ...innerFilters,
-    };
-    delete newFilters[dataIndex];
-    setFilters(newFilters);
-    const newProcessedData = getProcessedData(currentSorter, activeSorters, newFilters);
-    const currentData = getPageData(newProcessedData);
-    onChange &&
-      onChange(
-        getPaginationProps(newProcessedData),
-        activeSorters.length === 1 ? activeSorters[0] : activeSorters,
-        newFilters,
-        {
-          currentData: getOriginData(currentData),
-          currentAllData: getOriginData(newProcessedData),
-          action: 'filter',
-        }
-      );
-  }
-
-  /** ----------- Filters End ----------- */
-
-  const hasFixedColumnLeft = !!flattenColumns.find((c) => c.fixed === 'left');
-  const hasFixedColumnRight = !!flattenColumns.find((c) => c.fixed === 'right');
-  const hasFixedColumn = hasFixedColumnLeft || hasFixedColumnRight;
-
-  function getProcessedData(currentSorter: SorterInfo, activeSorters: SorterInfo[], filters) {
+  function getProcessedData() {
     let _data = (clonedData || []).slice();
 
-    Object.keys(filters).forEach((field) => {
-      if (filters[field] && filters[field].length) {
-        const column = getColumnByUniqueKey(field) as ColumnProps<T>;
-        if (column && typeof column.onFilter === 'function') {
-          _data = _data.filter((row) => {
-            return filters[field].reduce(
-              (pre, cur) => pre || (column.onFilter as Function)(cur, row),
-              false
-            );
-          });
-        }
-      }
-    });
+    _data = getFilteredData<T>(_data);
 
-    const getSortData = (d) => {
-      return d
-        .slice()
-        .sort(compareFn(activeSorters))
-        .map((item) => {
-          if (isArray(item[childrenColumnName])) {
-            return {
-              ...item,
-              [childrenColumnName]: getSortData(item[childrenColumnName]),
-            };
-          }
-          return item;
-        });
-    };
-
-    if (
-      (currentSorter.direction && typeof currentSorter.sorterFn === 'function') ||
-      activeSorters.length
-    ) {
-      return getSortData(_data);
-    }
+    _data = getSortedData(_data);
 
     return _data;
   }
 
   // 获得经过 sorter 和 filters 筛选之后的 data
-  const processedData = getProcessedData(currentSorter, activeSorters, innerFilters);
+  const processedData = getProcessedData();
 
   function getPaginationProps(_processedData = processedData) {
     const pageSize = mergePagination.pageSize || innerPageSize || 10;
@@ -627,24 +468,48 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     allSelectedRowKeys,
     flattenData,
   } = useRowSelection<T>(props, pageData, clonedData, getRowKey);
+  function handleOnChange(
+    action: 'sort' | 'paginate' | 'filter',
+    extra: {
+      paginationProps?: PaginationProps;
+      filters?: FilterType<T>;
+      sorters?: SorterInfo[];
+      current?: number;
+      pageSize?: number;
+    }
+  ) {
+    let paginationProps: PaginationProps = {};
+    let sorters = {} as SorterInfo[];
+    let filters = {} as FilterType<T>;
+    let currentData = {};
+    const newProcessedData = getProcessedData();
+    sorters = activeSorters;
+    filters = innerFilters;
 
-  // flattenColumns 在构造时优先使用了 column.key 作为主键，在查询时使用 getColumnByDataIndex 方法可能会导致bug。
-  function getColumnByUniqueKey(key: string | number) {
-    return flattenColumns.find((column, index) => {
-      if (typeof column.key !== 'undefined') {
-        if (typeof column.key === 'number' && typeof key === 'string') {
-          return column.key.toString() === key;
-        }
-        return column.key === key;
-      }
-      // unnecessary
-      if (typeof column.dataIndex !== 'undefined') {
-        return column.dataIndex === key;
-      }
-      if (typeof key === 'number') {
-        return index === key;
-      }
-      return false;
+    if (['sort', 'filter'].includes(action)) {
+      paginationProps = getPaginationProps(newProcessedData);
+      currentData = getPageData(newProcessedData);
+    } else {
+      paginationProps = {
+        ...getPaginationProps(),
+        current: extra.current,
+        pageSize: extra.pageSize,
+      };
+      currentData = getOriginData(getPageData(processedData, paginationProps));
+    }
+
+    if (action === 'sort') {
+      sorters = extra.sorters;
+    }
+
+    if (action === 'filter') {
+      filters = extra.filters;
+    }
+
+    onChange?.(paginationProps, sorters.length === 1 ? sorters[0] : sorters, filters, {
+      currentData: getOriginData(currentData),
+      currentAllData: getOriginData(newProcessedData),
+      action,
     });
   }
 
@@ -658,18 +523,8 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       setSelectedRowKeys([]);
       rowSelection.onChange && rowSelection.onChange([], []);
     }
-    const newPaginationProps = { ...getPaginationProps(), current, pageSize };
-    onChange &&
-      onChange(
-        newPaginationProps,
-        activeSorters.length === 1 ? activeSorters[0] : activeSorters,
-        innerFilters,
-        {
-          currentData: getOriginData(getPageData(processedData, newPaginationProps)),
-          currentAllData: getOriginData(processedData),
-          action: 'paginate',
-        }
-      );
+    handleOnChange('paginate', { current, pageSize });
+
     mergePagination.onChange && mergePagination.onChange(current, pageSize);
   }
 
@@ -783,7 +638,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     <Thead<T>
       {...props}
       activeSorters={activeSorters}
-      currentSorter={currentSorter}
       selectedRowKeys={selectedRowKeys}
       currentFilters={innerFilters}
       onCheckAll={onCheckAll}
@@ -847,7 +701,6 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       indentSize={indentSize}
       noDataElement={noDataElement || renderEmpty('Table')}
       activeSorters={activeSorters}
-      currentSorter={currentSorter}
       stickyOffsets={stickyOffsets}
       stickyClassNames={stickyClassNames}
       getRowKey={getRowKey}
