@@ -108,6 +108,7 @@ changelog: true
 - Fixed the issue where entering a minus sign in the Slider component triggered an onChange value of NaN.([#2660](https://github.com/arco-design/arco-design/pull/2660))
 - Fixed the issue where the ref reference in the Tabs component could be null.([#2660](https://github.com/arco-design/arco-design/pull/2660))
 - Fixed the issue where the `disabled` configuration of the internal Radio is invalid after `Radio.Group` is set to disabled.([#2653](https://github.com/arco-design/arco-design/pull/2653))
+- Fixed the bug that `maxTagCount` of `InputTag` component does not take effect when setting `renderTag`.
 
 ## 2.61.3
 

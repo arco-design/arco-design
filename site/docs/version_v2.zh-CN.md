@@ -108,6 +108,7 @@ changelog: true
 - 修复`Slider`组件输入负号触发`onChange`的值为`NaN`的问题。([#2660](https://github.com/arco-design/arco-design/pull/2660))
 - 修复`Tabs`组件的`ref`引用可能为`null`的问题。([#2660](https://github.com/arco-design/arco-design/pull/2660))
 - 修复 `Radio.Group` 设置 disabled 后，内部 Radio 的 `disabled` 配置无效的问题 。([#2653](https://github.com/arco-design/arco-design/pull/2653))
+- 修复 `InputTag` 组件在设置 `renderTag` 时 `maxTagCount` 不生效的 bug。
 
 ## 2.61.3
 

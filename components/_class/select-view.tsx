@@ -10,7 +10,7 @@ import React, {
   useMemo,
 } from 'react';
 import { pickDataAttributes } from '../_util/pick';
-import { isUndefined, isObject, isFunction } from '../_util/is';
+import { isUndefined, isObject, isFunction, isNumber } from '../_util/is';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
 import IconDown from '../../icon/react-icon/IconDown';
@@ -28,6 +28,9 @@ import IconHover from './icon-hover';
 import { Backspace, Enter } from '../_util/keycode';
 import fillNBSP from '../_util/fillNBSP';
 import Tag from '../Tag';
+import Popover from '../Popover';
+
+const MAX_TAG_COUNT_VALUE_PLACEHOLDER = '__arco_value_tag_placeholder';
 
 export interface SelectViewCommonProps
   extends Pick<InputTagProps<unknown>, 'animation' | 'renderTag' | 'dragToSort'> {
@@ -99,6 +102,7 @@ export interface SelectViewCommonProps
     | {
         count: number | 'responsive';
         render?: (invisibleTagCount: number) => ReactNode;
+        showPopover?: boolean;
       };
   /**
    * @zh 前缀。
@@ -187,8 +191,6 @@ const SearchStatus = {
   EDITING: 1,
   NONE: 2,
 };
-
-const DUMMY_TAG_COUNT = 1;
 
 export type SelectViewHandle = {
   dom: HTMLDivElement;
@@ -435,53 +437,50 @@ const CoreSelectView = React.forwardRef(
     };
 
     const renderTextFn = usePersistCallback(renderText);
+    // number or 'responsive'
+    const maxTagCountValue = isObject(maxTagCount) ? maxTagCount.count : maxTagCount;
+
+    const getTag = (v) => {
+      const result = renderTextFn(v);
+      return { value: v, label: result.text, closable: !result.disabled };
+    };
 
     const tagsToShow = useMemo(() => {
       if (!isMultiple) {
         return [];
       }
       const usedValue = isUndefined(value) ? [] : [].concat(value as []);
-      const tagsToShow: ObjectValueType[] = [];
-      const maxTagCountValue = isObject(maxTagCount) ? maxTagCount.count : maxTagCount;
-      const maxTagCountIsNumber = typeof maxTagCountValue === 'number';
+      const maxTagCountIsNumber = isNumber(maxTagCountValue);
 
-      // loop from start
-      for (let i = 0; i < usedValue.length; i++) {
-        if (maxTagCountIsNumber && tagsToShow.length >= maxTagCountValue + DUMMY_TAG_COUNT) {
-          break;
-        }
-        const v = usedValue[i];
-        const result = renderTextFn(v);
+      // responsive tag  时，需要全部渲染出来传给 input-tag，涉及到 tag 尺寸计算
+      const tagsToShow: ObjectValueType[] = (
+        maxTagCountIsNumber ? usedValue.slice(0, maxTagCountValue) : usedValue
+      ).map((v) => getTag(v));
 
-        tagsToShow.push({
-          value: v,
-          label: result.text,
-          closable: !result.disabled,
-        });
-      }
       return tagsToShow;
     }, [value, isMultiple, maxTagCount, renderTextFn]);
 
     const renderMultiple = () => {
-      const usedValue = isUndefined(value) ? [] : [].concat(value as []);
       const maxTagCountValue = isObject(maxTagCount) ? maxTagCount.count : maxTagCount;
+      const showPopover = isObject(maxTagCount) && maxTagCount.showPopover;
+
+      const tagPrefixCls = getPrefixCls('input-tag');
 
       const maxTagCountRender = (invisibleCount) => {
         const dom =
-          isObject(maxTagCount) && isFunction(maxTagCount.render)
-            ? maxTagCount.render(invisibleCount)
-            : `+${invisibleCount}...`;
+          isObject(maxTagCount) && isFunction(maxTagCount.render) ? (
+            maxTagCount.render(invisibleCount)
+          ) : maxTagCountValue === 'responsive' ? (
+            <Tag key={MAX_TAG_COUNT_VALUE_PLACEHOLDER} className={`${tagPrefixCls}-tag`}>
+              +{invisibleCount}...
+            </Tag>
+          ) : (
+            `+${invisibleCount}...`
+          );
 
-        if (renderTag) {
-          // 执行 renderTag 逻辑。。 这里只是为了兼容以前 select-view 里会对 +x... 节点执行 renderTag 逻辑
-          // 可能不大合理，按理说 maxTagCount.render 就行，但这里要保持以前的行为不变。
-          return dom;
-        }
-
-        return (
-          <Tag className={cs(`${getPrefixCls('input-tag')}-tag`, `${prefixCls}-tag`)}>{dom}</Tag>
-        );
+        return dom;
       };
+      const usedValue = isUndefined(value) ? [] : [].concat(value as []);
 
       const findLastClosableTagIndex = () => {
         // loop from end
@@ -530,6 +529,55 @@ const CoreSelectView = React.forwardRef(
         labelInValue: false,
       };
 
+      const maxCountTag = (() => {
+        if (isNumber(maxTagCountValue)) {
+          const invisibleTagCount = usedValue.length - maxTagCountValue;
+
+          if (invisibleTagCount > 0) {
+            const itemProps = {
+              label: maxTagCountRender(invisibleTagCount),
+              closable: false,
+              // InputTag needs to extract value as key
+              value: MAX_TAG_COUNT_VALUE_PLACEHOLDER,
+            };
+
+            if (showPopover) {
+              const popoverTags = usedValue
+                .map((val, index) => ({ val, index }))
+                .slice(maxTagCountValue)
+                .map((tag) => {
+                  const tagProps = getTag(tag.val);
+                  return renderTag ? (
+                    renderTag(
+                      { ...tagProps, onClose: () => {} },
+                      tag.index,
+                      tagsToShow.concat(itemProps)
+                    )
+                  ) : (
+                    <Tag
+                      {...tagProps}
+                      key={tagProps.value}
+                      className={`${tagPrefixCls}-tag`}
+                      onClose={(e) => eventHandlers.onRemove(tagProps.value, tag.index, e)}
+                    >
+                      {tagProps.label}
+                    </Tag>
+                  );
+                });
+              itemProps.label = (
+                <Popover content={!!popoverTags.length && <>{popoverTags}</>}>
+                  {itemProps.label}
+                </Popover>
+              );
+            }
+
+            return itemProps;
+          }
+        }
+      })();
+
+      const inputTagsToShow = !maxCountTag ? tagsToShow : tagsToShow.concat(maxCountTag);
+
       return (
         <InputTag
           {...inputPropsOverrideConfigProvider}
@@ -541,36 +589,33 @@ const CoreSelectView = React.forwardRef(
           disableInput={!showSearch}
           animation={animation}
           placeholder={placeholder}
-          value={tagsToShow}
+          value={inputTagsToShow}
           inputValue={inputValue}
           size={mergedSize}
           tagClassName={`${prefixCls}-tag`}
           renderTag={renderTag}
           icon={{ removeIcon }}
           maxTagCount={
-            maxTagCount
+            maxTagCountValue === 'responsive'
               ? {
-                  count: isObject(maxTagCount) ? maxTagCount.count : maxTagCount,
-                  render:
-                    maxTagCountValue === 'responsive'
-                      ? maxTagCountRender
-                      : () => maxTagCountRender(usedValue.length - maxTagCountValue),
-                  popoverProps: { disabled: true },
+                  count: maxTagCountValue,
+                  render: maxTagCountRender,
+                  popoverProps: showPopover ? {} : { disabled: true },
                 }
               : undefined
           }
           onChange={(newValue, reason) => {
             if (onSort && reason === 'sort') {
-              // const indexOfMaxTagCount = newValue.indexOf(MAX_TAG_COUNT_VALUE_PLACEHOLDER);
-              // // inject the invisible values tags to middle after dragging the "+x" tag
-              // if (indexOfMaxTagCount > -1) {
-              //   const headArr = newValue.slice(0, indexOfMaxTagCount);
-              //   const tailArr = newValue.slice(indexOfMaxTagCount + 1);
-              //   const midArr = usedValue.slice(-invisibleTagCount);
-              //   onSort(headArr.concat(midArr, tailArr));
-              // } else {
-              // }
-              onSort(newValue);
+              const indexOfMaxTagCount = newValue.indexOf(MAX_TAG_COUNT_VALUE_PLACEHOLDER);
+              // inject the invisible values tags to middle after dragging the "+x" tag
+              if (indexOfMaxTagCount > -1) {
+                const headArr = newValue.slice(0, indexOfMaxTagCount);
+                const tailArr = newValue.slice(indexOfMaxTagCount + 1);
+                const midArr = usedValue.slice(newValue.length - 1 - usedValue.length);
+                onSort(headArr.concat(midArr, tailArr));
+              } else {
+                onSort(newValue);
+              }
             }
           }}
           {...eventHandlers}

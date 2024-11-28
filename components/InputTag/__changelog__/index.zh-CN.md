@@ -22,6 +22,11 @@
 
 - `InputTag` 支持响应式 Tag 数([#2656](https://github.com/arco-design/arco-design/pull/2656))
 
+
+### 🐛 问题修复
+
+- 修复 `InputTag` 组件在设置 `renderTag` 时 `maxTagCount` 不生效的 bug。
+
 ## 2.59.0
 
 2024-01-19
