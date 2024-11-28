@@ -30,8 +30,6 @@ import fillNBSP from '../_util/fillNBSP';
 import OverflowEllipsis from '../_class/OverflowEllipsis';
 import ArcoCSSTransition from '../_util/CSSTransition';
 
-const MAX_TAG_COUNT_VALUE_PLACEHOLDER = '__arco_value_tag_placeholder';
-
 const CSS_TRANSITION_DURATION = 300;
 const MAX_TAG_RESPONSIVE = 'responsive';
 const REACT_KEY_FOR_INPUT = `__input_${Math.random().toFixed(10).slice(2)}`;
@@ -235,11 +233,12 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     index: number,
     inTooltip = false
   ): { valueKey: string | number; dom: ReactNode } => {
-    let { value: itemValue, label } = item;
+    const itemValue = item.value;
+    let label = item.label;
     let closable = !readOnly && !disabled && item.closable !== false;
 
     // 当前 Tag 的key
-    let valueKey = typeof itemValue === 'object' ? index : itemValue;
+    const valueKey = typeof itemValue === 'object' ? index : itemValue;
 
     const onClose = (event) => {
       tagCloseHandler(item, index, event);
@@ -247,18 +246,11 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
 
     if (!inTooltip && typeof maxTagCountValue === 'number' && index >= maxTagCountValue) {
       if (index === value.length - 1) {
-        // 为什么这里要重新赋值呢？ 因为select里之前 maxTagCount 会执行 renderTag 逻辑
-        // https://github.com/arco-design/arco-design/blob/main/components/_class/select-view.tsx#L462
         label = renderEllipsisNode(value.length - Number(maxTagCountValue));
-        itemValue = MAX_TAG_COUNT_VALUE_PLACEHOLDER;
         closable = false;
-        valueKey = MAX_TAG_COUNT_VALUE_PLACEHOLDER;
-        if (!renderTag) {
-          return { valueKey, dom: label };
-        }
-      } else {
-        return { valueKey, dom: null };
+        return { valueKey, dom: label };
       }
+      return { valueKey, dom: null };
     }
 
     if (renderTag) {
@@ -276,7 +268,6 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         ),
       };
     }
-
     const tagProps: Partial<TagProps> = {
       closable,
       onClose,
@@ -291,7 +282,6 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
       }),
       title: typeof label === 'string' ? label : undefined,
     };
-
     return { valueKey, dom: <Tag key={`${valueKey}-tag`} {...tagProps} /> };
   };
 
@@ -301,10 +291,10 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         ? maxTagCount.render
         : () => <span className={`${prefixCls}-tag-ellipsis`}>+{invisibleTagCount}</span>;
 
+    const popoverProps = isObject(maxTagCount) && maxTagCount.popoverProps;
+
     return (
       <Popover
-        {...(isObject(maxTagCount) ? maxTagCount.popoverProps : {})}
-        children={renderEllipsisLabel(invisibleTagCount, value)}
         content={
           <>
             {value
@@ -313,6 +303,8 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
               .map(({ tagValue, tagIndex }) => mergedRenderTag(tagValue, tagIndex, true)?.dom)}
           </>
         }
+        {...(popoverProps || {})}
+        children={renderEllipsisLabel(invisibleTagCount, value)}
       />
     );
   }

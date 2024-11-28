@@ -22,6 +22,10 @@
 
 - `InputTag` supports responsive Tag number([#2656](https://github.com/arco-design/arco-design/pull/2656))
 
+### 🐛 BugFix
+
+- Fixed the bug that `maxTagCount` of `InputTag` component does not take effect when setting `renderTag`.
+
 ## 2.59.0
 
 2024-01-19
