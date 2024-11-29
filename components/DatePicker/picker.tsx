@@ -214,7 +214,7 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
   const timeValue = panelValue || defaultTimeValue;
 
   function focusInput() {
-    refInput.current && refInput.current.blur && refInput.current.focus();
+    refInput.current && refInput.current.focus?.();
   }
 
   function blurInput() {
