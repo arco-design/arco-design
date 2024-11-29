@@ -89,6 +89,12 @@ export interface TreeProps {
    */
   draggable?: boolean;
   /**
+   * @zh 是否开启展开收起的节点动画。
+   * @en
+   * @defaultValue true
+   */
+  animation?: boolean;
+  /**
    * @zh 是否允许拖拽时放置在该节点。 (`dragNode` in `2.23.0`)
    * @en Whether to allow dropping on node. (`dragNode` in `2.23.0`)
    * @defaultValue () => true
