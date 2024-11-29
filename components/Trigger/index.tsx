@@ -430,10 +430,15 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
   offClickOutside = () => {
     if (this.handleClickOutside) {
-      const { getDocument } = this.getMergedProps(['getDocument']);
+      const { clickOutsideToClose, getDocument } = this.getMergedProps([
+        'clickOutsideToClose',
+        'getDocument',
+      ]);
       const root = isFunction(getDocument) && (getDocument as Function)();
 
-      off(root, 'mousedown', this.onClickOutside);
+      off(root, 'mousedown', this.onClickOutside, {
+        capture: isObject(clickOutsideToClose) ? clickOutsideToClose.capture : false,
+      });
       this.handleClickOutside = false;
     }
   };
