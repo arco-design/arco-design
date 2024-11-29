@@ -36,6 +36,7 @@ const defaultProps = {
   actionOnClick: 'select',
   allowDrop: () => true,
   fieldNames: DefaultFieldNames,
+  animation: true,
 };
 
 const needMergeKeys = [
@@ -53,6 +54,7 @@ const needMergeKeys = [
   'selectable',
   'allowDrop',
   'actionOnClick',
+  'animation',
 ] as const;
 
 type MergedPropsType = {
@@ -201,25 +203,27 @@ class Tree extends Component<TreeProps, TreeState> {
         // 比较前后expandKeys的改变，去重，得到需要收起/展开的动画
         // 例如 [...[1, 2, 3], ...[1, 3, 4]] 。那么 2 会收起，4会展开。
         // 如果父节点正在执行收起/展开逻辑，子节点不需要出现在 currentExpandKeys 数组。
-        newState.currentExpandKeys = [...newState.expandedKeys, ...this.state.expandedKeys]
-          .reduce((total, next) => {
-            const index = total.indexOf(next);
-            if (index === -1) {
-              total.push(next);
-            } else {
-              total.splice(index, 1);
-            }
-            return total;
-          }, [])
-          .filter((key, _, array) => {
-            if (this.key2nodeProps[key]) {
-              const pathParentKeys = this.key2nodeProps[key].pathParentKeys;
-              if (pathParentKeys.some((x) => array.indexOf(x) > -1)) {
-                return false;
-              }
-              return this.key2nodeProps[key].children?.length;
-            }
-          });
+        newState.currentExpandKeys = !mergedProps.animation
+          ? []
+          : [...newState.expandedKeys, ...this.state.expandedKeys]
+              .reduce((total, next) => {
+                const index = total.indexOf(next);
+                if (index === -1) {
+                  total.push(next);
+                } else {
+                  total.splice(index, 1);
+                }
+                return total;
+              }, [])
+              .filter((key, _, array) => {
+                if (this.key2nodeProps[key]) {
+                  const pathParentKeys = this.key2nodeProps[key].pathParentKeys;
+                  if (pathParentKeys.some((x) => array.indexOf(x) > -1)) {
+                    return false;
+                  }
+                  return this.key2nodeProps[key].children?.length;
+                }
+              });
       }
       const currentExpandKeys = newState.currentExpandKeys || this.state.currentExpandKeys;
       if (newState.treeData && currentExpandKeys) {
@@ -620,6 +624,7 @@ class Tree extends Component<TreeProps, TreeState> {
 
   handleExpand = (expanded: boolean, key: string) => {
     const { currentExpandKeys, expandedKeys = [] } = this.state;
+    const { animation } = this.getMergedProps();
     const { onExpand } = this.props;
     if (currentExpandKeys.indexOf(key) > -1) {
       // 如果当前key节点正在展开/收起，不执行操作。
@@ -634,7 +639,7 @@ class Tree extends Component<TreeProps, TreeState> {
     if (!('expandedKeys' in this.props)) {
       this.setState({
         expandedKeys: newExpandedKeys,
-        currentExpandKeys: [...currentExpandKeys, key],
+        currentExpandKeys: animation ? [...currentExpandKeys, key] : [],
       });
     }
     onExpand &&
@@ -764,6 +769,7 @@ class Tree extends Component<TreeProps, TreeState> {
       style,
       icons,
       actionOnClick,
+      animation,
     } = this.getMergedProps();
     const { loadMore, checkable } = this.props;
     // 兼容旧 APi : height
@@ -785,11 +791,12 @@ class Tree extends Component<TreeProps, TreeState> {
       <TreeContext.Provider
         value={{
           icons,
+          animation,
           key2nodeProps: this.key2nodeProps,
           getFieldInfo: this.getFieldInfo,
           getTreeState: this.getTreeState,
           getNodeProps: this.getNodeProps,
-          onExpandEnd: this.handleExpandEnd,
+          onExpandEnd: animation ? this.handleExpandEnd : () => {},
           onSelect: this.handleSelect,
           onCheck: this.handleCheck,
           onNodeDragStart: this.handleNodeDragStart,
