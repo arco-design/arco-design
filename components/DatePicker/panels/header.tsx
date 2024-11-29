@@ -57,7 +57,7 @@ function Header(props: HeaderProps) {
     if (mode === 'date' || mode === 'week') {
       const yearNode = (
         <span
-          key="year-header-label"
+          key="year-node"
           className={`${prefixCls}-header-label`}
           onClick={() => onChangePanel('year')}
         >
@@ -67,7 +67,7 @@ function Header(props: HeaderProps) {
 
       const monthNode = (
         <span
-          key="month-header-label"
+          key="month-node"
           className={`${prefixCls}-header-label`}
           onClick={() => onChangePanel('month')}
         >

@@ -303,7 +303,7 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
         </span>
         {isFunction(treeContext.renderExtra) && treeContext.renderExtra(props)}
       </div>
-      <AnimationNode {...props} />
+      {treeContext.animation && <AnimationNode {...props} />}
     </>
   );
 }

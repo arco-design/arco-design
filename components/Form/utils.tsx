@@ -1,6 +1,7 @@
 import cloneDeepWith from 'lodash/cloneDeepWith';
 import lodashSet from 'lodash/set';
 import { PropertyPath } from 'lodash';
+import flatten from 'lodash/flatten';
 import { Schema, SchemaType } from 'b-validate';
 import React, { ReactNode } from 'react';
 import has from 'lodash/has';
@@ -52,8 +53,8 @@ export function iterativelyGetKeys(_obj, _prefix = '') {
     }
     processed.add(obj);
 
-    return Object.keys(obj)
-      .map((el) => {
+    return flatten(
+      Object.keys(obj).map((el) => {
         if (
           (isObject(obj[el]) || isArray(obj[el])) &&
           Object.keys(obj[el]).length &&
@@ -63,7 +64,7 @@ export function iterativelyGetKeys(_obj, _prefix = '') {
         }
         return prefix + el;
       })
-      .flat();
+    );
   };
   return getKeys(_obj, _prefix);
 }
