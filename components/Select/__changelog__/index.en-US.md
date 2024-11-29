@@ -1,3 +1,16 @@
+## 2.65.0
+
+2024-11-29
+
+### 🆕 Feature
+- `Select` / `Cascader` / `TreeSelect` components support displaying hidden tags in `Popover` form through `maxTagCount.showPopover` property([#2877](https://github.com/arco-design/arco-design/pull/2877))
+
+
+### 🐛 BugFix
+
+- Fixed the bug that after `maxTagCount` is set for `Select` / `Cascader` / `TreeSelect` components, drag and sort will cause some selected values ​​to be unselected. (Introduced in` 2.62.0`)([#2877](https://github.com/arco-design/arco-design/pull/2877))
+- Fixed a bug where `Select` component occasionally behaved abnormally when maxTag=responsive.([#2871](https://github.com/arco-design/arco-design/pull/2871))
+
 ## 2.63.1
 
 2024-07-02

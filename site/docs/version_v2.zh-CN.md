@@ -2,6 +2,27 @@
 changelog: true
 ---
 
+## 2.65.0
+
+2024-11-29
+
+### 🆕 功能升级
+
+- `Tree` 组件支持通过 `animation` 属性关闭节点展开收起动画([#2880](https://github.com/arco-design/arco-design/pull/2880))
+- `Select` / `Cascader` / `TreeSelect` 组件支持通过 `maxTagCount.showPopover` 设置以 `Popover` 形式展示隐藏 tag([#2877](https://github.com/arco-design/arco-design/pull/2877))
+
+
+### 🐛 问题修复
+
+- 修复 `Form` 组件里 `flat` 语法不兼容低版本浏览器 bug([#2881](https://github.com/arco-design/arco-design/pull/2881))
+- 修复 `DatePicker` 组件([#2878](https://github.com/arco-design/arco-design/pull/2878))
+- 修复 `InputTag` 组件 `renderTag` 会针对 `+x...` 标签执行的 bug。（`2.62.0` 引入）([#2877](https://github.com/arco-design/arco-design/pull/2877))
+- 修复 `Select` / `Cascader` / `TreeSelect` 组件设置 `maxTagCount` 后，拖拽排序导致部分已选中值取消选中的 bug。（2.62.0 引入）([#2877](https://github.com/arco-design/arco-design/pull/2877))
+- 升级 `react-focus-lock` 依赖版本，解决 iframe 焦点抢占问题([#2874](https://github.com/arco-design/arco-design/pull/2874))
+- `Cascader` 设置`changeOnSelect`  时，搜索面板渲染节点表现异常([#2872](https://github.com/arco-design/arco-design/pull/2872))
+- 修复 `Select` 组件 maxTag=responsive 时偶发表现异常的 bug。([#2871](https://github.com/arco-design/arco-design/pull/2871))
+- 修复 `Menu` 自动省略边界场景会循环计算，导致浏览器不停闪烁的 bug([#2816](https://github.com/arco-design/arco-design/pull/2816))
+
 ## 2.64.1
 
 2024-10-28

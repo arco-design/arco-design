@@ -1,3 +1,16 @@
+## 2.65.0
+
+2024-11-29
+
+
+### 🆕 功能升级
+- `Select` / `Cascader` / `TreeSelect` 组件支持通过 `maxTagCount.showPopover` 设置以 `Popover` 形式展示隐藏 tag([#2877](https://github.com/arco-design/arco-design/pull/2877))
+
+### 🐛 问题修复
+
+- 修复 `Select` / `Cascader` / `TreeSelect` 组件设置 `maxTagCount` 后，拖拽排序导致部分已选中值取消选中的 bug。（2.62.0 引入）([#2877](https://github.com/arco-design/arco-design/pull/2877))
+- 修复 `Select` 组件 maxTag=responsive 时偶发表现异常的 bug。([#2871](https://github.com/arco-design/arco-design/pull/2871))
+
 ## 2.63.1
 
 2024-07-02

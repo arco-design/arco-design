@@ -1,3 +1,11 @@
+## 2.65.0
+
+2024-11-29
+
+### 🐛 BugFix
+
+- When `Cascader` sets `changeOnSelect`, the search panel rendering node behaves abnormally([#2872](https://github.com/arco-design/arco-design/pull/2872))
+
 ## 2.64.1
 
 2024-10-28

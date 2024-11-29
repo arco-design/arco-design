@@ -1,3 +1,11 @@
+## 2.65.0
+
+2024-11-29
+
+### 🐛 BugFix
+
+- Upgrade `react-focus-lock` dependency version to solve the iframe focus grabbing problem([#2874](https://github.com/arco-design/arco-design/pull/2874))
+
 ## 2.64.1
 
 2024-10-28

@@ -1,3 +1,11 @@
+## 2.65.0
+
+2024-11-29
+
+### 🐛 BugFix
+
+- Fixed the bug that `renderTag` of `InputTag` component will execute for `+x...` tag. (Introduced in `2.62.0`)([#2877](https://github.com/arco-design/arco-design/pull/2877))
+
 ## 2.63.0
 
 2024-06-11

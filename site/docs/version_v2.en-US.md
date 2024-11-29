@@ -2,6 +2,26 @@
 changelog: true
 ---
 
+## 2.65.0
+
+2024-11-29
+
+### 🆕 Feature
+
+- `Tree` component supports turning off node expansion and collapse animations through the `animation` property([#2880](https://github.com/arco-design/arco-design/pull/2880))
+- `Select` / `Cascader` / `TreeSelect` components support displaying hidden tags in `Popover` form through `maxTagCount.showPopover` property([#2877](https://github.com/arco-design/arco-design/pull/2877))
+
+### 🐛 BugFix
+
+- Fixed the bug that `flat` syntax in `Form` component is not compatible with lower version browsers([#2881](https://github.com/arco-design/arco-design/pull/2881))
+- Fixed the bug that some nodes of the `DatePicker` component lacked `key`, causing the console `warning`([#2878](https://github.com/arco-design/arco-design/pull/2878))
+- Fixed the bug that `renderTag` of `InputTag` component will execute for `+x...` tag. (Introduced in `2.62.0`)([#2877](https://github.com/arco-design/arco-design/pull/2877))
+- Fixed the bug that after `maxTagCount` is set for `Select` / `Cascader` / `TreeSelect` components, drag and sort will cause some selected values ​​to be unselected. (Introduced in` 2.62.0`)([#2877](https://github.com/arco-design/arco-design/pull/2877))
+- Upgrade `react-focus-lock` dependency version to solve the iframe focus grabbing problem([#2874](https://github.com/arco-design/arco-design/pull/2874))
+- When `Cascader` sets `changeOnSelect`, the search panel rendering node behaves abnormally([#2872](https://github.com/arco-design/arco-design/pull/2872))
+- Fixed a bug where `Select` component occasionally behaved abnormally when maxTag=responsive.([#2871](https://github.com/arco-design/arco-design/pull/2871))
+- Fixed the bug that `Menu` automatically omits the border scene and causes loop calculation, causing the browser to flicker continuously([#2816](https://github.com/arco-design/arco-design/pull/2816))
+
 ## 2.64.1
 
 2024-10-28

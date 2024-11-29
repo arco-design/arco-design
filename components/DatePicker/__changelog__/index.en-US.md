@@ -1,3 +1,11 @@
+## 2.65.0
+
+2024-11-29
+
+### 🐛 BugFix
+
+- Fixed the bug that some nodes of the `DatePicker` component lacked `key`, causing the console `warning`([#2878](https://github.com/arco-design/arco-design/pull/2878))
+
 ## 2.64.0
 
 2024-08-30

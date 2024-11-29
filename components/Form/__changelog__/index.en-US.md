@@ -1,3 +1,11 @@
+## 2.65.0
+
+2024-11-29
+
+### 🐛 BugFix
+
+- Fixed the bug that `flat` syntax in `Form` component is not compatible with lower version browsers([#2881](https://github.com/arco-design/arco-design/pull/2881))
+
 ## 2.62.1
 
 2024-05-17

@@ -1,3 +1,11 @@
+## 2.65.0
+
+2024-11-29
+
+### 🆕 Feature
+
+- `Tree` component supports turning off node expansion and collapse animations through the `animation` property([#2880](https://github.com/arco-design/arco-design/pull/2880))
+
 ## 2.63.2
 
 2024-08-08

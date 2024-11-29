@@ -1,3 +1,11 @@
+## 2.65.0
+
+2024-11-29
+
+### 🐛 BugFix
+
+- Fixed the bug that `Menu` automatically omits the border scene and causes loop calculation, causing the browser to flicker continuously([#2816](https://github.com/arco-design/arco-design/pull/2816))
+
 ## 2.57.0
 
 2023-12-08

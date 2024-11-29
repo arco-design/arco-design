@@ -4,6 +4,7 @@ import { getStyle } from '../_util/style';
 import MenuContext from './context';
 import ResizeObserver from '../_util/resizeObserver';
 import type { MenuProps } from './interface';
+import cs from '../_util/classNames';
 
 const OVERFLOW_THRESHOLD = 5;
 
@@ -122,7 +123,7 @@ const OverflowWrap = (props: OverflowWrapProps) => {
       if (lastVisibleIndex !== null) {
         if (index > lastVisibleIndex) {
           item = React.cloneElement(child as ReactElement, {
-            className: `${(child as ReactElement).props.className} ${overflowMenuItemClass}`,
+            className: cs(overflowMenuItemClass, (child as ReactElement)?.props?.className),
           });
         }
 
