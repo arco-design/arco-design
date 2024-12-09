@@ -130,7 +130,7 @@ function Mentions(baseProps: MentionsProps, ref) {
           measureInfo.measuring ||
           measureText !== measureInfo.text ||
           // fix: https://github.com/arco-design/arco-design/issues/2829
-          measurePrefix === textBeforeSelection
+          textBeforeSelection.includes(measurePrefix)
         ) {
           setMeasureInfo({
             measuring: true,
