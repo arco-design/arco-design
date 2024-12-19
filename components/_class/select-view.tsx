@@ -105,6 +105,12 @@ export interface SelectViewCommonProps
         showPopover?: boolean;
       };
   /**
+   * @zh 统一的最大标签数渲染表现
+   * @en Unify the maximum number of tags displayed
+   * @version 2.65.1
+   */
+  unifyMaxTagCountRender?: boolean;
+  /**
    * @zh 前缀。
    * @en Customize select suffix
    * @version 2.11.0
@@ -225,6 +231,7 @@ const CoreSelectView = React.forwardRef(
       inputValue,
       popupVisible,
       maxTagCount,
+      unifyMaxTagCountRender,
       isMultiple,
       isEmptyValue,
       prefix,
@@ -450,7 +457,7 @@ const CoreSelectView = React.forwardRef(
         return [];
       }
       const usedValue = isUndefined(value) ? [] : [].concat(value as []);
-      const maxTagCountIsNumber = isNumber(maxTagCountValue);
+      const maxTagCountIsNumber = isNumber(maxTagCountValue) && !unifyMaxTagCountRender;
 
       // responsive tag  时，需要全部渲染出来传给 input-tag，涉及到 tag 尺寸计算
       const tagsToShow: ObjectValueType[] = (
@@ -458,7 +465,7 @@ const CoreSelectView = React.forwardRef(
       ).map((v) => getTag(v));
 
       return tagsToShow;
-    }, [value, isMultiple, maxTagCount, renderTextFn]);
+    }, [value, isMultiple, maxTagCount, renderTextFn, unifyMaxTagCountRender]);
 
     const renderMultiple = () => {
       const maxTagCountValue = isObject(maxTagCount) ? maxTagCount.count : maxTagCount;
@@ -576,7 +583,17 @@ const CoreSelectView = React.forwardRef(
         }
       })();
 
-      const inputTagsToShow = !maxCountTag ? tagsToShow : tagsToShow.concat(maxCountTag);
+      const inputTagsToShow =
+        !maxCountTag || unifyMaxTagCountRender ? tagsToShow : tagsToShow.concat(maxCountTag);
+
+      const maxCountRender =
+        maxTagCountValue === 'responsive' || unifyMaxTagCountRender
+          ? {
+              count: maxTagCountValue,
+              render: maxTagCountRender,
+              popoverProps: showPopover ? {} : { disabled: true },
+            }
+          : undefined;
 
       return (
         <InputTag
@@ -595,15 +612,7 @@ const CoreSelectView = React.forwardRef(
           tagClassName={`${prefixCls}-tag`}
           renderTag={renderTag}
           icon={{ removeIcon }}
-          maxTagCount={
-            maxTagCountValue === 'responsive'
-              ? {
-                  count: maxTagCountValue,
-                  render: maxTagCountRender,
-                  popoverProps: showPopover ? {} : { disabled: true },
-                }
-              : undefined
-          }
+          maxTagCount={maxCountRender}
           onChange={(newValue, reason) => {
             if (onSort && reason === 'sort') {
               const indexOfMaxTagCount = newValue.indexOf(MAX_TAG_COUNT_VALUE_PLACEHOLDER);

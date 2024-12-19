@@ -17,7 +17,7 @@ When `maxTagCount=responsive` is used, the number of tags will be dynamically di
 
 
 ```js
-import { Select, Space, Divider } from '@arco-design/web-react';
+import { Select, Space, Divider, Tag } from '@arco-design/web-react';
 const Option = Select.Option;
 const options = [...new Array(20)].map((_, index) => `label ${index}`);
 
@@ -55,7 +55,7 @@ const App = () => {
         <Divider orientation="left"> 最多显示三个 Tag，隐藏节点以 Popover 展示 </Divider>
         <Select
           defaultValue={options.slice(0, 4)}
-          maxTagCount={{ count: 3, showPopover: true,  }}
+          maxTagCount={{ count: 3, showPopover: true }}
           style={{ width: 350 }}
           placeholder="Select an item"
           options={options}
@@ -69,6 +69,30 @@ const App = () => {
         <Select
           defaultValue={options.slice(0, 5)}
           maxTagCount="responsive"
+          style={{ width: 350 }}
+          placeholder="Select an item"
+          options={options}
+          allowClear
+          mode="multiple"
+          allowCreate
+        ></Select>
+      </div>
+
+      <div>
+        <Divider orientation="left"> 统一 maxTagCount count 为 responsive 和 number 场景的自定义 render 表现 </Divider>
+        <Select
+          defaultValue={options.slice(0, 4)}
+          maxTagCount={{
+            count: 3,
+            render: (invisibleCount) => `+${invisibleCount}`,
+            showPopover: true,
+          }}
+          unifyMaxTagCountRender={true}
+          renderTag={(props) => (
+            <Tag className="arco-input-tag-tag" {...props} style={{ marginRight: 4 }}>
+              {props.value}
+            </Tag>
+          )}
           style={{ width: 350 }}
           placeholder="Select an item"
           options={options}
