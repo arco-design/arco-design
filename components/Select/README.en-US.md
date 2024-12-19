@@ -25,12 +25,13 @@ When users need to select one or more from a group of similar data, they can use
 |labelInValue|Whether to embed label in value, turn the format of value from string to `{ value: string, label: ReactNode }`|boolean |`-`|-|
 |loading|Whether is in loading|boolean |`-`|-|
 |popupVisible|Whether to show dropdown.|boolean |`-`|2.6.0|
+|unifyMaxTagCountRender|Unify the maximum number of tags displayed|boolean |`-`|2.65.1|
 |unmountOnExit|Whether to destroy the DOM when hiding|boolean |`true`|-|
 |inputValue|To set input value|string |`-`|-|
 |placeholder|Placeholder of element|string |`-`|-|
 |allowCreate|Whether to allow new options to be created by input.|\| boolean\| {formatter: (inputValue: string, creating: boolean) => [SelectProps](select#select)['options'][number];} |`-`|2.13.0, `{ formatter }` in 2.54.0|
 |autoWidth|auto width. minWidth defaults to 0, maxWidth defaults to 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
-|maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode. Setting the number of `responsive` responsive display tags is not recommended when there are many options, as there may be performance issues.|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
+|maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode. Setting the number of `responsive` responsive display tags is not recommended when there are many options, as there may be performance issues.|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) => ReactNode;showPopover?: boolean;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
 |mode|Set mode of Select(**`tags` recommends using `mode: multiple; allowCreate: true` instead, this mode will be removed in the next major version**)|'multiple' \| 'tags' |`-`|-|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
