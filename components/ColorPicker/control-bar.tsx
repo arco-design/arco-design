@@ -2,76 +2,76 @@ import React, { CSSProperties, useContext } from 'react';
 import { ConfigContext } from '../ConfigProvider';
 import { useControlBlock } from './hooks/useControlBlock';
 import cs from '../_util/classNames';
-import { Color } from './interface';
 
 interface ControlBarProps {
-  x: number;
-  type?: 'hue' | 'alpha';
-  colorString: string;
-  // for alpha bar use
-  color?: Color;
-  onChange: (x: number) => void;
   style?: CSSProperties;
+  className?: string;
+  multiple?: boolean;
+  value: number | number[];
+  onChange: (x: number) => void;
+  onAdd?: (x: number) => void;
+  onActive?: (index: number) => void;
+  renderHandlerStyle?: (index?: number) => CSSProperties;
+  renderHandlerCenterStyle?: (index?: number) => CSSProperties;
 }
 
 export const ControlBar: React.FC<ControlBarProps> = ({
-  x,
-  type = 'hue',
-  color,
-  colorString,
+  className,
+  multiple = false,
+  value,
   onChange,
+  onActive,
+  onAdd,
   style,
+  renderHandlerStyle,
+  renderHandlerCenterStyle,
 }) => {
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('color-picker');
-  const { r, g, b } = color.rgb;
 
   const { blockRef, handlerRef, onMouseDown } = useControlBlock({
-    value: [x, 0],
+    multiple,
+    value: multiple
+      ? (value as number[]).map((item) => [item / 100, 0] as [number, number])
+      : [value as number, 0],
     onChange: (pos) => onChange(pos[0]),
+    onAdd: (pos) => onAdd(pos[0]),
+    onActive,
   });
 
   const renderHandler = () => {
-    return (
-      <div
-        ref={handlerRef}
-        style={{
-          left: `${x * 100}%`,
-        }}
-        className={`${prefixCls}-handler`}
-      >
-        <div className={`${prefixCls}-handler-center`} style={{ backgroundColor: colorString }} />
-      </div>
-    );
-  };
-
-  if (type === 'alpha') {
-    return (
-      <div className={`${prefixCls}-control-bar-bg`}>
+    const render = (x: number, index?: number) => {
+      return (
         <div
-          ref={blockRef}
-          className={cs(
-            `${prefixCls}-control-bar`,
-            `${prefixCls}-control-bar-alpha`,
-            `${prefixCls}-control-bar-alpha`
-          )}
+          key={`${x}-${index}`}
+          ref={handlerRef}
           style={{
-            background: `linear-gradient(to right, rgba(0, 0, 0, 0), rgb(${r}, ${g}, ${b}))`,
-            ...style,
+            left: `${x * 100}%`,
+            ...renderHandlerStyle?.(index),
           }}
-          onMouseDown={onMouseDown as any}
+          className={`${prefixCls}-handler`}
+          data-index={index}
         >
-          {renderHandler()}
+          <div
+            className={`${prefixCls}-handler-center`}
+            style={renderHandlerCenterStyle?.(index)}
+            data-index={index}
+          />
         </div>
-      </div>
-    );
-  }
+      );
+    };
+    return multiple
+      ? (value as number[]).map((item, index) => {
+          return render(item, index);
+        })
+      : render(value as number);
+  };
 
   return (
     <div
       ref={blockRef}
       style={style}
-      className={cs(`${prefixCls}-control-bar`, `${prefixCls}-control-bar-hue`)}
+      className={cs(`${prefixCls}-control-bar`, className)}
       onMouseDown={onMouseDown as any}
     >
       {renderHandler()}

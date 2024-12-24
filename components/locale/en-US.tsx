@@ -176,5 +176,7 @@ export default {
     history: 'History Colors',
     preset: 'Preset Colors',
     empty: 'Empty',
+    singleColor: 'Single Color',
+    gradientColor: 'Gradient Colors',
   },
 };

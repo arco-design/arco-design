@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
 import { ConfigContext } from '../ConfigProvider';
-import { ColorPickerProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
-import { Panel } from './panel';
 import cs from '../_util/classNames';
 import Trigger from '../Trigger';
+import { Panel } from './panel';
 import { colors } from './colors';
+import { ColorPickerProps } from './interface';
 import { useColorPicker } from './hooks/useColorPicker';
 import { isFunction, isNullOrUndefined } from '../_util/is';
+import { isGradientMode } from './mode';
+import { getGradientString, renderGradientBackground } from './utils';
 
 const defaultProps: ColorPickerProps = {
   size: 'default' as const,
@@ -25,6 +27,7 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
     style,
     className,
     size,
+    mode,
     disabled,
     disabledAlpha = false,
     triggerProps = {},
@@ -41,13 +44,18 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
 
   const {
     value,
+    activeMode,
+    gradientColors,
+    activeColorIndex,
     popupVisible,
     color,
     alpha,
-    colorString,
     onHsvChange,
     onAlphaChange,
     onVisibleChange,
+    onActiveModeChange,
+    onGradientColorsChange,
+    onActiveColorIndexChange,
   } = useColorPicker(props);
 
   const renderInput = () => {
@@ -59,6 +67,10 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
       return customTriggerElement;
     }
 
+    const stringifiedValue = isGradientMode(activeMode)
+      ? getGradientString(gradientColors)
+      : (value as string);
+
     return (
       <div
         className={cs(prefixCls, className, {
@@ -68,9 +80,21 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
         style={style}
         ref={ref}
       >
-        <div className={`${prefixCls}-preview`} style={{ backgroundColor: value }} />
+        <div
+          className={`${prefixCls}-preview`}
+          style={{
+            background: isGradientMode(activeMode)
+              ? renderGradientBackground(gradientColors)
+              : (value as string),
+          }}
+        />
         {Boolean(showText) && <div className={`${prefixCls}-value`}>{value}</div>}
-        <input className={`${prefixCls}-input`} value={value} disabled={disabled} readOnly />
+        <input
+          className={`${prefixCls}-input`}
+          value={stringifiedValue}
+          disabled={disabled}
+          readOnly
+        />
       </div>
     );
   };
@@ -78,15 +102,22 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
   const renderPanel = () => {
     return (
       <Panel
+        value={value}
+        mode={mode}
+        activeMode={activeMode}
+        gradientColors={gradientColors}
+        activeColorIndex={activeColorIndex}
         color={color}
         alpha={alpha}
-        colorString={colorString}
         historyColors={historyColors}
         presetColors={presetColors}
         showHistory={showHistory}
         showPreset={showPreset}
         onHsvChange={onHsvChange}
         onAlphaChange={onAlphaChange}
+        onActiveModeChange={onActiveModeChange}
+        onGradientColorsChange={onGradientColorsChange}
+        onActiveColorIndexChange={onActiveColorIndexChange}
         disabledAlpha={disabledAlpha}
         renderFooter={renderFooter}
       />

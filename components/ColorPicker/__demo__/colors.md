@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 6
 title:
   zh-CN: 预设颜色和历史颜色
   en-US: Preset & History
