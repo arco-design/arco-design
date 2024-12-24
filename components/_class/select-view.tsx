@@ -28,7 +28,7 @@ import IconHover from './icon-hover';
 import { Backspace, Enter } from '../_util/keycode';
 import fillNBSP from '../_util/fillNBSP';
 import Tag from '../Tag';
-import Popover from '../Popover';
+import Popover, { PopoverProps } from '../Popover';
 
 const MAX_TAG_COUNT_VALUE_PLACEHOLDER = '__arco_value_tag_placeholder';
 
@@ -102,7 +102,7 @@ export interface SelectViewCommonProps
     | {
         count: number | 'responsive';
         render?: (invisibleTagCount: number) => ReactNode;
-        showPopover?: boolean;
+        showPopover?: boolean | Partial<PopoverProps>;
       };
   /**
    * @zh 前缀。
@@ -564,8 +564,11 @@ const CoreSelectView = React.forwardRef(
                     </Tag>
                   );
                 });
+
+              const popoverProps = isObject(showPopover) ? showPopover : {};
+
               itemProps.label = (
-                <Popover content={!!popoverTags.length && <>{popoverTags}</>}>
+                <Popover {...popoverProps} content={!!popoverTags.length && <>{popoverTags}</>}>
                   {itemProps.label}
                 </Popover>
               );
@@ -600,7 +603,11 @@ const CoreSelectView = React.forwardRef(
               ? {
                   count: maxTagCountValue,
                   render: maxTagCountRender,
-                  popoverProps: showPopover ? {} : { disabled: true },
+                  popoverProps: isObject(showPopover)
+                    ? showPopover
+                    : showPopover
+                    ? {}
+                    : { disabled: true },
                 }
               : undefined
           }
