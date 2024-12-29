@@ -46,7 +46,8 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
     value,
     activeMode,
     gradientColors,
-    activeColorIndex,
+    activeColorId,
+    activeColorIdRef,
     popupVisible,
     color,
     alpha,
@@ -55,7 +56,7 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
     onVisibleChange,
     onActiveModeChange,
     onGradientColorsChange,
-    onActiveColorIndexChange,
+    onActiveColorIdChange,
   } = useColorPicker(props);
 
   const renderInput = () => {
@@ -67,9 +68,7 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
       return customTriggerElement;
     }
 
-    const stringifiedValue = isGradientMode(activeMode)
-      ? getGradientString(gradientColors)
-      : (value as string);
+    const stringifiedValue = typeof value === 'string' ? value : getGradientString(gradientColors);
 
     return (
       <div
@@ -88,7 +87,7 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
               : (value as string),
           }}
         />
-        {Boolean(showText) && <div className={`${prefixCls}-value`}>{value}</div>}
+        {Boolean(showText) && <div className={`${prefixCls}-value`}>{stringifiedValue}</div>}
         <input
           className={`${prefixCls}-input`}
           value={stringifiedValue}
@@ -102,11 +101,11 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
   const renderPanel = () => {
     return (
       <Panel
-        value={value}
         mode={mode}
         activeMode={activeMode}
         gradientColors={gradientColors}
-        activeColorIndex={activeColorIndex}
+        activeColorId={activeColorId}
+        activeColorIdRef={activeColorIdRef}
         color={color}
         alpha={alpha}
         historyColors={historyColors}
@@ -117,7 +116,7 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
         onAlphaChange={onAlphaChange}
         onActiveModeChange={onActiveModeChange}
         onGradientColorsChange={onGradientColorsChange}
-        onActiveColorIndexChange={onActiveColorIndexChange}
+        onActiveColorIdChange={onActiveColorIdChange}
         disabledAlpha={disabledAlpha}
         renderFooter={renderFooter}
       />

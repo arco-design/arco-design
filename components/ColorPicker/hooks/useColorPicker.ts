@@ -1,10 +1,18 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ColorPickerMode, GradientColor, HSV, InternalGradientColor } from '../interface';
 import { formatInputToHSVA } from '../../_util/color';
 import useMergeValue from '../../_util/hooks/useMergeValue';
 import useIsFirstRender from '../../_util/hooks/useIsFirstRender';
 import { getInitialActiveMode, isGradientMode, isSingleMode } from '../mode';
-import { getColorFromHsv, formatRgba, formatHex } from '../utils';
+import {
+  getColorFromHsv,
+  formatRgba,
+  formatHex,
+  getRandomId,
+  isEqualsColors,
+  equalsHsv,
+  mapValueToGradientColor,
+} from '../utils';
 
 interface UseColorPickerProps {
   mode?: ColorPickerMode | ColorPickerMode[];
@@ -18,20 +26,6 @@ interface UseColorPickerProps {
   onVisibleChange?: (visible: boolean) => void;
 }
 
-const mapValueToGradientColor = (value: GradientColor[]): InternalGradientColor[] =>
-  (value as GradientColor[]).map((item) => {
-    const formatInput = formatInputToHSVA(item.color);
-    return {
-      color: getColorFromHsv(formatInput),
-      alpha: formatInput.a,
-      percent: item.percent,
-    };
-  });
-
-const equalsHsv = (a: HSV, b: HSV) => {
-  return a.h === b.h && a.s === b.s && a.v === b.v;
-};
-
 export const useColorPicker = (props: UseColorPickerProps) => {
   const { mode = ColorPickerMode.Single, format, onChange, disabledAlpha } = props;
 
@@ -44,22 +38,44 @@ export const useColorPicker = (props: UseColorPickerProps) => {
 
   const [activeMode, setActiveMode] = useState<ColorPickerMode>(getInitialActiveMode(mode));
 
-  const [value, setValue] = useMergeValue(activeMode === ColorPickerMode.Gradient ? [] : '', props);
+  const [value, setValue] = useMergeValue(
+    activeMode === ColorPickerMode.Gradient ? undefined : '',
+    props
+  );
 
-  const [gradientColors, setGradientColors] = useState<InternalGradientColor[]>([]);
-  const [activeColorIndex, setActiveColorIndex] = useState(0);
+  const [_gradientColors, _setGradientColors] = useState<InternalGradientColor[]>(
+    isGradientMode(activeMode) && Array.isArray(value)
+      ? mapValueToGradientColor(value as GradientColor[])
+      : []
+  );
+  const [_activeColorId, _setActiveColorId] = useState(_gradientColors[0]?.id);
+  const gradientColorsRef = useRef(_gradientColors);
+  const activeColorIdRef = useRef(_activeColorId);
+  const gradientColors = gradientColorsRef.current;
+  const activeColorId = activeColorIdRef.current;
+  const setGradientColors = (
+    newColors:
+      | InternalGradientColor[]
+      | ((colors: InternalGradientColor[]) => InternalGradientColor[])
+  ) => {
+    _setGradientColors(newColors);
+    gradientColorsRef.current =
+      typeof newColors === 'function' ? newColors(gradientColorsRef.current) : newColors;
+  };
+  const setActiveColorId = (newId: string) => {
+    _setActiveColorId(newId);
+    activeColorIdRef.current = newId;
+  };
 
-  useEffect(() => {
-    if (isGradientMode(activeMode) && Array.isArray(value)) {
-      setGradientColors(mapValueToGradientColor(value as GradientColor[]));
-    }
-  }, []);
+  const activeColorIndex = useMemo(() => {
+    const activeIndex = gradientColors.findIndex((item) => item.id === activeColorId);
+    return activeIndex !== -1 ? activeIndex : 0;
+  }, [gradientColors, activeColorId]);
 
   const formatInput = isGradientMode(activeMode)
     ? formatInputToHSVA((value as GradientColor[])[activeColorIndex].color)
     : formatInputToHSVA(value as string);
 
-  /** editing values */
   const [hsv, setHsv] = useState<HSV>({
     h: formatInput.h,
     s: formatInput.s,
@@ -67,25 +83,34 @@ export const useColorPicker = (props: UseColorPickerProps) => {
   });
   const [alpha, setAlpha] = useState(formatInput.a);
 
-  const color = getColorFromHsv(hsv);
+  const color = useMemo(() => getColorFromHsv(hsv), [hsv]);
+
+  const formatSingleValue = useCallback(
+    (r, g, b, alpha) => {
+      return format === 'rgb' ? formatRgba(r, g, b, alpha) : formatHex(r, g, b, alpha);
+    },
+    [format]
+  );
 
   const formatValue = useMemo(() => {
     if (isSingleMode(activeMode)) {
       const { r, g, b } = color.rgb;
-      return format === 'rgb' ? formatRgba(r, g, b, alpha) : formatHex(r, g, b, alpha);
+      return formatSingleValue(r, g, b, alpha);
     }
     return gradientColors.map((item) => {
       const { r, g, b } = item.color.rgb;
       return {
-        color: format === 'rgb' ? formatRgba(r, g, b, item.alpha) : formatHex(r, g, b, item.alpha),
+        color: formatSingleValue(r, g, b, item.alpha),
         percent: item.percent,
       };
     });
-  }, [activeMode, alpha, hsv, format, gradientColors]);
+  }, [activeMode, gradientColors, color.rgb, formatSingleValue, alpha]);
 
   useEffect(() => {
     setValue(formatValue);
-    !isFirstRender && onChange?.(formatValue);
+    if (!isFirstRender && !isEqualsColors(value, formatValue)) {
+      onChange?.(formatValue);
+    }
   }, [formatValue]);
 
   const onVisibleChange = (newVisible) => {
@@ -141,15 +166,17 @@ export const useColorPicker = (props: UseColorPickerProps) => {
       return;
     }
     if (newMode === ColorPickerMode.Single) {
-      setActiveColorIndex(0);
+      setActiveColorId(gradientColors[0]?.id);
     } else {
       setGradientColors([
         {
+          id: getRandomId(),
           color,
           alpha,
           percent: 0,
         },
         {
+          id: getRandomId(),
           color,
           alpha,
           percent: 100,
@@ -163,7 +190,9 @@ export const useColorPicker = (props: UseColorPickerProps) => {
     value,
     activeMode,
     gradientColors,
-    activeColorIndex,
+    gradientColorsRef,
+    activeColorId,
+    activeColorIdRef,
     popupVisible,
     color,
     alpha,
@@ -171,7 +200,7 @@ export const useColorPicker = (props: UseColorPickerProps) => {
     onAlphaChange,
     onVisibleChange,
     onActiveModeChange,
-    onActiveColorIndexChange: setActiveColorIndex,
+    onActiveColorIdChange: setActiveColorId,
     onGradientColorsChange: setGradientColors,
   };
 };

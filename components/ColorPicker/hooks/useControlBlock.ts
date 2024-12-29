@@ -1,11 +1,16 @@
 import { useRef, useState } from 'react';
 
+interface MultiValueItem {
+  value: [number, number];
+  key: string;
+}
+
 interface ControlBlockParams {
-  value: [number, number] | [number, number][];
+  value: [number, number] | MultiValueItem[];
   multiple?: boolean;
-  onChange: (value: [number, number]) => void;
+  onChange: (value: [number, number], key?: string) => void;
   onAdd?: (value: [number, number]) => void;
-  onActive?: (value: number) => void;
+  onActive?: (key: string) => void;
 }
 
 export const useControlBlock = ({
@@ -61,8 +66,9 @@ export const useControlBlock = ({
     if (multiple) {
       if (ev.target === blockRef.current) {
         onAdd(getNewPosition(ev));
-      } else if (typeof (ev.target as HTMLDivElement)?.dataset?.index !== 'undefined') {
-        onActive(Number((ev.target as HTMLDivElement).dataset.index));
+      } else if (typeof (ev.target as HTMLDivElement)?.dataset?.key !== 'undefined') {
+        const key = (ev.target as HTMLDivElement).dataset.key!;
+        onActive(key);
       }
       return;
     }

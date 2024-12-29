@@ -28,11 +28,11 @@ const App = () => {
       percent: 100,
     },
   ]
-  const [value, setValue] = useState(defaultValue);
   return (
     <div>
-      <ColorPicker value={value} onChange={setValue} mode={['single', 'gradient']} />
-      {/** <ColorPicker defaultValue={defaultValue} mode="gradient" /> */}
+      <ColorPicker defaultValue={defaultValue} mode={['single', 'gradient']} showText />
+       <br />
+      <ColorPicker defaultValue={defaultValue} mode="gradient" showText />
     </div>
   );
 };

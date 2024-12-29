@@ -144,7 +144,8 @@ export interface GradientColor {
 }
 
 export interface InternalGradientColor {
+  id: string;
   color: Color;
-  alpha?: number;
+  alpha: number;
   percent: number;
 }

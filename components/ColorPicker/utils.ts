@@ -1,5 +1,13 @@
-import { getColorString, hsvToRgb, rgbToHex, rgbToHsv, rgbaToHex } from '../_util/color';
-import { HSV, InternalGradientColor, RGB } from './interface';
+import {
+  formatInputToHSVA,
+  formatInputToRGBA,
+  getColorString,
+  hsvToRgb,
+  rgbToHex,
+  rgbToHsv,
+  rgbaToHex,
+} from '../_util/color';
+import { GradientColor, HSV, InternalGradientColor, RGB } from './interface';
 
 interface RGBA extends RGB {
   a: number;
@@ -53,10 +61,31 @@ export const getColorFromHsv = (hsv: HSV) => {
   };
 };
 
+export const getRandomId = () => Math.random().toFixed(10).slice(2);
+
+export const mapValueToGradientColor = (value: GradientColor[]): InternalGradientColor[] =>
+  (value as GradientColor[]).map((item) => {
+    const formatInput = formatInputToHSVA(item.color);
+    return {
+      id: getRandomId(),
+      color: getColorFromHsv(formatInput),
+      alpha: formatInput.a,
+      percent: item.percent,
+    };
+  });
+
 export const getColorByGradients = (
   gradientColors: InternalGradientColor[],
-  percent: number
+  percent: number,
+  id?: string
 ): InternalGradientColor => {
+  const index = gradientColors.findIndex((item) => item.percent === percent);
+  if (index !== -1) {
+    return {
+      ...gradientColors[index],
+      id: id ?? getRandomId(),
+    };
+  }
   const latterColorIndex = gradientColors.findIndex((item) => item.percent > percent);
   const previousColorIndex = latterColorIndex - 1;
   const {
@@ -82,8 +111,38 @@ export const getColorByGradients = (
   );
   const { r, g, b, a } = interpolatedColor;
   return {
+    id: id ?? getRandomId(),
     color: getColorFromHsv(rgbToHsv(r, g, b)),
     alpha: a,
     percent,
   };
+};
+
+export const equalsHsv = (a: HSV, b: HSV) => {
+  return a.h === b.h && a.s === b.s && a.v === b.v;
+};
+export const equalsRgba = (a: RGBA, b: RGBA) => {
+  return a.r === b.r && a.g === b.g && a.b === b.b && a.a === b.a;
+};
+
+export const isEqualsColors = (
+  colorA: string | GradientColor[],
+  colorB: string | GradientColor[]
+) => {
+  if (typeof colorA === 'string' && typeof colorB === 'string') {
+    return colorA === colorB;
+  }
+  if (Array.isArray(colorA) && Array.isArray(colorB)) {
+    return (
+      colorA.length === colorB.length &&
+      colorA.every((itemA, index) => {
+        const itemB = colorB[index];
+        return (
+          equalsRgba(formatInputToRGBA(itemA.color), formatInputToRGBA(itemB.color)) &&
+          itemA.percent === itemB.percent
+        );
+      })
+    );
+  }
+  return false;
 };

@@ -6,7 +6,7 @@ import Radio from '../Radio';
 import Select from '../Select';
 import { InputRgb } from './input-rgb';
 import { InputHex } from './input-hex';
-import { Color, ColorPickerMode, GradientColor, HSV, InternalGradientColor } from './interface';
+import { Color, ColorPickerMode, HSV, InternalGradientColor } from './interface';
 import { getColorString, hexToRgb, rgbToHsv } from '../_util/color';
 import { isGradientMode, isMultiMode } from './mode';
 import { getColorByGradients, renderGradientBackground, sortGradientColors } from './utils';
@@ -14,11 +14,11 @@ import { getColorByGradients, renderGradientBackground, sortGradientColors } fro
 const RadioGroup = Radio.Group;
 
 interface PanelProps {
-  value: string | GradientColor[];
   mode: ColorPickerMode | ColorPickerMode[];
   activeMode: ColorPickerMode;
   gradientColors: InternalGradientColor[];
-  activeColorIndex: number;
+  activeColorId: string;
+  activeColorIdRef: React.MutableRefObject<string>;
   color: Color;
   alpha: number;
   disabledAlpha: boolean;
@@ -33,17 +33,18 @@ interface PanelProps {
   onHsvChange: (value: HSV) => void;
   onAlphaChange: (value: number) => void;
   onActiveModeChange: (value: ColorPickerMode) => void;
-  onGradientColorsChange: (value: InternalGradientColor[]) => void;
-  // | ((fn: (value: InternalGradientColor[]) => InternalGradientColor[]) => void);
-  onActiveColorIndexChange: (index: number) => void;
+  onGradientColorsChange: (
+    value: InternalGradientColor[] | ((colors: InternalGradientColor[]) => InternalGradientColor[])
+  ) => void;
+  onActiveColorIdChange: (index: string) => void;
 }
 
 export const Panel: React.FC<PanelProps> = ({
-  value,
   mode,
   activeMode,
   gradientColors,
-  activeColorIndex,
+  activeColorId,
+  activeColorIdRef,
   color,
   alpha,
   disabledAlpha,
@@ -59,7 +60,7 @@ export const Panel: React.FC<PanelProps> = ({
   onAlphaChange,
   onActiveModeChange,
   onGradientColorsChange,
-  onActiveColorIndexChange,
+  onActiveColorIdChange,
 }) => {
   const { getPrefixCls, locale } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('color-picker');
@@ -96,63 +97,70 @@ export const Panel: React.FC<PanelProps> = ({
     );
   };
 
+  const handleChange = (x: number) => {
+    const percent = Math.round(x * 100);
+    onGradientColorsChange((gradientColors) => {
+      return sortGradientColors(
+        gradientColors.map((item) => {
+          if (item.id === activeColorIdRef.current) {
+            return {
+              ...item,
+              percent,
+            };
+          }
+          return item;
+        })
+      );
+    });
+  };
+
   const renderGradientBar = () => {
     const handleAdd = (x: number) => {
       const percent = Math.round(x * 100);
       const newColor = getColorByGradients(gradientColors, percent);
       const newColors = sortGradientColors(gradientColors.concat(newColor));
       onGradientColorsChange(newColors);
-      onActiveColorIndexChange(newColors.findIndex((item) => percent === item.percent));
+      onActiveColorIdChange(newColor.id);
       onHsvChange(newColor.color.hsv);
       onAlphaChange(newColor.alpha);
     };
-    const handleChange = (x: number) => {
-      if (activeColorIndex === 0 || activeColorIndex === gradientColors.length - 1) {
-        return;
-      }
-      onGradientColorsChange(
-        sortGradientColors(
-          gradientColors.map((item, index) => {
-            if (index === activeColorIndex) {
-              return getColorByGradients(gradientColors, x * 100);
-            }
-            return item;
-          })
-        )
-      );
+
+    const handleActive = (key: string) => {
+      const activeColor = gradientColors.find((item) => item.id === key);
+      onActiveColorIdChange(key);
+      onHsvChange(activeColor.color.hsv);
+      onAlphaChange(activeColor.alpha);
     };
 
-    const handleActive = (index: number) => {
-      onActiveColorIndexChange(index);
-      onHsvChange(gradientColors[index].color.hsv);
-      onAlphaChange(gradientColors[index].alpha);
-    };
     return (
       <div className={`${prefixCls}-control-bar-gradient`}>
         <ControlBar
           multiple
-          value={gradientColors.map((item) => item.percent / 100)}
+          value={gradientColors.map(({ percent, id }) => ({
+            value: percent / 100,
+            key: id,
+          }))}
           onAdd={handleAdd}
           onChange={handleChange}
           onActive={handleActive}
           style={{
             background: renderGradientBackground(gradientColors),
           }}
-          renderHandlerStyle={(index) => {
-            if (activeColorIndex === index) {
+          renderHandlerStyle={(key) => {
+            if (activeColorId === key) {
               return {
                 outline: '1px solid rgb(var(--primary-6))',
               };
             }
             return {};
           }}
-          renderHandlerCenterStyle={(index) => {
+          renderHandlerCenterStyle={(key) => {
             const {
               color: {
                 rgb: { r, g, b },
               },
               alpha,
-            } = gradientColors[index];
+            } = gradientColors.find((item) => item.id === key)!;
             return {
               background: getColorString(r, g, b, alpha),
             };
@@ -254,7 +262,11 @@ export const Panel: React.FC<PanelProps> = ({
 
   return (
     <div className={`${prefixCls}-panel`}>
-      <div className={isMultiMode(mode) && `${prefixCls}-panel-control-gradient`}>
+      <div
+        className={
+          (isMultiMode(mode) || isGradientMode(activeMode)) && `${prefixCls}-panel-control-gradient`
+        }
+      >
         {isMultiMode(mode) && renderModeTag()}
         {isGradientMode(activeMode) && renderGradientBar()}
         <Palette
