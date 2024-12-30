@@ -21,16 +21,16 @@
 |showPreset|显示预设颜色|boolean |`-`|-|
 |showText|显示颜色值|boolean |`-`|-|
 |unmountOnExit|隐藏后是否销毁 DOM 结构|boolean |`true`|-|
-|defaultValue|默认值|string \| [GradientColor](#gradientcolor)[] |`-`|-|
-|value|颜色值，受控模式|string \| [GradientColor](#gradientcolor)[] |`-`|-|
-|mode|单一颜色或渐变色模式|[ColorPickerMode](#colorpickermode) \| [ColorPickerMode](#colorpickermode)[] |`single`|-|
 |format|颜色值的格式|'hex' \| 'rgb' |`-`|-|
 |size|输入框的尺寸|[InputProps](input#input)['size'] |`default`|-|
 |className|节点类名|string \| string[] |`-`|-|
+|defaultValue|默认值|string \| [GradientColor](#gradientcolor)[] |`-`|-|
 |historyColors|历史颜色的颜色数组|string[] |`-`|-|
+|mode|单一颜色或渐变色模式|[ColorPickerMode](#colorpickermode) \| [ColorPickerMode](#colorpickermode)[] |`single`|-|
 |presetColors|预设颜色的颜色数组|string[] |`-`|-|
 |style|节点样式|CSSProperties |`-`|-|
 |triggerProps|可以接受所有 Trigger 组件的 Props|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|
+|value|颜色值，受控模式|string \| [GradientColor](#gradientcolor)[] |`-`|-|
 |onChange|颜色值改变时触发|(value: string \| [GradientColor](#gradientcolor)[]) => void |`-`|-|
 |onVisibleChange|下拉框收起展开时触发。|(visible: boolean) => void |`-`|-|
 |renderFooter|自定义面板底部内容|() => ReactNode |`-`|2.62.0|
