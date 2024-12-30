@@ -1,7 +1,6 @@
 import {
   formatInputToHSVA,
   formatInputToRGBA,
-  getColorString,
   hsvToRgb,
   rgbToHex,
   rgbToHsv,
@@ -28,22 +27,14 @@ export const mix = (source: RGBA, target: RGBA, progress: number): RGBA =>
     { ...source }
   );
 
-export const getGradientString = (gradientColors: InternalGradientColor[]) =>
-  gradientColors
-    .map(
-      ({
-        color: {
-          rgb: { r, g, b },
-        },
-        alpha,
-        percent,
-      }) => `${getColorString(r, g, b, alpha)} ${percent}%`
-    )
-    .join(', ');
+export const getGradientString = (value: GradientColor[]) =>
+  value.map(({ color, percent }) => `${color} ${percent}%`).join(', ');
 
-export const renderGradientBackground = (gradientColors: InternalGradientColor[]) => {
-  return `linear-gradient(to right, ${getGradientString(gradientColors)})`;
+export const renderGradientBackground = (value: GradientColor[]) => {
+  return `linear-gradient(to right, ${getGradientString(value)})`;
 };
+export const renderBackground = (value: GradientColor[] | string) =>
+  Array.isArray(value) ? renderGradientBackground(value) : (value as string);
 
 export const formatRgba = (r: number, g: number, b: number, a: number) =>
   a < 1 ? `rgba(${r}, ${g}, ${b}, ${a.toFixed(2)})` : `rgb(${r}, ${g}, ${b})`;
@@ -63,13 +54,16 @@ export const getColorFromHsv = (hsv: HSV) => {
 
 export const getRandomId = () => Math.random().toFixed(10).slice(2);
 
-export const mapValueToGradientColor = (value: GradientColor[]): InternalGradientColor[] =>
+export const mapValueToGradientColor = (
+  value: GradientColor[],
+  disabledAlpha: boolean
+): InternalGradientColor[] =>
   (value as GradientColor[]).map((item) => {
     const formatInput = formatInputToHSVA(item.color);
     return {
       id: getRandomId(),
       color: getColorFromHsv(formatInput),
-      alpha: formatInput.a,
+      alpha: disabledAlpha ? 100 : formatInput.a,
       percent: item.percent,
     };
   });

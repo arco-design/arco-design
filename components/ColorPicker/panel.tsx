@@ -6,14 +6,15 @@ import Radio from '../Radio';
 import Select from '../Select';
 import { InputRgb } from './input-rgb';
 import { InputHex } from './input-hex';
-import { Color, ColorPickerMode, HSV, InternalGradientColor } from './interface';
+import { Color, ColorPickerMode, GradientColor, HSV, InternalGradientColor } from './interface';
 import { getColorString, hexToRgb, rgbToHsv } from '../_util/color';
 import { isGradientMode, isMultiMode } from './mode';
-import { getColorByGradients, renderGradientBackground, sortGradientColors } from './utils';
+import { getColorByGradients, renderBackground, sortGradientColors } from './utils';
 
 const RadioGroup = Radio.Group;
 
 interface PanelProps {
+  value: string | GradientColor[];
   mode: ColorPickerMode | ColorPickerMode[];
   activeMode: ColorPickerMode;
   gradientColors: InternalGradientColor[];
@@ -40,6 +41,7 @@ interface PanelProps {
 }
 
 export const Panel: React.FC<PanelProps> = ({
+  value,
   mode,
   activeMode,
   gradientColors,
@@ -144,7 +146,7 @@ export const Panel: React.FC<PanelProps> = ({
           onChange={handleChange}
           onActive={handleActive}
           style={{
-            background: renderGradientBackground(gradientColors),
+            background: renderBackground(value),
           }}
           renderHandlerStyle={(key) => {
             if (activeColorId === key) {

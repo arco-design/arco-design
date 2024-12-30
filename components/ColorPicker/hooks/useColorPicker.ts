@@ -45,7 +45,7 @@ export const useColorPicker = (props: UseColorPickerProps) => {
 
   const [_gradientColors, _setGradientColors] = useState<InternalGradientColor[]>(
     isGradientMode(activeMode) && Array.isArray(value)
-      ? mapValueToGradientColor(value as GradientColor[])
+      ? mapValueToGradientColor(value as GradientColor[], disabledAlpha)
       : []
   );
   const [_activeColorId, _setActiveColorId] = useState(_gradientColors[0]?.id);
@@ -156,7 +156,7 @@ export const useColorPicker = (props: UseColorPickerProps) => {
     const newGradientColors = [...gradientColors];
     newGradientColors[activeColorIndex] = {
       ...newGradientColors[activeColorIndex],
-      alpha,
+      alpha: disabledAlpha ? 100 : alpha,
     };
     setGradientColors(newGradientColors);
   }, [alpha]);
