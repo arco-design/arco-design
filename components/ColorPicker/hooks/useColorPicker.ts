@@ -113,20 +113,23 @@ export const useColorPicker = (props: UseColorPickerProps) => {
     }
   }, [formatValue]);
 
-  const onVisibleChange = (newVisible) => {
-    if (newVisible && value !== formatValue) {
-      const { h, s, v, a } = formatInput;
-      setHsv({ h, s, v });
-      setAlpha(a);
-    }
-
-    if (newVisible !== popupVisible) {
-      props.onVisibleChange && props.onVisibleChange(newVisible);
-      if (!('popupVisible' in props)) {
-        setPopupVisible(newVisible);
+  const onVisibleChange = useCallback(
+    (newVisible) => {
+      if (newVisible && value !== formatValue) {
+        const { h, s, v, a } = formatInput;
+        setHsv({ h, s, v });
+        setAlpha(a);
       }
-    }
-  };
+
+      if (newVisible !== popupVisible) {
+        props.onVisibleChange && props.onVisibleChange(newVisible);
+        if (!('popupVisible' in props)) {
+          setPopupVisible(newVisible);
+        }
+      }
+    },
+    [props.onVisibleChange, popupVisible, value]
+  );
 
   const onHsvChange = (_value: HSV) => {
     setHsv(_value);

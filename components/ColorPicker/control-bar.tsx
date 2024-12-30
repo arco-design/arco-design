@@ -13,21 +13,21 @@ interface ControlBarProps {
   className?: string;
   multiple?: boolean;
   value: number | MultiValueItem[];
-  onChange: (x: number) => void;
-  onAdd?: (x: number) => void;
   onActive?: (key: string) => void;
+  onAdd?: (x: number) => void;
+  onChange: (x: number) => void;
   renderHandlerStyle?: (key?: string, index?: number) => CSSProperties;
   renderHandlerCenterStyle?: (key?: string, index?: number) => CSSProperties;
 }
 
 export const ControlBar: React.FC<ControlBarProps> = ({
   className,
+  style,
   multiple = false,
   value,
-  onChange,
   onActive,
   onAdd,
-  style,
+  onChange,
   renderHandlerStyle,
   renderHandlerCenterStyle,
 }) => {

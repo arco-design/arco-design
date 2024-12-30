@@ -8,17 +8,17 @@ interface MultiValueItem {
 interface ControlBlockParams {
   value: [number, number] | MultiValueItem[];
   multiple?: boolean;
-  onChange: (value: [number, number], key?: string) => void;
-  onAdd?: (value: [number, number]) => void;
   onActive?: (key: string) => void;
+  onAdd?: (value: [number, number]) => void;
+  onChange: (value: [number, number], key?: string) => void;
 }
 
 export const useControlBlock = ({
   value,
   multiple = false,
-  onChange,
-  onAdd,
   onActive,
+  onAdd,
+  onChange,
 }: ControlBlockParams) => {
   const [active, setActive] = useState(false);
   const blockRef = useRef<HTMLDivElement>();
