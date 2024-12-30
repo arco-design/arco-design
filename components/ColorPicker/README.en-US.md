@@ -22,8 +22,9 @@ Used for select and display colors
 |showPreset|Show preset colors|boolean |`-`|-|
 |showText|Show color value|boolean |`-`|-|
 |unmountOnExit|Whether to umount the node on hiding|boolean |`true`|-|
-|defaultValue|The initial input content|string |`-`|-|
-|value|The input content value|string |`-`|-|
+|defaultValue|The initial input content|string \| [GradientColor](#gradientcolor)[] |`-`|-|
+|value|The input content value|string \| [GradientColor](#gradientcolor)[] |`-`|-|
+|mode|Whether to use single color or gradient color mode|[ColorPickerMode](#colorpickermode) \| [ColorPickerMode](#colorpickermode)[] |`single`|-|
 |format|Color value format|'hex' \| 'rgb' |`-`|-|
 |size|The size of the input box|[InputProps](input#input)['size'] |`default`|-|
 |className|Additional css class|string \| string[] |`-`|-|
@@ -31,7 +32,25 @@ Used for select and display colors
 |presetColors|Color array of preset colors|string[] |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |triggerProps|All `Trigger` component props|Partial&lt;[TriggerProps](trigger#trigger)&gt; |`-`|-|
-|onChange|Callback when the color value changes|(value: string) => void |`-`|-|
+|onChange|Callback when the color value changes|(value: string \| [GradientColor](#gradientcolor)[]) => void |`-`|-|
 |onVisibleChange|Callback when popup shown or hidden.|(visible: boolean) => void |`-`|-|
 |renderFooter|Customize the bottom content of the panel|() => ReactNode |`-`|2.62.0|
-|triggerElement|The trigger element which executes the dropdown action.|ReactNode \| ((params: { value: string }) => ReactNode) |`-`|2.60.0|
+|triggerElement|The trigger element which executes the dropdown action.|ReactNode \| ((params: { value: string \| [GradientColor](#gradientcolor)[] }) => ReactNode) |`-`|2.60.0|
+
+### GradientColor
+
+```js
+export interface GradientColor {
+  color: string;
+  percent: number;
+}
+```
+
+### ColorPickerMode
+
+```js
+export enum ColorPickerMode {
+  Single = "single",
+  Gradient = "gradient",
+}
+```
