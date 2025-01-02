@@ -27,7 +27,7 @@ interface UseColorPickerProps {
 }
 
 export const useColorPicker = (props: UseColorPickerProps) => {
-  const { mode = ColorPickerMode.Single, format, onChange, disabledAlpha } = props;
+  const { mode = ColorPickerMode.Single, defaultValue, format, onChange, disabledAlpha } = props;
 
   const isFirstRender = useIsFirstRender();
 
@@ -36,7 +36,11 @@ export const useColorPicker = (props: UseColorPickerProps) => {
     value: props.popupVisible,
   });
 
-  const [activeMode, setActiveMode] = useState<ColorPickerMode>(getInitialActiveMode(mode));
+  const [activeMode, setActiveMode] = useState<ColorPickerMode>(
+    (defaultValue && !Array.isArray(defaultValue)) || (props.value && !Array.isArray(props.value))
+      ? ColorPickerMode.Single
+      : getInitialActiveMode(mode)
+  );
 
   const [value, setValue] = useMergeValue(
     activeMode === ColorPickerMode.Gradient ? undefined : '',
@@ -72,7 +76,7 @@ export const useColorPicker = (props: UseColorPickerProps) => {
     return activeIndex !== -1 ? activeIndex : 0;
   }, [gradientColors, activeColorId]);
 
-  const formatInput = isGradientMode(activeMode)
+  const formatInput = Array.isArray(value)
     ? formatInputToHSVA((value as GradientColor[])[activeColorIndex].color)
     : formatInputToHSVA(value as string);
 
