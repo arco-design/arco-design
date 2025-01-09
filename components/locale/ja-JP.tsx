@@ -218,5 +218,7 @@ export default {
     history: '最近使用した色',
     preset: 'システムのデフォルトの色',
     empty: '空の',
+    singleColor: '単色',
+    gradientColor: 'グラデーション',
   },
 };

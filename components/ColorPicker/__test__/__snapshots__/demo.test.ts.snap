@@ -267,6 +267,48 @@ exports[`renders ColorPicker/demo/format.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders ColorPicker/demo/mode.md correctly 1`] = `
+<div>
+  <div
+    class="arco-color-picker arco-color-picker-size-default"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background:linear-gradient(to right, #165DFFAA 0%, #00B42AFF 100%)"
+    />
+    <div
+      class="arco-color-picker-value"
+    >
+      #165DFFAA 0%, #00B42AFF 100%
+    </div>
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFFAA 0%, #00B42AFF 100%"
+    />
+  </div>
+  <br />
+  <div
+    class="arco-color-picker arco-color-picker-size-default"
+  >
+    <div
+      class="arco-color-picker-preview"
+      style="background:linear-gradient(to right, #165DFFAA 0%, #00B42AFF 100%)"
+    />
+    <div
+      class="arco-color-picker-value"
+    >
+      #165DFFAA 0%, #00B42AFF 100%
+    </div>
+    <input
+      class="arco-color-picker-input"
+      readonly=""
+      value="#165DFFAA 0%, #00B42AFF 100%"
+    />
+  </div>
+</div>
+`;
+
 exports[`renders ColorPicker/demo/size.md correctly 1`] = `
 <div>
   <div
