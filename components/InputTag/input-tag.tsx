@@ -526,7 +526,11 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
             </Draggable>
           </UsedTransitionGroup>
         ) : (
-          <UsedTransitionGroup prefixCls={prefixCls} animation={animation}>
+          <UsedTransitionGroup
+            prefixCls={prefixCls}
+            animation={animation}
+            key={`max_tag_group_${maxTagCountValue}`}
+          >
             {maxTagCountValue === MAX_TAG_RESPONSIVE ? (
               <OverflowEllipsis
                 items={childrenTagWithAnimation}
