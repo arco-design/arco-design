@@ -549,7 +549,10 @@ const CoreSelectView = React.forwardRef(
                   const tagProps = getTag(tag.val);
                   return renderTag ? (
                     renderTag(
-                      { ...tagProps, onClose: () => {} },
+                      {
+                        ...tagProps,
+                        onClose: (e) => eventHandlers.onRemove(tagProps.value, tag.index, e),
+                      },
                       tag.index,
                       tagsToShow.concat(itemProps)
                     )
@@ -568,7 +571,20 @@ const CoreSelectView = React.forwardRef(
               const popoverProps = isObject(showPopover) ? showPopover : {};
 
               itemProps.label = (
-                <Popover {...popoverProps} content={!!popoverTags.length && <>{popoverTags}</>}>
+                <Popover
+                  {...popoverProps}
+                  content={
+                    !!popoverTags.length && (
+                      <div
+                        onClick={(e) => {
+                          e.stopPropagation();
+                        }}
+                      >
+                        {popoverTags}
+                      </div>
+                    )
+                  }
+                >
                   {itemProps.label}
                 </Popover>
               );
