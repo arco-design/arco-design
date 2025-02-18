@@ -143,6 +143,18 @@ export const formatInputToRgb = (
   return false;
 };
 
+export const formatInputToRGBA = (color: string) => {
+  const rgba = formatInputToRgb(color);
+  if (rgba) {
+    return {
+      r: rgba.r,
+      g: rgba.g,
+      b: rgba.b,
+      a: rgba.a ?? 1,
+    };
+  }
+};
+
 export const formatInputToHSVA = (color: string) => {
   const rgba = formatInputToRgb(color);
   if (rgba) {
@@ -208,4 +220,8 @@ export const rgbaToHex = (r: number, g: number, b: number, a: number) => {
   ];
 
   return hex.join('').toUpperCase();
+};
+
+export const getColorString = (r: number, g: number, b: number, a: number) => {
+  return `rgba(${r}, ${g}, ${b}, ${a.toFixed(2)})`;
 };

@@ -223,5 +223,7 @@ export default {
     history: '最近使用颜色',
     preset: '系统预设颜色',
     empty: '暂无',
+    singleColor: '单色',
+    gradientColor: '渐变色',
   },
 };

@@ -168,6 +168,19 @@
     }
   }
 
+  .@{color-picker-prefix-cls}-panel-control-gradient {
+    padding: @color-panel-padding @color-panel-padding 0;
+    .@{color-picker-prefix-cls}-control-bar-gradient {
+      margin: 0 @color-control-bar-handle-size / 2 @color-control-bar-gradient-margin;
+      .@{color-picker-prefix-cls}-control-bar {
+        width: 100%;
+      }
+    }
+    .@{color-picker-prefix-cls}-panel-control-gradient-tag {
+      margin-bottom: @color-control-bar-gradient-margin;
+    }
+  }
+
   .@{color-picker-prefix-cls}-panel-colors {
     padding: @color-panel-padding;
     border-top: 1px solid var(--color-fill-3);
