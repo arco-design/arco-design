@@ -3,7 +3,7 @@ DesignLab
 
 # Use theme package
 
-After the theme is configured and published by the style configuration platform, you can see the npm package published by yourself on npm. The following uses `@arco-design/theme-line` as an example to describe how to use it.
+After the theme is configured and published by the style configuration platform, you can see the npm package published by yourself on npm. The following uses `@arco-themes/theme-line` as an example to describe how to use it.
 `````
 
 *Auto translate by google.*
@@ -11,7 +11,7 @@ After the theme is configured and published by the style configuration platform,
 ## Install
 
 ```bash
-npm i @arco-design/theme-line
+npm i @arco-themes/theme-line
 ```
 
 ## Use in the project
@@ -37,7 +37,7 @@ const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
 {
   plugins: [
     new ArcoWebpackPlugin({
-        theme:'@arco-design/theme-line'
+        theme:'@arco-themes/theme-line'
     })
   ]
 }
@@ -47,11 +47,11 @@ const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
 
 1. Introduce the less file directly into the project
 
-`import'@arco-design/theme-line/index.less';`
+`import'@arco-themes/theme-line/index.less';`
 
 2. Import css files directly into the project
 
-`import'@arco-design/theme-line/css/arco.css';`
+`import'@arco-themes/theme-line/css/arco.css';`
 
 When directly importing the css file, you need to check whether it is consistent with the component library version used in the business project. Mainly because the css is packaged according to the specified version of the component library when the theme is released.
 

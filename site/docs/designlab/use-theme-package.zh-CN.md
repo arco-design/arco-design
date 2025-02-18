@@ -3,13 +3,13 @@
 
 # 使用主题包
 
-在风格配置平台配置主题并发布之后，可在 npm 看到自己发布出去的 npm 包。以下以 `@arco-design/theme-line` 为例描述使用方式。
+在风格配置平台配置主题并发布之后，可在 npm 看到自己发布出去的 npm 包。以下以 `@arco-themes/theme-line` 为例描述使用方式。
 `````
 
 ## 安装
 
 ```bash
-npm i @arco-design/theme-line
+npm i @arco-themes/theme-line
 ```
 
 ## 在项目中引用
@@ -35,7 +35,7 @@ const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
 {
   plugins: [
     new ArcoWebpackPlugin({
-        theme: '@arco-design/theme-line'
+        theme: '@arco-themes/theme-line'
     })
   ]
 }
@@ -45,11 +45,11 @@ const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
 
 1.  在项目中直接引入less文件
 
-`import '@arco-design/theme-line/index.less';`
+`import '@arco-themes/theme-line/index.less';`
 
 2.  在项目中直接引入css文件
 
-`import '@arco-design/theme-line/css/arco.css';`
+`import '@arco-themes/theme-line/css/arco.css';`
 
 直接引入css文件时，需要核对和业务项目中使用的组件库版本是否一致。 主要是因为css是在主题发布时候根据指定版本的组件库打包的。
 
