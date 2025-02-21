@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import ResizeObserver from 'resize-observer-polyfill';
+import ResizeObserverPolyfill from 'resize-observer-polyfill';
 
 export default function useResizeObserver(onResize: (entry: ResizeObserverEntry[]) => void) {
   const resizeObserver = useRef<ResizeObserver>();
@@ -16,6 +16,10 @@ export default function useResizeObserver(onResize: (entry: ResizeObserverEntry[
       if (resizeObserver.current) {
         destroyObserver();
       }
+      const ResizeObserver =
+        typeof window !== 'undefined' && window.ResizeObserver
+          ? window.ResizeObserver
+          : ResizeObserverPolyfill;
       resizeObserver.current = new ResizeObserver(onResize);
       resizeObserver.current.observe(elem);
     }

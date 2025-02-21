@@ -173,9 +173,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   scrollElements: (HTMLElement | Window)[] = null;
 
   // container 触发 resize时执行
-  resizeObserver = new ResizeObserverPolyfill(() => {
-    this.handleUpdatePosition();
-  });
+  resizeObserver: ResizeObserverPolyfill;
 
   childrenDom = null;
 
@@ -208,6 +206,14 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       popupVisible: !!popupVisible,
       popupStyle: {},
     };
+
+    const ResizeObserverAPI =
+      typeof window !== 'undefined' && window.ResizeObserver
+        ? window.ResizeObserver
+        : ResizeObserverPolyfill;
+    this.resizeObserver = new ResizeObserverAPI(() => {
+      this.handleUpdatePosition();
+    });
   }
 
   getRootElement = (): HTMLElement => {

@@ -1,5 +1,5 @@
 import React, { ReactElement, cloneElement, isValidElement } from 'react';
-import ResizeObserver from 'resize-observer-polyfill';
+import ResizeObserverPolyfill from 'resize-observer-polyfill';
 import lodashThrottle from 'lodash/throttle';
 import { callbackOriginRef, findDOMNode } from '../_util/react-dom';
 import { supportRef } from './is';
@@ -54,6 +54,10 @@ class ResizeObserverComponent extends React.Component<ResizeProps> {
     const resizeHandler = throttle ? lodashThrottle(onResize) : onResize;
 
     let firstExec = true; // 首次监听时，立即执行一次 onResize，之前行为保持一致，避免布局类组件出现闪动的情况
+    const ResizeObserver =
+      typeof window !== 'undefined' && window.ResizeObserver
+        ? window.ResizeObserver
+        : ResizeObserverPolyfill;
     this.resizeObserver = new ResizeObserver((entry) => {
       if (firstExec) {
         firstExec = false;

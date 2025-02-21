@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import ResizeObserver from 'resize-observer-polyfill';
+import ResizeObserverPolyfill from 'resize-observer-polyfill';
 import { findDOMNode } from 'react-dom';
 
 export interface ResizeProps {
@@ -32,6 +32,10 @@ class ResizeObserverComponent extends React.Component<ResizeProps> {
 
   createResizeObserver = () => {
     const { onResize } = this.props;
+    const ResizeObserver =
+      typeof window !== 'undefined' && window.ResizeObserver
+        ? window.ResizeObserver
+        : ResizeObserverPolyfill;
     this.resizeObserver = new ResizeObserver((entry) => {
       onResize && onResize(entry);
     });
