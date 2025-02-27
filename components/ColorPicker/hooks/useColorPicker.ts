@@ -15,7 +15,7 @@ import {
 } from '../utils';
 
 interface UseColorPickerProps {
-  mode?: ColorPickerMode | ColorPickerMode[];
+  mode?: 'single' | 'gradient' | ['single', 'gradient'];
   value?: string | GradientColor[];
   defaultValue?: string | GradientColor[];
   defaultPopupVisible?: boolean;
@@ -39,7 +39,7 @@ export const useColorPicker = (props: UseColorPickerProps) => {
   const [activeMode, setActiveMode] = useState<ColorPickerMode>(
     (defaultValue && !Array.isArray(defaultValue)) || (props.value && !Array.isArray(props.value))
       ? ColorPickerMode.Single
-      : getInitialActiveMode(mode)
+      : getInitialActiveMode(mode as ColorPickerMode | ColorPickerMode[])
   );
 
   const [value, setValue] = useMergeValue(

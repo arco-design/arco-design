@@ -33,7 +33,7 @@ export interface ColorPickerProps {
    * @en Whether to use single color or gradient color mode
    * @defaultValue single
    */
-  mode?: ColorPickerMode | ColorPickerMode[];
+  mode?: 'single' | 'gradient' | ['single', 'gradient'];
   /**
    * @zh 禁用
    * @en disabled

@@ -5,7 +5,7 @@ import cs from '../_util/classNames';
 import Trigger from '../Trigger';
 import { Panel } from './panel';
 import { colors } from './colors';
-import { ColorPickerProps } from './interface';
+import { ColorPickerProps, ColorPickerMode } from './interface';
 import { useColorPicker } from './hooks/useColorPicker';
 import { isFunction, isNullOrUndefined } from '../_util/is';
 import { getGradientString, renderBackground } from './utils';
@@ -103,7 +103,7 @@ function ColorPicker(baseProps: React.PropsWithChildren<ColorPickerProps>, ref) 
     return (
       <Panel
         value={value}
-        mode={mode}
+        mode={mode as ColorPickerMode | ColorPickerMode[]}
         activeMode={activeMode}
         gradientColors={gradientColors}
         activeColorId={activeColorId}
