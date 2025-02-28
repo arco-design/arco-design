@@ -168,7 +168,9 @@ const fixOffset = (localTS, o0, tz) => {
 };
 
 export function timezoneToOffset(inputTs: number, timezone: string) {
-  return fixOffset(inputTs, tzOffset(new Date().getTime(), timezone), timezone)[1];
+  // 使用输入时间戳获取初始偏移量猜测
+  const initialOffset = tzOffset(inputTs, timezone);
+  return fixOffset(inputTs, initialOffset, timezone)[1];
 }
 
 // get local now time
@@ -192,9 +194,21 @@ export function toTimezone(
       ? localOffset
       : timezoneToOffset(time.valueOf(), timezone)
     : utcOffset;
+
   const timezoneOffset = Math.abs(uOffset) <= 16 ? uOffset * 60 : uOffset;
+
   const diffOffset = local ? localOffset - timezoneOffset : timezoneOffset - localOffset;
-  return dayjs(dayjs(time).valueOf() + diffOffset * 60 * 1000);
+
+  // 由于内部时区是手动计算，所以看转换后的时间是否经历冬令时和夏令时边界，做下微调，修正拨表的一个小时
+  const fixOffset = timezone
+    ? timezoneToOffset(dayjs(time).valueOf() + diffOffset * 60 * 1000, timezone)
+    : uOffset;
+
+  const realDiffOffset = diffOffset - (uOffset - fixOffset);
+
+  const diff = local ? diffOffset : realDiffOffset;
+
+  return dayjs(dayjs(time).valueOf() + diff * 60 * 1000);
 }
 
 // convert specify timezone date to local date
