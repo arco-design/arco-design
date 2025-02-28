@@ -3,7 +3,7 @@ import { ColorPickerMode, GradientColor, HSV, InternalGradientColor } from '../i
 import { formatInputToHSVA } from '../../_util/color';
 import useMergeValue from '../../_util/hooks/useMergeValue';
 import useIsFirstRender from '../../_util/hooks/useIsFirstRender';
-import { getInitialActiveMode, isGradientMode, isSingleMode } from '../mode';
+import { getModeByValue, isGradientMode, isSingleMode } from '../mode';
 import {
   getColorFromHsv,
   formatRgba,
@@ -37,9 +37,7 @@ export const useColorPicker = (props: UseColorPickerProps) => {
   });
 
   const [activeMode, setActiveMode] = useState<ColorPickerMode>(
-    (defaultValue && !Array.isArray(defaultValue)) || (props.value && !Array.isArray(props.value))
-      ? ColorPickerMode.Single
-      : getInitialActiveMode(mode as ColorPickerMode | ColorPickerMode[])
+    getModeByValue(props.value, defaultValue, mode as ColorPickerMode | ColorPickerMode[])
   );
 
   const [value, setValue] = useMergeValue(

@@ -1,4 +1,4 @@
-import { ColorPickerMode } from './interface';
+import { ColorPickerMode, GradientColor } from './interface';
 
 export const getMode = (mode: ColorPickerMode | ColorPickerMode[]) => {
   if (Array.isArray(mode) && mode.length === 1) {
@@ -30,4 +30,24 @@ export const getInitialActiveMode = (
     return ColorPickerMode.Gradient;
   }
   return mode;
+};
+
+export const getModeByValue = (
+  value: string | GradientColor[],
+  defaultValue: string | GradientColor[],
+  mode: ColorPickerMode | ColorPickerMode[]
+) => {
+  if (value && Array.isArray(value)) {
+    return ColorPickerMode.Gradient;
+  }
+  if (value && typeof value === 'string') {
+    return ColorPickerMode.Single;
+  }
+  if (defaultValue && Array.isArray(defaultValue)) {
+    return ColorPickerMode.Gradient;
+  }
+  if (defaultValue && typeof defaultValue === 'string') {
+    return ColorPickerMode.Single;
+  }
+  return getInitialActiveMode(mode as ColorPickerMode | ColorPickerMode[]);
 };
