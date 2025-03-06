@@ -125,7 +125,13 @@ function Mentions(baseProps: MentionsProps, ref) {
       const measureText = textBeforeSelection.slice(measureIndex + measurePrefix.length);
 
       if (measureIndex > -1 && isValidSearch(measureText, props)) {
-        if (key === measurePrefix || measureInfo.measuring || measureText !== measureInfo.text) {
+        if (
+          key === measurePrefix ||
+          measureInfo.measuring ||
+          measureText !== measureInfo.text ||
+          // fix: https://github.com/arco-design/arco-design/issues/2829
+          textBeforeSelection.includes(measurePrefix)
+        ) {
           setMeasureInfo({
             measuring: true,
             text: measureText,
