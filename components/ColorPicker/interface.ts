@@ -12,12 +12,12 @@ export interface ColorPickerProps {
    * @zh 默认值
    * @en The initial input content
    */
-  defaultValue?: string;
+  defaultValue?: string | GradientColor[];
   /**
    * @zh 颜色值，受控模式
    * @en The input content value
    */
-  value?: string;
+  value?: string | GradientColor[];
   /**
    * @zh 显示颜色值
    * @en Show color value
@@ -28,6 +28,12 @@ export interface ColorPickerProps {
    * @en Color value format
    */
   format?: 'hex' | 'rgb';
+  /**
+   * @zh 单一颜色或渐变色模式
+   * @en Whether to use single color or gradient color mode
+   * @defaultValue single
+   */
+  mode?: 'single' | 'gradient' | ['single', 'gradient'];
   /**
    * @zh 禁用
    * @en disabled
@@ -90,12 +96,12 @@ export interface ColorPickerProps {
    * @en The trigger element which executes the dropdown action.
    * @version 2.60.0
    */
-  triggerElement?: ReactNode | ((params: { value: string }) => ReactNode);
+  triggerElement?: ReactNode | ((params: { value: string | GradientColor[] }) => ReactNode);
   /**
    * @zh 颜色值改变时触发
    * @en Callback when the color value changes
    */
-  onChange?: (value: string) => void;
+  onChange?: (value: string | GradientColor[]) => void;
   /**
    * @zh 下拉框收起展开时触发。
    * @en Callback when popup shown or hidden.
@@ -125,4 +131,21 @@ export interface Color {
   hsv: HSV;
   rgb: RGB;
   hex: string;
+}
+
+export enum ColorPickerMode {
+  Single = 'single',
+  Gradient = 'gradient',
+}
+
+export interface GradientColor {
+  color: string;
+  percent: number;
+}
+
+export interface InternalGradientColor {
+  id: string;
+  color: Color;
+  alpha: number;
+  percent: number;
 }

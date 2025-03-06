@@ -1,11 +1,25 @@
 import { useRef, useState } from 'react';
 
-interface ControlBlockParams {
+interface MultiValueItem {
   value: [number, number];
-  onChange: (value: [number, number]) => void;
+  key: string;
 }
 
-export const useControlBlock = ({ value, onChange }: ControlBlockParams) => {
+interface ControlBlockParams {
+  value: [number, number] | MultiValueItem[];
+  multiple?: boolean;
+  onActive?: (key: string) => void;
+  onAdd?: (value: [number, number]) => void;
+  onChange: (value: [number, number], key?: string) => void;
+}
+
+export const useControlBlock = ({
+  value,
+  multiple = false,
+  onActive,
+  onAdd,
+  onChange,
+}: ControlBlockParams) => {
   const [active, setActive] = useState(false);
   const blockRef = useRef<HTMLDivElement>();
   const handlerRef = useRef<HTMLDivElement>();
@@ -20,14 +34,18 @@ export const useControlBlock = ({ value, onChange }: ControlBlockParams) => {
     return value / max;
   };
 
-  const setCurrentPosition = (ev: MouseEvent) => {
+  const getNewPosition = (ev: MouseEvent): [number, number] => {
     const { clientX, clientY } = ev;
     const rect = blockRef.current.getBoundingClientRect();
-    const newValue: [number, number] = [
+    return [
       getPercentNumber(clientX - rect.x, rect.width),
       getPercentNumber(clientY - rect.y, rect.height),
     ];
-    if (newValue[0] !== value[0] || newValue[1] !== value[1]) {
+  };
+
+  const setCurrentPosition = (ev: MouseEvent) => {
+    const newValue = getNewPosition(ev);
+    if (multiple || (!multiple && (newValue[0] !== value[0] || newValue[1] !== value[1]))) {
       onChange?.(newValue);
     }
   };
@@ -41,11 +59,20 @@ export const useControlBlock = ({ value, onChange }: ControlBlockParams) => {
 
   const onMouseDown = (ev: MouseEvent) => {
     ev.preventDefault();
-    setActive(true);
-    setCurrentPosition(ev);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', removeListener);
     window.addEventListener('contextmenu', removeListener);
+    setActive(true);
+    if (multiple) {
+      if (ev.target === blockRef.current) {
+        onAdd(getNewPosition(ev));
+      } else if (typeof (ev.target as HTMLDivElement)?.dataset?.key !== 'undefined') {
+        const key = (ev.target as HTMLDivElement).dataset.key!;
+        onActive(key);
+      }
+      return;
+    }
+    setCurrentPosition(ev);
   };
 
   function onMouseMove(ev: MouseEvent) {

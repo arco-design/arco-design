@@ -12,6 +12,7 @@
   &-preview {
     border: @color-preview-border-size solid @color-preview-border-color;
     box-sizing: border-box;
+    flex: none;
   }
 
   &-value {
@@ -30,7 +31,7 @@
   }
 
   &-size-default {
-    height: @input-size-default-height;
+    min-height: @input-size-default-height;
     padding: (@input-size-default-height - @color-preview-size-default) / 2
       @color-input-size-default-padding-horizontal;
 
@@ -45,7 +46,7 @@
   }
 
   &-size-mini {
-    height: @input-size-mini-height;
+    min-height: @input-size-mini-height;
     padding: (@input-size-mini-height - @color-preview-size-mini) / 2
       @color-input-size-mini-padding-horizontal;
 
@@ -60,7 +61,7 @@
   }
 
   &-size-small {
-    height: @input-size-small-height;
+    min-height: @input-size-small-height;
     padding: (@input-size-small-height - @color-preview-size-small) / 2
       @color-input-size-small-padding-horizontal;
 
@@ -75,7 +76,7 @@
   }
 
   &-size-large {
-    height: @input-size-large-height;
+    min-height: @input-size-large-height;
     padding: (@input-size-large-height - @color-preview-size-large) / 2
       @color-input-size-large-padding-horizontal;
 
@@ -165,6 +166,19 @@
       .@{prefix}-input-inner-wrapper {
         padding: 0 @spacing-3;
       }
+    }
+  }
+
+  .@{color-picker-prefix-cls}-panel-control-gradient {
+    padding: @color-panel-padding @color-panel-padding 0;
+    .@{color-picker-prefix-cls}-control-bar-gradient {
+      margin: 0 @color-control-bar-handle-size / 2 @color-control-bar-gradient-margin;
+      .@{color-picker-prefix-cls}-control-bar {
+        width: 100%;
+      }
+    }
+    .@{color-picker-prefix-cls}-panel-control-gradient-tag {
+      margin-bottom: @color-control-bar-gradient-margin;
     }
   }
 
