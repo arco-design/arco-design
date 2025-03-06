@@ -5,6 +5,8 @@ import weekOfYear from 'dayjs/plugin/weekOfYear';
 import AdvancedFormat from 'dayjs/plugin/advancedFormat';
 import weekYear from 'dayjs/plugin/weekYear';
 import QuarterOfYear from 'dayjs/plugin/quarterOfYear';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import { isDayjs, isArray, isUndefined } from '../_util/is';
 
 const isMoment = (originDayjs() as any)._isAMomentObject;
@@ -43,6 +45,8 @@ originDayjs.extend(weekOfYear);
 originDayjs.extend(AdvancedFormat);
 originDayjs.extend(weekYear);
 originDayjs.extend(QuarterOfYear);
+originDayjs.extend(utc);
+originDayjs.extend(timezone);
 
 export const dayjs = originDayjs;
 
