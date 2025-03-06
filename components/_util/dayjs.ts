@@ -210,7 +210,7 @@ export function toTimezone(
 
   const realDiffOffset = diffOffset - (uOffset - fixOffset);
 
-  const diff = local ? diffOffset : realDiffOffset;
+  const diff = local || !isUndefined(utcOffset) ? diffOffset : realDiffOffset;
 
   return dayjs(dayjs(time).valueOf() + diff * 60 * 1000);
 }
