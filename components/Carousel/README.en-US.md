@@ -20,7 +20,7 @@ Carousel is used to display multiple contents such as pictures, videos, or embed
 |timingFunc|How intermediate values are calculated for CSS properties being affected by a transition effect.[transition-timing-function](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transition-timing-function)|string |`cubic-bezier(0.34, 0.69, 0.1, 1)`|-|
 |animation|The animation of the slide movement|'slide' \| 'card' \| 'fade' |`slide`|-|
 |direction|The direction of the slide movement|'horizontal' \| 'vertical' |`horizontal`|-|
-|indicatorPosition|Position of indication|'bottom' \| 'top' \| 'left' \| 'right' \| 'outer' |`bottom`|-|
+|indicatorPosition|Position of indication|'bottom' \| 'top' \| 'left' \| 'right' \| 'outer' \| 'outer-right' |`bottom`|-|
 |indicatorType|Type of indicator|'line' \| 'dot' \| 'slider' \| 'never' |`dot`|-|
 |showArrow|When to show the switch trigger|'always' \| 'hover' \| 'never' |`always`|-|
 |trigger|How to trigger the slide switch, click/hover the indicator|'click' \| 'hover' |`click`|-|

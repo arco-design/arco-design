@@ -100,7 +100,7 @@ export interface CarouselProps {
    * @en Position of indication
    * @defaultValue bottom
    */
-  indicatorPosition?: 'bottom' | 'top' | 'left' | 'right' | 'outer';
+  indicatorPosition?: 'bottom' | 'top' | 'left' | 'right' | 'outer' | 'outer-right';
   /**
    * @zh 指示器的样式
    * @en The additional css class for indicator
