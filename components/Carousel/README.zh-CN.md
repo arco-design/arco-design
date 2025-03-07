@@ -20,7 +20,7 @@
 |timingFunc|过渡速度曲线, 默认匀速 [transition-timing-function](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transition-timing-function)|string |`cubic-bezier(0.34, 0.69, 0.1, 1)`|-|
 |animation|切换动画|'slide' \| 'card' \| 'fade' |`slide`|-|
 |direction|幻灯片移动方向|'horizontal' \| 'vertical' |`horizontal`|-|
-|indicatorPosition|指示器位置|'bottom' \| 'top' \| 'left' \| 'right' \| 'outer' |`bottom`|-|
+|indicatorPosition|指示器位置|'bottom' \| 'top' \| 'left' \| 'right' \| 'outer' \| 'outer-right' |`bottom`|-|
 |indicatorType|指示器类型，可为小方块和小圆点或不显示|'line' \| 'dot' \| 'slider' \| 'never' |`dot`|-|
 |showArrow|切换箭头显示时机|'always' \| 'hover' \| 'never' |`always`|-|
 |trigger|幻灯片切换触发方式, click/hover 指示器|'click' \| 'hover' |`click`|-|
