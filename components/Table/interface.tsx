@@ -304,7 +304,7 @@ export interface RowSelectionProps<T = any> {
    * @en Callback when the user to manually select/deselect all rows
    * @version 2.6.0
    */
-  onSelectAll?: (selected: boolean, selectedRows) => void;
+  onSelectAll?: (selected: boolean, selectedRows: T[]) => void;
   /**
    * @zh 在数据项被删除时仍然保留选项的 `key`
    * @en The `key` is still retained in `selectedRowKeys` when the data item is deleted
