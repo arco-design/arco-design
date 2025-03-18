@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import ContextHolderElement, { HolderRef } from '../_util/contextHolder';
 import Message, { ConfigProps } from '.';
 import { MessageProps, MessageHookReturnType } from './interface';
@@ -9,8 +9,8 @@ export type messageFuncType = MessageHookReturnType;
 
 function useMessage(commonConfig: ConfigProps = {}): [MessageHookReturnType, JSX.Element] {
   const { maxCount, duration = 3000, prefixCls: _prefixCls } = commonConfig;
-  const contextHolderRef = createRef<HolderRef>();
-  const holderEle = <ContextHolderElement ref={contextHolderRef} />;
+  const contextHolderRef = useRef<HolderRef>();
+  const holderEle = useMemo(() => <ContextHolderElement ref={contextHolderRef} />, []);
   const messageInstance = {};
   let notice;
 
