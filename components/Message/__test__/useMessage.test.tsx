@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import Message from '..';
-import { ConfigProvider } from '../..';
-import { render, $ } from '../../../tests/util';
+import { Button, ConfigProvider } from '../..';
+import { render, $, fireEvent } from '../../../tests/util';
 
 describe('useMessage Test', () => {
   beforeEach(() => {
@@ -14,20 +14,25 @@ describe('useMessage Test', () => {
   });
 
   it('useMessage', async () => {
-    const [message, contextHolder] = Message.useMessage({});
-
     const ConfigContext = createContext({});
+    let messageInstance;
 
-    const wrapper = render(
-      <div>
-        <ConfigProvider prefixCls="demo" rtl effectGlobalNotice={false}>
-          <ConfigContext.Provider value="PJY">{contextHolder}</ConfigContext.Provider>
-        </ConfigProvider>
-      </div>
-    );
+    const TestComponent = () => {
+      const [message, contextHolder] = Message.useMessage({});
+      messageInstance = message;
+      return (
+        <div>
+          <ConfigProvider prefixCls="demo" rtl effectGlobalNotice={false}>
+            <ConfigContext.Provider value="PJY">{contextHolder}</ConfigContext.Provider>
+          </ConfigProvider>
+        </div>
+      );
+    };
+
+    const wrapper = render(<TestComponent />);
 
     // prefixCls: demo
-    const m = message.info?.({
+    const m = messageInstance.info?.({
       content: <ConfigContext.Consumer>{(name) => name}</ConfigContext.Consumer>,
     });
     expect(wrapper.find('.demo-message')[0].classList).toContain('demo-message-rtl');
@@ -50,20 +55,27 @@ describe('useMessage Test', () => {
   });
 
   it('message update', async () => {
-    const [message, contextHolder] = Message.useMessage({ maxCount: 2 });
-    const wrapper = render(
-      <div>
-        <ConfigProvider>{contextHolder}</ConfigProvider>
-      </div>
-    );
+    let messageInstance;
 
-    message.info?.({
+    const TestComponent = () => {
+      const [message, contextHolder] = Message.useMessage({ maxCount: 2 });
+      messageInstance = message;
+      return (
+        <div>
+          <ConfigProvider>{contextHolder}</ConfigProvider>
+        </div>
+      );
+    };
+
+    const wrapper = render(<TestComponent />);
+
+    messageInstance.info?.({
       id: 'demo',
       content: 'PJY',
     });
     expect(wrapper.find('.arco-message-content')[0].innerHTML).toBe('PJY');
 
-    const m = message.info?.({
+    const m = messageInstance.info?.({
       id: 'demo',
       content: 'YYH',
     });
@@ -73,5 +85,37 @@ describe('useMessage Test', () => {
 
     jest.runAllTimers();
     expect(wrapper.find('.arco-message').length).toBe(0);
+  });
+
+  it('should maintain instance stability during re-renders', async () => {
+    // const { promise, resolve } = promiseWithResolvers();
+    const TestComponent = () => {
+      const [loading, setLoading] = React.useState(false);
+      const [message, contextHolder] = Message.useMessage({});
+      return (
+        <div>
+          <Button
+            className="async-button"
+            loading={loading}
+            onClick={async () => {
+              setLoading(true);
+              await Promise.resolve(null);
+              message?.info?.('success');
+              // resolve();
+              setLoading(false);
+            }}
+          >
+            Click
+          </Button>
+          {contextHolder}
+        </div>
+      );
+    };
+
+    const wrapper = render(<TestComponent />);
+    expect($('.arco-message')).toHaveLength(0);
+    fireEvent.click(wrapper.querySelector('.async-button')!);
+    await Promise.resolve(null);
+    expect($('.arco-message')).toHaveLength(1);
   });
 });

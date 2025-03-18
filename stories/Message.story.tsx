@@ -37,6 +37,44 @@ export const Demo = () => {
   );
 };
 
+export const TestUseMessage = () => {
+  const [message, contextHolder] = Message.useMessage();
+  const [btnLoading, setBtnLoading] = React.useState(false);
+
+  const sleep = function () {
+    return new Promise((rs) => {
+      setTimeout(() => {
+        rs(1);
+      }, 1000);
+    });
+  };
+  return (
+    <div>
+      <Button
+        loading={btnLoading}
+        onClick={async () => {
+          setBtnLoading(true);
+          await sleep();
+          message.success?.('123');
+          setBtnLoading(false);
+        }}
+      >
+        test
+      </Button>
+      <Button
+        onClick={async () => {
+          setBtnLoading(true);
+          message.success?.('123');
+          setBtnLoading(false);
+        }}
+      >
+        test2
+      </Button>
+      {contextHolder}
+    </div>
+  );
+};
+
 export default {
   title: 'Message',
 };
