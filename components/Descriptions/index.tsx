@@ -17,7 +17,7 @@ const defaultProps: DescriptionsProps = {
 };
 
 function Descriptions(baseProps: DescriptionsProps) {
-  const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
+  const { getPrefixCls, componentConfig, rtl, size: ctxSize } = useContext(ConfigContext);
   const props = useMergeProps<DescriptionsProps>(
     baseProps,
     defaultProps,
@@ -192,7 +192,7 @@ function Descriptions(baseProps: DescriptionsProps) {
     {
       [`${prefixCls}-border`]: border,
       [`${prefixCls}-layout-${layout}`]: layout,
-      [`${prefixCls}-size-${size}`]: size,
+      [`${prefixCls}-size-${size || ctxSize}`]: size || ctxSize,
       [`${prefixCls}-table-layout-fixed`]: tableLayout === 'fixed',
       [`${prefixCls}-rtl`]: rtl,
     },
