@@ -33,7 +33,7 @@ jobs:
         run: yarn build:site
 
       - name: Upload site-dist Artifact
-        uses: actions/upload-artifact@v3.1.1
+        uses: actions/upload-artifact@v4
         with:
           name: site-dist
           path: site/dist
@@ -52,7 +52,7 @@ jobs:
           cache: 'yarn'
 
       - name: Download site-dist Artifact
-        uses: actions/download-artifact@v3.0.1
+        uses: actions/download-artifact@v4
         with:
           # Artifact name
           name: site-dist
@@ -60,7 +60,7 @@ jobs:
           path: dist/
 
       - name: netlify install
-        run: yarn add netlify-cli@16 -D
+        run: yarn global add netlify-cli@16
 
       - name: get PreviewID
         run: |

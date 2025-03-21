@@ -165,8 +165,5 @@
     "hooks/lib",
     "hooks/package.json"
   ],
-  "_unpkg": true,
-  "engines": {
-    "node": "16.x"
-  }
+  "_unpkg": true
 }

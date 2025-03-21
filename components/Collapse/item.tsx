@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useContext } from 'react';
+import React, { PropsWithChildren, useContext, useRef } from 'react';
 import { Transition } from 'react-transition-group';
 import cs from '../_util/classNames';
 import { CollapseContext } from './collapse';
@@ -9,6 +9,7 @@ import useKeyboardEvent from '../_util/hooks/useKeyboardEvent';
 
 function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
   const { getPrefixCls } = useContext(ConfigContext);
+  const divRef = useRef<HTMLDivElement>();
   const ctx = useContext(CollapseContext);
   const getEventListeners = useKeyboardEvent();
   const {
@@ -108,34 +109,54 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
         )}
       </div>
       <Transition
+        nodeRef={divRef}
         in={isExpanded}
-        addEndListener={(node, done) => {
-          node.addEventListener('transitionend', done, false);
+        addEndListener={(_, done) => {
+          divRef.current?.addEventListener('transitionend', done, false);
         }}
         mountOnEnter={'destroyOnHide' in props ? destroyOnHide : ctx.destroyOnHide || ctx.lazyload}
         unmountOnExit={'destroyOnHide' in props ? destroyOnHide : ctx.destroyOnHide}
-        onEnter={(e) => {
-          e.style.height = 0;
-          e.style.display = 'block';
+        onEnter={() => {
+          const e = divRef.current;
+          if (e) {
+            e.style.height = '0';
+            e.style.display = 'block';
+          }
         }}
-        onEntering={(e) => {
-          e.style.height = `${e.scrollHeight}px`;
+        onEntering={() => {
+          const e = divRef.current;
+          if (e) {
+            e.style.height = `${e.scrollHeight}px`;
+          }
         }}
-        onEntered={(e) => {
-          e.style.height = 'auto';
+        onEntered={() => {
+          const e = divRef.current;
+          if (e) {
+            e.style.height = 'auto';
+          }
         }}
-        onExit={(e) => {
-          e.style.display = 'block';
-          e.style.height = `${e.offsetHeight}px`;
-          // have to trigger reflow to get animation effect on exit
-          e.offsetHeight; // eslint-disable-line
+        onExit={() => {
+          const e = divRef.current;
+          if (e) {
+            e.style.display = 'block';
+            e.style.height = `${e.offsetHeight}px`;
+            // have to trigger reflow to get animation effect on exit
+            e.offsetHeight; // eslint-disable-line
+          }
         }}
-        onExiting={(e) => {
-          e.style.height = 0;
+        onExiting={() => {
+          const e = divRef.current;
+          if (e) {
+            e.style.height = '0';
+          }
         }}
-        onExited={(e) => {
-          e.style.display = 'none';
-          e.style.height = 'auto';
+        onExited={() => {
+          const e = divRef.current;
+
+          if (e) {
+            e.style.display = 'none';
+            e.style.height = 'auto';
+          }
         }}
       >
         <div
@@ -143,6 +164,7 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
           className={cs(`${prefixCls}-content`, {
             [`${prefixCls}-content-expanded`]: isExpanded,
           })}
+          ref={divRef}
         >
           <div style={contentStyle} className={`${prefixCls}-content-box`}>
             {children}

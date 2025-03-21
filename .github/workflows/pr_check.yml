@@ -10,13 +10,14 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
-      - name: install
-        run: yarn run dependencies
       - name: setup node
         uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'yarn'
+
+      - name: install
+        run: yarn run dependencies
 
       - name: run-icon
         run: yarn icon
