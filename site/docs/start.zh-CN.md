@@ -68,6 +68,18 @@ ReactDOM.render(
 </div>
 ```
 
+## 兼容 React 19
+
+需要在入口文件顶部直接引入
+`
+```
+import '@arco-design/web-react/es/_util/react-19-polyfill';
+
+```
+
+## 按需加载
+
+
 ## 按需加载
 
 `@arco-design/web-react` 的组件默认支持 `tree shaking`, 使用 `import { Button } from '@arco-design/web-react';` 方式引入即可按需加载。

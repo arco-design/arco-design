@@ -68,6 +68,16 @@ ReactDOM.render(
 </div>
 ```
 
+## React 19
+
+Need to be introduced directly at the top of the entry file
+
+```
+import '@arco-design/web-react/es/_util/react-19-polyfill';
+
+```
+
+
 ## Load on Demand
 
 The components of `@arco-design/web-react` support `tree shaking` by default, and can be loaded on demand by importing them using `import { Button } from '@arco-design/web-react';`.
