@@ -73,7 +73,7 @@ ReactDOM.render(
 需要在入口文件顶部直接引入
 `
 ```
-import '@arco-design/web-react/es/_util/react-19-polyfill';
+import '@arco-design/web-react/es/_util/react-19-adapter';
 
 ```
 
