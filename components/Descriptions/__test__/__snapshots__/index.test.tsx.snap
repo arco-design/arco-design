@@ -2,7 +2,7 @@
 
 exports[`ConfigProvider componentConfig.Descriptions default 1`] = `
 <div
-  class="arco-descriptions arco-descriptions-layout-horizontal"
+  class="arco-descriptions arco-descriptions-layout-horizontal arco-descriptions-size-default"
 >
   <div
     class="arco-descriptions-body"
@@ -20,7 +20,7 @@ exports[`ConfigProvider componentConfig.Descriptions default 1`] = `
 
 exports[`ConfigProvider componentConfig.Descriptions set className globally 1`] = `
 <div
-  class="arco-descriptions arco-descriptions-layout-horizontal global-default-class"
+  class="arco-descriptions arco-descriptions-layout-horizontal arco-descriptions-size-default global-default-class"
 >
   <div
     class="arco-descriptions-body"
@@ -38,7 +38,7 @@ exports[`ConfigProvider componentConfig.Descriptions set className globally 1`] 
 
 exports[`ConfigProvider componentConfig.Descriptions set className globally and component set className itself. 1`] = `
 <div
-  class="arco-descriptions arco-descriptions-layout-horizontal component-class"
+  class="arco-descriptions arco-descriptions-layout-horizontal arco-descriptions-size-default component-class"
 >
   <div
     class="arco-descriptions-body"
@@ -56,7 +56,7 @@ exports[`ConfigProvider componentConfig.Descriptions set className globally and 
 
 exports[`ConfigProvider componentConfig.Descriptions set data-* property 1`] = `
 <div
-  class="arco-descriptions arco-descriptions-layout-horizontal"
+  class="arco-descriptions arco-descriptions-layout-horizontal arco-descriptions-size-default"
 >
   <div
     class="arco-descriptions-body"

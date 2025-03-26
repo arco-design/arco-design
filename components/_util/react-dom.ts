@@ -19,14 +19,6 @@ const CopyReactDOM = ReactDOM as typeof ReactDOM & {
   };
 };
 
-let copyRender: (
-  app: ReactElement,
-  container: Element | DocumentFragment
-) => {
-  render: (container: ReactElement) => void;
-  _unmount: () => void;
-};
-
 const updateUsingClientEntryPoint = (skipWarning?: boolean) => {
   // https://github.com/facebook/react/blob/17806594cc28284fe195f918e8d77de3516848ec/packages/react-dom/npm/client.js#L10
   // Avoid console warning
@@ -36,41 +28,52 @@ const updateUsingClientEntryPoint = (skipWarning?: boolean) => {
 };
 
 let createRoot: CreateRootFnType;
+
 try {
   createRoot = CopyReactDOM.createRoot;
 } catch (_) {
   //
 }
 
-if (isReact18 && createRoot) {
-  copyRender = (app: ReactElement, container: Element | DocumentFragment) => {
-    updateUsingClientEntryPoint(true);
-    const root = createRoot(container);
-    updateUsingClientEntryPoint(false);
+let copyRender: (
+  app: ReactElement,
+  container: Element | DocumentFragment
+) => {
+  render: (container: ReactElement) => void;
+  _unmount: () => void;
+};
 
-    root.render(app);
+const setCopyRender = () => {
+  if (isReact18 && createRoot) {
+    copyRender = (app: ReactElement, container: Element | DocumentFragment) => {
+      updateUsingClientEntryPoint(true);
+      const root = createRoot(container);
+      updateUsingClientEntryPoint(false);
 
-    root._unmount = function () {
-      setTimeout(() => {
-        root?.unmount?.();
-      });
+      root.render(app);
+
+      root._unmount = function () {
+        setTimeout(() => {
+          root?.unmount?.();
+        });
+      };
+      return root;
     };
-    return root;
-  };
-} else {
-  copyRender = function (app: ReactElement, container: Element | DocumentFragment) {
-    CopyReactDOM.render(app, container);
+  } else {
+    copyRender = function (app: ReactElement, container: Element | DocumentFragment) {
+      CopyReactDOM.render(app, container);
 
-    return {
-      render: (app: ReactElement) => {
-        CopyReactDOM.render(app, container);
-      },
-      _unmount() {
-        CopyReactDOM.unmountComponentAtNode(container);
-      },
+      return {
+        render: (app: ReactElement) => {
+          CopyReactDOM.render(app, container);
+        },
+        _unmount() {
+          CopyReactDOM.unmountComponentAtNode(container);
+        },
+      };
     };
-  };
-}
+  }
+};
 
 let warnedInstancesWeakSet: WeakSet<Function> | undefined;
 function hasInstanceWarned(instance: ReactInstance) {
@@ -138,4 +141,14 @@ export const callbackOriginRef = (children: any, node) => {
   }
 };
 
-export const render = copyRender;
+// 这个主要是给 polyfill 调用下。 因为 react 19 的 index.js 不会再导出 createRoot，必须从 react-dom/client 导入 createRoot
+export const setCreateRoot = (_createRoot) => {
+  createRoot = _createRoot;
+  setCopyRender();
+};
+
+setCopyRender();
+
+export const render = (node, el) => {
+  return copyRender(node, el);
+};

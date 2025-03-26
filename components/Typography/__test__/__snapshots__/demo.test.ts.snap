@@ -498,7 +498,7 @@ exports[`renders Typography/demo/ellipsis-basic.md correctly 1`] = `
       class="arco-space-item"
     >
       <div
-        class="arco-descriptions arco-descriptions-layout-horizontal"
+        class="arco-descriptions arco-descriptions-layout-horizontal arco-descriptions-size-default"
         style="margin-bottom:20px"
       >
         <div
@@ -940,7 +940,7 @@ exports[`renders Typography/demo/ellipsis-controlled.md correctly 1`] = `
       class="arco-space-item"
     >
       <div
-        class="arco-descriptions arco-descriptions-layout-horizontal"
+        class="arco-descriptions arco-descriptions-layout-horizontal arco-descriptions-size-default"
         style="margin-bottom:20px"
       >
         <div
