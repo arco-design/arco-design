@@ -5,7 +5,7 @@ import { FormInstance } from '../interface';
 import { FormContext } from '../context';
 import warn from '../../_util/warning';
 
-const useWatch = (field: string | string[], form?: FormInstance) => {
+const useWatch = <T>(field: keyof T | keyof T[], form?: FormInstance<T>) => {
   const formCtx = useContext(FormContext);
 
   const formInstance = form || formCtx.store;
