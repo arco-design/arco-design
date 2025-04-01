@@ -3,7 +3,7 @@
 exports[`renders Descriptions/demo/align.md correctly 1`] = `
 <div>
   <div
-    class="arco-descriptions arco-descriptions-layout-horizontal"
+    class="arco-descriptions arco-descriptions-layout-horizontal arco-descriptions-size-default"
     style="margin-bottom:20px"
   >
     <div
@@ -89,7 +89,7 @@ exports[`renders Descriptions/demo/align.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-descriptions arco-descriptions-layout-inline-vertical"
+    class="arco-descriptions arco-descriptions-layout-inline-vertical arco-descriptions-size-default"
   >
     <div
       class="arco-descriptions-title"
@@ -193,7 +193,7 @@ exports[`renders Descriptions/demo/align.md correctly 1`] = `
 
 exports[`renders Descriptions/demo/basic.md correctly 1`] = `
 <div
-  class="arco-descriptions arco-descriptions-layout-inline-horizontal"
+  class="arco-descriptions arco-descriptions-layout-inline-horizontal arco-descriptions-size-default"
 >
   <div
     class="arco-descriptions-title"
@@ -296,7 +296,7 @@ exports[`renders Descriptions/demo/basic.md correctly 1`] = `
 
 exports[`renders Descriptions/demo/border.md correctly 1`] = `
 <div
-  class="arco-descriptions arco-descriptions-border arco-descriptions-layout-horizontal"
+  class="arco-descriptions arco-descriptions-border arco-descriptions-layout-horizontal arco-descriptions-size-default"
 >
   <div
     class="arco-descriptions-body"
@@ -390,7 +390,7 @@ exports[`renders Descriptions/demo/border.md correctly 1`] = `
 exports[`renders Descriptions/demo/layout.md correctly 1`] = `
 <div>
   <div
-    class="arco-descriptions arco-descriptions-layout-inline-horizontal"
+    class="arco-descriptions arco-descriptions-layout-inline-horizontal arco-descriptions-size-default"
     style="margin-bottom:20px"
   >
     <div
@@ -491,7 +491,7 @@ exports[`renders Descriptions/demo/layout.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-descriptions arco-descriptions-border arco-descriptions-layout-horizontal"
+    class="arco-descriptions arco-descriptions-border arco-descriptions-layout-horizontal arco-descriptions-size-default"
     style="margin-bottom:20px"
   >
     <div
@@ -587,7 +587,7 @@ exports[`renders Descriptions/demo/layout.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-descriptions arco-descriptions-border arco-descriptions-layout-vertical"
+    class="arco-descriptions arco-descriptions-border arco-descriptions-layout-vertical arco-descriptions-size-default"
     style="margin-bottom:20px"
   >
     <div
@@ -707,7 +707,7 @@ exports[`renders Descriptions/demo/layout.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-descriptions arco-descriptions-border arco-descriptions-layout-inline-vertical"
+    class="arco-descriptions arco-descriptions-border arco-descriptions-layout-inline-vertical arco-descriptions-size-default"
   >
     <div
       class="arco-descriptions-title"
@@ -853,7 +853,7 @@ exports[`renders Descriptions/demo/layout.md correctly 1`] = `
 
 exports[`renders Descriptions/demo/responsive.md correctly 1`] = `
 <div
-  class="arco-descriptions arco-descriptions-border arco-descriptions-layout-horizontal"
+  class="arco-descriptions arco-descriptions-border arco-descriptions-layout-horizontal arco-descriptions-size-default"
 >
   <div
     class="arco-descriptions-title"
@@ -952,7 +952,7 @@ exports[`renders Descriptions/demo/responsive.md correctly 1`] = `
 exports[`renders Descriptions/demo/single.md correctly 1`] = `
 <div>
   <div
-    class="arco-descriptions arco-descriptions-layout-horizontal"
+    class="arco-descriptions arco-descriptions-layout-horizontal arco-descriptions-size-default"
     style="margin-bottom:20px"
   >
     <div
@@ -1049,7 +1049,7 @@ exports[`renders Descriptions/demo/single.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-descriptions arco-descriptions-layout-horizontal"
+    class="arco-descriptions arco-descriptions-layout-horizontal arco-descriptions-size-default"
   >
     <div
       class="arco-descriptions-title"
