@@ -44,6 +44,11 @@ export const Demo = () => {
   // 监听多个字段
   const multipleFields = Form.useWatch(['name', 'age'], form);
 
+  const [anyForm] = Form.useForm();
+  const expectedAny1 = Form.useWatch('aaa');
+  const expectedAny2 = Form.useWatch('aaa', anyForm);
+  const expectedAny3 = Form.useWatch(['AAA'], anyForm);
+
   // 初始化表单数据
   useEffect(() => {
     form.setFieldsValue({
