@@ -193,7 +193,7 @@ function TBody<T>(props: TbodyProps<T>) {
 
   const renderDataRecord = (record: TBodyDataRecord, index: number) => (
     <DataRecordRenderer
-      key={index}
+      key={getRowKey(record) ?? index}
       record={record}
       index={index}
       virtualized={virtualized}
