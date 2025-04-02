@@ -13,9 +13,7 @@ const useWatch = <
 >(
   field: Field,
   form?: FormInstance<FormData, FieldValue, FieldKey>
-): Field extends Array<any>
-  ? Pick<FormData, Extract<Field[number], keyof FormData>>
-  : FormData[Extract<Field, keyof FormData>] => {
+): Field extends Array<any> ? Partial<FormData> : FormData[Extract<Field, keyof FormData>] => {
   const formCtx = useContext(FormContext);
 
   const formInstance =
