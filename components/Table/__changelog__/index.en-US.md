@@ -1,3 +1,11 @@
+## 2.66.0
+
+2025-04-03
+
+### 🐛 BugFix
+
+- Fixed the bug of repeated rendering of expanded row content in Table component([#2959](https://github.com/arco-design/arco-design/pull/2959))
+
 ## 2.64.1
 
 2024-10-28

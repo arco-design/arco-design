@@ -1,3 +1,11 @@
+## 2.66.0
+
+2025-04-03
+
+### 🐛 问题修复
+
+- 修复 `Trigger` 组件 `clickOutsideToClose` capture event 未销毁报错问题([#2882](https://github.com/arco-design/arco-design/pull/2882))
+
 ## 2.61.2
 
 2024-03-29

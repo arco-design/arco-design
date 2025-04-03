@@ -1,3 +1,11 @@
+## 2.66.0
+
+2025-04-03
+
+### 🐛 BugFix
+
+- Fixed the issue that after the `DatePicker` component sets the timezone, if there is PST and PDT, there will be one hour more or less at the boundary point.([#2938](https://github.com/arco-design/arco-design/pull/2938))
+
 ## 2.65.0
 
 2024-11-29

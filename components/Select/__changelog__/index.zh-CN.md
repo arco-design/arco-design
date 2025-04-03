@@ -1,3 +1,16 @@
+## 2.66.0
+
+2025-04-03
+
+### 🆕 功能升级
+
+- `Select/Cascader/TreeSelect` 组件 `maxTagCount.showPopover` 支持传入 `popoverProps`([#2904](https://github.com/arco-design/arco-design/pull/2904))
+
+### 🐛 问题修复
+
+- 修复 `maxTagCount` 动态改变时，出现重复 Tag 渲染的 bug。([#2923](https://github.com/arco-design/arco-design/pull/2923))
+- 修复 `renderTag` 和 `maxTag.showPopover` 同时使用时，弹出层内的 Tag 移除不生效的 bug 。([#2923](https://github.com/arco-design/arco-design/pull/2923))
+
 ## 2.65.0
 
 2024-11-29

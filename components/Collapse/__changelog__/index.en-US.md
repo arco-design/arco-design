@@ -1,3 +1,11 @@
+## 2.66.0
+
+2025-04-03
+
+### 🐛 BugFix
+
+- Fix `Collapse` error in react 19([#2948](https://github.com/arco-design/arco-design/pull/2948))
+
 ## 2.51.0
 
 2023-07-28

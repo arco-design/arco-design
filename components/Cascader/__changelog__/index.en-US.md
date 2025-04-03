@@ -1,3 +1,11 @@
+## 2.66.0
+
+2025-04-03
+
+### 🐛 BugFix
+
+- Fixed a bug where the `Cascader` component was not echoing option tags correctly when setting values ​​lazily while being controlled.([#2961](https://github.com/arco-design/arco-design/pull/2961))
+
 ## 2.65.0
 
 2024-11-29

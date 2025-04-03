@@ -1,3 +1,11 @@
+## 2.66.0
+
+2025-04-03
+
+### 🐛 BugFix
+
+- Fixed the issue of setting multiple characters for custom trigger characters in `Mentions` component([#2855](https://github.com/arco-design/arco-design/pull/2855))
+
 ## 2.38.0
 
 2022-07-29

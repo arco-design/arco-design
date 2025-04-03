@@ -1,3 +1,11 @@
+## 2.66.0
+
+2025-04-03
+
+### 🐛 BugFix
+
+- Fixed the bug that `Message.useMessage` reports an error in asynchronous execution scenarios.([#2951](https://github.com/arco-design/arco-design/pull/2951))
+
 ## 2.62.0
 
 2024-04-26

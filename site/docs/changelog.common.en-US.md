@@ -1,3 +1,11 @@
+## 2.66.0
+
+2025-04-03
+
+### 🆕 Feature
+
+- Compatible with React 19. Please refer to the documentation for usage.([#2954](https://github.com/arco-design/arco-design/pull/2954))
+
 ## 2.65.0
 
 2024-11-29

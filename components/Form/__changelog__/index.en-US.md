@@ -1,3 +1,11 @@
+## 2.66.0
+
+2025-04-03
+
+### 🐛 BugFix
+
+- Fixed the "Form" component dependcies execution timing bug. (Only when the value of the field specified by dependencies changes, the validation of Form.Item itself is triggered)([#2869](https://github.com/arco-design/arco-design/pull/2869))
+
 ## 2.65.0
 
 2024-11-29

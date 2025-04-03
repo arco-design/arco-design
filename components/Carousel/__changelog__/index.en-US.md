@@ -1,3 +1,11 @@
+## 2.66.0
+
+2025-04-03
+
+### 🐛 BugFix
+
+- Revise the definition of `CarouselProps.indicatorPosition`([#2944](https://github.com/arco-design/arco-design/pull/2944))
+
 ## 2.61.2
 
 2024-03-29

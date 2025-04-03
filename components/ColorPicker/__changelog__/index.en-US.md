@@ -1,3 +1,11 @@
+## 2.66.0
+
+2025-04-03
+
+### 🆕 Feature
+
+- `ColorPicker` supports `mode` to select a single color or gradient colors.([#2906](https://github.com/arco-design/arco-design/pull/2906))
+
 ## 2.64.1
 
 2024-10-28

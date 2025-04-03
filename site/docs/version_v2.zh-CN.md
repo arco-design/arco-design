@@ -2,6 +2,31 @@
 changelog: true
 ---
 
+## 2.66.0
+
+2025-04-03
+
+### 🆕 功能升级
+
+- 兼容 React 19 使用，使用方式可参考文档。([#2954](https://github.com/arco-design/arco-design/pull/2954))
+- `Descriptions`支持从全局上下文读取 `size` 属性配置([#2947](https://github.com/arco-design/arco-design/pull/2947))
+- `ColorPicker` 支持 `mode` 来选择单个颜色或渐变色。([#2906](https://github.com/arco-design/arco-design/pull/2906))
+- `Select/Cascader/TreeSelect` 组件 `maxTagCount.showPopover` 支持传入 `popoverProps`([#2904](https://github.com/arco-design/arco-design/pull/2904))
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件受控时延迟设置值时未正确回显选项标签的 bug 。([#2961](https://github.com/arco-design/arco-design/pull/2961))
+- 修复 `Table` 组件展开行内容重复渲染的 bug([#2959](https://github.com/arco-design/arco-design/pull/2959))
+- 修复 `Message.useMessage` 在异步执行场景报错的 bug。([#2951](https://github.com/arco-design/arco-design/pull/2951))
+- 修复 `Collapse` 在 react 19 下报错问题([#2948](https://github.com/arco-design/arco-design/pull/2948))
+- 修正 `Carousel` 组件 `CarouselProps. indicatorPosition` 定义([#2944](https://github.com/arco-design/arco-design/pull/2944))
+- 修复 `DatePicker` 组件设置时区后，如果有冬令时和夏令时，在边界点会存在多一个小时或者少一个小时的情况。([#2938](https://github.com/arco-design/arco-design/pull/2938))
+- 修复 `maxTagCount` 动态改变时，出现重复 Tag 渲染的 bug。([#2923](https://github.com/arco-design/arco-design/pull/2923))
+- 修复 `renderTag` 和 `maxTag.showPopover` 同时使用时，弹出层内的 Tag 移除不生效的 bug 。([#2923](https://github.com/arco-design/arco-design/pull/2923))
+- 修复 `Trigger` 组件 `clickOutsideToClose` capture event 未销毁报错问题([#2882](https://github.com/arco-design/arco-design/pull/2882))
+- 修复 `Form` 组件 dependcies 执行时机 bug。（仅在 dependencies 指定的字段的值发生改变时，才触发自身 Form.Item 的校验）([#2869](https://github.com/arco-design/arco-design/pull/2869))
+- 修复 `Mentions` 组件自定义触发字符设置多个字符的问题([#2855](https://github.com/arco-design/arco-design/pull/2855))
+
 ## 2.65.0
 
 2024-11-29

@@ -1,3 +1,11 @@
+## 2.66.0
+
+2025-04-03
+
+### 🐛 BugFix
+
+- Fixed the issue that clickOutsideToClose capture event was not destroyed and reported an error([#2882](https://github.com/arco-design/arco-design/pull/2882))
+
 ## 2.61.2
 
 2024-03-29

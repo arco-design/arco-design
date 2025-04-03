@@ -1,3 +1,16 @@
+## 2.66.0
+
+2025-04-03
+
+### 🆕 Feature
+
+- ([#2904](https://github.com/arco-design/arco-design/pull/2904))
+
+### 🐛 BugFix
+
+- Fixed a bug that caused duplicate tag rendering when `maxTagCount` changed dynamically.([#2923](https://github.com/arco-design/arco-design/pull/2923))
+- Fixed the bug that when `renderTag` and `maxTag.showPopover` are used at the same time, the tag removal in the popup layer does not take effect([#2923](https://github.com/arco-design/arco-design/pull/2923))
+
 ## 2.65.0
 
 2024-11-29

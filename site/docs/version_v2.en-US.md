@@ -2,6 +2,31 @@
 changelog: true
 ---
 
+## 2.66.0
+
+2025-04-03
+
+### 🆕 Feature
+
+- Compatible with React 19. Please refer to the documentation for usage.([#2954](https://github.com/arco-design/arco-design/pull/2954))
+- `Descriptions` supports reading `size` property configuration from the global context([#2947](https://github.com/arco-design/arco-design/pull/2947))
+- `ColorPicker` supports `mode` to select a single color or gradient colors.([#2906](https://github.com/arco-design/arco-design/pull/2906))
+- ([#2904](https://github.com/arco-design/arco-design/pull/2904))
+
+### 🐛 BugFix
+
+- Fixed a bug where the `Cascader` component was not echoing option tags correctly when setting values ​​lazily while being controlled.([#2961](https://github.com/arco-design/arco-design/pull/2961))
+- Fixed the bug of repeated rendering of expanded row content in Table component([#2959](https://github.com/arco-design/arco-design/pull/2959))
+- Fixed the bug that `Message.useMessage` reports an error in asynchronous execution scenarios.([#2951](https://github.com/arco-design/arco-design/pull/2951))
+- Fix `Collapse` error in react 19([#2948](https://github.com/arco-design/arco-design/pull/2948))
+- Revise the definition of `CarouselProps.indicatorPosition`([#2944](https://github.com/arco-design/arco-design/pull/2944))
+- Fixed the issue that after the `DatePicker` component sets the timezone, if there is PST and PDT, there will be one hour more or less at the boundary point.([#2938](https://github.com/arco-design/arco-design/pull/2938))
+- Fixed a bug that caused duplicate tag rendering when `maxTagCount` changed dynamically.([#2923](https://github.com/arco-design/arco-design/pull/2923))
+- Fixed the bug that when `renderTag` and `maxTag.showPopover` are used at the same time, the tag removal in the popup layer does not take effect([#2923](https://github.com/arco-design/arco-design/pull/2923))
+- Fixed the issue that clickOutsideToClose capture event was not destroyed and reported an error([#2882](https://github.com/arco-design/arco-design/pull/2882))
+- Fixed the "Form" component dependcies execution timing bug. (Only when the value of the field specified by dependencies changes, the validation of Form.Item itself is triggered)([#2869](https://github.com/arco-design/arco-design/pull/2869))
+- Fixed the issue of setting multiple characters for custom trigger characters in `Mentions` component([#2855](https://github.com/arco-design/arco-design/pull/2855))
+
 ## 2.65.0
 
 2024-11-29
