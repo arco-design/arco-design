@@ -4,7 +4,7 @@
 
 ### 🆕 功能升级
 
-- 兼容 React 19 使用，使用方式可参考文档。([#2954](https://github.com/arco-design/arco-design/pull/2954))
+- 兼容 React 19 使用，使用方式可参考快速上手文档。([#2954](https://github.com/arco-design/arco-design/pull/2954))
 
 ## 2.65.0
 

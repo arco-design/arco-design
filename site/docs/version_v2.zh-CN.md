@@ -8,7 +8,7 @@ changelog: true
 
 ### 🆕 功能升级
 
-- 兼容 React 19 使用，使用方式可参考文档。([#2954](https://github.com/arco-design/arco-design/pull/2954))
+- 兼容 React 19 使用，使用方式可参考快速上手文档。([#2954](https://github.com/arco-design/arco-design/pull/2954))
 - `Descriptions`支持从全局上下文读取 `size` 属性配置([#2947](https://github.com/arco-design/arco-design/pull/2947))
 - `ColorPicker` 支持 `mode` 来选择单个颜色或渐变色。([#2906](https://github.com/arco-design/arco-design/pull/2906))
 - `Select/Cascader/TreeSelect` 组件 `maxTagCount.showPopover` 支持传入 `popoverProps`([#2904](https://github.com/arco-design/arco-design/pull/2904))
