@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Cascader } from '@self';
 
 const getOptionList = (labelPrefix: string, valuePrefix: string, len: number) => {
@@ -38,6 +38,30 @@ function Demo1() {
 }
 
 export const Demo = () => <Demo1 />;
+
+export function MultiDemo() {
+  const [value, setValue] = React.useState<(string | string[])[]>([]);
+  useEffect(() => {
+    setValue([['value0', 'value0-0']]);
+  }, []);
+
+  return (
+    <>
+      <p>multiple mode</p>
+      <Cascader
+        placeholder="Please select ..."
+        style={{ width: 300 }}
+        options={options}
+        mode="multiple"
+        allowClear
+        maxTagCount={20}
+        onChange={setValue}
+        value={value}
+        virtualListProps={{}}
+      />
+    </>
+  );
+}
 
 export const LabelDemo = () => {
   const options = [

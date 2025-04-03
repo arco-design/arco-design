@@ -242,7 +242,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
         disabled: options[options.length - 1]?.disabled,
       };
     },
-    [store, renderFormat]
+    [getSelectedOptionsByValue, renderFormat]
   );
 
   const handleChange = (newValue: string[][], trigger?: 'panel') => {
