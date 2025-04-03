@@ -168,6 +168,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
       // don't to use formatValue(x, y, store)
       // we just need to get the value in a valid format, and update it to store nodes
       const newValue = formatValue(props.value, isMultiple);
+
       store.setNodeCheckedByValue(newValue);
       setValue(newValue);
     }
@@ -242,7 +243,9 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
         disabled: options[options.length - 1]?.disabled,
       };
     },
-    [getSelectedOptionsByValue, renderFormat]
+    [store, stateValue, renderFormat]
+    // 这里把 stateValue 放到依赖里面，是因为当受控时props.value改变或非受控时内部stateValue改变，都会需要出发节点选中状态的更新
+    // 此时需要重新渲染已选中值的展示
   );
 
   const handleChange = (newValue: string[][], trigger?: 'panel') => {
