@@ -33,7 +33,7 @@ export interface TableProps<T = any> {
    * @en Table row key
    * @defaultValue key
    */
-  rowKey?: React.Key | ((record: T) => React.Key);
+  rowKey?: React.Key | "index" | ((record: T, index?: number) => React.Key);
   /**
    * @zh 列描述数据对象的数组
    * @en An array of column objects
@@ -624,7 +624,7 @@ export interface TheadProps<T = any> {
   showSorterTooltip?: boolean | TooltipProps;
 }
 
-export type GetRowKeyType<T> = (record: T) => string;
+export type GetRowKeyType<T> = (record: T, index?: number) => string;
 
 export interface TbodyProps<T = any> {
   data: T[];
