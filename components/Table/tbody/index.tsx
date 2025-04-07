@@ -79,7 +79,7 @@ const DataRecordRenderer = forwardRef(function (
       />
     );
 
-    const travel = (children: TbodyProps['data'], rowKey: string, level = 0) => {
+    const travel = (children: TbodyProps['data'], rowKey: React.Key, level = 0) => {
       if (isArray(children) && children.length) {
         children.forEach((child, i) => {
           if (expandedRowKeys.indexOf(rowKey) !== -1) {

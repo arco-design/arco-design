@@ -25,8 +25,8 @@ type TdType = {
   level?: number;
   haveTreeData?: boolean;
   recordHaveChildren?: boolean;
-  rowKey?: string;
-  renderExpandIcon?: (record, rowKey: string) => ReactNode;
+  rowKey?: React.Key;
+  renderExpandIcon?: (record, rowKey: React.Key) => ReactNode;
 };
 
 function isInvalidRenderElement(element) {
