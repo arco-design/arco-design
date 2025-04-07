@@ -624,7 +624,7 @@ export interface TheadProps<T = any> {
   showSorterTooltip?: boolean | TooltipProps;
 }
 
-export type GetRowKeyType<T> = (record: T, index?: number) => string;
+export type GetRowKeyType<T> = (record: T, index?: number) => React.Key;
 
 export interface TbodyProps<T = any> {
   data: T[];
