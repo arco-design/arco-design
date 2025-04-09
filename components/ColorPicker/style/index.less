@@ -27,7 +27,7 @@
 
   &:hover {
     cursor: pointer;
-    background-color: var(--color-fill-3);
+    background-color: @color-input-bg-color-hover;
   }
 
   &-size-default {
@@ -126,7 +126,7 @@
       position: absolute;
       background-color: transparent;
       transform: translate(-50%, -50%);
-      border: @color-palette-handle-border-size solid var(--color-bg-white);
+      border: @color-palette-handle-border-size solid @color-palette-handle-border-color;
       box-sizing: border-box;
     }
   }
@@ -184,7 +184,7 @@
 
   .@{color-picker-prefix-cls}-panel-colors {
     padding: @color-panel-padding;
-    border-top: 1px solid var(--color-fill-3);
+    border-top: 1px solid @color-panel-border-color;
 
     .@{color-picker-prefix-cls}-colors-section:not(:first-child) {
       margin-top: @spacing-6;
@@ -193,13 +193,13 @@
     .@{color-picker-prefix-cls}-colors-text {
       font-size: @color-panel-section-title-font-size;
       font-weight: @font-weight-400;
-      color: var(--color-text-1);
+      color: @color-panel-section-title-font-color;
     }
 
     .@{color-picker-prefix-cls}-colors-empty {
       margin: @spacing-6 0;
       font-size: @color-panel-empty-font-size;
-      color: var(--color-text-3);
+      color: @color-panel-empty-font-color;
     }
 
     .@{color-picker-prefix-cls}-colors-wrapper {
@@ -264,9 +264,9 @@
       border-radius: @border-radius-circle;
       position: absolute;
       top: -2px;
-      background-color: var(--color-bg-white);
+      background-color: @color-control-bar-handle-bg-color;
       transform: translateX(-50%);
-      border: 1px solid var(--color-border-2);
+      border: 1px solid @color-control-bar-handle-border-color;
       box-sizing: border-box;
 
       &-center {
