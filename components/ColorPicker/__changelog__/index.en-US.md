@@ -1,3 +1,11 @@
+## 2.66.1
+
+2025-04-09
+
+### 🐛 BugFix
+
+- Fixed the bug that `ColorPicker` component style variable reference was not prefixed with css variable.([#2965](https://github.com/arco-design/arco-design/pull/2965))
+
 ## 2.66.0
 
 2025-04-03

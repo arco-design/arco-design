@@ -1,3 +1,11 @@
+## 2.66.1
+
+2025-04-09
+
+### 🐛 BugFix
+
+- Fixed the bug that the expanded panel is not fully displayed when the `Collapse` component content is loaded asynchronously.([#2964](https://github.com/arco-design/arco-design/pull/2964))
+
 ## 2.66.0
 
 2025-04-03
