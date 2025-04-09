@@ -111,7 +111,8 @@ function Item(props: PropsWithChildren<CollapseItemProps>, ref) {
       <Transition
         nodeRef={divRef}
         in={isExpanded}
-        addEndListener={(_, done) => {
+        //  when nodeRef prop is passed, node is not passed, so done is being passed as the first argument.
+        addEndListener={(done) => {
           divRef.current?.addEventListener('transitionend', done, false);
         }}
         mountOnEnter={'destroyOnHide' in props ? destroyOnHide : ctx.destroyOnHide || ctx.lazyload}
