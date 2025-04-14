@@ -408,6 +408,16 @@ export type TimePickerRangeProps = Omit<TimePickerProps, 'defaultValue'> & {
  */
 export interface BaseRangePickerProps {
   /**
+   * @zh 是否允许留空
+   * @en Whether to allow input empty
+   */
+  allowEmpty?: boolean;
+  /**
+   * @zh 允许留空时的参考区间
+   * @en Reference interval when blank is allowed
+   */
+  referenceInterval?: [string | Dayjs, string | Dayjs];
+  /**
    * @zh 是否禁用
    * @en Whether to disable input box
    */
