@@ -46,6 +46,7 @@ function getDOMPos(
 export interface TriggerState {
   popupVisible: boolean;
   popupStyle: object;
+  isMounted: boolean;
 }
 
 export const EventsByTriggerNeed = [
@@ -158,8 +159,6 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
   unmount = false;
 
-  isDidMount = false;
-
   // 保存鼠标的位置
   mouseLocation: MouseLocationType = {
     clientX: 0,
@@ -207,6 +206,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     this.state = {
       popupVisible: !!popupVisible,
       popupStyle: {},
+      isMounted: false,
     };
   }
 
@@ -221,7 +221,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
 
   componentDidMount() {
     this.componentDidUpdate(this.getMergedProps());
-    this.isDidMount = true;
+    this.setState({ isMounted: true });
     this.unmount = false;
 
     this.childrenDom = this.getRootElement();
@@ -864,7 +864,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   // 创建的dom节点插入getPopupContainer。
   appendToContainer = (node: HTMLDivElement) => {
     caf(this.rafId);
-    if (this.isDidMount) {
+    if (this.state.isMounted) {
       const { getPopupContainer: getGlobalPopupContainer } = this.context;
       const { getPopupContainer } = this.getMergedProps(['getPopupContainer']);
       const gpc = getPopupContainer || getGlobalPopupContainer;
@@ -884,6 +884,10 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   };
 
   getContainer = () => {
+    if (!this.state.isMounted) {
+      return null;
+    }
+
     const popupContainer = document.createElement('div');
 
     popupContainer.style.width = '100%';
