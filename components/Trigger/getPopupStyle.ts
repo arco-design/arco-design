@@ -173,16 +173,6 @@ const getChildRect = (child, mouseLocation, { boundaryDistance, position }): Chi
     : getBoundingClientRect(child, { boundaryDistance, position });
 };
 
-// popup 弹出层的尺寸。 https://github.com/arco-design/arco-design/issues/2132
-const getContentSize = (content) => {
-  const width = content.offsetWidth;
-  const height = content.offsetHeight;
-  return {
-    width,
-    height,
-  };
-};
-
 // 获取视口的宽度和高度
 const getViewportSize = (_boundaryDistance: TriggerProps['boundaryDistance']) => {
   const boundaryDistance = _boundaryDistance || {};
@@ -254,7 +244,7 @@ export default (
     content.style.minWidth = `${child.offsetWidth}px`;
   }
 
-  const contentSize = getContentSize(content);
+  const contentSize = content.getBoundingClientRect();
 
   let realPosition = props.position;
   const arrowStyle: { left?: number; top?: number } = {};
