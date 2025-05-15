@@ -7,7 +7,6 @@ import React, {
   useEffect,
   useCallback,
   useMemo,
-  WheelEvent,
 } from 'react';
 import ArcoCSSTransition from '../_util/CSSTransition';
 import { findDOMNode } from '../_util/react-dom';
@@ -221,18 +220,20 @@ function Preview(baseProps: ImagePreviewProps, ref) {
     onScaleChange(newScale);
   }
 
-  function onWheelZoom(e: WheelEvent<HTMLImageElement>) {
-    if (e.deltaY > 0) {
-      // 缩小
-      if (scale >= previewScales.minScale) {
-        // e.preventDefault();
-        onZoomOut();
+  const onWheelZoom = useCallback(
+    (e: WheelEvent) => {
+      e.preventDefault();
+      if (e.deltaY > 0) {
+        // 缩小
+        if (scale >= previewScales.minScale) {
+          onZoomOut();
+        }
+      } else if (scale <= previewScales.maxScale) {
+        onZoomIn();
       }
-    } else if (scale <= previewScales.maxScale) {
-      // e.preventDefault();
-      onZoomIn();
-    }
-  }
+    },
+    [scale]
+  );
 
   function onResetScale() {
     onScaleChange(1);
@@ -412,6 +413,18 @@ function Preview(baseProps: ImagePreviewProps, ref) {
     };
   }, [visible, escToExit, moving, currentIndex, scale]);
 
+  // zoom when wheel
+  useEffect(() => {
+    if (visible) {
+      document.addEventListener('wheel', onWheelZoom, { passive: false });
+    } else {
+      document.removeEventListener('wheel', onWheelZoom);
+    }
+    return () => {
+      document.removeEventListener('wheel', onWheelZoom);
+    };
+  }, [visible, onWheelZoom]);
+
   const defaultActions = [
     {
       key: 'fullScreen',
@@ -456,7 +469,6 @@ function Preview(baseProps: ImagePreviewProps, ref) {
   const renderImage = () => {
     const image = (
       <img
-        onWheel={onWheelZoom}
         ref={refImage}
         className={cs(imgClassName, `${previewPrefixCls}-img`, {
           [`${previewPrefixCls}-img-moving`]: moving,
