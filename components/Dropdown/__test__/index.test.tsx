@@ -28,6 +28,20 @@ describe('Dropdown', () => {
     expect(wrapper.querySelector('span')?.innerHTML).toBe('Hello');
   });
 
+  it("dropdown's children can be string", () => {
+    const wrapper = render(
+      <Dropdown droplist={Droplist} trigger="click">
+        {(open) => <Button>{open ? 'open' : 'close'}</Button>}
+      </Dropdown>
+    );
+    expect(wrapper.querySelector('.arco-btn')?.innerHTML).toBe('close');
+
+    fireEvent.click(wrapper.querySelector('.arco-btn') as any);
+    jest.runAllTimers();
+
+    expect(wrapper.querySelector('.arco-btn')?.innerHTML).toBe('open');
+  });
+
   it('dropdown open correctly', () => {
     const wrapper = render(
       <Dropdown droplist={Droplist} trigger="click">
