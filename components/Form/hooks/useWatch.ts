@@ -1,14 +1,23 @@
 import { useState, useContext, useEffect, useRef } from 'react';
 import get from 'lodash/get';
-import { isArray, isString } from '../../_util/is';
-import { FormInstance } from '../interface';
+import { isString } from '../../_util/is';
+import { FormInstance, KeyType } from '../interface';
 import { FormContext } from '../context';
 import warn from '../../_util/warning';
 
-const useWatch = (field: string | string[], form?: FormInstance) => {
+const useWatch = <
+  FormData = any,
+  FieldValue = FormData[keyof FormData],
+  FieldKey extends KeyType = keyof FormData,
+  Field extends FieldKey | FieldKey[] = FieldKey | FieldKey[]
+>(
+  field: Field,
+  form?: FormInstance<FormData, FieldValue, FieldKey>
+): Field extends Array<any> ? Partial<FormData> : FormData[Extract<Field, keyof FormData>] => {
   const formCtx = useContext(FormContext);
 
-  const formInstance = form || formCtx.store;
+  const formInstance =
+    form || (formCtx.store as FormInstance<FormData, FieldValue, FieldKey> | undefined);
 
   const [value, setValue] = useState(() => {
     const fieldValues = formInstance?.getFieldsValue([].concat(field));
@@ -35,7 +44,7 @@ const useWatch = (field: string | string[], form?: FormInstance) => {
       const field = fieldRef.current;
       const formValues = formInstance.getFieldsValue([].concat(field));
       let newValue = formValues;
-      if (!isArray(field)) {
+      if (isString(field)) {
         newValue = get(formValues, field);
       }
       const newValueString = JSON.stringify(newValue);
