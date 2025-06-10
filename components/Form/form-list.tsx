@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import get from 'lodash/get';
 import FormItem from './form-item';
 import { FormListProps, KeyType } from './interface';
-import { isFunction, isUndefined } from '../_util/is';
+import { isArray, isFunction, isUndefined } from '../_util/is';
 import { isFieldMatch, isSyntheticEvent } from './utils';
 import warning from '../_util/warning';
 import { FormListContext } from './context';
@@ -73,7 +73,7 @@ const List = <
           }
           const getFieldValue = (fv = false) => {
             const val = fv ? _value : store.getInnerMethods(true)?.innerGetFieldValue(field);
-            if (isFunction(formatter)) {
+            if (isFunction(formatter) && isArray(formatter(val))) {
               return formatter(val);
             }
             return val || [];
