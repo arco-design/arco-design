@@ -65,7 +65,7 @@ const List = <
           if (!(isFunction(normalize) && isFunction(formatter))) {
             warning(
               false,
-              'Form.List: The normalize and formatter properties cannot be used at the same time'
+              'Form.List: The normalize and formatter properties can be used at the same time'
             );
           }
           const getFieldValue = (fv = false) => {
