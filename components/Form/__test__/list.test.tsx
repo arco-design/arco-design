@@ -483,4 +483,43 @@ describe('FormList test', () => {
 
     expect(formRef.getFieldsValue()).toEqual({});
   });
+
+  it('formatter and normalize', async () => {
+    let formRef;
+    const wrapper = mountForm(
+      <Form ref={(node) => (formRef = node)}>
+        <Form.List field="users">
+          {(fields) => {
+            return (
+              <div>
+                {fields.map((item) => {
+                  return (
+                    <Grid.Row key={item.key}>
+                      <Form.Item
+                        field={`${item.field}.name`}
+                        formatter={(value) => value && `${value}formatter`}
+                        normalize={(value) => value && `${value}normalize`}
+                      >
+                        <Input />
+                      </Form.Item>
+                    </Grid.Row>
+                  );
+                })}
+              </div>
+            );
+          }}
+        </Form.List>
+      </Form>
+    );
+
+    act(() => {
+      formRef.setFieldValue('users.0.name', 'name');
+    });
+
+    expect(formRef.getFieldsValue()).toEqual({
+      users: [{ name: 'namenormalize' }],
+    });
+
+    expect(wrapper.find('input')[0].getAttribute('value')).toEqual('namenormalizeformatter');
+  });
 });
