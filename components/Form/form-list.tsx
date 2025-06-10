@@ -62,7 +62,10 @@ const List = <
         }}
       >
         {(_, store, { value: _value, onChange }) => {
-          if (!(isFunction(normalize) && isFunction(formatter))) {
+          if (
+            (isFunction(normalize) && !isFunction(formatter)) ||
+            (!isFunction(normalize) && isFunction(formatter))
+          ) {
             warning(
               false,
               'Form.List: The normalize and formatter properties can be used at the same time'
