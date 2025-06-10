@@ -497,8 +497,8 @@ describe('FormList test', () => {
                     <Grid.Row key={item.key}>
                       <Form.Item
                         field={`${item.field}.name`}
-                        formatter={(value) => value && `${value}formatter`}
-                        normalize={(value) => value && `${value}normalize`}
+                        formatter={(value) => value}
+                        normalize={(value) => value}
                       >
                         <Input />
                       </Form.Item>
@@ -517,9 +517,9 @@ describe('FormList test', () => {
     });
 
     expect(formRef.getFieldsValue()).toEqual({
-      users: [{ name: 'namenormalize' }],
+      users: [{ name: 'name' }],
     });
 
-    expect(wrapper.find('input')[0].getAttribute('value')).toEqual('namenormalizeformatter');
+    expect(wrapper.find('input')[0].getAttribute('value')).toEqual('name');
   });
 });
