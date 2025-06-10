@@ -127,7 +127,8 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
 
   // configProvider 提供的size可能和table size 不匹配，此时默认 'default'
   const size =
-    props.size || (['default', 'middle', 'small', 'mini'].indexOf(ctxSize) > -1 ? ctxSize : 'default');
+    props.size ||
+    (['default', 'middle', 'small', 'mini'].indexOf(ctxSize) > -1 ? ctxSize : 'default');
   const refTableHead = useRef<HTMLElement | null>(null);
   const refTableBody = useRef<HTMLElement | null>(null);
   const refTBody = useRef<HTMLElement | null>(null);
