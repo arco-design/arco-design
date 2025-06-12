@@ -15,6 +15,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
+    "importHelpers": true,
     "paths": {
       "@arco-design/web-react": ["components/index.tsx"],
       "@arco-design/web-react/icon": ["icon/index.js"],
