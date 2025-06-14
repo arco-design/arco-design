@@ -94,6 +94,13 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
 
   const prefix = ctx.getPrefixCls('ellipsis');
 
+  const getTextStyle = () => {
+    if (!textRef.current) {
+      return;
+    }
+    return window.getComputedStyle(textRef.current, null);
+  };
+
   const renderActionContent = () => {
     if (expandRender) {
       return expandRender(expanded);
@@ -108,25 +115,35 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
   const renderAction = () => {
     if (expandable && overflow) {
       return (
-        <div
-          className={cs(`${prefix}-action`, {
-            [`${prefix}-action-collapsed`]: !expanded,
-          })}
-          onClick={(ev) => {
-            if (expanded) {
-              setExpanded(false);
-              // @ts-ignore
-              onExpand?.(false, ev);
-            } else {
-              setExpanded(true);
-              setVisible(false);
-              // @ts-ignore
-              onExpand?.(true, ev);
-            }
-          }}
-        >
-          {renderActionContent()}
-        </div>
+        <>
+          <span
+            className={`${prefix}-action-before`}
+            style={{
+              float: 'right',
+              height: '100%',
+              marginBottom: `-${getTextStyle()?.lineHeight ?? 21}`,
+            }}
+          />
+          <div
+            className={cs(`${prefix}-action`, {
+              [`${prefix}-action-collapsed`]: !expanded,
+            })}
+            onClick={(ev) => {
+              if (expanded) {
+                setExpanded(false);
+                // @ts-ignore
+                onExpand?.(false, ev);
+              } else {
+                setExpanded(true);
+                setVisible(false);
+                // @ts-ignore
+                onExpand?.(true, ev);
+              }
+            }}
+          >
+            {renderActionContent()}
+          </div>
+        </>
       );
     }
     return null;
@@ -232,6 +249,7 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
         {!expanded && renderAction()}
         <span ref={textRef} className={`${prefix}-text`}>
           {children}
+          {`overflow: ${overflow} ${mirrorTextRef.current?.offsetWidth}`}
         </span>
         {expanded && renderAction()}
       </div>
