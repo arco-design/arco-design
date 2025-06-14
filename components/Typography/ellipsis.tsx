@@ -121,7 +121,7 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
             style={{
               float: 'right',
               height: '100%',
-              marginBottom: `-${getTextStyle()?.lineHeight ?? 21}`,
+              marginBottom: `-${getTextStyle()?.lineHeight ?? `21px`}`,
             }}
           />
           <div
