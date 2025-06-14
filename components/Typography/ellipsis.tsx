@@ -249,7 +249,6 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
         {!expanded && renderAction()}
         <span ref={textRef} className={`${prefix}-text`}>
           {children}
-          {`overflow: ${overflow} ${mirrorTextRef.current?.offsetWidth}`}
         </span>
         {expanded && renderAction()}
       </div>
