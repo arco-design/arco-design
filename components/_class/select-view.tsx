@@ -386,7 +386,10 @@ const CoreSelectView = React.forwardRef(
         value: needShowInput && typeof _inputValue !== 'object' ? _inputValue : '',
         // Allow placeholder to display the selected value first when searching
         placeholder:
-          canFocusInput && renderedValue && typeof renderedValue !== 'object'
+          canFocusInput &&
+          // 0 can also be used as a placeholder, because when options is number[], the selected value may be 0
+          (!!renderedValue || renderedValue === 0) &&
+          typeof renderedValue !== 'object'
             ? renderedValue
             : placeholder,
       };
