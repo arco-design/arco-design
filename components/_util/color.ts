@@ -17,7 +17,7 @@ export const hsvToRgb = (h: number, s: number, v: number) => {
   };
 };
 
-export const rgbToHsv = (r: number, g: number, b: number) => {
+export const rgbToHsv = (r: number = 0, g: number = 0, b: number = 0) => {
   r /= 255;
   g /= 255;
   b /= 255;
