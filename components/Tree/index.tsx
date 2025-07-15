@@ -160,7 +160,7 @@ class Tree extends Component<TreeProps, TreeState> {
       const newState: Partial<TreeState> = {};
       if (
         this.needUpdateTreeData(
-          { prevMergedProps, ...prevProps },
+          { ...prevMergedProps, ...prevProps },
           { ...mergedProps, ...this.props }
         )
       ) {
@@ -261,7 +261,7 @@ class Tree extends Component<TreeProps, TreeState> {
     return (
       prevProps.treeData !== props.treeData ||
       prevProps.children !== props.children ||
-      keys.some((key) => isEqualWith(prevProps[key], props[key]))
+      keys.some((key) => !isEqualWith(prevProps[key], props[key]))
     );
   };
 
