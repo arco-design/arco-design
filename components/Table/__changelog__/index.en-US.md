@@ -1,3 +1,11 @@
+## 2.66.2
+
+2025-07-15
+
+### 🐛 BugFix
+
+- Fixed the issue that `size=mini` configured by `ConfigProvider` does not work for `Table` component([#2981](https://github.com/arco-design/arco-design/pull/2981))
+
 ## 2.66.0
 
 2025-04-03

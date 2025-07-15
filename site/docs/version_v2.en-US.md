@@ -2,6 +2,16 @@
 changelog: true
 ---
 
+## 2.66.2
+
+2025-07-15
+
+### 🐛 BugFix
+
+- Fixed the issue that RGB value cannot be input when cleared([#3017](https://github.com/arco-design/arco-design/pull/3017))
+- Fixed the issue where maxTagCount="responsive" does not take effect when the `InputTag` component imports styles on demand([#2992](https://github.com/arco-design/arco-design/pull/2992))
+- Fixed the issue that `size=mini` configured by `ConfigProvider` does not work for `Table` component([#2981](https://github.com/arco-design/arco-design/pull/2981))
+
 ## 2.66.1
 
 2025-04-09

@@ -1,3 +1,11 @@
+## 2.66.2
+
+2025-07-15
+
+### 🐛 问题修复
+
+- 修复 `InputTag` 组件按需引入样式时 maxTagCount="responsive" 不生效的问题([#2992](https://github.com/arco-design/arco-design/pull/2992))
+
 ## 2.65.0
 
 2024-11-29

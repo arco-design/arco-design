@@ -2,6 +2,16 @@
 changelog: true
 ---
 
+## 2.66.2
+
+2025-07-15
+
+### 🐛 问题修复
+
+- 修复 RGB 值在清空时导致不可输入的问题([#3017](https://github.com/arco-design/arco-design/pull/3017))
+- 修复 `InputTag` 组件按需引入样式时 maxTagCount="responsive" 不生效的问题([#2992](https://github.com/arco-design/arco-design/pull/2992))
+- 修复`ConfigProvider` 配置的 `size=mini` 对 `Table` 组件不生效的问题([#2981](https://github.com/arco-design/arco-design/pull/2981))
+
 ## 2.66.1
 
 2025-04-09

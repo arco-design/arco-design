@@ -1,3 +1,11 @@
+## 2.66.2
+
+2025-07-15
+
+### 🐛 BugFix
+
+- Fixed the issue where maxTagCount="responsive" does not take effect when the `InputTag` component imports styles on demand([#2992](https://github.com/arco-design/arco-design/pull/2992))
+
 ## 2.65.0
 
 2024-11-29

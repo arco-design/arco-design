@@ -1,3 +1,11 @@
+## 2.66.2
+
+2025-07-15
+
+### 🐛 问题修复
+
+- 修复`ConfigProvider` 配置的 `size=mini` 对 `Table` 组件不生效的问题([#2981](https://github.com/arco-design/arco-design/pull/2981))
+
 ## 2.66.0
 
 2025-04-03

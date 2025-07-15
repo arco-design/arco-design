@@ -1,3 +1,11 @@
+## 2.66.2
+
+2025-07-15
+
+### 🐛 BugFix
+
+- Fixed the issue that RGB value cannot be input when cleared([#3017](https://github.com/arco-design/arco-design/pull/3017))
+
 ## 2.66.1
 
 2025-04-09
