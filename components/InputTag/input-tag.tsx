@@ -522,8 +522,9 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
                 valueChangeHandler(moveItem(value, prevIndex, index), 'sort');
               }}
             >
-              {childrenTagWithAnimation.concat(suffixInput)}
+              {childrenTagWithAnimation}
             </Draggable>
+            {suffixInput}
           </UsedTransitionGroup>
         ) : (
           <UsedTransitionGroup
