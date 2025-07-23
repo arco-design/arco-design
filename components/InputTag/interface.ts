@@ -218,6 +218,12 @@ export interface InputTagProps<T = any> {
    * @en Callback when the component is clicked
    */
   onClick?: (e) => void;
+  /**
+   * @zh 输入框最大输入的长度
+   * @en The max content length
+   * @version 2.23.0
+   */
+  maxLength?: number;
   tagClassName?: string;
   disableInput?: boolean;
 }
