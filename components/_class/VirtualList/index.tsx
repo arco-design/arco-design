@@ -243,7 +243,8 @@ const VirtualList: React.ForwardRefExoticComponent<
   };
 
   const getCachedItemHeight = (key: Key): number => {
-    return refItemHeightMap.current[key] || itemHeight;
+    const cachedItemHeight = refItemHeightMap.current[key];
+    return typeof cachedItemHeight === 'number' ? cachedItemHeight : itemHeight;
   };
 
   const internalScrollTo = (relativeScroll: RelativeScroll): void => {
