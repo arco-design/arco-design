@@ -118,7 +118,7 @@ function Tr<T>(props: TrType<T>, ref) {
   const baseTrProps = { className: classNameTr, key: trKey, ...rowProps, ...rowClickProps };
   const trProps = isString(ComponentBodyRow) ? baseTrProps : { ...baseTrProps, record, index };
 
-  function renderExpandIcon(record, rowK) {
+  function renderExpandIcon(record, rowK: React.Key) {
     const { icon: expandIcon } = expandProps;
     const expanded = !!~expandedRowKeys.indexOf(rowK);
     const onClickProps = {
