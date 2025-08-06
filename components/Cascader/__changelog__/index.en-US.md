@@ -1,3 +1,11 @@
+## 2.66.3
+
+2025-08-06
+
+### 🐛 BugFix
+
+- Fixed a bug in the `Cascader` component where the `isLeaf` node selection check would fail after `loadMore` was enabled.([#3033](https://github.com/arco-design/arco-design/pull/3033))
+
 ## 2.66.0
 
 2025-04-03

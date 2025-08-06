@@ -2,6 +2,14 @@
 changelog: true
 ---
 
+## 2.66.3
+
+2025-08-06
+
+### 🐛 问题修复
+
+- 修复 `Cascader` 组件在开启 `loadMore` 之后，对 `isLeaf` 节点选中判断有问题的 bug。([#3033](https://github.com/arco-design/arco-design/pull/3033))
+
 ## 2.66.2
 
 2025-07-15
