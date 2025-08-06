@@ -136,6 +136,10 @@ class Node<T> {
    * 那么只有当前节点的所有children加起来等于children.length，才是全选，否则和大于0，就是半选。
    */
   private _isHalfChecked = () => {
+    if (!this.children || this.children.length === 0) {
+      return false;
+    }
+
     const checkedLen = this.children.reduce((total, prev) => {
       const num = prev._halfChecked ? 0.5 : prev._checked ? 1 : 0;
       return total + num;
@@ -184,11 +188,37 @@ class Node<T> {
 
   public updateHalfState = (checked: boolean) => {
     this._halfChecked = this._isHalfChecked();
-    this._checked = this._halfChecked ? false : checked;
+
+    if (this._halfChecked) {
+      // 如果是半选状态，_checked 应该为 false
+      this._checked = false;
+    } else if (this.children && this.children.length > 0) {
+      // 有子节点的情况：检查是否所有子节点都被选中
+      const allChildrenChecked = this.children.every((child) => child._checked);
+      this._checked = allChildrenChecked;
+    } else if (checked && this.config.lazyload && !this.config.changeOnSelect) {
+      // 没有子节点的情况：使用传入的 checked 值，但需要检查是否为真正的叶子节点
+      const isActualLeaf =
+        this.isLeaf || (this.loaded && (!this.children || this.children.length === 0));
+      this._checked = isActualLeaf ? checked : false;
+    } else {
+      // 没有子节点且非 loadMore 模式的情况
+      this._checked = checked;
+    }
   };
 
   // 直接设置选中状态
   public setCheckedProperty = (checked: boolean) => {
+    // 在 loadMore 模式下，只有真正的叶子节点才能被选中
+    if (checked && this.config.lazyload && !this.config.changeOnSelect) {
+      const isActualLeaf =
+        this.isLeaf || (this.loaded && (!this.children || this.children.length === 0));
+      if (!isActualLeaf) {
+        // 如果不是真正的叶子节点，不允许设置为选中状态
+        return;
+      }
+    }
+
     this._checked = checked;
     this._halfChecked = false;
   };

@@ -56,7 +56,15 @@ class Store<T> {
 
     const traversal = (option: Node<T>) => {
       if (!option) return;
-      if (!leafOnly || option.isLeaf) {
+      // 在 loadMore 模式下，只有确实是叶子节点的才能被选中
+      // 即：isLeaf 为 true，或者在懒加载模式下已经加载完成且没有子节点
+      const isActualLeaf =
+        option.isLeaf ||
+        (this.config.lazyload &&
+          option.loaded &&
+          (!option.children || option.children.length === 0));
+
+      if (!leafOnly || isActualLeaf) {
         this.flatNodes.push(option);
       }
       if (isArray(option.children)) {
@@ -105,10 +113,15 @@ class Store<T> {
       const options = this._calcNodes(children, node);
       node.children = options;
 
+      // 标记节点已加载完成
+      node.setLoading(false);
+
       this._updateFlatNodes();
       if (this.config.changeOnSelect) {
         // node.setCheckedProperty(checked);
-      } else {
+      } else if (node._checked && children.length > 0) {
+        // 在多选模式下，如果节点有了子节点，需要取消其选中状态
+        // 因为此时它不再是叶子节点
         node.setCheckedState(false);
       }
     }
