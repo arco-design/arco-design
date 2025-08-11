@@ -2,6 +2,14 @@
 changelog: true
 ---
 
+## 2.66.4
+
+2025-08-11
+
+### 🐛 BugFix
+
+- Fixed the issue where the connection line did not change color in the completed state([#3035](https://github.com/arco-design/arco-design/pull/3035))
+
 ## 2.66.3
 
 2025-08-06
