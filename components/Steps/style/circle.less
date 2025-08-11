@@ -140,19 +140,19 @@
   }
 
   &-label-horizontal > &-item&-item-process {
-    .@{steps-prefix-cls}-item-title::after {
+    .@{steps-prefix-cls}-item-content .@{steps-prefix-cls}-item-title::after {
       background-color: @steps-circle-color-item-tail_wait;
     }
   }
 
   &-label-horizontal > &-item&-item-finish {
-    .@{steps-prefix-cls}-item-title::after {
+    .@{steps-prefix-cls}-item-content .@{steps-prefix-cls}-item-title::after {
       background-color: @steps-circle-color-item-tail_process;
     }
   }
 
   &-label-horizontal > &-item&-item-next-error {
-    .@{steps-prefix-cls}-item-title::after {
+    .@{steps-prefix-cls}-item-content .@{steps-prefix-cls}-item-title::after {
       background-color: @steps-circle-color-item-tail_error;
     }
   }
@@ -197,11 +197,11 @@
     }
   }
 
-  &-item:not(:last-child)&-item-finish &-item-tail::after {
+  & &-item:not(:last-child)&-item-finish &-item-tail::after {
     background-color: @steps-circle-color-item-tail_process;
   }
 
-  &-item:not(:last-child)&-item-next-error &-item-tail::after {
+  & &-item:not(:last-child)&-item-next-error &-item-tail::after {
     background-color: @steps-circle-color-item-tail_error;
   }
 
