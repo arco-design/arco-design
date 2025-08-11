@@ -167,8 +167,11 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const { ComponentTable, ComponentBodyWrapper, ComponentHeaderWrapper } = useComponent(components);
 
   const getRowKey: GetRowKeyType<T> = useMemo(() => {
+    if (rowKey === 'index') {
+      return (_, index) => index;
+    }
     if (typeof rowKey === 'function') {
-      return (record) => rowKey(getOriginData(record));
+      return (record, index) => rowKey(getOriginData(record), index);
     }
 
     return (record) => record[rowKey];
