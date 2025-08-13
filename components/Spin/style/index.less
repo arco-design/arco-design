@@ -73,8 +73,8 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%) scale(0);
-    width: @spin-dot-size-width;
-    height: @spin-dot-size-width;
+    width: @spin-dot-size-width * 4;
+    height: @spin-dot-size-width * 4;
     background-color: @spin-dot-color-icon_default;
     border-radius: @radius-circle;
     animation: ~'@{prefix}-dot-loading' 2s @transition-timing-function-linear infinite forwards;
@@ -107,6 +107,7 @@
     width: @spin-dot-size-width * 7;
     position: relative;
     height: @spin-dot-size-width;
+    transform: scale(0.25);
   }
 }
 
