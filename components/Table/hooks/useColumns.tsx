@@ -33,7 +33,9 @@ function getAllHeaderRowsCount(columns: InternalColumnProps[], childrenColumnNam
   return length;
 }
 
-function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], InternalColumnProps[]] {
+function useColumns<T>(
+  props: TableProps<T>
+): [InternalColumnProps<T>[][], InternalColumnProps<T>[]] {
   const {
     components,
     rowSelection,
@@ -85,7 +87,7 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
   const getInternalColumns = useCallback(
     (rows, operations, index?: number) => {
       const operationFixedProps: { fixed?: 'left' | 'right' } = {};
-      const _rows: InternalColumnProps[] = [];
+      const _rows: InternalColumnProps<T>[] = [];
       rows.forEach((r, i) => {
         const _r = { ...r };
         if (!('key' in r) || typeof r.key === 'undefined') {
@@ -185,11 +187,11 @@ function useColumns<T>(props: TableProps<T>): [InternalColumnProps[][], Internal
       return [getInternalColumns(rows, headerOperations, 0)];
     }
     let columnIndex = prefixIndex;
-    const rows: InternalColumnProps[][] = [];
+    const rows: InternalColumnProps<T>[][] = [];
     const travel = (baseColumns, current = 0) => {
       rows[current] = rows[current] || [];
       baseColumns.forEach((col) => {
-        const column: InternalColumnProps = { ...col };
+        const column: InternalColumnProps<T> = { ...col };
         if (column[childrenColumnName]) {
           column.colSpan = getFlattenColumns(col[childrenColumnName], childrenColumnName).length;
           column.$$columnIndex = [columnIndex];
