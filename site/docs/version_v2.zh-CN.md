@@ -2,6 +2,14 @@
 changelog: true
 ---
 
+## 2.66.5
+
+2025-08-21
+
+### 🆕 功能升级
+
+- 增加 FormContext 的导出([#3040](https://github.com/arco-design/arco-design/pull/3040))
+
 ## 2.66.4
 
 2025-08-11

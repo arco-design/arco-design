@@ -1,3 +1,11 @@
+## 2.66.5
+
+2025-08-21
+
+### 🆕 Feature
+
+- Added FormContext export([#3040](https://github.com/arco-design/arco-design/pull/3040))
+
 ## 2.66.0
 
 2025-04-03
