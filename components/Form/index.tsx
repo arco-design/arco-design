@@ -9,6 +9,7 @@ import useForm from './useForm';
 import useWatch from './hooks/useWatch';
 import useFormContext from './hooks/useContext';
 import useFormState from './hooks/useState';
+import { FormContext } from './context';
 
 export { FormInstance, FormProps, FormItemProps, FormProviderProps };
 
@@ -23,6 +24,7 @@ export interface FormComponent extends RefForm {
   useFormContext: typeof useFormContext;
   useWatch: typeof useWatch;
   useFormState: typeof useFormState;
+  FormContext: typeof FormContext;
 }
 
 const FormComp: FormComponent = Form as FormComponent;
@@ -41,5 +43,5 @@ FormComp.useFormContext = useFormContext;
 FormComp.useWatch = useWatch;
 
 FormComp.useFormState = useFormState;
-
+FormComp.FormContext = FormContext;
 export default FormComp;
