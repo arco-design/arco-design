@@ -27,7 +27,7 @@ function getFormElementId<FieldKey extends KeyType = string>(
   prefix: string | undefined,
   field: FieldKey
 ): string {
-  const id = (field as string).replace(/[\[\.]/g, '_').replace(/\]/g, '');
+  const id = CSS.escape(field as string);
   return prefix ? `${prefix}-${id}` : `${id}`;
 }
 
