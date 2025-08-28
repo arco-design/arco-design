@@ -26,6 +26,7 @@ An input box which will display your input as tags.
 |inputValue|To set input value|string |`-`|-|
 |placeholder|Placeholder of input element|string |`-`|-|
 |maxTagCount|The maximum number of `tags` is displayed|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number, value: T[]) =&gt; ReactNode;popoverProps?: Partial&lt;[PopoverProps](popover#popover)&gt;;} |`-`|2.59.0. `responsive ` in `2.62.0`|
+|maxLength|The max content length|number |`-`|2.23.0|
 |size|Different sizes|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
 |addAfter|The label text displayed after (on the right side of) the input-tag field|ReactNode |`-`|2.47.0|
