@@ -59,6 +59,7 @@ export default function Footer(props) {
                 type="text"
                 size="mini"
                 onClick={onClickSelectTimeBtn}
+                disabled={disabled}
                 className={
                   isTimePanel ? `${prefixCls}-btn-select-date` : `${prefixCls}-btn-select-time`
                 }
