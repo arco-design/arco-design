@@ -148,7 +148,8 @@
     "dist/**/*",
     "es/**/style/*",
     "lib/**/style/*",
-    "*.less"
+    "*.less",
+    "es/_util/react-19-adapter.js"
   ],
   "files": [
     "dist",
