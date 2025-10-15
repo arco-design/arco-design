@@ -2,6 +2,15 @@
 changelog: true
 ---
 
+## 2.66.6
+
+2025-10-15
+
+### 🐛 BugFix
+
+- Add side-effects to react-19-adapter([#3067](https://github.com/arco-design/arco-design/pull/3067))
+- Fixed data update issues([#3066](https://github.com/arco-design/arco-design/pull/3066))
+
 ## 2.66.5
 
 2025-08-21

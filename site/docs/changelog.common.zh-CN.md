@@ -1,3 +1,11 @@
+## 2.66.6
+
+2025-10-15
+
+### 🐛 问题修复
+
+- 增加 react-19-adapter 的  side-effects([#3067](https://github.com/arco-design/arco-design/pull/3067))
+
 ## 2.66.0
 
 2025-04-03

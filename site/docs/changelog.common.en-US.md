@@ -1,3 +1,11 @@
+## 2.66.6
+
+2025-10-15
+
+### 🐛 BugFix
+
+- Add side-effects to react-19-adapter([#3067](https://github.com/arco-design/arco-design/pull/3067))
+
 ## 2.66.0
 
 2025-04-03

@@ -1,3 +1,11 @@
+## 2.66.6
+
+2025-10-15
+
+### 🐛 BugFix
+
+- Fixed data update issues([#3066](https://github.com/arco-design/arco-design/pull/3066))
+
 ## 2.65.0
 
 2024-11-29

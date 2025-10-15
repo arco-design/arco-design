@@ -2,6 +2,15 @@
 changelog: true
 ---
 
+## 2.66.6
+
+2025-10-15
+
+### 🐛 问题修复
+
+- 增加 react-19-adapter 的  side-effects([#3067](https://github.com/arco-design/arco-design/pull/3067))
+- 修复数据更新问题([#3066](https://github.com/arco-design/arco-design/pull/3066))
+
 ## 2.66.5
 
 2025-08-21
