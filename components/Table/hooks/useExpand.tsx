@@ -34,12 +34,12 @@ export default function useExpand<T>(
             'rowExpandable' in expandProps &&
             typeof expandProps.rowExpandable === 'function'
           ) {
-            return expandProps.rowExpandable(originItem) && getRowKey(item);
+            return expandProps.rowExpandable(originItem) && getRowKey(item, index);
           }
           if (typeof expandedRowRender === 'function') {
-            return expandedRowRender(originItem, index) && getRowKey(item);
+            return expandedRowRender(originItem, index) && getRowKey(item, index);
           }
-          return isChildrenNotEmpty(item, childrenColumnName) && getRowKey(item);
+          return isChildrenNotEmpty(item, childrenColumnName) && getRowKey(item, index);
         })
         .filter((x) => x);
     }
@@ -52,8 +52,8 @@ export default function useExpand<T>(
       ? mergedExpandedRowKeys.concat(key)
       : mergedExpandedRowKeys.filter((_k) => key !== _k);
     const sortedExpandedRowKeys = flattenData
-      .filter((record) => newExpandedRowKeys.indexOf(getRowKey(record)) !== -1)
-      .map((record) => getRowKey(record));
+      .filter((record, index) => newExpandedRowKeys.indexOf(getRowKey(record, index)) !== -1)
+      .map((record, index) => getRowKey(record, index));
 
     setExpandedRowKeys(sortedExpandedRowKeys);
     handleExpandChange(key, isExpanded);
@@ -62,7 +62,7 @@ export default function useExpand<T>(
 
   function handleExpandChange(key: React.Key, expanded: boolean) {
     onExpand &&
-      onExpand(getOriginData(flattenData.find((item) => getRowKey(item) === key)), expanded);
+      onExpand(getOriginData(flattenData.find((item, index) => getRowKey(item, index) === key)), expanded);
   }
 
   return [mergedExpandedRowKeys, onClickExpandBtn];
