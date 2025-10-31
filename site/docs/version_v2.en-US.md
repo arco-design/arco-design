@@ -2,6 +2,14 @@
 changelog: true
 ---
 
+## 2.66.7
+
+2025-10-31
+
+### 🆕 Feature
+
+- Add the fixedTime property to `RangePicker`([#3070](https://github.com/arco-design/arco-design/pull/3070))
+
 ## 2.66.6
 
 2025-10-15

@@ -1,3 +1,11 @@
+## 2.66.7
+
+2025-10-31
+
+### 🆕 功能升级
+
+- `RangePicker`  增加 fixedTime 属性([#3070](https://github.com/arco-design/arco-design/pull/3070))
+
 ## 2.66.0
 
 2025-04-03
