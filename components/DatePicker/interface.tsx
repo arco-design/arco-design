@@ -506,6 +506,12 @@ export interface BaseRangePickerProps {
    * @version 2.60.0
    */
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>[];
+  /**
+   * @zh 是否固定时间
+   * @en Is it a fixed time?
+   * @version 2.66.7
+   */
+  fixedTime?: boolean;
 }
 
 export type RangePickerProps = BaseRangePickerProps &

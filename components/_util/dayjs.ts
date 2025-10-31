@@ -56,6 +56,7 @@ function startOfWeekTimestamp(date, weekStart: number) {
   const startOfWeek = date.clone().startOf('day').subtract(diff, 'day');
   return startOfWeek.valueOf();
 }
+
 function isSameWeekMoment(date1, date2, weekStart: number) {
   return startOfWeekTimestamp(date1, weekStart) === startOfWeekTimestamp(date2, weekStart);
 }
@@ -284,12 +285,23 @@ export function getValueWithTime(date: Dayjs, time?: Dayjs): Dayjs {
   return date;
 }
 
-export function getSortedDayjsArray(values?: Dayjs[]) {
+export function getSortedDayjsArray(values?: Dayjs[], fixedTime?: boolean) {
   if (!values || !values[0] || !values[1]) {
     return values;
   }
   const newValues = [...values];
   newValues.sort((a, b) => a.valueOf() - b.valueOf());
+  // 排序处理考虑时间
+  if (fixedTime && values.length === 2) {
+    newValues[0] = newValues[0]
+      .set('hour', values[0].get('hour'))
+      .set('minute', values[0].get('minute'))
+      .set('second', values[0].get('second'));
+    newValues[1] = newValues[1]
+      .set('hour', values[1].get('hour'))
+      .set('minute', values[1].get('minute'))
+      .set('second', values[1].get('second'));
+  }
   return newValues;
 }
 
