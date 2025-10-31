@@ -127,6 +127,7 @@ const Picker = (baseProps: RangePickerProps, ref) => {
     utcOffset,
     timezone,
     inputProps,
+    fixedTime,
   } = props;
 
   const prefixCls = getPrefixCls('picker-range');
@@ -521,7 +522,7 @@ const Picker = (baseProps: RangePickerProps, ref) => {
     if (!confirmValue || !confirmValue[0] || !confirmValue[1]) {
       return;
     }
-    const sortedValues = getSortedDayjsArray(confirmValue);
+    const sortedValues = getSortedDayjsArray(confirmValue, fixedTime);
     setValue(sortedValues);
     onHandleChange(sortedValues);
     if (triggerElement !== null && !keepOpen) {
@@ -589,7 +590,7 @@ const Picker = (baseProps: RangePickerProps, ref) => {
       newValueShow[focusedIndex] = newDate;
     }
 
-    const sortedValueShow = getSortedDayjsArray(newValueShow);
+    const sortedValueShow = getSortedDayjsArray(newValueShow, fixedTime);
 
     onSelectValueShow(sortedValueShow);
     setInputValue(undefined);
@@ -630,7 +631,7 @@ const Picker = (baseProps: RangePickerProps, ref) => {
   function onSelectValueShow(newValueShow) {
     setValueShow(newValueShow);
     setValueShowHover(undefined);
-    const sortedValues = getSortedDayjsArray(newValueShow);
+    const sortedValues = getSortedDayjsArray(newValueShow, fixedTime);
     const zoneValues = sortedValues.map((v) =>
       getLocaleDayjsValue(toLocal(v, utcOffset, timezone), locale.dayjsLocale)
     );
