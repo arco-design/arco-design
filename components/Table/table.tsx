@@ -185,25 +185,28 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       if (column.filteredValue) {
         currentFilters[innerDataIndex] = column.filteredValue;
       }
-      if ('defaultSortOrder' in column || 'sortOrder' in column) {
+      const hasDefaultSortOrder = 'defaultSortOrder' in column && typeof column.defaultSortOrder !== 'undefined' && column.defaultSortOrder !== null;
+      const hasSortOrder = 'sortOrder' in column && typeof column.sortOrder !== 'undefined' && column.sortOrder !== null;
+      if (hasDefaultSortOrder || hasSortOrder) {
         const priority = getSorterPriority(column.sorter);
-        const direction = 'sortOrder' in column ? column.sortOrder : column.defaultSortOrder;
-        const sorter: SorterInfo = {
-          field: innerDataIndex,
-          direction,
-          sorterFn: getSorterFn(column.sorter),
-          priority,
-        };
-        if (!direction) {
-          defaultSorters.push(sorter);
-        } else if (isNumber(priority)) {
-          if (defaultSorters.every((item) => isNumber(item.priority) || !item.direction)) {
+        const direction = hasSortOrder ? column.sortOrder : column.defaultSortOrder;
+        // Only add sorter if direction is defined
+        if (direction) {
+          const sorter: SorterInfo = {
+            field: innerDataIndex,
+            direction,
+            sorterFn: getSorterFn(column.sorter),
+            priority,
+          };
+          if (isNumber(priority)) {
+            if (defaultSorters.every((item) => isNumber(item.priority) || !item.direction)) {
+              defaultSorters.push(sorter);
+            }
+          } else if (defaultSorters.every((item) => !item.direction)) {
             defaultSorters.push(sorter);
+          } else {
+            defaultSorters = [sorter];
           }
-        } else if (defaultSorters.every((item) => !item.direction)) {
-          defaultSorters.push(sorter);
-        } else {
-          defaultSorters = [sorter];
         }
       }
     });
@@ -270,7 +273,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     return (a, b) => {
       for (let i = 0, l = sorters.length; i < l; i++) {
         const { sorterFn, direction } = sorters[i];
-        if (typeof sorterFn !== 'function') {
+        if (typeof sorterFn !== 'function' || typeof direction === 'undefined' || direction === null) {
           continue;
         }
         const result = compare(sorterFn, direction)(a, b);
