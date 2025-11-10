@@ -31,27 +31,30 @@ export default function useSorter(flattenColumns, defaultSorters) {
   );
 
   const getControlledSorters = useCallback((columns) => {
-    const controlledColumns = columns.filter((column) => 'sortOrder' in column);
+    const controlledColumns = columns.filter(
+      (column) => 'sortOrder' in column && typeof column.sortOrder !== 'undefined' && column.sortOrder !== null
+    );
     let sorters: SorterInfo[] = [];
     controlledColumns.forEach((column) => {
       const priority = getSorterPriority(column.sorter);
       const direction = column.sortOrder;
-      const sorter: SorterInfo = {
-        field: column.key,
-        direction,
-        sorterFn: getSorterFn(column.sorter),
-        priority,
-      };
-      if (!direction) {
-        sorters.push(sorter);
-      } else if (isNumber(priority)) {
-        if (sorters.every((item) => isNumber(item.priority) || !item.direction)) {
+      // Only add sorter if direction is defined (should always be true due to filter above)
+      if (direction) {
+        const sorter: SorterInfo = {
+          field: column.key,
+          direction,
+          sorterFn: getSorterFn(column.sorter),
+          priority,
+        };
+        if (isNumber(priority)) {
+          if (sorters.every((item) => isNumber(item.priority) || !item.direction)) {
+            sorters.push(sorter);
+          }
+        } else if (sorters.every((item) => !item.direction)) {
           sorters.push(sorter);
+        } else {
+          sorters = [sorter];
         }
-      } else if (sorters.every((item) => !item.direction)) {
-        sorters.push(sorter);
-      } else {
-        sorters = [sorter];
       }
     });
     return sorters;
@@ -73,6 +76,7 @@ export default function useSorter(flattenColumns, defaultSorters) {
     const prevControlledSorters = getControlledSorters(prevFlattenColumns);
     const controlledSorters = getControlledSorters(flattenColumns);
     const prevControlledFields = prevControlledSorters.map((item) => item.field);
+    const controlledFields = controlledSorters.map((item) => item.field);
 
     const changedSorters = controlledSorters.filter((item) => {
       const changed = prevControlledSorters.find(
@@ -84,7 +88,13 @@ export default function useSorter(flattenColumns, defaultSorters) {
       // 新增的sorter，用于处理开始不受控，之后又受控了的情况
       return !prevControlledFields.includes(item.field);
     });
-    if (changedSorters && changedSorters.length) {
+    
+    // Check if any previously controlled sorters were removed
+    const removedSorters = prevControlledSorters.filter(
+      (item) => !controlledFields.includes(item.field)
+    );
+    
+    if ((changedSorters && changedSorters.length) || (removedSorters && removedSorters.length)) {
       setActiveSorters(controlledSorters);
       setCurrentSorter({});
     }
