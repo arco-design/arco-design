@@ -27,7 +27,7 @@ import { EmptyProps } from '../Empty/interface';
 import { FormProps } from '../Form/interface';
 import { RowProps, ColProps, GridProps, GridItemProps } from '../Grid/interface';
 import { ImageProps } from '../Image/interface';
-import { InputProps } from '../Input/interface';
+import { InputProps, TextAreaProps } from '../Input/interface';
 import { InputNumberProps } from '../InputNumber/interface';
 import { InputTagProps } from '../InputTag/interface';
 import { LayoutProps } from '../Layout/interface';
@@ -116,6 +116,7 @@ export type ComponentConfig = {
   'Grid.GridItem'?: GridItemProps;
   Image?: ImageProps;
   Input?: InputProps;
+  'Input.TextArea'?: TextAreaProps;
   InputNumber?: InputNumberProps;
   VerificationCode?: VerificationCodeProps;
   Watermark?: WatermarkProps;
