@@ -1,3 +1,11 @@
+## 2.66.8
+
+2025-11-11
+
+### 🆕 Feature
+
+- Support configuring global default properties for Input.TextArea in ConfigProvider([#3077](https://github.com/arco-design/arco-design/pull/3077))
+
 ## 2.61.1
 
 2024-03-22

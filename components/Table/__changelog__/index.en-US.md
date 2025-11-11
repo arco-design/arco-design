@@ -1,3 +1,11 @@
+## 2.66.8
+
+2025-11-11
+
+### 🐛 BugFix
+
+- Fix incorrect sorting behavior when sortOrder is undefined([#3076](https://github.com/arco-design/arco-design/pull/3076))
+
 ## 2.66.2
 
 2025-07-15

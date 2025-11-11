@@ -1,3 +1,11 @@
+## 2.66.8
+
+2025-11-11
+
+### 🆕 功能升级
+
+- 支持在 ConfigProvider 中为 Input.TextArea 配置全局默认属性([#3077](https://github.com/arco-design/arco-design/pull/3077))
+
 ## 2.61.1
 
 2024-03-22

@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.66.8
+
+2025-11-11
+
+### 🆕 功能升级
+
+- 支持在 ConfigProvider 中为 Input.TextArea 配置全局默认属性([#3077](https://github.com/arco-design/arco-design/pull/3077))
+
+### 🐛 问题修复
+
+- 修复当 sortOrder 为 undefined 时的错误排序行为([#3076](https://github.com/arco-design/arco-design/pull/3076))
+
 ## 2.66.7
 
 2025-10-31

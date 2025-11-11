@@ -2,6 +2,18 @@
 changelog: true
 ---
 
+## 2.66.8
+
+2025-11-11
+
+### 🆕 Feature
+
+- Support configuring global default properties for Input.TextArea in ConfigProvider([#3077](https://github.com/arco-design/arco-design/pull/3077))
+
+### 🐛 BugFix
+
+- Fix incorrect sorting behavior when sortOrder is undefined([#3076](https://github.com/arco-design/arco-design/pull/3076))
+
 ## 2.66.7
 
 2025-10-31
