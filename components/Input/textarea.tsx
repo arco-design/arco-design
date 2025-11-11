@@ -17,9 +17,12 @@ import IconClose from '../../icon/react-icon/IconClose';
 import IconHover from '../_class/icon-hover';
 import { isObject } from '../_util/is';
 import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect';
+import useMergeProps from '../_util/hooks/useMergeProps';
 import useComposition from './useComposition';
 
-const TextArea = (props: TextAreaProps, ref) => {
+const TextArea = (baseProps: TextAreaProps, ref) => {
+  const { getPrefixCls, rtl, componentConfig } = useContext(ConfigContext);
+  const props = useMergeProps<TextAreaProps>(baseProps, {}, componentConfig?.['Input.TextArea']);
   const {
     className,
     style,
@@ -75,7 +78,6 @@ const TextArea = (props: TextAreaProps, ref) => {
   });
 
   const textareaDisplayedText = compositionValue || value || '';
-  const { getPrefixCls, rtl } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('textarea');
   if (disabled) {
     textAreaStyle.resize = 'none';
