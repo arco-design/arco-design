@@ -239,9 +239,12 @@ function InputNumber(baseProps: InputNumberProps, ref) {
     },
     onFocus: (e) => {
       // Both tab and button click trigger focus event. This can be used to determine whether user has taken operations
-      refHasOperateSincePropValueChanged.current = true;
-      setInputValue(refInput.current?.dom?.value);
-      onFocus?.(e);
+      const timeoutId = setTimeout(() => {
+        refHasOperateSincePropValueChanged.current = true;
+        setInputValue(refInput.current?.dom?.value);
+        onFocus?.(e);
+        clearTimeout(timeoutId);
+      }, 0);
     },
     onBlur: (e) => {
       setValue(getLegalValue(value), 'outOfRange');
