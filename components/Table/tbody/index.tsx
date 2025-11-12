@@ -71,7 +71,7 @@ const DataRecordRenderer = forwardRef(function (
     trList.push(
       <Tr<typeof record>
         ref={ref}
-        key={getRowKey(record)}
+        key={getRowKey(record, index)}
         {...trProps}
         record={record}
         level={0}
@@ -79,21 +79,21 @@ const DataRecordRenderer = forwardRef(function (
       />
     );
 
-    const travel = (children: TbodyProps['data'], rowKey: string, level = 0) => {
+    const travel = (children: TbodyProps['data'], rowKey: React.Key, level = 0) => {
       if (isArray(children) && children.length) {
         children.forEach((child, i) => {
           if (expandedRowKeys.indexOf(rowKey) !== -1) {
             trList.push(
               <Tr<TBodyDataRecord>
                 {...trProps}
-                key={getRowKey(child)}
+                key={getRowKey(child, i)}
                 record={child}
                 level={level + 1}
                 index={i}
               />
             );
             if (isChildrenNotEmpty(child)) {
-              travel(child[childrenColumnName], getRowKey(child), level + 1);
+              travel(child[childrenColumnName], getRowKey(child, i), level + 1);
             }
           }
         });
@@ -101,13 +101,13 @@ const DataRecordRenderer = forwardRef(function (
     };
 
     if (!er) {
-      travel(record[childrenColumnName], getRowKey(record));
+      travel(record[childrenColumnName], getRowKey(record, index));
     }
 
     return trList;
   };
 
-  const rowK = getRowKey(record);
+  const rowK = getRowKey(record, index);
   const shouldRenderExpandIcon =
     shouldRowExpand(record, index) && expandedRowKeys.indexOf(rowK) !== -1;
   const TRTagName = virtualized ? 'div' : 'tr';
@@ -193,7 +193,7 @@ function TBody<T>(props: TbodyProps<T>) {
 
   const renderDataRecord = (record: TBodyDataRecord, index: number) => (
     <DataRecordRenderer
-      key={getRowKey(record) ?? index}
+      key={getRowKey(record, index) ?? index}
       record={record}
       index={index}
       virtualized={virtualized}
@@ -217,7 +217,7 @@ function TBody<T>(props: TbodyProps<T>) {
           saveVirtualListRef(ref);
           saveRef(ref?.dom);
         }}
-        itemKey={getRowKey}
+        itemKey={(record, index) => getRowKey(record, index)}
         {...virtualListProps}
       >
         {renderDataRecord}
