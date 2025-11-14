@@ -79,4 +79,86 @@ describe('useNotification Test', () => {
     });
     expect(wrapper.find('#root .arco-notification')).toHaveLength(1);
   });
+
+  it('useNotification instance proxy with remove and clear', async () => {
+    const [notification, contextHolder] = Notification.useNotification({});
+
+    const wrapper = render(
+      <div>
+        <ConfigProvider>{contextHolder}</ConfigProvider>
+      </div>
+    );
+
+    // Test that instance proxy has remove and clear methods
+    const instance1 = notification.info?.({
+      id: 'notification-1',
+      content: 'First notification',
+      duration: 0,
+    });
+
+    expect(instance1).toBeDefined();
+    expect(typeof (instance1 as any)?.remove).toBe('function');
+    expect(typeof (instance1 as any)?.clear).toBe('function');
+
+    // Add another notification
+    const instance2 = notification.success?.({
+      id: 'notification-2',
+      content: 'Second notification',
+      duration: 0,
+    });
+
+    jest.runAllTimers();
+    expect(wrapper.find('.arco-notification-content')).toHaveLength(2);
+
+    // Test remove method on instance
+    (instance1 as any)?.remove?.('notification-1');
+    jest.runAllTimers();
+    expect(wrapper.find('.arco-notification-content')).toHaveLength(1);
+    expect(wrapper.find('.arco-notification-content')[0].innerHTML).toBe('Second notification');
+
+    // Test clear method on instance
+    (instance2 as any)?.clear?.();
+    jest.runAllTimers();
+    expect(wrapper.find('.arco-notification-content')).toHaveLength(0);
+  });
+
+  it('useNotification api remove and clear methods', async () => {
+    const [notification, contextHolder] = Notification.useNotification({});
+
+    const wrapper = render(
+      <div>
+        <ConfigProvider>{contextHolder}</ConfigProvider>
+      </div>
+    );
+
+    // Test that api has remove and clear methods
+    expect(typeof notification.remove).toBe('function');
+    expect(typeof notification.clear).toBe('function');
+
+    // Add notifications
+    notification.info?.({
+      id: 'notification-1',
+      content: 'First notification',
+      duration: 0,
+    });
+
+    notification.success?.({
+      id: 'notification-2',
+      content: 'Second notification',
+      duration: 0,
+    });
+
+    jest.runAllTimers();
+    expect(wrapper.find('.arco-notification-content')).toHaveLength(2);
+
+    // Test api.remove method
+    notification.remove?.('notification-1');
+    jest.runAllTimers();
+    expect(wrapper.find('.arco-notification-content')).toHaveLength(1);
+
+    // Test api.clear method
+    notification.clear?.();
+    jest.runAllTimers();
+    expect(wrapper.find('.arco-notification-content')).toHaveLength(0);
+  });
 });
