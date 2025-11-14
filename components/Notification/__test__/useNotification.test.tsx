@@ -79,4 +79,53 @@ describe('useNotification Test', () => {
     });
     expect(wrapper.find('#root .arco-notification')).toHaveLength(1);
   });
+
+  it('useNotification instance.remove', async () => {
+    const [notification, contextHolder] = Notification.useNotification({});
+
+    const wrapper = render(
+      <div>
+        <ConfigProvider>{contextHolder}</ConfigProvider>
+      </div>
+    );
+
+    // Create first notification to initialize the instance
+    notification.info?.({
+      id: 'test-id-1',
+      content: 'First Content',
+      duration: 0,
+    });
+
+    // Advance timers to allow instance to be ready
+    jest.runAllTimers();
+
+    // Now create second notification and get instance proxy
+    const instance = notification.info?.({
+      id: 'test-id-2',
+      content: 'Second Content',
+      duration: 0,
+    });
+
+    jest.runAllTimers();
+
+    // Verify both notifications are displayed
+    expect(wrapper.find('.arco-notification-content')).toHaveLength(2);
+
+    // Verify instance has remove method
+    expect(instance).toBeDefined();
+    expect(instance).toHaveProperty('remove');
+
+    // Call remove on the instance proxy using type narrowing
+    if (instance && 'remove' in instance && typeof instance.remove === 'function') {
+      instance.remove('test-id-2');
+    }
+
+    // Wait for opacity animation (200ms)
+    jest.advanceTimersByTime(250);
+
+    // Verify second notification is removed, first one remains
+    const contents = wrapper.find('.arco-notification-content');
+    expect(contents).toHaveLength(1);
+    expect(contents[0].innerHTML).toBe('First Content');
+  });
 });
