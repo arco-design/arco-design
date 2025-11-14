@@ -79,4 +79,42 @@ describe('useNotification Test', () => {
     });
     expect(wrapper.find('#root .arco-notification')).toHaveLength(1);
   });
+
+  it('useNotification instance proxy with remove method', async () => {
+    const [notification, contextHolder] = Notification.useNotification({});
+    const wrapper = render(
+      <div>
+        <ConfigProvider>{contextHolder}</ConfigProvider>
+      </div>
+    );
+
+    // Call notification.info and get the instance proxy
+    const instance = notification.info?.({
+      id: 'test-notification',
+      content: 'Test Content',
+      duration: 0,
+    });
+
+    // Verify the notification appears
+    expect(wrapper.find('.arco-notification-content')[0].innerHTML).toBe('Test Content');
+
+    // Verify the instance has a remove method
+    expect(instance).toBeDefined();
+    // Type guard to check if instance has remove method (it's NotificationInstance)
+    if (instance && 'remove' in instance) {
+      expect(typeof instance.remove).toBe('function');
+
+      // Call remove method
+      instance.remove?.('test-notification');
+
+      // Wait for removal animation (200ms as per component code)
+      jest.runAllTimers();
+
+      // Verify the notification is removed
+      expect(wrapper.find('.arco-notification-content')).toHaveLength(0);
+    } else {
+      // Should not reach here, fail the test
+      throw new Error('Instance should have a remove method');
+    }
+  });
 });
