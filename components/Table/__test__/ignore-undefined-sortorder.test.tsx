@@ -38,9 +38,7 @@ describe('Table ignore undefined sortOrder', () => {
 
   it('should allow toggling to unsorted state without requiring two clicks', () => {
     const TestComponent = () => {
-      const [sortOrder, setSortOrder] = React.useState<'ascend' | 'descend' | undefined>(
-        'ascend'
-      );
+      const [sortOrder, setSortOrder] = React.useState<'ascend' | 'descend' | undefined>('ascend');
 
       const columns: ColumnProps<TestData>[] = [
         {
@@ -170,9 +168,7 @@ describe('Table ignore undefined sortOrder', () => {
 
   it('should maintain controlled state when sortOrder changes from defined to undefined', () => {
     const TestComponent = () => {
-      const [sortOrder, setSortOrder] = React.useState<'ascend' | 'descend' | undefined>(
-        'descend'
-      );
+      const [sortOrder, setSortOrder] = React.useState<'ascend' | 'descend' | undefined>('descend');
 
       const columns: ColumnProps<TestData>[] = [
         {
