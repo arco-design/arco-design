@@ -98,14 +98,14 @@ describe('useNotification Test', () => {
     // Verify the notification appears
     expect(wrapper.find('.arco-notification-content')[0].innerHTML).toBe('Test Content');
 
-    // Verify the instance has a remove method
+    // Verify the instance has a close method
     expect(instance).toBeDefined();
-    // Type guard to check if instance has remove method (it's NotificationInstance)
-    if (instance && 'remove' in instance) {
-      expect(typeof instance.remove).toBe('function');
+    // Type guard to check if instance has close method (it's NotificationInstance)
+    if (instance && 'close' in instance) {
+      expect(typeof instance.close).toBe('function');
 
-      // Call remove method
-      instance.remove?.('test-notification');
+      // Call close method
+      instance.close?.();
 
       // Wait for removal animation (200ms as per component code)
       jest.runAllTimers();
@@ -114,7 +114,7 @@ describe('useNotification Test', () => {
       expect(wrapper.find('.arco-notification-content')).toHaveLength(0);
     } else {
       // Should not reach here, fail the test
-      throw new Error('Instance should have a remove method');
+      throw new Error('Instance should have a close method');
     }
   });
 });

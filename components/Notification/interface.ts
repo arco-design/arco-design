@@ -70,12 +70,11 @@ export interface NotificationProps {
 
 /**
  * 由 useNotification 返回给调用者的 instance proxy 类型
- * 包含 add（可选）与 remove（可选）的方法签名
+ * 包含 close 方法用于关闭当前通知实例
  */
 export type NotificationInstance = {
-  add?: (config: NotificationProps) => any;
-  /** remove a notice by id (exposed from hook) */
-  remove?: (id: string) => void;
+  /** close the current notification instance */
+  close?: () => void;
 };
 
 type notificationHookFunction = (config: NotificationProps) => NotificationInstance | ReactInstance;

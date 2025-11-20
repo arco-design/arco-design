@@ -1,7 +1,7 @@
 import React, { createRef } from 'react';
 import ContextHolderElement, { HolderRef } from '../_util/contextHolder';
 import Notification, { ConfigProps } from '.';
-import { NotificationProps, NotificationHookReturnType, NotificationInstance } from './interface';
+import { NotificationProps, NotificationHookReturnType } from './interface';
 import { isUndefined } from '../_util/is';
 
 // @deprecated
@@ -16,12 +16,6 @@ function useNotification(
   // 保存真实 Notification 组件实例的映射（按 position）
   const notificationInstance: { [key: string]: any } = {};
   let notice;
-
-  // 工厂：为某个 position 创建一个 proxy，始终暴露 add/remove（remove 委托给真实 instance）
-  const createInstanceProxy = (pos: string): NotificationInstance => ({
-    add: (props: NotificationProps) => notificationInstance[pos]?.add?.(props),
-    remove: (id: string) => notificationInstance[pos]?.remove?.(id),
-  });
 
   function addNotice(noticeProps: NotificationProps) {
     let prefixCls, rtl;
@@ -66,8 +60,14 @@ function useNotification(
       );
       contextHolderRef.current.addInstance(notice);
     }
-    // 返回 proxy，保证调用者可以直接使用 remove
-    return createInstanceProxy(position);
+    // 返回 proxy，保证调用者可以直接使用 close 关闭当前通知
+    return {
+      close: () => {
+        if (id !== undefined) {
+          notificationInstance[position]?.remove?.(id);
+        }
+      },
+    };
   }
 
   const notificationFuncs: NotificationHookReturnType = {};
