@@ -24,8 +24,11 @@ export const InputRgb = ({
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('color-picker');
 
-  const onInputChange = (_value: RGB) => {
-    const hsv = rgbToHsv(_value.r, _value.g, _value.b);
+  const onInputChange = (_value: Partial<RGB>) => {
+    const r = _value.r ?? 0;
+    const g = _value.g ?? 0;
+    const b = _value.b ?? 0;
+    const hsv = rgbToHsv(r, g, b);
     onHsvChange(hsv);
   };
 
