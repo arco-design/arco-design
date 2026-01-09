@@ -79,4 +79,34 @@ describe('useNotification Test', () => {
     });
     expect(wrapper.find('#root .arco-notification')).toHaveLength(1);
   });
+
+  it('useNotification instance.remove', async () => {
+    const [notification, contextHolder] = Notification.useNotification({});
+
+    render(
+      <div>
+        <ConfigProvider>{contextHolder}</ConfigProvider>
+      </div>
+    );
+
+    // Create a notification and get instance proxy
+    const instance = notification.info?.({
+      id: 'test-id',
+      content: 'Test Content',
+      duration: 0,
+    });
+
+    // Verify instance proxy has the required methods
+    expect(instance).toBeDefined();
+    expect(instance).toHaveProperty('add');
+    expect(instance).toHaveProperty('remove');
+
+    // Type narrowing to check method types
+    if (instance && 'add' in instance && 'remove' in instance) {
+      expect(typeof instance.add).toBe('function');
+      expect(typeof instance.remove).toBe('function');
+      // Calling remove should not throw
+      expect(() => instance.remove?.('test-id')).not.toThrow();
+    }
+  });
 });
