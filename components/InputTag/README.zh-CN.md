@@ -26,6 +26,7 @@
 |inputValue|控件的输入框内的值|string |`-`|-|
 |placeholder|预设文案|string |`-`|-|
 |maxTagCount|最多显示多少个 `tag`|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number, value: T[]) =&gt; ReactNode;popoverProps?: Partial&lt;[PopoverProps](popover#popover)&gt;;} |`-`|2.59.0. `responsive ` in `2.62.0`|
+|maxLength|输入框最大输入的长度|number |`-`|2.23.0|
 |size|不同尺寸|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|状态|'error' \| 'warning' |`-`|2.45.0|
 |addAfter|输入框后添加元素|ReactNode |`-`|2.47.0|
