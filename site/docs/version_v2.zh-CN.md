@@ -2,6 +2,16 @@
 changelog: true
 ---
 
+## 2.66.9
+
+2026-01-09
+
+### 🐛 问题修复
+
+- 修复 `Drawer` 配置了unmountOnExit，组件卸载后仍存在wrapper节点的问题([#3098](https://github.com/arco-design/arco-design/pull/3098))
+- 修复 `Descriptions` 组件在layout为inline模式下，size属性不生效问题([#3097](https://github.com/arco-design/arco-design/pull/3097))
+- 修复`ColorPicker`组件在RGB输入时，若清空某项值，会导致颜色信息显示为NaN且无法再正常输入的问题([#3096](https://github.com/arco-design/arco-design/pull/3096))
+
 ## 2.66.8
 
 2025-11-11

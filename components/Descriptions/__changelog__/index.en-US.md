@@ -1,3 +1,11 @@
+## 2.66.9
+
+2026-01-09
+
+### 🐛 BugFix
+
+- Fix the problem that the size property does not take effect in the `Descriptions` component when the layout is in inline mode.([#3097](https://github.com/arco-design/arco-design/pull/3097))
+
 ## 2.66.0
 
 2025-04-03

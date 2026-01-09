@@ -1,3 +1,11 @@
+## 2.66.9
+
+2026-01-09
+
+### 🐛 问题修复
+
+- 修复 `Descriptions` 组件在layout为inline模式下，size属性不生效问题([#3097](https://github.com/arco-design/arco-design/pull/3097))
+
 ## 2.66.0
 
 2025-04-03

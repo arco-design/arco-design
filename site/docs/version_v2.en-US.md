@@ -2,6 +2,16 @@
 changelog: true
 ---
 
+## 2.66.9
+
+2026-01-09
+
+### 🐛 BugFix
+
+- Fix the issue that when the `Drawer` is configured with unmountOnExit, the wrapper node still exists after the component is unmounted.([#3098](https://github.com/arco-design/arco-design/pull/3098))
+- Fix the problem that the size property does not take effect in the `Descriptions` component when the layout is in inline mode.([#3097](https://github.com/arco-design/arco-design/pull/3097))
+- Fix the issue in the `ColorPicker` component where when clearing a value in the RGB Input, it causes the color information to display as NAN and makes it impossible to input values normally thereafter.([#3096](https://github.com/arco-design/arco-design/pull/3096))
+
 ## 2.66.8
 
 2025-11-11

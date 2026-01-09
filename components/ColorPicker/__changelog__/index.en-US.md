@@ -1,3 +1,11 @@
+## 2.66.9
+
+2026-01-09
+
+### 🐛 BugFix
+
+- Fix the issue in the `ColorPicker` component where when clearing a value in the RGB Input, it causes the color information to display as NAN and makes it impossible to input values normally thereafter.([#3096](https://github.com/arco-design/arco-design/pull/3096))
+
 ## 2.66.2
 
 2025-07-15

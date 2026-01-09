@@ -1,3 +1,11 @@
+## 2.66.9
+
+2026-01-09
+
+### 🐛 BugFix
+
+- Fix the issue that when the `Drawer` is configured with unmountOnExit, the wrapper node still exists after the component is unmounted.([#3098](https://github.com/arco-design/arco-design/pull/3098))
+
 ## 2.56.2
 
 2023-12-01
