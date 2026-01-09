@@ -7,6 +7,7 @@
     margin-bottom: ~'@{descriptions-size-@{size}-title-margin-bottom}';
   }
 
+  &-size-@{size} &-item,
   &-size-@{size} &-item-label,
   &-size-@{size} &-item-value {
     padding-bottom: ~'@{descriptions-item-size-@{size}-spacing-bottom}';
@@ -14,6 +15,12 @@
     font-size: ~'@{descriptions-size-@{size}-font-size-text}';
   }
 
+  &-size-@{size} &-item-label-inline,
+  &-size-@{size} &-item-value-inline {
+    font-size: ~'@{descriptions-size-@{size}-font-size-text}';
+  }
+
+  &-size-@{size}&-border &-item,
   &-size-@{size}&-border &-item-label,
   &-size-@{size}&-border &-item-value {
     padding: ~'@{descriptions-border-item-size-@{size}-padding-vertical}' ~'@{descriptions-border-item-size-@{size}-padding-horizontal}';
