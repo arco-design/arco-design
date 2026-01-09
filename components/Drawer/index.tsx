@@ -85,6 +85,9 @@ function Drawer(baseProps: DrawerProps, ref) {
   const [inExit, setInExit] = useState(false);
   // Record whether it's opened to avoid element shaking during animation caused by focus lock.
   const [isOpened, setIsOpened] = useState(false);
+  // Record whether the drawer has ever been opened.
+  const isFirstRender = useRef(true);
+  const [isRendered, setIsRendered] = useState(false);
 
   const getContainer = useCallback((): HTMLElement => {
     const container = getPopupContainer?.();
@@ -107,6 +110,13 @@ function Drawer(baseProps: DrawerProps, ref) {
       setShouldReComputeFixed(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (visible && isFirstRender.current) {
+      isFirstRender.current = false;
+      setIsRendered(true);
+    }
+  }, [visible]);
 
   useEffect(() => {
     if (autoFocus && visible) {
@@ -207,8 +217,14 @@ function Drawer(baseProps: DrawerProps, ref) {
     element
   );
 
+  const forceRender = isFirstRender.current ? !mountOnEnter : isRendered;
+
+  if (!visible && !forceRender) {
+    return null;
+  }
+
   return (
-    <Portal forceRender={!mountOnEnter} visible={visible} getContainer={getPopupContainer}>
+    <Portal forceRender={forceRender} visible={visible} getContainer={getPopupContainer}>
       <div
         {...omit(rest, ['onCancel', 'onOk'])}
         ref={drawerWrapperRef}
@@ -286,6 +302,9 @@ function Drawer(baseProps: DrawerProps, ref) {
             if (!e) return;
             setInExit(false);
             e.parentNode.style.display = ''; // don't set display='none'
+            if (unmountOnExit) {
+              setIsRendered(false);
+            }
             afterClose?.();
           }}
         >
