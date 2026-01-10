@@ -58,14 +58,17 @@ function THead<T>(props: TheadProps<T>) {
               {_checkAll && !isRadio ? (
                 <Checkbox
                   indeterminate={
-                    data &&
-                    currentSelectedRowKeys.length > 0 &&
-                    currentSelectedRowKeys.length !== allSelectedRowKeys.length
+                    data && selectedRowKeys.length > 0 && allSelectedRowKeys.length === 0
+                      ? selectedRowKeys.length < data.length
+                      : currentSelectedRowKeys.length > 0 &&
+                        currentSelectedRowKeys.length !== allSelectedRowKeys.length
                   }
                   checked={
                     data &&
-                    currentSelectedRowKeys.length !== 0 &&
-                    currentSelectedRowKeys.length === allSelectedRowKeys.length
+                    selectedRowKeys.length > 0 &&
+                    (allSelectedRowKeys.length === 0
+                      ? selectedRowKeys.length === data.length
+                      : currentSelectedRowKeys.length === allSelectedRowKeys.length)
                   }
                   disabled={!allSelectedRowKeys.length}
                   onChange={props.onCheckAll}
