@@ -13,7 +13,8 @@ function useNotification(
   const { maxCount, duration = 3000, prefixCls: _prefixCls, getContainer } = commonConfig;
   const contextHolderRef = createRef<HolderRef>();
   const holderEle = <ContextHolderElement ref={contextHolderRef} />;
-  const notificationInstance = {};
+  // 保存真实 Notification 组件实例的映射（按 position）
+  const notificationInstance: { [key: string]: any } = {};
   let notice;
 
   function addNotice(noticeProps: NotificationProps) {
@@ -59,7 +60,14 @@ function useNotification(
       );
       contextHolderRef.current.addInstance(notice);
     }
-    return notificationInstance[position];
+    // 返回 proxy，保证调用者可以直接使用 close 关闭当前通知
+    return {
+      close: () => {
+        if (id !== undefined) {
+          notificationInstance[position]?.remove?.(id);
+        }
+      },
+    };
   }
 
   const notificationFuncs: NotificationHookReturnType = {};
