@@ -11162,7 +11162,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
 
 exports[`renders Table/demo/resizable.md correctly 1`] = `
 <div
-  class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover table-demo-resizable-column"
+  class="arco-table arco-table-size-default arco-table-border arco-table-border-cell arco-table-hover arco-table-layout-fixed arco-table-fixed-column table-demo-resizable-column"
 >
   <div
     class="arco-spin"
@@ -11179,7 +11179,9 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
           <div
             class="arco-table-content-inner"
           >
-            <table>
+            <table
+              style="width:1200px"
+            >
               <colgroup>
                 <col
                   style="width:120px"
@@ -11197,7 +11199,8 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th react-resizable"
+                    class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last react-resizable"
+                    style="left:0"
                   >
                     <div
                       class="arco-table-th-item"
@@ -11264,7 +11267,8 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    style="left:0"
                   >
                     <div
                       class="arco-table-cell"
@@ -11320,7 +11324,8 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    style="left:0"
                   >
                     <div
                       class="arco-table-cell"
@@ -11376,7 +11381,8 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    style="left:0"
                   >
                     <div
                       class="arco-table-cell"
@@ -11432,7 +11438,8 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    style="left:0"
                   >
                     <div
                       class="arco-table-cell"
@@ -11488,7 +11495,8 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    style="left:0"
                   >
                     <div
                       class="arco-table-cell"
