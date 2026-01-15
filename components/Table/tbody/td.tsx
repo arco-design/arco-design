@@ -70,6 +70,8 @@ function Td(props: TdType) {
   let tdProps: {
     rowSpan?: number;
     colSpan?: number;
+    className?: string;
+    style?: CSSProperties;
   } = {};
   let rowSpan;
   let colSpan;
@@ -155,8 +157,8 @@ function Td(props: TdType) {
       {needRenderExpandIcon ? (
         <span className={`${prefixCls}-cell-expand-icon`}>{renderExpandIcon(record, rowKey)}</span>
       ) : null}
-      {(isString(ComponentBodyCell) as JSX.IntrinsicAttributes) ? (
-        <ComponentBodyCell className={`${prefixCls}-cell-wrap-value`}>
+      {isString(ComponentBodyCell) ? (
+        <ComponentBodyCell {...({ className: `${prefixCls}-cell-wrap-value` } as any)}>
           {cellChildren}
         </ComponentBodyCell>
       ) : (
@@ -175,9 +177,7 @@ function Td(props: TdType) {
 
   return (
     <InnerComponentTd
-      className={classNameTd}
       key={column.key || column.dataIndex || columnIndex}
-      style={styleTd}
       {...pick(cellProps, [
         'onClick',
         'onDoubleClick',
@@ -190,6 +190,8 @@ function Td(props: TdType) {
         'onMouseUp',
       ])}
       {...tdProps}
+      className={cs(classNameTd, tdProps.className)}
+      style={{ ...styleTd, ...tdProps.style }}
     >
       <div
         className={cs(`${prefixCls}-cell`, {
