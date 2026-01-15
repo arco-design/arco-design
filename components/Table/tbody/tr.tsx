@@ -127,9 +127,17 @@ function Tr<T>(props: TrType<T>, ref) {
         onClickExpandBtn(rowK);
       },
     };
-    return typeof expandIcon === 'function' ? (
-      expandIcon({ expanded, record, ...onClickProps })
-    ) : (
+    if (typeof expandIcon === 'function') {
+      const customIcon = expandIcon({ expanded, record, ...onClickProps });
+      if (React.isValidElement(customIcon)) {
+        return React.cloneElement(customIcon, {
+          ...onClickProps,
+          ...customIcon.props,
+        });
+      }
+      return customIcon;
+    }
+    return (
       <button {...onClickProps} type="button">
         {expanded ? <IconMinus /> : <IconPlus />}
       </button>
@@ -244,7 +252,7 @@ function Tr<T>(props: TrType<T>, ref) {
             trIndex={index}
             level={level}
             haveTreeData={haveTreeData}
-            recordHaveChildren={recordHaveChildren}
+            recordHaveChildren={!!recordHaveChildren}
             rowKey={rowK}
             renderExpandIcon={renderExpandIcon}
           />

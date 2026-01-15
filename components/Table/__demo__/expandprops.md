@@ -84,13 +84,13 @@ function App() {
       data={data}
       expandedRowRender={(record) => record.email}
       expandProps={{
-        icon: ({ expanded, record, ...restProps }) =>
+        icon: ({ expanded, record }) =>
           expanded ? (
-            <button {...restProps}>
+            <button>
               <IconDown />
             </button>
           ) : (
-            <button {...restProps}>
+            <button>
               <IconRight />
             </button>
           ),
