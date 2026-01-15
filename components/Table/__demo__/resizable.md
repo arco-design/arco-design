@@ -22,6 +22,7 @@ const originColumns = [
     title: 'Name',
     dataIndex: 'name',
     width: 120,
+    fixed: 'left',
   },
   {
     title: 'Salary',
@@ -151,6 +152,7 @@ function App() {
       borderCell
       columns={columns}
       data={data}
+      scroll={{ x: 1200 }}
     />
   );
 }
@@ -160,7 +162,7 @@ export default App;
 
 ```css
 .table-demo-resizable-column .react-resizable {
-  position: relative;
+  position: sticky;
   background-clip: padding-box;
 }
 
