@@ -4266,7 +4266,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <th
-                      class="arco-table-th"
+                      class="arco-table-th arco-table-col-first"
                     >
                       <div
                         class="arco-table-th-item"
@@ -4337,7 +4337,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"
@@ -4406,7 +4406,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"
@@ -4475,7 +4475,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"
@@ -4544,7 +4544,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"
@@ -4613,7 +4613,7 @@ exports[`renders Form/demo/form-provider.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"

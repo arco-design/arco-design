@@ -5199,7 +5199,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                         class="arco-table-tr"
                       >
                         <td
-                          class="arco-table-td arco-table-operation arco-table-checkbox"
+                          class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                         >
                           <label
                             class="arco-checkbox"
@@ -5276,7 +5276,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                         class="arco-table-tr"
                       >
                         <td
-                          class="arco-table-td arco-table-operation arco-table-checkbox"
+                          class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                         >
                           <label
                             class="arco-checkbox"
@@ -5353,7 +5353,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                         class="arco-table-tr"
                       >
                         <td
-                          class="arco-table-td arco-table-operation arco-table-checkbox"
+                          class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                         >
                           <label
                             class="arco-checkbox"
@@ -5430,7 +5430,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                         class="arco-table-tr"
                       >
                         <td
-                          class="arco-table-td arco-table-operation arco-table-checkbox"
+                          class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                         >
                           <label
                             class="arco-checkbox"
@@ -5822,7 +5822,7 @@ exports[`renders Transfer/demo/with-table.md correctly 1`] = `
                         class="arco-table-tr arco-table-empty-row"
                       >
                         <td
-                          class="arco-table-td"
+                          class="arco-table-td arco-table-col-first"
                           colspan="4"
                         >
                           <div

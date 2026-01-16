@@ -705,7 +705,7 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td arco-table-operation arco-table-checkbox"
+                        class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                       >
                         <label
                           class="arco-checkbox"
@@ -795,7 +795,7 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td arco-table-operation arco-table-checkbox"
+                        class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                       >
                         <label
                           class="arco-checkbox"
@@ -885,7 +885,7 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td arco-table-operation arco-table-checkbox"
+                        class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                       >
                         <label
                           class="arco-checkbox"
@@ -975,7 +975,7 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td arco-table-operation arco-table-checkbox"
+                        class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                       >
                         <label
                           class="arco-checkbox"
@@ -1065,7 +1065,7 @@ exports[`renders Table/demo/attribution.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td arco-table-operation arco-table-checkbox"
+                        class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                       >
                         <label
                           class="arco-checkbox"
@@ -1252,7 +1252,7 @@ exports[`renders Table/demo/basic.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                   >
                     <div
                       class="arco-table-th-item"
@@ -1310,7 +1310,7 @@ exports[`renders Table/demo/basic.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -1366,7 +1366,7 @@ exports[`renders Table/demo/basic.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -1422,7 +1422,7 @@ exports[`renders Table/demo/basic.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -1478,7 +1478,7 @@ exports[`renders Table/demo/basic.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -1534,7 +1534,7 @@ exports[`renders Table/demo/basic.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -1810,7 +1810,7 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-checkbox"
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                     >
                       <label
                         class="arco-checkbox"
@@ -1921,7 +1921,7 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-checkbox"
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                     >
                       <label
                         class="arco-checkbox"
@@ -2032,7 +2032,7 @@ exports[`renders Table/demo/data-children.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-checkbox"
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                     >
                       <label
                         class="arco-checkbox"
@@ -2222,7 +2222,7 @@ exports[`renders Table/demo/drag.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                   >
                     <div
                       class="arco-table-th-item"
@@ -2281,7 +2281,7 @@ exports[`renders Table/demo/drag.md correctly 1`] = `
                   style="cursor:move"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -2338,7 +2338,7 @@ exports[`renders Table/demo/drag.md correctly 1`] = `
                   style="cursor:move"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -2395,7 +2395,7 @@ exports[`renders Table/demo/drag.md correctly 1`] = `
                   style="cursor:move"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -2452,7 +2452,7 @@ exports[`renders Table/demo/drag.md correctly 1`] = `
                   style="cursor:move"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -2509,7 +2509,7 @@ exports[`renders Table/demo/drag.md correctly 1`] = `
                   style="cursor:move"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -2766,7 +2766,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation"
+                    class="arco-table-td arco-table-operation arco-table-col-first"
                     style="width:40px;min-width:40px"
                   >
                     <div
@@ -2794,7 +2794,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                     </div>
                   </td>
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -2884,7 +2884,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation"
+                    class="arco-table-td arco-table-operation arco-table-col-first"
                     style="width:40px;min-width:40px"
                   >
                     <div
@@ -2912,7 +2912,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                     </div>
                   </td>
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -3002,7 +3002,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation"
+                    class="arco-table-td arco-table-operation arco-table-col-first"
                     style="width:40px;min-width:40px"
                   >
                     <div
@@ -3030,7 +3030,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                     </div>
                   </td>
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -3120,7 +3120,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation"
+                    class="arco-table-td arco-table-operation arco-table-col-first"
                     style="width:40px;min-width:40px"
                   >
                     <div
@@ -3148,7 +3148,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                     </div>
                   </td>
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -3238,7 +3238,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation"
+                    class="arco-table-td arco-table-operation arco-table-col-first"
                     style="width:40px;min-width:40px"
                   >
                     <div
@@ -3266,7 +3266,7 @@ exports[`renders Table/demo/drag-handle.md correctly 1`] = `
                     </div>
                   </td>
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -3515,7 +3515,7 @@ exports[`renders Table/demo/expand-sub-table.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                   >
                     <button
                       type="button"
@@ -3592,7 +3592,7 @@ exports[`renders Table/demo/expand-sub-table.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                   >
                     <button
                       type="button"
@@ -3669,7 +3669,7 @@ exports[`renders Table/demo/expand-sub-table.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                   >
                     <button
                       type="button"
@@ -3746,7 +3746,7 @@ exports[`renders Table/demo/expand-sub-table.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                   >
                     <button
                       type="button"
@@ -3823,7 +3823,7 @@ exports[`renders Table/demo/expand-sub-table.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                   >
                     <button
                       type="button"
@@ -4059,7 +4059,7 @@ exports[`renders Table/demo/expandable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                   >
                     <button
                       type="button"
@@ -4136,7 +4136,7 @@ exports[`renders Table/demo/expandable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                   >
                     <button
                       type="button"
@@ -4213,7 +4213,7 @@ exports[`renders Table/demo/expandable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                   >
                     <button
                       type="button"
@@ -4290,7 +4290,7 @@ exports[`renders Table/demo/expandable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                   />
                   <td
                     class="arco-table-td"
@@ -4349,7 +4349,7 @@ exports[`renders Table/demo/expandable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                   >
                     <button
                       type="button"
@@ -4593,7 +4593,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                     style="width:60px;min-width:60px"
                   >
                     <button>
@@ -4669,7 +4669,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                     style="width:60px;min-width:60px"
                   >
                     <button>
@@ -4745,7 +4745,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                     style="width:60px;min-width:60px"
                   >
                     <button>
@@ -4821,7 +4821,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                     style="width:60px;min-width:60px"
                   />
                   <td
@@ -4881,7 +4881,7 @@ exports[`renders Table/demo/expandprops.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-first"
                     style="width:60px;min-width:60px"
                   >
                     <button>
@@ -5052,7 +5052,7 @@ exports[`renders Table/demo/filter-dropdown.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                   >
                     <div
                       class="arco-table-th-item arco-table-col-has-filter"
@@ -5127,7 +5127,7 @@ exports[`renders Table/demo/filter-dropdown.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -5183,7 +5183,7 @@ exports[`renders Table/demo/filter-dropdown.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -5239,7 +5239,7 @@ exports[`renders Table/demo/filter-dropdown.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -5295,7 +5295,7 @@ exports[`renders Table/demo/filter-dropdown.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -5351,7 +5351,7 @@ exports[`renders Table/demo/filter-dropdown.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -5690,7 +5690,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
+                      class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-fixed-left arco-table-col-first"
                       style="left:0"
                     >
                       <button
@@ -5844,7 +5844,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
+                      class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-fixed-left arco-table-col-first"
                       style="left:0"
                     >
                       <button
@@ -5998,7 +5998,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
+                      class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-fixed-left arco-table-col-first"
                       style="left:0"
                     >
                       <button
@@ -6152,7 +6152,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
+                      class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-fixed-left arco-table-col-first"
                       style="left:0"
                     >
                       <button
@@ -6306,7 +6306,7 @@ exports[`renders Table/demo/fixed-column.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
+                      class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-fixed-left arco-table-col-first"
                       style="left:0"
                     >
                       <button
@@ -6569,7 +6569,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    class="arco-table-th arco-table-col-first arco-table-col-fixed-left arco-table-col-fixed-left-last"
                     rowspan="3"
                     style="left:0"
                   >
@@ -6646,7 +6646,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                     rowspan="2"
                   >
                     <div
@@ -6706,7 +6706,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                   >
                     <div
                       class="arco-table-th-item"
@@ -6751,7 +6751,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                     style="left:0"
                   >
                     <div
@@ -6875,7 +6875,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                     style="left:0"
                   >
                     <div
@@ -6999,7 +6999,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                     style="left:0"
                   >
                     <div
@@ -7123,7 +7123,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                     style="left:0"
                   >
                     <div
@@ -7247,7 +7247,7 @@ exports[`renders Table/demo/group-columns.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                     style="left:0"
                   >
                     <div
@@ -7472,7 +7472,7 @@ exports[`renders Table/demo/header-sticky.md correctly 1`] = `
                         class="arco-table-tr"
                       >
                         <th
-                          class="arco-table-th"
+                          class="arco-table-th arco-table-col-first"
                         >
                           <div
                             class="arco-table-th-item"
@@ -7543,7 +7543,7 @@ exports[`renders Table/demo/header-sticky.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td"
+                        class="arco-table-td arco-table-col-first"
                       >
                         <div
                           class="arco-table-cell"
@@ -7599,7 +7599,7 @@ exports[`renders Table/demo/header-sticky.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td"
+                        class="arco-table-td arco-table-col-first"
                       >
                         <div
                           class="arco-table-cell"
@@ -7655,7 +7655,7 @@ exports[`renders Table/demo/header-sticky.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td"
+                        class="arco-table-td arco-table-col-first"
                       >
                         <div
                           class="arco-table-cell"
@@ -7711,7 +7711,7 @@ exports[`renders Table/demo/header-sticky.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td"
+                        class="arco-table-td arco-table-col-first"
                       >
                         <div
                           class="arco-table-cell"
@@ -7767,7 +7767,7 @@ exports[`renders Table/demo/header-sticky.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td"
+                        class="arco-table-td arco-table-col-first"
                       >
                         <div
                           class="arco-table-cell"
@@ -7921,7 +7921,7 @@ exports[`renders Table/demo/multiple-sorter.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                   >
                     <div
                       class="arco-table-th-item arco-table-col-has-sorter"
@@ -8222,7 +8222,7 @@ exports[`renders Table/demo/multiple-sorter.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -8291,7 +8291,7 @@ exports[`renders Table/demo/multiple-sorter.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -8360,7 +8360,7 @@ exports[`renders Table/demo/multiple-sorter.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -8429,7 +8429,7 @@ exports[`renders Table/demo/multiple-sorter.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -8498,7 +8498,7 @@ exports[`renders Table/demo/multiple-sorter.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -8787,7 +8787,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-col-fixed-left"
+                    class="arco-table-td arco-table-operation arco-table-col-fixed-left arco-table-col-first"
                     style="left:0;width:40px;min-width:40px"
                   >
                     1
@@ -8829,7 +8829,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     </label>
                   </td>
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-fixed-left"
                     style="left:80px"
                   >
                     <button
@@ -8908,7 +8908,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-col-fixed-left"
+                    class="arco-table-td arco-table-operation arco-table-col-fixed-left arco-table-col-first"
                     style="left:0;width:40px;min-width:40px"
                   >
                     2
@@ -8950,7 +8950,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     </label>
                   </td>
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-fixed-left"
                     style="left:80px"
                   >
                     <button
@@ -9029,7 +9029,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-col-fixed-left"
+                    class="arco-table-td arco-table-operation arco-table-col-fixed-left arco-table-col-first"
                     style="left:0;width:40px;min-width:40px"
                   >
                     3
@@ -9071,7 +9071,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     </label>
                   </td>
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-fixed-left"
                     style="left:80px"
                   >
                     <button
@@ -9150,7 +9150,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   class="arco-table-tr arco-table-row-checked"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-col-fixed-left"
+                    class="arco-table-td arco-table-operation arco-table-col-fixed-left arco-table-col-first"
                     style="left:0;width:40px;min-width:40px"
                   >
                     4
@@ -9194,7 +9194,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     </label>
                   </td>
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-fixed-left"
                     style="left:80px"
                   />
                   <td
@@ -9255,7 +9255,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-col-fixed-left"
+                    class="arco-table-td arco-table-operation arco-table-col-fixed-left arco-table-col-first"
                     style="left:0;width:40px;min-width:40px"
                   >
                     5
@@ -9297,7 +9297,7 @@ exports[`renders Table/demo/operations.md correctly 1`] = `
                     </label>
                   </td>
                   <td
-                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left"
+                    class="arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-fixed-left"
                     style="left:80px"
                   >
                     <button
@@ -9570,7 +9570,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -9660,7 +9660,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -9750,7 +9750,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -9840,7 +9840,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -9930,7 +9930,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -10020,7 +10020,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -10110,7 +10110,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -10200,7 +10200,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -10290,7 +10290,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -10380,7 +10380,7 @@ exports[`renders Table/demo/pagination.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-operation arco-table-checkbox"
+                    class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                   >
                     <label
                       class="arco-checkbox"
@@ -10723,7 +10723,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                   >
                     <div
                       class="arco-table-th-item"
@@ -10781,7 +10781,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -10844,7 +10844,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -10907,7 +10907,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -10970,7 +10970,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -11033,7 +11033,7 @@ exports[`renders Table/demo/render.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -11199,7 +11199,7 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last react-resizable"
+                    class="arco-table-th arco-table-col-first arco-table-col-fixed-left arco-table-col-fixed-left-last react-resizable"
                     style="left:0"
                   >
                     <div
@@ -11267,7 +11267,7 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                     style="left:0"
                   >
                     <div
@@ -11324,7 +11324,7 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                     style="left:0"
                   >
                     <div
@@ -11381,7 +11381,7 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                     style="left:0"
                   >
                     <div
@@ -11438,7 +11438,7 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                     style="left:0"
                   >
                     <div
@@ -11495,7 +11495,7 @@ exports[`renders Table/demo/resizable.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                    class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                     style="left:0"
                   >
                     <div
@@ -11647,7 +11647,7 @@ exports[`renders Table/demo/rowspan.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                   >
                     <div
                       class="arco-table-th-item"
@@ -11693,7 +11693,7 @@ exports[`renders Table/demo/rowspan.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -11750,7 +11750,7 @@ exports[`renders Table/demo/rowspan.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -11793,7 +11793,7 @@ exports[`renders Table/demo/rowspan.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -11836,7 +11836,7 @@ exports[`renders Table/demo/rowspan.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -11892,7 +11892,7 @@ exports[`renders Table/demo/rowspan.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                     colspan="2"
                   >
                     <div
@@ -12164,7 +12164,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-checkbox"
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                     >
                       <label
                         aria-disabled="false"
@@ -12255,7 +12255,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-checkbox"
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                     >
                       <label
                         aria-disabled="false"
@@ -12346,7 +12346,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-checkbox"
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                     >
                       <label
                         aria-disabled="false"
@@ -12437,7 +12437,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                     class="arco-table-tr arco-table-row-checked"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-checkbox"
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                     >
                       <label
                         aria-disabled="true"
@@ -12531,7 +12531,7 @@ exports[`renders Table/demo/selection.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-operation arco-table-checkbox"
+                      class="arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-table-col-first"
                     >
                       <label
                         aria-disabled="false"
@@ -12718,7 +12718,7 @@ exports[`renders Table/demo/sorter.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                   >
                     <div
                       class="arco-table-th-item arco-table-col-has-sorter"
@@ -12929,7 +12929,7 @@ exports[`renders Table/demo/sorter.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -12985,7 +12985,7 @@ exports[`renders Table/demo/sorter.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -13041,7 +13041,7 @@ exports[`renders Table/demo/sorter.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -13097,7 +13097,7 @@ exports[`renders Table/demo/sorter.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -13248,7 +13248,7 @@ exports[`renders Table/demo/style.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                     style="background-color:var(--color-bg-2)"
                   >
                     <div
@@ -13310,7 +13310,7 @@ exports[`renders Table/demo/style.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -13366,7 +13366,7 @@ exports[`renders Table/demo/style.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -13422,7 +13422,7 @@ exports[`renders Table/demo/style.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -13478,7 +13478,7 @@ exports[`renders Table/demo/style.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -13534,7 +13534,7 @@ exports[`renders Table/demo/style.md correctly 1`] = `
                   class="arco-table-tr"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                   >
                     <div
                       class="arco-table-cell"
@@ -13688,7 +13688,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <th
-                      class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      class="arco-table-th arco-table-col-first arco-table-col-fixed-left arco-table-col-fixed-left-last"
                       style="left:0"
                     >
                       <div
@@ -13747,7 +13747,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                       style="left:0"
                     >
                       <div
@@ -13804,7 +13804,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                       style="left:0"
                     >
                       <div
@@ -13861,7 +13861,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                       style="left:0"
                     >
                       <div
@@ -13918,7 +13918,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                       style="left:0"
                     >
                       <div
@@ -13975,7 +13975,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                       style="left:0"
                     >
                       <div
@@ -14166,7 +14166,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <th
-                      class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      class="arco-table-th arco-table-col-first arco-table-col-fixed-left arco-table-col-fixed-left-last"
                       style="left:0"
                     >
                       <div
@@ -14239,7 +14239,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                       style="left:0"
                     >
                       <div
@@ -14317,7 +14317,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                       style="left:0"
                     >
                       <div
@@ -14395,7 +14395,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                       style="left:0"
                     >
                       <div
@@ -14473,7 +14473,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                       style="left:0"
                     >
                       <div
@@ -14551,7 +14551,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                      class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                       style="left:0"
                     >
                       <div
@@ -14786,7 +14786,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <th
-                        class="arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                        class="arco-table-th arco-table-col-first arco-table-col-fixed-left arco-table-col-fixed-left-last"
                         style="left:0"
                       >
                         <div
@@ -14862,7 +14862,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                        class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                         style="left:0"
                       >
                         <div
@@ -14919,7 +14919,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                        class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                         style="left:0"
                       >
                         <div
@@ -14976,7 +14976,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                        class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                         style="left:0"
                       >
                         <div
@@ -15033,7 +15033,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                        class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                         style="left:0"
                       >
                         <div
@@ -15090,7 +15090,7 @@ exports[`renders Table/demo/summary.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <td
-                        class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last"
+                        class="arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first"
                         style="left:0"
                       >
                         <div
@@ -15305,7 +15305,7 @@ Array [
                     class="arco-table-tr"
                   >
                     <th
-                      class="arco-table-th"
+                      class="arco-table-th arco-table-col-first"
                     >
                       <div
                         class="arco-table-th-item"
@@ -15378,7 +15378,7 @@ Array [
                     style="display:table-row"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"
@@ -15456,7 +15456,7 @@ Array [
                     style="display:table-row"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"
@@ -15534,7 +15534,7 @@ Array [
                     style="display:table-row"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"
@@ -15612,7 +15612,7 @@ Array [
                     style="display:table-row"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"
@@ -15690,7 +15690,7 @@ Array [
                     style="display:table-row"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"
@@ -15993,7 +15993,7 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <div
-                        class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-fixed-left"
+                        class="arco-table-td arco-table-operation arco-table-checkbox arco-table-selection-col arco-table-col-first arco-table-col-fixed-left arco-table-col-first"
                         style="left:0"
                       >
                         <label

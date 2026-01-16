@@ -143,7 +143,7 @@ describe('Table components', () => {
     jest.runAllTimers();
 
     expect(component.find('tbody .arco-table-checkbox').item(0).className).toBe(
-      'arco-table-td arco-table-operation arco-table-checkbox arco-tooltip-open'
+      'arco-table-td arco-table-operation arco-table-checkbox arco-table-col-first arco-tooltip-open'
     );
   });
 

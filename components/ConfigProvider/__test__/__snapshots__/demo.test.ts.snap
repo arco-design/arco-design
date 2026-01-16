@@ -977,7 +977,7 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
                       class="arco-table-tr"
                     >
                       <th
-                        class="arco-table-th"
+                        class="arco-table-th arco-table-col-first"
                       >
                         <div
                           class="arco-table-th-item"
@@ -1035,7 +1035,7 @@ exports[`renders ConfigProvider/demo/component-config.md correctly 1`] = `
                       class="arco-table-tr arco-table-empty-row"
                     >
                       <td
-                        class="arco-table-td"
+                        class="arco-table-td arco-table-col-first"
                         colspan="4"
                       >
                         <div
@@ -1517,7 +1517,7 @@ Array [
                     class="arco-table-tr"
                   >
                     <th
-                      class="arco-table-th"
+                      class="arco-table-th arco-table-col-first"
                     >
                       <div
                         class="arco-table-th-item"
@@ -1549,7 +1549,7 @@ Array [
                     class="arco-table-tr arco-table-empty-row"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                       colspan="2"
                     >
                       <div
@@ -2199,7 +2199,7 @@ Array [
                     class="arco-table-tr"
                   >
                     <th
-                      class="arco-table-th"
+                      class="arco-table-th arco-table-col-first"
                     >
                       <div
                         class="arco-table-th-item"
@@ -2257,7 +2257,7 @@ Array [
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"
@@ -2313,7 +2313,7 @@ Array [
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"
@@ -2369,7 +2369,7 @@ Array [
                     class="arco-table-tr"
                   >
                     <td
-                      class="arco-table-td"
+                      class="arco-table-td arco-table-col-first"
                     >
                       <div
                         class="arco-table-cell"

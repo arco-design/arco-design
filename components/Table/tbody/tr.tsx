@@ -75,10 +75,11 @@ function Tr<T>(props: TrType<T>, ref) {
       ? rowSelection.checkboxProps(originRecord)
       : {};
   const operationClassName = cs(`${prefixCls}-td`, `${prefixCls}-operation`);
-  const getPrefixColClassName = (name) => {
+  const getPrefixColClassName = (name, index) => {
     return cs(operationClassName, `${prefixCls}-${name}`, {
       [`${prefixCls}-selection-col`]: (virtualized && type === 'checkbox') || type === 'radio',
       [`${prefixCls}-expand-icon-col`]: virtualized && expandedRowRender,
+      [`${prefixCls}-col-first`]: index === 0,
     });
   };
 
@@ -145,7 +146,7 @@ function Tr<T>(props: TrType<T>, ref) {
   }
 
   const expandNode = expandedRowRender && (
-    <InnerComponentTd className={getPrefixColClassName('expand-icon-cell')}>
+    <InnerComponentTd className={getPrefixColClassName('expand-icon-cell', 0)}>
       {shouldRenderExpandRow && renderExpandIcon(record, rowK)}
     </InnerComponentTd>
   );
@@ -174,7 +175,7 @@ function Tr<T>(props: TrType<T>, ref) {
 
   if (type === 'checkbox') {
     selectionNode = (
-      <InnerComponentTd className={getPrefixColClassName('checkbox')}>
+      <InnerComponentTd className={getPrefixColClassName('checkbox', expandNode ? 1 : 0)}>
         {renderSelectionCell
           ? renderSelectionCell(checkboxNode, checked, originRecord)
           : checkboxNode}
@@ -183,7 +184,7 @@ function Tr<T>(props: TrType<T>, ref) {
   }
   if (type === 'radio') {
     selectionNode = (
-      <InnerComponentTd className={getPrefixColClassName('radio')}>
+      <InnerComponentTd className={getPrefixColClassName('radio', expandNode ? 1 : 0)}>
         {renderSelectionCell ? renderSelectionCell(radioNode, checked, originRecord) : radioNode}
       </InnerComponentTd>
     );
@@ -219,7 +220,10 @@ function Tr<T>(props: TrType<T>, ref) {
             className: cs(
               isExtraOperation ? operationClassName : '',
               operationNode?.props?.className,
-              stickyClassName
+              stickyClassName,
+              {
+                [`${prefixCls}-col-first`]: colIndex === 0,
+              }
             ),
             style: {
               ...operationNode?.props?.style,
