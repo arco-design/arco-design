@@ -63,6 +63,7 @@ function Td(props: TdType) {
     {
       [`${prefixCls}-col-sorted`]:
         currentSorter && currentSorter.direction && currentSorter.field === column.dataIndex,
+      [`${prefixCls}-col-first`]: columnIndex === 0,
     },
     column.className
   );
