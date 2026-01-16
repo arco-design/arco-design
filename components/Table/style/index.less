@@ -613,8 +613,8 @@
       }
     }
 
-    .@{table-cls-th}:first-child,
-    .@{table-cls-td}:first-child {
+    .@{table-cls-th}.@{table-prefix-cls}-col-first,
+    .@{table-cls-td}.@{table-prefix-cls}-col-first {
       border-left: @table-border-width @table-border-style @table-color-border;
     }
 
@@ -656,8 +656,8 @@
   }
 
   &-border-cell:not(&-border) {
-    .@{table-cls-th}:first-child,
-    .@{table-cls-td}:first-child {
+    .@{table-cls-th}.@{table-prefix-cls}-col-first,
+    .@{table-cls-td}.@{table-prefix-cls}-col-first {
       border-left: 0;
     }
   }
@@ -855,8 +855,8 @@
   }
 
   &-rtl&-border-cell:not(&-border) {
-    .@{table-cls-th}:first-child,
-    .@{table-cls-td}:first-child {
+    .@{table-cls-th}.@{table-prefix-cls}-col-first,
+    .@{table-cls-td}.@{table-prefix-cls}-col-first {
       border-right: 0;
     }
   }

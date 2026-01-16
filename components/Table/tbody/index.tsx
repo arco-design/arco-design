@@ -121,7 +121,7 @@ const DataRecordRenderer = forwardRef(function (
           className={cs(`${prefixCls}-tr`, `${prefixCls}-expand-content`)}
         >
           <TDTagName
-            className={cs(`${prefixCls}-td`)}
+            className={cs(`${prefixCls}-td`, `${prefixCls}-col-first`)}
             style={{ paddingLeft: indentSize }}
             colSpan={columns.length}
           >
@@ -185,7 +185,7 @@ function TBody<T>(props: TbodyProps<T>) {
 
   const noDataTr = (
     <tr className={cs(`${prefixCls}-tr`, `${prefixCls}-empty-row`)}>
-      <td className={`${prefixCls}-td`} colSpan={columns.length}>
+      <td className={cs(`${prefixCls}-td`, `${prefixCls}-col-first`)} colSpan={columns.length}>
         <div {...noElementProps}>{noDataElement}</div>
       </td>
     </tr>
