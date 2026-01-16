@@ -35,21 +35,21 @@ describe('Table fixed columns', () => {
       component.find('td.arco-table-col-fixed-right.arco-table-col-fixed-right-first')
     ).toHaveLength(5);
 
-    function getHeadCell(i) {
+    function getHeadCell(i: number) {
       return headTr.querySelectorAll('th').item(i);
     }
 
-    function getBodyCell(i) {
+    function getBodyCell(i: number) {
       return bodyTr.querySelectorAll('td').item(i);
     }
 
     expect(getHeadCell(0).className).toBe(
-      'arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last'
+      'arco-table-th arco-table-col-first arco-table-col-fixed-left arco-table-col-fixed-left-last'
     );
     expect(getHeadCell(0).getAttribute('style')).toEqual('left: 0px;');
 
     expect(getBodyCell(0).className).toBe(
-      'arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last'
+      'arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last arco-table-col-first'
     );
     expect(getBodyCell(0).getAttribute('style')).toEqual('left: 0px;');
   });
@@ -78,11 +78,11 @@ describe('Table fixed columns', () => {
     const headTr = component.find('thead tr').item(0);
     const bodyTr = component.find('tbody tr').item(0);
 
-    function getHeadCell(i) {
+    function getHeadCell(i: number) {
       return headTr.querySelectorAll('th').item(i);
     }
 
-    function getBodyCell(i) {
+    function getBodyCell(i: number) {
       return bodyTr.querySelectorAll('td').item(i);
     }
 
@@ -97,7 +97,7 @@ describe('Table fixed columns', () => {
     expect(getHeadCell(1).getAttribute('style')).toEqual('left: 40px;');
 
     expect(getBodyCell(0).className).toBe(
-      'arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left'
+      'arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-fixed-left arco-table-col-first'
     );
     expect(getBodyCell(0).getAttribute('style')).toEqual('left: 0px;');
 
@@ -127,20 +127,20 @@ describe('Table fixed columns', () => {
       <Table scroll={{ x: 600, y: 200 }} columns={fixedColumns} data={data} />
     );
 
-    function getHeadCell(component, i) {
-      return component.find('thead tr')[0].querySelectorAll('th').item(i);
+    function getHeadCell(component: any, i: number) {
+      return component.find('thead tr').item(0).querySelectorAll('th').item(i);
     }
 
-    function getBodyCell(component, i) {
-      return component.find('tbody tr')[0].querySelectorAll('td').item(i);
+    function getBodyCell(component: any, i: number) {
+      return component.find('tbody tr').item(0).querySelectorAll('td').item(i);
     }
 
-    expect(getHeadCell(component, 0).className).toBe('arco-table-th');
+    expect(getHeadCell(component, 0).className).toBe('arco-table-th arco-table-col-first');
     expect(getHeadCell(component, 0).getAttribute('style')).toEqual(null);
     expect(getHeadCell(component, 1).className).toBe('arco-table-th');
     expect(getHeadCell(component, 1).getAttribute('style')).toEqual(null);
 
-    expect(getBodyCell(component, 0).className).toBe('arco-table-td');
+    expect(getBodyCell(component, 0).className).toBe('arco-table-td arco-table-col-first');
     expect(getBodyCell(component, 0).getAttribute('style')).toEqual(null);
     expect(getBodyCell(component, 1).className).toBe('arco-table-td');
     expect(getBodyCell(component, 1).getAttribute('style')).toEqual(null);
@@ -158,14 +158,18 @@ describe('Table fixed columns', () => {
       />
     );
 
-    expect(getHeadCell(component, 0).className).toBe('arco-table-th arco-table-col-fixed-left');
+    expect(getHeadCell(component, 0).className).toBe(
+      'arco-table-th arco-table-col-first arco-table-col-fixed-left'
+    );
     expect(getHeadCell(component, 0).getAttribute('style')).toEqual('left: 0px;');
     expect(getHeadCell(component, 1).className).toBe(
       'arco-table-th arco-table-col-fixed-left arco-table-col-fixed-left-last'
     );
     expect(getHeadCell(component, 1).getAttribute('style')).toEqual('left: 100px;');
 
-    expect(getBodyCell(component, 0).className).toBe('arco-table-td arco-table-col-fixed-left');
+    expect(getBodyCell(component, 0).className).toBe(
+      'arco-table-td arco-table-col-fixed-left arco-table-col-first'
+    );
     expect(getBodyCell(component, 0).getAttribute('style')).toEqual('left: 0px;');
     expect(getBodyCell(component, 1).className).toBe(
       'arco-table-td arco-table-col-fixed-left arco-table-col-fixed-left-last'
@@ -202,11 +206,11 @@ describe('Table fixed columns', () => {
     const headTr = component.find('thead tr').item(0);
     const bodyTr = component.find('tbody tr').item(0);
 
-    function getHeadCell(i) {
+    function getHeadCell(i: number) {
       return headTr.querySelectorAll('th').item(i);
     }
 
-    function getBodyCell(i) {
+    function getBodyCell(i: number) {
       return bodyTr.querySelectorAll('td').item(i);
     }
 

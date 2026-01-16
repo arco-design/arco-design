@@ -28,7 +28,7 @@ exports[`ConfigProvider componentConfig.Table default 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                   >
                     <div
                       class="arco-table-th-item"
@@ -45,7 +45,7 @@ exports[`ConfigProvider componentConfig.Table default 1`] = `
                   class="arco-table-tr arco-table-empty-row"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                     colspan="1"
                   >
                     <div
@@ -122,7 +122,7 @@ exports[`ConfigProvider componentConfig.Table set className globally 1`] = `
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                   >
                     <div
                       class="arco-table-th-item"
@@ -139,7 +139,7 @@ exports[`ConfigProvider componentConfig.Table set className globally 1`] = `
                   class="arco-table-tr arco-table-empty-row"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                     colspan="1"
                   >
                     <div
@@ -216,7 +216,7 @@ exports[`ConfigProvider componentConfig.Table set className globally and compone
                   class="arco-table-tr"
                 >
                   <th
-                    class="arco-table-th"
+                    class="arco-table-th arco-table-col-first"
                   >
                     <div
                       class="arco-table-th-item"
@@ -233,7 +233,7 @@ exports[`ConfigProvider componentConfig.Table set className globally and compone
                   class="arco-table-tr arco-table-empty-row"
                 >
                   <td
-                    class="arco-table-td"
+                    class="arco-table-td arco-table-col-first"
                     colspan="1"
                   >
                     <div

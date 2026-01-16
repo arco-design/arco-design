@@ -326,6 +326,7 @@ function Column<T>({
           {
             [`${prefixCls}-col-sorted`]:
               currentSorter && currentSorter.direction && currentSorter.field === innerDataIndex,
+            [`${prefixCls}-col-first`]: index === 0,
           },
           className
         )}
