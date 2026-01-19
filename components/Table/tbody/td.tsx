@@ -179,6 +179,38 @@ function Td(props: TdType) {
   return (
     <InnerComponentTd
       key={column.key || column.dataIndex || columnIndex}
+      onMouseEnter={(e) => {
+        if (rowSpan > 1) {
+          const table = e.currentTarget.closest(`.${prefixCls}`);
+          const tbody = e.currentTarget.closest('tbody');
+          if (table && tbody) {
+            const trs = tbody.querySelectorAll(`.${prefixCls}-tr`);
+            for (let i = trIndex; i < trIndex + rowSpan; i++) {
+              const tr = trs[i];
+              if (tr) {
+                tr.classList.add(`${prefixCls}-tr-hover`);
+              }
+            }
+          }
+        }
+        cellProps?.onMouseEnter?.(e);
+      }}
+      onMouseLeave={(e) => {
+        if (rowSpan > 1) {
+          const table = e.currentTarget.closest(`.${prefixCls}`);
+          const tbody = e.currentTarget.closest('tbody');
+          if (table && tbody) {
+            const trs = tbody.querySelectorAll(`.${prefixCls}-tr`);
+            for (let i = trIndex; i < trIndex + rowSpan; i++) {
+              const tr = trs[i];
+              if (tr) {
+                tr.classList.remove(`${prefixCls}-tr-hover`);
+              }
+            }
+          }
+        }
+        cellProps?.onMouseLeave?.(e);
+      }}
       {...pick(cellProps, [
         'onClick',
         'onDoubleClick',
