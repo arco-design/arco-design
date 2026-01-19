@@ -670,7 +670,8 @@
   }
 
   &-hover {
-    .@{table-cls-tr}:not(.@{table-prefix-cls}-empty-row):hover {
+    .@{table-cls-tr}:not(.@{table-prefix-cls}-empty-row):hover,
+    .@{table-cls-tr}.@{table-prefix-cls}-tr-hover {
       .@{table-cls-td}:not(.@{table-prefix-cls}-col-fixed-left):not(.@{table-prefix-cls}-col-fixed-right) {
         background-color: @table-color-bg-body-row_hover;
       }
