@@ -8631,6 +8631,117 @@ exports[`renders Table/demo/multiple-sorter.md correctly 1`] = `
 </div>
 `;
 
+exports[`renders Table/demo/no-data-element.md correctly 1`] = `
+<div
+  class="arco-table arco-table-size-default arco-table-border arco-table-hover"
+>
+  <div
+    class="arco-spin"
+  >
+    <div
+      class="arco-spin-children"
+    >
+      <div
+        class="arco-table-container"
+      >
+        <div
+          class="arco-table-content-scroll"
+        >
+          <div
+            class="arco-table-content-inner"
+          >
+            <table>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr
+                  class="arco-table-tr"
+                >
+                  <th
+                    class="arco-table-th arco-table-col-first"
+                  >
+                    <div
+                      class="arco-table-th-item"
+                    >
+                      <span
+                        class="arco-table-th-item-title"
+                      >
+                        Name
+                      </span>
+                    </div>
+                  </th>
+                  <th
+                    class="arco-table-th"
+                  >
+                    <div
+                      class="arco-table-th-item"
+                    >
+                      <span
+                        class="arco-table-th-item-title"
+                      >
+                        Salary
+                      </span>
+                    </div>
+                  </th>
+                  <th
+                    class="arco-table-th"
+                  >
+                    <div
+                      class="arco-table-th-item"
+                    >
+                      <span
+                        class="arco-table-th-item-title"
+                      >
+                        Address
+                      </span>
+                    </div>
+                  </th>
+                  <th
+                    class="arco-table-th"
+                  >
+                    <div
+                      class="arco-table-th-item"
+                    >
+                      <span
+                        class="arco-table-th-item-title"
+                      >
+                        Email
+                      </span>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="arco-table-tr arco-table-empty-row"
+                >
+                  <td
+                    class="arco-table-td arco-table-col-first"
+                    colspan="4"
+                  >
+                    <div
+                      class="arco-table-no-data"
+                    >
+                      <div>
+                        No data available
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders Table/demo/operations.md correctly 1`] = `
 <div
   class="arco-table arco-table-size-default arco-table-border arco-table-hover arco-table-layout-fixed arco-table-fixed-column"

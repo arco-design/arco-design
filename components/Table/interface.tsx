@@ -111,6 +111,7 @@ export interface TableProps<T = any> {
   /**
    * @zh 没有数据的时候显示的元素
    * @en Element to be displayed when there is no data
+   * @defaultValue <Empty />
    */
   noDataElement?: string | ReactNode;
   /**
