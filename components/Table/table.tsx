@@ -519,7 +519,16 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
         off(tableFoot, 'scroll', tableScrollHandler);
       }
     };
-  }, [hasFixedColumnLeft, hasFixedColumnRight, scroll?.x, scroll?.y, flattenColumns.length, data]);
+  }, [
+    hasFixedColumnLeft,
+    hasFixedColumnRight,
+    scroll?.x,
+    scroll?.y,
+    flattenColumns.length,
+    data,
+    virtualized,
+    pageData.length === 0,
+  ]);
 
   useUpdate(() => {
     const { total, pageSize } = getPaginationProps(data);
@@ -846,7 +855,12 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   const tbodyNode = (
     <Tbody<T>
       {...props}
-      saveRef={(node) => (refTBody.current = node)}
+      saveRef={(node) => {
+        refTBody.current = node;
+        if (virtualized && pageData.length === 0) {
+          refTableBody.current = node;
+        }
+      }}
       selectedRowKeys={selectedRowKeys}
       indeterminateKeys={indeterminateKeys}
       expandedRowKeys={expandedRowKeys}
