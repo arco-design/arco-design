@@ -154,7 +154,7 @@ function Button(baseProps: ButtonProps, ref) {
   );
 }
 
-const ForwardRefButton = forwardRef<unknown, ButtonProps>(Button);
+const ForwardRefButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(Button);
 
 const ButtonComponent = ForwardRefButton as typeof ForwardRefButton & {
   __BYTE_BUTTON: boolean;
