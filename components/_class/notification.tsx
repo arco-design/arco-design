@@ -48,20 +48,25 @@ class BaseNotice extends Component<any, BaseNoticeState> {
   };
 
   update = (newNotice) => {
-    const updatedNotices = this.state.notices.map((oldNotice) =>
-      newNotice.id === oldNotice.id ? newNotice : oldNotice
-    );
-
     this.setState(
-      {
-        notices: updatedNotices,
+      (prevState) => {
+        const updatedNotices = prevState.notices.map((oldNotice) =>
+          newNotice.id === oldNotice.id ? newNotice : oldNotice
+        );
+        return {
+          notices: updatedNotices,
+        };
       },
       () => {
-        const notices = updatedNotices.map((notice) => {
-          if (newNotice.id === notice.id) delete notice.update;
-          return notice;
+        this.setState((prevState) => {
+          const notices = prevState.notices.map((notice) => {
+            if (newNotice.id === notice.id && notice.update) {
+              delete notice.update;
+            }
+            return notice;
+          });
+          return { notices };
         });
-        this.setState({ notices });
       }
     );
   };
