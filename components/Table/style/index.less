@@ -662,6 +662,53 @@
     }
   }
 
+  //存在滚动条且不在右侧，需要把右侧首个td/th边框设置成与背景同色，防止边框颜色展示
+  &-border-cell {
+    &.@{table-prefix-cls}-scroll-position-left,
+    &.@{table-prefix-cls}-scroll-position-middle {
+      .@{table-cls-td}.@{table-prefix-cls}-col-fixed-right-first {
+        border-left-color: @table-color-bg-body-cell;
+      }
+      .@{table-cls-th}.@{table-prefix-cls}-col-fixed-right-first {
+        border-left-color: @table-color-bg-header-cell;
+      }
+    }
+  }
+
+  // 存在滚动条且不在右侧，只开启了header边框时需要把th的左边框隐藏
+  &-border-header-cell {
+    &.@{table-prefix-cls}-scroll-position-left,
+    &.@{table-prefix-cls}-scroll-position-middle {
+      .@{table-cls-th}.@{table-prefix-cls}-col-fixed-right-first {
+        border-left-color: @table-color-bg-header-cell;
+      }
+    }
+  }
+
+  // 存在滚动条且不在右侧，只开启了body边框时需要把td的左边框隐藏
+  &-border-body-cell {
+    &.@{table-prefix-cls}-scroll-position-left,
+    &.@{table-prefix-cls}-scroll-position-middle {
+      .@{table-cls-td}.@{table-prefix-cls}-col-fixed-right-first {
+        border-left-color: @table-color-bg-body-cell;
+      }
+    }
+  }
+
+  // 存在body边框但不存在header边框时，需要header也增加隐形的边框确保对齐
+  &-border-body-cell:not(&-border-header-cell) {
+    .@{table-cls-th}.@{table-prefix-cls}-col-fixed-right-first {
+      border-left: @table-border-width @table-border-style @table-color-bg-header-cell;
+    }
+  }
+
+  // 存在header边框但不存在body边框时，需要body也增加隐形的边框确保对齐
+  &-border-header-cell:not(&-border-body-cell) {
+    .@{table-cls-td}.@{table-prefix-cls}-col-fixed-right-first {
+      border-left: @table-border-width @table-border-style @table-color-bg-body-cell;
+    }
+  }
+
   // stripe: true
   &-stripe {
     .@{table-cls-tr}:nth-child(even) .@{table-cls-td} {
@@ -687,6 +734,32 @@
           height: 100%;
           background-color: @table-color-bg-body-row_hover;
           z-index: -1;
+        }
+      }
+    }
+
+    &.@{table-prefix-cls}-border-header-cell:not(.@{table-prefix-cls}-border-body-cell) {
+      .@{table-cls-tr}:not(.@{table-prefix-cls}-empty-row):hover {
+        .@{table-cls-td}.@{table-prefix-cls}-col-fixed-right {
+          border-left-color: @table-color-bg-body-row_hover;
+
+          .@{table-prefix-cls}-rtl & {
+            border-left: unset;
+            border-right-color: @table-color-bg-body-row_hover;
+          }
+        }
+      }
+    }
+
+    &.@{table-prefix-cls}-border-body-cell:not(.@{table-prefix-cls}-border-header-cell) {
+      .@{table-cls-tr}:not(.@{table-prefix-cls}-empty-row):hover {
+        .@{table-cls-th}.@{table-prefix-cls}-col-fixed-right {
+          border-left-color: @table-color-bg-body-row_hover;
+
+          .@{table-prefix-cls}-rtl & {
+            border-left: unset;
+            border-right-color: @table-color-bg-body-row_hover;
+          }
         }
       }
     }
@@ -859,6 +932,54 @@
     .@{table-cls-th}.@{table-prefix-cls}-col-first,
     .@{table-cls-td}.@{table-prefix-cls}-col-first {
       border-right: 0;
+    }
+  }
+
+  &-rtl&-border-cell {
+    &.@{table-prefix-cls}-scroll-position-right,
+    &.@{table-prefix-cls}-scroll-position-middle {
+      .@{table-cls-td}.@{table-prefix-cls}-col-fixed-right-first {
+        border-left-color: unset;
+        border-right-color: @table-color-bg-body-cell;
+      }
+      .@{table-cls-th}.@{table-prefix-cls}-col-fixed-right-first {
+        border-left-color: unset;
+        border-right-color: @table-color-bg-header-cell;
+      }
+    }
+  }
+
+  &-rtl&-border-header-cell {
+    &.@{table-prefix-cls}-scroll-position-right,
+    &.@{table-prefix-cls}-scroll-position-middle {
+      .@{table-cls-th}.@{table-prefix-cls}-col-fixed-right-first {
+        border-left-color: unset;
+        border-right-color: @table-color-bg-header-cell;
+      }
+    }
+  }
+
+  &-rtl&-border-body-cell {
+    &.@{table-prefix-cls}-scroll-position-right,
+    &.@{table-prefix-cls}-scroll-position-middle {
+      .@{table-cls-td}.@{table-prefix-cls}-col-fixed-right-first {
+        border-left-color: unset;
+        border-right-color: @table-color-bg-body-cell;
+      }
+    }
+  }
+
+  &-rtl&-border-body-cell:not(&-border-header-cell) {
+    .@{table-cls-th}.@{table-prefix-cls}-col-fixed-right-first {
+      border-left: unset;
+      border-right: @table-border-width @table-border-style @table-color-bg-header-cell;
+    }
+  }
+
+  &-rtl&-border-header-cell:not(&-border-body-cell) {
+    .@{table-cls-td}.@{table-prefix-cls}-col-fixed-right-first {
+      border-left: unset;
+      border-right: @table-border-width @table-border-style @table-color-bg-body-cell;
     }
   }
 
