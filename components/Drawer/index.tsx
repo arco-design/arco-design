@@ -317,7 +317,12 @@ function Drawer(baseProps: DrawerProps, ref) {
             )}
           >
             <div className={`${prefixCls}-inner`}>
-              <ConfigProvider {...context} zIndex={popupZIndex || 1050}>
+              <ConfigProvider
+                {...context}
+                effectGlobalModal={false}
+                effectGlobalNotice={false}
+                zIndex={popupZIndex || 1050}
+              >
                 {dom}
               </ConfigProvider>
             </div>

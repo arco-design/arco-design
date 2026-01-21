@@ -246,6 +246,8 @@ function Modal(baseProps: PropsWithChildren<ModalProps>, ref) {
   const element = (
     <ConfigProvider
       {...context}
+      effectGlobalModal={false}
+      effectGlobalNotice={false}
       prefixCls={props.prefixCls || context.prefixCls}
       locale={locale}
       zIndex={popupZIndex || 1050}

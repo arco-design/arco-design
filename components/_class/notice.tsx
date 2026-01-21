@@ -188,7 +188,7 @@ class Notice extends Component<NoticeProps, {}> {
     if (noticeType === 'message') {
       _closable = closable;
       return (
-        <ConfigProvider {...configContext}>
+        <ConfigProvider {...configContext} effectGlobalModal={false} effectGlobalNotice={false}>
           <div
             style={{ textAlign: 'center' }}
             onMouseEnter={this.onMouseEnter}
@@ -220,7 +220,7 @@ class Notice extends Component<NoticeProps, {}> {
 
     if (noticeType === 'notification') {
       return (
-        <ConfigProvider {...configContext}>
+        <ConfigProvider {...configContext} effectGlobalModal={false} effectGlobalNotice={false}>
           <div
             ref={this.rootDOMRef}
             onMouseEnter={this.onMouseEnter}
