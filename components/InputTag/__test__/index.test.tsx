@@ -153,4 +153,9 @@ describe('InputTag', () => {
     expect(wrapper.querySelectorAll('.arco-tag')).toHaveLength(3);
     expect(wrapper.querySelector('input').getAttribute('value')).toBe('');
   });
+
+  it('maxLength should work', () => {
+    const wrapper = render(<InputTag maxLength={5} placeholder="最多输入5个字符" />);
+    expect(wrapper.querySelector('input')).toBeTruthy();
+  });
 });

@@ -1,3 +1,11 @@
+## 2.67.0
+
+2025-07-23
+
+### 🐛 BugFix
+
+- `InputTag` component adds `maxLength` property to support limiting the maximum input length of the input box.([#XXXX](https://github.com/arco-design/arco-design/pull/XXXX))
+
 ## 2.66.2
 
 2025-07-15
