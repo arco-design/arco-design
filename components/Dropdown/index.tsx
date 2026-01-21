@@ -1,4 +1,12 @@
-import React, { ReactElement, useContext, useRef } from 'react';
+import React, {
+  ReactElement,
+  cloneElement,
+  isValidElement,
+  forwardRef,
+  ReactNode,
+  useContext,
+  useRef,
+} from 'react';
 import get from 'lodash/get';
 import Trigger, { EventsByTriggerNeed } from '../Trigger';
 import Button from './button';
@@ -16,12 +24,14 @@ const defaultProps: DropdownProps = {
   unmountOnExit: true,
 };
 
-const trigerPopupAlign = {
+const triggerPopupAlign = {
   left: 4,
   right: 4,
   top: 4,
   bottom: 4,
 };
+
+const isValidReactElement = (element: any): element is ReactElement => isValidElement(element);
 
 function Dropdown(baseProps: DropdownProps, _) {
   const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
@@ -41,14 +51,14 @@ function Dropdown(baseProps: DropdownProps, _) {
 
   const prefixCls = getPrefixCls('dropdown');
 
-  const triggerRef = useRef(null);
+  const triggerRef = useRef<Trigger>(null);
   const [popupVisible, setPopupVisible] = useMergeValue(false, {
     defaultValue: props.defaultPopupVisible,
     value: props.popupVisible,
   });
 
   const getPopupContent = () => {
-    return React.Children.only(droplist || <span />) as React.ReactElement;
+    return React.Children.only(droplist || <span />) as ReactElement;
   };
 
   const changePopupVisible = (visible: boolean) => {
@@ -76,7 +86,7 @@ function Dropdown(baseProps: DropdownProps, _) {
         }
       }
 
-      return React.cloneElement(content as ReactElement, {
+      return cloneElement(content as ReactElement, {
         prefixCls: cs(`${prefixCls}-menu`, {
           [`${prefixCls}-menu-hidden`]: isEmpty,
         }),
@@ -108,9 +118,25 @@ function Dropdown(baseProps: DropdownProps, _) {
     return content;
   };
 
+  const createTriggerChildren = (children: ReactNode) => {
+    if (isValidReactElement(children)) {
+      return cloneElement(children, {
+        ...(typeof disabled === 'boolean' ? { disabled } : {}),
+        className: cs(
+          {
+            [`${prefixCls}-popup-visible`]: popupVisible,
+            [`${[prefixCls]}-rtl`]: rtl,
+          },
+          children.props.className
+        ),
+      });
+    }
+    return children;
+  };
+
   return (
     <Trigger
-      ref={(ref) => (triggerRef.current = ref)}
+      ref={triggerRef}
       classNames="slideDynamicOrigin"
       childrenPrefix={prefixCls}
       trigger={trigger}
@@ -121,7 +147,7 @@ function Dropdown(baseProps: DropdownProps, _) {
       unmountOnExit={unmountOnExit}
       position={position}
       popupVisible={popupVisible}
-      popupAlign={trigerPopupAlign}
+      popupAlign={triggerPopupAlign}
       getPopupContainer={getPopupContainer}
       alignPoint={trigger === 'contextMenu'}
       {...pick(rest, EventsByTriggerNeed)}
@@ -129,25 +155,14 @@ function Dropdown(baseProps: DropdownProps, _) {
       {...omit(triggerProps, ['onVisibleChange'])}
       onVisibleChange={handleVisibleChange}
     >
-      {React.isValidElement(children)
-        ? React.cloneElement(children, {
-            ...(typeof disabled === 'boolean' ? { disabled } : {}),
-            className: cs(
-              {
-                [`${prefixCls}-popup-visible`]: popupVisible,
-                [`${[prefixCls]}-rtl`]: rtl,
-              },
-              children.props.className
-            ),
-          })
-        : children}
+      {createTriggerChildren(typeof children === 'function' ? children(popupVisible) : children)}
     </Trigger>
   );
 }
 
 const ForwardRefDropdown: React.ForwardRefExoticComponent<
   DropdownProps & React.RefAttributes<unknown>
-> = React.forwardRef<unknown, DropdownProps>(Dropdown);
+> = forwardRef<unknown, DropdownProps>(Dropdown);
 
 const DropdownComponent = ForwardRefDropdown as typeof ForwardRefDropdown & {
   Button: typeof Button;
