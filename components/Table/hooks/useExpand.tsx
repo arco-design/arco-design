@@ -1,4 +1,4 @@
-import { useState, Key } from 'react';
+import { useState, Key, useEffect, useRef } from 'react';
 import { TableProps, GetRowKeyType } from '../interface';
 import { isChildrenNotEmpty, getOriginData } from '../utils';
 
@@ -18,6 +18,17 @@ export default function useExpand<T>(
   } = props;
   const [expandedRowKeys, setExpandedRowKeys] = useState<Key[]>(getDefaultExpandedRowKeys());
   const mergedExpandedRowKeys = props.expandedRowKeys || expandedRowKeys;
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    if (defaultExpandAllRows && flattenData && flattenData.length > 0) {
+      setExpandedRowKeys(getDefaultExpandedRowKeys());
+    }
+  }, [flattenData?.length, defaultExpandAllRows]);
 
   function getDefaultExpandedRowKeys() {
     let rows: React.Key[] = [];
