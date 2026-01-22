@@ -99,13 +99,11 @@ function ConfigProvider(baseProps: ConfigProviderProps) {
     }
   }, [locale, prefixCls, rtl, effectGlobalModal]);
 
-  let child = children;
-
-  if (prefixCls && prefixCls !== 'arco') {
-    child = <IconContext.Provider value={{ prefixCls }}>{children}</IconContext.Provider>;
-  }
-
-  return <ConfigContext.Provider value={config}>{child}</ConfigContext.Provider>;
+  return (
+    <ConfigContext.Provider value={config}>
+      <IconContext.Provider value={{ prefixCls }}>{children}</IconContext.Provider>
+    </ConfigContext.Provider>
+  );
 }
 
 ConfigProvider.ConfigContext = ConfigContext;
