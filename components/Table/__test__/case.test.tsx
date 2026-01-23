@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '../../../tests/util';
-import Table from '..';
+import Table, { ColumnProps } from '..';
 
 describe('Table special case test', () => {
   beforeEach(() => {
@@ -8,14 +8,14 @@ describe('Table special case test', () => {
   });
 
   it('data item is array', () => {
+    const arrayData = [['1'], ['2']];
     // case: https://github.com/arco-design/arco-design/issues/1258
-    const columns = [
+    const columns: ColumnProps<typeof arrayData[0]>[] = [
       {
         dataIndex: '[0]',
         title: 'title',
       },
     ];
-    const arrayData = [['1'], ['2']];
     const component = render(
       <Table<string[]> rowKey={(record) => record[0]} columns={columns} data={arrayData} />
     );
@@ -43,13 +43,6 @@ describe('Table special case test', () => {
   });
 
   it('change data and selectedRows should up-to-date', () => {
-    // case: https://github.com/arco-design/arco-design/issues/1294
-    const columns = [
-      {
-        dataIndex: 'title',
-        title: 'title',
-      },
-    ];
     const oldData = [
       { key: '1', title: '1' },
       { key: '2', title: '2' },
@@ -58,6 +51,14 @@ describe('Table special case test', () => {
       { key: '1', title: '1' },
       { key: '2', title: '3' },
     ];
+    // case: https://github.com/arco-design/arco-design/issues/1294
+    const columns: ColumnProps<typeof oldData[0]>[] = [
+      {
+        dataIndex: 'title',
+        title: 'title',
+      },
+    ];
+
     const onChange = jest.fn();
 
     const component = render(
