@@ -14,7 +14,7 @@ export const on = (function () {
   }
   return function (
     element: EventTarget | null,
-    event: string,
+    event: keyof WindowEventMap,
     handler: EventListenerOrEventListenerObject,
     options?: boolean | AddEventListenerOptions
   ) {
@@ -28,7 +28,7 @@ export const off = (function () {
   }
   return function (
     element: EventTarget | null,
-    event: string,
+    event: keyof WindowEventMap,
     handler: EventListenerOrEventListenerObject,
     options?: boolean | AddEventListenerOptions
   ) {
