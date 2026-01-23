@@ -1,3 +1,11 @@
+## 2.66.10
+
+2026-01-23
+
+### 🐛 BugFix
+
+- Fix the issue that when closing the previous message messageA and displaying a new message messageB in the `Message` component, the new message messageB fails to display properly.([#3108](https://github.com/arco-design/arco-design/pull/3108))
+
 ## 2.66.0
 
 2025-04-03

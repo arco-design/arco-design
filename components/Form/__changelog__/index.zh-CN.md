@@ -1,3 +1,11 @@
+## 2.66.10
+
+2026-01-23
+
+### 🆎 类型修正
+
+- 新增支持 `Form.useWatch` 强类型，从传入的 FormInstance 自动推断，类型行为与 form.getFieldsValue一致([#3111](https://github.com/arco-design/arco-design/pull/3111))
+
 ## 2.66.5
 
 2025-08-21

@@ -2,6 +2,27 @@
 changelog: true
 ---
 
+## 2.66.10
+
+2026-01-23
+
+### 🐛 BugFix
+
+- Fix the issue that when the data of the `Table` component is fetched asynchronously, the setting of defaultExpandAllRows fails.([#3110](https://github.com/arco-design/arco-design/pull/3110))
+- Fix the issue that the `Message` component and `Notification` component reset the locale to Chinese after being triggered.([#3109](https://github.com/arco-design/arco-design/pull/3109))
+- Fix the issue that when closing the previous message messageA and displaying a new message messageB in the `Message` component, the new message messageB fails to display properly.([#3108](https://github.com/arco-design/arco-design/pull/3108))
+- Fix the issue that, after enabling virtual scrolling in the `Table` component, when there is an instance of empty data, the table header and the table body no longer scroll horizontally in sync.([#3107](https://github.com/arco-design/arco-design/pull/3107))
+- Fix the problem that after enabling virtual scrolling in the `Table` component, the summary section fails to function properly and is not rendered correctly.([#3106](https://github.com/arco-design/arco-design/pull/3106))
+- Fix the problem that only the first row is highlighted when hovering over the `Table` component after merging cells across multiple rows.([#3104](https://github.com/arco-design/arco-design/pull/3104))
+- Fix the issue in the `Table` component where, when merging cells in the first column, even if borderCell is set to false, some internal borders are still exposed.([#3102](https://github.com/arco-design/arco-design/pull/3102))
+- Fix the problem that the expand/collapse click event fails after customizing the expand/collapse icons in the `Table`.([#3101](https://github.com/arco-design/arco-design/pull/3101))
+- Fix the issue that when the `Table` component is added with fixed positioning, if the props returned by the custom render contain style, the fixed positioning fails.([#3099](https://github.com/arco-design/arco-design/pull/3099))
+- Fix the problem that, after enabling row selection in the `Table` component, when all rows are unselectable, the CheckAll state in the table header is incorrect.([#3094](https://github.com/arco-design/arco-design/pull/3094))
+
+### 🆎 TypeScript
+
+- Added support for strong typing of `Form.useWatch`, which is automatically inferred from the passed FormInstance. The type behavior is consistent with form.getFieldsValue.([#3111](https://github.com/arco-design/arco-design/pull/3111))
+
 ## 2.66.9
 
 2026-01-09

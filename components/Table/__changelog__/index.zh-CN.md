@@ -1,3 +1,18 @@
+## 2.66.10
+
+2026-01-23
+
+### 🐛 问题修复
+
+- 修复 `Table` 组件在 data 数据异步拉取时，设置 defaultExpandAllRows 后失效的问题([#3110](https://github.com/arco-design/arco-design/pull/3110))
+- 修复 `Table` 组件开启虚拟滚动后，在出现一次空数据的情况下，表头与表身不再同步横向滚动的问题([#3107](https://github.com/arco-design/arco-design/pull/3107))
+- 修复 `Table` 组件开启虚拟滚动后，总结栏 summary 失效、未正常渲染的问题([#3106](https://github.com/arco-design/arco-design/pull/3106))
+- 修复 `Table` 组件合并多行单元格后，鼠标悬停（hover）时仅第一行高亮的问题。([#3104](https://github.com/arco-design/arco-design/pull/3104))
+- 修复 `Table` 组件第一列在合并单元格时，即便将borderCell设置为false，内部仍有部分边框外露的问题([#3102](https://github.com/arco-design/arco-design/pull/3102))
+- 修复 `Table` 在定制展开/折叠图标后，展开/折叠点击事件失效的问题 。([#3101](https://github.com/arco-design/arco-design/pull/3101))
+- 修复 `Table` 组件添加 fixed 定位后，若自定义 render 返回的 props 包含 style，则 fixed 定位失效的问题([#3099](https://github.com/arco-design/arco-design/pull/3099))
+- 修复 `Table` 组件在开启行选择后，所有行都都不可选的情况下，表头CheckAll状态不对问题([#3094](https://github.com/arco-design/arco-design/pull/3094))
+
 ## 2.66.8
 
 2025-11-11

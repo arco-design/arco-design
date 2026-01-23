@@ -1,3 +1,11 @@
+## 2.66.10
+
+2026-01-23
+
+### 🆎 TypeScript
+
+- Added support for strong typing of `Form.useWatch`, which is automatically inferred from the passed FormInstance. The type behavior is consistent with form.getFieldsValue.([#3111](https://github.com/arco-design/arco-design/pull/3111))
+
 ## 2.66.5
 
 2025-08-21

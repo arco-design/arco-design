@@ -1,3 +1,11 @@
+## 2.66.10
+
+2026-01-23
+
+### 🐛 BugFix
+
+- Fix the issue that the `Message` component and `Notification` component reset the locale to Chinese after being triggered.([#3109](https://github.com/arco-design/arco-design/pull/3109))
+
 ## 2.58.0
 
 2023-12-29
