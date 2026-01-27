@@ -100,10 +100,12 @@ const Form = <
     if (!node) {
       return;
     }
-    let fieldNode = node.querySelector(`#${getFormElementId(id, field as string)}`);
+    let fieldNode = node.querySelector(`#${CSS.escape(getFormElementId(id, field as string))}`);
     if (!fieldNode) {
       // 如果设置了nostyle， fieldNode不存在，尝试直接查询表单控件
-      fieldNode = node.querySelector(`#${getFormElementId(id, field as string)}${ID_SUFFIX}`);
+      fieldNode = node.querySelector(
+        `#${CSS.escape(getFormElementId(id, field as string))}${ID_SUFFIX}`
+      );
     }
     fieldNode &&
       scrollIntoView(fieldNode, {
