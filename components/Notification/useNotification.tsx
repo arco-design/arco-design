@@ -13,8 +13,13 @@ function useNotification(
   const { maxCount, duration = 3000, prefixCls: _prefixCls, getContainer } = commonConfig;
   const contextHolderRef = createRef<HolderRef>();
   const holderEle = <ContextHolderElement ref={contextHolderRef} />;
-  const notificationInstance = {};
+  const notificationInstance: { [key: string]: any } = {};
   let notice;
+
+  const createInstanceProxy = (pos: string) => ({
+    add: (props: NotificationProps) => notificationInstance[pos]?.add?.(props),
+    remove: (id: string) => notificationInstance[pos]?.remove?.(id),
+  });
 
   function addNotice(noticeProps: NotificationProps) {
     let prefixCls, rtl;
@@ -59,7 +64,7 @@ function useNotification(
       );
       contextHolderRef.current.addInstance(notice);
     }
-    return notificationInstance[position];
+    return createInstanceProxy(position);
   }
 
   const notificationFuncs: NotificationHookReturnType = {};
