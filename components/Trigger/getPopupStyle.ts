@@ -174,9 +174,10 @@ const getChildRect = (child, mouseLocation, { boundaryDistance, position }): Chi
 };
 
 // popup 弹出层的尺寸。 https://github.com/arco-design/arco-design/issues/2132
+// offsetWidth 得到的宽度是四舍五入后的，可能比实际值小。此处 +1 以避免溢出容器
 const getContentSize = (content) => {
-  const width = content.offsetWidth;
-  const height = content.offsetHeight;
+  const width = content.offsetWidth + 1;
+  const height = content.offsetHeight + 1;
   return {
     width,
     height,
