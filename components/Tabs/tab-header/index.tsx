@@ -113,14 +113,11 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   const align = type === 'capsule' ? right : left;
 
   const isScrollable = useMemo<boolean>(() => {
-    const headerContentHeight = scrollWrapperSize.height - extraSize.height - addBtnSize.height;
-    const headerContentWidth = scrollWrapperSize.width - extraSize.width - addBtnSize.width;
-    const res =
-      mergeProps.direction === 'vertical'
-        ? headerContentHeight < headerSize.height
-        : headerContentWidth < headerSize.width;
-    return res;
-  }, [mergeProps.direction, scrollWrapperSize, extraSize, headerSize, addBtnSize]);
+    if (mergeProps.direction === DIRECTION_VERTICAL) {
+      return headerSize.height > headerWrapperSize.height;
+    }
+    return headerSize.width > headerWrapperSize.width;
+  }, [mergeProps.direction, headerSize, headerWrapperSize]);
 
   const updateScrollWrapperSize = () => {
     if (scrollWrapperRef.current) {
