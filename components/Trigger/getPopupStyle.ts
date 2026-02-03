@@ -245,8 +245,11 @@ export default (
   const alignTop = popupAlign.top || 0;
   const alignBottom = popupAlign.bottom || 0;
 
-  // 通过props.style 传递的width优先级更高
-  if (autoAlignPopupWidth && propsStyle?.width === undefined) {
+  if (
+    autoAlignPopupWidth &&
+    propsStyle?.width === undefined &&
+    props.popupStyle?.width === undefined
+  ) {
     content.style.width = `${child.offsetWidth}px`;
   }
 
