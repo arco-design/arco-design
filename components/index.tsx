@@ -107,6 +107,9 @@ export { default as Link } from './Link';
 export type { ListProps, ListItemProps, ListItemMetaProps } from './List/interface';
 export { default as List } from './List';
 
+export type { LogProps } from './Log/interface';
+export { default as Log } from './Log';
+
 export type { MessageProps, MessageHookReturnType } from './Message/interface';
 export { default as Message } from './Message';
 
