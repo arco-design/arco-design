@@ -1,10 +1,14 @@
-import { CSSProperties, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 /**
  * @title Alert
  */
-export interface AlertProps {
-  style?: CSSProperties;
+export interface AlertProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'className' | 'title' | 'content'> {
+  /**
+   * @zh 自定义类名
+   * @en Custom className
+   */
   className?: string | string[];
   /**
    * @zh 自定义操作项
@@ -21,7 +25,7 @@ export interface AlertProps {
    * @zh 关闭的回调
    * @en Callback when Alert is closed
    */
-  onClose?: (e) => void;
+  onClose?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /**
    * @zh 关闭动画结束后执行的回调
    * @en Callback when Alert close animation is complete
