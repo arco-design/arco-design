@@ -74,6 +74,8 @@ function Alert(baseProps: AlertProps, ref) {
   );
   const _closable = 'closeable' in props ? closeable : closable;
 
+  console.log('test');
+
   return (
     <ArcoCSSTransition
       in={visible}
