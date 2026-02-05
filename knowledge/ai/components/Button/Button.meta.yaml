@@ -1,0 +1,338 @@
+specVersion: 1.0.0
+registryVersion: 1.0.0
+
+component:
+  id: Button
+  displayName:
+    zh-CN: 按钮
+    en-US: Button
+  category: ['General']
+
+purpose:
+  summary:
+    zh-CN: 按钮是一种命令组件，可发起一个即时操作。
+    en-US: Button is a command component to trigger immediate actions.
+  whenToUse:
+    - zh-CN: 触发提交或重置等表单操作
+      en-US: Trigger form submit or reset actions
+    - zh-CN: 执行页面内的即时操作（如保存、删除、搜索）
+      en-US: Perform immediate in-page actions (e.g., save, delete, search)
+    - zh-CN: 用于强调主要操作，使用 primary 类型
+      en-US: Emphasize the primary action using type="primary"
+  whenNotToUse:
+    - zh-CN: 需要展示多项操作入口时，优先考虑使用下拉菜单或更多操作
+      en-US: Avoid when multiple actions are needed; consider Dropdown or More actions
+    - zh-CN: 长流程或复杂交互建议使用步骤条或向导
+      en-US: For long or complex flows, consider Steps or Wizard
+  alternatives:
+    - component: Dropdown
+      reason:
+        zh-CN: 用于承载一组操作入口
+        en-US: For multiple action entries
+
+entry:
+  import:
+    from: '@arco-design/web-react'
+    named: ['Button']
+    default: false
+  types:
+    propsType: ButtonProps
+    from: '@arco-design/web-react'
+
+api:
+  props:
+    - name: disabled
+      description: { zh-CN: 是否禁用, en-US: Whether disabled }
+      type: { ts: boolean, kind: primitive }
+      required: false
+      default: null
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: iconOnly
+      description:
+        zh-CN: 只有图标，按钮宽高相等。如果指定 icon 且没有 children，iconOnly 默认为 true。
+        en-US: Icon-only, button width and height are equal. Defaults to true when icon is set and no children.
+      type: { ts: boolean, kind: primitive }
+      required: false
+      default: null
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: loading
+      description: { zh-CN: 按钮是否是加载状态, en-US: Whether the button is in loading state }
+      type: { ts: boolean, kind: primitive }
+      required: false
+      default: null
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: loadingFixedWidth
+      description: { zh-CN: 当 loading 的时候，不改变按钮的宽度, en-US: Keep button width unchanged when loading }
+      type: { ts: boolean, kind: primitive }
+      required: false
+      default: null
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: long
+      description: { zh-CN: 按钮宽度随容器自适应, en-US: Button width adapts to container }
+      type: { ts: boolean, kind: primitive }
+      required: false
+      default: null
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: href
+      description:
+        zh-CN: 添加跳转链接，设置此属性，button 表现跟 a 标签一致
+        en-US: Behaves like an anchor when href is set
+      type: { ts: string, kind: primitive }
+      required: false
+      default: null
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: target
+      description:
+        zh-CN: a 链接的 target 属性，href 存在时生效
+        en-US: Target of link, effective only when href exists
+      type: { ts: string, kind: primitive }
+      required: false
+      default: null
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: htmlType
+      description:
+        zh-CN: 按钮原生的 html type 类型
+        en-US: Native HTML button type
+      type: { ts: "'button' | 'submit' | 'reset'", kind: union }
+      required: false
+      default: 'button'
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: shape
+      description:
+        zh-CN: 按钮形状，circle-圆形，round-全圆角，square-长方形
+        en-US: Button shape: circle, round, square
+      type: { ts: "'circle' | 'round' | 'square'", kind: union }
+      required: false
+      default: 'square'
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: size
+      description:
+        zh-CN: 按钮的尺寸
+        en-US: Button size
+      type: { ts: "'mini' | 'small' | 'default' | 'large'", kind: union }
+      required: false
+      default: 'default'
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: status
+      description:
+        zh-CN: 按钮状态
+        en-US: Button status
+      type: { ts: "'warning' | 'danger' | 'success' | 'default'", kind: union }
+      required: false
+      default: 'default'
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: type
+      description:
+        zh-CN: 按钮类型：default(次级)、primary、secondary、dashed、text、outline
+        en-US: Button type: default, primary, secondary, dashed, text, outline
+      type: { ts: "'default' | 'primary' | 'secondary' | 'dashed' | 'text' | 'outline'", kind: union }
+      required: false
+      default: 'default'
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: icon
+      description: { zh-CN: 设置按钮的图标, en-US: Icon for button }
+      type: { ts: ReactNode, kind: ReactNode }
+      required: false
+      default: null
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: anchorProps
+      description:
+        zh-CN: a 链接的原生属性，href 存在时生效
+        en-US: Native anchor attributes, effective when href exists
+      type: { ts: HTMLProps<HTMLAnchorElement>, kind: object }
+      required: false
+      default: null
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: className
+      description: { zh-CN: 节点类名, en-US: Node className }
+      type: { ts: 'string | string[]', kind: union }
+      required: false
+      default: null
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: style
+      description: { zh-CN: 节点样式, en-US: Node style }
+      type: { ts: CSSProperties, kind: object }
+      required: false
+      default: null
+      constraints: []
+      deprecated: false
+      examples: []
+    - name: onClick
+      description: { zh-CN: 点击按钮的回调, en-US: Callback fired when button is clicked }
+      type: { ts: '(e: Event) => void', kind: function }
+      required: false
+      default: null
+      constraints: []
+      deprecated: false
+      examples: []
+  events:
+    - name: onClick
+      description: { zh-CN: 点击触发，loading 或 disabled 状态下不会触发, en-US: Fired on click; not triggered when loading or disabled }
+      type: { ts: '(e: Event) => void', kind: function }
+  methods: []
+  slots:
+    - name: children
+      description: { zh-CN: 按钮文本或节点内容, en-US: Button text or node content }
+  cssTokens: []
+
+usage:
+  keywords:
+    - submit
+    - reset
+    - save
+    - delete
+    - search
+    - navigate
+  features:
+    - loading-state
+    - icon-only
+    - status-variant
+    - size-variant
+    - shape-variant
+    - long-adaptive-width
+  states:
+    - default
+    - hover
+    - active
+    - disabled
+    - loading
+  a11y:
+    keyboard: []
+    aria: []
+  recipes:
+    - id: btn-basic-types
+      title: { zh-CN: 按钮类型, en-US: Button types }
+      steps:
+        - { zh-CN: 设置不同的 type 展示基础类型, en-US: Set different type props to show basic types }
+      code: |
+        import { Button, Space } from '@arco-design/web-react';
+
+        <Space size="large">
+          <Button type="primary">Primary</Button>
+          <Button type="secondary">Secondary</Button>
+          <Button type="dashed">Dashed</Button>
+          <Button type="outline">Outline</Button>
+          <Button type="text">Text</Button>
+        </Space>
+      tags: [basic, type]
+      links:
+        source: 'components/Button/__demo__/basic.md'
+    - id: btn-size-variants
+      title: { zh-CN: 按钮尺寸, en-US: Button size }
+      steps:
+        - { zh-CN: 通过 size 设置按钮尺寸, en-US: Control button size via size prop }
+      code: |
+        import { Button, Space } from '@arco-design/web-react';
+
+        <Space size="large">
+          <Button size="mini" type="primary">Mini</Button>
+          <Button size="small" type="primary">Small</Button>
+          <Button size="default" type="primary">Default</Button>
+          <Button size="large" type="primary">Large</Button>
+        </Space>
+      tags: [size]
+      links:
+        source: 'components/Button/__demo__/size.md'
+    - id: btn-shape-icon-only
+      title: { zh-CN: 图标与形状, en-US: Icon and shape }
+      steps:
+        - { zh-CN: 设置 icon 并在无 children 时为图标按钮, en-US: Set icon-only when no children }
+        - { zh-CN: 通过 shape 设置为圆形或全圆角, en-US: Use shape to circle or round }
+      code: |
+        import { Button, Space } from '@arco-design/web-react';
+        import { IconPlus } from '@arco-design/web-react/icon';
+
+        <Space size="large">
+          <Button type="primary" icon={<IconPlus />} />
+          <Button shape="circle" type="primary" icon={<IconPlus />} />
+          <Button shape="round" type="primary">Primary</Button>
+        </Space>
+      tags: [icon, shape]
+      links:
+        source: 'components/Button/__demo__/shape.md'
+    - id: btn-loading-state
+      title: { zh-CN: 加载态按钮, en-US: Loading button }
+      steps:
+        - { zh-CN: 设置 loading 进入加载态并禁止点击, en-US: Set loading to prevent clicks }
+        - { zh-CN: 使用 loadingFixedWidth 保持宽度不变, en-US: Use loadingFixedWidth to fix width }
+      code: |
+        import { useState } from 'react';
+        import { Button, Divider } from '@arco-design/web-react';
+        import { IconPlus } from '@arco-design/web-react/icon';
+
+        function App() {
+          const [loading2, setLoading2] = useState(false);
+          function onClickBtn2() {
+            setLoading2(true);
+            setTimeout(() => setLoading2(false), 4000);
+          }
+          return (
+            <>
+              <Button type="primary" loading>Loading</Button>
+              <Button type="primary" loadingFixedWidth loading={loading2} onClick={onClickBtn2}>Search</Button>
+            </>
+          );
+        }
+      tags: [loading]
+      links:
+        source: 'components/Button/__demo__/loading.md'
+
+constraints:
+  invariants:
+    - id: BTN-INV-TARGET-NEEDS-HREF
+      level: error
+      message: { zh-CN: 当设置 target 时必须提供 href, en-US: target requires href }
+      if: props.target != null
+      then: props.href != null
+      links:
+        source: 'components/Button/interface.ts'
+    - id: BTN-INV-ANCHOR-PROPS-NEEDS-HREF
+      level: error
+      message: { zh-CN: 当设置 anchorProps 时必须提供 href, en-US: anchorProps requires href }
+      if: props.anchorProps != null
+      then: props.href != null
+      links:
+        source: 'components/Button/interface.ts'
+    - id: BTN-INV-ICON-ONLY-NO-CHILDREN
+      level: error
+      message: { zh-CN: iconOnly 为 true 时不能存在 children, en-US: iconOnly=true requires no children }
+      if: props.iconOnly == true
+      then: props.children == null
+      links:
+        source: 'components/Button/interface.ts'
+  unsupported: []
+
+links:
+  docs: 'components/Button/README.zh-CN.md'
+  source: 'components/Button/index.tsx'
+  figma: ''
