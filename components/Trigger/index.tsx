@@ -1140,7 +1140,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
             style={
               {
                 width:
-                  autoAlignPopupWidth && style?.width === undefined
+                  autoAlignPopupWidth && style?.width === undefined && dropdownPopupStyle?.width === undefined
                     ? this.childrenDomSize?.width
                     : '',
                 ...popupStyle,
