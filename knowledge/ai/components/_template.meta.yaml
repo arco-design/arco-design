@@ -1,0 +1,77 @@
+specVersion: 1.0.0
+registryVersion: 1.0.0
+component:
+  name: ComponentName
+  title:
+    zh-CN: 组件中文名
+    en-US: Component English Name
+purpose:
+  zh-CN: 组件用途、定位与边界。
+  en-US: Purpose, role and boundaries of the component.
+whenNotToUse:
+  - zh-CN: 不适用场景说明。
+    en-US: When not to use description.
+alternatives:
+  - AnotherComponent
+api:
+  props:
+    - name: exampleProp
+      type: string
+      required: false
+      default: ''
+      description:
+        zh-CN: 属性描述。
+        en-US: Prop description.
+      links:
+        source:
+          - components/ComponentName/interface.ts
+rules:
+  invariants:
+    - id: example-rule
+      dsl: "if(props.size=='small'){ props.icon == null }"
+      level: warn
+      description:
+        zh-CN: 示例规则描述。
+        en-US: Example rule description.
+      links:
+        source:
+          - components/ComponentName/index.tsx
+    - id: second-rule
+      dsl: 'props.disabled => events.onClick == null'
+      level: error
+      description:
+        zh-CN: 禁用态不可触发点击事件。
+        en-US: Disabled state must not trigger click events.
+      links:
+        source:
+          - components/ComponentName/index.tsx
+usage:
+  recipes:
+    - id: basic-usage
+      name:
+        zh-CN: 基础用法
+        en-US: Basic usage
+      description:
+        zh-CN: 简述基础用法场景。
+        en-US: Describe basic usage scenario.
+      demo: components/ComponentName/__demo__/basic.tsx
+      links:
+        source:
+          - components/ComponentName/__demo__/basic.tsx
+    - id: advanced-usage
+      name:
+        zh-CN: 高级用法
+        en-US: Advanced usage
+      description:
+        zh-CN: 包含复杂交互或组合的使用示例。
+        en-US: Example with complex interactions or composition.
+      demo: components/ComponentName/__demo__/advanced.tsx
+      links:
+        source:
+          - components/ComponentName/__demo__/advanced.tsx
+links:
+  source:
+    - components/ComponentName/index.tsx
+    - components/ComponentName/interface.ts
+  docs:
+    - components/ComponentName/README.zh-CN.md

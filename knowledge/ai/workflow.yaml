@@ -1,0 +1,126 @@
+specVersion: 1.0.0
+title:
+  zh-CN: 组件元数据生成工作流
+  en-US: Component Metadata Generation Workflow
+purpose:
+  zh-CN: 将组件库的能力边界、使用约束与最佳实践以结构化、可校验的形式沉淀，供 AI 代码生成、RAG 检索、规则校验与文档站点复用。
+  en-US: Capture capability boundaries, usage constraints and best practices in a structured, validatable format for AI codegen, RAG, rule checks, and docs reuse.
+constraints:
+  rules:
+    - id: files-location
+      level: error
+      dsl: "forall(file in outputs): file.path.startsWith('knowledge/')"
+      description:
+        zh-CN: 所有产出物必须位于 knowledge/ 目录下。
+        en-US: All outputs must be under the knowledge/ directory.
+    - id: meta-schema-ext
+      level: error
+      dsl: "forall(file in outputs): file.ext == '.yaml' || file.ext == '.schema.json'"
+      description:
+        zh-CN: 元数据与索引使用 .yaml，Schema 使用 .schema.json。
+        en-US: Metadata and registry use .yaml, schema uses .schema.json.
+    - id: i18n-required
+      level: error
+      dsl: "forall(loc in localized): loc.has('zh-CN')"
+      description:
+        zh-CN: 描述性字段必须包含 zh-CN。
+        en-US: Descriptive fields must include zh-CN.
+    - id: no-fabrication
+      level: error
+      dsl: 'forall(prop in api.props): prop.links.source.length > 0'
+      description:
+        zh-CN: 所有属性、类型、默认值必须有源码或文档溯源。
+        en-US: Every prop/type/default must have source links to code or docs.
+workflow:
+  steps:
+    - id: read-interface
+      name:
+        zh-CN: 读取接口定义
+        en-US: Read interface definitions
+      description:
+        zh-CN: 解析 interface.ts 获取 props 类型、默认值与注释。
+        en-US: Parse interface.ts to collect prop types, defaults and comments.
+    - id: read-implementation
+      name:
+        zh-CN: 读取组件实现
+        en-US: Read component implementation
+      description:
+        zh-CN: 分析 index.tsx 识别隐式逻辑与默认行为（条件渲染、互斥关系等）。
+        en-US: Analyze index.tsx for implicit logic and default behaviors.
+    - id: read-readme
+      name:
+        zh-CN: 阅读 README
+        en-US: Read README
+      description:
+        zh-CN: 理解组件定位、注意事项，并确保 API 表字段完整性。
+        en-US: Understand component purpose and ensure README API coverage.
+    - id: read-demos
+      name:
+        zh-CN: 阅读示例
+        en-US: Read demos
+      description:
+        zh-CN: 总结常见用法与最佳实践，写入 usage.recipes。
+        en-US: Summarize common usage and best practices into usage.recipes.
+    - id: generate-meta
+      name:
+        zh-CN: 生成元数据文件
+        en-US: Generate metadata file
+      description:
+        zh-CN: 输出至 `knowledge/ai/components/<ComponentName>/<ComponentName>.meta.yaml`。
+        en-US: Output to `knowledge/ai/components/<ComponentName>/<ComponentName>.meta.yaml`.
+    - id: update-registry
+      name:
+        zh-CN: 更新注册索引
+        en-US: Update registry
+      description:
+        zh-CN: 在 `knowledge/ai/registry.yaml` 增加或更新组件条目。
+        en-US: Add or update component entry in `knowledge/ai/registry.yaml`.
+    - id: schema-validation
+      name:
+        zh-CN: Schema 校验
+        en-US: Schema validation
+      description:
+        zh-CN: 使用 `knowledge/ai/component-metadata.schema.json` 校验生成的 .meta.yaml。
+        en-US: Validate .meta.yaml using `knowledge/ai/component-metadata.schema.json`.
+quality:
+  checklist:
+    - id: api-complete
+      item:
+        zh-CN: API props 覆盖 README 中的表格，字段无遗漏。
+        en-US: API props fully cover README table without missing fields.
+    - id: rules-density
+      item:
+        zh-CN: 关键约束以 rules/invariants 结构化表达，至少2条。
+        en-US: Key constraints are structured in rules/invariants, at least 2.
+    - id: recipes-minimum
+      item:
+        zh-CN: 至少 2 个 usage.recipes，高频组件建议 4-8 个。
+        en-US: At least 2 usage.recipes, 4-8 for high-usage components.
+    - id: when-not-to-use
+      item:
+        zh-CN: 明确不适用场景与可替代组件。
+        en-US: Clearly state when-not-to-use and alternatives.
+    - id: i18n-coverage
+      item:
+        zh-CN: i18n 描述完整，至少含 zh-CN。
+        en-US: i18n description complete, at least zh-CN.
+    - id: traceable-links
+      item:
+        zh-CN: links 字段可追溯源码与文档的有效路径。
+        en-US: links must include valid paths to source and docs.
+priority:
+  high:
+    - Button
+    - Input
+    - Select
+    - Form
+    - Table
+    - Modal
+    - Drawer
+  medium:
+    - Upload
+    - DatePicker
+    - Tabs
+    - Menu
+  low:
+    - Others

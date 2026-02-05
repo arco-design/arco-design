@@ -44,7 +44,8 @@
     "generate-version": "node ./scripts/generate-version.js",
     "prepare": "husky install",
     "test:screenshots": "node ./tests/screenshots.js",
-    "pre-commit": "pretty-quick --staged && npm run eslint && npm run stylelint"
+    "pre-commit": "pretty-quick --staged && npm run eslint && npm run stylelint",
+    "validate:meta": "node ./scripts/validate-meta.js"
   },
   "keywords": [
     "arco",

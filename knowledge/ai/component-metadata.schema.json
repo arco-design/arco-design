@@ -1,8 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://arco.design/ai/component-metadata.schema.json",
-  "title": "Arco Design React Component Metadata Schema",
-  "description": "Authority schema for validating single-component metadata (*.meta.yaml).",
+  "title": "Arco Component Metadata",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -10,42 +9,39 @@
     "registryVersion",
     "component",
     "purpose",
-    "entry",
     "api",
+    "rules",
     "usage",
-    "constraints",
     "links"
   ],
   "properties": {
-    "specVersion": { "$ref": "#/definitions/SemVer" },
-    "registryVersion": { "$ref": "#/definitions/SemVer" },
+    "specVersion": {
+      "type": "string",
+      "description": "Schema version (SemVer)",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[0-9A-Za-z.-]+)?$"
+    },
+    "registryVersion": {
+      "type": "string",
+      "description": "Registry version (SemVer)",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[0-9A-Za-z.-]+)?$"
+    },
     "component": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "tag", "category"],
+      "required": ["name"],
       "properties": {
         "name": { "type": "string", "minLength": 1 },
-        "tag": { "type": "string", "minLength": 1 },
-        "category": { "type": "string", "minLength": 1 },
-        "description": { "$ref": "#/definitions/I18nText" }
+        "title": { "$ref": "#/definitions/LocalizedString" }
       }
     },
-    "purpose": { "$ref": "#/definitions/I18nText" },
-    "entry": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["modulePath", "exportName"],
-      "properties": {
-        "packageName": { "type": "string", "minLength": 1 },
-        "modulePath": { "type": "string", "minLength": 1 },
-        "exportName": { "type": "string", "minLength": 1 },
-        "style": {
-          "type": "array",
-          "items": { "type": "string", "minLength": 1 }
-        },
-        "examplesPath": { "type": "string", "minLength": 1 },
-        "since": { "$ref": "#/definitions/SemVer" }
-      }
+    "purpose": { "$ref": "#/definitions/LocalizedString" },
+    "whenNotToUse": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/LocalizedString" }
+    },
+    "alternatives": {
+      "type": "array",
+      "items": { "type": "string" }
     },
     "api": {
       "type": "object",
@@ -54,19 +50,73 @@
       "properties": {
         "props": {
           "type": "array",
-          "items": { "$ref": "#/definitions/Prop" }
-        },
-        "events": {
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "type", "required", "description", "links"],
+            "properties": {
+              "name": { "type": "string" },
+              "type": { "type": "string" },
+              "required": { "type": "boolean" },
+              "default": {
+                "oneOf": [
+                  { "type": "string" },
+                  { "type": "number" },
+                  { "type": "boolean" },
+                  { "type": "null" },
+                  { "type": "object" },
+                  { "type": "array" }
+                ]
+              },
+              "description": { "$ref": "#/definitions/LocalizedString" },
+              "links": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["source"],
+                "properties": {
+                  "source": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["invariants"],
+      "properties": {
+        "invariants": {
           "type": "array",
-          "items": { "$ref": "#/definitions/Event" }
-        },
-        "methods": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/Method" }
-        },
-        "slots": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/Slot" }
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "dsl", "level", "description", "links"],
+            "properties": {
+              "id": { "type": "string" },
+              "dsl": { "type": "string" },
+              "level": { "type": "string", "enum": ["error", "warn"] },
+              "description": { "$ref": "#/definitions/LocalizedString" },
+              "links": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["source"],
+                "properties": {
+                  "source": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -77,23 +127,30 @@
       "properties": {
         "recipes": {
           "type": "array",
-          "items": { "$ref": "#/definitions/Recipe" },
-          "minItems": 1
-        }
-      }
-    },
-    "constraints": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["rules", "invariants"],
-      "properties": {
-        "rules": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/Rule" }
-        },
-        "invariants": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/Rule" }
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "name", "description", "links"],
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "$ref": "#/definitions/LocalizedString" },
+              "description": { "$ref": "#/definitions/LocalizedString" },
+              "demo": { "type": "string" },
+              "links": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["source"],
+                "properties": {
+                  "source": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -102,285 +159,28 @@
       "additionalProperties": false,
       "required": ["source"],
       "properties": {
-        "homepage": { "type": "string", "format": "uri" },
-        "docs": {
-          "type": "array",
-          "items": { "type": "string", "format": "uri" }
-        },
         "source": {
           "type": "array",
-          "items": { "$ref": "#/definitions/SourceLink" },
-          "minItems": 1
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "docs": {
+          "type": "array",
+          "items": { "type": "string" }
         }
       }
     }
   },
   "definitions": {
-    "SemVer": {
-      "type": "string",
-      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-(?:0|[1-9]\\d*|[0-9A-Za-z-]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9]\\d*|[0-9A-Za-z-]*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
-    },
-    "I18nText": {
+    "LocalizedString": {
       "type": "object",
       "additionalProperties": false,
+      "minProperties": 1,
       "properties": {
-        "zh-CN": { "type": "string", "minLength": 1 },
-        "en-US": { "type": "string", "minLength": 1 }
+        "zh-CN": { "type": "string" },
+        "en-US": { "type": "string" }
       },
-      "anyOf": [{ "required": ["zh-CN"] }, { "required": ["en-US"] }]
-    },
-    "TypeDescriptor": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "type": { "type": "string", "minLength": 1 },
-        "enum": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/Literal" },
-          "minItems": 1
-        },
-        "items": { "$ref": "#/definitions/TypeDescriptor" },
-        "properties": {
-          "type": "object",
-          "additionalProperties": { "$ref": "#/definitions/TypeDescriptor" }
-        },
-        "required": {
-          "type": "array",
-          "items": { "type": "string" }
-        },
-        "nullable": { "type": "boolean" },
-        "description": { "$ref": "#/definitions/I18nText" }
-      },
-      "required": ["type"]
-    },
-    "TypeRef": {
-      "anyOf": [{ "type": "string", "minLength": 1 }, { "$ref": "#/definitions/TypeDescriptor" }]
-    },
-    "Literal": {
-      "oneOf": [
-        { "type": "string" },
-        { "type": "number" },
-        { "type": "integer" },
-        { "type": "boolean" },
-        { "type": "null" },
-        { "type": "array" },
-        { "type": "object" }
-      ]
-    },
-    "Deprecated": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "since": { "$ref": "#/definitions/SemVer" },
-        "reason": { "$ref": "#/definitions/I18nText" }
-      }
-    },
-    "Prop": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["name", "type"],
-      "properties": {
-        "name": { "type": "string", "minLength": 1 },
-        "type": { "$ref": "#/definitions/TypeRef" },
-        "required": { "type": "boolean" },
-        "default": { "$ref": "#/definitions/Literal" },
-        "description": { "$ref": "#/definitions/I18nText" },
-        "since": { "$ref": "#/definitions/SemVer" },
-        "deprecated": { "$ref": "#/definitions/Deprecated" },
-        "links": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/SourceLink" }
-        }
-      }
-    },
-    "Event": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["name"],
-      "properties": {
-        "name": { "type": "string", "minLength": 1 },
-        "payload": { "$ref": "#/definitions/TypeRef" },
-        "description": { "$ref": "#/definitions/I18nText" },
-        "since": { "$ref": "#/definitions/SemVer" },
-        "deprecated": { "$ref": "#/definitions/Deprecated" },
-        "links": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/SourceLink" }
-        }
-      }
-    },
-    "Parameter": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["name", "type"],
-      "properties": {
-        "name": { "type": "string", "minLength": 1 },
-        "type": { "$ref": "#/definitions/TypeRef" },
-        "required": { "type": "boolean" },
-        "description": { "$ref": "#/definitions/I18nText" }
-      }
-    },
-    "ReturnType": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["type"],
-      "properties": {
-        "type": { "$ref": "#/definitions/TypeRef" },
-        "description": { "$ref": "#/definitions/I18nText" }
-      }
-    },
-    "Method": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["name"],
-      "properties": {
-        "name": { "type": "string", "minLength": 1 },
-        "params": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/Parameter" }
-        },
-        "returns": { "$ref": "#/definitions/ReturnType" },
-        "description": { "$ref": "#/definitions/I18nText" },
-        "since": { "$ref": "#/definitions/SemVer" },
-        "deprecated": { "$ref": "#/definitions/Deprecated" },
-        "links": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/SourceLink" }
-        }
-      }
-    },
-    "Slot": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["name"],
-      "properties": {
-        "name": { "type": "string", "minLength": 1 },
-        "description": { "$ref": "#/definitions/I18nText" },
-        "slotProps": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/Parameter" }
-        }
-      }
-    },
-    "RecipeStep": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "title": { "$ref": "#/definitions/I18nText" },
-        "code": { "type": "string" },
-        "explanation": { "$ref": "#/definitions/I18nText" }
-      }
-    },
-    "Recipe": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["title"],
-      "properties": {
-        "title": { "$ref": "#/definitions/I18nText" },
-        "description": { "$ref": "#/definitions/I18nText" },
-        "appliesWhen": { "$ref": "#/definitions/LogicNode" },
-        "steps": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/RecipeStep" }
-        },
-        "links": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/SourceLink" }
-        }
-      }
-    },
-    "RuleTarget": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["type", "selector"],
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": ["component", "prop", "event", "method", "slot", "usage"]
-        },
-        "selector": { "type": "string", "minLength": 1 },
-        "syntax": { "type": "string", "enum": ["dotpath", "jsonpath"], "default": "dotpath" }
-      }
-    },
-    "LogicNode": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["op", "operands"],
-      "properties": {
-        "op": {
-          "type": "string",
-          "enum": [
-            "equals",
-            "notEquals",
-            "in",
-            "notIn",
-            "exists",
-            "matches",
-            "gt",
-            "gte",
-            "lt",
-            "lte",
-            "and",
-            "or",
-            "not",
-            "implies"
-          ]
-        },
-        "operands": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/Expression" }
-        }
-      }
-    },
-    "Expression": {
-      "anyOf": [
-        { "$ref": "#/definitions/SelectorRef" },
-        { "$ref": "#/definitions/Literal" },
-        { "$ref": "#/definitions/LogicNode" }
-      ]
-    },
-    "SelectorRef": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["path"],
-      "properties": {
-        "path": { "type": "string", "minLength": 1 },
-        "syntax": { "type": "string", "enum": ["dotpath", "jsonpath"], "default": "dotpath" }
-      }
-    },
-    "Rule": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["id", "target", "logic", "level", "message"],
-      "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "target": { "$ref": "#/definitions/RuleTarget" },
-        "logic": { "$ref": "#/definitions/LogicNode" },
-        "level": { "type": "string", "enum": ["error", "warn", "info"], "default": "error" },
-        "message": { "$ref": "#/definitions/I18nText" },
-        "rationale": { "$ref": "#/definitions/I18nText" },
-        "since": { "$ref": "#/definitions/SemVer" },
-        "deprecated": { "$ref": "#/definitions/Deprecated" },
-        "links": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/SourceLink" }
-        }
-      }
-    },
-    "SourceLink": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["type"],
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": ["code", "docs", "site", "test", "story", "commit", "issue", "pr"]
-        },
-        "url": { "type": "string", "format": "uri" },
-        "path": { "type": "string", "minLength": 1 },
-        "note": { "$ref": "#/definitions/I18nText" }
-      },
-      "anyOf": [{ "required": ["url"] }, { "required": ["path"] }]
+      "required": ["zh-CN"]
     }
   }
 }

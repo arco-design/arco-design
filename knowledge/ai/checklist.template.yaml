@@ -1,0 +1,30 @@
+specVersion: 1.0.0
+title:
+  zh-CN: 组件元数据人工验收清单
+  en-US: Manual Review Checklist for Component Metadata
+items:
+  - id: source-links
+    text:
+      zh-CN: 所有 props、规则、recipes 均提供 links.source 指向源码或 README。
+      en-US: All props, rules, recipes include links.source to code or README.
+    status: pending
+  - id: i18n
+    text:
+      zh-CN: 所有描述性字段包含 zh-CN。
+      en-US: All descriptive fields include zh-CN.
+    status: pending
+  - id: invariants
+    text:
+      zh-CN: 至少两条关键约束以 DSL 写入 rules.invariants。
+      en-US: At least two key constraints written in DSL under rules.invariants.
+    status: pending
+  - id: recipes
+    text:
+      zh-CN: 至少两个 usage.recipes，且描述明确、可操作。
+      en-US: At least two usage.recipes with clear actionable descriptions.
+    status: pending
+  - id: api-coverage
+    text:
+      zh-CN: API props 完整覆盖 README 表格。
+      en-US: API props fully cover README table.
+    status: pending
