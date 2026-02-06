@@ -1,0 +1,544 @@
+specVersion: '1.0.0'
+id: Button
+displayName:
+  en-US: Button
+  zh-CN: 按钮
+purpose:
+  summary: 触发即时操作的通用交互控件，支持类型、状态、尺寸、形状、图标与超链接模式。
+  usageConstraints:
+    - id: use-link-for-navigation
+      title: 导航场景应使用 Link 组件
+      description: 当需要跳转到页面或外部链接时，优先使用 Link 组件而非 Button 的 href 模式。
+      links:
+        source:
+          - components/Link/README.zh-CN.md
+          - components/Button/README.zh-CN.md
+    - id: use-anchor-for-inpage
+      title: 页面内锚点导航应使用 Anchor 组件
+      description: 页面内的目录跳转/锚点导航应使用 Anchor 组件，避免误用按钮。
+      links:
+        source:
+          - components/Anchor/README.zh-CN.md
+          - components/Button/README.zh-CN.md
+    - id: use-dropdown-or-group-for-multiple-actions
+      title: 多操作入口使用 Dropdown 或 Button.Group
+      description: 当一个入口下需承载多项操作时，使用 Dropdown 或 Button.Group 组织操作。
+      links:
+        source:
+          - components/Dropdown/README.zh-CN.md
+          - components/Button/README.zh-CN.md
+entry:
+  main: components/Button/index.tsx
+  style: components/Button/style/index.less
+  types:
+    - components/Button/interface.ts
+  package: '@arco-design/web-react'
+  exportName: Button
+api:
+  props:
+    - name: disabled
+      type: boolean
+      required: false
+      default: null
+      description: 是否禁用
+      constraints:
+        - type: custom
+          level: warning
+          message: 加载或禁用时不触发点击事件
+          when: props.disabled === true
+          links:
+            source:
+              - components/Button/index.tsx
+    - name: iconOnly
+      type: boolean
+      required: false
+      default: null
+      description: 只有图标，按钮宽高相等。如果指定 icon 且没有 children，iconOnly 默认为 true
+      constraints:
+        - type: requires
+          level: warning
+          message: 设置 icon 且无 children 时自动为 iconOnly
+          when: props.icon != null && (props.children == null || props.children === '')
+          links:
+            source:
+              - components/Button/index.tsx
+    - name: loading
+      type: boolean
+      required: false
+      default: null
+      description: 按钮是否是加载状态
+      constraints:
+        - type: custom
+          level: warning
+          message: 加载或禁用时不触发点击事件
+          when: props.loading === true
+          links:
+            source:
+              - components/Button/index.tsx
+    - name: loadingFixedWidth
+      type: boolean
+      required: false
+      default: null
+      description: 当 loading 的时候，不改变按钮的宽度。
+    - name: long
+      type: boolean
+      required: false
+      default: null
+      description: 按钮宽度随容器自适应。
+    - name: href
+      type: string
+      required: false
+      default: null
+      description: 添加跳转链接，设置此属性，button 表现跟 a 标签一致
+      constraints:
+        - type: custom
+          level: warning
+          message: 设置 href 时渲染为 a 元素，htmlType 被忽略
+          when: props.href != null
+          links:
+            source:
+              - components/Button/index.tsx
+    - name: target
+      type: string
+      required: false
+      default: null
+      description: a 链接的 target 属性，href 存在时生效
+      constraints:
+        - type: requires
+          level: error
+          message: target 存在时必须提供 href
+          when: props.target != null
+          links:
+            source:
+              - components/Button/interface.ts
+    - name: anchorProps
+      type: HTMLProps<HTMLAnchorElement>
+      required: false
+      default: null
+      description: a 链接的原生属性，href 存在时生效
+      constraints:
+        - type: requires
+          level: error
+          message: anchorProps 仅在 href 存在时生效
+          when: props.anchorProps != null
+          links:
+            source:
+              - components/Button/interface.ts
+    - name: htmlType
+      type: "'button' | 'submit' | 'reset'"
+      required: false
+      default: button
+      description: 按钮原生的 html type 类型
+    - name: shape
+      type: "'circle' | 'round' | 'square'"
+      required: false
+      default: square
+      description: 按钮形状
+    - name: size
+      type: "'mini' | 'small' | 'default' | 'large'"
+      required: false
+      default: default
+      description: 按钮的尺寸
+      constraints:
+        - type: custom
+          level: warning
+          message: 未设置时会使用 ConfigProvider 的 size
+          when: props.size == null
+          links:
+            source:
+              - components/Button/index.tsx
+    - name: status
+      type: "'warning' | 'danger' | 'success' | 'default'"
+      required: false
+      default: default
+      description: 按钮状态
+    - name: type
+      type: "'default' | 'primary' | 'secondary' | 'dashed' | 'text' | 'outline'"
+      required: false
+      default: default
+      description: 按钮类型
+      constraints:
+        - type: custom
+          level: warning
+          message: type 为 default 时样式映射为 secondary 类
+          when: props.type === 'default'
+          links:
+            source:
+              - components/Button/index.tsx
+    - name: icon
+      type: ReactNode
+      required: false
+      default: null
+      description: 设置按钮的图标
+    - name: className
+      type: 'string | string[]'
+      required: false
+      default: null
+      description: 节点类名
+    - name: style
+      type: CSSProperties
+      required: false
+      default: null
+      description: 节点样式
+    - name: onClick
+      type: '(e: Event) => void'
+      required: false
+      default: null
+      description: 点击按钮的回调
+  events:
+    - name: onClick
+      description: 点击按钮时触发（加载或禁用时不触发）
+      links:
+        source:
+          - components/Button/index.tsx
+usage:
+  keywords: [submit, save, delete, navigate, upload, search]
+  recipes:
+    - id: btn-basic-types
+      title: 基本用法
+      i18n:
+        title:
+          en-US: Basic
+          zh-CN: 基本用法
+      code:
+        - lang: js
+          content: |
+            import { Button, Space } from '@arco-design/web-react';
+            const App = () => (
+              <Space size="large">
+                <Button type="primary">Primary</Button>
+                <Button type="secondary">Secondary</Button>
+                <Button type="dashed">Dashed</Button>
+                <Button type="outline">Outline</Button>
+                <Button type="text">Text</Button>
+              </Space>
+            );
+            export default App;
+      source:
+        directory: components/Button/__demo__
+        demos:
+          - components/Button/__demo__/basic.md
+      steps:
+        - 使用不同的 type 表达主次与风格
+      propsUsed: [type]
+    - id: btn-icon
+      title: 图标按钮
+      i18n:
+        title:
+          en-US: Icon
+          zh-CN: 图标按钮
+      code:
+        - lang: js
+          content: |
+            import { Button, Space } from '@arco-design/web-react';
+            import { IconPlus, IconDelete } from '@arco-design/web-react/icon';
+            const App = () => (
+              <Space size="large">
+                <Button type="primary" icon={<IconPlus />} />
+                <Button type="primary" icon={<IconDelete />}>Delete</Button>
+              </Space>
+            );
+            export default App;
+      source:
+        directory: components/Button/__demo__
+        demos:
+          - components/Button/__demo__/icon.md
+      steps:
+        - 设置 icon；没有 children 时自动进入 iconOnly
+      propsUsed: [icon, iconOnly]
+    - id: btn-shape
+      title: 按钮形状
+      i18n:
+        title:
+          en-US: Shape
+          zh-CN: 按钮形状
+      code:
+        - lang: js
+          content: |
+            import { Button, Space } from '@arco-design/web-react';
+            import { IconPlus } from '@arco-design/web-react/icon';
+            const App = () => (
+              <Space size="large">
+                <Button type="primary" icon={<IconPlus />} />
+                <Button shape="circle" type="primary" icon={<IconPlus />} />
+                <Button shape="round" type="primary">Primary</Button>
+                <Button type="primary">Primary</Button>
+              </Space>
+            );
+            export default App;
+      source:
+        directory: components/Button/__demo__
+        demos:
+          - components/Button/__demo__/shape.md
+      steps:
+        - 通过 shape 切换为 circle 或 round
+      propsUsed: [shape]
+    - id: btn-size
+      title: 按钮尺寸
+      i18n:
+        title:
+          en-US: Size
+          zh-CN: 按钮尺寸
+      code:
+        - lang: js
+          content: |
+            import { Button, Space } from '@arco-design/web-react';
+            const App = () => (
+              <Space size="large">
+                <Button size="mini" type="primary">Mini</Button>
+                <Button size="small" type="primary">Small</Button>
+                <Button size="default" type="primary">Default</Button>
+                <Button size="large" type="primary">Large</Button>
+              </Space>
+            );
+            export default App;
+      source:
+        directory: components/Button/__demo__
+        demos:
+          - components/Button/__demo__/size.md
+      steps:
+        - 通过 size 设置 mini/small/default/large
+      propsUsed: [size]
+    - id: btn-status
+      title: 按钮状态
+      i18n:
+        title:
+          en-US: Status
+          zh-CN: 按钮状态
+      code:
+        - lang: js
+          content: |
+            import { Button } from '@arco-design/web-react';
+            const App = () => (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 100px)', gridRowGap: 24, gridColumnGap: 24 }}>
+                <Button type="primary" status="warning">Warning</Button>
+                <Button status="warning">Warning</Button>
+                <Button type="outline" status="warning">Warning</Button>
+                <Button type="text" status="warning">Warning</Button>
+                <Button type="primary" status="danger">Danger</Button>
+                <Button status="danger">Danger</Button>
+                <Button type="outline" status="danger">Danger</Button>
+                <Button type="text" status="danger">Danger</Button>
+                <Button type="primary" status="success">Success</Button>
+                <Button status="success">Success</Button>
+                <Button type="outline" status="success">Success</Button>
+                <Button type="text" status="success">Success</Button>
+              </div>
+            );
+            export default App;
+      source:
+        directory: components/Button/__demo__
+        demos:
+          - components/Button/__demo__/status.md
+      steps:
+        - status 与 type 可同时设置，status 优先级更高
+      propsUsed: [status, type]
+    - id: btn-disabled
+      title: 禁用按钮
+      i18n:
+        title:
+          en-US: Disabled
+          zh-CN: 禁用按钮
+      code:
+        - lang: js
+          content: |
+            import { Button, Space } from '@arco-design/web-react';
+            const App = () => (
+              <Space size="large" direction="vertical">
+                <Space size="large">
+                  <Button disabled type="primary">Primary</Button>
+                  <Button disabled type="secondary">Secondary</Button>
+                  <Button disabled type="dashed">Dashed</Button>
+                  <Button disabled type="outline">Outline</Button>
+                  <Button disabled type="text">Text</Button>
+                </Space>
+                <Space size="large">
+                  <Button disabled type="primary" status="danger">Primary</Button>
+                  <Button disabled type="secondary" status="danger">Secondary</Button>
+                  <Button disabled type="dashed" status="danger">Dashed</Button>
+                  <Button disabled type="outline" status="danger">Outline</Button>
+                  <Button disabled type="text" status="danger">Text</Button>
+                </Space>
+                <Space size="large">
+                  <Button disabled type="primary" status="warning">Primary</Button>
+                  <Button disabled type="secondary" status="warning">Secondary</Button>
+                  <Button disabled type="dashed" status="warning">Dashed</Button>
+                  <Button disabled type="outline" status="warning">Outline</Button>
+                  <Button disabled type="text" status="warning">Text</Button>
+                </Space>
+                <Space size="large">
+                  <Button disabled type="primary" status="success">Primary</Button>
+                  <Button disabled type="secondary" status="success">Secondary</Button>
+                  <Button disabled type="dashed" status="success">Dashed</Button>
+                  <Button disabled type="outline" status="success">Outline</Button>
+                  <Button disabled type="text" status="success">Text</Button>
+                </Space>
+              </Space>
+            );
+            export default App;
+      source:
+        directory: components/Button/__demo__
+        demos:
+          - components/Button/__demo__/disabled.md
+      steps:
+        - 设置 disabled 禁止点击
+      propsUsed: [disabled]
+    - id: btn-loading
+      title: 加载中按钮
+      i18n:
+        title:
+          en-US: Loading
+          zh-CN: 加载中按钮
+      code:
+        - lang: js
+          content: |
+            import { useState } from 'react';
+            import { Button, Divider } from '@arco-design/web-react';
+            import { IconPlus } from '@arco-design/web-react/icon';
+            function App() {
+              const [loading1, setLoading1] = useState(false);
+              const [loading2, setLoading2] = useState(false);
+              const [loading3, setLoading3] = useState(false);
+              function onClickBtn1() { setLoading1(true); setTimeout(() => { setLoading1(false); }, 4000); }
+              function onClickBtn2() { setLoading2(true); setTimeout(() => { setLoading2(false); }, 4000); }
+              function onClickBtn3() { setLoading3(true); setTimeout(() => { setLoading3(false); }, 4000); }
+              return (
+                <div>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 100px)', rowGap: 24, columnGap: 24, marginLeft: 24 }}>
+                    <Button type="primary" loading>Loading</Button>
+                    <Button type="secondary" loading>Loading</Button>
+                    <Button type="dashed" loading>Loading</Button>
+                    <Button type="primary" shape="circle" loading />
+                    <Button type="secondary" shape="circle" loading />
+                    <Button type="dashed" shape="circle" loading />
+                  </div>
+                  <Button type="primary" loading={loading1} onClick={onClickBtn1} style={{ margin: 24 }}>Click Me</Button>
+                  <Button type="primary" loading={loading2} onClick={onClickBtn2} style={{ margin: 24 }}>{!loading2 && <IconPlus />}Click Me</Button>
+                  <Divider style={{ width: 440, minWidth: 440 }}>loading fixed width</Divider>
+                  <Button type="primary" loadingFixedWidth loading={loading3} onClick={onClickBtn3} style={{ margin: 24 }}>Search</Button>
+                </div>
+              );
+            }
+            export default App;
+      source:
+        directory: components/Button/__demo__
+        demos:
+          - components/Button/__demo__/loading.md
+      steps:
+        - 设置 loading；加载中不触发点击
+        - 使用 loadingFixedWidth 保持宽度
+      propsUsed: [loading, loadingFixedWidth, shape]
+    - id: btn-long
+      title: 长按钮
+      i18n:
+        title:
+          en-US: Long
+          zh-CN: 长按钮
+      code:
+        - lang: js
+          content: |
+            import { Button, Space } from '@arco-design/web-react';
+            import { IconUpload } from '@arco-design/web-react/icon';
+            const App = () => (
+              <Space style={{ width: 360, border: '1px solid var(--color-border)', borderRadius: 4, padding: 20 }} direction="vertical" size="large">
+                <Button type="primary" long>Primary</Button>
+                <Button type="secondary" long>Secondary</Button>
+                <Button type="dashed" long>Dashed</Button>
+                <Button type="default" long>Default</Button>
+                <Button type="text" long>Text</Button>
+              </Space>
+            );
+            export default App;
+      source:
+        directory: components/Button/__demo__
+        demos:
+          - components/Button/__demo__/long.md
+      steps:
+        - 设置 long 使按钮宽度自适应容器
+      propsUsed: [long]
+    - id: btn-group
+      title: 组合按钮
+      i18n:
+        title:
+          en-US: Button group
+          zh-CN: 组合按钮
+      code:
+        - lang: tsx
+          content: |
+            import React from 'react';
+            import { Button, Space } from '@arco-design/web-react';
+            import { IconLeft, IconRight, IconMore, IconStar, IconSettings, IconMessage, IconDown } from '@arco-design/web-react/icon';
+            const ButtonGroup = Button.Group;
+            const App = () => (
+              <Space size="large" direction="vertical">
+                <Space size="large">
+                  <ButtonGroup>
+                    <Button>Publish</Button>
+                    <Button icon={<IconDown />} />
+                  </ButtonGroup>
+                  <ButtonGroup>
+                    <Button type="secondary">Publish</Button>
+                    <Button type="secondary" icon={<IconMore />} />
+                  </ButtonGroup>
+                </Space>
+                <ButtonGroup>
+                  <Button type="primary">Publish</Button>
+                  <Button type="primary" icon={<IconDown />} />
+                </ButtonGroup>
+                <Space size="large">
+                  <ButtonGroup>
+                    <Button type="primary" icon={<IconLeft />} shape="round" style={{ padding: '0 8px' }}>Prev</Button>
+                    <Button type="primary" shape="round" style={{ padding: '0 8px' }}>Next<IconRight /></Button>
+                  </ButtonGroup>
+                  <ButtonGroup>
+                    <Button type="primary" icon={<IconStar />} />
+                    <Button type="primary" icon={<IconMessage />} />
+                    <Button type="primary" icon={<IconSettings />} />
+                  </ButtonGroup>
+                  <ButtonGroup>
+                    <Button type="primary" icon={<IconStar />}>Favorite</Button>
+                    <Button type="primary" icon={<IconSettings />}>Setting</Button>
+                  </ButtonGroup>
+                </Space>
+              </Space>
+            );
+            export default App;
+      source:
+        directory: components/Button/__demo__
+        demos:
+          - components/Button/__demo__/button-group.md
+      steps:
+        - 使用 Button.Group 组织同级操作
+      propsUsed: [type, icon, shape]
+constraints:
+  invariants:
+    - id: requires-href-when-target
+      level: error
+      description: target 存在时必须提供 href
+      rule:
+        type: requires
+        level: error
+        message: target requires href
+        when: props.target != null
+      links:
+        source:
+          - components/Button/interface.ts
+    - id: requires-href-when-anchorProps
+      level: error
+      description: anchorProps 仅在 href 存在时生效
+      rule:
+        type: requires
+        level: error
+        message: anchorProps requires href
+        when: props.anchorProps != null
+      links:
+        source:
+          - components/Button/interface.ts
+links:
+  source:
+    - components/Button/index.tsx
+    - components/Button/interface.ts
+  docs:
+    - components/Button/README.zh-CN.md
+  tests:
+    - components/Button/__test__/index.test.tsx
