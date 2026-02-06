@@ -1,0 +1,17 @@
+components:
+  - id: Button
+    displayName:
+      zh-CN: 按钮
+      en-US: Button
+    category: ['通用']
+    entry:
+      import:
+        from: '@arco-design/web-react'
+        named: ['Button']
+        default: false
+      types:
+        propsType: ButtonProps
+        from: '@arco-design/web-react'
+    doc:
+      markdown: components/Button/README.zh-CN.md
+    meta: knowledge/ai/components/Button/Button.meta.yaml
