@@ -1,0 +1,366 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://arco.design/knowledge/ai/component-metadata.schema.json",
+  "title": "Arco Component Metadata Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["specVersion", "id", "displayName", "purpose", "entry", "api", "usage", "links"],
+  "properties": {
+    "specVersion": {
+      "type": "string",
+      "description": "Schema spec version (semver)",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "id": {
+      "type": "string",
+      "description": "Component identifier (e.g., Button)",
+      "pattern": "^[A-Z][A-Za-z0-9]*(?:\\.[A-Za-z0-9]+)*$"
+    },
+    "displayName": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en-US", "zh-CN"],
+      "properties": {
+        "en-US": { "type": "string" },
+        "zh-CN": { "type": "string" }
+      }
+    },
+    "purpose": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "summary": { "type": "string" },
+        "capabilityBoundary": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/annotatedItem" }
+        },
+        "usageConstraints": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/annotatedItem" }
+        },
+        "bestPractices": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/annotatedItem" }
+        },
+        "patterns": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/annotatedItem" }
+        }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["main"],
+      "properties": {
+        "main": { "$ref": "#/$defs/path" },
+        "style": { "$ref": "#/$defs/path" },
+        "types": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/path" }
+        },
+        "package": { "type": "string" },
+        "exportName": { "type": "string" }
+      }
+    },
+    "api": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["props"],
+      "properties": {
+        "props": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/prop" },
+          "minItems": 1
+        },
+        "events": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/event" }
+        },
+        "methods": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/method" }
+        }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["keywords", "recipes"],
+      "properties": {
+        "keywords": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "recipes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/recipe" },
+          "minItems": 1
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "invariants": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/invariant" }
+        }
+      }
+    },
+    "links": { "$ref": "#/$defs/links" },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "componentVersion": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+        },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "authors": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "$defs": {
+    "path": {
+      "type": "string",
+      "description": "Repository relative path",
+      "pattern": "^(components|icon|stories|tests|lib|es|site|scripts)/.+$"
+    },
+    "demoPath": {
+      "type": "string",
+      "description": "Path to a demo file under __demo__",
+      "pattern": "^components/[^/]+/__demo__/.+"
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source"],
+      "properties": {
+        "source": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/path" },
+          "minItems": 1
+        },
+        "docs": { "type": "array", "items": { "$ref": "#/$defs/path" } },
+        "tests": { "type": "array", "items": { "$ref": "#/$defs/path" } }
+      }
+    },
+    "annotatedItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "links": { "$ref": "#/$defs/links" }
+      }
+    },
+    "prop": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "type"],
+      "properties": {
+        "name": { "type": "string", "pattern": "^[A-Za-z_][A-Za-z0-9_]*$" },
+        "type": { "type": "string" },
+        "required": { "type": "boolean", "default": false },
+        "default": {
+          "oneOf": [
+            { "type": "string" },
+            { "type": "number" },
+            { "type": "boolean" },
+            { "type": "array" },
+            { "type": "object" },
+            { "type": "null" }
+          ]
+        },
+        "description": { "type": "string" },
+        "since": { "type": "string" },
+        "deprecated": {
+          "oneOf": [
+            { "type": "boolean" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["reason"],
+              "properties": {
+                "since": { "type": "string" },
+                "reason": { "type": "string" }
+              }
+            }
+          ]
+        },
+        "relations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/relationRule" }
+        },
+        "constraints": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/constraint" }
+        },
+        "links": { "$ref": "#/$defs/links" }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "detailType": { "type": "string" },
+        "payload": { "type": "object" },
+        "description": { "type": "string" },
+        "links": { "$ref": "#/$defs/links" }
+      }
+    },
+    "method": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "params": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "type"],
+            "properties": {
+              "name": { "type": "string" },
+              "type": { "type": "string" },
+              "optional": { "type": "boolean", "default": false },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "returns": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type"],
+          "properties": {
+            "type": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        },
+        "description": { "type": "string" },
+        "links": { "$ref": "#/$defs/links" }
+      }
+    },
+    "recipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "i18n", "code", "source"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "i18n": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title"],
+          "properties": {
+            "title": { "$ref": "#/$defs/i18nString" },
+            "description": { "$ref": "#/$defs/i18nString" }
+          }
+        },
+        "description": { "type": "string" },
+        "code": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/codeSnippet" },
+          "minItems": 1
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["demos"],
+          "properties": {
+            "directory": { "$ref": "#/$defs/path" },
+            "demos": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/demoPath" },
+              "minItems": 1
+            }
+          }
+        },
+        "steps": { "type": "array", "items": { "type": "string" } },
+        "propsUsed": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "i18nString": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en-US", "zh-CN"],
+      "properties": {
+        "en-US": { "type": "string" },
+        "zh-CN": { "type": "string" }
+      }
+    },
+    "codeSnippet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lang", "content"],
+      "properties": {
+        "lang": {
+          "type": "string",
+          "enum": ["tsx", "jsx", "ts", "js", "css", "less", "json", "md"]
+        },
+        "content": { "type": "string" },
+        "file": { "$ref": "#/$defs/path" },
+        "runnable": { "type": "boolean", "default": false }
+      }
+    },
+    "constraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "level", "message"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "requires",
+            "conflicts",
+            "mutuallyExclusive",
+            "enum",
+            "pattern",
+            "range",
+            "length",
+            "custom"
+          ]
+        },
+        "level": { "type": "string", "enum": ["error", "warning"] },
+        "message": { "type": "string" },
+        "selector": { "type": "string" },
+        "when": { "type": "string" },
+        "params": { "type": "object" },
+        "links": { "$ref": "#/$defs/links" }
+      }
+    },
+    "relationRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "level", "message", "target"],
+      "properties": {
+        "type": { "type": "string", "enum": ["requires", "conflicts", "enables"] },
+        "target": { "type": "string" },
+        "level": { "type": "string", "enum": ["error", "warning"] },
+        "message": { "type": "string" },
+        "when": { "type": "string" },
+        "links": { "$ref": "#/$defs/links" }
+      }
+    },
+    "invariant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "level", "description", "rule"],
+      "properties": {
+        "id": { "type": "string" },
+        "level": { "type": "string", "enum": ["error", "warning"] },
+        "description": { "type": "string" },
+        "rule": { "$ref": "#/$defs/constraint" },
+        "links": { "$ref": "#/$defs/links" }
+      }
+    }
+  }
+}
