@@ -13,7 +13,7 @@ function useNotification(
   const { maxCount, duration = 3000, prefixCls: _prefixCls, getContainer } = commonConfig;
   const contextHolderRef = createRef<HolderRef>();
   const holderEle = <ContextHolderElement ref={contextHolderRef} />;
-  const notificationInstance = {};
+  const notificationInstance: { [key: string]: any } = {};
   let notice;
 
   function addNotice(noticeProps: NotificationProps) {
@@ -33,6 +33,12 @@ function useNotification(
       ...noticeProps,
     };
     let id;
+    const createInstanceProxy = (pos: string) => ({
+      add: (props: NotificationProps) => notificationInstance[pos]?.add?.(props),
+      remove: (targetId: string) => notificationInstance[pos]?.remove?.(targetId),
+      clear: () => notificationInstance[pos]?.clear?.(),
+    });
+
     if (notificationInstance[position]) {
       const notices = notificationInstance[position].state.notices;
       if (notices.length >= maxCount) {
@@ -59,7 +65,8 @@ function useNotification(
       );
       contextHolderRef.current.addInstance(notice);
     }
-    return notificationInstance[position];
+    // Always return a proxy object tied to the position so caller can call remove/clear
+    return createInstanceProxy(position);
   }
 
   const notificationFuncs: NotificationHookReturnType = {};
@@ -72,6 +79,19 @@ function useNotification(
       });
     };
   });
+
+  // expose remove/clear on the returned api as well (iterate all positions)
+  notificationFuncs.remove = (id: string) => {
+    Object.values(notificationInstance).forEach((inst: any) => {
+      inst?.remove?.(id);
+    });
+  };
+
+  notificationFuncs.clear = () => {
+    Object.values(notificationInstance).forEach((inst: any) => {
+      inst?.clear?.();
+    });
+  };
 
   return [notificationFuncs, holderEle];
 }

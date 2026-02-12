@@ -68,7 +68,16 @@ export interface NotificationProps {
   type?: string;
 }
 
-type notificationHookFunction = (config: NotificationProps) => ReactInstance;
+type NotificationInstance = {
+  /** add a notice (delegate to internal instance when ready) */
+  add?: (config: NotificationProps) => any;
+  /** remove a notice by id */
+  remove?: (id: string) => void;
+  /** clear all notices */
+  clear?: () => void;
+};
+
+type notificationHookFunction = (config: NotificationProps) => NotificationInstance | ReactInstance;
 
 export type NotificationHookReturnType = {
   info?: notificationHookFunction;
@@ -76,4 +85,8 @@ export type NotificationHookReturnType = {
   warning?: notificationHookFunction;
   error?: notificationHookFunction;
   normal?: notificationHookFunction;
+  /** remove by id when using the hook */
+  remove?: (id: string) => void;
+  /** clear all when using the hook */
+  clear?: () => void;
 };
