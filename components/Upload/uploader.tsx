@@ -13,18 +13,13 @@ export type UploaderType = {
   reupload: (file: UploadItem) => void;
 };
 
-type UploaderState = {
-  uploadRequests: { [key: string]: UploadRequestReturn };
-};
+type UploaderState = {};
 class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, UploaderState> {
   inputRef: HTMLInputElement | null;
+  uploadRequests: { [key: string]: UploadRequestReturn } = {};
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      uploadRequests: {},
-    };
   }
 
   // 提供 ref 调用
@@ -34,7 +29,7 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
 
   // 提供 ref 调用。终止
   abort = (file: UploadItem) => {
-    const req = this.state.uploadRequests[file.uid];
+    const req = this.uploadRequests[file.uid];
     if (req) {
       req.abort && req.abort();
       this.updateFileStatus({
@@ -55,11 +50,7 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
   };
 
   deleteReq = (uid: string) => {
-    const newValue = { ...this.state.uploadRequests };
-    delete newValue[uid];
-    this.setState({
-      uploadRequests: newValue,
-    });
+    delete this.uploadRequests[uid];
   };
 
   // 提供 ref 调用
@@ -140,12 +131,7 @@ class Uploader extends React.Component<React.PropsWithChildren<UploaderProps>, U
       request = await customRequest(options);
     }
 
-    this.setState({
-      uploadRequests: {
-        ...this.state.uploadRequests,
-        [file.uid]: request,
-      },
-    });
+    this.uploadRequests[file.uid] = request;
   };
 
   handleFiles = (files: File[]) => {
