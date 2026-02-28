@@ -1,0 +1,38 @@
+name: MR Check
+trigger:
+  change:
+    types: [create, push]
+    notification:
+      when: [success]
+      to: [lingyunsong]
+
+jobs:
+  jest-test:
+    name: Jest Test
+    image: hub.byted.org/codebase/ci_nodejs_16
+    envs:
+      TZ: Asia/Singapore
+    steps:
+      - name: Install dependencies
+        commands:
+          - yarn run dependencies
+
+      - name: Generate icons
+        commands:
+          - yarn icon
+
+      - name: Build CJS
+        commands:
+          - yarn build:cjs
+
+      - name: Build ES
+        commands:
+          - yarn build:es
+
+      - name: Test client
+        commands:
+          - yarn test:client
+
+      - name: Test node
+        commands:
+          - yarn test:node
