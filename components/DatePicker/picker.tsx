@@ -73,6 +73,7 @@ interface InnerPickerProps extends PickerProps {
   defaultValue?: CalendarValue | CalendarValue[];
   value?: CalendarValue | CalendarValue[];
   showTime?: boolean | TimePickerProps;
+  timepickerProps?: TimePickerProps;
   onSelect?: (dateString: string, date: Dayjs) => void;
   onChange?: (dateString: string, date: Dayjs) => void;
   showNowBtn?: boolean;
@@ -292,6 +293,14 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
     setOpen(false);
   }
 
+  function onConfirmTimeValue(v: Dayjs) {
+    const _valueShow = panelValue || getNow(utcOffset, timezone);
+    const newValue = getValueWithTime(_valueShow, v);
+    setValue(newValue);
+    onHandleChange(newValue);
+    setOpen(false);
+  }
+
   function onHandleSelect(_: string, date?: Dayjs, now?: boolean) {
     setInputValue(undefined);
     setHoverPlaceholderValue(undefined);
@@ -487,6 +496,11 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
       (isArray(shortcuts) && shortcuts.length && !shortcutsPlacementLeft) ||
       (!showTime && panelMode === 'date' && showNowBtn);
 
+    const disableConfirm = Boolean(
+      (props.timepickerProps && (props.timepickerProps as TimePickerProps).disableConfirm) ||
+        (isObject(showTime) && (showTime as TimePickerProps).disableConfirm)
+    );
+
     const content = (
       <>
         {React.cloneElement(picker as ReactElement, {
@@ -495,6 +509,7 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
           getHeaderOperations,
           onSelect: onHandleSelect,
           onTimePickerSelect,
+          onConfirmValue: onConfirmTimeValue,
           onSelectNow,
           popupVisible: mergedPopupVisible,
           format,
@@ -523,6 +538,7 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
             shortcutsPlacementLeft={shortcutsPlacementLeft}
             onClickSelectTimeBtn={onClickSelectTimeBtn}
             isTimePanel={isTimePanel}
+            disableConfirm={disableConfirm}
           />
         )}
       </>

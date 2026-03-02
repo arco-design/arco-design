@@ -13,7 +13,6 @@ import MonthPanel from '../month';
 import YearPanel from '../year';
 import { newArray } from '../../../_util/constant';
 import PickerContext from '../../context';
-import omit from '../../../_util/omit';
 
 interface InnerDatePickerProps extends DatePickerProps {
   onTimePickerSelect?: (timeString: string, time: Dayjs) => void;
@@ -34,6 +33,7 @@ interface InnerDatePickerProps extends DatePickerProps {
   isTimePanel?: boolean;
   panelMode?: ModeType;
   setPanelMode?: (mode: ModeType) => void;
+  onConfirmValue?: (value: Dayjs) => void;
 }
 
 const allDaysInOnePage = 6 * 7;
@@ -201,13 +201,14 @@ function DatePicker(props: InnerDatePickerProps & PrivateCType) {
       <div className={`${prefixCls}-timepicker`}>
         <header className={`${prefixCls}-timepicker-title`}>{DATEPICKER_LOCALE.selectTime}</header>
         <TimePicker
-          {...omit(timepickerProps, ['disableConfirm'])}
+          {...timepickerProps}
           {...showTimeProps}
           {...disabledTimeProps}
           hideFooter
           format={timeFormat}
           valueShow={timeValue.format(timeFormat)}
           onSelect={onTimePickerSelect}
+          onConfirmValue={props.onConfirmValue}
           popupVisible={popupVisible}
           utcOffset={utcOffset}
           timezone={timezone}

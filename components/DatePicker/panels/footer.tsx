@@ -22,6 +22,7 @@ export default function Footer(props) {
     extra,
     mode,
     shortcutsPlacementLeft,
+    disableConfirm,
   } = props;
 
   const hasShortcuts = isArray(shortcuts) && shortcuts.length > 0;
@@ -65,15 +66,17 @@ export default function Footer(props) {
               >
                 {isTimePanel ? DATEPICKER_LOCALE.selectDate : DATEPICKER_LOCALE.selectTime}
               </Button>
-              <Button
-                className={`${prefixCls}-btn-confirm`}
-                type="primary"
-                size="mini"
-                disabled={disabled}
-                onClick={onClickConfirmBtn}
-              >
-                {DATEPICKER_LOCALE.ok}
-              </Button>
+              {!disableConfirm && (
+                <Button
+                  className={`${prefixCls}-btn-confirm`}
+                  type="primary"
+                  size="mini"
+                  disabled={disabled}
+                  onClick={onClickConfirmBtn}
+                >
+                  {DATEPICKER_LOCALE.ok}
+                </Button>
+              )}
             </>
           )}
         </div>
