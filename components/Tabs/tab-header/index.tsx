@@ -77,6 +77,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   const titleRef = useRef({});
   const [headerOffset, setHeaderOffset] = useState(0);
   const [shouldScroll, setShouldScroll] = useState(true);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const {
     paneChildren,
@@ -327,6 +328,12 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
     onScroll(offset) {
       updateHeaderOffset(offset);
     },
+    onScrollStart() {
+      setIsScrolling(true);
+    },
+    onScrollEnd() {
+      setIsScrolling(false);
+    },
   });
 
   return (
@@ -373,6 +380,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
                     !props.headerPadding &&
                     direction === 'horizontal' &&
                     ['line', 'text'].indexOf(type) > -1,
+                  [`${prefixCls}-header-scrolling`]: isScrolling,
                 })}
                 ref={headerRef}
                 style={headerStyle}
