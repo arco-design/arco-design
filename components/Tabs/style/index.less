@@ -131,7 +131,12 @@
     position: relative;
     display: inline-block;
     transition: transform @transition-duration-2 @transition-timing-function-standard;
+    will-change: transform;
     white-space: nowrap;
+
+    &-scrolling {
+      transition: none;
+    }
 
     &-extra {
       width: auto;

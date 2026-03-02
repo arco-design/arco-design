@@ -11,19 +11,74 @@ export default function useHeaderScroll<T extends HTMLElement>(props: {
   direction: 'horizontal' | 'vertical';
   isScrollable: boolean;
   onScroll: (offset: number) => void | boolean;
+  onScrollStart?: () => void;
+  onScrollEnd?: () => void;
 }) {
-  const { headerWrapperRef, headerOffset, align, isScrollable, direction, onScroll } = props;
+  const {
+    headerWrapperRef,
+    headerOffset,
+    align,
+    isScrollable,
+    direction,
+    onScroll,
+    onScrollStart,
+    onScrollEnd,
+  } = props;
 
-  function onOffset(offsetX: number, offsetY) {
-    let offset = 0;
+  const headerOffsetRef = useRef(headerOffset);
+  headerOffsetRef.current = headerOffset;
 
-    if (direction === 'vertical') {
-      offset = headerOffset + offsetY;
-    } else {
-      offset = align === 'left' ? headerOffset + offsetX : headerOffset - offsetX;
+  const rafIdRef = useRef<number | null>(null);
+  const endTimerRef = useRef<number | null>(null);
+  const scrollingRef = useRef(false);
+  const pendingOffsetRef = useRef<{ x: number; y: number } | null>(null);
+
+  const scheduleScrollEnd = () => {
+    if (endTimerRef.current != null) {
+      window.clearTimeout(endTimerRef.current);
+    }
+    endTimerRef.current = window.setTimeout(() => {
+      scrollingRef.current = false;
+      if (onScrollEnd) onScrollEnd();
+      endTimerRef.current = null;
+    }, 80);
+  };
+
+  function scheduleOffset(offsetX: number, offsetY: number) {
+    if (!isScrollable) return;
+    pendingOffsetRef.current = { x: offsetX, y: offsetY };
+
+    if (!scrollingRef.current) {
+      scrollingRef.current = true;
+      if (onScrollStart) onScrollStart();
     }
 
-    onScroll && onScroll(offset);
+    if (rafIdRef.current == null) {
+      rafIdRef.current = window.requestAnimationFrame(() => {
+        rafIdRef.current = null;
+        const pending = pendingOffsetRef.current;
+        if (pending) {
+          let offset = 0;
+          if (direction === 'vertical') {
+            offset = headerOffsetRef.current + pending.y;
+          } else {
+            offset =
+              align === 'left'
+                ? headerOffsetRef.current + pending.x
+                : headerOffsetRef.current - pending.x;
+          }
+          if (onScroll) onScroll(offset);
+          pendingOffsetRef.current = null;
+        }
+        scheduleScrollEnd();
+      });
+    } else {
+      scheduleScrollEnd();
+    }
+  }
+
+  function onOffset(offsetX: number, offsetY: number) {
+    scheduleOffset(offsetX, offsetY);
   }
 
   // wheel
@@ -81,7 +136,8 @@ export default function useHeaderScroll<T extends HTMLElement>(props: {
 
   const onTouchMoveEnd = () => {
     off(document.documentElement, 'touchmove', onTouchMove);
-    off(document.documentElement, 'touchend', onTouchMoveEnd);
+    off(window, 'touchend', onTouchMoveEnd);
+    scheduleScrollEnd();
   };
 
   const onTouchStart = (e: TouchEvent) => {
@@ -97,27 +153,42 @@ export default function useHeaderScroll<T extends HTMLElement>(props: {
 
     on(document.documentElement, 'touchmove', onTouchMove, { passive: false });
     on(window, 'touchend', onTouchMoveEnd, { passive: false });
+    if (!scrollingRef.current) {
+      scrollingRef.current = true;
+      if (onScrollStart) onScrollStart();
+    }
   };
 
   const eventProxy = useRef<{ onWheel: WheelEventHandler; onTouchStart: TouchEventHandler }>(null);
   eventProxy.current = { onWheel, onTouchStart };
 
   useEffect(() => {
-    on(
-      headerWrapperRef.current,
-      'wheel',
-      (e: WheelEvent) => {
-        eventProxy.current.onWheel(e);
-      },
-      { passive: false }
-    );
-    on(
-      headerWrapperRef.current,
-      'touchstart',
-      (e: TouchEvent) => {
-        eventProxy.current.onTouchStart(e);
-      },
-      { passive: true }
-    );
-  }, [headerWrapperRef.current]);
+    const node = headerWrapperRef.current as unknown as HTMLElement;
+    if (!node) return;
+    const wheelListener = (e: WheelEvent) => {
+      eventProxy.current.onWheel(e);
+    };
+    const touchStartListener = (e: TouchEvent) => {
+      eventProxy.current.onTouchStart(e);
+    };
+    on(node, 'wheel', wheelListener, { passive: false });
+    on(node, 'touchstart', touchStartListener, { passive: true });
+
+    return () => {
+      off(node, 'wheel', wheelListener);
+      off(node, 'touchstart', touchStartListener);
+      off(document.documentElement, 'touchmove', onTouchMove);
+      off(window, 'touchend', onTouchMoveEnd);
+      if (rafIdRef.current != null) {
+        window.cancelAnimationFrame(rafIdRef.current);
+        rafIdRef.current = null;
+      }
+      if (endTimerRef.current != null) {
+        window.clearTimeout(endTimerRef.current);
+        endTimerRef.current = null;
+      }
+      pendingOffsetRef.current = null;
+      scrollingRef.current = false;
+    };
+  }, [headerWrapperRef.current, isScrollable]);
 }
