@@ -1,4 +1,3 @@
-import isEqualWith from 'lodash/isEqualWith';
 import { valueInSet, transformValuesToSet } from '../util';
 import { isArray, isFunction, isString } from '../../_util/is';
 import { FieldNamesType, CascaderProps } from '../interface';
@@ -132,16 +131,22 @@ class Store<T> {
    * value: 是路径节点的value组成的数组
    */
   public findNodeByValue = (value: string[]): Node<T> | null => {
-    let targetNode: Node<T> = null;
     if (!value || !value.length) {
-      return targetNode;
+      return null;
     }
 
-    this.flatNodes.some((node) => {
-      if (isEqualWith(node.pathValue, value)) {
-        targetNode = node;
+    let list: Node<T>[] = this.nodes;
+    let targetNode: Node<T> = null;
+
+    for (let i = 0; i < value.length; i++) {
+      const v = value[i];
+      const item = (list || []).find((x) => x.value === v);
+      if (!item) {
+        break;
       }
-    });
+      targetNode = item;
+      list = item.children;
+    }
     return targetNode;
   };
 
