@@ -152,6 +152,7 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
   useEffect(() => {
     refHasOperateSincePropValueChanged.current = false;
+    setIsUserTyping(false);
   }, [props.value]);
 
   useEffect(() => {
@@ -214,7 +215,11 @@ function InputNumber(baseProps: InputNumberProps, ref) {
 
   const inputEventHandlers: Partial<InputProps> = {
     onChange: (rawText, event) => {
-      setIsUserTyping(true);
+      // 受控模式：不进入 userTyping 状态，直接由外部 value 决定展示。
+      // 这样父组件在 onChange 里立刻 setState(固定值) 时，不会被本地 rawText 覆盖。
+      if (!('value' in props)) {
+        setIsUserTyping(true);
+      }
       rawText = rawText.trim().replace(/。/g, '.');
       const parsedValue = parser ? parser(rawText) : rawText;
 
