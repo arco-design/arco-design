@@ -96,7 +96,14 @@ export async function schemaValidate(field, value, _rules: RulesProps[], validat
 
       const _rule = { ...rule };
       if (!_rule.type && !_rule.validator) {
-        _rule.type = 'string';
+        const isNumberValue = typeof value === 'number';
+        const hasNumberSemantics =
+          _rule.min !== undefined ||
+          _rule.max !== undefined ||
+          _rule.equal !== undefined ||
+          _rule.positive === true ||
+          _rule.negative === true;
+        _rule.type = isNumberValue || hasNumberSemantics ? 'number' : 'string';
       }
       const schema = new Schema({ [field]: [_rule] } as SchemaType, {
         ignoreEmptyString: true,
