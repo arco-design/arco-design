@@ -358,16 +358,24 @@ class Store<
         if ('touched' in item) {
           info.touched = item.touched;
         }
+        let nextValue = item.value as FieldValue;
         if ('value' in item) {
-          set(this.store, field, item.value);
-          changeValues[field] = item.value;
+          const control = this.getRegisteredField(field);
+          if (control && isFunction(control.props?.normalize)) {
+            const prevFieldValue = this.getFieldValue(field);
+            const allValues = this.getFieldsValue();
+            nextValue = control.props.normalize(nextValue, prevFieldValue, {
+              ...allValues,
+            });
+          }
+          set(this.store, field, nextValue);
+          changeValues[field] = nextValue;
         }
-
         this.notify('setFieldValue', {
           data: info,
           prev,
           field,
-          changeValues: { [field]: item.value },
+          changeValues: { [field]: nextValue },
         });
       }
     });
