@@ -79,9 +79,6 @@ const TextArea = (baseProps: TextAreaProps, ref) => {
 
   const textareaDisplayedText = compositionValue || value || '';
   const prefixCls = getPrefixCls('textarea');
-  if (disabled) {
-    textAreaStyle.resize = 'none';
-  }
 
   // set element focus and caret position
   const onFocus = () => {
@@ -111,7 +108,7 @@ const TextArea = (baseProps: TextAreaProps, ref) => {
 
   useIsomorphicLayoutEffect(() => {
     resizeTextAreaHeight();
-  }, [textareaDisplayedText]);
+  }, [textareaDisplayedText, disabled, props.autoSize]);
 
   useImperativeHandle(
     ref,
@@ -158,7 +155,7 @@ const TextArea = (baseProps: TextAreaProps, ref) => {
       {...omit(rest, ['autoSize', 'defaultValue'])}
       maxLength={maxLength}
       ref={textareaRef}
-      style={{ ...style, ...textAreaStyle }}
+      style={{ ...style, ...textAreaStyle, ...(disabled ? { resize: 'none' } : {}) }}
       className={classNames}
       placeholder={placeholder}
       disabled={disabled}
