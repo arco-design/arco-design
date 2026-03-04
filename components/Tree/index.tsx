@@ -168,6 +168,32 @@ class Tree extends Component<TreeProps, TreeState> {
         const nodeList = this.getNodeList(treeData);
         newState.treeData = treeData;
         newState.nodeList = nodeList;
+
+        if ('expandedKeys' in this.props) {
+          const derivedExpandedKeys = this.getInitExpandedKeys(this.props.expandedKeys || []);
+          newState.expandedKeys = derivedExpandedKeys;
+          newState.currentExpandKeys = !mergedProps.animation
+            ? []
+            : [...derivedExpandedKeys, ...this.state.expandedKeys]
+                .reduce((total, next) => {
+                  const index = total.indexOf(next);
+                  if (index === -1) {
+                    total.push(next);
+                  } else {
+                    total.splice(index, 1);
+                  }
+                  return total;
+                }, [])
+                .filter((key, _, array) => {
+                  if (this.key2nodeProps[key]) {
+                    const pathParentKeys = this.key2nodeProps[key].pathParentKeys;
+                    if (pathParentKeys.some((x) => array.indexOf(x) > -1)) {
+                      return false;
+                    }
+                    return this.key2nodeProps[key].children?.length;
+                  }
+                });
+        }
       }
 
       if (
