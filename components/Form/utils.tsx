@@ -1,5 +1,6 @@
 import cloneDeepWith from 'lodash/cloneDeepWith';
 import lodashSet from 'lodash/set';
+import lodashGet from 'lodash/get';
 import { PropertyPath } from 'lodash';
 import flatten from 'lodash/flatten';
 import { Schema, SchemaType } from 'b-validate';
@@ -33,8 +34,20 @@ export const formatValidateMsg = (
 };
 
 export function set<T extends IndexedObject>(target: T, field: PropertyPath, value: any) {
-  lodashSet(target, field, cloneDeep(value));
+  const isBracketLeadingLiteral = typeof field === 'string' && /^\[[^'"`]/.test(field);
+  const path: PropertyPath = isBracketLeadingLiteral ? [field] : field;
+  lodashSet(target, path, cloneDeep(value));
   return target;
+}
+
+export function get<T extends IndexedObject, R = any>(
+  target: T,
+  field: PropertyPath,
+  defaultValue?: R
+) {
+  const isBracketLeadingLiteral = typeof field === 'string' && /^\[[^'"`]/.test(field);
+  const path: PropertyPath = isBracketLeadingLiteral ? [field] : field;
+  return lodashGet(target as unknown as object, path, defaultValue as R) as R;
 }
 
 // iteratively get all keys of object including nested objects
