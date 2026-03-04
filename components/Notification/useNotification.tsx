@@ -13,7 +13,9 @@ function useNotification(
   const { maxCount, duration = 3000, prefixCls: _prefixCls, getContainer } = commonConfig;
   const contextHolderRef = createRef<HolderRef>();
   const holderEle = <ContextHolderElement ref={contextHolderRef} />;
-  const notificationInstance = {};
+  const notificationInstance: Partial<
+    Record<NonNullable<NotificationProps['position']>, Notification>
+  > = {};
   let notice;
 
   function addNotice(noticeProps: NotificationProps) {
@@ -28,28 +30,29 @@ function useNotification(
     if (isUndefined(noticeProps.position)) {
       position = rtl ? 'topLeft' : 'topRight';
     }
+    const pos = position as NonNullable<NotificationProps['position']>;
     const _noticeProps = {
       duration,
       ...noticeProps,
     };
     let id;
-    if (notificationInstance[position]) {
-      const notices = notificationInstance[position].state.notices;
+    if (notificationInstance[pos]) {
+      const notices = notificationInstance[pos].state.notices;
       if (notices.length >= maxCount) {
         const updated = notices[0];
         id = updated.id;
         notices.shift();
-        notificationInstance[position].add({ ..._noticeProps, id });
+        notificationInstance[pos].add({ ..._noticeProps, id });
       } else {
-        id = notificationInstance[position].add(_noticeProps);
+        id = notificationInstance[pos].add(_noticeProps);
       }
     } else {
       notice = (
         <Notification
           ref={(instance) => {
-            notificationInstance[position] = instance;
-            if (notificationInstance[position]) {
-              id = notificationInstance[position].add(_noticeProps);
+            notificationInstance[pos] = instance;
+            if (notificationInstance[pos]) {
+              id = notificationInstance[pos].add(_noticeProps);
             }
           }}
           prefixCls={mergedPrefixCls}
@@ -59,7 +62,7 @@ function useNotification(
       );
       contextHolderRef.current.addInstance(notice);
     }
-    return notificationInstance[position];
+    return notificationInstance[pos];
   }
 
   const notificationFuncs: NotificationHookReturnType = {};
@@ -72,6 +75,14 @@ function useNotification(
       });
     };
   });
+
+  notificationFuncs.remove = (id: string) => {
+    (
+      Object.keys(notificationInstance) as Array<NonNullable<NotificationProps['position']>>
+    ).forEach((pos) => {
+      notificationInstance[pos]?.remove(id);
+    });
+  };
 
   return [notificationFuncs, holderEle];
 }
