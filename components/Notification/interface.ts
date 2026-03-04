@@ -76,4 +76,5 @@ export type NotificationHookReturnType = {
   warning?: notificationHookFunction;
   error?: notificationHookFunction;
   normal?: notificationHookFunction;
+  remove?: (id: string) => void;
 };
