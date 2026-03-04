@@ -1,9 +1,8 @@
 import React from 'react';
-import get from 'lodash/get';
 import setWith from 'lodash/setWith';
 import has from 'lodash/has';
 import omit from 'lodash/omit';
-import { cloneDeep, set, iterativelyGetKeys } from './utils';
+import { cloneDeep, set, get, iterativelyGetKeys } from './utils';
 import { isArray, isFunction, isObject, isExist } from '../_util/is';
 import Control from './control';
 import {
