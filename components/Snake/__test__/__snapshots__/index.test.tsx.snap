@@ -29,7 +29,7 @@ exports[`ConfigProvider componentConfig.Snake default 1`] = `
     />
     <div
       class="arco-snake-cell arco-snake-cell-food"
-      style="left:80px;top:80px;width:20px;height:20px"
+      style="left:160px;top:160px;width:20px;height:20px"
     />
     <div
       class="arco-snake-overlay"
@@ -83,7 +83,7 @@ exports[`ConfigProvider componentConfig.Snake set className globally 1`] = `
     />
     <div
       class="arco-snake-cell arco-snake-cell-food"
-      style="left:100px;top:220px;width:20px;height:20px"
+      style="left:300px;top:40px;width:20px;height:20px"
     />
     <div
       class="arco-snake-overlay"
@@ -137,7 +137,7 @@ exports[`ConfigProvider componentConfig.Snake set className globally and compone
     />
     <div
       class="arco-snake-cell arco-snake-cell-food"
-      style="left:260px;top:0;width:20px;height:20px"
+      style="left:280px;top:120px;width:20px;height:20px"
     />
     <div
       class="arco-snake-overlay"
@@ -191,7 +191,7 @@ exports[`ConfigProvider componentConfig.Snake set data-* property 1`] = `
     />
     <div
       class="arco-snake-cell arco-snake-cell-food"
-      style="left:260px;top:100px;width:20px;height:20px"
+      style="left:140px;top:240px;width:20px;height:20px"
     />
     <div
       class="arco-snake-overlay"
