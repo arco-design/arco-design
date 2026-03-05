@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Snake default 1`] = `
+<div
+  class="arco-snake"
+>
+  <div
+    class="arco-snake-header"
+  >
+    <span
+      class="arco-snake-score"
+    >
+      Score: 
+      <strong>
+        0
+      </strong>
+    </span>
+    <div
+      class="arco-snake-actions"
+    />
+  </div>
+  <div
+    class="arco-snake-board"
+    style="width:400px;height:400px"
+  >
+    <div
+      class="arco-snake-cell arco-snake-cell-head"
+      style="left:200px;top:200px;width:20px;height:20px"
+    />
+    <div
+      class="arco-snake-cell arco-snake-cell-food"
+      style="left:80px;top:80px;width:20px;height:20px"
+    />
+    <div
+      class="arco-snake-overlay"
+    >
+      <p
+        class="arco-snake-overlay-title"
+      >
+        Snake
+      </p>
+      <button
+        class="arco-snake-btn"
+      >
+        Start
+      </button>
+      <p
+        class="arco-snake-overlay-hint"
+      >
+        Use arrow keys to move, Space to pause
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Snake set className globally 1`] = `
+<div
+  class="arco-snake global-default-class"
+>
+  <div
+    class="arco-snake-header"
+  >
+    <span
+      class="arco-snake-score"
+    >
+      Score: 
+      <strong>
+        0
+      </strong>
+    </span>
+    <div
+      class="arco-snake-actions"
+    />
+  </div>
+  <div
+    class="arco-snake-board"
+    style="width:400px;height:400px"
+  >
+    <div
+      class="arco-snake-cell arco-snake-cell-head"
+      style="left:200px;top:200px;width:20px;height:20px"
+    />
+    <div
+      class="arco-snake-cell arco-snake-cell-food"
+      style="left:100px;top:220px;width:20px;height:20px"
+    />
+    <div
+      class="arco-snake-overlay"
+    >
+      <p
+        class="arco-snake-overlay-title"
+      >
+        Snake
+      </p>
+      <button
+        class="arco-snake-btn"
+      >
+        Start
+      </button>
+      <p
+        class="arco-snake-overlay-hint"
+      >
+        Use arrow keys to move, Space to pause
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Snake set className globally and component set className itself. 1`] = `
+<div
+  class="arco-snake component-class"
+>
+  <div
+    class="arco-snake-header"
+  >
+    <span
+      class="arco-snake-score"
+    >
+      Score: 
+      <strong>
+        0
+      </strong>
+    </span>
+    <div
+      class="arco-snake-actions"
+    />
+  </div>
+  <div
+    class="arco-snake-board"
+    style="width:400px;height:400px"
+  >
+    <div
+      class="arco-snake-cell arco-snake-cell-head"
+      style="left:200px;top:200px;width:20px;height:20px"
+    />
+    <div
+      class="arco-snake-cell arco-snake-cell-food"
+      style="left:260px;top:0;width:20px;height:20px"
+    />
+    <div
+      class="arco-snake-overlay"
+    >
+      <p
+        class="arco-snake-overlay-title"
+      >
+        Snake
+      </p>
+      <button
+        class="arco-snake-btn"
+      >
+        Start
+      </button>
+      <p
+        class="arco-snake-overlay-hint"
+      >
+        Use arrow keys to move, Space to pause
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Snake set data-* property 1`] = `
+<div
+  class="arco-snake"
+>
+  <div
+    class="arco-snake-header"
+  >
+    <span
+      class="arco-snake-score"
+    >
+      Score: 
+      <strong>
+        0
+      </strong>
+    </span>
+    <div
+      class="arco-snake-actions"
+    />
+  </div>
+  <div
+    class="arco-snake-board"
+    style="width:400px;height:400px"
+  >
+    <div
+      class="arco-snake-cell arco-snake-cell-head"
+      style="left:200px;top:200px;width:20px;height:20px"
+    />
+    <div
+      class="arco-snake-cell arco-snake-cell-food"
+      style="left:260px;top:100px;width:20px;height:20px"
+    />
+    <div
+      class="arco-snake-overlay"
+    >
+      <p
+        class="arco-snake-overlay-title"
+      >
+        Snake
+      </p>
+      <button
+        class="arco-snake-btn"
+      >
+        Start
+      </button>
+      <p
+        class="arco-snake-overlay-hint"
+      >
+        Use arrow keys to move, Space to pause
+      </p>
+    </div>
+  </div>
+</div>
+`;
