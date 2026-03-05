@@ -10,7 +10,7 @@ import scrollIntoView, { Options as ScrollIntoViewOptions } from 'scroll-into-vi
 import merge from 'lodash/merge';
 import cs from '../_util/classNames';
 import useForm from './useForm';
-import { FormProps, FormInstance, FieldError, KeyType } from './interface';
+import { FormProps, FormInstance, FieldError, KeyType, ValidateOptions } from './interface';
 import ConfigProvider, { ConfigContext } from '../ConfigProvider';
 import {
   FormContext as RawFormContext,
@@ -120,10 +120,16 @@ const Form = <
       formProviderCtx.onFormValuesChange && formProviderCtx.onFormValuesChange(props.id, value);
     },
     onChange: props.onChange,
-    onValidateFail: (errors: { [key in FieldKey]: FieldError<FieldValue> }) => {
+    onValidateFail: (
+      errors: { [key in FieldKey]: FieldError<FieldValue> },
+      options?: ValidateOptions
+    ) => {
+      if (options?.noScrollToFirstError) {
+        return;
+      }
       if (props.scrollToFirstError) {
-        const options = isObject(props.scrollToFirstError) ? props.scrollToFirstError : {};
-        formInstance.scrollToField((Object.keys(errors) as FieldKey[])[0], options);
+        const scrollOptions = isObject(props.scrollToFirstError) ? props.scrollToFirstError : {};
+        formInstance.scrollToField((Object.keys(errors) as FieldKey[])[0], scrollOptions);
       }
     },
     onSubmitFailed: props.onSubmitFailed,

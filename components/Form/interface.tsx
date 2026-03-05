@@ -565,6 +565,7 @@ export type InnerMethodsReturnType<
 
 export interface ValidateOptions {
   validateOnly?: boolean;
+  noScrollToFirstError?: boolean;
 }
 
 export interface FormValidateFn<
