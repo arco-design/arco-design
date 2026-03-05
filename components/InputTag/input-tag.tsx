@@ -127,6 +127,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
     renderTag,
     tagClassName,
     maxTagCount,
+    maxLength,
     onInputChange,
     onKeyDown,
     onPaste,
@@ -459,6 +460,7 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
           onPaste?.(event);
           handleTokenSeparators(event.clipboardData.getData('text'));
         }}
+        maxLength={maxLength}
       />
     </ArcoCSSTransition>,
   ];
