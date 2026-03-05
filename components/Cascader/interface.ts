@@ -177,7 +177,7 @@ export interface CascaderProps<T = any> extends Omit<SelectViewCommonProps, 'sho
    * @zh 格式化显示内容。
    * @en The return value will be displayed in the input box.
    */
-  renderFormat?: (valueShow: any[]) => ReactNode;
+  renderFormat?: (valueShow: any[], options?: OptionProps[]) => ReactNode;
   /**
    * @zh 搜索时的回调。(reason in `2.34.0`)
    * @en Callback when input changed.(reason in `2.34.0`)
