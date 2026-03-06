@@ -230,7 +230,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
         valueShow = options.map((x) => x.label);
       }
       if (isFunction(renderFormat)) {
-        text = renderFormat(valueShow);
+        text = renderFormat(valueShow, options);
       } else if (valueShow.every((v) => isString(v))) {
         text = valueShow.join(' / ');
       } else {

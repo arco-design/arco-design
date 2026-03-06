@@ -32,7 +32,7 @@ Display options in a multi-level cascading dropdown component.
 |autoWidth|auto width. minWidth defaults to 0, maxWidth defaults to 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |checkedStrategy|Customize the return value<br/> parent:Only return the parent node when all child nodes are selected <br/> child: Return child nodes|'parent' \| 'child' |`child`|2.31.0|
 |expandTrigger|Set the way to display the next level menu. One of hover and click|'click' \| 'hover' |`click`|-|
-|maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode. Setting the number of `responsive` responsive display tags is not recommended when there are many options, as there may be performance issues.|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
+|maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode. Setting the number of `responsive` responsive display tags is not recommended when there are many options, as there may be performance issues.|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) =&gt; ReactNode;showPopover?: boolean \| Partial&lt;[PopoverProps](popover#popover)&gt;;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
 |mode|Set mode|'multiple' |`-`|-|
 |showSearch|Whether single mode Select is searchable. `{ retainInputValue: true }` to retain the existing content when the search box is focused,`{ retainInputValueWhileSelect: true }` to retain the existing content when multiple selection is selected.`{ panelMode: 'select' }` Display options as a search panel (`2.39.0`)`renderOption` Custom rendering search option (`2.39.0`)|\| boolean\| {panelMode?: 'cascader' \| 'select';renderOption?: (inputValue: string,option: NodeProps&lt;T&gt;,options: [extraOptions](#extraoptions)) =&gt; ReactNode;retainInputValue?: boolean;retainInputValueWhileSelect?: boolean;} |`-`|-|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
@@ -69,7 +69,7 @@ Display options in a multi-level cascading dropdown component.
 |onKeyDown|Callback when keyboard pressed|(e) => void |`-`|2.40.0|
 |onSearch|Callback when input changed.(reason in `2.34.0`)|(inputValue: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.20.0|
 |onVisibleChange|Callback when popup shown or hidden.|(visible: boolean) => void |`-`|-|
-|renderFormat|The return value will be displayed in the input box.|(valueShow: any[]) => ReactNode |`-`|-|
+|renderFormat|The return value will be displayed in the input box.|(valueShow: any[], options?: [OptionProps](#optionprops)[]) => ReactNode |`-`|-|
 |renderTag|Custom tag rendering, `props` is the current tag attribute, `index` is the order of the current tag, `values` is the value of all tags|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|
 
 ### extraOptions
@@ -98,6 +98,50 @@ export type FieldNamesType = {
   /** Custom field name for isLeaf */
   isLeaf?: string;
 };
+```
+
+### OptionProps
+
+```js
+export interface OptionProps {
+  /**
+   * @zh 选项的值
+   * @en: the value of Option
+   *
+   */
+  value?: string;
+  /**
+   * @zh 选项文本
+   * @en option text
+   */
+  label?: string;
+  /**
+   * @zh 是否禁用该选项
+   * @en whether to disabled
+   */
+  disabled?: boolean;
+  /**
+   * @zh 下一级选项
+   * @en next level menu
+   */
+  children?: OptionProps[];
+  /**
+   * @zh 是否是叶子节点
+   * @en Flag whether it is a leaf node
+   */
+  isLeaf?: boolean;
+  /**
+   * @zh 是否禁用复选框选中
+   * @en Whether to disable the check box is selected
+   * @version 2.21.0
+   */
+  disableCheckbox?: boolean;
+  /**
+   * @zh 其他字段
+   * @en other fields
+   */
+  [key: string]: any;
+}
 ```
 
 ### InputValueChangeReason
