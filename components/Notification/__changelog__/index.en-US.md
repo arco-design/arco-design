@@ -1,3 +1,11 @@
+## 2.66.11
+
+2026-03-06
+
+### 🆕 Feature
+
+- Add a manual remove method to `Notification.useNotification`.([#3145](https://github.com/arco-design/arco-design/pull/3145))
+
 ## 2.66.10
 
 2026-01-23

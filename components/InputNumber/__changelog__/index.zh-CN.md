@@ -1,3 +1,11 @@
+## 2.66.11
+
+2026-03-06
+
+### 🐛 问题修复
+
+- 修复`InputNumber`受控模式下，value更新后，实际显示值更新不及时问题修复([#3138](https://github.com/arco-design/arco-design/pull/3138))
+
 ## 2.61.3
 
 2024-04-12

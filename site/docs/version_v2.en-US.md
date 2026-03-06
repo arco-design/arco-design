@@ -2,6 +2,34 @@
 changelog: true
 ---
 
+## 2.66.11
+
+2026-03-06
+
+### 💎 Enhancement
+
+- Optimize `Tabs` component scrolling performance; resolve scrolling stuttering.([#3131](https://github.com/arco-design/arco-design/pull/3131))
+
+### 🆕 Feature
+
+- Add the information of the currently selected options to the renderFormat parameter of the Cascader component.([#3146](https://github.com/arco-design/arco-design/pull/3146))
+- Add a manual remove method to `Notification.useNotification`.([#3145](https://github.com/arco-design/arco-design/pull/3145))
+- A new noScrollToFirstError parameter is added to the validate method of the `Form` component to control the scrolling behavior.([#3144](https://github.com/arco-design/arco-design/pull/3144))
+- The `Cascader` component supports quickly selecting the missing items when the default values are incomplete.([#3133](https://github.com/arco-design/arco-design/pull/3133))
+
+### 🐛 BugFix
+
+- Fix the issue where expandedKeys does not take effect after the `Tree` component loads data asynchronously.([#3142](https://github.com/arco-design/arco-design/pull/3142))
+- Fix the issue where the `Tooltip` component causes a white screen when rendering an array containing a single element wrapped by it.([#3141](https://github.com/arco-design/arco-design/pull/3141))
+- Fix the issue where the autoSize feature of the `TextArea` component becomes ineffective after switching to the disabled state.([#3140](https://github.com/arco-design/arco-design/pull/3140))
+- If a field in the `Form` contains square brackets [], the value will be abnormally parsed into an object after calling getFieldsValue().([#3139](https://github.com/arco-design/arco-design/pull/3139))
+- Fix the issue where the actual displayed value of the `InputNumber` component is not updated in a timely manner after the value is changed in controlled mode.([#3138](https://github.com/arco-design/arco-design/pull/3138))
+- Fix the issue where the `InputTag` component allows clicking the tag close button to delete tags even when it is in the disabled state.([#3137](https://github.com/arco-design/arco-design/pull/3137))
+- Fix the issue where the min/max validation rules of the `InputNumber` component in `FormItem` do not take effect.([#3136](https://github.com/arco-design/arco-design/pull/3136))
+- Fix the issue where form.setFieldValue in the `Form` component does not trigger the normalize function.([#3135](https://github.com/arco-design/arco-design/pull/3135))
+- The disableConfirm configuration in timepickerProps of the `DatePicker` component does not take effect.([#3134](https://github.com/arco-design/arco-design/pull/3134))
+- Fix the issue where the `Trigger` component throws the error "Cannot read properties of undefined (reading 'className')" during runtime, which causes the page to crash.([#3132](https://github.com/arco-design/arco-design/pull/3132))
+
 ## 2.66.10
 
 2026-01-23

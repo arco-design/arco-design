@@ -1,3 +1,17 @@
+## 2.66.11
+
+2026-03-06
+
+### 🆕 功能升级
+
+- `Form` 组件validate方法新增noScrollToFirstError参数以控制滚动行为([#3144](https://github.com/arco-design/arco-design/pull/3144))
+
+### 🐛 问题修复
+
+- `Form` 中field如果携带中括号[]，调用getFieldsValue()后值会被异常解析成object([#3139](https://github.com/arco-design/arco-design/pull/3139))
+- 修复`FormItem`中InputNumber组件的min/max校验规则不生效问题([#3136](https://github.com/arco-design/arco-design/pull/3136))
+- 修复`Form` 中 form.setFieldValue不触发normalize函数的问题([#3135](https://github.com/arco-design/arco-design/pull/3135))
+
 ## 2.66.10
 
 2026-01-23

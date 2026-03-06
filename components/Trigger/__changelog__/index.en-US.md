@@ -1,3 +1,12 @@
+## 2.66.11
+
+2026-03-06
+
+### 🐛 BugFix
+
+- Fix the issue where the `Tooltip` component causes a white screen when rendering an array containing a single element wrapped by it.([#3141](https://github.com/arco-design/arco-design/pull/3141))
+- Fix the issue where the `Trigger` component throws the error "Cannot read properties of undefined (reading 'className')" during runtime, which causes the page to crash.([#3132](https://github.com/arco-design/arco-design/pull/3132))
+
 ## 2.66.0
 
 2025-04-03

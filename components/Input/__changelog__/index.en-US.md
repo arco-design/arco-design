@@ -1,3 +1,11 @@
+## 2.66.11
+
+2026-03-06
+
+### 🐛 BugFix
+
+- Fix the issue where the autoSize feature of the `TextArea` component becomes ineffective after switching to the disabled state.([#3140](https://github.com/arco-design/arco-design/pull/3140))
+
 ## 2.66.8
 
 2025-11-11

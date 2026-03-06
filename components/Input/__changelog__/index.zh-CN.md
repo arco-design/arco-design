@@ -1,3 +1,11 @@
+## 2.66.11
+
+2026-03-06
+
+### 🐛 问题修复
+
+- 修复`TextArea`组件切换disabled后autoSize失效问题修复([#3140](https://github.com/arco-design/arco-design/pull/3140))
+
 ## 2.66.8
 
 2025-11-11

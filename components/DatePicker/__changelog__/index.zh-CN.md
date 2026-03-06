@@ -1,3 +1,11 @@
+## 2.66.11
+
+2026-03-06
+
+### 🐛 问题修复
+
+- `DatePicker` 中timepickerProps配置了disableConfirm不生效([#3134](https://github.com/arco-design/arco-design/pull/3134))
+
 ## 2.66.7
 
 2025-10-31

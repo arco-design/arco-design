@@ -1,3 +1,11 @@
+## 2.66.11
+
+2026-03-06
+
+### 💎 Enhancement
+
+- Optimize `Tabs` component scrolling performance; resolve scrolling stuttering.([#3131](https://github.com/arco-design/arco-design/pull/3131))
+
 ## 2.62.0
 
 2024-04-26

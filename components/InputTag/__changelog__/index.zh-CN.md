@@ -1,3 +1,11 @@
+## 2.66.11
+
+2026-03-06
+
+### 🐛 问题修复
+
+- 修复`InputTag`组件在disabled状态下仍可点击tag close删除tag问题([#3137](https://github.com/arco-design/arco-design/pull/3137))
+
 ## 2.66.2
 
 2025-07-15

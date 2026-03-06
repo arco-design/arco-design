@@ -1,3 +1,11 @@
+## 2.66.11
+
+2026-03-06
+
+### 🐛 BugFix
+
+- Fix the issue where the `InputTag` component allows clicking the tag close button to delete tags even when it is in the disabled state.([#3137](https://github.com/arco-design/arco-design/pull/3137))
+
 ## 2.66.2
 
 2025-07-15

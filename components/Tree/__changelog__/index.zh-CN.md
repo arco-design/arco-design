@@ -1,3 +1,11 @@
+## 2.66.11
+
+2026-03-06
+
+### 🐛 问题修复
+
+- 修复`Tree`组件异步加载数据后expandedKeys未生效问题([#3142](https://github.com/arco-design/arco-design/pull/3142))
+
 ## 2.66.6
 
 2025-10-15

@@ -1,3 +1,11 @@
+## 2.66.11
+
+2026-03-06
+
+### 🐛 BugFix
+
+- Fix the issue where the actual displayed value of the InputNumber component is not updated in a timely manner after the value is changed in controlled mode.([#3138](https://github.com/arco-design/arco-design/pull/3138))
+
 ## 2.61.3
 
 2024-04-12

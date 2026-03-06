@@ -1,3 +1,11 @@
+## 2.66.11
+
+2026-03-06
+
+### 🐛 BugFix
+
+- Fix the issue where expandedKeys does not take effect after the `Tree` component loads data asynchronously.([#3142](https://github.com/arco-design/arco-design/pull/3142))
+
 ## 2.66.6
 
 2025-10-15

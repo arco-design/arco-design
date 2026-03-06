@@ -1,3 +1,12 @@
+## 2.66.11
+
+2026-03-06
+
+### 🆕 功能升级
+
+- `Cascader` 的 renderFormat 参数添加当前被选中的 options 信息([#3146](https://github.com/arco-design/arco-design/pull/3146))
+- `Cascader` 组件在默认值不完整时支持快速选中缺少的项([#3133](https://github.com/arco-design/arco-design/pull/3133))
+
 ## 2.66.3
 
 2025-08-06

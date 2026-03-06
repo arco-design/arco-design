@@ -2,6 +2,34 @@
 changelog: true
 ---
 
+## 2.66.11
+
+2026-03-06
+
+### 💎 功能优化
+
+- `Tabs` 组件滚动性能优化，避免滚动卡顿([#3131](https://github.com/arco-design/arco-design/pull/3131))
+
+### 🆕 功能升级
+
+- `Cascader` 的 renderFormat 参数添加当前被选中的 options 信息([#3146](https://github.com/arco-design/arco-design/pull/3146))
+- 为`Notification.useNotification` 添加手动remove方法([#3145](https://github.com/arco-design/arco-design/pull/3145))
+- `Form` 组件validate方法新增noScrollToFirstError参数以控制滚动行为([#3144](https://github.com/arco-design/arco-design/pull/3144))
+- `Cascader` 组件在默认值不完整时支持快速选中缺少的项([#3133](https://github.com/arco-design/arco-design/pull/3133))
+
+### 🐛 问题修复
+
+- 修复`Tree`组件异步加载数据后expandedKeys未生效问题([#3142](https://github.com/arco-design/arco-design/pull/3142))
+- `Tooltip` 组件包裹单个元素的数组时渲染白屏问题修复([#3141](https://github.com/arco-design/arco-design/pull/3141))
+- 修复`TextArea`组件切换disabled后autoSize失效问题修复([#3140](https://github.com/arco-design/arco-design/pull/3140))
+- `Form` 中field如果携带中括号[]，调用getFieldsValue()后值会被异常解析成object([#3139](https://github.com/arco-design/arco-design/pull/3139))
+- 修复`InputNumber`受控模式下，value更新后，实际显示值更新不及时问题修复([#3138](https://github.com/arco-design/arco-design/pull/3138))
+- 修复`InputTag`组件在disabled状态下仍可点击tag close删除tag问题([#3137](https://github.com/arco-design/arco-design/pull/3137))
+- 修复`FormItem`中`InputNumber`组件的min/max校验规则不生效问题([#3136](https://github.com/arco-design/arco-design/pull/3136))
+- 修复`Form` 中 form.setFieldValue不触发normalize函数的问题([#3135](https://github.com/arco-design/arco-design/pull/3135))
+- `DatePicker` 中timepickerProps配置了disableConfirm不生效([#3134](https://github.com/arco-design/arco-design/pull/3134))
+- 修复`Trigger`组件运行时报错 “Cannot read properties of undefined (reading 'className')”导致页面崩溃问题([#3132](https://github.com/arco-design/arco-design/pull/3132))
+
 ## 2.66.10
 
 2026-01-23

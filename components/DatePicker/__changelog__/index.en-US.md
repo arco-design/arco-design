@@ -1,3 +1,11 @@
+## 2.66.11
+
+2026-03-06
+
+### 🐛 BugFix
+
+- The disableConfirm configuration in timepickerProps of the `DatePicker` component does not take effect.([#3134](https://github.com/arco-design/arco-design/pull/3134))
+
 ## 2.66.7
 
 2025-10-31

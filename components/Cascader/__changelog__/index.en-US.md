@@ -1,3 +1,12 @@
+## 2.66.11
+
+2026-03-06
+
+### 🆕 Feature
+
+- Add the information of the currently selected options to the renderFormat parameter of the Cascader component.([#3146](https://github.com/arco-design/arco-design/pull/3146))
+- The `Cascader` component supports quickly selecting the missing items when the default values are incomplete.([#3133](https://github.com/arco-design/arco-design/pull/3133))
+
 ## 2.66.3
 
 2025-08-06
