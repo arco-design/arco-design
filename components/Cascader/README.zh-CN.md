@@ -32,7 +32,7 @@
 |autoWidth|设置宽度自适应。minWidth 默认为 0，maxWidth 默认为 100%|\| boolean\| { minWidth?: CSSProperties['minWidth']; maxWidth?: CSSProperties['maxWidth'] } |`-`|2.54.0|
 |checkedStrategy|定制回填方式 <br/> parent: 子节点都被选中时候返回父节点 <br/> child: 返回子节点|'parent' \| 'child' |`child`|2.31.0|
 |expandTrigger|展开下一级方式|'click' \| 'hover' |`click`|-|
-|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。设置 `responsive` 响应式显示标签数不建议在选项较多时使用，可能存在性能问题，|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
+|maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。设置 `responsive` 响应式显示标签数不建议在选项较多时使用，可能存在性能问题，|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) =&gt; ReactNode;showPopover?: boolean \| Partial&lt;[PopoverProps](popover#popover)&gt;;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
 |mode|是否开启多选|'multiple' |`-`|-|
 |showSearch|使单选模式可搜索，传入 `{ retainInputValue: true }` 在搜索框聚焦时保留现有内容传入 `{ retainInputValueWhileSelect: true }` 在多选选择时保留输入框内容。传入 `{ panelMode: 'select' }` 以搜索面板形式展示可选项 (`2.39.0`)`renderOption` 自定义渲染搜索项 (`2.39.0`)|\| boolean\| {panelMode?: 'cascader' \| 'select';renderOption?: (inputValue: string,option: NodeProps&lt;T&gt;,options: [extraOptions](#extraoptions)) =&gt; ReactNode;retainInputValue?: boolean;retainInputValueWhileSelect?: boolean;} |`-`|-|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
@@ -69,7 +69,7 @@
 |onKeyDown|键盘输入时的回调|(e) => void |`-`|2.40.0|
 |onSearch|搜索时的回调。(reason in `2.34.0`)|(inputValue: string, reason: [InputValueChangeReason](#inputvaluechangereason)) => void |`-`|2.20.0|
 |onVisibleChange|下拉框收起展开时触发。|(visible: boolean) => void |`-`|-|
-|renderFormat|格式化显示内容。|(valueShow: any[]) => ReactNode |`-`|-|
+|renderFormat|格式化显示内容。|(valueShow: any[], options?: [OptionProps](#optionprops)[]) => ReactNode |`-`|-|
 |renderTag|自定义标签渲染，`props` 为当前标签属性，`index` 为当前标签的顺序，`values` 为所有标签的值.|(props: {value: any;label: ReactNode;closable: boolean;onClose: (event) => void;},index: number,values: [ObjectValueType](#objectvaluetype)[]) => ReactNode |`-`|index、values added in 2.15.0|
 
 ### extraOptions
@@ -98,6 +98,50 @@ export type FieldNamesType = {
   /** Custom field name for isLeaf */
   isLeaf?: string;
 };
+```
+
+### OptionProps
+
+```js
+export interface OptionProps {
+  /**
+   * @zh 选项的值
+   * @en: the value of Option
+   *
+   */
+  value?: string;
+  /**
+   * @zh 选项文本
+   * @en option text
+   */
+  label?: string;
+  /**
+   * @zh 是否禁用该选项
+   * @en whether to disabled
+   */
+  disabled?: boolean;
+  /**
+   * @zh 下一级选项
+   * @en next level menu
+   */
+  children?: OptionProps[];
+  /**
+   * @zh 是否是叶子节点
+   * @en Flag whether it is a leaf node
+   */
+  isLeaf?: boolean;
+  /**
+   * @zh 是否禁用复选框选中
+   * @en Whether to disable the check box is selected
+   * @version 2.21.0
+   */
+  disableCheckbox?: boolean;
+  /**
+   * @zh 其他字段
+   * @en other fields
+   */
+  [key: string]: any;
+}
 ```
 
 ### InputValueChangeReason
