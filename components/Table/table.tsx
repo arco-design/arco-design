@@ -785,11 +785,11 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
       if (scrollBarWidth) {
         scrollbarChanged.current = true;
         if (wrapper) {
-          wrapper.style.overflowY = 'scroll';
+          wrapper.style.paddingRight = scrollBarWidth + 'px';
         }
 
         if (refTableFoot.current) {
-          refTableFoot.current.style.overflowY = 'scroll';
+          refTableFoot.current.style.paddingRight = scrollBarWidth + 'px';
         }
       } else if (wrapper && scrollbarChanged.current) {
         scrollbarChanged.current = false;
