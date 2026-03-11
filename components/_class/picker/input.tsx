@@ -12,7 +12,7 @@ import omit from '../../_util/omit';
 import { Enter } from '../../_util/keycode';
 import { ConfigContext } from '../../ConfigProvider';
 import IconClose from '../../../icon/react-icon/IconClose';
-import IconHover from '../../_class/icon-hover';
+import IconHover from '../icon-hover';
 import cs from '../../_util/classNames';
 import { isArray } from '../../_util/is';
 
