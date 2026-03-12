@@ -164,17 +164,47 @@ export function getCompareItemRelativeTop({
   return compareItemTop;
 }
 
+function getTextLengthFromNode(node: unknown): number {
+  // 处理 null / undefined
+  if (node === null || node === undefined) {
+    return 0;
+  }
+
+  // 处理字符串
+  if (typeof node === 'string') {
+    return getStringLength(node);
+  }
+
+  // 处理数字
+  if (typeof node === 'number') {
+    return getStringLength(String(node));
+  }
+
+  // 处理数组，递归计算
+  if (Array.isArray(node)) {
+    return node.reduce((acc, child) => acc + getTextLengthFromNode(child), 0);
+  }
+
+  // 处理 ReactElement，递归获取 children
+  if (typeof node === 'object' && node !== null && 'props' in node) {
+    const reactElement = node as { props?: { children?: unknown } };
+    if (reactElement.props?.children !== undefined) {
+      return getTextLengthFromNode(reactElement.props.children);
+    }
+  }
+
+  return 0;
+}
+
 export function getLongestItemIndex(data: Array<any>): number {
   let result = -1;
-  let length = 0;
+  let maxLength = 0;
   data.forEach((item, index) => {
-    item = typeof item === 'string' ? item : item.props?.children;
-    if (typeof item === 'string') {
-      const _length = getStringLength(item);
-      if (_length > length) {
-        length = _length;
-        result = index;
-      }
+    const node = typeof item === 'string' ? item : item.props?.children;
+    const length = getTextLengthFromNode(node);
+    if (length > maxLength) {
+      maxLength = length;
+      result = index;
     }
   });
   return result;
