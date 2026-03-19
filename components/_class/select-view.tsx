@@ -268,6 +268,7 @@ const CoreSelectView = React.forwardRef(
     const { size: ctxSize, getPrefixCls } = useContext(ConfigContext);
     const [searchStatus, setSearchStatus] = useState(SearchStatus.NONE);
     const [focused, setFocused] = useState(false);
+    const [compositionText, setCompositionText] = useState<string | undefined>();
 
     const forceUpdate = useForceUpdate();
 
@@ -375,11 +376,23 @@ const CoreSelectView = React.forwardRef(
       },
       blur: (event) => {
         event.stopPropagation();
+        setCompositionText(undefined);
         tryTriggerFocusChange('blur', event);
       },
       change: (newValue, event) => {
         setSearchStatus(SearchStatus.EDITING);
         onChangeInputValue && onChangeInputValue(newValue, event);
+      },
+      compositionStart: (event) => {
+        setSearchStatus(SearchStatus.EDITING);
+        setCompositionText(event.target.value);
+      },
+      compositionUpdate: (event) => {
+        setSearchStatus(SearchStatus.EDITING);
+        setCompositionText(event.target.value);
+      },
+      compositionEnd: () => {
+        setCompositionText(undefined);
       },
     };
 
@@ -421,6 +434,9 @@ const CoreSelectView = React.forwardRef(
         inputProps.onFocus = inputEventHandlers.focus;
         inputProps.onBlur = inputEventHandlers.blur;
         inputProps.onChange = inputEventHandlers.change;
+        inputProps.onCompositionStart = inputEventHandlers.compositionStart;
+        inputProps.onCompositionUpdate = inputEventHandlers.compositionUpdate;
+        inputProps.onCompositionEnd = inputEventHandlers.compositionEnd;
       } else {
         // Avoid input getting focus by Tab
         // Do NOT pass [disabled] to <input>, otherwise the click event will not be triggered
@@ -445,7 +461,13 @@ const CoreSelectView = React.forwardRef(
           {/* mirror should provide select-width if there is only placeholder in input */}
           {needShowInput ? (
             <span className={`${prefixCls}-view-value-mirror`}>
-              {fillNBSP(inputProps.value ? inputTextValue : inputProps.placeholder)}
+              {fillNBSP(
+                compositionText !== undefined
+                  ? compositionText
+                  : inputProps.value
+                  ? inputTextValue
+                  : inputProps.placeholder
+              )}
             </span>
           ) : null}
 
