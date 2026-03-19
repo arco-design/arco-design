@@ -185,11 +185,31 @@ function getTextLengthFromNode(node: unknown): number {
     return node.reduce((acc, child) => acc + getTextLengthFromNode(child), 0);
   }
 
-  // 处理 ReactElement，递归获取 children
+  // 处理 ReactElement，优先递归获取 children，兼容文本直接挂在 props 上的场景
   if (typeof node === 'object' && node !== null && 'props' in node) {
-    const reactElement = node as { props?: { children?: unknown } };
+    const reactElement = node as {
+      props?: {
+        children?: unknown;
+        text?: unknown;
+        label?: unknown;
+        title?: unknown;
+      };
+    };
+
     if (reactElement.props?.children !== undefined) {
       return getTextLengthFromNode(reactElement.props.children);
+    }
+
+    if (reactElement.props?.text !== undefined) {
+      return getTextLengthFromNode(reactElement.props.text);
+    }
+
+    if (reactElement.props?.label !== undefined) {
+      return getTextLengthFromNode(reactElement.props.label);
+    }
+
+    if (reactElement.props?.title !== undefined) {
+      return getTextLengthFromNode(reactElement.props.title);
     }
   }
 
