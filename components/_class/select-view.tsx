@@ -32,6 +32,22 @@ import Popover, { PopoverProps } from '../Popover';
 
 const MAX_TAG_COUNT_VALUE_PLACEHOLDER = '__arco_value_tag_placeholder';
 
+const nodeToText = (node: ReactNode): string => {
+  if (typeof node === 'string' || typeof node === 'number') {
+    return String(node);
+  }
+
+  if (Array.isArray(node)) {
+    return node.map((item) => nodeToText(item)).join('');
+  }
+
+  if (React.isValidElement(node)) {
+    return nodeToText(node.props?.children);
+  }
+
+  return '';
+};
+
 export interface SelectViewCommonProps
   extends Pick<InputTagProps<unknown>, 'animation' | 'renderTag' | 'dragToSort'> {
   id?: string;
@@ -263,6 +279,10 @@ const CoreSelectView = React.forwardRef(
     const isRetainInputValueSearch = isObject(showSearch) && showSearch.retainInputValue;
     // the formatted text of value.
     const renderedValue = !isMultiple && value !== undefined ? renderText(value).text : '';
+    const renderedValuePlain =
+      typeof renderedValue === 'string' || typeof renderedValue === 'number'
+        ? String(renderedValue)
+        : nodeToText(renderedValue);
 
     // Avoid losing focus caused by clicking certain icons
     const keepFocus = (event) => {
@@ -364,7 +384,7 @@ const CoreSelectView = React.forwardRef(
     };
 
     const renderSingle = () => {
-      let _inputValue: string;
+      let _inputValue: ReactNode;
 
       switch (searchStatus) {
         case SearchStatus.BEFORE:
@@ -380,17 +400,18 @@ const CoreSelectView = React.forwardRef(
 
       // <input> is used to input and display placeholder, in other cases use <span> to display value to support displaying rich text
       const needShowInput = !!((mergedFocused && canFocusInput) || isEmptyValue);
+      const inputTextValue =
+        typeof _inputValue === 'string' || typeof _inputValue === 'number'
+          ? String(_inputValue)
+          : '';
       const inputProps: InputComponentProps = {
         style: { width: '100%' },
         // _inputValue after renderText(value) may be rich text, but the value of <input> cannot be object
-        value: needShowInput && typeof _inputValue !== 'object' ? _inputValue : '',
+        value: needShowInput ? inputTextValue : '',
         // Allow placeholder to display the selected value first when searching
         placeholder:
-          canFocusInput &&
-          // 0 can also be used as a placeholder, because when options is number[], the selected value may be 0
-          (!!renderedValue || renderedValue === 0) &&
-          typeof renderedValue !== 'object'
-            ? renderedValue
+          canFocusInput && (!!renderedValuePlain || renderedValue === 0)
+            ? renderedValuePlain
             : placeholder,
       };
 
@@ -424,7 +445,7 @@ const CoreSelectView = React.forwardRef(
           {/* mirror should provide select-width if there is only placeholder in input */}
           {needShowInput ? (
             <span className={`${prefixCls}-view-value-mirror`}>
-              {fillNBSP(inputProps.value ? _inputValue : inputProps.placeholder)}
+              {fillNBSP(inputProps.value ? inputTextValue : inputProps.placeholder)}
             </span>
           ) : null}
 
