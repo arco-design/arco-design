@@ -24,10 +24,12 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
               autocomplete="off"
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
               placeholder="Input and press Enter"
+              style="order:-1"
               value=""
             />
             <span
               class="arco-input-tag-input-mirror"
+              style="order:-1"
             >
               Input and press Enter
             </span>
@@ -53,10 +55,12 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-disabled arco-input-tag-input-autowidth"
               disabled=""
               placeholder="Disabled"
+              style="order:-1"
               value=""
             />
             <span
               class="arco-input-tag-input-mirror"
+              style="order:-1"
             >
               Disabled
             </span>
@@ -88,10 +92,12 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
               placeholder="Readonly"
               readonly=""
+              style="order:-1"
               value=""
             />
             <span
               class="arco-input-tag-input-mirror"
+              style="order:-1"
             >
               Readonly
             </span>
@@ -116,10 +122,12 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
               autocomplete="off"
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
               placeholder="Error"
+              style="order:-1"
               value=""
             />
             <span
               class="arco-input-tag-input-mirror"
+              style="order:-1"
             >
               Error
             </span>
@@ -142,10 +150,12 @@ exports[`renders InputTag/demo/basic.md correctly 1`] = `
           autocomplete="off"
           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
           placeholder="Warning"
+          style="order:-1"
           value=""
         />
         <span
           class="arco-input-tag-input-mirror"
+          style="order:-1"
         >
           Warning
         </span>
@@ -711,10 +721,12 @@ exports[`renders InputTag/demo/prefix.md correctly 1`] = `
             <input
               autocomplete="off"
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+              style="order:-1"
               value=""
             />
             <span
               class="arco-input-tag-input-mirror"
+              style="order:-1"
             />
           </div>
         </div>
@@ -761,10 +773,12 @@ exports[`renders InputTag/demo/prefix.md correctly 1`] = `
               <input
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               />
             </div>
           </div>
@@ -817,10 +831,12 @@ exports[`renders InputTag/demo/prefix.md correctly 1`] = `
               <input
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               />
             </div>
           </div>
@@ -851,10 +867,12 @@ exports[`renders InputTag/demo/prefix.md correctly 1`] = `
               <input
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               />
             </div>
           </div>
@@ -1440,10 +1458,12 @@ exports[`renders InputTag/demo/save-on-blur.md correctly 1`] = `
         autocomplete="off"
         class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
         placeholder="Input and blur directly"
+        style="order:-1"
         value=""
       />
       <span
         class="arco-input-tag-input-mirror"
+        style="order:-1"
       >
         Input and blur directly
       </span>
@@ -1665,10 +1685,12 @@ exports[`renders InputTag/demo/tokenSeparator.md correctly 1`] = `
           autocomplete="off"
           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
           placeholder="Paste text here"
+          style="order:-1"
           value=""
         />
         <span
           class="arco-input-tag-input-mirror"
+          style="order:-1"
         >
           Paste text here
         </span>
@@ -1700,10 +1722,12 @@ exports[`renders InputTag/demo/validate.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Please input"
+            style="order:-1"
             value=""
           />
           <span
             class="arco-input-tag-input-mirror"
+            style="order:-1"
           >
             Please input
           </span>
@@ -1728,10 +1752,12 @@ exports[`renders InputTag/demo/validate.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Format user input"
+            style="order:-1"
             value=""
           />
           <span
             class="arco-input-tag-input-mirror"
+            style="order:-1"
           >
             Format user input
           </span>

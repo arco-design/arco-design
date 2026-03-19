@@ -109,10 +109,12 @@ exports[`renders TreeSelect/demo/addon.md correctly 1`] = `
                 <input
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+                  style="order:-1"
                   value=""
                 />
                 <span
                   class="arco-input-tag-input-mirror"
+                  style="order:-1"
                 />
               </div>
             </div>
@@ -649,10 +651,12 @@ exports[`renders TreeSelect/demo/draggable.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="请选择..."
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               >
                 请选择...
               </span>
@@ -971,10 +975,12 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               >
                 Please select ...
               </span>
@@ -1035,10 +1041,12 @@ exports[`renders TreeSelect/demo/multiple.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Max display 2 tags"
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               >
                 Max display 2 tags
               </span>
@@ -1100,10 +1108,12 @@ exports[`renders TreeSelect/demo/onSearch.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="please select..."
+            style="order:-1"
             value=""
           />
           <span
             class="arco-input-tag-input-mirror"
+            style="order:-1"
           >
             please select...
           </span>
