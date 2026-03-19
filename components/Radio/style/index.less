@@ -286,6 +286,31 @@
     line-height: @radio-group-size-line-height_vertical;
     margin-right: 0;
   }
+
+  .@{radio-prefix-cls}-button {
+    display: block;
+    line-height: @radio-group-size-line-height_vertical;
+
+    &:not(:first-of-type)::before {
+      display: none;
+    }
+
+    &::after {
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: @radio-button-bg-border-radius;
+    }
+  }
+}
+
+.@{radio-prefix-cls}-group-type-button.@{radio-prefix-cls}-group-direction-vertical {
+  line-height: normal;
+
+  .@{radio-prefix-cls}-button {
+    margin: (@radio-button-spacing / 2) 0;
+  }
 }
 
 // dark mode
