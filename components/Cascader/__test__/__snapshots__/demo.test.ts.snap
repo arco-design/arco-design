@@ -115,10 +115,12 @@ exports[`renders Cascader/demo/addon.md correctly 1`] = `
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                   placeholder="Hover to expand"
+                  style="order:-1"
                   value=""
                 />
                 <span
                   class="arco-input-tag-input-mirror"
+                  style="order:-1"
                 >
                   Hover to expand
                 </span>
@@ -523,10 +525,12 @@ exports[`renders Cascader/demo/change_on_select.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               >
                 Please select ...
               </span>
@@ -733,10 +737,12 @@ exports[`renders Cascader/demo/control.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               >
                 Please select ...
               </span>
@@ -1891,10 +1897,12 @@ exports[`renders Cascader/demo/loadmore.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               >
                 Please select ...
               </span>
@@ -2055,10 +2063,12 @@ exports[`renders Cascader/demo/multiple.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               >
                 Please select ...
               </span>
@@ -2229,10 +2239,12 @@ exports[`renders Cascader/demo/onSearch.md correctly 1`] = `
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                   placeholder="Please enter ..."
+                  style="order:-1"
                   value=""
                 />
                 <span
                   class="arco-input-tag-input-mirror"
+                  style="order:-1"
                 >
                   Please enter ...
                 </span>
@@ -2873,10 +2885,12 @@ exports[`renders Cascader/demo/size.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Please select ..."
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               >
                 Please select ...
               </span>

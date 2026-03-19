@@ -7685,10 +7685,12 @@ exports[`renders Form/demo/size.md correctly 1`] = `
                           autocomplete="off"
                           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                           placeholder="please select"
+                          style="order:-1"
                           value=""
                         />
                         <span
                           class="arco-input-tag-input-mirror"
+                          style="order:-1"
                         >
                           please select
                         </span>
@@ -9499,10 +9501,12 @@ exports[`renders Form/demo/validate-status.md correctly 1`] = `
                           autocomplete="off"
                           class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                           placeholder="Select..."
+                          style="order:-1"
                           value=""
                         />
                         <span
                           class="arco-input-tag-input-mirror"
+                          style="order:-1"
                         >
                           Select...
                         </span>

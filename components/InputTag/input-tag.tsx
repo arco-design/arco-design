@@ -412,6 +412,13 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
         autoFocus={autoFocus}
         placeholder={!value.length ? placeholder : ''}
         prefixCls={`${prefixCls}-input`}
+        {...(!value.length
+          ? {
+              style: {
+                order: -1,
+              },
+            }
+          : {})}
         autoFitWidth={{
           delay: () => refDelay.current,
           pure: true,

@@ -115,10 +115,12 @@ exports[`renders Select/demo/addbefore.md correctly 1`] = `
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                   placeholder="Select city"
+                  style="order:-1"
                   value=""
                 />
                 <span
                   class="arco-input-tag-input-mirror"
+                  style="order:-1"
                 >
                   Select city
                 </span>
@@ -371,10 +373,12 @@ exports[`renders Select/demo/async-data.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Search by name"
+            style="order:-1"
             value=""
           />
           <span
             class="arco-input-tag-input-mirror"
+            style="order:-1"
           >
             Search by name
           </span>
@@ -752,10 +756,12 @@ exports[`renders Select/demo/autoWidth.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Select an item"
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               >
                 Select an item
               </span>
@@ -822,10 +828,12 @@ exports[`renders Select/demo/autoWidth.md correctly 1`] = `
                   autocomplete="off"
                   class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                   placeholder="Select an item"
+                  style="order:-1"
                   value=""
                 />
                 <span
                   class="arco-input-tag-input-mirror"
+                  style="order:-1"
                 >
                   Select an item
                 </span>
@@ -1675,10 +1683,12 @@ exports[`renders Select/demo/hide-selected-option.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Select an item"
+            style="order:-1"
             value=""
           />
           <span
             class="arco-input-tag-input-mirror"
+            style="order:-1"
           >
             Select an item
           </span>
@@ -3255,10 +3265,12 @@ exports[`renders Select/demo/on-popup-scroll.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Search by name"
+            style="order:-1"
             value=""
           />
           <span
             class="arco-input-tag-input-mirror"
+            style="order:-1"
           >
             Search by name
           </span>
@@ -4322,10 +4334,12 @@ exports[`renders Select/demo/size.md correctly 1`] = `
                 autocomplete="off"
                 class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
                 placeholder="Select cities"
+                style="order:-1"
                 value=""
               />
               <span
                 class="arco-input-tag-input-mirror"
+                style="order:-1"
               >
                 Select cities
               </span>
@@ -4387,10 +4401,12 @@ exports[`renders Select/demo/token-separators.md correctly 1`] = `
             autocomplete="off"
             class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
             placeholder="Select cities"
+            style="order:-1"
             value=""
           />
           <span
             class="arco-input-tag-input-mirror"
+            style="order:-1"
           >
             Select cities
           </span>
@@ -4456,10 +4472,12 @@ Array [
               autocomplete="off"
               class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
               placeholder="Select a tag"
+              style="order:-1"
               value=""
             />
             <span
               class="arco-input-tag-input-mirror"
+              style="order:-1"
             >
               Select a tag
             </span>
