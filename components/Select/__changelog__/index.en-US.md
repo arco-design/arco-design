@@ -1,3 +1,14 @@
+## 2.66.12
+
+2026-03-20
+
+### 🐛 BugFix
+
+- Fix the issue where the width does not expand with input during Chinese input method composition when `Select` is in single-selection mode with autoWidth enabled.([#3157](https://github.com/arco-design/arco-design/pull/3157))
+- Fix the issue where the selected value is not displayed and the dropdown displays abnormally due to incorrect width when the selected value is a ReactNode (such as wrapped by Tooltip or div) after focusing, while `Select` is in autoWidth mode.([#3156](https://github.com/arco-design/arco-design/pull/3156))
+- Fix the issue where the dropdown list width is not fully occupied by text after setting autoAlignPopupMinWidth for the `Select` component.([#3154](https://github.com/arco-design/arco-design/pull/3154))
+- Fix the issue where the dropdown list width of the `Select` component fails to adapt to content automatically after searching.([#3150](https://github.com/arco-design/arco-design/pull/3150))
+
 ## 2.66.0
 
 2025-04-03

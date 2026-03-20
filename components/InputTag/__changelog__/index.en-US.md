@@ -1,3 +1,11 @@
+## 2.66.12
+
+2026-03-20
+
+### 🐛 BugFix
+
+- Fix the issue where the placeholder shifts and visually shakes when clearing content in the `InputTag` component.([#3152](https://github.com/arco-design/arco-design/pull/3152))
+
 ## 2.66.11
 
 2026-03-06

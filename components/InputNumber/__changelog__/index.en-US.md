@@ -1,3 +1,11 @@
+## 2.66.12
+
+2026-03-20
+
+### 🐛 BugFix
+
+- Fix the issue where decimal point input fails to display correctly in the controlled mode of `InputNumber`.([#3151](https://github.com/arco-design/arco-design/pull/3151))
+
 ## 2.66.11
 
 2026-03-06

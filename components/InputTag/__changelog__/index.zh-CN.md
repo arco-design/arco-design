@@ -1,3 +1,11 @@
+## 2.66.12
+
+2026-03-20
+
+### 🐛 问题修复
+
+- 修复`InputTag` 组件清除内容时placeholder出现位移和视觉晃动问题([#3152](https://github.com/arco-design/arco-design/pull/3152))
+
 ## 2.66.11
 
 2026-03-06

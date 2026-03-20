@@ -1,3 +1,11 @@
+## 2.66.12
+
+2026-03-20
+
+### 🐛 BugFix
+
+- Fixed the issue where invoking the normalize function via `form.setFieldValue` leads to unexpected behavior in scenarios such as copying, and supplemented the interface documentation accordingly.([#3149](https://github.com/arco-design/arco-design/pull/3149))
+
 ## 2.66.11
 
 2026-03-06

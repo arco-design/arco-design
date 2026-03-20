@@ -1,3 +1,11 @@
+## 2.66.12
+
+2026-03-20
+
+### 🐛 问题修复
+
+- 修复`form.setFieldValue`触发normalize函数后会导致复制等场景下不符合预期问题，补全接口文档说明([#3149](https://github.com/arco-design/arco-design/pull/3149))
+
 ## 2.66.11
 
 2026-03-06

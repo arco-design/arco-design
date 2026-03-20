@@ -1,3 +1,11 @@
+## 2.66.12
+
+2026-03-20
+
+### 🐛 问题修复
+
+- 修复`Radio.Group` 设置 type='button' 时 direction='vertical' 不生效，按钮仍水平排列的问题([#3153](https://github.com/arco-design/arco-design/pull/3153))
+
 ## 2.62.0
 
 2024-04-26

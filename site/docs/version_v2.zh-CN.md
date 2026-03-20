@@ -2,6 +2,21 @@
 changelog: true
 ---
 
+## 2.66.12
+
+2026-03-20
+
+### 🐛 问题修复
+
+- 修复 `Select` 单选模式开启 autoWidth 时，中文输入法 composition 期间宽度未跟随输入扩展问题([#3157](https://github.com/arco-design/arco-design/pull/3157))
+- 修复 `Select` 在autoWidth 时，聚焦后已选值为 ReactNode（如 Tooltip、div 包裹）不显示，宽度异常导致下拉展示异常问题([#3156](https://github.com/arco-design/arco-design/pull/3156))
+- 修复 `Select`  组件设置autoAlignPopupMinWidth后下拉列表宽度未被文字占满的问题([#3154](https://github.com/arco-design/arco-design/pull/3154))
+- 修复`Radio.Group` 设置 type='button' 时 direction='vertical' 不生效，按钮仍水平排列的问题([#3153](https://github.com/arco-design/arco-design/pull/3153))
+- 修复`InputTag` 组件清除内容时placeholder出现位移和视觉晃动问题([#3152](https://github.com/arco-design/arco-design/pull/3152))
+- 修复`InputNumber`受控模式下小数点输入无法正常展示问题([#3151](https://github.com/arco-design/arco-design/pull/3151))
+- 修复 `Select` 组件搜索后下拉列表宽度无法自适应内容问题([#3150](https://github.com/arco-design/arco-design/pull/3150))
+- 修复`form.setFieldValue`触发normalize函数后会导致复制等场景下不符合预期问题，补全接口文档说明([#3149](https://github.com/arco-design/arco-design/pull/3149))
+
 ## 2.66.11
 
 2026-03-06

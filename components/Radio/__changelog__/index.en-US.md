@@ -1,3 +1,11 @@
+## 2.66.12
+
+2026-03-20
+
+### 🐛 BugFix
+
+- Fix the issue where direction='vertical' does not take effect when type='button' is set for `Radio.Group`, and the buttons are still arranged horizontally.([#3153](https://github.com/arco-design/arco-design/pull/3153))
+
 ## 2.62.0
 
 2024-04-26
