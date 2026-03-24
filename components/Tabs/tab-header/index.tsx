@@ -20,6 +20,7 @@ import { ConfigContext } from '../../ConfigProvider';
 const DIRECTION_VERTICAL = 'vertical';
 const ALIGN_RIGHT = 'right';
 const ALIGN_LEFT = 'left';
+const SCROLLABLE_GAP_BUFFER = 1;
 
 const SCROLL_MAP = {
   delete: true,
@@ -70,9 +71,9 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
 
   const [headerWrapperRef, headerWrapperSize, setHeaderWrapperSize] = useDomSize<HTMLDivElement>();
   const [headerRef, headerSize, setHeaderSize] = useDomSize<HTMLDivElement>();
-  const [scrollWrapperRef, scrollWrapperSize, setScrollWrapperSize] = useDomSize<HTMLDivElement>();
-  const [extraRef, extraSize, setExtraSize] = useDomSize<HTMLDivElement>();
-  const [addBtnRef, addBtnSize, setAddenBtnSize] = useDomSize<HTMLDivElement>();
+  const [scrollWrapperRef, , setScrollWrapperSize] = useDomSize<HTMLDivElement>();
+  const [extraRef, , setExtraSize] = useDomSize<HTMLDivElement>();
+  const [addBtnRef, , setAddenBtnSize] = useDomSize<HTMLDivElement>();
 
   const titleRef = useRef({});
   const [headerOffset, setHeaderOffset] = useState(0);
@@ -114,14 +115,12 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   const align = type === 'capsule' ? right : left;
 
   const isScrollable = useMemo<boolean>(() => {
-    const headerContentHeight = scrollWrapperSize.height - extraSize.height - addBtnSize.height;
-    const headerContentWidth = scrollWrapperSize.width - extraSize.width - addBtnSize.width;
-    const res =
+    const wrapperGap =
       mergeProps.direction === 'vertical'
-        ? headerContentHeight < headerSize.height
-        : headerContentWidth < headerSize.width;
-    return res;
-  }, [mergeProps.direction, scrollWrapperSize, extraSize, headerSize, addBtnSize]);
+        ? headerSize.height - headerWrapperSize.height
+        : headerSize.width - headerWrapperSize.width;
+    return wrapperGap > SCROLLABLE_GAP_BUFFER;
+  }, [mergeProps.direction, headerSize, headerWrapperSize]);
 
   const updateScrollWrapperSize = () => {
     if (scrollWrapperRef.current) {
@@ -172,7 +171,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   );
 
   const updateHeaderOffset = (offset) => {
-    const nextOffset = getValidOffset(offset);
+    const nextOffset = Math.round(getValidOffset(offset));
     if (nextOffset !== headerOffset) {
       setHeaderOffset(nextOffset);
     }
@@ -224,7 +223,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
         } else if (isNumber(scrollAlign)) {
           nextOffset = Math.max(topOffset - scrollAlign, bottomOffset);
         }
-        return nextOffset;
+        return Math.round(nextOffset);
       }
 
       // 水平方向的 offset 计算，分为 capsule 和其他，因为 capsule 是右对齐
@@ -247,7 +246,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
           nextOffset = Math.min(startOffset + scrollAlign, endOffset);
         }
 
-        return nextOffset;
+        return Math.round(nextOffset);
       }
 
       let nextOffset = currentOffset;
@@ -266,7 +265,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
       } else if (isNumber(scrollAlign)) {
         nextOffset = Math.max(startOffset - scrollAlign, endOffset);
       }
-      return nextOffset;
+      return Math.round(nextOffset);
     };
 
     updateScrollOffset(headerWrapperRef.current, direction);

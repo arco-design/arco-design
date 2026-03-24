@@ -67,6 +67,7 @@ export default function useHeaderScroll<T extends HTMLElement>(props: {
                 ? headerOffsetRef.current + pending.x
                 : headerOffsetRef.current - pending.x;
           }
+          offset = Math.round(offset);
           if (onScroll) onScroll(offset);
           pendingOffsetRef.current = null;
         }
@@ -105,7 +106,8 @@ export default function useHeaderScroll<T extends HTMLElement>(props: {
       lastWheelDirectionRef.current = 'y';
     }
 
-    onOffset(offset, offset);
+    const nextOffset = Math.round(offset);
+    onOffset(nextOffset, nextOffset);
   }
 
   // touch
@@ -131,7 +133,7 @@ export default function useHeaderScroll<T extends HTMLElement>(props: {
     // 往下移动的距离
     const offsetY = position.clientY - clientY;
 
-    onOffset(-offsetX, -offsetY);
+    onOffset(Math.round(-offsetX), Math.round(-offsetY));
   };
 
   const onTouchMoveEnd = () => {
