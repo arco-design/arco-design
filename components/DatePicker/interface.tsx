@@ -536,6 +536,9 @@ export interface ShortcutsProps {
   onSelectNow?: () => void;
   nowText?: ReactNode;
   showTime?: boolean | TimePickerProps;
+  nowDisabled?: boolean;
+  disabledDate?: (current: Dayjs) => boolean;
+  mode?: ModeType;
 }
 
 export type DatePickerHandle = {

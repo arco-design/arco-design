@@ -34,7 +34,7 @@ import useMergeProps from '../_util/hooks/useMergeProps';
 import PickerContext from './context';
 import usePrevious from '../_util/hooks/usePrevious';
 import useUpdate from '../_util/hooks/useUpdate';
-import { getDefaultWeekStart, getLocaleDayjsValue } from './util';
+import { getDefaultWeekStart, getLocaleDayjsValue, isDisabledDate } from './util';
 import { pickDataAttributes } from '../_util/pick';
 
 function getFormat(props) {
@@ -213,6 +213,8 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
       (getDayjsValue(showTime.defaultValue, showTime.format || 'HH:mm:ss') as Dayjs)) ||
     getNow(utcOffset, timezone);
   const timeValue = panelValue || defaultTimeValue;
+  const nowValue = getNow(utcOffset, timezone);
+  const nowDisabled = isDisabledDate(nowValue, disabledDate, 'date');
 
   function focusInput() {
     refInput.current && refInput.current.focus?.();
@@ -417,7 +419,10 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
   }
 
   function onSelectNow() {
-    const now = getLocaleDayjsValue(getNow(utcOffset, timezone), locale.dayjsLocale);
+    if (nowDisabled) {
+      return;
+    }
+    const now = getLocaleDayjsValue(nowValue, locale.dayjsLocale);
     handlePickerValueChange(now);
     onHandleSelect(now.format(format), now, true);
   }
@@ -457,6 +462,9 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
     onSelectShortcut && onSelectShortcut(shortcut);
     if (typeof shortcut.value === 'function' && isDayjs(shortcut.value())) {
       const time = getDayjsValue(shortcut.value(), format, utcOffset, timezone) as Dayjs;
+      if (isDisabledDate(time, disabledDate, mode)) {
+        return;
+      }
       setValue(time);
       onHandleChange(time);
       setOpen(false);
@@ -488,6 +496,9 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
       onMouseEnterShortcut,
       onMouseLeaveShortcut,
       onSelectShortcut: onHandleSelectShortcut,
+      nowDisabled,
+      disabledDate,
+      mode,
     };
 
     const shouldShowFooter =
@@ -535,6 +546,8 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
             onClickConfirmBtn={onClickConfirmBtn}
             extra={extra}
             mode={panelMode}
+            nowDisabled={nowDisabled}
+            disabledDate={disabledDate}
             shortcutsPlacementLeft={shortcutsPlacementLeft}
             onClickSelectTimeBtn={onClickSelectTimeBtn}
             isTimePanel={isTimePanel}
