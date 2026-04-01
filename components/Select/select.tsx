@@ -774,6 +774,16 @@ function Select(baseProps: SelectProps, ref) {
   );
 
   const renderView = (eleView: ReactElement | ReactNode) => {
+    const mergedTriggerProps = { ...triggerProps };
+    const popupStyleWidth = mergedTriggerProps.popupStyle?.width;
+
+    if (popupStyleWidth !== undefined) {
+      mergedTriggerProps.style = {
+        ...mergedTriggerProps.style,
+        width: popupStyleWidth,
+      };
+    }
+
     return (
       <Trigger
         ref={(ref) => (refTrigger.current = ref)}
@@ -794,7 +804,7 @@ function Select(baseProps: SelectProps, ref) {
           refPopupExiting.current = false;
           tryUpdateInputValue('', 'optionListHide');
         }}
-        {...omit(triggerProps, ['popupVisible', 'onVisibleChange'])}
+        {...omit(mergedTriggerProps, ['popupVisible', 'onVisibleChange'])}
       >
         {eleView}
       </Trigger>
