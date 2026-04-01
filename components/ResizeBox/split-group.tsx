@@ -118,12 +118,13 @@ function SplitGroup(props: SplitGroupProps, ref) {
     const next = Math.min(index + 1, panes.length - 1);
     const totalOffset = offsets[index] + offsets[next];
 
-    const currentMin = formatSize(panes[index].min) || 0;
+    let currentMin = formatSize(panes[index].min) || 0;
     let currentMax = formatSize(panes[index].max) || totalOffset;
     const nextMin = formatSize(panes[next].min) || 0;
     let nextMax = formatSize(panes[next].max) || totalOffset;
 
     //  min 的优先级高于 max
+    currentMin = Math.max(totalOffset - nextMax, currentMin);
     currentMax = Math.min(totalOffset - nextMin, currentMax);
     nextMax = Math.min(totalOffset - currentMin, nextMax);
     return {
