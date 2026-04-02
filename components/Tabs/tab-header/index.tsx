@@ -171,7 +171,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   );
 
   const updateHeaderOffset = (offset) => {
-    const nextOffset = Math.round(getValidOffset(offset));
+    const nextOffset = getValidOffset(offset);
     if (nextOffset !== headerOffset) {
       setHeaderOffset(nextOffset);
     }
@@ -223,7 +223,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
         } else if (isNumber(scrollAlign)) {
           nextOffset = Math.max(topOffset - scrollAlign, bottomOffset);
         }
-        return Math.round(nextOffset);
+        return nextOffset;
       }
 
       // 水平方向的 offset 计算，分为 capsule 和其他，因为 capsule 是右对齐
@@ -246,7 +246,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
           nextOffset = Math.min(startOffset + scrollAlign, endOffset);
         }
 
-        return Math.round(nextOffset);
+        return nextOffset;
       }
 
       let nextOffset = currentOffset;
@@ -265,7 +265,7 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
       } else if (isNumber(scrollAlign)) {
         nextOffset = Math.max(startOffset - scrollAlign, endOffset);
       }
-      return Math.round(nextOffset);
+      return nextOffset;
     };
 
     updateScrollOffset(headerWrapperRef.current, direction);

@@ -9,10 +9,10 @@ export const getRectDiff = (node: HTMLElement, parentNode: HTMLElement) => {
   const scaleY = Math.abs(scaleYRaw - 1) < 0.01 ? 1 : scaleYRaw;
 
   return {
-    left: Math.round((nodeRect.left - parentRect.left) * scaleX),
-    top: Math.round((nodeRect.top - parentRect.top) * scaleY),
-    right: Math.round((nodeRect.right - parentRect.right) * scaleX),
-    bottom: Math.round((nodeRect.bottom - parentRect.bottom) * scaleY),
+    left: (nodeRect.left - parentRect.left) * scaleX,
+    top: (nodeRect.top - parentRect.top) * scaleY,
+    right: (nodeRect.right - parentRect.right) * scaleX,
+    bottom: (nodeRect.bottom - parentRect.bottom) * scaleY,
   };
 };
 
