@@ -104,13 +104,22 @@ function SplitGroup(props: SplitGroupProps, ref) {
 
   // 入参 百分比/像素值 => 全部转化为百分比(响应式)
   function formatSize(size?: number | string) {
-    const totalPX = isHorizontal ? wrapperRef.current.offsetWidth : wrapperRef.current.offsetHeight;
+    const totalPX = isHorizontal
+      ? wrapperRef.current?.offsetWidth
+      : wrapperRef.current?.offsetHeight;
     if (!size || (isNumber(size) && size < 0)) {
       return 0;
     }
 
-    const percent = isString(size) ? parseFloat(size) / totalPX : size;
-    return Math.min(percent, 1);
+    if (isString(size)) {
+      const parsedSize = parseFloat(size);
+      if (!Number.isFinite(parsedSize) || !Number.isFinite(totalPX) || totalPX <= 0) {
+        return 0;
+      }
+      return Math.min(parsedSize / totalPX, 1);
+    }
+
+    return Number.isFinite(size) ? Math.min(size, 1) : 0;
   }
 
   // 计算阈值，因为伸缩杆会影响到当前面板 跟 下一个面板。所以同时计算两个阈值。
@@ -118,12 +127,13 @@ function SplitGroup(props: SplitGroupProps, ref) {
     const next = Math.min(index + 1, panes.length - 1);
     const totalOffset = offsets[index] + offsets[next];
 
-    const currentMin = formatSize(panes[index].min) || 0;
+    let currentMin = formatSize(panes[index].min) || 0;
     let currentMax = formatSize(panes[index].max) || totalOffset;
     const nextMin = formatSize(panes[next].min) || 0;
     let nextMax = formatSize(panes[next].max) || totalOffset;
 
     //  min 的优先级高于 max
+    currentMin = Math.max(totalOffset - nextMax, currentMin);
     currentMax = Math.min(totalOffset - nextMin, currentMax);
     nextMax = Math.min(totalOffset - currentMin, nextMax);
     return {
