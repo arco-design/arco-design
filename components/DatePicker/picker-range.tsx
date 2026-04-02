@@ -35,6 +35,7 @@ import {
   getDefaultWeekStart,
   getLocaleDayjsValue,
   getFormatByIndex,
+  isDisabledDate as checkDisabledDate,
 } from './util';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import usePrevious from '../_util/hooks/usePrevious';
@@ -721,6 +722,9 @@ const Picker = (baseProps: RangePickerProps, ref) => {
     onSelectShortcut && onSelectShortcut(shortcut);
     if (isValidShortcut(shortcut)) {
       const time = getDayjsValue(shortcut.value(), format, utcOffset, timezone) as Dayjs[];
+      if (time.some((item) => checkDisabledDate(item, disabledDate, mode))) {
+        return;
+      }
       onConfirmValue(time);
     }
   }
@@ -787,6 +791,8 @@ const Picker = (baseProps: RangePickerProps, ref) => {
       onMouseEnterShortcut,
       onMouseLeaveShortcut,
       onSelectShortcut: onHandleSelectShortcut,
+      disabledDate,
+      mode,
     };
 
     const shouldShowFooter =
