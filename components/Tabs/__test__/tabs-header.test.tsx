@@ -1,4 +1,5 @@
 import React from 'react';
+import { act } from 'react-dom/test-utils';
 import { render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
@@ -18,7 +19,7 @@ const _getHTMLOffsetHeight = Object.getOwnPropertyDescriptor(
   'offsetWidth'
 ).get;
 
-function createDemo(props: React.PropsWithChildren<TabsProps>) {
+function createDemo(props: TabsProps) {
   return (
     <Tabs {...props}>
       <TabPane destroyOnHide key="1" title="Tab 1">
@@ -38,7 +39,21 @@ describe('Tabs Header Scroll', () => {
   beforeAll(() => {
     Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
       get() {
-        // width 递减，mock 选项卡头部滚动出现。
+        const className = (this as HTMLElement).className || '';
+
+        if (typeof className === 'string') {
+          if (className.includes('arco-tabs-header-wrapper')) {
+            return 100;
+          }
+          if (
+            className.includes('arco-tabs-header') &&
+            !className.includes('arco-tabs-header-wrapper')
+          ) {
+            return 300;
+          }
+        }
+
+        // 其他节点保持递减，兼容 Tabs 内部多处尺寸读取。
         return 1000 - 10 * ++getCount;
       },
     });
@@ -49,6 +64,16 @@ describe('Tabs Header Scroll', () => {
     Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
       get: _getHTMLOffsetHeight,
     });
+  });
+
+  afterEach(() => {
+    act(() => {
+      jest.runAllTimers();
+    });
+  });
+
+  beforeEach(() => {
+    jest.useFakeTimers();
   });
 
   it('Tabs Header replace dropdown icon', () => {
@@ -98,5 +123,9 @@ describe('Tabs Header Scroll', () => {
 
     expect(wrapper.find('.arco-tabs-left-icon')).toHaveLength(0);
     expect(wrapper.find('.arco-tabs-right-icon')).toHaveLength(0);
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
   });
 });
