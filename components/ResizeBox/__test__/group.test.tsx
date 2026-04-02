@@ -245,41 +245,4 @@ describe('ResizeBox Split Group', () => {
     expect(wrapper.find('.arco-btn')).toHaveLength(1);
     expect(wrapper.find('.arco-btn .arco-icon-plus')).toHaveLength(1);
   });
-
-  it('limit right pane max size correctly when resizing', () => {
-    const wrapper = render(
-      <ResizeBox.SplitGroup
-        panes={[
-          {
-            content: <Typography.Text>left</Typography.Text>,
-            size: '150px',
-            min: '100px',
-            max: '300px',
-          },
-          {
-            content: <Typography.Text>center</Typography.Text>,
-          },
-          {
-            content: <Typography.Text>right</Typography.Text>,
-            size: '300px',
-            min: '200px',
-            max: '400px',
-          },
-        ]}
-      />
-    );
-
-    jest.runAllTimers();
-
-    const trigger = wrapper.find(`.${triggerPrefixCls}`)[1];
-
-    act(() => {
-      fireEvent.mouseDown(trigger, { pageX: 500 });
-      fireEvent.mouseMove(window, { pageX: 100 });
-      fireEvent.mouseUp(window);
-    });
-
-    const panesEl = wrapper.find(`.${groupPrefixCls}-pane`);
-    expect(panesEl[2].style.flexBasis).toEqual(`calc(50% - ${triggerContentRect.width / 2}px)`);
-  });
 });

@@ -104,13 +104,22 @@ function SplitGroup(props: SplitGroupProps, ref) {
 
   // 入参 百分比/像素值 => 全部转化为百分比(响应式)
   function formatSize(size?: number | string) {
-    const totalPX = isHorizontal ? wrapperRef.current.offsetWidth : wrapperRef.current.offsetHeight;
+    const totalPX = isHorizontal
+      ? wrapperRef.current?.offsetWidth
+      : wrapperRef.current?.offsetHeight;
     if (!size || (isNumber(size) && size < 0)) {
       return 0;
     }
 
-    const percent = isString(size) ? parseFloat(size) / totalPX : size;
-    return Math.min(percent, 1);
+    if (isString(size)) {
+      const parsedSize = parseFloat(size);
+      if (!Number.isFinite(parsedSize) || !Number.isFinite(totalPX) || totalPX <= 0) {
+        return 0;
+      }
+      return Math.min(parsedSize / totalPX, 1);
+    }
+
+    return Number.isFinite(size) ? Math.min(size, 1) : 0;
   }
 
   // 计算阈值，因为伸缩杆会影响到当前面板 跟 下一个面板。所以同时计算两个阈值。
