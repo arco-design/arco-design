@@ -20,6 +20,7 @@ import { ConfigContext } from '../../ConfigProvider';
 const DIRECTION_VERTICAL = 'vertical';
 const ALIGN_RIGHT = 'right';
 const ALIGN_LEFT = 'left';
+const SCROLLABLE_GAP_BUFFER = 1;
 
 const SCROLL_MAP = {
   delete: true,
@@ -70,9 +71,9 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
 
   const [headerWrapperRef, headerWrapperSize, setHeaderWrapperSize] = useDomSize<HTMLDivElement>();
   const [headerRef, headerSize, setHeaderSize] = useDomSize<HTMLDivElement>();
-  const [scrollWrapperRef, scrollWrapperSize, setScrollWrapperSize] = useDomSize<HTMLDivElement>();
-  const [extraRef, extraSize, setExtraSize] = useDomSize<HTMLDivElement>();
-  const [addBtnRef, addBtnSize, setAddenBtnSize] = useDomSize<HTMLDivElement>();
+  const [scrollWrapperRef, , setScrollWrapperSize] = useDomSize<HTMLDivElement>();
+  const [extraRef, , setExtraSize] = useDomSize<HTMLDivElement>();
+  const [addBtnRef, , setAddenBtnSize] = useDomSize<HTMLDivElement>();
 
   const titleRef = useRef({});
   const [headerOffset, setHeaderOffset] = useState(0);
@@ -114,14 +115,12 @@ const TabHeader = React.forwardRef<HTMLDivElement, TabsProps>((props, ref) => {
   const align = type === 'capsule' ? right : left;
 
   const isScrollable = useMemo<boolean>(() => {
-    const headerContentHeight = scrollWrapperSize.height - extraSize.height - addBtnSize.height;
-    const headerContentWidth = scrollWrapperSize.width - extraSize.width - addBtnSize.width;
-    const res =
+    const wrapperGap =
       mergeProps.direction === 'vertical'
-        ? headerContentHeight < headerSize.height
-        : headerContentWidth < headerSize.width;
-    return res;
-  }, [mergeProps.direction, scrollWrapperSize, extraSize, headerSize, addBtnSize]);
+        ? headerSize.height - headerWrapperSize.height
+        : headerSize.width - headerWrapperSize.width;
+    return wrapperGap > SCROLLABLE_GAP_BUFFER;
+  }, [mergeProps.direction, headerSize, headerWrapperSize]);
 
   const updateScrollWrapperSize = () => {
     if (scrollWrapperRef.current) {

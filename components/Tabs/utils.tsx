@@ -3,8 +3,10 @@ import { Enter } from '../_util/keycode';
 export const getRectDiff = (node: HTMLElement, parentNode: HTMLElement) => {
   const nodeRect = node.getBoundingClientRect();
   const parentRect = parentNode.getBoundingClientRect();
-  const scaleX = parentNode.offsetWidth / parentRect.width;
-  const scaleY = parentNode.offsetHeight / parentRect.height;
+  const scaleXRaw = parentRect.width ? parentNode.offsetWidth / parentRect.width : 1;
+  const scaleYRaw = parentRect.height ? parentNode.offsetHeight / parentRect.height : 1;
+  const scaleX = Math.abs(scaleXRaw - 1) < 0.01 ? 1 : scaleXRaw;
+  const scaleY = Math.abs(scaleYRaw - 1) < 0.01 ? 1 : scaleYRaw;
 
   return {
     left: (nodeRect.left - parentRect.left) * scaleX,
