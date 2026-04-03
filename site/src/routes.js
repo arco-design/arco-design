@@ -255,7 +255,6 @@ export default function getRoutes(lang = 'zh', t) {
               name: t['routes.color-picker'],
               path: 'components/color-picker',
               component: lazyLoad(() => import(`../../components/ColorPicker/README${suffix}.md`)),
-              new: true,
             },
             {
               name: t['routes.date-picker'],
@@ -288,7 +287,6 @@ export default function getRoutes(lang = 'zh', t) {
               component: lazyLoad(() =>
                 import(`../../components/VerificationCode/README${suffix}.md`)
               ),
-              new: true,
             },
             {
               name: t['routes.mentions'],
@@ -400,7 +398,6 @@ export default function getRoutes(lang = 'zh', t) {
               name: t['routes.watermark'],
               path: 'components/watermark',
               component: lazyLoad(() => import(`../../components/Watermark/README${suffix}.md`)),
-              new: true,
             },
           ],
         },
