@@ -181,6 +181,30 @@ describe('Select', () => {
     expect(wrapper.querySelector('.arco-trigger')).toHaveClass('arco-trigger-position-left');
   });
 
+  it('popup with popupStyle width keeps br position', async () => {
+    wrapper = render(
+      <div style={{ width: 500, position: 'relative' }}>
+        <Select
+          style={{ width: 154 }}
+          options={OPTIONS}
+          triggerProps={{
+            popupStyle: { width: 200 },
+            autoFitPosition: false,
+            position: 'br',
+          }}
+        />
+      </div>
+    );
+
+    const select = wrapper.querySelector('.arco-select');
+    fireEvent.click(select);
+    await sleep(100);
+
+    const trigger = wrapper.querySelector('.arco-trigger');
+    expect(trigger).toHaveClass('arco-trigger-position-br');
+    expect(trigger.style.width).toBe('200px');
+  });
+
   it('show value correctly when defaultValue does not exist in options', () => {
     wrapper = render(
       <div>
