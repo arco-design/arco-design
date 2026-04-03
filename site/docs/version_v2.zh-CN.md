@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.66.13
+
+2026-04-03
+
+### 🐛 问题修复
+
+- 修复 `ResizeBox.SplitGroup`组件时，为右侧区域配置了 max 属性，但实际缩放操作时，该最大宽度限制并未生效问题([#3161](https://github.com/arco-design/arco-design/pull/3161))
+- 修复 `Select` 的triggerProps设置宽度后及定位设置失效问题([#3160](https://github.com/arco-design/arco-design/pull/3160))
+- 修复 `DatePicker` 组件通过disabledDate禁用今天之后，底部的“今天”快捷选择按钮仍然可以点击的问题([#3159](https://github.com/arco-design/arco-design/pull/3159))
+- 修复水平 `Tabs` 在特定窗口位置会出现无限抖动问题([#3158](https://github.com/arco-design/arco-design/pull/3158))
+
 ## 2.66.12
 
 2026-03-20

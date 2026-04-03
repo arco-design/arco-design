@@ -1,3 +1,11 @@
+## 2.66.13
+
+2026-04-03
+
+### 🐛 问题修复
+
+- 修复 `DatePicker` 组件通过disabledDate禁用今天之后，底部的“今天”快捷选择按钮仍然可以点击的问题([#3159](https://github.com/arco-design/arco-design/pull/3159))
+
 ## 2.66.11
 
 2026-03-06

@@ -1,3 +1,11 @@
+## 2.66.13
+
+2026-04-03
+
+### 🐛 BugFix
+
+- Fix the issue where positioning becomes invalid after setting the width via triggerProps in the `Select` component.([#3160](https://github.com/arco-design/arco-design/pull/3160))
+
 ## 2.66.12
 
 2026-03-20

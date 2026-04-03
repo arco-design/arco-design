@@ -1,3 +1,11 @@
+## 2.66.13
+
+2026-04-03
+
+### 🐛 问题修复
+
+- 修复 `ResizeBox.SplitGroup`组件时，为右侧区域配置了 max 属性，但实际缩放操作时，该最大宽度限制并未生效问题([#3161](https://github.com/arco-design/arco-design/pull/3161))
+
 ## 2.55.2
 
 2023-11-10

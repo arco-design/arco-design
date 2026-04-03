@@ -1,3 +1,11 @@
+## 2.66.13
+
+2026-04-03
+
+### 🐛 BugFix
+
+- Fixed the issue where the "Today" shortcut button at the bottom remained clickable after disabling dates after today using the disabledDate prop in the `DatePicker` component.([#3159](https://github.com/arco-design/arco-design/pull/3159))
+
 ## 2.66.11
 
 2026-03-06

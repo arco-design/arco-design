@@ -1,3 +1,11 @@
+## 2.66.13
+
+2026-04-03
+
+### 🐛 BugFix
+
+- Fixed the issue where the maximum width limit set via the max property for the right area of the `ResizeBox.SplitGroup` component did not take effect during actual resizing operations.([#3161](https://github.com/arco-design/arco-design/pull/3161))
+
 ## 2.55.2
 
 2023-11-10

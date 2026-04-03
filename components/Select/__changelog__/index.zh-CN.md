@@ -1,3 +1,11 @@
+## 2.66.13
+
+2026-04-03
+
+### 🐛 问题修复
+
+- 修复 `Select` 的triggerProps设置宽度后及定位设置失效问题([#3160](https://github.com/arco-design/arco-design/pull/3160))
+
 ## 2.66.12
 
 2026-03-20

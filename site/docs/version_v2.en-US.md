@@ -2,6 +2,17 @@
 changelog: true
 ---
 
+## 2.66.13
+
+2026-04-03
+
+### 🐛 BugFix
+
+- Fixed the issue where the maximum width limit set via the max property for the right area of the `ResizeBox.SplitGroup` component did not take effect during actual resizing operations.([#3161](https://github.com/arco-design/arco-design/pull/3161))
+- Fix the issue where positioning becomes invalid after setting the width via triggerProps in the `Select` component.([#3160](https://github.com/arco-design/arco-design/pull/3160))
+- Fixed the issue where the "Today" shortcut button at the bottom remained clickable after disabling dates after today using the disabledDate prop in the `DatePicker` component.([#3159](https://github.com/arco-design/arco-design/pull/3159))
+- Fix the infinite jitter issue that occurs with horizontal `tabs` at specific window positions.([#3158](https://github.com/arco-design/arco-design/pull/3158))
+
 ## 2.66.12
 
 2026-03-20
