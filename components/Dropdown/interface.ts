@@ -6,7 +6,7 @@ import { ButtonProps } from '../Button';
  * @title Dropdown
  */
 export interface DropdownProps {
-  children?: ReactNode;
+  children?: ReactNode | ((open: boolean) => ReactNode);
   /**
    * @zh 下拉框的内容
    * @en Content of dropdown list
