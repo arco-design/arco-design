@@ -32,7 +32,7 @@ export interface RadioProps<T = any>
    * @en Callback when radio status change
    */
   onChange?: (checked: boolean, event: ChangeEvent) => void;
-  children?: ReactNode | ((value: { checked: boolean }) => ReactNode);
+  children?: ReactNode | ((value: { checked: boolean; disabled: boolean }) => ReactNode);
 }
 
 /**

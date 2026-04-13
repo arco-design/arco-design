@@ -90,7 +90,7 @@ function Radio(baseProps: RadioProps) {
         }}
       />
       {isFunction(children) ? (
-        children({ checked })
+        children({ checked, disabled })
       ) : context.type === 'radio' ? (
         <>
           <IconHover
