@@ -138,6 +138,7 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
   // Not fixed header
   const refTableNF = useRef<HTMLTableElement | null>(null);
   const lastScrollLeft = useRef<number>(0);
+  const syncingScrollTargets = useRef<HTMLElement[]>([]);
 
   const scrollbarChanged = useRef<boolean>(false);
   const [groupColumns, flattenColumns] = useColumns<T>(props);
@@ -722,19 +723,29 @@ function Table<T extends unknown>(baseProps: TableProps<T>, ref: React.Ref<Table
     const theadScrollContainer =
       refTableHead.current && (refTableHead.current.parentNode as HTMLElement);
     const tfoot = refTableFoot.current;
-    if (target.scrollLeft !== lastScrollLeft.current) {
-      if (theadScrollContainer) {
-        theadScrollContainer.scrollLeft = target.scrollLeft;
-      }
-      if (tbody) {
-        tbody.scrollLeft = target.scrollLeft;
-      }
-      if (tfoot) {
-        tfoot.scrollLeft = target.scrollLeft;
-      }
+    const scrollTarget = target as HTMLElement;
+
+    if (syncingScrollTargets.current.includes(scrollTarget)) {
+      syncingScrollTargets.current = syncingScrollTargets.current.filter(
+        (item) => item !== scrollTarget
+      );
+      lastScrollLeft.current = scrollTarget.scrollLeft;
+      return;
+    }
+
+    if (scrollTarget.scrollLeft !== lastScrollLeft.current) {
+      const syncTargets = [theadScrollContainer, tbody, tfoot].filter(
+        (node): node is HTMLElement => !!node && node !== scrollTarget
+      );
+
+      syncingScrollTargets.current = syncTargets;
+      syncTargets.forEach((node) => {
+        node.scrollLeft = scrollTarget.scrollLeft;
+      });
       setFixedColumnClassNames();
     }
-    lastScrollLeft.current = e.target.scrollLeft;
+
+    lastScrollLeft.current = scrollTarget.scrollLeft;
   }
 
   // isFixedHeader = false
