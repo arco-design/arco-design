@@ -40,7 +40,7 @@ function PageOption(props: PageOptionProps) {
         aria-label={locale.Pagination.pageSize}
       >
         <Select
-          value={sizeOptions.indexOf(pageSize) !== -1 ? pageSize : sizeOptions[0]}
+          value={pageSize}
           onChange={(value) => {
             onPageSizeChange(value);
           }}

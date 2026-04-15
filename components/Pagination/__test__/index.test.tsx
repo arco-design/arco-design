@@ -55,6 +55,15 @@ describe('Pagination', () => {
     expect(component.find('.arco-pagination-item-disabled')).toHaveLength(2);
   });
 
+  it('should display defaultPageSize when sizeCanChange is enabled', () => {
+    const component = render(
+      <Pagination total={200} sizeCanChange defaultPageSize={20} sizeOptions={[10, 30, 40, 50]} />
+    );
+
+    expect(component.find('.arco-select-view-value')[0].innerHTML.startsWith('20')).toBe(true);
+    expect(component.find('.arco-pagination-item')).toHaveLength(Math.ceil(200 / 20) + 2);
+  });
+
   it('trigger onPageSizeChange correctly', () => {
     const mockPageSizeChange = jest.fn();
     const mockChange = jest.fn();

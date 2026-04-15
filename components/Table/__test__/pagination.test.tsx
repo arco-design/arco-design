@@ -96,4 +96,27 @@ describe('Table test', () => {
     expect(component.find('.arco-table-no-data')).toHaveLength(1);
     expect(component.find('.arco-table-pagination')).toHaveLength(1);
   });
+
+  it('table pagination should respect defaultPageSize when sizeCanChange is enabled', () => {
+    const tableData = new Array(40).fill(null).map((_, index) => ({
+      key: `${index}`,
+      name: `name-${index}`,
+      value: `value-${index}`,
+    }));
+    const tableColumns = ['name', 'value'].map((key) => ({ title: key, dataIndex: key }));
+    const component = render(
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        pagination={{
+          defaultPageSize: 20,
+          sizeCanChange: true,
+          sizeOptions: [10, 30, 40, 50],
+        }}
+      />
+    );
+
+    expect(component.find('.arco-select-view-value')[0].innerHTML.startsWith('20')).toBe(true);
+    expect(component.find('tbody tr')).toHaveLength(20);
+  });
 });
