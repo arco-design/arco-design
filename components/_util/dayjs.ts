@@ -50,6 +50,8 @@ originDayjs.extend(timezone);
 
 export const dayjs = originDayjs;
 
+const defaultStringFormats = ['YYYY-MM-DD HH:mm:ss', 'YYYY-MM-DD'];
+
 function startOfWeekTimestamp(date, weekStart: number) {
   // 计算 date 与前一个 weekStart 日期的间隔
   const diff = (date.day() - weekStart + 7) % 7;
@@ -249,8 +251,19 @@ export function getDayjsValue(
     }
     if (typeof value === 'string') {
       const dv = dayjs(value, isArray(format) ? format[i] : format);
+      if (dv.isValid()) {
+        return dv;
+      }
 
-      return dv.isValid() ? dv : dayjs(value, 'YYYY-MM-DD');
+      for (let index = 0; index < defaultStringFormats.length; index += 1) {
+        const fallbackValue = dayjs(value, defaultStringFormats[index]);
+
+        if (fallbackValue.isValid()) {
+          return fallbackValue;
+        }
+      }
+
+      return dv;
     }
     return dayjs(value);
   };

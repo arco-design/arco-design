@@ -111,6 +111,16 @@ describe('Picker Format', () => {
     );
   });
 
+  it('showTime format with meridiem and string value', () => {
+    const component = render(
+      <DatePicker showTime format="YYYY/MM/DD hh:mm:ss A" value="2025-08-12 09:24:09" />
+    );
+
+    expect(component.find('.arco-picker-input input')[0].getAttribute('value')).toBe(
+      '2025/08/12 09:24:09 上午'
+    );
+  });
+
   it('RangePicker format array', () => {
     const component = render(
       <RangePicker
