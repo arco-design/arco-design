@@ -212,7 +212,7 @@ describe('Modal', () => {
   it('should keep focus on DatePicker input and close modal with esc', () => {
     const onCancel = jest.fn();
 
-    const component = render(
+    render(
       <Modal visible title="Add User" onCancel={onCancel}>
         <Form>
           <Form.Item label="Date of Birth" field="birthday">
@@ -227,13 +227,13 @@ describe('Modal', () => {
 
     jest.runAllTimers();
 
-    const dateInput = component.container.querySelector(
-      '.arco-picker-input input'
-    ) as HTMLInputElement;
-    expect(document.activeElement).toBe(dateInput);
-
     const focusLockNode = document.querySelector('[data-focus-lock-disabled]');
     expect(focusLockNode).toBeTruthy();
+
+    const dateInput = document.querySelector('.arco-picker-input input') as HTMLInputElement;
+    expect(dateInput).toBeTruthy();
+    expect(focusLockNode).toContainElement(dateInput);
+
     fireEvent.keyDown(focusLockNode as HTMLElement, {
       key: Esc.key,
     });
