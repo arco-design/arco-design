@@ -187,6 +187,7 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
   const [hoverPlaceholderValue, setHoverPlaceholderValue] = useState<string>();
 
   const mergedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
+  const prevPopupVisibleRef = useRef<boolean>(mergedPopupVisible);
 
   const mergedValue =
     'value' in props ? (getDayjsValue(propsValue, format, utcOffset, timezone) as Dayjs) : value;
@@ -238,6 +239,8 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
   useEffect(() => {
     setInputValue(undefined);
     setHoverPlaceholderValue(undefined);
+    const prevPopupVisible = prevPopupVisibleRef.current;
+    prevPopupVisibleRef.current = mergedPopupVisible;
 
     if (mergedPopupVisible) {
       setPageShowDate(defaultPageShowDate);
@@ -250,7 +253,9 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
       setTimeout(() => {
         setIsTimePanel(false);
         setPanelMode(mode);
-        blurInput();
+        if (prevPopupVisible && document.activeElement === refInput.current?.input) {
+          blurInput();
+        }
       }, 100);
     }
   }, [mergedPopupVisible]);

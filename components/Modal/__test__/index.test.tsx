@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import mountTest from '../../../tests/mountTest';
 import Modal from '..';
 import Button from '../../Button';
+import DatePicker from '../../DatePicker';
+import Form from '../../Form';
+import Input from '../../Input';
 import { $, render, fireEvent, cleanup } from '../../../tests/util';
 import { Esc } from '../../_util/keycode';
 
@@ -67,7 +70,7 @@ describe('Modal', () => {
         </Modal>
       </div>
     );
-    expect(component.querySelector('.arco-modal-close-icon').textContent).toBe('xxx');
+    expect(component.querySelector('.arco-modal-close-icon')?.textContent).toBe('xxx');
   });
 
   it('open modal correctly', () => {
@@ -83,7 +86,9 @@ describe('Modal', () => {
 
     expect($('.arco-modal-mask').length).toBe(1);
 
-    fireEvent.click(wrapper.querySelector('.arco-modal-close-icon'));
+    const closeIcon = wrapper.querySelector('.arco-modal-close-icon');
+    expect(closeIcon).toBeTruthy();
+    fireEvent.click(closeIcon as Element);
 
     jest.runAllTimers();
 
@@ -152,7 +157,9 @@ describe('Modal', () => {
     });
     jest.runAllTimers();
     expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(2);
-    fireEvent.keyDown(document.querySelectorAll('[data-focus-lock-disabled]')[0], {
+    const focusLockNode = document.querySelectorAll('[data-focus-lock-disabled]')[0];
+    expect(focusLockNode).toBeTruthy();
+    fireEvent.keyDown(focusLockNode, {
       key: Esc.key,
     });
     jest.runAllTimers();
@@ -200,5 +207,37 @@ describe('Modal', () => {
     jest.runAllTimers();
     expect(document.querySelectorAll(`.arco-modal-wrapper`)).toHaveLength(0);
     jest.useRealTimers();
+  });
+
+  it('should keep focus on DatePicker input and close modal with esc', () => {
+    const onCancel = jest.fn();
+
+    const component = render(
+      <Modal visible title="Add User" onCancel={onCancel}>
+        <Form>
+          <Form.Item label="Date of Birth" field="birthday">
+            <DatePicker placeholder="" />
+          </Form.Item>
+          <Form.Item label="Name" field="name">
+            <Input placeholder="" />
+          </Form.Item>
+        </Form>
+      </Modal>
+    );
+
+    jest.runAllTimers();
+
+    const dateInput = component.container.querySelector(
+      '.arco-picker-input input'
+    ) as HTMLInputElement;
+    expect(document.activeElement).toBe(dateInput);
+
+    const focusLockNode = document.querySelector('[data-focus-lock-disabled]');
+    expect(focusLockNode).toBeTruthy();
+    fireEvent.keyDown(focusLockNode as HTMLElement, {
+      key: Esc.key,
+    });
+
+    expect(onCancel).toHaveBeenCalledTimes(1);
   });
 });

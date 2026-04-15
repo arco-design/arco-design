@@ -43,6 +43,7 @@ export interface DateInputProps {
 type DateInputHandle = {
   focus: () => void;
   blur: () => void;
+  input: HTMLInputElement | null;
 };
 
 function DateInput(
@@ -85,6 +86,7 @@ function DateInput(
     blur() {
       input.current && input.current.blur && input.current.blur();
     },
+    input: input.current,
     getRootDOMNode: () => inputWrapperRef.current,
   }));
 
