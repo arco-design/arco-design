@@ -61,6 +61,7 @@
 |maxLength|输入框最大输入的长度；设置 `errorOnly`为 `true` 后，超过 `maxLength` 会展示 `error` 状态，并不限制用户输入。|number \| { length: number; errorOnly?: boolean } |`-`|`errorOnly` in 2.23.0|
 |style|节点样式|CSSProperties |`-`|-|
 |wrapperStyle|开启字数统计之后，会在 `textarea` 标签外包一层 `div`，`wrapperStyle` 用来配置这个 `div` 的样式。|CSSProperties |`-`|-|
+|wordLimitPosition|字数统计的位置|`'inside' \| 'outside'` |`inside`| 2.66.14 |
 |onChange|输入时的回调|(value: string, e) => void |`-`|-|
 |onClear|点击清除按钮的回调|() => void |`-`|2.2.0|
 |onPressEnter|按下回车键的回调|(e) => void |`-`|-|

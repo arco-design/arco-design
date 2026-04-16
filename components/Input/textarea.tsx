@@ -39,6 +39,7 @@ const TextArea = (baseProps: TextAreaProps, ref) => {
     onPressEnter,
     status,
     clearIcon,
+    wordLimitPosition = 'inside',
     ...rest
   } = props;
 
@@ -128,7 +129,13 @@ const TextArea = (baseProps: TextAreaProps, ref) => {
   );
 
   const valueLength = value ? value.length : 0;
-  const withWrapper = (wordLimitMaxLength && showWordLimit) || allowClear;
+  const withWordLimit = !!(wordLimitMaxLength && showWordLimit);
+  const withWrapper = withWordLimit || allowClear;
+  const wordLimitOutside = withWordLimit && wordLimitPosition === 'outside';
+  const [leftWord, rightWord] = rtl
+    ? [wordLimitMaxLength, valueLength]
+    : [valueLength, wordLimitMaxLength];
+  const wordLimitText = withWordLimit ? `${leftWord}/${rightWord}` : '';
 
   const lengthError = useMemo(() => {
     if (!maxLength && wordLimitMaxLength) {
@@ -170,13 +177,11 @@ const TextArea = (baseProps: TextAreaProps, ref) => {
 
   if (withWrapper) {
     const showClearIcon = !disabled && allowClear && value;
-    const [leftWord, rightWord] = rtl
-      ? [wordLimitMaxLength, valueLength]
-      : [valueLength, wordLimitMaxLength];
     return (
       <div
         className={cs(`${prefixCls}-wrapper`, {
           [`${prefixCls}-clear-wrapper`]: allowClear,
+          [`${prefixCls}-wrapper-word-limit-outside`]: wordLimitOutside,
           [`${prefixCls}-wrapper-rtl`]: rtl,
         })}
         style={wrapperStyle}
@@ -205,13 +210,14 @@ const TextArea = (baseProps: TextAreaProps, ref) => {
             </IconHover>
           )
         ) : null}
-        {wordLimitMaxLength && showWordLimit && (
+        {withWordLimit && (
           <span
             className={cs(`${prefixCls}-word-limit`, {
+              [`${prefixCls}-word-limit-outside`]: wordLimitOutside,
               [`${prefixCls}-word-limit-error`]: lengthError,
             })}
           >
-            {leftWord}/{rightWord}
+            {wordLimitText}
           </span>
         )}
       </div>

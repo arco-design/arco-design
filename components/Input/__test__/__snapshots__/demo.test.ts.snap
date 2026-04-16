@@ -734,6 +734,7 @@ exports[`renders Input/demo/max-length.md correctly 1`] = `
   </div>
   <div
     class="arco-space-item"
+    style="margin-bottom:8px"
   >
     <div
       class="arco-space arco-space-horizontal arco-space-align-start"
@@ -788,6 +789,25 @@ exports[`renders Input/demo/max-length.md correctly 1`] = `
           </span>
         </div>
       </div>
+    </div>
+  </div>
+  <div
+    class="arco-space-item"
+  >
+    <div
+      class="arco-textarea-wrapper arco-textarea-wrapper-word-limit-outside"
+      style="width:300px"
+    >
+      <textarea
+        class="arco-textarea"
+        maxlength="50"
+        placeholder="Word count below the textarea"
+      />
+      <span
+        class="arco-textarea-word-limit arco-textarea-word-limit-outside"
+      >
+        0/50
+      </span>
     </div>
   </div>
 </div>

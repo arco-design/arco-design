@@ -56,6 +56,14 @@ function App() {
           wrapperStyle={{ width: 300 }}
         />
       </Space>
+
+      <Input.TextArea
+        maxLength={50}
+        showWordLimit
+        wordLimitPosition="outside"
+        placeholder="Word count below the textarea"
+        wrapperStyle={{ width: 300 }}
+      />
     </Space>
   );
 }

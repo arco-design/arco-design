@@ -6,6 +6,20 @@
   width: 100%;
 }
 
+.@{textarea-prefix-cls}-wrapper-word-limit-outside {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  vertical-align: top;
+
+  .@{textarea-prefix-cls}-word-limit {
+    position: static;
+    align-self: flex-end;
+    margin-top: @spacing-2;
+    line-height: @line-height-base;
+  }
+}
+
 .@{textarea-prefix-cls}-clear-wrapper {
   &:hover {
     .@{textarea-prefix-cls}-clear-icon {

@@ -294,6 +294,23 @@ describe('Test Textarea', () => {
     expect(inputLimitElement()).toHaveLength(0);
   });
 
+  it('test TextArea wordLimitPosition', () => {
+    const textarea = render(
+      <Input.TextArea
+        maxLength={50}
+        defaultValue={getLengthString(20)}
+        showWordLimit
+        wordLimitPosition="outside"
+      />
+    );
+    const textareaWrapperElement = () => textarea.container.querySelector('.arco-textarea-wrapper');
+    const textareaLimitElement = () =>
+      textarea.container.querySelector('.arco-textarea-word-limit');
+    expect(textareaWrapperElement()).toHaveClass('arco-textarea-wrapper-word-limit-outside');
+    expect(textareaLimitElement()).toHaveClass('arco-textarea-word-limit-outside');
+    expect(textareaLimitElement()?.textContent).toEqual('20/50');
+  });
+
   it('test maxLength.errorOnly', () => {
     const input = render(
       <Input

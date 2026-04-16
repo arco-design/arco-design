@@ -61,6 +61,7 @@ The basic form components have been expanded on the basis of native controls and
 |maxLength|The max content length；After setting `errorOnly` to `true`, if `maxLength` is exceeded, the `error` status will be displayed, and user input will not be restricted.|number \| { length: number; errorOnly?: boolean } |`-`|`errorOnly` in 2.23.0|
 |style|Additional style|CSSProperties |`-`|-|
 |wrapperStyle|With `showWordLimit`, a `div` will be outside the `textarea` tag, and `wrapperStyle` is used to configure the style of it.|CSSProperties |`-`|-|
+|wordLimitPosition|The position of the word count|`'inside' \| 'outside'` |`inside`| 2.66.14 |  
 |onChange|Callback when user input|(value: string, e) => void |`-`|-|
 |onClear|Callback when click clear button|() => void |`-`|2.2.0|
 |onPressEnter|Callback when press enter key|(e) => void |`-`|-|

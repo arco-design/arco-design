@@ -223,6 +223,11 @@ export interface TextAreaProps
   maxLength?: number | { length: number; errorOnly?: boolean };
   showWordLimit?: boolean;
   /**
+   * @zh 字数统计的位置
+   * @en The position of the word count
+   */
+  wordLimitPosition?: 'inside' | 'outside';
+  /**
    * @zh 允许清空输入框
    * @en Whether allow clear the content
    * @version 2.2.0
