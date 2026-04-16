@@ -2,6 +2,7 @@ import React from 'react';
 import { render, fireEvent, act } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import Tree from '..';
+import Input from '../../Input';
 import { IconHeartFill } from '../../../icon';
 import componentConfigTest from '../../../tests/componentConfigTest';
 
@@ -109,6 +110,57 @@ describe('Tree', () => {
     const summaryNodeLength = getTreeNodesLength(data);
     expect(wrapper.find(`${prefixCls}-node`)).toHaveLength(summaryNodeLength);
   });
+
+  it('should keep caret position for controlled input rendered in title', () => {
+    function Demo() {
+      const [value, setValue] = React.useState('abc');
+
+      return (
+        <Tree defaultExpandedKeys={['0-0']}>
+          <TreeNode title="Trunk" key="0-0">
+            <TreeNode key="0-0-0" title={<Input value={value} onChange={setValue} />} />
+          </TreeNode>
+        </Tree>
+      );
+    }
+
+    const wrapper = render(<Demo />);
+    const innerInput = wrapper.querySelectorAll('input')[0] as HTMLInputElement;
+
+    act(() => {
+      innerInput.focus();
+      innerInput.setSelectionRange(2, 2);
+    });
+
+    fireEvent.compositionStart(innerInput);
+    fireEvent.compositionUpdate(innerInput, {
+      target: {
+        value: 'ab中c',
+      },
+    });
+    fireEvent.change(innerInput, {
+      target: {
+        value: 'ab中c',
+      },
+    });
+
+    act(() => {
+      innerInput.setSelectionRange(3, 3);
+    });
+
+    fireEvent.compositionEnd(innerInput, {
+      target: {
+        value: 'ab中c',
+      },
+    });
+
+    const updatedInput = wrapper.querySelectorAll('input')[0] as HTMLInputElement;
+    expect(updatedInput.value).toBe('ab中c');
+    expect(document.activeElement).toBe(updatedInput);
+    expect(updatedInput.selectionStart).toBe(3);
+    expect(updatedInput.selectionEnd).toBe(3);
+  });
+
   it('tree render treedata', () => {
     const wrapper = render(<Tree treeData={data} />);
     const wrapper2 = render(<Tree>{generatorTreeNodes(data)}</Tree>);
