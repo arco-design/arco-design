@@ -112,6 +112,7 @@ function flatChildren(
     const optionValue = getChildValue(child);
     const optionLabel = get(child, 'props.children');
     const searchValue = inputValue.toLowerCase();
+    const hasExplicitValue = get(child, 'props.value') !== undefined;
 
     let isValidOption = true;
     if (filterOption === true) {
@@ -119,7 +120,7 @@ function flatChildren(
         optionValue !== undefined && String(optionValue).toLowerCase().indexOf(searchValue) !== -1;
       const isLabelMatched =
         typeof optionLabel === 'string' && optionLabel.toLowerCase().indexOf(searchValue) !== -1;
-      isValidOption = !inputValue || isValueMatched || isLabelMatched;
+      isValidOption = hasExplicitValue && (!inputValue || isValueMatched || isLabelMatched);
     } else if (typeof filterOption === 'function') {
       isValidOption = !inputValue || filterOption(inputValue, child);
     }
