@@ -110,12 +110,16 @@ function flatChildren(
 
   const handleOption = (child: ReactElement, origin: OptionInfo['_origin']) => {
     const optionValue = getChildValue(child);
+    const optionLabel = get(child, 'props.children');
+    const searchValue = inputValue.toLowerCase();
 
     let isValidOption = true;
     if (filterOption === true) {
-      isValidOption =
-        optionValue !== undefined &&
-        String(optionValue).toLowerCase().indexOf(inputValue.toLowerCase()) !== -1;
+      const isValueMatched =
+        optionValue !== undefined && String(optionValue).toLowerCase().indexOf(searchValue) !== -1;
+      const isLabelMatched =
+        typeof optionLabel === 'string' && optionLabel.toLowerCase().indexOf(searchValue) !== -1;
+      isValidOption = !inputValue || isValueMatched || isLabelMatched;
     } else if (typeof filterOption === 'function') {
       isValidOption = !inputValue || filterOption(inputValue, child);
     }

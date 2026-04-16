@@ -158,6 +158,36 @@ describe('Select', () => {
     expect(wrapper.find('.arco-select-option')).toHaveLength(0);
   });
 
+  it('showSearch matches string label in options and Option children', async () => {
+    wrapper = render(
+      <div>
+        <Select showSearch options={[{ label: '中文', value: 'chinese' }]} />
+        <Select showSearch>
+          <Option value="chinese">中文</Option>
+        </Select>
+      </div>
+    );
+
+    const selectList = wrapper.querySelectorAll('.arco-select');
+    fireEvent.click(selectList[0]);
+    await sleep(100);
+
+    const inputList = wrapper.querySelectorAll('input');
+    fireEvent.change(inputList[0], { target: { value: '中' } });
+    expect(wrapper.find('.arco-select-option')).toHaveLength(1);
+    expect(wrapper.querySelector('.arco-select-option')).toHaveTextContent('中文');
+    expect(wrapper.querySelector('.arco-select-highlight')).toHaveTextContent('中');
+
+    fireEvent.change(inputList[0], { target: { value: '' } });
+    fireEvent.click(selectList[1]);
+    await sleep(100);
+
+    fireEvent.change(inputList[1], { target: { value: '中' } });
+    expect(wrapper.find('.arco-select-option')).toHaveLength(1);
+    expect(wrapper.querySelector('.arco-select-option')).toHaveTextContent('中文');
+    expect(wrapper.querySelector('.arco-select-highlight')).toHaveTextContent('中');
+  });
+
   it('showSearch async correctly', async () => {
     const onSearch = jest.fn();
     wrapper = render(
