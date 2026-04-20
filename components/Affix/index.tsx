@@ -19,6 +19,8 @@ import useIsomorphicLayoutEffect from '../_util/hooks/useIsomorphicLayoutEffect'
 import { AffixProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
 
+const EVENT_NAMES: (keyof WindowEventMap)[] = ['scroll', 'resize'];
+
 function getTargetRect(target: HTMLElement | Window) {
   return isWindow(target)
     ? {
@@ -37,7 +39,10 @@ const defaultProps = {
   target: () => window,
 };
 
-function Affix(baseProps: PropsWithChildren<AffixProps>, ref) {
+const Affix: React.ForwardRefRenderFunction<AffixHandle, React.PropsWithChildren<AffixProps>> = (
+  baseProps,
+  ref
+) => {
   const { getPrefixCls, componentConfig, rtl } = useContext(ConfigContext);
   const props = useMergeProps<PropsWithChildren<AffixProps>>(
     baseProps,
@@ -148,11 +153,13 @@ function Affix(baseProps: PropsWithChildren<AffixProps>, ref) {
   useEffect(() => {
     targetRef.current = target && isFunction(target) ? target() : null;
     if (targetRef.current) {
-      on(targetRef.current, 'scroll', updatePosition);
-      on(targetRef.current, 'resize', updatePosition);
+      for (const eventName of EVENT_NAMES) {
+        on(targetRef.current, eventName, updatePosition);
+      }
       return () => {
-        off(targetRef.current, 'scroll', updatePosition);
-        off(targetRef.current, 'resize', updatePosition);
+        for (const eventName of EVENT_NAMES) {
+          off(targetRef.current, eventName, updatePosition);
+        }
       };
     }
   }, [target, updatePosition]);
@@ -188,7 +195,7 @@ function Affix(baseProps: PropsWithChildren<AffixProps>, ref) {
       </div>
     </ResizeObserver>
   );
-}
+};
 
 const AffixComponent = forwardRef<AffixHandle, PropsWithChildren<AffixProps>>(Affix);
 
