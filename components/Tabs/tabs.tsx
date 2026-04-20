@@ -1,21 +1,21 @@
 import React, {
-  ReactElement,
-  useRef,
-  useImperativeHandle,
-  useContext,
   PropsWithChildren,
+  ReactElement,
+  useContext,
+  useImperativeHandle,
+  useRef,
 } from 'react';
 import cs from '../_util/classNames';
-import TabPane, { TabPaneType, TabPaneProps } from './tab-pane';
-import TabHeader from './tab-header/index';
-import TabContent from './tab-content';
+import useId from '../_util/hooks/useId';
+import useMergeProps from '../_util/hooks/useMergeProps';
+import useMergeValue from '../_util/hooks/useMergeValue';
+import { isFunction, isObject } from '../_util/is';
 import omit from '../_util/omit';
 import { ConfigContext } from '../ConfigProvider';
-import { isFunction, isObject } from '../_util/is';
-import useMergeValue from '../_util/hooks/useMergeValue';
 import { TabsProps } from './interface';
-import useMergeProps from '../_util/hooks/useMergeProps';
-import useId from '../_util/hooks/useId';
+import TabContent from './tab-content';
+import TabHeader from './tab-header/index';
+import TabPane, { TabPaneProps, TabPaneType } from './tab-pane';
 
 const sizeList = ['mini', 'small', 'default', 'large'];
 
@@ -153,6 +153,7 @@ function Tabs(baseProps: TabsProps, ref) {
         'type',
         'scrollPosition',
         'offsetAlign',
+        'inkBarSize',
       ])}
       style={style}
       className={cs(
