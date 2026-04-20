@@ -35,6 +35,7 @@ Show and preview pictures.
 |previewProps|Preview options (all options are optional) [ImagePreviewProps](#imagepreview)|PartialImagePreviewProps |`-`|-|
 |style|Additional style|CSSProperties |`-`|-|
 |width|Image width|string \| number |`-`|-|
+|fit|like style object-fit|fill \| contain \| cover \| none \| scale-down|`-`|-|
 
 ### Image.Preview
 
