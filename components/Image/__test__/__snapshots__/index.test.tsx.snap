@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ConfigProvider componentConfig.Image default 1`] = `
-<div
-  class="arco-image arco-image-before-load"
->
+<div>
   <img
-    class="arco-image-img"
+    class="arco-image-img arco-image arco-image-before-load"
     tabindex="0"
   />
   <div
@@ -15,11 +13,9 @@ exports[`ConfigProvider componentConfig.Image default 1`] = `
 `;
 
 exports[`ConfigProvider componentConfig.Image set className globally 1`] = `
-<div
-  class="arco-image arco-image-before-load global-default-class"
->
+<div>
   <img
-    class="arco-image-img"
+    class="arco-image-img arco-image arco-image-before-load global-default-class"
     tabindex="0"
   />
   <div
@@ -29,11 +25,9 @@ exports[`ConfigProvider componentConfig.Image set className globally 1`] = `
 `;
 
 exports[`ConfigProvider componentConfig.Image set className globally and component set className itself. 1`] = `
-<div
-  class="arco-image arco-image-before-load component-class"
->
+<div>
   <img
-    class="arco-image-img"
+    class="arco-image-img arco-image arco-image-before-load component-class"
     tabindex="0"
   />
   <div
@@ -43,11 +37,9 @@ exports[`ConfigProvider componentConfig.Image set className globally and compone
 `;
 
 exports[`ConfigProvider componentConfig.Image set data-* property 1`] = `
-<div
-  class="arco-image arco-image-before-load"
->
+<div>
   <img
-    class="arco-image-img"
+    class="arco-image-img arco-image arco-image-before-load"
     data-test-name="Image"
     tabindex="0"
   />
