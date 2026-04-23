@@ -35,7 +35,8 @@ const data = [
   {
     label: 'Date of Birth',
     value: '2020-05-15',
-    span: 2,
+    span: 2, 
+    columnSpan: 1.5
   },
   {
     label: 'Address',
