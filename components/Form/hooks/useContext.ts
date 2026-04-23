@@ -1,14 +1,22 @@
 import { useCallback, useContext, useEffect, useRef } from 'react';
-import { FormInstance, SubmitStatus } from '../interface';
-import { FormContext } from '../context';
+import { FormInstance, SubmitStatus, KeyType } from '../interface';
+import { FormContext, FormContextType } from '../context';
 import warn from '../../_util/warning';
 import useForceUpdate from '../../_util/hooks/useForceUpdate';
 
 /**
  * useFormContext 只会返回一些 Form 全局的状态，避免返回某个表单项的状态
  */
-const useFormContext = (): { form: FormInstance; disabled: boolean; isSubmitting: boolean } => {
-  const formCtx = useContext(FormContext);
+const useFormContext = <
+  FormData = any,
+  FieldValue = FormData[keyof FormData],
+  FieldKey extends KeyType = keyof FormData
+>(): {
+  form: FormInstance<FormData, FieldValue, FieldKey>;
+  disabled: boolean;
+  isSubmitting: boolean;
+} => {
+  const formCtx = useContext(FormContext as FormContextType<FormData, FieldValue, FieldKey>);
   const formInstance = formCtx.store;
   const isSubmittingRef = useRef(false);
 
