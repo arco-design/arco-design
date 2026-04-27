@@ -549,6 +549,54 @@ describe('UseForm', () => {
     expect(form.scrollToField).toBeInstanceOf(Function);
   });
 
+  it('scrollToField should support special character field', async () => {
+    const scrollSpy = jest.spyOn(Element.prototype, 'scrollIntoView').mockImplementation(() => {});
+
+    const DemoWithSpecialField = () => {
+      const [specialForm] = Form.useForm();
+      useEffect(() => {
+        expect(() => {
+          specialForm.scrollToField('1-2-3');
+        }).not.toThrow();
+      }, [specialForm]);
+
+      return (
+        <Form form={specialForm} id="special-form" scrollToFirstError>
+          <Form.Item
+            label="字段1"
+            field="1-2-3"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          <Button className="submit-button" htmlType="submit">
+            提交
+          </Button>
+        </Form>
+      );
+    };
+
+    const specialWrapper = render(<DemoWithSpecialField />);
+    const specialInput = specialWrapper.querySelector('input');
+    const specialFormElement = specialWrapper.querySelector('form');
+    const targetId = 'special-form-1-2-3';
+
+    expect(document.getElementById(targetId)).toBe(specialInput);
+    expect(() => {
+      fireEvent.submit(specialFormElement);
+    }).not.toThrow();
+
+    await sleep(20);
+    expect(scrollSpy).toHaveBeenCalled();
+
+    specialWrapper.unmount();
+    scrollSpy.mockRestore();
+  });
+
   it('getfieldsError', async () => {
     let e;
     try {

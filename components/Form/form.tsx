@@ -31,6 +31,13 @@ function getFormElementId<FieldKey extends KeyType = string>(
   return prefix ? `${prefix}-${id}` : `${id}`;
 }
 
+function getFieldElement(node: HTMLElement, elementId: string) {
+  const target = document.getElementById(elementId);
+  if (target && node.contains(target)) {
+    return target;
+  }
+}
+
 const defaultProps = {
   layout: 'horizontal' as const,
   labelCol: { span: 5, offset: 0 },
@@ -100,10 +107,11 @@ const Form = <
     if (!node) {
       return;
     }
-    let fieldNode = node.querySelector(`#${getFormElementId(id, field as string)}`);
+    const fieldElementId = getFormElementId(id, field as string);
+    let fieldNode = getFieldElement(node, fieldElementId);
     if (!fieldNode) {
       // 如果设置了nostyle， fieldNode不存在，尝试直接查询表单控件
-      fieldNode = node.querySelector(`#${getFormElementId(id, field as string)}${ID_SUFFIX}`);
+      fieldNode = getFieldElement(node, `${fieldElementId}${ID_SUFFIX}`);
     }
     fieldNode &&
       scrollIntoView(fieldNode, {
