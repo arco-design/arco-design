@@ -1,4 +1,12 @@
-import React, { useState, useRef, useContext, ReactElement, ReactNode } from 'react';
+import React, {
+  useState,
+  useRef,
+  useContext,
+  ReactElement,
+  ReactNode,
+  useCallback,
+  useEffect,
+} from 'react';
 import SubMenu from './sub-menu';
 import { getStyle } from '../_util/style';
 import MenuContext from './context';
@@ -30,6 +38,7 @@ const OverflowWrap = (props: OverflowWrapProps) => {
   const { prefixCls } = useContext(MenuContext);
 
   const refUl = useRef(null);
+  const resizeFrameRef = useRef<number>(null);
   const [lastVisibleIndex, setLastVisibleIndex] = useState(null);
 
   const overflowSubMenuClass = `${prefixCls}-overflow-sub-menu`;
@@ -48,7 +57,7 @@ const OverflowWrap = (props: OverflowWrapProps) => {
     }
   };
 
-  function computeLastVisibleIndex() {
+  const computeLastVisibleIndex = useCallback(() => {
     if (!refUl.current) {
       return;
     }
@@ -100,7 +109,27 @@ const OverflowWrap = (props: OverflowWrapProps) => {
 
     // 全部可见
     tryUpdateEllipsisStatus(null);
-  }
+  }, [children, lastVisibleIndex]);
+
+  const onResize = useCallback(() => {
+    if (resizeFrameRef.current) {
+      cancelAnimationFrame(resizeFrameRef.current);
+    }
+
+    resizeFrameRef.current = requestAnimationFrame(() => {
+      resizeFrameRef.current = null;
+      computeLastVisibleIndex();
+    });
+  }, [computeLastVisibleIndex]);
+
+  useEffect(() => {
+    return () => {
+      if (resizeFrameRef.current) {
+        cancelAnimationFrame(resizeFrameRef.current);
+        resizeFrameRef.current = null;
+      }
+    };
+  }, []);
 
   const renderOverflowSubMenu = (children, isMirror = false) => {
     return (
@@ -144,7 +173,7 @@ const OverflowWrap = (props: OverflowWrapProps) => {
   };
 
   return (
-    <ResizeObserver onResize={computeLastVisibleIndex} getTargetDOMNode={() => refUl.current}>
+    <ResizeObserver onResize={onResize} delayOnResizeByRaf getTargetDOMNode={() => refUl.current}>
       <div className={`${prefixCls}-overflow-wrap`} ref={refUl}>
         {renderChildren()}
       </div>
