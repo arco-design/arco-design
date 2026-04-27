@@ -529,11 +529,20 @@ function InputTag(baseProps: InputTagProps<string | ObjectValueType>, ref) {
                   arr.splice(isMoveLeft ? toIndex : toIndex - 1, 0, item);
                   return arr;
                 };
+                if (
+                  prevIndex < 0 ||
+                  index < 0 ||
+                  prevIndex >= value.length ||
+                  index > value.length
+                ) {
+                  return;
+                }
                 valueChangeHandler(moveItem(value, prevIndex, index), 'sort');
               }}
             >
-              {childrenTagWithAnimation.concat(suffixInput)}
+              {childrenTagWithAnimation}
             </Draggable>
+            {suffixInput}
           </UsedTransitionGroup>
         ) : (
           <UsedTransitionGroup
