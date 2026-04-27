@@ -255,8 +255,9 @@ function Preview(baseProps: ImagePreviewProps, ref) {
   }
 
   // Close button is clicked.
-  function onCloseClick() {
+  function onCloseClick(e) {
     close();
+    e.stopPropagation();
   }
 
   function close() {
