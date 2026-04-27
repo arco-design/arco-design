@@ -4,6 +4,7 @@ import { sleep, render } from '../../../tests/util';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Button from '../../Button';
+import Tooltip from '../../Tooltip';
 import Select from '../select';
 import { Enter, Tab } from '../../_util/keycode';
 import { LabeledValue, SelectProps } from '../interface';
@@ -205,6 +206,42 @@ describe('Select', () => {
     );
     fireEvent.change(wrapper.querySelector('input'), { target: { value: 'A' } });
     expect(onSearch.mock.calls[0][0]).toBe('A');
+  });
+
+  it('retainInputValue works with Tooltip wrapped option children', async () => {
+    wrapper = render(
+      <Select showSearch={{ retainInputValue: true }} defaultValue="1">
+        <Option value="1">
+          <Tooltip content="tooltip content">content1</Tooltip>
+        </Option>
+      </Select>
+    );
+
+    const select = wrapper.querySelector('.arco-select');
+    const input = wrapper.querySelector('input') as HTMLInputElement;
+
+    fireEvent.click(select);
+    await sleep(100);
+    expect(input.value).toBe('content1');
+  });
+
+  it('retainInputValue works with div wrapped option children', async () => {
+    wrapper = render(
+      <Select showSearch={{ retainInputValue: true }} defaultValue="1">
+        <Option value="1">
+          <div>content1</div>
+        </Option>
+      </Select>
+    );
+
+    expect(wrapper.querySelector('.arco-select-view-value')).toHaveTextContent('content1');
+
+    const select = wrapper.querySelector('.arco-select');
+    const input = wrapper.querySelector('input') as HTMLInputElement;
+
+    fireEvent.click(select);
+    await sleep(100);
+    expect(input.value).toBe('content1');
   });
 
   it('popup with correct position', async () => {
