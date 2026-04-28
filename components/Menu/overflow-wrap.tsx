@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext, ReactElement, ReactNode } from 'react';
+import React, { useState, useRef, useContext, ReactElement, ReactNode, useCallback } from 'react';
 import SubMenu from './sub-menu';
 import { getStyle } from '../_util/style';
 import MenuContext from './context';
@@ -7,6 +7,7 @@ import type { MenuProps } from './interface';
 import cs from '../_util/classNames';
 
 const OVERFLOW_THRESHOLD = 5;
+const WIDTH_CHANGE_THRESHOLD = 1;
 
 function getNodeWidth(node) {
   // getBoundingClientRect will get a result like 20.45
@@ -30,6 +31,7 @@ const OverflowWrap = (props: OverflowWrapProps) => {
   const { prefixCls } = useContext(MenuContext);
 
   const refUl = useRef(null);
+  const lastMeasuredWidthRef = useRef<number>(0);
   const [lastVisibleIndex, setLastVisibleIndex] = useState(null);
 
   const overflowSubMenuClass = `${prefixCls}-overflow-sub-menu`;
@@ -48,13 +50,24 @@ const OverflowWrap = (props: OverflowWrapProps) => {
     }
   };
 
-  function computeLastVisibleIndex() {
+  const computeLastVisibleIndex = useCallback(() => {
     if (!refUl.current) {
       return;
     }
 
     const ulElement = refUl.current;
-    const maxWidth = getNodeWidth(ulElement) - OVERFLOW_THRESHOLD;
+    const currentWidth = getNodeWidth(ulElement);
+
+    if (
+      lastMeasuredWidthRef.current &&
+      Math.abs(currentWidth - lastMeasuredWidthRef.current) < WIDTH_CHANGE_THRESHOLD
+    ) {
+      return;
+    }
+
+    lastMeasuredWidthRef.current = currentWidth;
+
+    const maxWidth = currentWidth - OVERFLOW_THRESHOLD;
     const childNodeList = [].slice.call(ulElement.children);
 
     let menuItemIndex = 0;
@@ -100,7 +113,7 @@ const OverflowWrap = (props: OverflowWrapProps) => {
 
     // 全部可见
     tryUpdateEllipsisStatus(null);
-  }
+  }, [children, lastVisibleIndex]);
 
   const renderOverflowSubMenu = (children, isMirror = false) => {
     return (
@@ -144,7 +157,11 @@ const OverflowWrap = (props: OverflowWrapProps) => {
   };
 
   return (
-    <ResizeObserver onResize={computeLastVisibleIndex} getTargetDOMNode={() => refUl.current}>
+    <ResizeObserver
+      onResize={computeLastVisibleIndex}
+      delayOnResizeByRaf
+      getTargetDOMNode={() => refUl.current}
+    >
       <div className={`${prefixCls}-overflow-wrap`} ref={refUl}>
         {renderChildren()}
       </div>
