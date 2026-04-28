@@ -549,6 +549,50 @@ describe('UseForm', () => {
     expect(form.scrollToField).toBeInstanceOf(Function);
   });
 
+  it('scrollToField should support special character field', async () => {
+    const DemoWithSpecialField = () => {
+      const [specialForm] = Form.useForm();
+      useEffect(() => {
+        expect(() => {
+          specialForm.scrollToField('1-2-3');
+        }).not.toThrow();
+      }, [specialForm]);
+
+      return (
+        <Form form={specialForm} id="special-form" scrollToFirstError>
+          <Form.Item
+            label="字段1"
+            field="1-2-3"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          <Button className="submit-button" htmlType="submit">
+            提交
+          </Button>
+        </Form>
+      );
+    };
+
+    const specialWrapper = render(<DemoWithSpecialField />);
+    const specialFormElement = specialWrapper.querySelector('form');
+    const targetId = 'special-form-1-2-3';
+    const targetFieldNode = document.getElementById(targetId);
+
+    expect(targetFieldNode).toBeTruthy();
+    expect(targetFieldNode?.id).toBe(targetId);
+    expect(() => {
+      fireEvent.submit(specialFormElement as Element);
+    }).not.toThrow();
+
+    await sleep(20);
+    specialWrapper.unmount();
+  });
+
   it('getfieldsError', async () => {
     let e;
     try {
