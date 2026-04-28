@@ -641,27 +641,20 @@ exports[`renders TreeSelect/demo/draggable.md correctly 1`] = `
         >
           <div
             class="arco-draggable"
+          />
+          <input
+            autocomplete="off"
+            class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+            placeholder="请选择..."
+            style="order:-1"
+            value=""
+          />
+          <span
+            class="arco-input-tag-input-mirror"
+            style="order:-1"
           >
-            <li
-              class="arco-draggable-item"
-              draggable="true"
-              style="display:inline-block"
-            >
-              <input
-                autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-                placeholder="请选择..."
-                style="order:-1"
-                value=""
-              />
-              <span
-                class="arco-input-tag-input-mirror"
-                style="order:-1"
-              >
-                请选择...
-              </span>
-            </li>
-          </div>
+            请选择...
+          </span>
         </div>
       </div>
     </div>

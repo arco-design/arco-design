@@ -153,4 +153,14 @@ describe('InputTag', () => {
     expect(wrapper.querySelectorAll('.arco-tag')).toHaveLength(3);
     expect(wrapper.querySelector('input').getAttribute('value')).toBe('');
   });
+
+  it('should not make input area draggable when dragToSort is enabled', async () => {
+    const wrapper = render(<InputTag dragToSort defaultValue={['a', 'b', 'c', 'd']} />);
+    const eleInput = wrapper.querySelector('input') as HTMLElement;
+
+    fireEvent.change(eleInput, { target: { value: 'draft' } });
+    await sleep(10);
+
+    expect(wrapper.querySelectorAll('[draggable="true"]')).toHaveLength(4);
+  });
 });
