@@ -164,6 +164,11 @@ export interface MenuSubMenuProps extends Omit<HTMLAttributes<HTMLElement>, 'tit
    */
   title?: string | ReactNode;
   /**
+   * @zh 子菜单的图标
+   * @en Icon of the subMenu
+   */
+  icon?: ReactNode;
+  /**
    * @zh 唯一标志
    * @en Unique ID of the subMenu
    */

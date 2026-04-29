@@ -16,8 +16,18 @@ import ArcoCSSTransition from '../../_util/CSSTransition';
 const CONTENT_HIDDEN_STYLE: CSSProperties = { height: 0, visibility: 'hidden' };
 
 const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
-  const { _key, children, style, className, title, level, forwardedRef, selectable, ...rest } =
-    props;
+  const {
+    _key,
+    children,
+    style,
+    className,
+    title,
+    icon,
+    level,
+    forwardedRef,
+    selectable,
+    ...rest
+  } = props;
   const {
     id: menuId,
     prefixCls,
@@ -71,7 +81,8 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
       }}
     >
       <MenuIndent level={level} prefixCls={prefixCls} levelIndent={levelIndent} />
-      <span>{title}</span>
+      {icon}
+      <span className={`${prefixCls}-submenu-title`}>{title}</span>
       <span className={`${prefixCls}-icon-suffix ${isOpen ? 'is-open' : ''}`}>
         {icons && icons.horizontalArrowDown ? icons.horizontalArrowDown : <IconDown />}
       </span>

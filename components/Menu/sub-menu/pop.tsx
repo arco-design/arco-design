@@ -22,6 +22,7 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
     style,
     className,
     title,
+    icon,
     level,
     selectable,
     forwardedRef,
@@ -129,7 +130,8 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
         {...omit(rest, ['key', 'popup'])}
       >
         <MenuIndent prefixCls={prefixCls} levelIndent={levelIndent} level={level} />
-        {title}
+        {icon}
+        <span className={`${prefixCls}-submenu-title`}>{title}</span>
         {renderSuffix()}
         {hasSelectedStatus && mode === 'horizontal' ? (
           <div className={`${prefixCls}-selected-label`} />

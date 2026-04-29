@@ -254,6 +254,13 @@
     overflow: auto;
   }
 
+  &-submenu-title {
+    .text-ellipsis();
+
+    flex: 1;
+    min-width: 0;
+  }
+
   &-vertical {
     .item-mode(vertical);
 
@@ -371,15 +378,19 @@
       display: none;
     }
 
-    // Hide text after icon when menu is collapsed
-    @style-item-text: {
+    .@{menu-prefix-cls}-submenu-title {
+      width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .@{menu-prefix-cls}-pop-header,
+    .@{menu-prefix-cls}-inline-header {
       .@{prefix}-icon {
         margin-left: 1px;
-        margin-right: 100vw;
+        margin-right: @menu-margin-right-item-prefix-icon;
       }
-    };
-
-    .applyStyleToItem(@style-item-text);
+    }
 
     & &-button {
       right: unset;
@@ -548,13 +559,13 @@
   }
 
   .@{menu-prefix-cls}-collapse {
-    @rtl-style-item-text: {
+    .@{menu-prefix-cls}-pop-header,
+    .@{menu-prefix-cls}-inline-header {
       .@{prefix}-icon {
-        margin-left: 100vw;
+        margin-left: @menu-margin-right-item-prefix-icon;
         margin-right: 1px;
       }
-    };
-    .applyStyleToItem(  @rtl-style-item-text);
+    }
   }
 
   .@{menu-prefix-cls}-pop-trigger {
