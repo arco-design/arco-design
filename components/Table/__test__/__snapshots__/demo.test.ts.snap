@@ -16095,10 +16095,10 @@ exports[`renders Table/demo/virtualized.md correctly 1`] = `
                 style="overflow-y:auto;overflow-anchor:none;max-height:500px"
               >
                 <div
-                  style="height:3200000px;position:relative;overflow:visible;z-index:0;width:1000px;min-width:100%"
+                  style="height:3200000px;position:relative;overflow:visible;overflow-anchor:none;z-index:0;width:1000px;min-width:100%"
                 >
                   <div
-                    style="display:flex;flex-direction:column;transform:translateY(0px);position:absolute;left:0;right:auto;top:0;min-width:100%"
+                    style="display:flex;flex-direction:column;overflow-anchor:none;transform:translateY(0px);position:absolute;left:0;right:auto;top:0;min-width:100%"
                   >
                     <div
                       class="arco-table-tr"

@@ -25,6 +25,7 @@ const Filler: React.FC<FillerProps> = ({
   let innerStyle: React.CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
+    overflowAnchor: 'none',
   };
 
   if (offset !== undefined) {
@@ -32,6 +33,7 @@ const Filler: React.FC<FillerProps> = ({
       height,
       position: 'relative',
       overflow: 'hidden',
+      overflowAnchor: 'none',
       zIndex: 0,
       ...propsOuterStyle,
     };
@@ -46,7 +48,7 @@ const Filler: React.FC<FillerProps> = ({
       ...propsInnerStyle,
     };
   } else {
-    outerStyle = { ...propsOuterStyle };
+    outerStyle = { overflowAnchor: 'none', ...propsOuterStyle };
     innerStyle = { ...innerStyle, ...propsInnerStyle };
   }
 

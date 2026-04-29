@@ -254,6 +254,10 @@ const VirtualList: React.ForwardRefExoticComponent<
     return item !== undefined ? getItemKey(item, index) : null;
   };
 
+  const getItemIndexByKey = (key: Key): number => {
+    return data.findIndex((item, index) => getItemKey(item, index) === key);
+  };
+
   const getCachedItemHeight = (key: Key): number => {
     return refItemHeightMap.current[key] || itemHeight;
   };
@@ -422,6 +426,7 @@ const VirtualList: React.ForwardRefExoticComponent<
     if (!refList.current) return;
 
     let changedItemIndex: number = null;
+    let locatedItemIndex = state.itemIndex;
     const switchTo = refIsVirtual.current !== isVirtual ? (isVirtual ? 'virtual' : 'raw') : '';
 
     refIsVirtual.current = isVirtual;
@@ -431,8 +436,18 @@ const VirtualList: React.ForwardRefExoticComponent<
       changedItemIndex = diff ? diff.index : null;
     }
 
+    const locatedItemKey = getItemKeyByIndex(state.itemIndex, prevData);
+    if (locatedItemKey && locatedItemKey !== GHOST_ITEM_KEY) {
+      const nextIndex = getItemIndexByKey(locatedItemKey);
+      locatedItemIndex = nextIndex > -1 ? nextIndex : Math.min(locatedItemIndex, itemCount - 1);
+    }
+
+    const dataLengthChanged = changedItemIndex !== null;
+    const shouldCorrectScroll =
+      switchTo || (isVirtual && dataLengthChanged && changedItemIndex <= state.startIndex);
+
     // No need to correct the position when the number of elements in the real list changes
-    if (switchTo || (isVirtual && changedItemIndex)) {
+    if (shouldCorrectScroll) {
       const { clientHeight } = refList.current;
       const locatedItemRelativeTop = getItemRelativeTop({
         itemHeight: getCachedItemHeight(getItemKeyByIndex(state.itemIndex, prevData)),
@@ -447,7 +462,7 @@ const VirtualList: React.ForwardRefExoticComponent<
 
       if (switchTo === 'raw') {
         let rawTop = locatedItemRelativeTop;
-        for (let index = 0; index < state.itemIndex; index++) {
+        for (let index = 0; index < locatedItemIndex; index++) {
           rawTop -= getCachedItemHeight(getItemKeyByIndex(index));
         }
 
@@ -458,10 +473,12 @@ const VirtualList: React.ForwardRefExoticComponent<
         });
       } else {
         internalScrollTo({
-          itemIndex: state.itemIndex,
+          itemIndex: locatedItemIndex,
           relativeTop: locatedItemRelativeTop,
         });
       }
+    } else if (isVirtual && dataLengthChanged) {
+      virtualListScrollHandler(null, true);
     }
   }, [data, isVirtual]);
 

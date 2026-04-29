@@ -2592,10 +2592,10 @@ Array [
         style="overflow-y:auto;overflow-anchor:none;max-height:560px"
       >
         <div
-          style="height:320000px;position:relative;overflow:hidden;z-index:0"
+          style="height:320000px;position:relative;overflow:hidden;overflow-anchor:none;z-index:0"
         >
           <div
-            style="display:flex;flex-direction:column;transform:translateY(0px);position:absolute;left:0;right:0;top:0"
+            style="display:flex;flex-direction:column;overflow-anchor:none;transform:translateY(0px);position:absolute;left:0;right:0;top:0"
           >
             <div
               class="arco-list-item"
