@@ -5,7 +5,7 @@ import { MenuSubMenuProps } from '../interface';
 import IconRight from '../../../icon/react-icon/IconRight';
 import IconLeft from '../../../icon/react-icon/IconLeft';
 import IconDown from '../../../icon/react-icon/IconDown';
-import { isChildrenSelected } from '../util';
+import { isChildrenSelected, splitSubMenuTitle } from '../util';
 import omit from '../../_util/omit';
 import Dropdown from '../../Dropdown';
 import Menu from '../index';
@@ -22,7 +22,6 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
     style,
     className,
     title,
-    icon,
     level,
     selectable,
     forwardedRef,
@@ -67,6 +66,7 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
 
   const hasSelectedStatus = isChildrenSelected(children, selectedKeys) || isSelected;
   const popPosition: TriggerProps['position'][] = rtl ? ['br', 'lt'] : ['bl', 'rt'];
+  const { titleIcon, titleText } = splitSubMenuTitle(title);
   const subMenuClickHandler = (event) => {
     onClickSubMenu(_key, level, 'pop');
     selectable && onClickMenuItem(_key, event);
@@ -130,8 +130,8 @@ const SubMenuPop = (props: MenuSubMenuProps & { forwardedRef }) => {
         {...omit(rest, ['key', 'popup'])}
       >
         <MenuIndent prefixCls={prefixCls} levelIndent={levelIndent} level={level} />
-        {icon}
-        <span className={`${prefixCls}-submenu-title`}>{title}</span>
+        {titleIcon}
+        <span className={`${prefixCls}-submenu-title`}>{titleText}</span>
         {renderSuffix()}
         {hasSelectedStatus && mode === 'horizontal' ? (
           <div className={`${prefixCls}-selected-label`} />

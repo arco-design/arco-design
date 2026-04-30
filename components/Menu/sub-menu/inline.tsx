@@ -3,7 +3,12 @@ import cs from '../../_util/classNames';
 import useStateWithPromise from '../../_util/hooks/useStateWithPromise';
 import { MenuSubMenuProps } from '../interface';
 import IconDown from '../../../icon/react-icon/IconDown';
-import { processChildren, isChildrenSelected, PROPS_NEED_TO_BE_PASSED_IN_SUBMENU } from '../util';
+import {
+  processChildren,
+  isChildrenSelected,
+  PROPS_NEED_TO_BE_PASSED_IN_SUBMENU,
+  splitSubMenuTitle,
+} from '../util';
 import MenuContext from '../context';
 import MenuIndent from '../indent';
 import pick from '../../_util/pick';
@@ -16,18 +21,8 @@ import ArcoCSSTransition from '../../_util/CSSTransition';
 const CONTENT_HIDDEN_STYLE: CSSProperties = { height: 0, visibility: 'hidden' };
 
 const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
-  const {
-    _key,
-    children,
-    style,
-    className,
-    title,
-    icon,
-    level,
-    forwardedRef,
-    selectable,
-    ...rest
-  } = props;
+  const { _key, children, style, className, title, level, forwardedRef, selectable, ...rest } =
+    props;
   const {
     id: menuId,
     prefixCls,
@@ -63,6 +58,7 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
     level: level + 1,
     selectable,
   }) as ReactNode[];
+  const { titleIcon, titleText } = splitSubMenuTitle(title);
 
   const header = (
     <div
@@ -81,8 +77,8 @@ const SubMenuInline = (props: MenuSubMenuProps & { forwardedRef }) => {
       }}
     >
       <MenuIndent level={level} prefixCls={prefixCls} levelIndent={levelIndent} />
-      {icon}
-      <span className={`${prefixCls}-submenu-title`}>{title}</span>
+      {titleIcon}
+      <span className={`${prefixCls}-submenu-title`}>{titleText}</span>
       <span className={`${prefixCls}-icon-suffix ${isOpen ? 'is-open' : ''}`}>
         {icons && icons.horizontalArrowDown ? icons.horizontalArrowDown : <IconDown />}
       </span>

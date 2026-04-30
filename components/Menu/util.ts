@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 
 export type MenuInfo = {
   keyPath: string[];
@@ -10,6 +10,42 @@ export type MenuInfo = {
 };
 
 export const PROPS_NEED_TO_BE_PASSED_IN_SUBMENU = ['popup', 'triggerProps', 'selectable'];
+
+const flattenReactFragment = (children: ReactNode): ReactNode[] => {
+  return React.Children.toArray(children).reduce<ReactNode[]>((result, child) => {
+    if (React.isValidElement(child) && child.type === React.Fragment) {
+      return result.concat(flattenReactFragment(child.props.children));
+    }
+    return result.concat(child);
+  }, []);
+};
+
+const isIconElement = (node: ReactNode) => {
+  if (!React.isValidElement(node)) {
+    return false;
+  }
+
+  return node.props?.isIcon || (node.type as any)?.defaultProps?.isIcon;
+};
+
+export const splitSubMenuTitle = (title: ReactNode) => {
+  const titleNodes = flattenReactFragment(title);
+  const firstTitleNodeIndex = titleNodes.findIndex((node) => {
+    return !(typeof node === 'string' && node.trim() === '');
+  });
+
+  if (firstTitleNodeIndex > -1 && isIconElement(titleNodes[firstTitleNodeIndex])) {
+    return {
+      titleIcon: titleNodes[firstTitleNodeIndex],
+      titleText: titleNodes.slice(firstTitleNodeIndex + 1),
+    };
+  }
+
+  return {
+    titleIcon: null,
+    titleText: title,
+  };
+};
 
 // Expand MenuGroup to get an array only contains MenuItem and SubMenu
 const flatMenuGroup = (children): ReactElement[] => {

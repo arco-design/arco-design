@@ -11,6 +11,15 @@ const SubMenu = Menu.SubMenu;
 const MenuItem = Menu.Item;
 const MenuItemGroup = Menu.ItemGroup;
 
+const IconPrefix = (props) => {
+  const rest = { ...props };
+  delete rest.isIcon;
+  return <svg {...rest} className="arco-icon test-menu-icon" />;
+};
+IconPrefix.defaultProps = {
+  isIcon: true,
+};
+
 mountTest(Menu);
 componentConfigTest(Menu, 'Menu');
 
@@ -232,6 +241,31 @@ describe('Menu', () => {
     expect(getComputedStyle(wrapper.querySelector('.arco-menu-inline-content')).height).toBe(
       'auto'
     );
+  });
+
+  it('keeps SubMenu title prefix icon outside collapsed title text', () => {
+    const wrapper = render(
+      <Menu mode="vertical" collapse>
+        <SubMenu
+          key="layout"
+          title={
+            <>
+              <IconPrefix /> Navigation 1
+            </>
+          }
+        >
+          <MenuItem key="1">Menu 1</MenuItem>
+        </SubMenu>
+      </Menu>
+    );
+
+    const header = wrapper.querySelector('.arco-menu-pop-header');
+    const icon = header.querySelector('.test-menu-icon');
+    const title = header.querySelector('.arco-menu-submenu-title');
+
+    expect(icon.parentElement).toBe(header);
+    expect(title).toHaveTextContent('Navigation 1');
+    expect(title.querySelector('.test-menu-icon')).toBeNull();
   });
 
   it('SubMenu properties are passed in correctly', () => {
