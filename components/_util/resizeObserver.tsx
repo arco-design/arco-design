@@ -9,12 +9,17 @@ export interface ResizeProps {
   onResize?: (entry: ResizeObserverEntry[]) => void;
   children?: React.ReactNode;
   getTargetDOMNode?: () => any;
+  delayOnResizeByRaf?: boolean;
 }
 
 class ResizeObserverComponent extends React.Component<ResizeProps> {
   resizeObserver: ResizeObserver;
 
   rootDOMRef: any;
+
+  resizeFrameId: number;
+
+  latestEntry: ResizeObserverEntry[];
 
   getRootElement = () => {
     const { getTargetDOMNode } = this.props;
@@ -40,13 +45,17 @@ class ResizeObserverComponent extends React.Component<ResizeProps> {
   }
 
   componentWillUnmount = () => {
+    if (this.resizeFrameId) {
+      cancelAnimationFrame(this.resizeFrameId);
+      this.resizeFrameId = null;
+    }
     if (this.resizeObserver) {
       this.destroyResizeObserver();
     }
   };
 
   createResizeObserver = () => {
-    const { throttle = true } = this.props;
+    const { throttle = true, delayOnResizeByRaf = false } = this.props;
     const onResize = (entry) => {
       this.props.onResize?.(entry);
     };
@@ -59,6 +68,18 @@ class ResizeObserverComponent extends React.Component<ResizeProps> {
         firstExec = false;
         onResize(entry);
       }
+
+      if (delayOnResizeByRaf) {
+        this.latestEntry = entry;
+        if (!this.resizeFrameId) {
+          this.resizeFrameId = requestAnimationFrame(() => {
+            this.resizeFrameId = null;
+            resizeHandler(this.latestEntry);
+          });
+        }
+        return;
+      }
+
       resizeHandler(entry);
     });
     const targetNode = this.getRootElement();
@@ -68,6 +89,7 @@ class ResizeObserverComponent extends React.Component<ResizeProps> {
   destroyResizeObserver = () => {
     this.resizeObserver && this.resizeObserver.disconnect();
     this.resizeObserver = null;
+    this.latestEntry = null;
   };
 
   render() {
