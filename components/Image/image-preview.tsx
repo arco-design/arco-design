@@ -8,6 +8,7 @@ import React, {
   useCallback,
   useMemo,
   WheelEvent,
+  MouseEvent,
 } from 'react';
 import ArcoCSSTransition from '../_util/CSSTransition';
 import { findDOMNode } from '../_util/react-dom';
@@ -255,7 +256,8 @@ function Preview(baseProps: ImagePreviewProps, ref) {
   }
 
   // Close button is clicked.
-  function onCloseClick() {
+  function onCloseClick(e: MouseEvent<HTMLDivElement>) {
+    e.stopPropagation();
     close();
   }
 

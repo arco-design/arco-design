@@ -197,6 +197,25 @@ describe('Image', () => {
     expect(mockVisibleChange.mock.calls[0]).toEqual([false, true]);
   });
 
+  it('should not trigger parent click event when click close button', () => {
+    const mockParentClick = jest.fn();
+    const mockVisibleChange = jest.fn();
+    const wrapper = render(
+      <div onClick={mockParentClick}>
+        <Image.Preview src={imgSrc} onVisibleChange={mockVisibleChange} defaultVisible />
+      </div>
+    );
+
+    jest.runAllTimers();
+
+    act(() => {
+      fireEvent.click(wrapper.find('.arco-image-preview-close-btn')[0]);
+    });
+
+    expect(mockVisibleChange.mock.calls[0]).toEqual([false, true]);
+    expect(mockParentClick).toHaveBeenCalledTimes(0);
+  });
+
   it('handle maskClosable prop correctly', () => {
     const mockVisibleChange = jest.fn();
     const wrapper = render(
