@@ -191,7 +191,7 @@ export interface SelectViewProps extends SelectViewCommonProps {
   prefixCls: string;
   rtl?: boolean;
   ariaControls?: string;
-  renderText: (value) => { text; disabled };
+  renderText: (value) => { text; textInput?: string; disabled };
   renderView?: (eleView: ReactElement) => ReactElement;
   onSort?: (value) => void;
   onRemoveCheckedItem?: (item, index: number, e) => void;
@@ -279,9 +279,13 @@ const CoreSelectView = React.forwardRef(
     const mergedFocused = focused || popupVisible;
     const isRetainInputValueSearch = isObject(showSearch) && showSearch.retainInputValue;
     // the formatted text of value.
-    const renderedValue = !isMultiple && value !== undefined ? renderText(value).text : '';
+    const renderedTextResult = !isMultiple && value !== undefined ? renderText(value) : null;
+    const renderedValue = renderedTextResult?.text ?? '';
+    const renderedValueInput = renderedTextResult?.textInput;
     const renderedValuePlain =
-      typeof renderedValue === 'string' || typeof renderedValue === 'number'
+      renderedValueInput !== undefined
+        ? renderedValueInput
+        : typeof renderedValue === 'string' || typeof renderedValue === 'number'
         ? String(renderedValue)
         : nodeToText(renderedValue);
 
@@ -401,7 +405,7 @@ const CoreSelectView = React.forwardRef(
 
       switch (searchStatus) {
         case SearchStatus.BEFORE:
-          _inputValue = inputValue || (isRetainInputValueSearch ? renderedValue : '');
+          _inputValue = inputValue || (isRetainInputValueSearch ? renderedValuePlain : '');
           break;
         case SearchStatus.EDITING:
           _inputValue = inputValue || '';
