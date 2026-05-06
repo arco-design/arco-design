@@ -1038,22 +1038,16 @@ exports[`renders Cascader/demo/draggable.md correctly 1`] = `
                 </span>
               </div>
             </li>
-            <li
-              class="arco-draggable-item"
-              draggable="true"
-              style="display:inline-block"
-            >
-              <input
-                autocomplete="off"
-                class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
-                placeholder=""
-                value=""
-              />
-              <span
-                class="arco-input-tag-input-mirror"
-              />
-            </li>
           </div>
+          <input
+            autocomplete="off"
+            class="arco-input-tag-input arco-input-tag-input-size-default arco-input-tag-input-autowidth"
+            placeholder=""
+            value=""
+          />
+          <span
+            class="arco-input-tag-input-mirror"
+          />
         </div>
       </div>
     </div>
