@@ -69,6 +69,13 @@ describe('Tree case', () => {
     expect(firstNode.textContent).toBe('+');
   });
 
+  it('does not focus switcher when clicking by mouse', () => {
+    const wrapper = render(<Tree treeData={TreeData} />);
+    const firstNode = wrapper.find(`.arco-tree-node-switcher-icon`).item(0);
+
+    expect(fireEvent.mouseDown(firstNode)).toBe(false);
+  });
+
   it('show child correctly', async () => {
     const data = [
       {

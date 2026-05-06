@@ -7592,10 +7592,10 @@ exports[`renders Tree/demo/virtual.md correctly 1`] = `
     tabindex="0"
   >
     <div
-      style="height:35520px;position:relative;overflow:hidden;z-index:0"
+      style="height:35520px;position:relative;overflow:hidden;overflow-anchor:none;z-index:0"
     >
       <div
-        style="display:flex;flex-direction:column;transform:translateY(0px);position:absolute;left:0;right:0;top:0"
+        style="display:flex;flex-direction:column;overflow-anchor:none;transform:translateY(0px);position:absolute;left:0;right:0;top:0"
       >
         <div
           aria-expanded="true"

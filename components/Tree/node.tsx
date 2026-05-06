@@ -128,6 +128,7 @@ function TreeNode(props: PropsWithChildren<NodeProps>, ref) {
           aria-label={expanded ? 'fold button' : 'expand button'}
           role="button"
           tabIndex={0}
+          onMouseDown={(e) => e.preventDefault()}
           onClick={switchExpandStatus}
         >
           {icon}
