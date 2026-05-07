@@ -33,6 +33,7 @@ import { InputTagProps } from '../InputTag/interface';
 import { LayoutProps } from '../Layout/interface';
 import { LinkProps } from '../Link/interface';
 import { ListItemProps, ListProps } from '../List/interface';
+import { LogProps } from '../Log/interface';
 import { MentionsProps } from '../Mentions/interface';
 import { MenuProps } from '../Menu/interface';
 import { ModalProps } from '../Modal/interface';
@@ -125,6 +126,7 @@ export type ComponentConfig = {
   Link?: LinkProps;
   List?: ListProps;
   'List.Item'?: ListItemProps;
+  Log?: LogProps;
   Mentions?: MentionsProps;
   Menu?: MenuProps;
   Modal?: ModalProps;

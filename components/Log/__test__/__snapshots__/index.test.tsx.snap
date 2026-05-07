@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfigProvider componentConfig.Log default 1`] = `
+<div
+  class="arco-log arco-log-default"
+  role="log"
+>
+  <div
+    class="arco-log-content-wrapper"
+  >
+    <div
+      class="arco-log-content"
+    />
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Log set className globally 1`] = `
+<div
+  class="arco-log arco-log-default global-default-class"
+  role="log"
+>
+  <div
+    class="arco-log-content-wrapper"
+  >
+    <div
+      class="arco-log-content"
+    />
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Log set className globally and component set className itself. 1`] = `
+<div
+  class="arco-log arco-log-default component-class"
+  role="log"
+>
+  <div
+    class="arco-log-content-wrapper"
+  >
+    <div
+      class="arco-log-content"
+    />
+  </div>
+</div>
+`;
+
+exports[`ConfigProvider componentConfig.Log set data-* property 1`] = `
+<div
+  class="arco-log arco-log-default"
+  data-test-name="Log"
+  role="log"
+>
+  <div
+    class="arco-log-content-wrapper"
+  >
+    <div
+      class="arco-log-content"
+    />
+  </div>
+</div>
+`;

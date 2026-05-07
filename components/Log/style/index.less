@@ -1,0 +1,106 @@
+@import './token.less';
+
+@log-prefix-cls: ~'@{prefix}-log';
+
+.@{log-prefix-cls} {
+  box-sizing: border-box;
+  border-radius: @log-border-radius;
+  padding: (@log-padding-vertical - @log-border-width)
+    (@log-padding-horizontal - @log-border-width);
+  font-size: @log-font-size-content;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  text-align: left;
+  align-items: center;
+  line-height: @log-line-height;
+
+  &-default {
+    border: @log-border-width solid @log-default-color-border;
+    background-color: @log-default-color-bg;
+    color: @log-default-color-text;
+  }
+
+  &-info {
+    border: @log-border-width solid @log-info-color-border;
+    background-color: @log-info-color-bg;
+    color: @log-info-color-text;
+  }
+
+  &-success {
+    border: @log-border-width solid @log-success-color-border;
+    background-color: @log-success-color-bg;
+    color: @log-success-color-text;
+  }
+
+  &-warning {
+    border: @log-border-width solid @log-warning-color-border;
+    background-color: @log-warning-color-bg;
+    color: @log-warning-color-text;
+  }
+
+  &-error {
+    border: @log-border-width solid @log-error-color-border;
+    background-color: @log-error-color-bg;
+    color: @log-error-color-text;
+  }
+
+  &-content-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-content {
+    word-break: break-word;
+  }
+
+  &-timestamp {
+    font-size: @log-font-size-timestamp;
+    margin-right: @log-margin-timestamp-right;
+    opacity: 0.6;
+  }
+
+  &-icon-wrapper {
+    margin-right: @log-margin-icon-right;
+    height: @log-line-height * @log-font-size-content;
+    display: flex;
+    align-items: center;
+
+    svg {
+      font-size: @log-font-size-icon;
+    }
+  }
+
+  &-info &-icon-wrapper svg {
+    color: @log-info-color-icon;
+  }
+
+  &-success &-icon-wrapper svg {
+    color: @log-success-color-icon;
+  }
+
+  &-warning &-icon-wrapper svg {
+    color: @log-warning-color-icon;
+  }
+
+  &-error &-icon-wrapper svg {
+    color: @log-error-color-icon;
+  }
+}
+
+.@{log-prefix-cls}-rtl {
+  direction: rtl;
+  text-align: right;
+
+  .@{log-prefix-cls}-icon-wrapper {
+    margin-right: 0;
+    margin-left: @log-margin-icon-right;
+  }
+
+  .@{log-prefix-cls}-timestamp {
+    margin-right: 0;
+    margin-left: @log-margin-timestamp-right;
+  }
+}
