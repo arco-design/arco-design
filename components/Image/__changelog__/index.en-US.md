@@ -1,3 +1,11 @@
+## 2.66.15
+
+2026-05-08
+
+### 🐛 BugFix
+
+- Fix the issue where the click event of the close button in the `Image.Preview` popup bubbles up, causing the parent element's click event to be triggered mistakenly.([#3178](https://github.com/arco-design/arco-design/pull/3178))
+
 ## 2.61.0
 
 2024-03-15

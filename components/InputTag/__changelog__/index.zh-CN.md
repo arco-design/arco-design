@@ -1,3 +1,11 @@
+## 2.66.15
+
+2026-05-08
+
+### 🐛 问题修复
+
+- 修复 `InputTag` 组件，当开启拖拽排序能力dragToSort后，在输入时，输入部分还未按enter保存为tag时，就可以拖拽为保存为tag的输入，拖拽完成后会报错问题([#3174](https://github.com/arco-design/arco-design/pull/3174))
+
 ## 2.66.12
 
 2026-03-20

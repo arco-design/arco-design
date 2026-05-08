@@ -1,3 +1,11 @@
+## 2.66.15
+
+2026-05-08
+
+### 🐛 问题修复
+
+- 修复修复 `Tree` 在 Modal 中使用虚拟列表时，展开/关闭节点或 loadMore 完成后,由于VirtualList 数据变更后的滚动校准过度、旧虚拟窗口状态未及时重算，以及浏览器焦点/scroll anchoring 对虚拟 DOM 重排产生自动滚动补偿导致的滚动条跳动问题([#3177](https://github.com/arco-design/arco-design/pull/3177))
+
 ## 2.66.14
 
 2026-04-16

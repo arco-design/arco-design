@@ -1,3 +1,11 @@
+## 2.66.15
+
+2026-05-08
+
+### 🐛 BugFix
+
+- Fix the issue that in the showSearch mode of the `Select` component, when the Option content is wrapped by HTML tags (such as Tooltip, Popover, div, etc.) and retainInputValue: true is configured, the selected content in the input box will be cleared and not displayed when focusing the dropdown box again after selecting an option.([#3173](https://github.com/arco-design/arco-design/pull/3173))
+
 ## 2.66.14
 
 2026-04-16

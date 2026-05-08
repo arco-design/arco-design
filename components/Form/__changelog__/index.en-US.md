@@ -1,3 +1,11 @@
+## 2.66.15
+
+2026-05-08
+
+### 🐛 BugFix
+
+- Fix the issue where form.scrollToField in the `Form` component throws an invalid selector error and fails to scroll when targeting a field ID that starts with a number or contains special characters.([#3175](https://github.com/arco-design/arco-design/pull/3175))
+
 ## 2.66.12
 
 2026-03-20

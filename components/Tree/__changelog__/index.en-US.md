@@ -1,3 +1,11 @@
+## 2.66.15
+
+2026-05-08
+
+### 🐛 BugFix
+
+- Fix the scrollbar jitter issue of `Tree` when using the virtual list inside Modal. After expanding/collapsing nodes or completing loadMore, the problem occurs due to excessive scroll calibration after VirtualList data changes, untimely recalculation of the old virtual viewport state, and automatic scroll compensation caused by browser focus and scroll anchoring affecting virtual DOM reflow.([#3177](https://github.com/arco-design/arco-design/pull/3177))
+
 ## 2.66.14
 
 2026-04-16

@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.66.15
+
+2026-05-08
+
+### 🐛 问题修复
+
+- 修复 `Image.Preview` 弹出层关闭按钮点击事件冒泡，导致误触发父元素的click事件的问题([#3178](https://github.com/arco-design/arco-design/pull/3178))
+- 修复修复 `Tree` 在 Modal 中使用虚拟列表时，展开/关闭节点或 loadMore 完成后,由于VirtualList 数据变更后的滚动校准过度、旧虚拟窗口状态未及时重算，以及浏览器焦点/scroll anchoring 对虚拟 DOM 重排产生自动滚动补偿导致的滚动条跳动问题([#3177](https://github.com/arco-design/arco-design/pull/3177))
+- 修复ResizeObserver 回调内同步测量并更新 `Menu`溢出状态，触发连续布局抖动，浏览器上报 loop error问题([#3176](https://github.com/arco-design/arco-design/pull/3176))
+- 修复 `Form` 组件中form.scrollToField 命中数字开头或含特殊字符的字段 id 时抛出非法选择器错误，滚动失败问题([#3175](https://github.com/arco-design/arco-design/pull/3175))
+- 修复 `InputTag` 组件，当开启拖拽排序能力dragToSort后，在输入时，输入部分还未按enter保存为tag时，就可以拖拽为保存为tag的输入，拖拽完成后会报错问题([#3174](https://github.com/arco-design/arco-design/pull/3174))
+- 修复在 `Select` 组件showSearch模式下，如果Option内容被HTML标签（如Tooltip、Popover或div等）包裹，并且设置了retainInputValue: true，在选中选项后再次聚焦下拉框时，输入框内已选中的内容会被清空，不展示已选中内容的问题([#3173](https://github.com/arco-design/arco-design/pull/3173))
+
 ## 2.66.14
 
 2026-04-16

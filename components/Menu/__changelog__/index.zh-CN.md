@@ -1,3 +1,11 @@
+## 2.66.15
+
+2026-05-08
+
+### 🐛 问题修复
+
+- 修复ResizeObserver 回调内同步测量并更新 `Menu`溢出状态，触发连续布局抖动，浏览器上报 loop error问题([#3176](https://github.com/arco-design/arco-design/pull/3176))
+
 ## 2.65.0
 
 2024-11-29

@@ -1,3 +1,11 @@
+## 2.66.15
+
+2026-05-08
+
+### 🐛 BugFix
+
+- Fix the issue that synchronously measuring and updating the `Menu` overflow state inside the ResizeObserver callback triggers continuous layout jitter and causes the browser to report a loop error.([#3176](https://github.com/arco-design/arco-design/pull/3176))
+
 ## 2.65.0
 
 2024-11-29

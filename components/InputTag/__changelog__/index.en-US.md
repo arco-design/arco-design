@@ -1,3 +1,11 @@
+## 2.66.15
+
+2026-05-08
+
+### 🐛 BugFix
+
+- Fix the issue of the `InputTag` component: when the drag-and-drop sorting capability dragToSort is enabled, the unsaved input content (which has not been confirmed as a tag by pressing Enter) can be dragged directly during input. An error will be thrown after the drag operation is completed.([#3174](https://github.com/arco-design/arco-design/pull/3174))
+
 ## 2.66.12
 
 2026-03-20

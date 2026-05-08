@@ -1,3 +1,11 @@
+## 2.66.15
+
+2026-05-08
+
+### 🐛 问题修复
+
+- 修复在 `Select` 组件showSearch模式下，如果Option内容被HTML标签（如Tooltip、Popover或div等）包裹，并且设置了retainInputValue: true，在选中选项后再次聚焦下拉框时，输入框内已选中的内容会被清空，不展示已选中内容的问题([#3173](https://github.com/arco-design/arco-design/pull/3173))
+
 ## 2.66.14
 
 2026-04-16

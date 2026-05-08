@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.66.15
+
+2026-05-08
+
+### 🐛 BugFix
+
+- Fix the issue where the click event of the close button in the `Image.Preview` popup bubbles up, causing the parent element's click event to be triggered mistakenly.([#3178](https://github.com/arco-design/arco-design/pull/3178))
+- Fix the scrollbar jitter issue of `Tree` when using the virtual list inside Modal. After expanding/collapsing nodes or completing loadMore, the problem occurs due to excessive scroll calibration after VirtualList data changes, untimely recalculation of the old virtual viewport state, and automatic scroll compensation caused by browser focus and scroll anchoring affecting virtual DOM reflow.([#3177](https://github.com/arco-design/arco-design/pull/3177))
+- Fix the issue that synchronously measuring and updating the `Menu` overflow state inside the ResizeObserver callback triggers continuous layout jitter and causes the browser to report a loop error.([#3176](https://github.com/arco-design/arco-design/pull/3176))
+- Fix the issue where form.scrollToField in the `Form` component throws an invalid selector error and fails to scroll when targeting a field ID that starts with a number or contains special characters.([#3175](https://github.com/arco-design/arco-design/pull/3175))
+- Fix the issue of the `InputTag` component: when the drag-and-drop sorting capability dragToSort is enabled, the unsaved input content (which has not been confirmed as a tag by pressing Enter) can be dragged directly during input. An error will be thrown after the drag operation is completed.([#3174](https://github.com/arco-design/arco-design/pull/3174))
+- Fix the issue that in the showSearch mode of the `Select` component, when the Option content is wrapped by HTML tags (such as Tooltip, Popover, div, etc.) and retainInputValue: true is configured, the selected content in the input box will be cleared and not displayed when focusing the dropdown box again after selecting an option.([#3173](https://github.com/arco-design/arco-design/pull/3173))
+
 ## 2.66.14
 
 2026-04-16

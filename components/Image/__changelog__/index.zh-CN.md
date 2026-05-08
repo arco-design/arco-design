@@ -1,3 +1,11 @@
+## 2.66.15
+
+2026-05-08
+
+### 🐛 问题修复
+
+- 修复 `Image.Preview` 弹出层关闭按钮点击事件冒泡，导致误触发父元素的click事件的问题([#3178](https://github.com/arco-design/arco-design/pull/3178))
+
 ## 2.61.0
 
 2024-03-15

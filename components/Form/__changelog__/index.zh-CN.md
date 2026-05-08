@@ -1,3 +1,11 @@
+## 2.66.15
+
+2026-05-08
+
+### 🐛 问题修复
+
+- 修复 `Form` 组件中form.scrollToField 命中数字开头或含特殊字符的字段 id 时抛出非法选择器错误，滚动失败问题([#3175](https://github.com/arco-design/arco-design/pull/3175))
+
 ## 2.66.12
 
 2026-03-20
