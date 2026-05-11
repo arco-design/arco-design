@@ -6,3 +6,5 @@ stories/**/*.jsx
 *.json
 react-icon/
 react-icon-cjs/
+components/**/*.js
+!components/style/theme/color/*.js

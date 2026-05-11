@@ -226,6 +226,9 @@ export { default as Mentions } from './Mentions';
 export type { WatermarkProps } from './Watermark/interface';
 export { default as Watermark } from './Watermark';
 
+export type { SnakeProps } from './Snake/interface';
+export { default as Snake } from './Snake';
+
 export type { ImageProps, ImagePreviewProps, ImagePreviewActionProps, ImagePreviewGroupProps } from './Image/interface';
 export { default as Image } from './Image';
 

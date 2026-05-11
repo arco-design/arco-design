@@ -1,7 +1,7 @@
 import React, { ReactElement, cloneElement, isValidElement } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import lodashThrottle from 'lodash/throttle';
-import { callbackOriginRef, findDOMNode } from '../_util/react-dom';
+import { callbackOriginRef, findDOMNode } from './react-dom';
 import { supportRef } from './is';
 
 export interface ResizeProps {
