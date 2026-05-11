@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 import React, { useRef } from 'react';
 import get from 'lodash/get';
 import FormItem from './form-item';
 import { FormListProps, KeyType } from './interface';
-import { isFunction, isUndefined } from '../_util/is';
+import { isArray, isFunction, isUndefined } from '../_util/is';
 import { isFieldMatch, isSyntheticEvent } from './utils';
 import warning from '../_util/warning';
 import { FormListContext } from './context';
@@ -18,7 +19,7 @@ const List = <
 >(
   props: FormListProps<SubFieldValue, SubFieldKey, FieldKey>
 ) => {
-  const { field, children, initialValue } = props;
+  const { field, children, initialValue, normalize, formatter } = props;
   const keysRef = useRef<{ keys: number[]; id: number }>({
     id: 0,
     keys: [],
@@ -36,7 +37,9 @@ const List = <
           const startIndex = keys.indexOf(field);
           const index = keys[startIndex + 1];
 
-          return `${field}_${currentKeys.indexOf(index)}_${keys.slice(startIndex + 2).join('_')}`;
+          return `${field as string}_${currentKeys.indexOf(index)}_${keys
+            .slice(startIndex + 2)
+            .join('_')}`;
         },
       }}
     >
@@ -59,7 +62,30 @@ const List = <
         }}
       >
         {(_, store, { value: _value, onChange }) => {
-          const value = _value || [];
+          if (
+            (isFunction(normalize) && !isFunction(formatter)) ||
+            (!isFunction(normalize) && isFunction(formatter))
+          ) {
+            warning(
+              false,
+              'Form.List: The normalize and formatter properties can be used at the same time'
+            );
+          }
+          const getFieldValue = (fv = false) => {
+            const val = fv ? _value : store.getInnerMethods(true)?.innerGetFieldValue(field);
+            if (isFunction(formatter) && isArray(formatter(val))) {
+              return formatter(val);
+            }
+            return val || [];
+          };
+
+          const setfieldValue = (val, options) => {
+            if (isFunction(normalize)) {
+              onChange(normalize(val), options);
+            }
+            return onChange(val, options);
+          };
+          const value = getFieldValue(true);
 
           // 为啥 add，move，remove 里不直接用 value，而是又 getFieldValue？
           // 因为用户可能把 add，remove，move 给 memo 了，导致 remove 直接读取的 value 不是最新的
@@ -73,7 +99,7 @@ const List = <
               );
               return;
             }
-            const value = store.getInnerMethods(true)?.innerGetFieldValue(field) || [];
+            const value = getFieldValue();
             const key = keysRef.current.id;
 
             keysRef.current.id += 1;
@@ -88,21 +114,21 @@ const List = <
             }
 
             // defaultValue = undefined 时，认为当前字段未被操作过
-            onChange(newValue, {
+            setfieldValue(newValue, {
               isFormList: true,
               ignore: defaultValue === undefined,
             });
           };
 
           const remove = function (index: number) {
-            const value = store.getInnerMethods(true)?.innerGetFieldValue(field) || [];
+            const value = getFieldValue();
             const newValue = value.filter((_, i) => i !== index);
             currentKeys.splice(index, 1);
-            onChange([...newValue], { isFormList: true });
+            setfieldValue([...newValue], { isFormList: true });
           };
 
           const move = function (fromIndex: number, toIndex: number) {
-            const value = store.getInnerMethods(true)?.innerGetFieldValue(field) || [];
+            const value = getFieldValue();
             if (
               fromIndex === toIndex ||
               !isIndexLegal(fromIndex, value) ||
@@ -119,21 +145,21 @@ const List = <
             newValue.splice(fromIndex, 1);
             newValue.splice(toIndex, 0, fromItem);
 
-            onChange(newValue, { isFormList: true });
+            setfieldValue(newValue, { isFormList: true });
           };
 
           return (
             isFunction(children) &&
             children(
-              value.map((_, index) => {
+              value?.map((_, index) => {
                 let key = currentKeys[index];
-                if (key === undefined) {
+                if (key === undefined || key === null) {
                   key = keysRef.current.id;
                   currentKeys.push(key);
                   keysRef.current.id += 1;
                 }
                 return {
-                  field: `${field}[${index}]`,
+                  field: `${field as string}[${index}]` as SubFieldKey,
                   key,
                 };
               }),
