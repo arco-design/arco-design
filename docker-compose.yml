@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  arco-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: arco-dev
+    ports:
+      - '9000:9000' # For dev:site
+    volumes:
+      - .:/app
+    tty: true
+    command: yarn start
+  storybook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: storybook
+    ports:
+      - '6006:6006' # For storybook
+    volumes:
+      - .:/app
+    tty: true
+    command: yarn demo
