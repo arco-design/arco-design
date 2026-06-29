@@ -46,7 +46,7 @@ const Calendar = {
   week: {
     long: {
       self: '週間',
-      monday: '月曜',
+      monday: '月曜日',
       tuesday: '火曜日',
       wednesday: '水曜日',
       thursday: '木曜日',
@@ -134,7 +134,7 @@ export default {
     now: 'たった今',
   },
   Progress: {
-    success: '実施する',
+    success: '成功',
     error: '失敗',
   },
   Upload: {
@@ -160,7 +160,7 @@ export default {
   },
   ImagePreview: {
     fullScreen: '全画面表示',
-    rotateRight: '右に回る',
+    rotateRight: '右に回転',
     rotateLeft: '左に回転',
     zoomIn: 'ズームイン',
     zoomOut: 'ズームアウトする',
