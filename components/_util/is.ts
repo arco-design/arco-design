@@ -143,6 +143,11 @@ const isForwardRefReact = (object) => {
   }
   return false;
 };
+// 传入的元素是否是 forwardRef 组件
+export const isForwardRefComponent = (element: any): boolean => {
+  return isForwardRefReact(element);
+};
+
 // 传入的元素是否可以设置 ref 饮用
 export const supportRef = (element: any): boolean => {
   if (isDOMElement(element)) {
