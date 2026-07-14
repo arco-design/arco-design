@@ -213,6 +213,29 @@ const getViewportSize = (_boundaryDistance: TriggerProps['boundaryDistance']) =>
   };
 };
 
+const getContainerVisibleArea = (
+  mountContainer: Element,
+  viewportWidth: number,
+  boundaryLeft: number
+): { left: number; width: number } => {
+  const parent = mountContainer.parentNode as HTMLElement | null;
+
+  if (!parent || parent === document.body || parent === document.documentElement) {
+    return {
+      left: boundaryLeft,
+      width: viewportWidth,
+    };
+  }
+
+  return {
+    left: 0,
+    width:
+      parent.clientWidth ||
+      (mountContainer as HTMLElement).clientWidth ||
+      mountContainer.scrollWidth,
+  };
+};
+
 export default (
   props: TriggerProps,
   content: HTMLElement,
@@ -359,8 +382,12 @@ export default (
     if (style.left < 0) {
       style.left = 0;
     } else {
-      // 限制在popupContainer中，左侧最大为 mountContainer.scrollWidth - contentSize.width，保证弹出层在container内部
-      const maxLeft = mountContainer.scrollWidth - contentSize.width;
+      // 限制在可见容器中。不能直接使用 mountContainer.scrollWidth，它可能已被绝对定位弹层自身撑大。
+      const visibleArea = getContainerVisibleArea(mountContainer, windowWidth, boundary.left);
+      const maxLeft = Math.max(
+        0,
+        visibleArea.left + visibleArea.width - contentSize.width
+      );
       style.left = Math.min(maxLeft, style.left);
     }
 
