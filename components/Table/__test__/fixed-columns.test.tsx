@@ -87,7 +87,7 @@ describe('Table fixed columns', () => {
     }
 
     expect(getHeadCell(0).className).toBe(
-      'arco-table-th arco-table-operation arco-table-expand arco-table-col-fixed-left'
+      'arco-table-th arco-table-operation arco-table-expand arco-table-col-fixed-left arco-table-col-first'
     );
     expect(getHeadCell(0).getAttribute('style')).toEqual('left: 0px;');
 
@@ -97,7 +97,7 @@ describe('Table fixed columns', () => {
     expect(getHeadCell(1).getAttribute('style')).toEqual('left: 40px;');
 
     expect(getBodyCell(0).className).toBe(
-      'arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-first arco-table-col-fixed-left arco-table-col-first'
+      'arco-table-td arco-table-operation arco-table-expand-icon-cell arco-table-col-fixed-left arco-table-col-first'
     );
     expect(getBodyCell(0).getAttribute('style')).toEqual('left: 0px;');
 

@@ -53,7 +53,9 @@ describe('Table group columns', () => {
     function getRowCell(rowIndex, colIndex) {
       return component.find('tr').item(rowIndex).querySelectorAll('th').item(colIndex);
     }
-    expect(getRowCell(0, 0).className).toBe('arco-table-th arco-table-operation arco-table-expand');
+    expect(getRowCell(0, 0).className).toBe(
+      'arco-table-th arco-table-operation arco-table-expand arco-table-col-first'
+    );
     expect(getRowCell(0, 0).getAttribute('rowSpan')).toBe('2');
 
     expect(getRowCell(0, 1).className).toBe(

@@ -75,11 +75,12 @@ function Tr<T>(props: TrType<T>, ref) {
       ? rowSelection.checkboxProps(originRecord)
       : {};
   const operationClassName = cs(`${prefixCls}-td`, `${prefixCls}-operation`);
-  const getPrefixColClassName = (name, index) => {
+  // col-first 由外层 columns.map 中的 cloneElement 按真实 colIndex 统一判定，
+  // 此处不再根据写死的 index 添加，避免操作列不在首列时错误地画出左边线。
+  const getPrefixColClassName = (name) => {
     return cs(operationClassName, `${prefixCls}-${name}`, {
       [`${prefixCls}-selection-col`]: (virtualized && type === 'checkbox') || type === 'radio',
       [`${prefixCls}-expand-icon-col`]: virtualized && expandedRowRender,
-      [`${prefixCls}-col-first`]: index === 0,
     });
   };
 
@@ -146,7 +147,7 @@ function Tr<T>(props: TrType<T>, ref) {
   }
 
   const expandNode = expandedRowRender && (
-    <InnerComponentTd className={getPrefixColClassName('expand-icon-cell', 0)}>
+    <InnerComponentTd className={getPrefixColClassName('expand-icon-cell')}>
       {shouldRenderExpandRow && renderExpandIcon(record, rowK)}
     </InnerComponentTd>
   );
@@ -175,7 +176,7 @@ function Tr<T>(props: TrType<T>, ref) {
 
   if (type === 'checkbox') {
     selectionNode = (
-      <InnerComponentTd className={getPrefixColClassName('checkbox', expandNode ? 1 : 0)}>
+      <InnerComponentTd className={getPrefixColClassName('checkbox')}>
         {renderSelectionCell
           ? renderSelectionCell(checkboxNode, checked, originRecord)
           : checkboxNode}
@@ -184,7 +185,7 @@ function Tr<T>(props: TrType<T>, ref) {
   }
   if (type === 'radio') {
     selectionNode = (
-      <InnerComponentTd className={getPrefixColClassName('radio', expandNode ? 1 : 0)}>
+      <InnerComponentTd className={getPrefixColClassName('radio')}>
         {renderSelectionCell ? renderSelectionCell(radioNode, checked, originRecord) : radioNode}
       </InnerComponentTd>
     );

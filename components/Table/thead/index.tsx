@@ -127,7 +127,11 @@ function THead<T>(props: TheadProps<T>) {
                   className: cs(
                     isExtraOperation ? operationClassName : '',
                     operationNode?.props?.className,
-                    stickyClassName
+                    stickyClassName,
+                    {
+                      // 与表体保持一致：首列操作单元格需要 col-first 才能画出左边线
+                      [`${prefixCls}-col-first`]: colIndex === 0,
+                    }
                   ),
                   style: {
                     ...operationNode?.props?.style,
