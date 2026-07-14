@@ -1,0 +1,34 @@
+components/Table/thead/index.tsx
+  h_950556d420ce36 130
+components/Table/tbody/tr.tsx
+  h_950556d420ce36 78-80
+components/Table/__test__/components.test.tsx
+  s_3ca1fdd7139660::t_02590e42f3517e 146
+components/Table/__test__/fixed-columns.test.tsx
+  s_3ca1fdd7139660::t_e9461f9a41e2d3 90,100
+components/Table/__test__/group-columns.test.tsx
+  s_3ca1fdd7139660::t_35ec60063d006b 56-58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "9f3586e63a75ca3477f6d05a3d616fa128d33d4d",
+  "prompts": {},
+  "humans": {
+    "h_950556d420ce36": {
+      "author": "lingyunsong <lingyunsong@bytedance.com>"
+    }
+  },
+  "sessions": {
+    "s_3ca1fdd7139660": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5fd5-775f-79f3-9e0a-5c265365d147",
+        "model": "unknown"
+      },
+      "human_author": "lingyunsong <lingyunsong@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
