@@ -1,0 +1,18 @@
+site/docs/version_v2.zh-CN.md
+  h_950556d420ce36 5-13
+package.json
+  h_950556d420ce36 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "fbf2ec0a8cc28a5d20f1f82de6c2c4196ef66950",
+  "prompts": {},
+  "humans": {
+    "h_950556d420ce36": {
+      "author": "lingyunsong <lingyunsong@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
