@@ -3,9 +3,13 @@ import { CSSProperties } from 'react';
 /**
  * @title Affix
  */
-export interface AffixProps {
+export interface AffixProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'className' | 'onChange'> {
+  /**
+   * @zh 自定义类名
+   * @en Custom className
+   */
   className?: string | string[];
-  style?: CSSProperties;
   /**
    * @zh 给 `fixed` 的元素设置 className。
    * @en ClassName of the fixed element.
