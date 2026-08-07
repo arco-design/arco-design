@@ -9,6 +9,7 @@ import useRefs from '../../_util/hooks/useRefs';
 import useForceUpdate from '../../_util/hooks/useForceUpdate';
 import { ArrowDown, Esc, Enter, ArrowUp, ArrowRight, ArrowLeft } from '../../_util/keycode';
 import useUpdate from '../../_util/hooks/useUpdate';
+import useIsomorphicLayoutEffect from '../../_util/hooks/useIsomorphicLayoutEffect';
 import Node from '../base/node';
 import { getMultipleCheckValue } from '../util';
 import VirtualList, { VirtualListHandle } from '../../_class/VirtualList';
@@ -262,6 +263,10 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
     ? props.dropdownColumnRender
     : (menu) => menu;
 
+  useIsomorphicLayoutEffect(() => {
+    props.updatePopupPosition?.();
+  });
+
   return !menus.length || !menus[0]?.length ? (
     <>{renderEmpty()}</>
   ) : (
@@ -279,15 +284,17 @@ const ListPanel = <T extends OptionProps>(props: CascaderPanelProps<T>) => {
             classNames="cascaderSlide"
             onEnter={(e: HTMLDivElement) => {
               if (!e) return;
-              e.style.marginLeft = `-${e.scrollWidth}px`;
+              const columnTransform = props.dropdownMenuColumnStyle?.transform || '';
+              e.style.transform = `translateX(-${e.scrollWidth}px) ${columnTransform}`.trim();
             }}
             onEntering={(e: HTMLDivElement) => {
               if (!e) return;
-              e.style.marginLeft = `0px`;
+              const columnTransform = props.dropdownMenuColumnStyle?.transform || '';
+              e.style.transform = `translateX(0) ${columnTransform}`.trim();
             }}
             onEntered={(e) => {
               if (!e) return;
-              e.style.marginLeft = '';
+              e.style.transform = props.dropdownMenuColumnStyle?.transform || '';
             }}
           >
             <div

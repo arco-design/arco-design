@@ -566,6 +566,20 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     return this.getRootElement();
   };
 
+  updatePopupPositionSync = () => {
+    if (this.unmount) {
+      return;
+    }
+
+    const target = this.triggerRef.current;
+    const popupStyle = this.getPopupStyle();
+    if (target && popupStyle) {
+      const style = this.props.style || {};
+      target.style.top = String(style.top || `${popupStyle.top}px`);
+      target.style.left = String(style.left || `${popupStyle.left}px`);
+    }
+  };
+
   updatePopupPosition = (delay = 0, callback?: () => void) => {
     const currentVisible = this.state.popupVisible;
     if (!currentVisible) {
@@ -1138,15 +1152,9 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       >
         <ResizeObserver
           onResize={() => {
-            const target = this.triggerRef.current;
-            if (target) {
-              // Avoid the flickering problem caused by the size change and positioning not being recalculated in time.
-              // TODO: Consider changing the popup style directly  in the next major version
-              const popupStyle = this.getPopupStyle();
-              const style = this.props.style || {};
-              target.style.top = String(style.top || `${popupStyle.top}px`);
-              target.style.left = String(style.left || `${popupStyle.left}px`);
-            }
+            // Avoid the flickering problem caused by the size change and positioning not being recalculated in time.
+            // TODO: Consider changing the popup style directly  in the next major version
+            this.updatePopupPositionSync();
             this.onResize();
           }}
           getTargetDOMNode={() => this.getPopupElement()}

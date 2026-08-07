@@ -3,6 +3,8 @@ import { act } from 'react-test-renderer';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Cascader from '../cascader';
+import CascaderPanel from '../panel/list';
+import Store from '../base/store';
 import { fireEvent, render } from '../../../tests/util';
 
 mountTest(Cascader);
@@ -104,6 +106,76 @@ describe('Cascader basic test', () => {
       list1.querySelector(`${prefixCls}-list-item ${prefixCls}-list-item-label`) as Element
     );
     expect(wrapper.querySelector('.arco-cascader-view-value')).toHaveTextContent('上海');
+  });
+
+  it('preserves custom column transform after enter animation', () => {
+    const store = new Store(options);
+    const wrapper = render(
+      <CascaderPanel
+        store={store}
+        value={[]}
+        prefixCls="arco-cascader"
+        popupVisible
+        dropdownMenuColumnStyle={{ transform: 'scale(0.9)' }}
+        getTriggerElement={() => null}
+        icons={{}}
+      />
+    );
+
+    fireEvent.click(wrapper.find(`${prefixCls}-list-item-label`)[0]);
+    act(() => {
+      jest.runAllTimers();
+    });
+
+    expect(wrapper.find(`${prefixCls}-list-column`)[1]).toHaveStyle({ transform: 'scale(0.9)' });
+  });
+
+  it('updates popup position synchronously when panel content changes', () => {
+    const updatePopupPosition = jest.fn();
+    const store = new Store([
+      ...options,
+      {
+        value: 'beijing',
+        label: '北京',
+        children: [{ value: 'beijingshi', label: '北京市' }],
+      },
+    ]);
+    const wrapper = render(
+      <CascaderPanel
+        store={store}
+        value={[]}
+        prefixCls="arco-cascader"
+        popupVisible
+        updatePopupPosition={updatePopupPosition}
+        getTriggerElement={() => null}
+        icons={{}}
+      />
+    );
+
+    updatePopupPosition.mockClear();
+    fireEvent.click(wrapper.find(`${prefixCls}-list-item-label`)[0]);
+
+    expect(wrapper.find(`${prefixCls}-list-column`)).toHaveLength(2);
+    expect(updatePopupPosition).toHaveBeenCalledTimes(1);
+
+    updatePopupPosition.mockClear();
+    fireEvent.click(wrapper.find(`${prefixCls}-list-item-label`)[1]);
+    expect(wrapper.find(`${prefixCls}-list-column`)).toHaveLength(2);
+    expect(updatePopupPosition).toHaveBeenCalledTimes(1);
+
+    updatePopupPosition.mockClear();
+    wrapper.rerender(
+      <CascaderPanel
+        store={store}
+        value={[]}
+        prefixCls="arco-cascader"
+        popupVisible={false}
+        updatePopupPosition={updatePopupPosition}
+        getTriggerElement={() => null}
+        icons={{}}
+      />
+    );
+    expect(updatePopupPosition).toHaveBeenCalledTimes(1);
   });
 });
 

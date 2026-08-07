@@ -13,6 +13,7 @@ import { isString, isObject, isFunction } from '../../_util/is';
 import { getMultipleCheckValue } from '../util';
 import VirtualList from '../../_class/VirtualList';
 import { on, off } from '../../_util/dom';
+import useIsomorphicLayoutEffect from '../../_util/hooks/useIsomorphicLayoutEffect';
 
 export const getLegalIndex = (currentIndex, maxIndex) => {
   if (currentIndex < 0) {
@@ -39,6 +40,7 @@ export type SearchPanelProps<T> = {
   defaultActiveFirstOption: boolean;
   renderOption?: (inputValue: string, node: NodeProps<T>, options: extraOptions) => ReactNode;
   getTriggerElement: () => HTMLElement;
+  updatePopupPosition?: () => void;
   icons?: {
     loading?: ReactNode;
     checked?: ReactNode;
@@ -185,6 +187,10 @@ const SearchPanel = <T extends OptionProps>(props: SearchPanelProps<T>) => {
   }, [currentHoverIndex, options]);
 
   refActiveItem.current = null;
+
+  useIsomorphicLayoutEffect(() => {
+    props.updatePopupPosition?.();
+  });
 
   return options.length ? (
     <div className={`${prefixCls}-list-wrapper`}>

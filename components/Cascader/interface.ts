@@ -316,6 +316,7 @@ export interface CascaderPanelProps<T> {
   dropdownColumnRender?: CascaderProps<T>['dropdownColumnRender'];
   dropdownMenuColumnStyle?: CascaderProps<T>['dropdownMenuColumnStyle'];
   getTriggerElement: () => HTMLElement;
+  updatePopupPosition?: () => void;
   icons?: {
     loading?: ReactNode;
     checked?: ReactNode;

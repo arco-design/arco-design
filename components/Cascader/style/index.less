@@ -159,7 +159,8 @@
 
     &-item {
       &-active {
-        transition: all @transition-duration-2 @transition-timing-function-linear;
+        transition: color @transition-duration-2 @transition-timing-function-linear,
+          background-color @transition-duration-2 @transition-timing-function-linear;
         background-color: @cascader-color-item-bg_active;
         color: @cascader-color-item-text_active;
         font-weight: @cascader-font-item-weight_active;
@@ -213,7 +214,7 @@
 
 .cascaderSlide-enter-active,
 .cascaderSlide-appear-active {
-  transition: margin @transition-duration-3 @transition-timing-function-standard;
+  transition: transform @transition-duration-3 @transition-timing-function-standard;
 }
 
 @import './rtl.less';

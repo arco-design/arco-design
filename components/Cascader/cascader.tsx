@@ -115,6 +115,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   const refOnInputChangeCallbackReason = useRef<InputValueChangeReason>(null);
 
   const selectRef = useRef(null);
+  const triggerRef = useRef<Trigger>();
   // 暂存被选中的值对应的节点。仅在onSearch的时候用到
   // 避免出现下拉列表改变，之前选中的option找不到对应的节点，展示上会出问题。
   const stashNodes = useRef<Store<T>['nodes']>(store?.getCheckedNodes() || []);
@@ -359,6 +360,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 }
                 // TODO 组件重构，解耦面板选择和输入框，面板可独立使用
                 getTriggerElement={() => selectRef.current?.dom}
+                updatePopupPosition={() => triggerRef.current?.updatePopupPositionSync()}
                 value={mergeValue}
                 virtualListProps={props.virtualListProps}
                 defaultActiveFirstOption={props.defaultActiveFirstOption}
@@ -382,6 +384,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
                 prefixCls={prefixCls}
                 rtl={rtl}
                 getTriggerElement={() => selectRef.current?.dom}
+                updatePopupPosition={() => triggerRef.current?.updatePopupPositionSync()}
                 renderEmpty={renderEmptyEle}
                 popupVisible={popupVisible}
                 value={mergeValue}
@@ -410,6 +413,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   const renderView = (eleView: ReactElement | ReactNode) => {
     return (
       <Trigger
+        ref={triggerRef}
         popup={renderPopup}
         trigger={props.trigger}
         disabled={disabled}
@@ -417,6 +421,7 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
         position={rtl ? 'br' : 'bl'}
         classNames="slideDynamicOrigin"
         popupAlign={triggerPopupAlign}
+        boundaryDistance={rtl ? { left: 1 } : { right: 1 }}
         // 动态加载时，unmountOnExit 默认为false。
         unmountOnExit={'unmountOnExit' in props ? props.unmountOnExit : !isFunction(props.loadMore)}
         popupVisible={popupVisible}
