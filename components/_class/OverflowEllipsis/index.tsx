@@ -58,8 +58,11 @@ export default function OverflowEllipsis(props: OverflowEllipsisProps) {
       totalWidth += target?.width || 0;
     });
 
-    setMaxCount(Math.max(newMaxCount, 0));
-  }, [overflowItems, containerWidth, suffixOverflowItems]);
+    const nextMaxCount = Math.max(newMaxCount, 0);
+    if (maxCount !== nextMaxCount) {
+      setMaxCount(nextMaxCount);
+    }
+  }, [overflowItems, containerWidth, suffixOverflowItems, maxCount]);
 
   return (
     <ResizeObserver
@@ -102,9 +105,14 @@ export default function OverflowEllipsis(props: OverflowEllipsisProps) {
               className={`${prefixCls}-suffix-item`}
               onResize={(node) => {
                 setSuffixOverflowItems((suffixOverflowItems) => {
+                  const width = node.clientWidth;
+                  const currentItem = suffixOverflowItems[key];
+                  if (currentItem?.node === node && currentItem.width === width) {
+                    return suffixOverflowItems;
+                  }
                   return {
                     ...suffixOverflowItems,
-                    [`${key}`]: { node, width: node.clientWidth },
+                    [`${key}`]: { node, width },
                   };
                 });
               }}
