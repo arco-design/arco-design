@@ -102,7 +102,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 [Design Lab]: https://arco.design/themes
 [Material Market]: https://arco.design/material
 [Icon Box]: https://arco.design/iconbox
-[Arco Pro]: https://arco.design/pro/
+[Arco Pro]: https://pro.arco.design/
 
 # Browser Support
 
