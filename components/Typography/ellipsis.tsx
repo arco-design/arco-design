@@ -12,7 +12,7 @@ import { ConfigContext } from '../ConfigProvider';
 import cs from '../_util/classNames';
 import { Tooltip } from '../index';
 import ResizeObserver from '../_util/resizeObserver';
-import throttleByRaf from '../_util/throttleByRaf';
+import throttleByRafV2 from '../_util/throttleByRafV2';
 import useMergeProps from '../_util/hooks/useMergeProps';
 import { isObject } from '../_util/is';
 import useMergeValue from '../_util/hooks/useMergeValue';
@@ -57,6 +57,8 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
 
   const mirrorContentRef = useRef<HTMLDivElement>(null);
   const mirrorTextRef = useRef<HTMLDivElement>(null);
+  const lastMeasureRef = useRef<boolean | null>(null);
+  const stableCountRef = useRef<number>(0);
   const [expanded, setExpanded] = useMergeValue(false, {
     defaultValue: props.defaultExpanded,
     value: props.expanded,
@@ -133,23 +135,32 @@ const EllipsisComponent: React.ForwardRefRenderFunction<
   };
 
   const onResize = useCallback(
-    throttleByRaf(() => {
-      if (mirrorTextRef.current && mirrorContentRef.current) {
-        const isOverflow = single
-          ? mirrorTextRef.current.offsetWidth > mirrorContentRef.current.offsetWidth
-          : mirrorTextRef.current.offsetHeight > mirrorContentRef.current.offsetHeight;
-        if (isOverflow) {
-          if (overflow === false) {
-            setOverflow(true);
-            onEllipsis?.(true);
-          }
-        } else if (overflow === true) {
-          setOverflow(false);
-          onEllipsis?.(false);
-        }
+    throttleByRafV2(() => {
+      if (expanded) {
+        return;
+      }
+      const mirrorText = mirrorTextRef.current;
+      const mirrorContent = mirrorContentRef.current;
+      if (!mirrorText || !mirrorContent) {
+        return;
+      }
+      const isOverflow = single
+        ? mirrorText.scrollWidth - mirrorContent.clientWidth > 1
+        : mirrorText.scrollHeight - mirrorContent.clientHeight > 1;
+
+      if (lastMeasureRef.current === isOverflow) {
+        stableCountRef.current += 1;
+      } else {
+        lastMeasureRef.current = isOverflow;
+        stableCountRef.current = 1;
+      }
+
+      if (stableCountRef.current >= 2 && overflow !== isOverflow) {
+        setOverflow(isOverflow);
+        onEllipsis?.(isOverflow);
       }
     }),
-    [overflow, single]
+    [single, expanded, overflow, onEllipsis]
   );
 
   const renderMirror = () => {
