@@ -81,7 +81,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 # 相关链接
 
 * [官网](https://arco.design/)
-* [组件文档](https://arco.design/react/components/overview)
+* [组件文档](https://arco.design/react/docs/overview)
 * [暗黑模式](https://arco.design/react/docs/dark)
 * [主题配置](https://arco.design/react/docs/theme)
 * [Figma 设计资源](https://www.figma.com/file/M66cTiLXHa4SVyZIlfY5Pb/arco-Design-System?node-id=7945%3A44563)
@@ -102,7 +102,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 [风格配置平台]: https://arco.design/themes
 [物料平台]: https://arco.design/material
 [图标平台]: https://arco.design/iconbox
-[Arco Pro]: https://arco.design/pro/
+[Arco Pro]: https://pro.arco.design/
 
 # 浏览器兼容性
 
