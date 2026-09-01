@@ -157,6 +157,12 @@ export interface ImagePreviewProps {
    */
   closable?: boolean;
   /**
+   * @zh 是否允许鼠标滚轮缩放
+   * @en Whether to allow mouse wheel zoom
+   * @defaultValue true
+   */
+  wheelZoomable?: boolean;
+  /**
    * @zh 额外操作，[ImagePreviewActionProps](#imagepreviewactionprops)
    * @en Extra operations, [ImagePreviewActionProps](#imagepreviewactionprops)
    */

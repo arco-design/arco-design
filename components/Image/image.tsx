@@ -82,6 +82,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   }, []);
 
   const previewSrc = previewProps.src || src;
+  const previewWheelZoomable = previewProps.wheelZoomable;
   const [showFooter] = useShowFooter({ title, description, actions });
   const { isLoading, isError, isLoaded, isBeforeLoad, setStatus } = useImageStatus('beforeLoad');
   const loaded = useRef(false);
@@ -92,7 +93,13 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
 
   // Props passed directly into Preview component
   const availablePreviewProps = useMemo(() => {
-    return omit(previewProps, ['visible', 'defaultVisible', 'src', 'onVisibleChange']);
+    return omit(previewProps, [
+      'visible',
+      'defaultVisible',
+      'src',
+      'onVisibleChange',
+      'wheelZoomable',
+    ]);
   }, [previewProps]);
 
   const prefixCls = getPrefixCls('image');
@@ -243,6 +250,7 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
       )}
       {isLoaded && preview && (
         <ImagePreview
+          wheelZoomable={previewWheelZoomable}
           visible={previewVisible}
           src={previewSrc}
           {...availablePreviewProps}
