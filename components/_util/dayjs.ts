@@ -7,7 +7,7 @@ import weekYear from 'dayjs/plugin/weekYear';
 import QuarterOfYear from 'dayjs/plugin/quarterOfYear';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
-import { isDayjs, isArray, isUndefined } from '../_util/is';
+import { isDayjs, isArray, isUndefined } from './is';
 
 const isMoment = (originDayjs() as any)._isAMomentObject;
 

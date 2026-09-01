@@ -66,6 +66,7 @@ import { TriggerProps } from '../Trigger/interface';
 import { UploadProps } from '../Upload/interface';
 import { VerificationCodeProps } from '../VerificationCode/interface';
 import { WatermarkProps } from '../Watermark/interface';
+import { SnakeProps } from '../Snake/interface';
 import { ColorPickerProps } from '../ColorPicker';
 import { TypographyEllipsisProps } from '../Typography';
 
@@ -141,6 +142,7 @@ export type ComponentConfig = {
   Select?: SelectProps;
   Skeleton?: SkeletonProps;
   Slider?: SliderProps;
+  Snake?: SnakeProps;
   Space?: SpaceProps;
   Spin?: SpinProps;
   Statistic?: StatisticProps;
