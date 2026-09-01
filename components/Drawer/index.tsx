@@ -228,7 +228,7 @@ function Drawer(baseProps: DrawerProps, ref) {
       <div
         {...omit(rest, ['onCancel', 'onOk'])}
         ref={drawerWrapperRef}
-        onKeyDown={(e) => {
+        onKeyUp={(e) => {
           const keyCode = e.keyCode || e.which;
           if (keyCode === Esc.code) {
             if (escToExit && visible) {
