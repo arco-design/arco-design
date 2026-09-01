@@ -41,6 +41,10 @@ We use [Github issues](https://github.com/arco-design/arco-design/issues) for bu
 1. Commit your changes, adhering to the [Commit Guidelines](#commit-guidelines)
 1. Open a new pull request, [referencing corresponding issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword) if available.
 
+### Run with Docker-compose
+```bash
+$ docker-compose up
+```
 ### Commonly used npm scripts
 
 ```bash
