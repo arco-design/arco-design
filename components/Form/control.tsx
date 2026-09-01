@@ -392,6 +392,9 @@ export default class Control<
   };
 
   renderControl(children: React.ReactNode, id) {
+    if (!React.isValidElement(children)) {
+      return children;
+    }
     const {
       field,
       trigger = 'onChange',
