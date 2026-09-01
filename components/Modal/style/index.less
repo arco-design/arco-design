@@ -172,6 +172,15 @@
   }
 }
 
+// border-width should 1px if the mode is dark
+@{arco-theme-tag} {
+  &[arco-theme='dark'] {
+    .@{modal-prefix-cls} {
+      border: @border-1 solid @modal-color-border;
+    }
+  }
+}
+
 .zoomModal-enter,
 .zoomModal-appear {
   opacity: 0;
