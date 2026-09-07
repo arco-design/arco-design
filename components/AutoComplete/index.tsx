@@ -13,6 +13,7 @@ import { RefInputType } from '../Input/interface';
 import IconLoading from '../../icon/react-icon/IconLoading';
 import { AutoCompleteProps } from './interface';
 import useMergeProps from '../_util/hooks/useMergeProps';
+import { getReactElementRef } from '../_util/react-dom';
 
 const IMPOSSIBLE_VALUE = `Autocomplete_${Math.random()}`;
 
@@ -114,7 +115,7 @@ function AutoComplete(baseProps: AutoCompleteProps, ref) {
     ref: (node) => {
       refInput.current = node;
 
-      const { ref: originRef } = usedTriggerElement as any;
+      const originRef = getReactElementRef(usedTriggerElement);
       if (typeof originRef === 'function') {
         originRef(node);
       }

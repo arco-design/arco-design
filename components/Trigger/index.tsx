@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import ResizeObserverPolyfill from 'resize-observer-polyfill';
 import { CSSTransition } from 'react-transition-group';
-import { callbackOriginRef, findDOMNode } from '../_util/react-dom';
+import { callbackOriginRef, findDOMNode, getReactElementRef } from '../_util/react-dom';
 import { on, off, contains, getScrollElements, isScrollElement } from '../_util/dom';
 import { isFunction, isObject, isArray, supportRef } from '../_util/is';
 import { pickDataAttributes } from '../_util/pick';
@@ -1180,7 +1180,7 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
             {...pickDataAttributes(this.props)}
           >
             <popupChildren.type
-              ref={popupChildren.ref}
+              ref={getReactElementRef(popupChildren)}
               {...popupChildren.props}
               style={{ ...popupChildren.props.style, ...dropdownPopupStyle }}
             />
