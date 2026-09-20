@@ -398,7 +398,7 @@ export interface FormItemProps<
   isFormList?: boolean;
   /**
    * @zh `ReactNode` 类型与函数类型的 children
-   * @en `ReactNode` type and Fuction type children
+   * @en `ReactNode` type and Function type children
    */
   children?: React.ReactNode | FormItemChildrenFn<FormData, FieldValue, FieldKey>;
 }
