@@ -3,6 +3,7 @@ import { act } from 'react-test-renderer';
 import mountTest from '../../../tests/mountTest';
 import componentConfigTest from '../../../tests/componentConfigTest';
 import Slider from '..';
+import ConfigProvider from '../../ConfigProvider';
 import { SliderProps } from '../interface';
 import { fireEvent, render } from '../../../tests/util';
 
@@ -333,5 +334,232 @@ describe('Slider ', () => {
 
     expect(component1.find('.arco-input')[0]?.getAttribute('value')).toEqual('20');
     expect(component2.find('.arco-input')[0]?.getAttribute('value')).toEqual('20');
+  });
+});
+
+describe('Slider onlyMarkValue keyboard navigation', () => {
+  const marks = { '-20': '-20', '-10': '-10', 0: '0', 10: '10', 20: '20' };
+  const sliderProps = { min: -20, max: 20, marks, onlyMarkValue: true, tooltipVisible: false };
+  const pressArrow = (button: HTMLElement, key: string) => {
+    const keyCodes = { ArrowLeft: 37, ArrowUp: 38, ArrowRight: 39, ArrowDown: 40 };
+    fireEvent.keyDown(button, { key, keyCode: keyCodes[key] });
+  };
+
+  [
+    { name: 'mixed marks', marks, min: -20, max: 20, values: [-10, 0, 10, 20] },
+    {
+      name: 'mixed marks inserted out of order',
+      marks: { 20: '20', '-10': '-10', 0: '0', '-20': '-20', 10: '10' },
+      min: -20,
+      max: 20,
+      values: [-10, 0, 10, 20],
+    },
+    {
+      name: 'all-negative marks inserted out of order',
+      marks: { '-10': '-10', '-20': '-20', '-30': '-30' },
+      min: -30,
+      max: -10,
+      values: [-20, -10],
+    },
+    {
+      name: 'nonnegative marks',
+      marks: { 20: '20', 0: '0', 10: '10' },
+      min: 0,
+      max: 20,
+      values: [10, 20],
+    },
+  ].forEach(({ name, marks: testMarks, min, max, values }) => {
+    it(`should traverse ${name} in numeric order`, () => {
+      const onChange = jest.fn();
+      const component = render(
+        <Slider
+          {...sliderProps}
+          min={min}
+          max={max}
+          marks={testMarks}
+          step={1000}
+          onChange={onChange}
+        />
+      );
+      const button = component.getByRole('slider');
+      const backwards = [min, ...values.slice(0, -1)].reverse();
+
+      for (let repeat = 0; repeat < 2; repeat++) {
+        values.forEach((value) => {
+          pressArrow(button, 'ArrowRight');
+          expect(onChange).toHaveBeenLastCalledWith(value);
+          expect(button.getAttribute('aria-valuenow')).toBe(String(value));
+          expect(button.style.left).toBe(`${((value - min) / (max - min)) * 100}%`);
+        });
+        backwards.forEach((value) => {
+          pressArrow(button, 'ArrowLeft');
+          expect(onChange).toHaveBeenLastCalledWith(value);
+          expect(button.getAttribute('aria-valuenow')).toBe(String(value));
+        });
+      }
+    });
+  });
+
+  [
+    { value: -20, key: 'ArrowLeft' },
+    { value: 20, key: 'ArrowRight' },
+  ].forEach(({ value, key }) => {
+    it(`should stay at mark boundary ${value} on ${key}`, () => {
+      const onChange = jest.fn();
+      const component = render(<Slider {...sliderProps} defaultValue={value} onChange={onChange} />);
+      const button = component.getByRole('slider');
+      pressArrow(button, key);
+      pressArrow(button, key);
+      expect(onChange.mock.calls).toEqual([[value], [value]]);
+      expect(button.getAttribute('aria-valuenow')).toBe(String(value));
+    });
+  });
+
+  it('should navigate from the normalized nearest mark', () => {
+    const onChange = jest.fn();
+    const component = render(<Slider {...sliderProps} defaultValue={-8} onChange={onChange} />);
+    const button = component.getByRole('slider');
+    expect(button.getAttribute('aria-valuenow')).toBe('-10');
+    pressArrow(button, 'ArrowRight');
+    expect(onChange).toHaveBeenLastCalledWith(0);
+    expect(button.getAttribute('aria-valuenow')).toBe('0');
+  });
+
+  [
+    [-10, 10],
+    [-20, -10, 10],
+  ].forEach((value) => {
+    it(`should navigate range values for ${value.join(',')}`, () => {
+      const onChange = jest.fn();
+      const component = render(
+        <Slider range {...sliderProps} defaultValue={value} onChange={onChange} />
+      );
+      const buttons = component.getAllByRole('slider');
+      const index = value.indexOf(-10);
+      pressArrow(buttons[index], 'ArrowRight');
+      const expected = value.map((mark) => (mark === -10 ? 0 : mark));
+      expect(onChange).toHaveBeenLastCalledWith(expected);
+      expect(buttons.map((button) => Number(button.getAttribute('aria-valuenow')))).toEqual(expected);
+      pressArrow(buttons[index], 'ArrowLeft');
+      expect(onChange).toHaveBeenLastCalledWith(value);
+      pressArrow(buttons[buttons.length - 1], 'ArrowRight');
+      expect(onChange).toHaveBeenLastCalledWith([...value.slice(0, -1), 20]);
+    });
+  });
+
+  it('should preserve sorted range values when a thumb crosses another', () => {
+    const onChange = jest.fn();
+    const component = render(
+      <Slider {...sliderProps} range defaultValue={[-10, 0]} onChange={onChange} />
+    );
+    const button = component.getAllByRole('slider')[0];
+    pressArrow(button, 'ArrowRight');
+    expect(onChange).toHaveBeenLastCalledWith([0, 0]);
+    pressArrow(button, 'ArrowRight');
+    expect(onChange).toHaveBeenLastCalledWith([0, 10]);
+    expect(
+      component.getAllByRole('slider').map((thumb) => Number(thumb.getAttribute('aria-valuenow')))
+    ).toEqual([0, 10]);
+  });
+
+  it('should keep controlled values until the parent accepts an update', () => {
+    const onChange = jest.fn();
+    const props = { ...sliderProps, onChange };
+    const component = render(<Slider {...props} value={-10} />);
+    const button = component.getByRole('slider');
+    pressArrow(button, 'ArrowRight');
+    pressArrow(button, 'ArrowRight');
+    expect(onChange.mock.calls).toEqual([[0], [0]]);
+    expect(button.getAttribute('aria-valuenow')).toBe('-10');
+    component.rerender(<Slider {...props} value={0} />);
+    expect(button.getAttribute('aria-valuenow')).toBe('0');
+    pressArrow(button, 'ArrowRight');
+    expect(onChange).toHaveBeenLastCalledWith(10);
+    expect(button.getAttribute('aria-valuenow')).toBe('0');
+    component.rerender(<Slider {...props} value={10} />);
+    pressArrow(button, 'ArrowLeft');
+    expect(onChange).toHaveBeenLastCalledWith(0);
+  });
+
+  it('should ignore arrow keys while disabled', () => {
+    const onChange = jest.fn();
+    const component = render(
+      <Slider {...sliderProps} defaultValue={-10} disabled onChange={onChange} />
+    );
+    const button = component.getByRole('slider');
+    ['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown'].forEach((key) => pressArrow(button, key));
+    expect(onChange).not.toHaveBeenCalled();
+    expect(button.getAttribute('aria-valuenow')).toBe('-10');
+  });
+
+  [
+    [false, false, false],
+    [false, false, true],
+    [false, true, false],
+    [false, true, true],
+    [true, false, false],
+    [true, false, true],
+    [true, true, false],
+    [true, true, true],
+  ].forEach(([vertical, reverse, rtl]) => {
+    it(`should preserve arrows (vertical=${vertical} reverse=${reverse} rtl=${rtl})`, () => {
+      const onChange = jest.fn();
+      const component = render(
+        <ConfigProvider rtl={rtl}>
+          <Slider
+            {...sliderProps}
+            defaultValue={-10}
+            vertical={vertical}
+            reverse={reverse}
+            onChange={onChange}
+          />
+        </ConfigProvider>
+      );
+      const button = component.getByRole('slider');
+      ['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown'].forEach((key) => pressArrow(button, key));
+      expect(onChange.mock.calls).toEqual([[0], [-10], [0], [-10]]);
+      expect(button.getAttribute('aria-valuenow')).toBe('-10');
+    });
+  });
+
+  it('should preserve ordinary step navigation when onlyMarkValue is false', () => {
+    const onChange = jest.fn();
+    const component = render(
+      <Slider
+        {...sliderProps}
+        onlyMarkValue={false}
+        defaultValue={-10}
+        step={2}
+        onChange={onChange}
+      />
+    );
+    const button = component.getByRole('slider');
+    pressArrow(button, 'ArrowRight');
+    expect(onChange).toHaveBeenLastCalledWith(-8);
+    expect(button.getAttribute('aria-valuenow')).toBe('-8');
+    pressArrow(button, 'ArrowLeft');
+    expect(onChange).toHaveBeenLastCalledWith(-10);
+  });
+
+  it('should preserve the existing fallback at unmarked bounds', () => {
+    const onChange = jest.fn();
+    const props = {
+      ...sliderProps,
+      min: 0,
+      max: 30,
+      marks: { 10: '10', 20: '20' },
+      onChange,
+    };
+    const component = render(<Slider {...props} value={0} />);
+    const button = component.getByRole('slider');
+    pressArrow(button, 'ArrowLeft');
+    expect(onChange).toHaveBeenLastCalledWith(0);
+    pressArrow(button, 'ArrowRight');
+    expect(onChange).toHaveBeenLastCalledWith(10);
+    component.rerender(<Slider {...props} value={30} />);
+    pressArrow(button, 'ArrowLeft');
+    expect(onChange).toHaveBeenLastCalledWith(30);
+    pressArrow(button, 'ArrowRight');
+    expect(onChange).toHaveBeenLastCalledWith(10);
   });
 });
