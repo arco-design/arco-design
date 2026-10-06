@@ -406,7 +406,9 @@ describe('Slider onlyMarkValue keyboard navigation', () => {
   ].forEach(({ value, key }) => {
     it(`should stay at mark boundary ${value} on ${key}`, () => {
       const onChange = jest.fn();
-      const component = render(<Slider {...sliderProps} defaultValue={value} onChange={onChange} />);
+      const component = render(
+        <Slider {...sliderProps} defaultValue={value} onChange={onChange} />
+      );
       const button = component.getByRole('slider');
       pressArrow(button, key);
       pressArrow(button, key);
@@ -439,7 +441,9 @@ describe('Slider onlyMarkValue keyboard navigation', () => {
       pressArrow(buttons[index], 'ArrowRight');
       const expected = value.map((mark) => (mark === -10 ? 0 : mark));
       expect(onChange).toHaveBeenLastCalledWith(expected);
-      expect(buttons.map((button) => Number(button.getAttribute('aria-valuenow')))).toEqual(expected);
+      expect(buttons.map((button) => Number(button.getAttribute('aria-valuenow')))).toEqual(
+        expected
+      );
       pressArrow(buttons[index], 'ArrowLeft');
       expect(onChange).toHaveBeenLastCalledWith(value);
       pressArrow(buttons[buttons.length - 1], 'ArrowRight');
