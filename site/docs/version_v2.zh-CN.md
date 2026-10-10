@@ -2,6 +2,15 @@
 changelog: true
 ---
 
+## 2.66.17
+
+2026-10-10
+
+### 🐛 问题修复
+
+- 修复多选模式下使用响应式 `maxTagCount` 时，重复的尺寸通知可能导致无限更新的问题。([#3199](https://github.com/arco-design/arco-design/pull/3199))
+- 修复级联面板宽度变化时弹层瞬时越界，导致页面横向滚动条闪烁和抖动的问题([#3197](https://github.com/arco-design/arco-design/pull/3197))
+
 ## 2.66.16
 
 2026-07-14

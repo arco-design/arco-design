@@ -2,6 +2,15 @@
 changelog: true
 ---
 
+## 2.66.17
+
+2026-10-10
+
+### 🐛 BugFix
+
+- Fix an infinite update loop that could occur when a multiple Select uses responsive `maxTagCount` and receives repeated resize notifications.([#3199](https://github.com/arco-design/arco-design/pull/3199))
+- Fix page jitter and horizontal scrollbar flicker caused by transient popup overflow when Cascader panel width changes([#3197](https://github.com/arco-design/arco-design/pull/3197))
+
 ## 2.66.16
 
 2026-07-14

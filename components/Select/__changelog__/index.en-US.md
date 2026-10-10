@@ -1,3 +1,11 @@
+## 2.66.17
+
+2026-10-10
+
+### 🐛 BugFix
+
+- Fix an infinite update loop that could occur when a multiple Select uses responsive `maxTagCount` and receives repeated resize notifications.([#3199](https://github.com/arco-design/arco-design/pull/3199))
+
 ## 2.66.15
 
 2026-05-08

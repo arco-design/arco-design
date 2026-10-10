@@ -1,3 +1,11 @@
+## 2.66.17
+
+2026-10-10
+
+### 🐛 BugFix
+
+- Fix page jitter and horizontal scrollbar flicker caused by transient popup overflow when Cascader panel width changes([#3197](https://github.com/arco-design/arco-design/pull/3197))
+
 ## 2.66.11
 
 2026-03-06
