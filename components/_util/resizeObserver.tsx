@@ -2,7 +2,7 @@ import React, { ReactElement, cloneElement, isValidElement } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import lodashThrottle from 'lodash/throttle';
 import { callbackOriginRef, findDOMNode } from '../_util/react-dom';
-import { supportRef } from './is';
+import { supportRef, isReact19, isDOMElement, isForwardRefComponent } from './is';
 
 export interface ResizeProps {
   throttle?: boolean;
@@ -95,14 +95,30 @@ class ResizeObserverComponent extends React.Component<ResizeProps> {
   render() {
     const { children } = this.props;
 
-    if (supportRef(children) && isValidElement(children) && !this.props.getTargetDOMNode) {
-      return cloneElement(children as ReactElement, {
-        ref: (node) => {
-          this.rootDOMRef = node;
+    if (!this.props.getTargetDOMNode && isValidElement(children)) {
+      // react 19 移除了 ReactDOM.findDOMNode，类组件、未使用 forwardRef 的函数组件
+      // 无法通过 ref 拿到真实 dom 节点，包裹一层 span 以保证能被 ResizeObserver 观测。
+      if (isReact19 && !isDOMElement(children) && !isForwardRefComponent(children)) {
+        return (
+          <span
+            ref={(node) => {
+              this.rootDOMRef = node;
+            }}
+          >
+            {children}
+          </span>
+        );
+      }
 
-          callbackOriginRef(children, node);
-        },
-      });
+      if (supportRef(children)) {
+        return cloneElement(children as ReactElement, {
+          ref: (node) => {
+            this.rootDOMRef = node;
+
+            callbackOriginRef(children, node);
+          },
+        });
+      }
     }
     this.rootDOMRef = null;
     return this.props.children;
