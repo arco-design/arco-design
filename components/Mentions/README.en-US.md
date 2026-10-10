@@ -39,6 +39,6 @@ Mentions is used to mention someone or something in the input.
 |onChange|Callback when input value is changed|(value: string) => void |`-`|-|
 |onClear|Callback when click clear button|() => void |`-`|2.2.0|
 |onFocus|Trigger when mentions get focus|(e) => void |`-`|-|
-|onPressEnter|Callback when press enter key|(e) => void |`-`|-|
+|onPressEnter|Callback when Enter is pressed. `didSelectOption` indicates whether this Enter accepted an option.|(event, didSelectOption?: boolean) => void |`-`|-|
 |onSearch|Callback on search|(text: string, prefix: string) => void |`-`|-|
 
