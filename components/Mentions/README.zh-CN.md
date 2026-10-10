@@ -39,6 +39,6 @@
 |onChange|输入改变时的回调|(value: string) => void |`-`|-|
 |onClear|点击清除按钮的回调|() => void |`-`|2.2.0|
 |onFocus|聚焦时的回调|(e) => void |`-`|-|
-|onPressEnter|按下回车键的回调|(e) => void |`-`|-|
+|onPressEnter|按下回车时的回调，`didSelectOption` 表示本次回车是否选中了选项。|(event, didSelectOption?: boolean) => void |`-`|-|
 |onSearch|搜索时的回调|(text: string, prefix: string) => void |`-`|-|
 

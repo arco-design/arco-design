@@ -76,6 +76,11 @@ export interface MentionsProps extends Omit<TextAreaProps, 'prefix' | 'maxLength
    */
   onChange?: (value: string) => void;
   /**
+   * @zh 按下回车时的回调，`didSelectOption` 表示本次回车是否选中了选项。
+   * @en Callback when Enter is pressed. `didSelectOption` indicates whether this Enter accepted an option.
+   */
+  onPressEnter?: (event, didSelectOption?: boolean) => void;
+  /**
    * @zh 搜索时的回调
    * @en Callback on search
    */

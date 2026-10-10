@@ -13,6 +13,12 @@ const TextArea = Input.TextArea;
 
 const FunctionalKeyCodeList = [Esc.code, Enter.code, ArrowUp.code, ArrowDown.code];
 
+type KeyDownFrame = {
+  event: React.KeyboardEvent;
+  isEnter: boolean;
+  didSelectOption: boolean;
+};
+
 const defaultProps: MentionsProps = {
   prefix: '@',
   split: ' ',
@@ -46,6 +52,8 @@ function Mentions(baseProps: MentionsProps, ref) {
   const refSelect = useRef(null);
   const refMeasure = useRef(null);
   const refTextarea = useRef(null);
+  const refActiveKeyDown = useRef<KeyDownFrame>(null);
+  const refCompletedKeyDown = useRef<KeyDownFrame>(null);
 
   const [value, setValue] = useMergeValue('', {
     value: props.value,
@@ -84,6 +92,9 @@ function Mentions(baseProps: MentionsProps, ref) {
     const match = `${measureInfo.prefix}${optionValue}`;
     const nextValue = `${head}${match}${tail}`;
 
+    if (refActiveKeyDown.current?.isEnter) {
+      refActiveKeyDown.current.didSelectOption = true;
+    }
     setValue(nextValue);
     stopMeasure();
     onChange && onChange(nextValue);
@@ -148,6 +159,36 @@ function Mentions(baseProps: MentionsProps, ref) {
     onBlur: stopMeasure,
   };
 
+  const textAreaProps = { ...textAreaEventHandlers, ...rest };
+
+  const handleKeyDown = (event) => {
+    // User handlers can synchronously dispatch another keyboard event.
+    const parentFrame = refActiveKeyDown.current;
+    const frame: KeyDownFrame = {
+      event,
+      isEnter: (event.keyCode || event.which) === Enter.code,
+      didSelectOption: false,
+    };
+    refActiveKeyDown.current = frame;
+    refCompletedKeyDown.current = null;
+    try {
+      textAreaProps.onKeyDown && textAreaProps.onKeyDown(event);
+      if (frame.isEnter) {
+        refCompletedKeyDown.current = frame;
+      }
+    } finally {
+      refActiveKeyDown.current = parentFrame;
+    }
+  };
+
+  const handlePressEnter = (event) => {
+    const frame = refCompletedKeyDown.current;
+    // Consume the result before an application callback can reenter.
+    refCompletedKeyDown.current = null;
+    const didSelectOption = frame?.event === event && frame.didSelectOption;
+    textAreaProps.onPressEnter && textAreaProps.onPressEnter(event, !!didSelectOption);
+  };
+
   // Pass [value: undefined] to Select, make sure onChange callback will always be triggered
   // Only parameter of Select.onChange is needed, Select.value is not important cause Select is hidden
   return (
@@ -164,8 +205,9 @@ function Mentions(baseProps: MentionsProps, ref) {
         ref={refTextarea}
         className={`${prefixCls}-textarea`}
         value={value}
-        {...textAreaEventHandlers}
-        {...rest}
+        {...textAreaProps}
+        onKeyDown={handleKeyDown}
+        onPressEnter={handlePressEnter}
       />
       <div ref={refMeasure} className={`${prefixCls}-measure`}>
         {value.slice(0, measureInfo.location)}
