@@ -159,8 +159,11 @@
 
   &-type-text,
   &-type-picture-list {
-    .@{upload-prefix-cls}-list-item:first-of-type {
-      margin-top: @upload-list-margin-top;
+    padding-top: @upload-list-margin-top - @upload-text-item-margin-top;
+
+    &.@{upload-prefix-cls}-list-empty {
+      padding-top: 0;
+      transition: padding-top ease-out 400ms;
     }
   }
 
@@ -352,16 +355,12 @@
     }
 
     .@{upload-prefix-cls}-list-item-done
-      .@{upload-prefix-cls}-list-item-text-name
-      when
-      not(@upload-text-item-color-text_success = unset) {
+    .@{upload-prefix-cls}-list-item-text-name when not(@upload-text-item-color-text_success = unset) {
       color: @upload-text-item-color-text_success;
     }
 
     .@{upload-prefix-cls}-list-item-uploading
-      .@{upload-prefix-cls}-list-item-text-name
-      when
-      not(@upload-text-item-color-text_uploading = unset) {
+    .@{upload-prefix-cls}-list-item-text-name when not(@upload-text-item-color-text_uploading = unset) {
       color: @upload-text-item-color-text_uploading;
     }
   }
@@ -454,6 +453,7 @@
         width: 0;
         height: 0;
       }
+
       .@{upload-prefix-cls}-list-error-icon {
         font-size: @upload-picture-item-size-error-icon;
         color: @upload-picture-item-color-error-icon;
@@ -491,16 +491,12 @@
     }
 
     .@{upload-prefix-cls}-list-item-done
-      .@{upload-prefix-cls}-list-item-text-name
-      when
-      not(@upload-picture-text-item-color-text_success = unset) {
+    .@{upload-prefix-cls}-list-item-text-name when not(@upload-picture-text-item-color-text_success = unset) {
       color: @upload-picture-text-item-color-text_success;
     }
 
     .@{upload-prefix-cls}-list-item-uploading
-      .@{upload-prefix-cls}-list-item-text-name
-      when
-      not(@upload-picture-text-item-color-text_uploading = unset) {
+    .@{upload-prefix-cls}-list-item-text-name when not(@upload-picture-text-item-color-text_uploading = unset) {
       color: @upload-picture-text-item-color-text_uploading;
     }
   }
@@ -524,8 +520,8 @@
   overflow: hidden;
   margin: 0;
   transition: opacity @transition-duration-1 @transition-timing-function-linear,
-    height @transition-duration-3 @transition-timing-function-standard @transition-duration-1,
-    margin @transition-duration-3 @transition-timing-function-standard @transition-duration-1;
+  height @transition-duration-3 @transition-timing-function-standard @transition-duration-1,
+  margin @transition-duration-3 @transition-timing-function-standard @transition-duration-1;
 }
 
 .@{upload-prefix-cls}-list-item {
@@ -547,8 +543,8 @@
     overflow: hidden;
     margin: 0;
     transition: opacity @transition-duration-1 @transition-timing-function-linear,
-      width @transition-duration-3 @transition-timing-function-standard @transition-duration-1,
-      margin @transition-duration-3 @transition-timing-function-standard @transition-duration-1;
+    width @transition-duration-3 @transition-timing-function-standard @transition-duration-1,
+    margin @transition-duration-3 @transition-timing-function-standard @transition-duration-1;
   }
 }
 

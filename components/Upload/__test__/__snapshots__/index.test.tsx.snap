@@ -37,7 +37,7 @@ Array [
     </div>
   </div>,
   <div
-    class="arco-upload-list arco-upload-list-type-text"
+    class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
   />,
 ]
 `;
@@ -79,7 +79,7 @@ Array [
     </div>
   </div>,
   <div
-    class="arco-upload-list arco-upload-list-type-text"
+    class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
   />,
 ]
 `;
@@ -121,7 +121,7 @@ Array [
     </div>
   </div>,
   <div
-    class="arco-upload-list arco-upload-list-type-text"
+    class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
   />,
 ]
 `;
@@ -164,7 +164,7 @@ Array [
     </div>
   </div>,
   <div
-    class="arco-upload-list arco-upload-list-type-text"
+    class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
   />,
 ]
 `;
