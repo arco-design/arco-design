@@ -6,7 +6,7 @@ import IconInfoCircleFill from '../../icon/react-icon/IconInfoCircleFill';
 import IconExclamationCircleFill from '../../icon/react-icon/IconExclamationCircleFill';
 import IconLoading from '../../icon/react-icon/IconLoading';
 import cs from '../_util/classNames';
-import IconHover from '../_class/icon-hover';
+import IconHover from './icon-hover';
 import { IconContext } from '../../icon/react-icon/context';
 import ConfigProvider from '../ConfigProvider';
 import { ConfigContext } from '../ConfigProvider/context';
