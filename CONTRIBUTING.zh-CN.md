@@ -60,6 +60,11 @@ $ yarn dev:site
 # 启动 storybook 。 这里启动不启动都可以，官网也可以调试
 $ yarn demo
 ```
+### 使用docker-compose启动
+```bash
+$ docker-compose up
+
+```
 
 ### 常用的命令
 
