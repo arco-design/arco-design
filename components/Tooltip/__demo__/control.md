@@ -36,7 +36,7 @@ function App() {
       <br />
       <br />
       <Tooltip position="bottom" content="Mouse over to display tooltip" popupVisible={visible}>
-        <Button>Be Controled</Button>
+        <Button>Be Controlled</Button>
       </Tooltip>
     </div>
   );

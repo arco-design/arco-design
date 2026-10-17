@@ -16,7 +16,7 @@ title:
 <br/>
 **注意注意注意：  使用谷歌翻译页面导致页面白屏报错？**
 
-组件用了 `React.Fragement` 导致的问题。React 原生的问题 （[Issue 链接](https://github.com/facebook/react/issues/17256)）。可以设置 `ellipsis.wrapper` 解决。比如 `ellipsis={{ wrapper: 'span' }}`。
+组件用了 `React.Fragment` 导致的问题。React 原生的问题 （[Issue 链接](https://github.com/facebook/react/issues/17256)）。可以设置 `ellipsis.wrapper` 解决。比如 `ellipsis={{ wrapper: 'span' }}`。
 
 ## en-US
 **It is not recommended to use the ellipsis attribute to enable folding. It is recommended to use the Typography.Ellipsis component instead.**
@@ -27,7 +27,7 @@ Omit multiple lines of text when there is insufficient space.
 
 **Attention: Attention: Using Google Translate results in a white screen error on the page? **
 
-The component uses `React.Fragement` to cause problems. React native issues ([Issue link](https://github.com/facebook/react/issues/17256)). It can be solved by setting `ellipsis.wrapper`. For example `ellipsis={{ wrapper: 'span' }}`.
+The component uses `React.Fragment` to cause problems. React native issues ([Issue link](https://github.com/facebook/react/issues/17256)). It can be solved by setting `ellipsis.wrapper`. For example `ellipsis={{ wrapper: 'span' }}`.
 
 ```js
 import { Typography } from '@arco-design/web-react';

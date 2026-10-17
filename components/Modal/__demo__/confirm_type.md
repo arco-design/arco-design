@@ -34,7 +34,7 @@ function warning() {
   Modal.warning({
     title: 'Warning Notification',
     content:
-      'This is a warning description which directly indicates a warning that might need attention. (e.g., "Invalid request, please contact admininstration.")',
+      'This is a warning description which directly indicates a warning that might need attention. (e.g., "Invalid request, please contact administration.")',
   });
 }
 

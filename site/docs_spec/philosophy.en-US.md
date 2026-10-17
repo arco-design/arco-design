@@ -61,7 +61,7 @@ Actions and options should be visible to minimize the memory load of users on th
 
 ## Highlight Priority
 
-Users should be scaning the content instead of reading or watching. Thus the design should highlight the key points, weaken and eliminate irrelevant information that should not be contained in important conversations.
+Users should be scanning the content instead of reading or watching. Thus the design should highlight the key points, weaken and eliminate irrelevant information that should not be contained in important conversations.
 
 <div class="markdown-img-layout-2">
   <img src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/78989683d6404a738d6ad8661e54c1c8~tplv-uwbnlip3yd-image.image" />
