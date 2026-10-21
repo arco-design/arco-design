@@ -1,7 +1,7 @@
 import React, { forwardRef, memo, useContext, CSSProperties, useRef, useMemo } from 'react';
 import NP, { plus, times, divide } from 'number-precision';
 import omit from '../_util/omit';
-import SliderButton from './button';
+import SliderButton, { SliderButtonHandle } from './button';
 import Marks from './marks';
 import Dots from './dots';
 import Input from './input';
@@ -54,6 +54,8 @@ function Slider(baseProps: SliderProps, ref) {
     getIntervalConfig,
     ...rest
   } = props;
+
+  const refSliderButtons = useRef<{ [key: number]: SliderButtonHandle }>({});
 
   const range = !!propRange;
   const rangeConfig = isObject(propRange) ? { ...propRange } : { draggableBar: false };
@@ -248,6 +250,8 @@ function Slider(baseProps: SliderProps, ref) {
   }
 
   function onRoadMouseDown(e) {
+    // 防止拖动的时候鼠标选中
+    e.preventDefault();
     getPosition();
     const val = getValueByCoords(e.clientX, e.clientY);
     if (rangeConfig.draggableBar && inRange(val)) {
@@ -273,9 +277,12 @@ function Slider(baseProps: SliderProps, ref) {
     if (range && nearEndValue - value > value - nearBeginVal) {
       copyVal[beforeIndex] = value;
       onChange(copyVal, 'jumpToClick');
+      // 触发鼠标点击的事件，SliderButton 在此时可以一起被拖动
+      refSliderButtons.current[beforeIndex]?.mouseDown?.();
     } else {
       copyVal[nextIndex] = value;
       onChange(copyVal, 'jumpToClick');
+      refSliderButtons.current[nextIndex]?.mouseDown?.();
     }
     onMouseUp();
   }
@@ -402,6 +409,7 @@ function Slider(baseProps: SliderProps, ref) {
             return (
               <SliderButton
                 key={index}
+                ref={(ref) => (refSliderButtons.current[index] = ref)}
                 style={getBtnStyle(getIntervalOffset(val, intervalConfigs))}
                 disabled={disabled}
                 prefixCls={prefixCls}

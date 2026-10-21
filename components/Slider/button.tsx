@@ -7,6 +7,8 @@ import React, {
   useEffect,
   useRef,
   useMemo,
+  forwardRef,
+  useImperativeHandle,
 } from 'react';
 import cs from '../_util/classNames';
 import { on, off } from '../_util/dom';
@@ -36,6 +38,10 @@ interface SliderButtonProps {
   onArrowEvent?: (type: 'addition' | 'subtraction') => void;
 }
 
+export type SliderButtonHandle = {
+  mouseDown: () => void;
+};
+
 const triggerStyle = { maxWidth: 350 };
 
 const triggerDuration = {
@@ -50,7 +56,10 @@ const triggerPopupAlign = {
   bottom: 12,
 };
 
-const SliderButton = function (props: SliderButtonProps) {
+const SliderButton = function (
+  props: SliderButtonProps,
+  ref: (handle: SliderButtonHandle) => void
+) {
   // props
   const {
     style,
@@ -83,8 +92,8 @@ const SliderButton = function (props: SliderButtonProps) {
   const isDragging = useRef(false);
   const tooltip = useRef(null);
 
-  function handleMouseDown(e) {
-    e.stopPropagation();
+  function handleMouseDown(e?: React.MouseEvent) {
+    e?.stopPropagation();
     if (disabled) return;
 
     moveStart(e);
@@ -118,9 +127,9 @@ const SliderButton = function (props: SliderButtonProps) {
     }
   }
 
-  function moveStart(e) {
+  function moveStart(e?: React.MouseEvent) {
     // 如果不阻止默认行为可能会在拖动时产生鼠标选中状态，所以手动处理元素失焦
-    e.preventDefault();
+    e?.preventDefault();
     const activeElement = document.activeElement as HTMLElement;
     activeElement && activeElement.blur && activeElement.blur();
 
@@ -199,6 +208,12 @@ const SliderButton = function (props: SliderButtonProps) {
     tooltip && tooltip.current && tooltip.current.updatePopupPosition();
   }, [value]);
 
+  useImperativeHandle<SliderButtonHandle, SliderButtonHandle>(ref, () => ({
+    mouseDown: () => {
+      handleMouseDown();
+    },
+  }));
+
   return (
     <Trigger
       style={triggerStyle}
@@ -252,4 +267,8 @@ const SliderButton = function (props: SliderButtonProps) {
   );
 };
 
-export default memo(SliderButton);
+const SliderButtonComponent = forwardRef<SliderButtonHandle, SliderButtonProps>(SliderButton);
+
+SliderButtonComponent.displayName = 'Slider';
+
+export default memo(SliderButtonComponent);
