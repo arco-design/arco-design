@@ -112,7 +112,8 @@ function Drawer(baseProps: DrawerProps, ref) {
   }, []);
 
   useEffect(() => {
-    if (visible && isFirstRender.current) {
+    // Keep every opening rendered until its exit transition completes.
+    if (visible) {
       isFirstRender.current = false;
       setIsRendered(true);
     }
