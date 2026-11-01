@@ -224,7 +224,7 @@ function TBody<T>(props: TbodyProps<T>) {
       </VirtualList>
     ) : (
       <div className={`${prefixCls}-body`} ref={saveRef}>
-        <table>
+        <table style={scrollStyleX}>
           <tbody>{noDataTr}</tbody>
         </table>
       </div>
