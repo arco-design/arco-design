@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import merge from 'lodash/merge';
 import { ComponentsProps } from '../interface';
 import { isObject } from '../../_util/is';
 
@@ -43,7 +42,15 @@ const defaultComponents: ComponentsProps = {
 
 export default function useComponent(components: ComponentsProps) {
   const _components = useMemo(
-    () => (isObject(components) ? merge({}, defaultComponents, components) : defaultComponents),
+    () => {
+      if(!isObject(components)) {
+        return defaultComponents
+      }
+      const _components = Object.assign({}, components, defaultComponents)
+      _components.header = Object.assign({}, defaultComponents.header, components.header)
+      _components.body = Object.assign({}, defaultComponents.body, components.body)
+      return _components
+    },
     [components]
   );
 
