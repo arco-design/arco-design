@@ -208,10 +208,11 @@ function Image(baseProps: ImagePropsType, ref: LegacyRef<HTMLDivElement>) {
   };
 
   return (
-    <div className={classNames} style={Object.assign({ width, height }, style)} ref={ref}>
+    <div ref={ref}>
       <img
         ref={refImg}
-        className={`${prefixCls}-img`}
+        style={Object.assign({ width, height }, style)}
+        className={`${prefixCls}-img ${classNames}`}
         tabIndex={0}
         {...getKeyboardEvents({
           onPressEnter: onImgClick,
