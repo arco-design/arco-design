@@ -30,16 +30,20 @@ function NodeList(props, ref) {
     const currentExpandKeysSet = new Set(currentExpandKeys);
     nodeList.forEach((nodeProps) => {
       const pathParentKeys = nodeProps.pathParentKeys || [];
-      // 如果父节点处于正在展开状态，子节点暂时不可见，因为父节点的children会在animation中渲染出来。
+      // 如果父节点处于正在展开状态，子节点暂时不可见，因为父节点的children会在animation【非虚拟滚动场景】中渲染出来。
       // 当动画完成时，父节点children隐藏，此时在这里渲染子节点。 anyway，一切为了动画！！！
-      if (
+      if (isVirtual) {
+        if (pathParentKeys.every((key) => expandedKeysSet.has(key))) {
+          newKeys.add(nodeProps._key);
+        }
+      } else if (
         pathParentKeys.every((key) => !currentExpandKeysSet.has(key) && expandedKeysSet.has(key))
       ) {
         newKeys.add(nodeProps._key);
       }
     });
     return newKeys;
-  }, [expandedKeysSet, currentExpandKeys, nodeList]);
+  }, [expandedKeysSet, currentExpandKeys, nodeList, isVirtual]);
 
   const calcChildrenList = () => {
     return nodeList.filter((item) => {
