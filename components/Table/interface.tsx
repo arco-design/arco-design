@@ -1,4 +1,5 @@
 import React, { ReactNode, CSSProperties } from 'react';
+import { NestedKeyOf } from '../_util/type';
 import { PaginationProps } from '../Pagination/pagination';
 import { SpinProps } from '../Spin';
 import { TriggerProps } from '../Trigger';
@@ -38,7 +39,7 @@ export interface TableProps<T = any> {
    * @zh 列描述数据对象的数组
    * @en An array of column objects
    */
-  columns?: ColumnProps<T>[];
+  columns?: ColumnProps<T>[] | ColumnProps<any>[];
   /**
    * @zh 覆盖原生表格标签
    * @en Override native table tag
@@ -432,7 +433,7 @@ export interface ColumnProps<T = any> {
    * The `key` corresponding to the column data in the data item is used to display the value.
    * It supports the nested writing of `a[0].bc[1]`, see [lodash.get](https:// www.npmjs.com/package/lodash.get).
    */
-  dataIndex?: string;
+  dataIndex?: T extends object ? NestedKeyOf<T> : string;
   /**
    * @zh React的 key值，如果不指定，默认取 `dataIndex` 的值
    * @en React key value, if not specified, the default value of `dataIndex` is taken
