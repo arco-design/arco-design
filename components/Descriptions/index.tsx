@@ -76,13 +76,26 @@ function Descriptions(baseProps: DescriptionsProps) {
       const length = getLength(lastOne);
       if (length === 0) {
         renderData.push([
-          { ...d, span: d.span ? (d.span > currentColumn ? currentColumn : d.span) : 1 },
+          {
+            ...d,
+            span: d.span ? (d.span > currentColumn ? currentColumn : d.span) : 1,
+            columnSpan: d.columnSpan
+              ? d.columnSpan > currentColumn
+                ? currentColumn
+                : d.columnSpan
+              : 1,
+          },
         ]);
       } else if (length === currentColumn) {
         renderData.push([
           {
             ...d,
             span: d.span ? (d.span > currentColumn ? currentColumn : d.span) : 1,
+            columnSpan: d.columnSpan
+              ? d.columnSpan > currentColumn
+                ? currentColumn
+                : d.columnSpan
+              : 1,
           },
         ]);
       } else {
@@ -143,9 +156,14 @@ function Descriptions(baseProps: DescriptionsProps) {
       <tr key={i} className={`${prefixCls}-row`}>
         {d.map((_d, _i) => {
           const colSpanProps = _d.span > 1 ? { colSpan: _d.span * 2 - 1 } : {};
+          const columnSpanLabelProps = _d.columnSpan > 1 ? { colSpan: _d.columnSpan * 2 - 1 } : {};
           return (
             <Fragment key={_d.key || _i}>
-              <td className={`${prefixCls}-item-label`} style={labelStyle}>
+              <td
+                className={`${prefixCls}-item-label`}
+                style={labelStyle}
+                {...columnSpanLabelProps}
+              >
                 {_d.label}
                 {colon}
               </td>
