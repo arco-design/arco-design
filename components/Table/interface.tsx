@@ -550,7 +550,6 @@ export interface ColumnProps<T = any> {
   components?: ComponentsProps;
   columnFixedStyle?: CSSProperties;
   column?: any;
-  [key: string]: any;
 }
 
 // private use
