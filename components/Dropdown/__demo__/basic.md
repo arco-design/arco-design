@@ -33,6 +33,14 @@ function App() {
         </Button>
       </Dropdown>
 
+      <Dropdown droplist={dropList} position="bl">
+        {(open) => (
+          <Button type="text">
+            {open ? 'close' : 'open'} <IconDown />
+          </Button>
+        )}
+      </Dropdown>
+
       <Dropdown droplist={dropList} position="bl" disabled>
         <Button type="text">
           Hover me <IconDown />
