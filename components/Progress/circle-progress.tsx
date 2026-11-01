@@ -115,7 +115,7 @@ const CircleProgress = (
   );
 
   // type === line 时候，返回的是一个圆环
-  if (size === 'mini' && status === 'success' && props.type === 'circle') {
+  if (size === 'mini' && status === 'success' && props.type === 'circle' && percent === 100) {
     dom = (
       <div className={`${cls}-wrapper`} style={{ width, height: width }}>
         <IconCheck style={{ fontSize: width - 2, color }} />
