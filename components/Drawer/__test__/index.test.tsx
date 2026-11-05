@@ -1,9 +1,10 @@
 import React from 'react';
-import { act } from 'react-test-renderer';
 import mountTest from '../../../tests/mountTest';
 import Drawer, { DrawerProps } from '..';
 import Button from '../../Button';
-import { render, fireEvent } from '../../../tests/util';
+import Form from '../../Form';
+import Input from '../../Input';
+import { render, fireEvent, act, cleanup } from '../../../tests/util';
 import { Esc } from '../../_util/keycode';
 
 mountTest(Drawer);
@@ -76,8 +77,100 @@ describe('Drawer', () => {
   });
 
   afterEach(() => {
-    document.body.innerHTML = '';
-    jest.runAllTimers();
+    cleanup();
+    act(() => {
+      jest.runAllTimers();
+    });
+    jest.useRealTimers();
+  });
+
+  it.each([
+    [true, true],
+    [true, false],
+    [false, true],
+    [false, false],
+  ])(
+    'completes repeated transitions with mountOnEnter=%s and unmountOnExit=%s',
+    (mountOnEnter, unmountOnExit) => {
+      const afterOpen = jest.fn();
+      const afterClose = jest.fn();
+      const wrapper = render(
+        <DemoTest
+          mountOnEnter={mountOnEnter}
+          unmountOnExit={unmountOnExit}
+          afterOpen={afterOpen}
+          afterClose={afterClose}
+        />
+      );
+
+      expect(wrapper.find('.arco-drawer-wrapper')).toHaveLength(mountOnEnter ? 0 : 1);
+
+      for (let cycle = 1; cycle <= 3; cycle++) {
+        openDrawer(wrapper);
+        act(() => {
+          jest.runAllTimers();
+        });
+        expect(afterOpen).toHaveBeenCalledTimes(cycle);
+
+        fireEvent.click(wrapper.find('.arco-drawer-close-icon')[0]);
+        // Keep the wrapper mounted until the closing transition finishes.
+        expect(wrapper.find('.arco-drawer-wrapper')).toHaveLength(1);
+        expect(afterClose).toHaveBeenCalledTimes(cycle - 1);
+
+        act(() => {
+          jest.runAllTimers();
+        });
+        expect(afterClose).toHaveBeenCalledTimes(cycle);
+        expect(wrapper.find('.arco-drawer-wrapper')).toHaveLength(unmountOnExit ? 0 : 1);
+      }
+
+      wrapper.unmount();
+    }
+  );
+
+  it('resets the preserved form in afterClose after every cancellation', () => {
+    function FormDrawer() {
+      const [visible, setVisible] = React.useState(false);
+      const [form] = Form.useForm();
+
+      return (
+        <>
+          <Button className="open-btn" onClick={() => setVisible(true)}>
+            Open
+          </Button>
+          <Drawer
+            visible={visible}
+            unmountOnExit
+            onCancel={() => setVisible(false)}
+            afterClose={() => form.resetFields()}
+          >
+            <Form form={form}>
+              <Form.Item field="name">
+                <Input placeholder="Name" />
+              </Form.Item>
+            </Form>
+          </Drawer>
+        </>
+      );
+    }
+
+    const wrapper = render(<FormDrawer />);
+
+    for (let cycle = 1; cycle <= 3; cycle++) {
+      openDrawer(wrapper);
+      act(() => {
+        jest.runAllTimers();
+      });
+      const input = wrapper.getByPlaceholderText('Name');
+      expect(input).toHaveValue('');
+      fireEvent.change(input, { target: { value: `cancelled-${cycle}` } });
+      fireEvent.click(wrapper.find('.arco-drawer-footer > .arco-btn-secondary')[0]);
+      act(() => {
+        jest.runAllTimers();
+      });
+    }
+
+    wrapper.unmount();
   });
 
   it('open drawer correctly', () => {
