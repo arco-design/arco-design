@@ -83,12 +83,18 @@ function Dropdown(baseProps: DropdownProps, _) {
         inDropdown: true,
         selectable: false,
         onClickMenuItem: (...args) => {
+          const [, event] = args;
           let returnValueOfOnClickMenuItem = null;
 
           // Trigger onClickMenuItem first
           const content = getPopupContent();
           if (content.props.onClickMenuItem) {
             returnValueOfOnClickMenuItem = content.props.onClickMenuItem(...args);
+          }
+
+          // A menu item can stop propagation to keep its nested popup mounted.
+          if (event?.isPropagationStopped?.()) {
+            return;
           }
 
           // Set focus to avoid onblur
