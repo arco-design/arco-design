@@ -65,8 +65,8 @@ function Item(props: MenuItemProps, ref) {
 
   const menuItemClickHandler = (event) => {
     if (!disabled) {
-      onClickMenuItem(_key, event);
       onClick && onClick(event);
+      onClickMenuItem(_key, event);
     }
   };
 

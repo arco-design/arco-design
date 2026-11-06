@@ -68,6 +68,60 @@ describe('Menu', () => {
     expect(wrapper.querySelector('.arco-menu-selected')).toHaveTextContent('模块');
   });
 
+  it.each([
+    ['click', false],
+    ['click', true],
+    ['Enter', false],
+    ['Enter', true],
+  ])('preserves menu selection on %s activation (stopped: %s)', (activation, stopped) => {
+    const onClickMenuItem = jest.fn((_, event) => event.isPropagationStopped());
+    const onClick = jest.fn((event) => {
+      if (stopped) {
+        event.stopPropagation();
+      }
+    });
+    const wrapper = render(
+      <Menu defaultSelectedKeys={['first']} onClickMenuItem={onClickMenuItem}>
+        <Menu.Item key="first">First</Menu.Item>
+        <Menu.Item key="second" onClick={onClick}>
+          Second
+        </Menu.Item>
+      </Menu>
+    );
+    const item = wrapper.querySelectorAll('.arco-menu-item')[1];
+    if (activation === 'click') {
+      fireEvent.click(item);
+    } else {
+      fireEvent.keyDown(item, { key: 'Enter', keyCode: 13 });
+    }
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(onClickMenuItem).toHaveBeenCalledTimes(1);
+    expect(onClickMenuItem).toHaveReturnedWith(stopped);
+    expect(wrapper.querySelector('.arco-menu-selected')).toHaveTextContent('Second');
+  });
+
+  it.each(['click', 'Enter'])('does not activate a disabled item on %s', (activation) => {
+    const onClick = jest.fn();
+    const onClickMenuItem = jest.fn();
+    const wrapper = render(
+      <Menu defaultSelectedKeys={['first']} onClickMenuItem={onClickMenuItem}>
+        <Menu.Item key="first">First</Menu.Item>
+        <Menu.Item key="disabled" disabled onClick={onClick}>
+          Disabled
+        </Menu.Item>
+      </Menu>
+    );
+    const item = wrapper.querySelectorAll('.arco-menu-item')[1];
+    if (activation === 'click') {
+      fireEvent.click(item);
+    } else {
+      fireEvent.keyDown(item, { key: 'Enter', keyCode: 13 });
+    }
+    expect(onClick).not.toHaveBeenCalled();
+    expect(onClickMenuItem).not.toHaveBeenCalled();
+    expect(wrapper.querySelector('.arco-menu-selected')).toHaveTextContent('First');
+  });
+
   it('vertical openKeys', () => {
     const wrapper = render(generateMenu(testProps));
     expect(getComputedStyle(wrapper.querySelector('.arco-menu-inline-content')).height).toBe(
