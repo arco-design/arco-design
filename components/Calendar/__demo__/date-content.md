@@ -43,7 +43,7 @@ const App = () => {
                 <div style={{ padding: '0 10px' }}>
                   <Badge style={badgeStyle} status="default" text="Coding" />
                   <br />
-                  <Badge style={badgeStyle} status="processing" text="Runing" />
+                  <Badge style={badgeStyle} status="processing" text="Running" />
                   <br />
                   <Badge style={badgeStyle} status="success" text="Eating" />
                   <br />

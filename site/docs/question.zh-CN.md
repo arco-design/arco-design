@@ -199,7 +199,7 @@ Modal 和 Drawer 一般作为全屏显示，节点直接挂载在 body。而 pop
 ### 性能问题
 对于大量使用 超出省略 场景，由于默认是通过 js 计算，造成了性能问题，可以尝试给 `Typography` 组件定宽，并且开启 `ellipsis.cssEllipsis` 为 `true` 即可。
 ### 使用谷歌翻译页面之后报错
-这个是因为某版本修复问题，用了 `React.Fragement` 导致的问题。是 React 原生的 bug （[Issue 链接](https://github.com/facebook/react/issues/17256)）。
+这个是因为某版本修复问题，用了 `React.Fragment` 导致的问题。是 React 原生的 bug （[Issue 链接](https://github.com/facebook/react/issues/17256)）。
 可以设置 `ellipsis.wrapper` 解决。比如 `ellipsis={{ wrapper: 'span' }}`。
 
 ## Upload 相关
@@ -212,7 +212,7 @@ Modal 和 Drawer 一般作为全屏显示，节点直接挂载在 body。而 pop
 ### 设置了accept 分别为 txt doc docx pdf 的mime类型，唤起的文件列表还是会存在一些其他 mime 类型
 文件选择器里是否文件允许被选中是浏览器 accept 属性对应的默认行为，组件啥也控制不了。但是你可以在 beforeUpload 里对文件进行再次的判断，过滤掉不符合上传条件的文件。
 ### 上传失败时自定义 Upload 的错误信息提示？
-Upload 的错误提示默认是直接显示上传文件的 repsonse 字段，如果想要自定义上传失败的错误信息展示，自定义下 response 字段就行。（p.s: 如果不大能理解这块，可以试试在控制台打印下 onChange 的参数，会发现 fileList 的每个元素都有一个 response 字段，这块用户是可以完全自定义的）
+Upload 的错误提示默认是直接显示上传文件的 response 字段，如果想要自定义上传失败的错误信息展示，自定义下 response 字段就行。（p.s: 如果不大能理解这块，可以试试在控制台打印下 onChange 的参数，会发现 fileList 的每个元素都有一个 response 字段，这块用户是可以完全自定义的）
 ![官网示例](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/1fa8f4196d544195ba2a8292e7f64e2e~tplv-goo7wpa0wc-image.image)
 
 
