@@ -112,8 +112,9 @@ function Drawer(baseProps: DrawerProps, ref) {
   }, []);
 
   useEffect(() => {
-    if (visible && isFirstRender.current) {
+    if (visible) {
       isFirstRender.current = false;
+      // Keep the drawer mounted through the closing transition after every open.
       setIsRendered(true);
     }
   }, [visible]);
