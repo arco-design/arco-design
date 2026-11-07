@@ -10,7 +10,15 @@ import ResizeObserverPolyfill from 'resize-observer-polyfill';
 import { CSSTransition } from 'react-transition-group';
 import { callbackOriginRef, findDOMNode } from '../_util/react-dom';
 import { on, off, contains, getScrollElements, isScrollElement } from '../_util/dom';
-import { isFunction, isObject, isArray, supportRef } from '../_util/is';
+import {
+  isFunction,
+  isObject,
+  isArray,
+  supportRef,
+  isReact19,
+  isDOMElement,
+  isForwardRefComponent,
+} from '../_util/is';
 import { pickDataAttributes } from '../_util/pick';
 import { Esc } from '../_util/keycode';
 import Portal from './portal';
@@ -871,6 +879,18 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
           })}
         </span>
       );
+    }
+
+    // react 19 移除了 ReactDOM.findDOMNode，类组件、未使用 forwardRef 的函数组件
+    // 无法通过 ref 拿到真实 dom 节点，会触发 findDOMNode 相关警告且导致弹层定位失效。
+    // 此处包裹一层 span 以保证始终能拿到一个真实 dom 节点。
+    if (
+      isReact19 &&
+      React.isValidElement(child) &&
+      !isDOMElement(child) &&
+      !isForwardRefComponent(child)
+    ) {
+      child = <span>{child}</span>;
     }
 
     // 防止为空报错
