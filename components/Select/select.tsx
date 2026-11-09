@@ -495,8 +495,8 @@ function Select(baseProps: SelectProps, ref) {
     }
   };
 
-  const handleOptionClick = (optionValue: OptionProps['value'], disabled: boolean) => {
-    if (disabled) {
+  const handleOptionClick = (optionValue: OptionProps['value'], optionDisabled: boolean) => {
+    if (disabled || optionDisabled) {
       return;
     }
 
