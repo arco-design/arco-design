@@ -482,6 +482,18 @@ export interface FormListProps<
       move: (fromIndex: number, toIndex: number) => void;
     }
   ) => React.ReactNode;
+
+  /**
+   * @zh 将控件的 `value` 进行一定的转换再保存到form中。
+   * @en Convert the `value` to the FormItem
+   */
+  normalize?: (value?: SubFieldValue[]) => any;
+  /**
+   * @zh 将Form内保存的当前控件对应的值进行一定的转换，再传递给控件。
+   * @en Convert the `value` of the FormItem to children;
+   * @version 2.23.0
+   */
+  formatter?: (value?: SubFieldValue[]) => any;
 }
 
 export type FormContextProps<
