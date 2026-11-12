@@ -203,7 +203,13 @@ const Picker = (baseProps: RangePickerProps, ref) => {
 
   const [isTimePanel, setIsTimePanel] = useState<boolean>(false);
 
-  const mergedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
+  const triggerDisabled = isArray(disabled) ? disabled[0] && disabled[1] : disabled;
+  const requestedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
+  const mergedPopupVisible = !triggerDisabled && requestedPopupVisible;
+
+  useUpdate(() => {
+    if (triggerDisabled && requestedPopupVisible) setOpen(false);
+  }, [triggerDisabled]);
   const propsValueDayjs = getDayjsValue(propsValue, format, utcOffset, timezone) as Dayjs[];
   const mergedValue = 'value' in props ? propsValueDayjs : value;
 
@@ -773,6 +779,8 @@ const Picker = (baseProps: RangePickerProps, ref) => {
   }
 
   function renderPopup(panelOnly?: boolean) {
+    if (triggerDisabled && !panelOnly) return null;
+
     const classNames = cs(
       `${prefixCls}-container`,
       {
@@ -887,8 +895,6 @@ const Picker = (baseProps: RangePickerProps, ref) => {
     allowClear,
     prefix: props.prefix,
   };
-
-  const triggerDisabled = isArray(disabled) ? disabled[0] && disabled[1] : disabled;
 
   return (
     <PickerContext.Provider value={{ utcOffset, timezone, weekStart }}>
