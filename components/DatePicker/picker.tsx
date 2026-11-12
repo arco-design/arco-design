@@ -186,7 +186,12 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
   const [isTimePanel, setIsTimePanel] = useState<boolean>(false);
   const [hoverPlaceholderValue, setHoverPlaceholderValue] = useState<string>();
 
-  const mergedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
+  const requestedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
+  const mergedPopupVisible = !disabled && requestedPopupVisible;
+
+  useUpdate(() => {
+    if (disabled && requestedPopupVisible) setOpen(false);
+  }, [disabled]);
   const prevPopupVisibleRef = useRef<boolean>(mergedPopupVisible);
 
   const mergedValue =
@@ -481,6 +486,8 @@ const Picker = (baseProps: InnerPickerProps, ref) => {
   }
 
   function renderPopup(panelOnly?: boolean) {
+    if (disabled && !panelOnly) return null;
+
     const classNames = cs(
       `${prefixCls}-container`,
       {
