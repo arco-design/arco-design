@@ -5,6 +5,7 @@ import componentConfigTest from '../../../tests/componentConfigTest';
 import Dropdown from '..';
 import Button from '../../Button';
 import Menu from '../../Menu';
+import Popconfirm from '../../Popconfirm';
 
 mountTest(Dropdown);
 componentConfigTest(Dropdown.Button, 'Dropdown.Button');
@@ -100,6 +101,129 @@ describe('Dropdown', () => {
 
     simulateMenuItemClick(2);
     judgeTriggerVisible(true);
+  });
+
+  it.each(['click', 'hover'] as const)(
+    'allows a stopped item click to open Popconfirm in a %s dropdown',
+    (trigger) => {
+      const onOk = jest.fn();
+      const onCancel = jest.fn();
+      const onClickMenuItem = jest.fn();
+      const wrapper = render(
+        <Dropdown
+          trigger={trigger}
+          droplist={
+            <Menu onClickMenuItem={onClickMenuItem}>
+              <Menu.Item key="normal">Normal action</Menu.Item>
+              <>
+                <Popconfirm title="Delete this item?" onOk={onOk} onCancel={onCancel}>
+                  <Menu.Item key="remove" onClick={(event) => event.stopPropagation()}>
+                    Delete
+                  </Menu.Item>
+                </Popconfirm>
+              </>
+            </Menu>
+          }
+        >
+          <Button>Open</Button>
+        </Dropdown>
+      );
+      fireEvent[trigger === 'hover' ? 'mouseEnter' : 'click'](
+        wrapper.querySelector('.arco-btn') as HTMLElement
+      );
+      jest.runAllTimers();
+      let confirmationClicks = 0;
+      const openConfirmation = () => {
+        fireEvent.click(document.querySelectorAll('.arco-dropdown-menu-item')[1]);
+        jest.runAllTimers();
+        expect(document.querySelectorAll('.arco-popconfirm')).toHaveLength(1);
+        expect(document.querySelectorAll('.arco-dropdown-menu')).toHaveLength(1);
+        confirmationClicks++;
+        expect(onClickMenuItem).toHaveBeenCalledTimes(confirmationClicks);
+      };
+
+      // The original issue stops propagation on the Menu.Item inside a fragment.
+      openConfirmation();
+      fireEvent.mouseDown(document.querySelectorAll('.arco-popconfirm .arco-btn')[0]);
+      fireEvent.click(document.querySelectorAll('.arco-popconfirm .arco-btn')[0]);
+      jest.runAllTimers();
+      expect(onCancel).toHaveBeenCalledTimes(1);
+      expect(document.querySelectorAll('.arco-popconfirm')).toHaveLength(0);
+      expect(document.querySelectorAll('.arco-dropdown-menu')).toHaveLength(1);
+
+      openConfirmation();
+      fireEvent.mouseDown(document.querySelectorAll('.arco-popconfirm .arco-btn')[1]);
+      fireEvent.click(document.querySelectorAll('.arco-popconfirm .arco-btn')[1]);
+      jest.runAllTimers();
+      expect(onOk).toHaveBeenCalledTimes(1);
+      expect(document.querySelectorAll('.arco-popconfirm')).toHaveLength(0);
+      expect(document.querySelectorAll('.arco-dropdown-menu')).toHaveLength(1);
+
+      // Other menu items retain the usual callback and close behavior.
+      fireEvent.click(document.querySelectorAll('.arco-dropdown-menu-item')[0]);
+      jest.runAllTimers();
+      expect(onClickMenuItem).toHaveBeenCalledTimes(3);
+      expect(onClickMenuItem.mock.calls[2][0]).toBe('normal');
+      expect(document.querySelectorAll('.arco-dropdown-menu')).toHaveLength(0);
+    }
+  );
+
+  it('still closes the dropdown and nested confirmation on an outside click', () => {
+    const wrapper = render(
+      <Dropdown
+        trigger="click"
+        droplist={
+          <Menu>
+            <Popconfirm title="Delete this item?">
+              <Menu.Item key="remove" onClick={(event) => event.stopPropagation()}>
+                Delete
+              </Menu.Item>
+            </Popconfirm>
+          </Menu>
+        }
+      >
+        <Button>Open</Button>
+      </Dropdown>
+    );
+    fireEvent.click(wrapper.querySelector('.arco-btn') as HTMLElement);
+    jest.runAllTimers();
+    fireEvent.click(document.querySelector('.arco-dropdown-menu-item') as HTMLElement);
+    jest.runAllTimers();
+    expect(document.querySelectorAll('.arco-popconfirm')).toHaveLength(1);
+    fireEvent.mouseDown(document.body);
+    jest.runAllTimers();
+    expect(document.querySelectorAll('.arco-popconfirm')).toHaveLength(0);
+    expect(document.querySelectorAll('.arco-dropdown-menu')).toHaveLength(0);
+  });
+
+  it.each([false, true])('supports custom menus with a native event: %s', (withNativeEvent) => {
+    const CustomMenu = ({
+      isMenu,
+      onClickMenuItem,
+    }: {
+      isMenu?: boolean;
+      onClickMenuItem?: (key: string, event?: Event) => void;
+    }) => (
+      <button
+        data-testid="custom-menu-item"
+        role={isMenu ? 'menuitem' : undefined}
+        onClick={(event) => {
+          onClickMenuItem('custom', withNativeEvent ? event.nativeEvent : undefined);
+        }}
+      >
+        Custom action
+      </button>
+    );
+    const wrapper = render(
+      <Dropdown trigger="click" droplist={<CustomMenu isMenu />}>
+        <Button>Open</Button>
+      </Dropdown>
+    );
+    fireEvent.click(wrapper.querySelector('.arco-btn') as HTMLElement);
+    jest.runAllTimers();
+    fireEvent.click(wrapper.getByTestId('custom-menu-item'));
+    jest.runAllTimers();
+    expect(wrapper.queryByTestId('custom-menu-item')).toBeNull();
   });
 
   it('Dropdown.Button mount correctly', () => {
