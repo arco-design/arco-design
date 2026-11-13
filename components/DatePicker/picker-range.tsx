@@ -35,6 +35,7 @@ import {
   getDefaultWeekStart,
   getLocaleDayjsValue,
   getFormatByIndex,
+  getDefaultWeekValue,
   isDisabledDate as checkDisabledDate,
 } from './util';
 import useMergeProps from '../_util/hooks/useMergeProps';
@@ -57,7 +58,7 @@ function getFormat(props) {
       valueFormat = 'YYYY';
       break;
     case 'week':
-      valueFormat = 'YYYY-wo';
+      valueFormat = 'gggg-wo';
       break;
     case 'quarter':
       valueFormat = 'YYYY-[Q]Q';
@@ -158,6 +159,33 @@ const Picker = (baseProps: RangePickerProps, ref) => {
   );
 
   const format = getFormat(props);
+  const useDefaultWeekFormat =
+    mode === 'week' && [0, 1].every((index) => getFormatByIndex(format, index) === 'gggg-wo');
+
+  function getRangeValue(time, offset?: number, zone?: string) {
+    return useDefaultWeekFormat
+      ? getDefaultWeekValue(
+          time,
+          locale.dayjsLocale,
+          offset,
+          zone,
+          props.format ? 'gggg-wo' : 'YYYY-wo'
+        )
+      : getDayjsValue(time, format, offset, zone);
+  }
+
+  function getCallbackStrings(panelDates: Dayjs[], localDates: Dayjs[]) {
+    // Week labels use the displayed calendar; callback dates continue to use the
+    // existing local-time conversion.
+    const dates = useDefaultWeekFormat ? panelDates : localDates;
+    return isArray(dates)
+      ? dates.map(
+          (date, index) =>
+            date &&
+            getLocaleDayjsValue(date, locale.dayjsLocale).format(getFormatByIndex(format, index))
+        )
+      : undefined;
+  }
 
   // get input index when half disabled
   function getAvailableInputIndex() {
@@ -204,7 +232,7 @@ const Picker = (baseProps: RangePickerProps, ref) => {
   const [isTimePanel, setIsTimePanel] = useState<boolean>(false);
 
   const mergedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
-  const propsValueDayjs = getDayjsValue(propsValue, format, utcOffset, timezone) as Dayjs[];
+  const propsValueDayjs = getRangeValue(propsValue, utcOffset, timezone) as Dayjs[];
   const mergedValue = 'value' in props ? propsValueDayjs : value;
 
   const panelValue = shortcutsValue || valueShow || mergedValue || [];
@@ -245,9 +273,9 @@ const Picker = (baseProps: RangePickerProps, ref) => {
     let value;
 
     if (props.value) {
-      value = getDayjsValue(props.value, format, utcOffset, timezone);
+      value = getRangeValue(props.value, utcOffset, timezone);
     } else {
-      value = getDayjsValue(props.defaultValue, format, utcOffset, timezone);
+      value = getRangeValue(props.defaultValue, utcOffset, timezone);
     }
 
     if (isHalfAvailable && (!value || (value && !value[nextFocusedInputIndex]))) {
@@ -260,7 +288,7 @@ const Picker = (baseProps: RangePickerProps, ref) => {
   }
 
   const defaultPageShowDates = mergedValue ||
-    (getDayjsValue(defaultPickerValue, format) as Dayjs[]) || [now, now];
+    (getRangeValue(defaultPickerValue) as Dayjs[]) || [now, now];
 
   // show date at two panels
   const [pageShowDates, setPageShowDates] = useState<Dayjs[]>(
@@ -268,7 +296,7 @@ const Picker = (baseProps: RangePickerProps, ref) => {
   );
 
   const mergedPageShowDate =
-    getShowDatesFromFocused(getDayjsValue(pickerValue, format, utcOffset, timezone) as Dayjs[]) ||
+    getShowDatesFromFocused(getRangeValue(pickerValue, utcOffset, timezone) as Dayjs[]) ||
     pageShowDates;
 
   const previousUtcOffset = usePrevious(utcOffset);
@@ -453,6 +481,16 @@ const Picker = (baseProps: RangePickerProps, ref) => {
 
   // Determine whether the input date is in the correct format
   function isValid(time): boolean {
+    if (useDefaultWeekFormat) {
+      const date = getRangeValue(time) as Dayjs;
+      return (
+        typeof time === 'string' &&
+        date?.isValid() &&
+        date.locale(locale.dayjsLocale).format(getFormatByIndex(format, focusedInputIndex)) ===
+          time &&
+        !isDisabledDate(date)
+      );
+    }
     return (
       isValidTimeString(time, format, focusedInputIndex) &&
       !isDisabledDate(getDayjsValue(time, format) as Dayjs)
@@ -472,7 +510,7 @@ const Picker = (baseProps: RangePickerProps, ref) => {
       setOpen(true);
     }
     if (isValid(niv)) {
-      newValueShow[focusedInputIndex] = getDayjsValue(niv, format) as Dayjs;
+      newValueShow[focusedInputIndex] = getRangeValue(niv) as Dayjs;
       setValueShow(newValueShow);
       setFixedPageShowDates(newValueShow);
       setInputValue(undefined);
@@ -493,13 +531,7 @@ const Picker = (baseProps: RangePickerProps, ref) => {
             getLocaleDayjsValue(toLocal(v, utcOffset, timezone), locale.dayjsLocale)
           )
         : undefined;
-      onChange &&
-        onChange(
-          isArray(localValue)
-            ? localValue.map((v, i) => v && v.format(getFormatByIndex(format, i)))
-            : undefined,
-          localValue
-        );
+      onChange && onChange(getCallbackStrings(newValue, localValue), localValue);
     }
   }
 
@@ -637,11 +669,9 @@ const Picker = (baseProps: RangePickerProps, ref) => {
       getLocaleDayjsValue(toLocal(v, utcOffset, timezone), locale.dayjsLocale)
     );
     onSelect &&
-      onSelect(
-        zoneValues.map((v, i) => v && v.format(getFormatByIndex(format, i))),
-        zoneValues,
-        { type: focusedInputIndex === 1 ? 'end' : 'start' }
-      );
+      onSelect(getCallbackStrings(sortedValues, zoneValues), zoneValues, {
+        type: focusedInputIndex === 1 ? 'end' : 'start',
+      });
   }
 
   // Switch to next focused input
