@@ -270,6 +270,14 @@
     .@{menu-prefix-cls}-inline-header {
       padding-right: @menu-vertical-item-padding-horizontal + 16;
     }
+
+    &.@{menu-prefix-cls}-collapse {
+      // 折叠时不为已隐藏的 suffixIcon 预留空间
+      .@{menu-prefix-cls}-pop-header,
+      .@{menu-prefix-cls}-inline-header {
+        padding-right: @menu-vertical-item-padding-horizontal;
+      }
+    }
   }
 
   // 水平菜单中，仅允许出现普通 item 和 popSubMenu
@@ -539,6 +547,13 @@
     .@{menu-prefix-cls}-inline-header {
       padding-right: @menu-vertical-item-padding-horizontal;
       padding-left: @menu-vertical-item-padding-horizontal + 16;
+    }
+
+    &.@{menu-prefix-cls}-collapse {
+      .@{menu-prefix-cls}-pop-header,
+      .@{menu-prefix-cls}-inline-header {
+        padding-left: @menu-vertical-item-padding-horizontal;
+      }
     }
   }
 
