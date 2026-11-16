@@ -70,13 +70,21 @@ ReactDOM.render(
 
 ## React 19
 
-Need to be introduced directly at the top of the entry file
+React 19 removes `ReactDOM.render`. Before calling static methods such as `Modal.confirm`, `Message`, or `Notification`, import the adapter in your application entry to register `createRoot` from `react-dom/client` with Arco. Using `createRoot` to mount your application does not perform this registration.
 
-```
+For components from the ES module (`es`) build:
+
+```js
 import '@arco-design/web-react/es/_util/react-19-adapter';
-
 ```
 
+If your build configuration or on-demand import plugin uses CommonJS (`lib`) components, use the `lib` adapter instead:
+
+```js
+import '@arco-design/web-react/lib/_util/react-19-adapter';
+```
+
+The adapter must match the component build: the `es` adapter configures only the `es` renderer, and the `lib` adapter configures only the `lib` renderer. Both entries are declared as side effects so production builds preserve their initialization.
 
 ## Load on Demand
 
