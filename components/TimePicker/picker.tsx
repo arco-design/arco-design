@@ -109,7 +109,12 @@ const Picker = (baseProps: InnerPickerProps) => {
   // controlled mode / uncontrolled mode
   const mergedValue =
     'value' in props ? getDayjsValue(propsValue, format, utcOffset, timezone) : value;
-  const mergedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
+  const requestedPopupVisible = 'popupVisible' in props ? props.popupVisible : popupVisible;
+  const mergedPopupVisible = !disabled && requestedPopupVisible;
+
+  useUpdate(() => {
+    if (disabled && requestedPopupVisible) setOpen(false);
+  }, [disabled]);
 
   const previousUtcOffset = usePrevious(utcOffset);
   const previousTimezone = usePrevious(timezone);
@@ -188,6 +193,8 @@ const Picker = (baseProps: InnerPickerProps) => {
   }
 
   function renderPopup(panelOnly?: boolean) {
+    if (disabled && !panelOnly) return null;
+
     const vs = isRangePicker
       ? isArray(valueShow) && valueShow.length
         ? valueShow
