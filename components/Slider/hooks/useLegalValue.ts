@@ -101,7 +101,7 @@ export default function useLegalValue(props: {
 
       let newValue = plus(value, multi * props.step);
       if (props.onlyMarkValue) {
-        const markKeys = Object.keys(props.marks);
+        const markKeys = Object.keys(props.marks).sort((a, b) => Number(a) - Number(b));
         const currentIndex = markKeys.findIndex((key) => Number(key) === value);
         newValue =
           markKeys[currentIndex + multi] !== undefined
