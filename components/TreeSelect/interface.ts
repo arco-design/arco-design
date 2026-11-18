@@ -83,7 +83,7 @@ export interface TreeSelectProps extends SelectViewCommonProps {
   /**
    * @zh 定制回显方式
    * @en Customize the return value
-   * @defaultValue all
+   * @defaultValue child
    */
   treeCheckedStrategy?: TreeProps['checkedStrategy'];
   /**
