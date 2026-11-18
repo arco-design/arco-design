@@ -34,7 +34,7 @@
 |maxTagCount|最多显示多少个 `tag`，仅在多选或标签模式有效。设置 `responsive` 响应式显示标签数不建议在选项较多时使用，可能存在性能问题，|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
 |size|分别不同尺寸的选择器。对应 `24px`, `28px`, `32px`, `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|状态|'error' \| 'warning' |`-`|2.45.0|
-|treeCheckedStrategy|定制回显方式|[TreeProps](tree#tree)['checkedStrategy'] |`all`|-|
+|treeCheckedStrategy|定制回显方式|[TreeProps](tree#tree)['checkedStrategy'] |`child`|-|
 |addBefore|选择框前添加元素|ReactNode |`-`|2.41.0|
 |clearIcon|`allowClear` 时配置清除按钮的图标。|ReactNode |`-`|2.26.0|
 |notFoundContent|没有数据时显示的内容|ReactNode |`-`|-|

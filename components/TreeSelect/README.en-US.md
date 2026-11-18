@@ -34,7 +34,7 @@ Can choose tree structure data.Only Single choice is supports.
 |maxTagCount|The maximum number of `tags` is displayed, only valid in `multiple` and `label` mode. Setting the number of `responsive` responsive display tags is not recommended when there are many options, as there may be performance issues.|\| number\| 'responsive'\| {count: number \| 'responsive';render?: (invisibleTagCount: number) => ReactNode;} |`-`|Object type in 2.37.0. `responsive ` in `2.62.0`|
 |size|Height of element, `24px` `28px` `32px` `36px`|'mini' \| 'small' \| 'default' \| 'large' |`-`|-|
 |status|Status|'error' \| 'warning' |`-`|2.45.0|
-|treeCheckedStrategy|Customize the return value|[TreeProps](tree#tree)['checkedStrategy'] |`all`|-|
+|treeCheckedStrategy|Customize the return value|[TreeProps](tree#tree)['checkedStrategy'] |`child`|-|
 |addBefore|The label text displayed before (on the left side of) the select field|ReactNode |`-`|2.41.0|
 |clearIcon|Configure the icon of the clear button when `allowClear`.|ReactNode |`-`|2.26.0|
 |notFoundContent|The content display when no data|ReactNode |`-`|-|
