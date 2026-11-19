@@ -1,0 +1,113 @@
+@import '../../style/theme/default.less';
+@import './token.less';
+
+@snake-prefix-cls: ~'@{prefix}-snake';
+
+.@{snake-prefix-cls} {
+  display: inline-block;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: @snake-spacing-header-v @snake-spacing-header-h;
+    background-color: @snake-color-header-bg;
+    border: 1px solid @snake-color-border;
+    border-bottom: none;
+    border-radius: @snake-border-radius @snake-border-radius 0 0;
+    box-sizing: border-box;
+  }
+
+  &-score {
+    font-size: @snake-font-size-score;
+    color: @snake-color-text;
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    gap: @snake-spacing-overlay-gap;
+  }
+
+  &-board {
+    position: relative;
+    background-color: @snake-color-board-bg;
+    border: 1px solid @snake-color-border;
+    border-radius: 0 0 @snake-border-radius @snake-border-radius;
+    overflow: hidden;
+    box-sizing: content-box;
+  }
+
+  &-cell {
+    position: absolute;
+    box-sizing: border-box;
+
+    &-head {
+      background-color: @snake-color-head;
+      border-radius: @snake-border-radius-cell;
+    }
+
+    &-body {
+      background-color: @snake-color-body;
+      border-radius: @snake-border-radius-cell;
+    }
+
+    &-food {
+      background-color: @snake-color-food;
+      border-radius: 50%;
+    }
+  }
+
+  &-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: @snake-spacing-overlay-gap;
+    background-color: @snake-color-overlay-bg;
+
+    &-title {
+      margin: 0;
+      font-size: @snake-font-size-title;
+      font-weight: 600;
+      color: @snake-color-overlay-text;
+    }
+
+    &-score {
+      margin: 0;
+      font-size: @snake-font-size-score;
+      color: @snake-color-overlay-text;
+    }
+
+    &-hint {
+      margin: 0;
+      font-size: @snake-font-size-hint;
+      color: @snake-color-overlay-hint;
+    }
+  }
+
+  &-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: @snake-spacing-btn-v @snake-spacing-btn-h;
+    background-color: @snake-color-btn-bg;
+    color: @snake-color-btn-text;
+    font-size: @snake-font-size-btn;
+    border: none;
+    border-radius: @snake-border-radius;
+    cursor: pointer;
+    outline: none;
+    transition: background-color @transition-duration-1 @transition-timing-function-linear;
+
+    &:hover {
+      background-color: @snake-color-btn-bg-hover;
+    }
+
+    &:active {
+      background-color: @snake-color-btn-bg-active;
+    }
+  }
+}

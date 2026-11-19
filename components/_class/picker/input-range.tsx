@@ -9,7 +9,7 @@ import React, {
 } from 'react';
 import { Dayjs } from 'dayjs';
 import IconClose from '../../../icon/react-icon/IconClose';
-import IconHover from '../../_class/icon-hover';
+import IconHover from '../icon-hover';
 import cs from '../../_util/classNames';
 import { Enter, Tab } from '../../_util/keycode';
 import omit from '../../_util/omit';
