@@ -35,5 +35,6 @@ export type DataType = {
   label?: ReactNode;
   value?: ReactNode;
   span?: number;
+  columnSpan?: number;
 }[];
 ```
