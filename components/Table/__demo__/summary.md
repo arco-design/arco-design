@@ -149,7 +149,7 @@ const App = () => {
               <Table.Summary.Cell />
             </Table.Summary.Row>
             <Table.Summary.Row>
-              <Table.Summary.Cell>Avarage</Table.Summary.Cell>
+              <Table.Summary.Cell>Average</Table.Summary.Cell>
               <Table.Summary.Cell colSpan={3}>
                 <Typography.Text type="success">
                   {currentData.reduce((prev, next) => prev + next.salary, 0) / 5}
