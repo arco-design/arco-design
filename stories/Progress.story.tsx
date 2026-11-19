@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Progress, InputNumber } from '@self';
 
 function Demo1() {
-  const [value, setValue] = useState<number>(800);
+  const [value, setValue] = useState<number>(80);
 
   return (
     <div style={{ width: 600 }}>
