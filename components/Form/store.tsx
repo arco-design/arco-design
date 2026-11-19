@@ -524,6 +524,18 @@ class Store<
           }
         });
 
+        // Keep Form.List values in sync with onValuesChange when the list was operated on.
+        this.getRegisteredFields(true, { containFormList: true }).forEach((control) => {
+          if (control.props?.isFormList && control.isTouched()) {
+            const field = control.props.field;
+            const listValue = get(this.store, field);
+            const existing = get(values, field);
+            if (isArray(listValue) && (existing === undefined || existing === null)) {
+              set(values, field, cloneDeep(listValue));
+            }
+          }
+        });
+
         if (Object.keys(errors).length) {
           onValidateFail(errors);
           callback && callback(errors, cloneDeep(values));
