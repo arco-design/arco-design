@@ -89,7 +89,7 @@ exports[`renders Upload/demo/basic.md correctly 1`] = `
       </div>
     </div>
     <div
-      class="arco-upload-list arco-upload-list-type-text"
+      class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
     />
   </div>
   <div>
@@ -130,7 +130,7 @@ exports[`renders Upload/demo/basic.md correctly 1`] = `
       </div>
     </div>
     <div
-      class="arco-upload-list arco-upload-list-type-text"
+      class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
     />
   </div>
 </div>
@@ -174,7 +174,7 @@ exports[`renders Upload/demo/beforeUpload.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-upload-list arco-upload-list-type-text"
+    class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
   />
 </div>
 `;
@@ -182,7 +182,7 @@ exports[`renders Upload/demo/beforeUpload.md correctly 1`] = `
 exports[`renders Upload/demo/crop.md correctly 1`] = `
 <div>
   <div
-    class="arco-upload-list arco-upload-list-type-picture-card"
+    class="arco-upload-list arco-upload-list-type-picture-card arco-upload-list-empty"
   />
   <div
     class="arco-upload arco-upload-type-picture-card"
@@ -263,7 +263,7 @@ Array [
     </div>
   </div>,
   <div
-    class="arco-upload-list arco-upload-list-type-text"
+    class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
   />,
 ]
 `;
@@ -307,7 +307,7 @@ exports[`renders Upload/demo/directory.md correctly 1`] = `
       </div>
     </div>
     <div
-      class="arco-upload-list arco-upload-list-type-text"
+      class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
     />
   </div>
 </div>
@@ -359,7 +359,7 @@ Array [
     </div>
   </div>,
   <div
-    class="arco-upload-list arco-upload-list-type-text"
+    class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
   />,
 ]
 `;
@@ -708,7 +708,7 @@ Array [
     </div>
   </div>,
   <div
-    class="arco-upload-list arco-upload-list-type-text"
+    class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
   />,
 ]
 `;
@@ -775,7 +775,7 @@ Array [
     </div>
   </div>,
   <div
-    class="arco-upload-list arco-upload-list-type-text"
+    class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
   />,
 ]
 `;
@@ -1862,7 +1862,7 @@ exports[`renders Upload/demo/trigger.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="arco-upload-list arco-upload-list-type-text"
+    class="arco-upload-list arco-upload-list-type-text arco-upload-list-empty"
   />
 </div>
 `;
