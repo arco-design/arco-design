@@ -19,7 +19,7 @@ export default function useComposition({
   normalizeHandler,
 }: {
   value: string;
-  maxLength: number;
+  maxLength: string | number;
   onChange: InputProps['onChange'];
   onKeyDown: InputProps['onKeyDown'] | TextAreaProps['onKeyDown'];
   onPressEnter: InputProps['onPressEnter'];
@@ -46,7 +46,7 @@ export default function useComposition({
       // Avoid triggering onChange repeatedly for the same value
       // Compositionend is earlier than onchange in Firefox, different with chrome
       newValue !== value &&
-      (maxLength === undefined || newValue.length <= maxLength)
+      (maxLength === undefined || newValue.length <= Number(maxLength) || maxLength === '')
     ) {
       onChange(newValue, e);
     }
