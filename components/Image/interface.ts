@@ -50,6 +50,12 @@ export interface ImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'c
    */
   footerPosition?: 'inner' | 'outer';
   /**
+   * @zh 图片原生的style object-fit
+   * @en img style object-fit
+   * @defaultValue none
+   */
+  fit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
+  /**
    * @zh 是否开启简洁模式
    * @en Whether to enable simple mode
    */
