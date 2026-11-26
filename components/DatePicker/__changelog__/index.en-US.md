@@ -1,3 +1,11 @@
+## 2.66.19
+
+2026-11-26
+
+### 🐛 BugFix
+
+- Fix incorrect week-years and week-string parsing and round-trips in RangePicker with the default week format, including explicit default formats and timezone configurations.([#3221](https://github.com/arco-design/arco-design/pull/3221))
+
 ## 2.66.14
 
 2026-04-16

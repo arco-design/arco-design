@@ -1,3 +1,11 @@
+## 2.66.19
+
+2026-11-26
+
+### 🐛 问题修复
+
+- 修复设置 `unmountOnExit` 后，重复关闭抽屉时 `afterClose` 不再触发的问题。([#3215](https://github.com/arco-design/arco-design/pull/3215))
+
 ## 2.66.9
 
 2026-01-09

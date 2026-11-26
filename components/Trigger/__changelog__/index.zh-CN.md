@@ -1,3 +1,11 @@
+## 2.66.19
+
+2026-11-26
+
+### 🆕 功能升级
+
+- 新增 `isUseAllBoundaryDistances`，支持独立应用已配置的视口留白，并在弹层偏移后执行边界限制。([#3225](https://github.com/arco-design/arco-design/pull/3225))
+
 ## 2.66.16
 
 2026-07-14

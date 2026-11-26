@@ -1,3 +1,11 @@
+## 2.66.19
+
+2026-11-26
+
+### 🐛 BugFix
+
+- Fix `afterClose` not firing on repeated closes when `unmountOnExit` is enabled.([#3215](https://github.com/arco-design/arco-design/pull/3215))
+
 ## 2.66.9
 
 2026-01-09

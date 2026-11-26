@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.66.19
+
+2026-11-26
+
+### 🆕 功能升级
+
+- 新增 `isUseAllBoundaryDistances`，支持独立应用已配置的视口留白，并在弹层偏移后执行边界限制。([#3225](https://github.com/arco-design/arco-design/pull/3225))
+
+### 🐛 问题修复
+
+- 修复 RangePicker 周选择跨年时周年份错误，以及默认周格式在时区转换、字符串回填和显式指定时的解析与显示问题。([#3221](https://github.com/arco-design/arco-design/pull/3221))
+- 修复设置 `unmountOnExit` 后，重复关闭抽屉时 `afterClose` 不再触发的问题。([#3215](https://github.com/arco-design/arco-design/pull/3215))
+
 ## 2.66.17
 
 2026-10-10

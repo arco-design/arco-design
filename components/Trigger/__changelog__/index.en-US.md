@@ -1,3 +1,11 @@
+## 2.66.19
+
+2026-11-26
+
+### 🆕 Feature
+
+- Add `isUseAllBoundaryDistances` to apply configured viewport padding independently and enforce it after popup offsets.([#3225](https://github.com/arco-design/arco-design/pull/3225))
+
 ## 2.66.16
 
 2026-07-14

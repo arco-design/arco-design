@@ -2,6 +2,19 @@
 changelog: true
 ---
 
+## 2.66.19
+
+2026-11-26
+
+### 🆕 Feature
+
+- Add `isUseAllBoundaryDistances` to apply configured viewport padding independently and enforce it after popup offsets.([#3225](https://github.com/arco-design/arco-design/pull/3225))
+
+### 🐛 BugFix
+
+- Fix incorrect week-years and week-string parsing and round-trips in RangePicker with the default week format, including explicit default formats and timezone configurations.([#3221](https://github.com/arco-design/arco-design/pull/3221))
+- Fix `afterClose` not firing on repeated closes when `unmountOnExit` is enabled.([#3215](https://github.com/arco-design/arco-design/pull/3215))
+
 ## 2.66.17
 
 2026-10-10
