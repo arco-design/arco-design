@@ -4,7 +4,7 @@ const Calendar = {
   formatYear: 'YYYY',
   formatMonth: 'MM/YYYY',
   monthBeforeYear: true,
-  today: 'Cегодня',
+  today: 'Сегодня',
   view: {
     month: 'месяц',
     year: 'год',
@@ -87,7 +87,7 @@ export default {
     },
     selectTime: 'период отбора',
     selectDate: 'выберите дату',
-    today: 'Cегодня',
+    today: 'Сегодня',
     now: 'В настоящее время',
     ok: 'OK',
   },
