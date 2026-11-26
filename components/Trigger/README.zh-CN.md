@@ -25,6 +25,7 @@
 |defaultPopupVisible|默认弹出框开启或关闭|boolean |`-`|-|
 |disabled|是否禁用|boolean |`-`|-|
 |escToClose|是否允许按 `ESC` 键关闭弹出框。|boolean |`-`|-|
+|isUseAllBoundaryDistances|是否独立应用 `boundaryDistance` 中设置的各侧视口留白。仅在 `autoFitPosition=true` 且 `alignPoint=false` 时生效。|boolean |`false`|-|
 |mouseLeaveToClose|是否在鼠标移出触发节点和弹出层的时候关闭弹出层|boolean |`true`|2.22.0|
 |popupHoverStay|是否在鼠标移出触发节点，移入弹出框时保留弹出框。|boolean |`true`|-|
 |popupVisible|设置弹出框开启或关闭|boolean |`-`|-|

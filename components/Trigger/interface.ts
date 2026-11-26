@@ -137,6 +137,12 @@ export interface TriggerProps {
     | { right?: number; bottom?: number }
     | { right?: number; top?: number };
   /**
+   * @zh 是否独立应用 `boundaryDistance` 中设置的各侧视口留白。仅在 `autoFitPosition=true` 且 `alignPoint=false` 时生效。
+   * @en Whether to apply each configured `boundaryDistance` independently as viewport padding. Only takes effect when `autoFitPosition=true` and `alignPoint=false`.
+   * @defaultValue false
+   */
+  isUseAllBoundaryDistances?: boolean;
+  /**
    * @zh 是否在鼠标移出触发节点，移入弹出框时保留弹出框。
    * @en Whether the popup is visible when the mouse hovers over the popup.
    * @defaultValue true

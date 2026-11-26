@@ -25,6 +25,7 @@ Used to pop up a drop-down box by hovering, focusing, or clicking on a element.
 |defaultPopupVisible|Whether the popup is visible by default|boolean |`-`|-|
 |disabled|Whether to disable|boolean |`-`|-|
 |escToClose|Whether to allow close the popup by pressing `ESC`.|boolean |`-`|-|
+|isUseAllBoundaryDistances|Whether to apply each configured `boundaryDistance` independently as viewport padding. Only takes effect when `autoFitPosition=true` and `alignPoint=false`.|boolean |`false`|-|
 |mouseLeaveToClose|Whether to allow close the popup by clicking the child node.|boolean |`true`|2.22.0|
 |popupHoverStay|Whether the popup is visible when the mouse hovers over the popup.|boolean |`true`|-|
 |popupVisible|Whether the popup is visible|boolean |`-`|-|

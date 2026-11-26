@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import ResizeObserverPolyfill from 'resize-observer-polyfill';
 import { CSSTransition } from 'react-transition-group';
+import shallowEqual from 'shallowequal';
 import { callbackOriginRef, findDOMNode } from '../_util/react-dom';
 import { on, off, contains, getScrollElements, isScrollElement } from '../_util/dom';
 import { isFunction, isObject, isArray, supportRef } from '../_util/is';
@@ -17,7 +18,7 @@ import Portal from './portal';
 import ResizeObserver from '../_util/resizeObserver';
 import cs from '../_util/classNames';
 import { ConfigContext } from '../ConfigProvider';
-import getStyle, { getBoundingClientRect } from './getPopupStyle';
+import getStyle, { getAllBoundaryDistances, getBoundingClientRect } from './getPopupStyle';
 import throttleByRaf from '../_util/throttleByRaf';
 import { TriggerProps, MouseLocationType } from './interface';
 import { raf, caf } from '../_util/raf';
@@ -182,6 +183,8 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
   // 保存children节点的尺寸。 主要用于在弹出层动画前和动画完成后比较尺寸是否有变化。
   childrenDomSize: ReturnType<typeof getDOMPos> = {};
 
+  private allBoundaryDistances: ReturnType<typeof getAllBoundaryDistances>;
+
   getMergedProps = (basePropsOrKeys?): PropsWithChildren<TriggerProps> => {
     const { componentConfig } = this.context;
     const props = mergeProps<PropsWithChildren<TriggerProps>>(
@@ -250,12 +253,15 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
       return;
     }
 
+    const allBoundaryDistances = getAllBoundaryDistances(currentProps);
+    const boundaryDistancesChanged = !shallowEqual(this.allBoundaryDistances, allBoundaryDistances);
+    this.allBoundaryDistances = allBoundaryDistances;
     const rect = getDOMPos(this.childrenDom, {
       boundaryDistance: this.props.alignPoint ? {} : this.props.boundaryDistance,
       position: this.props.position,
     });
     // children节点的尺寸改变，主要是处理children 存在scale等动画属性，或者移动位置的时候，popup 的位置有问题
-    if (JSON.stringify(rect) !== JSON.stringify(this.childrenDomSize)) {
+    if (boundaryDistancesChanged || JSON.stringify(rect) !== JSON.stringify(this.childrenDomSize)) {
       this.updatePopupPosition();
       this.childrenDomSize = rect;
     }
@@ -574,6 +580,16 @@ class Trigger extends PureComponent<TriggerProps, TriggerState> {
     const target = this.triggerRef.current;
     const popupStyle = this.getPopupStyle();
     if (target && popupStyle) {
+      if (this.allBoundaryDistances) {
+        const style = this.getMergedProps(['style']).style || {};
+        if (style.top == null) {
+          target.style.top = `${popupStyle.top}px`;
+        }
+        if (style.left == null) {
+          target.style.left = `${popupStyle.left}px`;
+        }
+        return;
+      }
       const style = this.props.style || {};
       target.style.top = String(style.top || `${popupStyle.top}px`);
       target.style.left = String(style.left || `${popupStyle.left}px`);
