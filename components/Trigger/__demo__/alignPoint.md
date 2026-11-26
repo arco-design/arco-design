@@ -2,7 +2,7 @@
 order: 4
 title:
   zh-CN: 跟随鼠标显示弹出层
-  en-US: algin mouse position
+  en-US: align mouse position
 ---
 
 ## zh-CN
