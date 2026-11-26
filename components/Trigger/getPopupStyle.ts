@@ -5,6 +5,28 @@ import { TriggerProps, MouseLocationType } from './interface';
 
 const defaultBoundaryDistanceValue = 0;
 
+type BoundaryDistances = Partial<Record<'left' | 'right' | 'top' | 'bottom', number>>;
+
+const getValidDistance = (distance?: number) =>
+  Number.isFinite(distance) && distance >= 0 ? distance : undefined;
+
+export function getAllBoundaryDistances(props: TriggerProps): BoundaryDistances | undefined {
+  if (props.isUseAllBoundaryDistances !== true || !props.autoFitPosition || props.alignPoint) {
+    return undefined;
+  }
+
+  const { left, right, top, bottom }: BoundaryDistances = props.boundaryDistance || {};
+  const distances = {
+    left: getValidDistance(left),
+    right: getValidDistance(right),
+    top: getValidDistance(top),
+    bottom: getValidDistance(bottom),
+  };
+  return Object.keys(distances).some((side) => distances[side] !== undefined)
+    ? distances
+    : undefined;
+}
+
 export const getBoundingClientRect = (
   dom,
   options: {
@@ -250,7 +272,8 @@ export default (
   }
   const style: { left?: number; top?: number } = {};
 
-  const boundaryDistance = (!props.alignPoint && props.boundaryDistance) || {};
+  const allBoundaryDistances = getAllBoundaryDistances(props);
+  const boundaryDistance = (!allBoundaryDistances && !alignPoint && props.boundaryDistance) || {};
 
   // 如果跟随鼠标，相当于鼠标位置作为 child
   const childRect = getChildRect(child, alignPoint && mouseLocation, {
@@ -281,20 +304,25 @@ export default (
 
   let realPosition = props.position;
   const arrowStyle: { left?: number; top?: number } = {};
+  // Viewport origin expressed in the popup container's coordinate system.
+  const boundary = {
+    left: left - childRect.left,
+    top: top - childRect.top,
+  };
+  const viewport = allBoundaryDistances && getViewportSize({});
 
   const autoPosition = (direction) => {
     if (!props.autoFitPosition) {
       return;
     }
     // document.documentElement?.clientHeight 是为了排除横向滚动条的高度影响。
-    const { windowHeight, windowWidth } = getViewportSize(boundaryDistance);
+    const { windowHeight, windowWidth } = viewport || getViewportSize(boundaryDistance);
+    const leftDistance = allBoundaryDistances?.left ?? 0;
+    const topDistance = allBoundaryDistances?.top ?? 0;
+    const rightEdge = windowWidth - (allBoundaryDistances?.right ?? 0);
+    const bottomEdge = windowHeight - (allBoundaryDistances?.bottom ?? 0);
 
     let result = false; // 是否进行了位置调整
-    // 视口左侧/顶部到 popupContainer 的距离
-    const boundary = {
-      left: left - childRect.left,
-      top: top - childRect.top,
-    };
     const { top: styleTop = 0, left: styleLeft = 0 } = style;
 
     // 水平方向微调
@@ -327,54 +355,57 @@ export default (
         style.top = Math.max(style.top as number, top - contentSize.height + childRect.height / 2);
       }
     }
-    if (direction === 'top' && boundary.top > styleTop) {
+    if (direction === 'top' && boundary.top + topDistance > styleTop) {
       // 上面被遮挡，判断是否下方空间可容纳弹出层。只需要满足比上方空间大，即使小于弹出层高度，也进行位置调整。
-      if (childRect.top < windowHeight - childRect.bottom) {
+      if (childRect.top - topDistance < bottomEdge - childRect.bottom) {
         // 放到下面
         style.top = Math.min(
           top + height + (alignTop || 0),
-          boundary.top + windowHeight - contentSize.height
+          boundary.top + bottomEdge - contentSize.height
         );
         result = true;
       } else {
         // 贴顶部边界
-        style.top = boundary.top;
+        style.top = boundary.top + topDistance;
       }
     }
-    if (direction === 'bottom' && styleTop - boundary.top + contentSize.height > windowHeight) {
+    if (direction === 'bottom' && styleTop - boundary.top + contentSize.height > bottomEdge) {
       // 下部分被遮挡
-      if (windowHeight - childRect.bottom < childRect.top) {
+      if (bottomEdge - childRect.bottom < childRect.top - topDistance) {
         // 放到上面
-        style.top = Math.max(top - contentSize.height - (alignBottom || 0), boundary.top);
+        style.top = Math.max(
+          top - contentSize.height - (alignBottom || 0),
+          boundary.top + topDistance
+        );
 
         result = true;
       } else {
         // 贴底边界
-        style.top = boundary.top + windowHeight - contentSize.height;
+        style.top = boundary.top + bottomEdge - contentSize.height;
       }
     }
-    if (direction === 'left' && boundary.left > styleLeft) {
+    if (direction === 'left' && boundary.left + leftDistance > styleLeft) {
       // 左边被遮挡
-      if (childRect.left < windowWidth - childRect.right) {
+      if (childRect.left - leftDistance < rightEdge - childRect.right) {
         // 放到右边
         style.left = Math.min(
           width + left + alignRight,
-          boundary.left + windowWidth - contentSize.width
+          boundary.left + rightEdge - contentSize.width
         );
         result = true;
       } else {
-        style.left = boundary.left;
+        style.left = boundary.left + leftDistance;
       }
     }
-    if (direction === 'right' && styleLeft - boundary.left + contentSize.width > windowWidth) {
+    if (direction === 'right' && styleLeft - boundary.left + contentSize.width > rightEdge) {
       // 右边被遮挡
-      if (windowWidth - childRect.right < childRect.left) {
+      if (rightEdge - childRect.right < childRect.left - leftDistance) {
         // 放到左边
-        style.left = Math.max(left - contentSize.width - alignLeft, boundary.left);
+        style.left = Math.max(left - contentSize.width - alignLeft, boundary.left + leftDistance);
         result = true;
       } else {
         // 贴左边界
-        style.left = boundary.left + windowWidth - contentSize.width;
+        style.left = boundary.left + rightEdge - contentSize.width;
       }
     }
 
@@ -384,10 +415,7 @@ export default (
     } else {
       // 限制在可见容器中。不能直接使用 mountContainer.scrollWidth，它可能已被绝对定位弹层自身撑大。
       const visibleArea = getContainerVisibleArea(mountContainer, windowWidth, boundary.left);
-      const maxLeft = Math.max(
-        0,
-        visibleArea.left + visibleArea.width - contentSize.width
-      );
+      const maxLeft = Math.max(0, visibleArea.left + visibleArea.width - contentSize.width);
       style.left = Math.min(maxLeft, style.left);
     }
 
@@ -397,12 +425,40 @@ export default (
   const horizontalOffset = popupAlign.horizontalOffset || 0;
   const verticalOffset = popupAlign.verticalOffset || 0;
 
+  const offsetPopup = (axis: 'left' | 'top', offset: number) => {
+    style[axis] += offset;
+    if (!allBoundaryDistances) {
+      return;
+    }
+
+    const { left, right, top, bottom } = allBoundaryDistances;
+    // Apply the right and bottom limits first so left and top win when the popup is too large.
+    if (right !== undefined) {
+      style.left = Math.min(
+        style.left,
+        boundary.left + viewport.windowWidth - right - contentSize.width
+      );
+    }
+    if (bottom !== undefined) {
+      style.top = Math.min(
+        style.top,
+        boundary.top + viewport.windowHeight - bottom - contentSize.height
+      );
+    }
+    if (left !== undefined) {
+      style.left = Math.max(style.left, boundary.left + left);
+    }
+    if (top !== undefined) {
+      style.top = Math.max(style.top, boundary.top + top);
+    }
+  };
+
   switch (props.position) {
     case 'top': {
       style.top = top - contentSize.height - alignTop;
       style.left = left + width / 2 - contentSize.width / 2;
       autoPosition('top') && (realPosition = 'bottom');
-      style.left += horizontalOffset;
+      offsetPopup('left', horizontalOffset);
 
       const arrowLeft = left - Number(style.left) + width / 2;
       arrowStyle.left = getInsideValue(12, contentSize.width - 12, arrowLeft);
@@ -412,7 +468,7 @@ export default (
       style.top = top - contentSize.height - alignTop;
       style.left = left;
       autoPosition('top') && (realPosition = 'bl');
-      style.left += horizontalOffset;
+      offsetPopup('left', horizontalOffset);
       let arrowLeft = left - Number(style.left) + Math.min(width / 2, 50);
       arrowStyle.left = getInsideValue(12, contentSize.width - 12, arrowLeft);
       break;
@@ -420,7 +476,7 @@ export default (
       style.top = -content.clientHeight + top - alignTop;
       style.left = left + width - contentSize.width;
       autoPosition('top') && (realPosition = 'br');
-      style.left += horizontalOffset;
+      offsetPopup('left', horizontalOffset);
       arrowLeft = left - Number(style.left) + Math.max(width / 2, width - 50);
       arrowStyle.left = getInsideValue(12, contentSize.width - 12, arrowLeft);
       break;
@@ -428,7 +484,7 @@ export default (
       style.top = height + top + alignBottom;
       style.left = left + width / 2 - contentSize.width / 2;
       autoPosition('bottom') && (realPosition = 'top');
-      style.left += horizontalOffset;
+      offsetPopup('left', horizontalOffset);
 
       const arrowLeft = left - Number(style.left) + width / 2;
       arrowStyle.left = getInsideValue(12, contentSize.width - 12, arrowLeft);
@@ -438,7 +494,7 @@ export default (
       style.top = height + top + alignBottom;
       style.left = left;
       autoPosition('bottom') && (realPosition = 'tl');
-      style.left += horizontalOffset;
+      offsetPopup('left', horizontalOffset);
       arrowLeft = left - Number(style.left) + Math.min(width / 2, 50);
       arrowStyle.left = getInsideValue(12, contentSize.width - 12, arrowLeft);
       break;
@@ -446,7 +502,7 @@ export default (
       style.top = height + top + alignBottom;
       style.left = left + width - contentSize.width;
       autoPosition('bottom') && (realPosition = 'tr');
-      style.left += horizontalOffset;
+      offsetPopup('left', horizontalOffset);
       arrowLeft = left - Number(style.left) + Math.max(width / 2, width - 50);
       arrowStyle.left = getInsideValue(12, contentSize.width - 12, arrowLeft);
       break;
@@ -454,7 +510,7 @@ export default (
       style.top = top + height / 2 - contentSize.height / 2;
       style.left = left - contentSize.width - alignLeft;
       autoPosition('left') && (realPosition = 'right');
-      style.top += verticalOffset;
+      offsetPopup('top', verticalOffset);
       const arrowTop = top - Number(style.top) + height / 2;
       arrowStyle.top = getInsideValue(12, contentSize.height - 12, arrowTop);
       break;
@@ -464,7 +520,7 @@ export default (
       style.top = top;
       style.left = left - contentSize.width - alignLeft;
       autoPosition('left') && (realPosition = 'rt');
-      style.top += verticalOffset;
+      offsetPopup('top', verticalOffset);
       let arrowTop = top - Number(style.top) + Math.min(height / 2, 50);
       arrowStyle.top = getInsideValue(12, contentSize.height - 12, arrowTop);
       break;
@@ -472,7 +528,7 @@ export default (
       style.top = top + height - contentSize.height;
       style.left = left - contentSize.width - alignLeft;
       autoPosition('left') && (realPosition = 'rb');
-      style.top += verticalOffset;
+      offsetPopup('top', verticalOffset);
 
       arrowTop = top - Number(style.top) + Math.max(height / 2, height - 50);
       arrowStyle.top = getInsideValue(12, contentSize.height - 12, arrowTop);
@@ -481,7 +537,7 @@ export default (
       style.top = top + height / 2 - contentSize.height / 2;
       style.left = width + left + alignRight;
       autoPosition('right') && (realPosition = 'left');
-      style.top += verticalOffset;
+      offsetPopup('top', verticalOffset);
 
       const arrowTop = top - Number(style.top) + height / 2;
       arrowStyle.top = getInsideValue(12, contentSize.height - 12, arrowTop);
@@ -491,7 +547,7 @@ export default (
       style.top = top;
       style.left = width + left + alignRight;
       autoPosition('right') && (realPosition = 'lt');
-      style.top += verticalOffset;
+      offsetPopup('top', verticalOffset);
 
       arrowTop = top - Number(style.top) + Math.min(height / 2, 50);
       arrowStyle.top = getInsideValue(12, contentSize.height - 12, arrowTop);
@@ -500,7 +556,7 @@ export default (
       style.top = top + height - contentSize.height;
       style.left = width + left + alignRight;
       autoPosition('right') && (realPosition = 'lb');
-      style.top += verticalOffset;
+      offsetPopup('top', verticalOffset);
 
       arrowTop = top - Number(style.top) + Math.max(height / 2, height - 50);
       arrowStyle.top = getInsideValue(12, contentSize.height - 12, arrowTop);
