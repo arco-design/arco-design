@@ -70,15 +70,21 @@ ReactDOM.render(
 
 ## 兼容 React 19
 
-需要在入口文件顶部直接引入
-`
-```
+React 19 移除了 `ReactDOM.render`。使用 `Modal.confirm`、`Message`、`Notification` 等静态方法前，需要在应用入口引入适配器，为 Arco 注册 `react-dom/client` 的 `createRoot`。仅使用 `createRoot` 挂载应用本身不会完成这一步。
+
+使用 ES 模块（`es`）组件时：
+
+```js
 import '@arco-design/web-react/es/_util/react-19-adapter';
-
 ```
 
-## 按需加载
+如果构建配置或按需导入插件使用 CommonJS（`lib`）组件，适配器也应使用 `lib` 入口：
 
+```js
+import '@arco-design/web-react/lib/_util/react-19-adapter';
+```
+
+适配器必须与组件使用同一种模块构建：`es` 适配器只配置 `es` 渲染器，`lib` 适配器只配置 `lib` 渲染器。库已将这两个入口声明为副作用模块，确保生产构建保留适配器初始化。
 
 ## 按需加载
 
