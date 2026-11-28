@@ -22,6 +22,18 @@ describe('Select', () => {
     wrapper && wrapper.unmount();
   });
 
+  it('does not select an option after the open Select becomes disabled', () => {
+    const onChange = jest.fn();
+    const props = { options: ['Apple', 'Orange'], defaultValue: 'Apple', onChange };
+    wrapper = render(<Select {...props} />);
+    fireEvent.click(wrapper.querySelector('.arco-select-view'));
+    wrapper.rerender(<Select {...props} disabled />);
+    fireEvent.click(wrapper.getByText('Orange'));
+
+    expect(onChange).not.toHaveBeenCalled();
+    expect(wrapper.querySelector('.arco-select-view').textContent).toContain('Apple');
+  });
+
   it('tokenSeparators', async () => {
     const onChange = jest.fn();
     wrapper = render(
