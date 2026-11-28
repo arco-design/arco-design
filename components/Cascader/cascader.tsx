@@ -101,10 +101,11 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
 
   const mergeValue = 'value' in props ? formatValue(props.value, isMultiple, store) : stateValue;
 
-  const [popupVisible, setPopupVisible] = useMergeValue(false, {
+  const [requestedPopupVisible, setPopupVisible] = useMergeValue(false, {
     value: props.popupVisible,
     defaultValue: props.defaultPopupVisible,
   });
+  const popupVisible = !disabled && requestedPopupVisible;
   const [inputValue, setInputValue, stateInputValue] = useMergeValue('', {
     value: 'inputValue' in props ? props.inputValue || '' : undefined,
   });
@@ -209,15 +210,19 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
 
   const handleVisibleChange = useCallback(
     (newVisible) => {
-      if (newVisible !== popupVisible) {
+      if (newVisible !== requestedPopupVisible) {
         props.onVisibleChange && props.onVisibleChange(newVisible);
         if (!('popupVisible' in props)) {
           setPopupVisible(newVisible);
         }
       }
     },
-    [props.onVisibleChange, popupVisible]
+    [props.onVisibleChange, requestedPopupVisible]
   );
+
+  useUpdate(() => {
+    if (disabled) handleVisibleChange(false);
+  }, [disabled]);
 
   const renderText = useCallback(
     (value) => {
@@ -319,6 +324,8 @@ function Cascader<T extends OptionProps>(baseProps: CascaderProps<T>, ref) {
   };
 
   const renderPopup = () => {
+    if (disabled) return null;
+
     // 远程搜索时是否以搜索面板展示搜索结果
     const panelMode = isObject(props.showSearch) ? props.showSearch.panelMode : undefined;
 
